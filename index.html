@@ -1330,13 +1330,15 @@ function pixelize(img,o={}){
 const SPRITE_CACHE=new Map();
 function spriteFrame(key,pose,ps,o){
   const q=(v,n)=>v==null||v<0?-1:Math.round(v*n)/n,b=v=>v>.5?1:v>0?.5:0;
-  const qp={...pose,t:Math.floor((pose.t||0)*12)/12,atk:q(pose.atk,10),cast:q(pose.cast,8),dead:q(pose.dead,12),flash:b(pose.flash||0),hitK:b(pose.hitK||0),land:b(pose.land||0),walk:Math.round((pose.walk||0)/(Math.PI/5))*(Math.PI/5)};
+  // idle motion loops every 6s at 10fps, so a fighter's frames are drawn once and then reused from the cache
+  const busy=pose.moving||(pose.atk!=null&&pose.atk>=0)||(pose.cast!=null&&pose.cast>=0)||(pose.dead!=null&&pose.dead>=0)||pose.hitK>0||pose.flash>0,tr=10;
+  const qp={...pose,t:busy?(pose.moving?Math.floor((((pose.t||0)%2)+2)%2*4)/4:0):Math.floor((((pose.t||0)%6)+6)%6*tr)/tr,atk:q(pose.atk,10),cast:q(pose.cast,8),dead:q(pose.dead,12),flash:b(pose.flash||0),hitK:b(pose.hitK||0),land:b(pose.land||0),walk:Math.round((pose.walk||0)/(Math.PI/5))*(Math.PI/5)};
   const id=[key,ps.toFixed(3),o.ol,qp.t,qp.atk,qp.cast,qp.dead,qp.flash,qp.hitK,qp.land,qp.moving?qp.walk:'s',qp.face,qp.cheer?1:0,qp.seed].join('|');
   let f=SPRITE_CACHE.get(id);
   if(f){SPRITE_CACHE.delete(id);SPRITE_CACHE.set(id,f);return f}
   const s=makeSprite(key,qp,ps,o),cv=document.createElement('canvas');cv.width=s.W;cv.height=s.H;cv.getContext('2d').drawImage(s.cv,0,0,s.W,s.H,0,0,s.W,s.H);
   f={cv,W:s.W,H:s.H,ox:s.ox,oy:s.oy};SPRITE_CACHE.set(id,f);
-  if(SPRITE_CACHE.size>420)SPRITE_CACHE.delete(SPRITE_CACHE.keys().next().value);
+  if(SPRITE_CACHE.size>1400)SPRITE_CACHE.delete(SPRITE_CACHE.keys().next().value);
   return f;
 }
 function makeSprite(key,pose,ps,o){
