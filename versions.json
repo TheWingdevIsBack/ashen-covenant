@@ -1,9 +1,15 @@
 [
  {
+  "v": "0.18.0",
+  "date": "2026-10-11",
+  "notes": "Three new contracts from the design doc: Roads of the Drowned, The Festering Road and Siege of the Cinder Throne",
+  "latest": true
+ },
+ {
   "v": "0.17.0",
   "date": "2026-10-11",
   "notes": "Main menu with Continue, version history and sound settings",
-  "latest": true
+  "commit": "57f3a6a"
  },
  {
   "v": "0.16.0",
