@@ -526,11 +526,16 @@ button:active:not(:disabled){transform:translateY(1px);filter:brightness(1.15)}
 #coachBlock{position:fixed;inset:0;z-index:38;pointer-events:auto;touch-action:none}
 #coachSpot{position:fixed;border-radius:10px;box-shadow:0 0 0 9999px rgba(8,5,4,.62),0 0 0 2px #ffd36a,0 0 22px rgba(255,200,90,.5);pointer-events:none;transition:all .25s ease}
 #coach{z-index:40}
+#app{padding-top:calc(6px + env(safe-area-inset-top,0px));padding-bottom:calc(12px + env(safe-area-inset-bottom,0px));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+#overlay{padding:calc(16px + env(safe-area-inset-top,0px)) 16px calc(16px + env(safe-area-inset-bottom,0px))}
+#sheet .in{max-height:calc(100dvh - env(safe-area-inset-top,0px) - 20px)}
+.unq{flex:none;align-self:center;background:#3a2420;border:1px solid #8a4a3a;border-radius:5px;padding:5px 9px;font-size:11.5px;font-weight:700;color:#f0d0c0}
+.selits{display:flex;align-items:center;gap:3px}.selits span{font-size:10px;color:var(--muted);margin-left:4px}
 </style>
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
 </head>
 <body>
-<script>window.ASHEN_VERSIONS=[{"v": "0.20.1", "date": "2026-10-11", "notes": "Boot Camp tips now pause the game: the screen dims around what the tip points at, and you tap Got it to continue", "latest": true}, {"v": "0.20.0", "date": "2026-10-11", "notes": "Boot Camp: a two-act tutorial contract with a tip for every part of the game", "commit": "19bfdf8"}, {"v": "0.19.3", "date": "2026-10-11", "notes": "The game always fetches the newest release, and offers a one-tap update if an old copy is showing", "commit": "62c85a8"}, {"v": "0.19.2", "date": "2026-10-11", "notes": "Sentinel reworked: Sentinels mark what they shoot, and the trait makes all your ranged units faster and longer-reaching", "commit": "61c8fcd"}, {"v": "0.19.1", "date": "2026-10-11", "notes": "Trait names are back on shop cards", "commit": "65aa9cc"}, {"v": "0.19.0", "date": "2026-10-11", "notes": "29 new units (110 in all): every contract can now reach the top tier of each of its origins and classes", "commit": "162ab82"}, {"v": "0.18.0", "date": "2026-10-11", "notes": "Three new contracts from the design doc: Roads of the Drowned, The Festering Road and Siege of the Cinder Throne", "commit": "0074adf"}, {"v": "0.17.0", "date": "2026-10-11", "notes": "Main menu with Continue, version history and sound settings", "commit": "57f3a6a"}, {"v": "0.16.0", "date": "2026-10-11", "commit": "d0f200d", "notes": "Covenant origin, one-screen map and flatter hexes"}, {"v": "0.15.0", "date": "2026-10-11", "commit": "817d9aa", "notes": "First web release: pixel-art company, items and the three-act campaign"}]</script>
+<script>window.ASHEN_VERSIONS=[{"v": "0.20.2", "date": "2026-10-11", "notes": "The interface stays clear of the iPhone notch and camera cutout on every screen", "latest": true}, {"v": "0.20.1", "date": "2026-10-11", "notes": "Boot Camp tips now pause the game: the screen dims around what the tip points at, and you tap Got it to continue", "commit": "70578de"}, {"v": "0.20.0", "date": "2026-10-11", "notes": "Boot Camp: a two-act tutorial contract with a tip for every part of the game", "commit": "19bfdf8"}, {"v": "0.19.3", "date": "2026-10-11", "notes": "The game always fetches the newest release, and offers a one-tap update if an old copy is showing", "commit": "62c85a8"}, {"v": "0.19.2", "date": "2026-10-11", "notes": "Sentinel reworked: Sentinels mark what they shoot, and the trait makes all your ranged units faster and longer-reaching", "commit": "61c8fcd"}, {"v": "0.19.1", "date": "2026-10-11", "notes": "Trait names are back on shop cards", "commit": "65aa9cc"}, {"v": "0.19.0", "date": "2026-10-11", "notes": "29 new units (110 in all): every contract can now reach the top tier of each of its origins and classes", "commit": "162ab82"}, {"v": "0.18.0", "date": "2026-10-11", "notes": "Three new contracts from the design doc: Roads of the Drowned, The Festering Road and Siege of the Cinder Throne", "commit": "0074adf"}, {"v": "0.17.0", "date": "2026-10-11", "notes": "Main menu with Continue, version history and sound settings", "commit": "57f3a6a"}, {"v": "0.16.0", "date": "2026-10-11", "commit": "d0f200d", "notes": "Covenant origin, one-screen map and flatter hexes"}, {"v": "0.15.0", "date": "2026-10-11", "commit": "817d9aa", "notes": "First web release: pixel-art company, items and the three-act campaign"}]</script>
 
 
 <div id="app">
@@ -583,8 +588,9 @@ button:active:not(:disabled){transform:translateY(1px);filter:brightness(1.15)}
 
 <script>
 // ================= VERSION =================
-const GAME_VERSION='0.20.1',S_VERSION=9;
+const GAME_VERSION='0.20.2',S_VERSION=9;
 const CHANGELOG={
+  '0.20.2':['The interface stays clear of the iPhone notch and camera cutout on every screen','A component now combines with a component a unit already holds even when a finished item sits after it','Unequip any item from the unit info card'],
   '0.20.1':['Boot Camp tips now pause the game: the screen dims around what the tip points at, and you tap Got it to continue'],
   '0.20.0':['Boot Camp: a two-act tutorial contract with a tip for every part of the game','Larger, livelier characters: they blink, shout, fidget, and catch the light on armour and blades','Weapon swing trails, hit sparks, hitstop, camera punches, dash afterimages and slow motion on the final blow','Fallen units burn away, big spells scorch the ground, and spells, projectiles and fire light the battlefield','Rain, spores, ash-snow and ground mist by region; star auras on ★★ and ★★★ units'],
   '0.19.3':['The game always fetches the newest release, and offers a one-tap update if an old copy is showing'],
@@ -1725,8 +1731,9 @@ const unitAt=loc=>loc.z==='b'?S.board[loc.k]:S.bench[loc.i];
 function setAt(loc,u){if(loc.z==='b'){if(u)S.board[loc.k]=u;else delete S.board[loc.k]}else S.bench[loc.i]=u||null}
 function equip(u){
   const id=S.items[selItem];if(id==null)return;
-  const its=u.items||(u.items=[]),last=its[its.length-1];
-  if(isComp(id)&&last&&isComp(last)){const f=comboOf(last,id);its[its.length-1]=f;S.items.splice(selItem,1);selItem=null;sfx.merge();
+  const its=u.items||(u.items=[]),ci=its.findIndex(x=>isComp(x));
+  // a component combines with any loose component the unit already holds, wherever it sits
+  if(isComp(id)&&ci>=0){const f=comboOf(its[ci],id);its[ci]=f;S.items.splice(selItem,1);selItem=null;sfx.merge();
     const loc=Object.entries(S.board).find(([k,x])=>x===u);if(loc){const [r,c]=loc[0].split(',').map(Number),P=proj(r,Xof(r,c));(V.bursts=V.bursts||[]).push({x:P.x,y:P.y,s:P.s,t0:V.t})}
     render();return toast(`${ITEM[f].name} forged`,ITEM[f].desc)}
   if(its.length>=3)return toast('Hands full','A unit can carry three items.');
@@ -2189,7 +2196,7 @@ function render(){
   }).join('');
   const su=sel&&S.phase==='plan'?unitAt(sel):null,sb=$('#selbar');
   if(su){const d=UNITS[su.key];sb.hidden=false;sb.innerHTML=`<div class="sp k${d.cost}"><canvas class="pc" data-key="${su.key}" data-zoom="1.3"></canvas></div>
-    <div class="mid"><div class="nm">${d.name}<span>${stars(su.star)}</span></div><div class="chips">${traitsOf(su.key).filter(isActive).map(t=>`<span class="chip">${ticon(t)}${t}</span>`).join('')}</div>${d.ab?`<div class="ab"><b>${ABIL[d.ab][0]}</b> <span>${d.mana-(d.c==='Hexblade'?20:0)} mana</span> · ${ABIL[d.ab][1](Math.round(d.p*SPELL[su.star-1]))}</div>`:''}<div class="hint">Tap a hex or bench slot to move.</div></div>
+    <div class="mid"><div class="nm">${d.name}<span>${stars(su.star)}</span></div><div class="chips">${traitsOf(su.key).filter(isActive).map(t=>`<span class="chip">${ticon(t)}${t}</span>`).join('')}</div>${d.ab?`<div class="ab"><b>${ABIL[d.ab][0]}</b> <span>${d.mana-(d.c==='Hexblade'?20:0)} mana</span> · ${ABIL[d.ab][1](Math.round(d.p*SPELL[su.star-1]))}</div>`:''}<div class="hint">Tap a hex or bench slot to move.</div>${su.items&&su.items.length?`<div class="selits">${su.items.map(id=>itemIcon(id,'sm')).join('')}<span>Info to unequip</span></div>`:''}</div>
     <div class="btns"><button data-info>Info</button><button class="sell" id="sellBtn">Sell ${coin}${sellValue(su)}</button></div>`;paintPortraits(sb)}
   else if(selItem!=null&&S.phase==='plan'&&S.items[selItem]){const id=S.items[selItem];sb.hidden=false;
     sb.innerHTML=`<div class="ibig">${itemIcon(id,'lg')}</div><div class="mid"><div class="nm">${itemName(id)}</div><div class="ab">${itemDesc(id)}</div>
@@ -2214,7 +2221,9 @@ function toast(t,s){const el=$('#toast');el.innerHTML=`<b>${t}</b>${s?`<span>${s
 
 // ---- bottom sheet: unit card / trait card ----
 // components you own, on hand or on a unit, excluding one armory slot
-function haveComp(c,skip){return S.items.some((x,i)=>i!==skip&&x===c)||[...Object.values(S.board),...S.bench].some(u=>u&&u.items&&u.items[u.items.length-1]===c)}
+function haveComp(c,skip){return S.items.some((x,i)=>i!==skip&&x===c)||[...Object.values(S.board),...S.bench].some(u=>u&&u.items&&u.items.includes(c))}
+function unequip(i){const u=sel&&unitAt(sel);if(!u||!u.items||!u.items[i]||S.phase!=='plan')return;const id=u.items.splice(i,1)[0];S.items.push(id);sfx.sell();render();
+  if(sheet&&sheet.type==='unit')renderSheet();toast(`${itemName(id)} unequipped`,'Returned to your armory.');const a=$('#armory');if(a){a.classList.remove('gain');void a.offsetWidth;a.classList.add('gain')}}
 function openItem(id){sheet={type:'item',id};renderSheet()}
 function recipeRow(f){const [a,b]=ITEM[f].c,ready=a===b?S.items.filter(x=>x===a).length>=2:(haveComp(a)&&haveComp(b));
   return `<div class="rrow${ready?' ready':''}" data-iteminfo="${f}"><span class="rr-recipe">${itemIcon(a,'xs')}<i>+</i>${itemIcon(b,'xs')}</span>${itemIcon(f)}<span class="rr-txt"><b>${ITEM[f].name}</b>${ready?'<em>Ready to forge</em>':''}<span>${ITEM[f].desc}</span></span></div>`}
@@ -2274,11 +2283,11 @@ function renderSheet(){
     <button class="sh-x" data-close>✕</button></div>
   <div class="bars2"><div class="bar2${sheet.team==='B'?' foe':''}" id="shHp"><i style="width:${100*st.hp/st.max}%"></i><span class="num">${Math.round(st.hp)} / ${Math.round(st.max)}${st.shield>0?` (+${Math.round(st.shield)})`:''}</span></div>
     <div class="bar2 mp" id="shMp"><i style="width:${100*st.mana/st.maxMana}%"></i><span class="num">${d.ab?`${Math.round(st.mana)} / ${st.maxMana}`:'No ability'}</span></div></div>
+  ${(()=>{const its=sheet.ent?sheet.ent.items:sheet.mine&&sel?(unitAt(sel)||{}).items:sheet.enemy!=null?(S.enemy[sheet.enemy]||{}).items:null;return its&&its.length?`<div class="abil"><div class="h">Items</div>${its.map((id,i)=>`<div class="irow">${itemIcon(id)}<span><b>${itemName(id)}</b> ${itemDesc(id)}</span>${sheet.mine&&plan&&!sheet.ent?`<button class="unq" data-unequip="${i}">Unequip</button>`:''}</div>`).join('')}</div>`:''})()}
   <div class="sgrid num"><div>Attack<b>${Math.round(st.atk)}</b></div><div>Speed<b>${st.as.toFixed(2)}</b></div><div>Range<b>${st.range}</b></div>
     <div>Armor<b>${Math.round(st.ar)}</b></div><div>Magic res.<b>${Math.round(st.mr)}</b></div><div>Spell pow.<b>${Math.round(st.sp*100)}%</b></div></div>
   ${a?`<div class="abil"><div class="h">${a[0]}<span>${st.maxMana} mana</span></div>${a[1](Math.round(d.p*SPELL[sheet.star-1]*(sheet.elite?1.3:1)))}</div>`:''}
   <div class="abil"><div class="h">${d.c}</div>${TRAITS[d.c].passive}</div>
-  ${(()=>{const its=sheet.ent?sheet.ent.items:sheet.mine&&sel?(unitAt(sel)||{}).items:sheet.enemy!=null?(S.enemy[sheet.enemy]||{}).items:null;return its&&its.length?`<div class="abil"><div class="h">Items</div>${its.map(id=>`<div class="irow">${itemIcon(id)}<span><b>${itemName(id)}</b> ${itemDesc(id)}</span></div>`).join('')}</div>`:''})()}
   ${sheet.mine&&plan&&sel&&unitAt(sel)?`<div class="sh-act"><button class="sell" id="sellBtn">Sell ${coin} ${sellValue(unitAt(sel))}</button></div>`:''}`;
   paintPortraits(box);
 }
@@ -3169,6 +3178,7 @@ document.addEventListener('click',ev=>{
   const smi=t.closest('[data-smithitem]');if(smi&&!smi.disabled){const o=S.offer.item;if(S.gold>=o.price){S.gold-=o.price;S.items.push(o.id);sfx.merge();return afterNode(`${ITEM[o.id].name} bought`,'Added to your armory.')}return}
   if(t.closest('[data-recipes]')){sheet={type:'recipes'};return renderSheet()}
   if(t.closest('#relBtn')){sel=null;sheet={type:'relics'};return renderSheet()}
+  const uq=t.closest('[data-unequip]');if(uq)return unequip(+uq.dataset.unequip);
   const ii=t.closest('[data-iteminfo]');if(ii)return openItem(ii.dataset.iteminfo);
   const it=t.closest('[data-item]');if(it){if(S.phase!=='plan')return toast('Items are equipped between battles','');const i=+it.dataset.item;selItem=selItem===i?null:i;sel=null;closeSheet();sfx.tap();return render()}
   const evb=t.closest('[data-ev]');if(evb&&!evb.disabled){const E=EVENTS[S.ev],ch=E[evb.dataset.ev];const res=ch[3]();render();return afterNode(ch[0],typeof res==='string'?res:ch[1])}

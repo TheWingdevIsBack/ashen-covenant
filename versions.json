@@ -1,9 +1,15 @@
 [
  {
+  "v": "0.20.2",
+  "date": "2026-10-11",
+  "notes": "The interface stays clear of the iPhone notch and camera cutout on every screen",
+  "latest": true
+ },
+ {
   "v": "0.20.1",
   "date": "2026-10-11",
   "notes": "Boot Camp tips now pause the game: the screen dims around what the tip points at, and you tap Got it to continue",
-  "latest": true
+  "commit": "70578de"
  },
  {
   "v": "0.20.0",
