@@ -1713,7 +1713,7 @@ function layout(){
   if(app&&st0){const kids=[...app.children].filter(c=>c!==st0&&c.offsetParent!==null&&getComputedStyle(c).position!=='absolute');const cs=getComputedStyle(app);
     const r2=kids.reduce((h,c)=>h+c.offsetHeight,0)+(parseFloat(cs.rowGap)||6)*kids.length+parseFloat(cs.paddingTop)+parseFloat(cs.paddingBottom);if(r2>150)rest=r2}
   const curCard=V.cardh||128,avail=(window.innerHeight||700)-(rest-(curCard-128))-6-(V.trim||0);
-  const H=Math.round(Math.max(cw*2.2+field,Math.min(cw*6.4+field,avail)));
+  const H=Math.round(Math.max(cw*1.1+field,Math.min(cw*6.4+field,avail)));
   V.cardh=Math.round(128+Math.max(-24,Math.min(44,avail-H)));document.documentElement.style.setProperty('--cardh',V.cardh+'px');
   Object.assign(V,{W,cw,rh,y0:H-field,cx:W/2,H});
   V.dpr=Math.min(2,window.devicePixelRatio||1);
