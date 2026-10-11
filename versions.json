@@ -1,9 +1,15 @@
 [
  {
+  "v": "0.20.0",
+  "date": "2026-10-11",
+  "notes": "Boot Camp: a two-act tutorial contract with a tip for every part of the game",
+  "latest": true
+ },
+ {
   "v": "0.19.3",
   "date": "2026-10-11",
   "notes": "The game always fetches the newest release, and offers a one-tap update if an old copy is showing",
-  "latest": true
+  "commit": "62c85a8"
  },
  {
   "v": "0.19.2",
