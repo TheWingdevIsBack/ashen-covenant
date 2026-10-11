@@ -547,11 +547,22 @@ button:active:not(:disabled){transform:translateY(1px);filter:brightness(1.15)}
 #dragTip .dt-tr{display:flex;flex-wrap:wrap;gap:2px 8px;font-size:11px;font-weight:600}
 #dragTip .dt-tr i{font-style:normal;display:flex;align-items:center;gap:3px}#dragTip .dt-tr .tic{width:11px;height:11px}
 #dragTip .dt-sw{color:#c9a25a;font-size:14px;line-height:1;margin:-1px 0}
+#stamp{position:absolute;left:0;right:0;top:38%;z-index:5;text-align:center;pointer-events:none;font-family:var(--display);font-size:46px;color:#ffe0a0;text-shadow:0 3px 0 #5a1e08,0 0 24px rgba(255,140,50,.8);letter-spacing:.02em}
+#stamp.go{animation:stamp .9s cubic-bezier(.2,1.4,.4,1) forwards}
+@keyframes stamp{0%{transform:scale(2.4);opacity:0}18%{transform:scale(1);opacity:1}70%{transform:scale(1.04);opacity:1}100%{transform:scale(1.25);opacity:0}}
+#fieldCount{position:absolute;left:8px;bottom:6px;z-index:3;font-size:11px;font-weight:600;color:var(--muted);background:rgba(16,11,10,.75);border:1px solid #3a2e2a;border-radius:10px;padding:2px 8px;pointer-events:none}
+#fieldCount b{color:var(--bone);font-size:12px}
+#fieldCount.full{border-color:#6a5434;color:#c9a25a}#fieldCount.full b{color:#ffd890}
+#fieldCount.warn{border-color:#b0603a;color:#f0b090;animation:fcw 1.4s ease-in-out infinite}
+@keyframes fcw{50%{box-shadow:0 0 10px rgba(240,140,80,.5)}}
+.tb.tpop{animation:tpop .8s cubic-bezier(.2,1.6,.4,1)}
+@keyframes tpop{0%{transform:scale(1)}25%{transform:scale(1.18);filter:brightness(1.8)}100%{transform:scale(1)}}
+@media (prefers-reduced-motion:reduce){#stamp.go,.tb.tpop,#fieldCount.warn{animation:none}}
 </style>
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
 </head>
 <body>
-<script>window.ASHEN_VERSIONS=[{"v": "0.21.2", "date": "2026-10-11", "notes": "A bigger battlefield: taller phones spend their spare height on deeper rows and larger fighters", "latest": true}, {"v": "0.21.1", "date": "2026-10-11", "notes": "The Ashward March ramps up more gently", "commit": "fabd80e"}, {"v": "0.21.0", "date": "2026-10-11", "notes": "Everything moves by dragging: drag items onto units to equip them, and drag units to place, swap or sell them", "commit": "6f61b5f"}, {"v": "0.20.2", "date": "2026-10-11", "notes": "The interface stays clear of the iPhone notch and camera cutout on every screen", "commit": "6639abb"}, {"v": "0.20.1", "date": "2026-10-11", "notes": "Boot Camp tips now pause the game: the screen dims around what the tip points at, and you tap Got it to continue", "commit": "70578de"}, {"v": "0.20.0", "date": "2026-10-11", "notes": "Boot Camp: a two-act tutorial contract with a tip for every part of the game", "commit": "19bfdf8"}, {"v": "0.19.3", "date": "2026-10-11", "notes": "The game always fetches the newest release, and offers a one-tap update if an old copy is showing", "commit": "62c85a8"}, {"v": "0.19.2", "date": "2026-10-11", "notes": "Sentinel reworked: Sentinels mark what they shoot, and the trait makes all your ranged units faster and longer-reaching", "commit": "61c8fcd"}, {"v": "0.19.1", "date": "2026-10-11", "notes": "Trait names are back on shop cards", "commit": "65aa9cc"}, {"v": "0.19.0", "date": "2026-10-11", "notes": "29 new units (110 in all): every contract can now reach the top tier of each of its origins and classes", "commit": "162ab82"}, {"v": "0.18.0", "date": "2026-10-11", "notes": "Three new contracts from the design doc: Roads of the Drowned, The Festering Road and Siege of the Cinder Throne", "commit": "0074adf"}, {"v": "0.17.0", "date": "2026-10-11", "notes": "Main menu with Continue, version history and sound settings", "commit": "57f3a6a"}, {"v": "0.16.0", "date": "2026-10-11", "commit": "d0f200d", "notes": "Covenant origin, one-screen map and flatter hexes"}, {"v": "0.15.0", "date": "2026-10-11", "commit": "817d9aa", "notes": "First web release: pixel-art company, items and the three-act campaign"}]</script>
+<script>window.ASHEN_VERSIONS=[{"v": "0.22.0", "date": "2026-10-11", "notes": "Even fights: enemy boards now grow with the rounds to match yours, so battles are close and tense instead of lopsided", "latest": true}, {"v": "0.21.2", "date": "2026-10-11", "notes": "A bigger battlefield: taller phones spend their spare height on deeper rows and larger fighters", "commit": "2b7760c"}, {"v": "0.21.1", "date": "2026-10-11", "notes": "The Ashward March ramps up more gently", "commit": "fabd80e"}, {"v": "0.21.0", "date": "2026-10-11", "notes": "Everything moves by dragging: drag items onto units to equip them, and drag units to place, swap or sell them", "commit": "6f61b5f"}, {"v": "0.20.2", "date": "2026-10-11", "notes": "The interface stays clear of the iPhone notch and camera cutout on every screen", "commit": "6639abb"}, {"v": "0.20.1", "date": "2026-10-11", "notes": "Boot Camp tips now pause the game: the screen dims around what the tip points at, and you tap Got it to continue", "commit": "70578de"}, {"v": "0.20.0", "date": "2026-10-11", "notes": "Boot Camp: a two-act tutorial contract with a tip for every part of the game", "commit": "19bfdf8"}, {"v": "0.19.3", "date": "2026-10-11", "notes": "The game always fetches the newest release, and offers a one-tap update if an old copy is showing", "commit": "62c85a8"}, {"v": "0.19.2", "date": "2026-10-11", "notes": "Sentinel reworked: Sentinels mark what they shoot, and the trait makes all your ranged units faster and longer-reaching", "commit": "61c8fcd"}, {"v": "0.19.1", "date": "2026-10-11", "notes": "Trait names are back on shop cards", "commit": "65aa9cc"}, {"v": "0.19.0", "date": "2026-10-11", "notes": "29 new units (110 in all): every contract can now reach the top tier of each of its origins and classes", "commit": "162ab82"}, {"v": "0.18.0", "date": "2026-10-11", "notes": "Three new contracts from the design doc: Roads of the Drowned, The Festering Road and Siege of the Cinder Throne", "commit": "0074adf"}, {"v": "0.17.0", "date": "2026-10-11", "notes": "Main menu with Continue, version history and sound settings", "commit": "57f3a6a"}, {"v": "0.16.0", "date": "2026-10-11", "commit": "d0f200d", "notes": "Covenant origin, one-screen map and flatter hexes"}, {"v": "0.15.0", "date": "2026-10-11", "commit": "817d9aa", "notes": "First web release: pixel-art company, items and the three-act campaign"}]</script>
 
 
 <div id="app">
@@ -563,7 +574,7 @@ button:active:not(:disabled){transform:translateY(1px);filter:brightness(1.15)}
     <div id="hpBox"><span class="heart"></span><b id="hp" class="num">30</b></div>
   </div>
   <div id="traits"></div>
-  <div id="stage"><canvas id="cv"></canvas><div id="toast"></div><div id="bossCard" hidden></div><div id="banner" hidden></div></div>
+  <div id="stage"><canvas id="cv"></canvas><div id="toast"></div><div id="bossCard" hidden></div><div id="stamp" hidden></div><div id="fieldCount"></div><div id="banner" hidden></div></div>
   <div id="armory"></div>
   <div id="benchWrap"><div id="bench"></div><canvas id="benchCv"></canvas></div>
   <div id="econ">
@@ -604,8 +615,9 @@ button:active:not(:disabled){transform:translateY(1px);filter:brightness(1.15)}
 
 <script>
 // ================= VERSION =================
-const GAME_VERSION='0.21.2',S_VERSION=9;
+const GAME_VERSION='0.22.0',S_VERSION=9;
 const CHANGELOG={
+  '0.22.0':['Even fights: enemy boards now grow with the rounds to match yours, so battles are close and tense instead of lopsided','Units start battles with some mana, so abilities fire sooner, and after 20 seconds Overtime makes every blow hit harder','A Fight! stamp, team-strength bars, a fielded-units counter, and a flash and chime when a trait reaches a new tier','Empty field slots fill from your bench when a fight starts, like TFT','Damage numbers show only crits, abilities and big hits by default (change in Settings)','Retrying a boss faces the same army; mini bosses rebalanced; each contract retuned'],
   '0.21.2':['A bigger battlefield: taller phones spend their spare height on deeper rows and larger fighters','While dragging, a label names exactly what will happen, such as Swap Vosk and Maren or Forge Witchsteel Sabre on Maren, with each unit\'s stars and traits, and the target glows'],
   '0.21.1':['The Ashward March ramps up more gently','Items drop about twice as often: more components from wins, a bonus from elites and mini bosses, and the odd consolation drop after a loss'],
   '0.21.0':['Everything moves by dragging: drag items onto units to equip them, and drag units to place, swap or sell them','Tapping a unit, on the field or the bench, now just opens its card; tapping an item shows what it does','Your bench shows your reserves as living figures that idle and pace in their slots'],
@@ -627,10 +639,10 @@ const ARCHIVED=/\/versions\/[^/]+\/?/.test(location.pathname);
 const SITE='https://thewingdevisback.github.io/ashen-covenant/';
 // ================= RUN 1 DATA =================
 const RUNS=[
-  {id:0,name:'The Ashward March',blurb:'A desperate push through the first burned territories.',origins:['Ashborn','Ironpact','Stoneblood','Forsaken','Covenant'],stars:1,grow:.54,acts:[['ashen','pact'],['ashen','pact','hollows']],final:'pyre',boss:{key:'ashwalker',name:'The Ashwalker',lives:2,desc:'Revives twice; its third death explodes across the field.'},scale:0},
+  {id:0,name:'The Ashward March',blurb:'A desperate push through the first burned territories.',origins:['Ashborn','Ironpact','Stoneblood','Forsaken','Covenant'],stars:1,grow:.48,acts:[['ashen','pact'],['ashen','pact','hollows']],final:'pyre',boss:{key:'ashwalker',name:'The Ashwalker',lives:2,desc:'Revives twice; its third death explodes across the field.'},scale:0},
   {id:1,name:'Roads of the Drowned',blurb:'Contract into the flooded ruins of the old mage city.',origins:['Hollow','Wraithkin','Duskbound','Forsaken'],stars:2,acts:[['spires','pact'],['spires','pact','drowned']],final:'spire',boss:{key:'duskmother',name:'The Duskmother',lives:0,desc:'Drinks the blood she spills; at half health she vanishes into dusk and returns healed.'},scale:1},
-  {id:2,name:'The Festering Road',blurb:'Into the rot. Bring fire.',origins:['Plagueborn','Verdant','Hollow','Wraithkin'],stars:3,acts:[['festering','maw'],['festering','maw','spires']],final:'rotthrone',boss:{key:'sovereign',name:'The Plague Sovereign',lives:0,desc:'Every one of its followers bursts into Rot when it dies.'},scale:2},
-  {id:3,name:'Siege of the Cinder Throne',blurb:"The last great contract. The empire's seat. Everything at once.",origins:['Ashborn','Covenant','Duskbound','Ironpact','Stoneblood'],stars:4,acts:[['cinder','ashen'],['cinder','ashen','pact']],final:'throne',boss:{key:'kingboss',name:'The Sundered King',lives:2,desc:'Three phases; each death wakes another origin in him: fire, then stone, then blood.'},scale:3},
+  {id:2,name:'The Festering Road',blurb:'Into the rot. Bring fire.',origins:['Plagueborn','Verdant','Hollow','Wraithkin'],stars:3,acts:[['festering','maw'],['festering','maw','spires']],final:'rotthrone',boss:{key:'sovereign',name:'The Plague Sovereign',lives:0,desc:'Every one of its followers bursts into Rot when it dies.'},scale:2,grow:.66},
+  {id:3,name:'Siege of the Cinder Throne',blurb:"The last great contract. The empire's seat. Everything at once.",origins:['Ashborn','Covenant','Duskbound','Ironpact','Stoneblood'],stars:4,acts:[['cinder','ashen'],['cinder','ashen','pact']],final:'throne',boss:{key:'kingboss',name:'The Sundered King',lives:2,desc:'Three phases; each death wakes another origin in him: fire, then stone, then blood.'},scale:2.2,grow:.52},
   {id:4,tutorial:true,name:'Boot Camp',blurb:'Learn every part of the game in two short acts. Start here.',origins:['Ashborn','Ironpact'],stars:0,acts:[['muster']],final:'yard',nActs:2,short:true,boss:{key:'drillmaster',name:'The Drillmaster',lives:0,desc:'A grizzled veteran who tests everything you have learned.'},scale:-1.4},
 ];
 let RUN=RUNS[0];
@@ -757,7 +769,7 @@ const UNITS={
   thornling:{...U('Thornling','',1,[],'Ravager',420,45,.8,1,15,15,999,null,0),token:true},
   duskmother:{...U('The Duskmother','Final boss',5,['Duskbound','Wraithkin'],'Invoker',3300,110,.75,3,40,50,80,'drain',380),token:true},
   sovereign:{...U('The Plague Sovereign','Final boss',5,['Plagueborn'],'Vanguard',3600,120,.7,1,55,45,90,'contagion',300),token:true},
-  kingboss:{...U('The Sundered King','Final boss',5,['Ashborn','Stoneblood','Duskbound'],'Ravager',3000,130,.75,1,55,45,90,'kingfall',420),token:true},
+  kingboss:{...U('The Sundered King','Final boss',5,['Ashborn','Stoneblood','Duskbound'],'Ravager',2600,130,.75,1,55,45,90,'kingfall',420),token:true},
   revenant:{...U('Ashborn Revenant','',1,[],'Ravager',450,40,.7,1,15,15,999,null,0),token:true},
   drillmaster:{...U('The Drillmaster','Final boss',5,['Ironpact','Ashborn'],'Vanguard',1700,75,.65,1,45,35,90,'oathguard',260),token:true},
   ashwalker:{...U('The Ashwalker','Final boss',5,['Ashborn'],'Ravager',3000,130,.7,1,50,40,80,'cleave',360),token:true},
@@ -1129,7 +1141,7 @@ const sfx={
 };
 
 // ---- settings and procedural music: a low drone under slow plucks, with a war-drum pulse during battle ----
-const SET=Object.assign({music:true,shake:true,speed:1,vol:.7},store.get('ashen-settings',{}));
+const SET=Object.assign({music:true,shake:true,speed:1,vol:.7,nums:'big'},store.get('ashen-settings',{}));
 const saveSet=()=>store.set('ashen-settings',SET);
 function actx(){if(!SFX.ctx){try{SFX.ctx=new(window.AudioContext||window.webkitAudioContext)()}catch(e){return null}}if(SFX.ctx.state==='suspended')SFX.ctx.resume();return SFX.ctx}
 const MUS={nodes:null,timer:0,mood:'ashen',combat:false,beat:0};
@@ -1675,18 +1687,20 @@ const enemyCells=()=>ALLCELLS.filter(p=>side(p.r,p.c)==='B');
 const diff=()=>1+(S.round-1)*(RUN.grow||.62)+RUN.scale*.45*Math.min(1,.4+S.round*.1)+(S.heat||0)*.35;
 function genEnemy(){
   const node=S.node||'battle',R=REGIONS[S.region]||{fav:[]};
-  const r=diff()+(node==='elite'||node==='boss'?1:0);
-  const n=Math.min(2+Math.floor(r*.55)-(node==='boss'?1:0),12);
-  const maxCost=r<3?1:r<5?2:r<8?3:r<12?4:5;
+  const r=diff()+(node==='elite'?1:0);
+  // enemy boards are as big as yours should be by now (TFT-style even fights); their strength comes from cost, stars and items
+  const sched=S.round===1?2:Math.min(9,3+Math.floor((S.round-1)*.36));
+  const n=Math.min(9,sched+(node==='elite'?1:0));
+  const maxCost=r<3.5?1:r<5.5?2:r<8.5?3:r<12?4:5;
   const list=[];
   if(node==='final')list.push({key:RUN.boss.key,star:1,boss:RUN.boss.key,lives:RUN.boss.lives});
-  if(node==='boss')list.push({key:S.boss.key,star:2,elite:S.act>=2,boss:'mini',bossName:S.boss.name,lives:S.act>=2?1:0});
+  if(node==='boss')list.push({key:S.boss.key,star:UNITS[S.boss.key].cost>=(S.act===1?4:5)?1:2,elite:false,boss:'mini',bossName:S.boss.name,lives:S.act>=2?1:0});
   if(node==='elite')list.push({key:weightedPick(poolCost(maxCost,Math.min(3,maxCost)),R.fav,3),star:2,elite:true});
   while(list.length<n){
-    const cost=Math.min(maxCost,1+Math.floor(Math.pow(Math.random(),.7)*maxCost));
+    const cost=Math.min(maxCost,1+Math.floor(Math.pow(Math.random(),1.05)*maxCost));
     const key=weightedPick(poolCost(cost),R.fav,3);
-    let star=Math.random()<Math.min(.05*r,.6)?2:1;
-    if(r>=12&&Math.random()<(r-11)*.07)star=3;
+    let star=Math.random()<Math.min(.035*r,.55)?2:1;
+    if(r>=12&&Math.random()<(r-11)*.06)star=3;
     list.push({key,star});
   }
   list.forEach(u=>{
@@ -2072,6 +2086,7 @@ function drawScene(){
   if(fight)drawFxLow();
   if(fight)drawLights(lc,units);
   drawWeather(lc);
+  if(fight&&C.otOn&&!C.over){lc.save();lc.setTransform(1,0,0,1,0,0);const w=V.low.width,h=V.low.height,a=.18+.08*Math.sin(V.t*6);const g=lc.createRadialGradient(w/2,h*.55,h*.3,w/2,h*.55,w*.8);g.addColorStop(0,'rgba(180,20,10,0)');g.addColorStop(1,`rgba(180,20,10,${a})`);lc.fillStyle=g;lc.fillRect(0,0,w,h);lc.restore();lc.setTransform(k,0,0,k,0,0)}
   if(!V.menuMode&&isNight()&&(S.phase==='plan'||S.phase==='combat')){lc.save();lc.setTransform(1,0,0,1,0,0);lc.fillStyle='rgba(14,22,70,.32)';lc.fillRect(0,0,V.low.width,V.low.height);lc.restore();lc.setTransform(k,0,0,k,0,0)}
   {lc.setTransform(1,0,0,1,0,0);const w=V.low.width,h=V.low.height;
    if(!V.vig||V.vig.width!==w||V.vig.height!==h){V.vig=document.createElement('canvas');V.vig.width=w;V.vig.height=h;const x=V.vig.getContext('2d'),vg=x.createRadialGradient(w/2,h*.55,h*.35,w/2,h*.55,w*.75);vg.addColorStop(0,'rgba(0,0,0,0)');vg.addColorStop(1,'rgba(6,2,4,.55)');x.fillStyle=vg;x.fillRect(0,0,w,h)}
@@ -2091,8 +2106,18 @@ function drawScene(){
   ctx.setTransform(V.dpr*z,0,0,V.dpr*z,zx,zy);
   units.forEach(u=>drawUnitHud(ctx,u));
   if(fight)drawTextFx(ctx);
-  if(fight){const b=C.ents.find(e=>e.team==='B'&&e.boss&&!e.dead);if(b)drawBossBar(ctx,b)}
+  if(fight){drawTeamBars(ctx);const b=C.ents.find(e=>e.team==='B'&&e.boss&&!e.dead);if(b)drawBossBar(ctx,b)}
 }
+// at-a-glance tug of war: each side's remaining strength (health plus shields) and how many are still standing
+function drawTeamBars(ctx){
+  const sum=t=>{let h=0,m=0,n=0,N=0;for(const e of C.ents){if(e.team!==t||UNITS[e.key].token&&!e.boss)continue;N++;m+=e.max;if(!e.dead){h+=e.hp+Math.min(e.shield||0,e.max*.5);n++}}return{f:m?Math.min(1,h/m):0,n,N}};
+  const A=sum('A'),B=sum('B'),W=V.W,w=Math.min(150,W*.36),y=V.H-14;
+  ctx.save();ctx.font='700 9px Silkscreen, monospace';ctx.textBaseline='middle';
+  const bar=(x,f,col,dir,label)=>{ctx.fillStyle='rgba(10,6,6,.75)';ctx.fillRect(x-1,y-5,w+2,10);ctx.fillStyle='#2a1a18';ctx.fillRect(x,y-4,w,8);
+    const fw=w*f;ctx.fillStyle=col;dir>0?ctx.fillRect(x,y-4,fw,8):ctx.fillRect(x+w-fw,y-4,fw,8);ctx.fillStyle='rgba(255,255,255,.25)';dir>0?ctx.fillRect(x,y-4,fw,1.5):ctx.fillRect(x+w-fw,y-4,fw,1.5);
+    ctx.fillStyle='#f0e4cc';ctx.textAlign=dir>0?'left':'right';ctx.fillText(label,dir>0?x+3:x+w-3,y+.5)};
+  bar(W/2-w-14,A.f,'#4f8fd8',1,`${A.n}/${A.N}`);bar(W/2+14,B.f,'#d8503f',-1,`${B.n}/${B.N}`);
+  ctx.fillStyle='#c9a25a';ctx.textAlign='center';ctx.font='700 11px "IM Fell English SC", Georgia, serif';ctx.fillText('vs',W/2,y);ctx.restore()}
 function drawBossBar(ctx,b){
   const W=V.W,w=Math.min(300,W*.74),x=Math.round((W-w)/2),y=10,nm=b.boss==='mini'?(b.bossName||UNITS[b.key].name):RUN.boss.name;
   ctx.save();ctx.fillStyle='rgba(12,8,8,.78)';ctx.fillRect(x-6,y-4,w+12,28);ctx.strokeStyle='#6a4a2a';ctx.lineWidth=1;ctx.strokeRect(x-5.5,y-3.5,w+11,27);
@@ -2208,6 +2233,13 @@ function render(){
   const ts=Object.entries(cnt).sort((a,b)=>tierOf(b[0],b[1])-tierOf(a[0],a[1])||b[1]-a[1]);
   $('#traits').innerHTML=ts.length?ts.map(([t,n])=>`<button class="tb ${TRAITS[t].kind} ${tierClass(t,n)}${tierOf(t,n)?' on':''}" data-t="${t}" style="--tc:${TRAITS[t].col}"><span class="tbadge">${ticon(t)}</span><span class="tn">${t}</span><span class="cnt num"><b>${n}</b>/${nextTh(t,n)}</span></button>`).join('')
     :'<span class="traitEmpty">Field units to activate origins and classes</span>';
+  // celebrate a trait reaching a new tier while you arrange your company
+  {const tiers=Object.fromEntries(ts.map(([t,n])=>[t,tierOf(t,n)])),newly=[];
+   if(S.phase==='plan'&&V.tierSnap&&V.tierRound===S.round)for(const [t,ti] of Object.entries(tiers))if(ti>(V.tierSnap[t]||0))newly.push(t);
+   V.tierSnap=tiers;V.tierRound=S.round;
+   if(newly.length){const t=newly[0],n=cnt[t],ti=tiers[t];setTimeout(()=>{newly.forEach(x=>{const b=document.querySelector(`#traits [data-t="${x}"]`);if(b){b.classList.remove('tpop');void b.offsetWidth;b.classList.add('tpop');b.scrollIntoView({block:'nearest',inline:'nearest'})}})},0);
+     [523,784,1046].forEach((f,i)=>tone(f,.12,'triangle',.05,0,i*.06));toast(`${t} ${TRAITS[t].th[ti-1]} active`,TRAITS[t].t[ti-1])}}
+  {const fc=$('#fieldCount'),n=boardCount(),cap=boardCap(),spare=S.bench.some(Boolean)&&n<cap;fc.hidden=S.phase!=='plan';fc.className=n>=cap?'full':spare?'warn':'';fc.innerHTML=`<b>${n}</b>/${cap} fielded${spare?' · room for more':''}`}
   $('#bench').innerHTML=S.bench.map((u,i)=>`<div class="slot${S.popAt===i?' pop':''}${u?' k'+UNITS[u.key].cost:''}${sel&&sel.z==='n'&&sel.i===i?' sel':''}${V.drag&&V.drag.u&&!u?' drop':''}" data-i="${i}">${u?`<div class="pstars">${stars(u.star)}</div>${u.items&&u.items.length?`<div class="bitems">${u.items.map(id=>itemIcon(id,'xs')).join('')}</div>`:''}`:''}</div>`).join('');
   $('#shop').innerHTML=S.shop.map((k,i)=>{
     if(!k)return `<div class="card empty"></div>`;
@@ -2386,6 +2418,13 @@ function applyTraits(ents,cnt){
 }
 function startCombat(){
   if(S.phase!=='plan')return;
+  // like TFT, empty field slots are filled from the bench when the fight starts: strongest first, melee in front, ranged behind
+  {let placed=0;const val=u=>UNITS[u.key].cost*Math.pow(3,u.star-1);
+   while(boardCount()<boardCap()){const bi=S.bench.map((u,i)=>u?i:-1).filter(i=>i>=0).sort((a,b)=>val(S.bench[b])-val(S.bench[a]))[0];if(bi==null)break;
+     const u=S.bench[bi],free=ALLCELLS.filter(p=>side(p.r,p.c)==='A'&&!S.board[K(p.r,p.c)]);if(!free.length)break;
+     free.sort((a,b)=>UNITS[u.key].r===1?Xof(b.r,b.c)-Xof(a.r,a.c)||Math.abs(a.r-2)-Math.abs(b.r-2):Xof(a.r,a.c)-Xof(b.r,b.c)||Math.abs(a.r-2)-Math.abs(b.r-2));
+     S.board[K(free[0].r,free[0].c)]=u;S.bench[bi]=null;placed++}
+   if(placed)setTimeout(()=>toast(`${placed} unit${placed>1?'s':''} fielded from the bench`,'Empty slots fill themselves when the fight starts.'),950)}
   if(!boardCount())return toast('Your field is empty','Move a unit from the bench onto your side.');
   sel=null;selItem=null;closeSheet();S.phase='combat';
   const lateScale=(1+Math.max(0,diff()-8)*.07)*(1+.07*RUN.scale)*(1+.06*(S.heat||0));MUS.combat=true;
@@ -2416,9 +2455,10 @@ function startCombat(){
   if(has('crown')){const occ=new Set(A.map(e=>K(e.r,e.c)));
     const free=ALLCELLS.filter(p=>side(p.r,p.c)==='A'&&!occ.has(K(p.r,p.c))).sort((a,b)=>Xof(b.r,b.c)-Xof(a.r,a.c))[0];
     if(free)A.push(makeEnt({key:'revenant',star:1},'A',free.r,free.c,1))}
-  const ents=[...A,...B];ents.forEach(applyItems);ents.forEach(e=>{e.max=e.hp;e.mana=Math.min(e.mana,e.maxMana-1);if(e.it.ward)e.shield+=e.max*.3;if(e.geode)e.shield+=e.max*.2});
+  const ents=[...A,...B];ents.forEach(applyItems);ents.forEach(e=>{e.max=e.hp;e.mana=Math.min(Math.max(e.mana,Math.round(e.maxMana*.25)),e.maxMana-1);if(e.it.ward)e.shield+=e.max*.3;if(e.geode)e.shield+=e.max*.2});
   C={ents,grid:new Map(ents.map(e=>[K(e.r,e.c),e])),time:0,acc:0,speed:C?C.speed:SET.speed,over:false,after:0,ended:false,pend:[],proj:[],fx:[],badgeUsed:false,flashT:null};
-  $('#stage').classList.toggle('bossfight',B.some(e=>e.boss));render();toast('Battle','Tap any unit to inspect it.');
+  $('#stage').classList.toggle('bossfight',B.some(e=>e.boss));render();
+  {const st=$('#stamp');st.textContent=B.some(e=>e.boss)?'Boss fight!':'Fight!';st.hidden=false;st.classList.remove('go');void st.offsetWidth;st.classList.add('go');clearTimeout(st._t);st._t=setTimeout(()=>st.hidden=true,900);sfx.march()}
 }
 const alive=t=>C.ents.filter(e=>!e.dead&&e.team===t);
 const foeOf=t=>t==='A'?'B':'A';
@@ -2465,8 +2505,11 @@ function routeStep(e,t){
   let k=K(goal.r,goal.c);while(prev.get(k)!==start)k=prev.get(k);
   const [r,c]=k.split(',').map(Number);return{r,c};
 }
+const OT=20;
 function step(dt){
   C.time+=dt;const tm=C.time;
+  // overtime: past 20 seconds every hit lands harder and harder, so no battle drags on
+  if(tm>OT){if(!C.otOn){C.otOn=true;toast('Overtime','Every blow now lands harder.');sfx.boom()}C.ot=1+.22*(tm-OT)}
   C.pend=C.pend.filter(h=>{if(h.at<=tm){h.fn();return false}return true});
   C.proj=C.proj.filter(p=>{if(p.t0+p.dur<=tm){
     let t=p.t,red=1;
@@ -2532,7 +2575,7 @@ function hit(src,t,amt,type,basic,crit){
   if(spellHit&&src.it.moth&&!t.mothed){t.mr=Math.max(0,t.mr-20);t.mothed=true}
   let d=mitigate(t,amt,type);
   if(t.share){const adj=alive(t.team).filter(a=>a!==t&&dist(a,t)<=1);if(adj.length){const s=d*.2;d-=s;adj.forEach(a=>applyRaw(a,s/adj.length,src,null))}}
-  applyRaw(t,d,src,type,crit);if(type){if(crit){sfx.crit();V.shake=Math.max(V.shake||0,1.6);C.freeze=Math.max(C.freeze||0,.045)}else sfx.hit()}
+  t._basic=basic;applyRaw(t,d,src,type,crit);t._basic=false;if(type){if(crit){sfx.crit();V.shake=Math.max(V.shake||0,1.6);C.freeze=Math.max(C.freeze||0,.045)}else sfx.hit()}
   if(type&&src&&(crit||C.time-(t._db||-9)>.18)){t._db=C.time;debris(t,crit?9:basic?3:4,type==='phys'?['#fff3c8','#ffb04a','#ffd36a']:[src.oc||'#ffcf7a','#fff4e0'],{h:28,dur:crit?.7:.45,up:crit?80:50,spread:crit?130:80})}
   if(basic&&src&&!t.dead){
     if(src.marker){if(!(t.markUntil>C.time))fxText(t,'Marked','#b8c8ff',10);t.markUntil=C.time+3;t.markTeam=src.team}
@@ -2565,6 +2608,7 @@ function applyRaw(t,d,src,type,crit){
   if(t.dead)return;
   if(t.invulUntil>C.time)return;
   if(t.dr)d*=t.dr;
+  if(type&&C.ot>1)d*=C.ot;
   if(t.vulnUntil>C.time)d*=t.vuln||1;
   if(type&&src&&src.it&&src.it.bloodletter&&!src.dead)src.hp=Math.min(src.max,src.hp+d*.2);
   if(type==='magic'&&src&&src.hexVamp&&!src.dead)src.hp=Math.min(src.max,src.hp+d*.25);
@@ -2572,7 +2616,7 @@ function applyRaw(t,d,src,type,crit){
   if(t.shield>0){const a=Math.min(t.shield,d);t.shield-=a;d-=a}
   if(type&&src&&src.team==='A'&&!src.dead&&has('chalice'))src.hp=Math.min(src.max,src.hp+d*.05);
   t.hp-=d;t.hitT=type?C.time:t.hitT;t.mana=Math.min(t.maxMana,t.mana+Math.min(d*.04,8));
-  if(type&&d>=1)fxText(t,Math.round(d)+(crit?'!':''),crit?'#ffe14a':type==='magic'?'#ffcf7a':'#e8dfcf',crit?18:type==='magic'?15:11);
+  if(type&&d>=1&&(SET.nums==='all'||crit||!t._basic||d>=180))fxText(t,Math.round(d)+(crit?'!':''),crit?'#ffe14a':type==='magic'?'#ffcf7a':'#e8dfcf',crit?18:type==='magic'?15:11);
   if(t.fade&&!t.fadeUsed&&t.hp>0&&t.hp<t.max*.3){t.fadeUsed=true;t.invulUntil=C.time+2;fxText(t,'Fades','#c8d8ff',12)}
   if(t.boss==='duskmother'&&!t.phased&&t.hp>0&&t.hp<t.max*.5){t.phased=true;t.invulUntil=C.time+3;t.hp=Math.min(t.max,t.hp+t.max*.15);C.flashT=C.time;fxAt('ring',t,.9,'#ff3a4a',{big:true});fxText(t,'Veil of Dusk','#ff6a7a',14);V.shake=4}
   if(t.it&&t.it.shroud&&!t.shroudUsed&&t.hp>0&&t.hp<t.max*.4){t.shroudUsed=true;t.hp+=t.max*.3;fxAt('heal',t,.8);fxText(t,'Shroud','#c8b8ff',11)}
@@ -2741,7 +2785,7 @@ function endCombat(){
   S.round++;S.xp+=2;checkLevel();closeSheet();selItem=null;
   if(drops.length)sub.push(`spoils: ${drops.map(itemName).join(', ')}`);
   if(won&&node==='final')return finish(true);
-  if(!won&&(node==='boss'||node==='final')){S.phase='plan';freshShop();genEnemy();render();return toast(title,'The boss still holds the road. Regroup and try again.')}
+  if(!won&&(node==='boss'||node==='final')){S.phase='plan';freshShop();render();return toast(title,'The boss still holds the road. Regroup and try again.')}
   if(won&&node==='elite'){addGold(3);sub.push('+3 spoils');const k=rnd(poolCost(Math.min(4,S.act+1)));if(giveUnit(k,1))sub.push(`${UNITS[k].name} joins you`)}
   S.phase='map';S.enemy=[];render();toast(title,sub.join(' · '));
   const at0=S.at;setTimeout(()=>{if(S.phase!=='map'||S.at!==at0)return;if(won&&node==='boss')bossReward();else if($('#mapv').hidden)showMap()},1100);
@@ -2968,7 +3012,7 @@ const TUT=[
  {id:'shop',when:()=>planning(),at:'#shop',title:'Recruit fighters',text:'Tap a card to buy that fighter. The coin badge is its cost; the tags at the top are its traits. New recruits wait on your bench.'},
  {id:'bench',when:()=>planning()&&S.bench.some(Boolean),at:'#bench',title:'Field your recruits',text:'Drag a unit from the bench onto a blue hex to field it, and drag it again to move it. Tapping a unit shows its card. Your level is how many units can fight at once.'},
  {id:'traits',when:()=>planning()&&boardCount()>=2,at:'#traits',title:'Traits',text:'Units that share an origin (big hexagon) or class (small circle) power each other up. Fielding 2, 4 and 6 of one trait unlocks stronger bonuses. Tap a badge to read it.'},
- {id:'fight',when:()=>planning()&&boardCount()>=2,at:'#fight',title:'Fight!',text:'Press Fight when you are ready. Battles play out on their own, and your company heals fully afterwards.'},
+ {id:'fight',when:()=>planning()&&boardCount()>=2,at:'#fight',title:'Fight!',text:'Press Fight when you are ready. Any empty field slots fill from your bench, battles play out on their own, and your company heals fully afterwards.'},
  {id:'combat',when:()=>S.phase==='combat',at:'#stage',title:'In battle',text:'The green bar is health, the thin blue bar is mana: when it fills, the unit casts its ability. Tap any unit to inspect it, and tap Speed to fast-forward.'},
  {id:'gold',when:()=>S.round>=2&&(planning()||S.phase==='map')&&!mvOpen()&&!ovOpen(),at:'#goldBox',title:'Gold',text:'Every battle pays 5 gold, +1 for a win, +1 for every 10 gold you hold (the pips, up to 5) and more for win or loss streaks. Saving up pays off.'},
  {id:'items',when:()=>planning()&&S.round>=2&&S.items.length>0,at:'#armory',onShow:()=>{if(S.items.length<2){S.items.push(S.items[0]||'blade');render()}},title:'Items',text:'Battles sometimes drop item components. Drag one onto a unit to equip it; two components on the same unit forge a finished item. Tap any item to read it, or the book to see every recipe.'},
@@ -3066,6 +3110,7 @@ function drawMenu(){
   if(menuTab==='codex'){$('#mnPanel').innerHTML=codexHtml();paintPortraits($('#mnPanel'));return}
   if(menuTab==='settings'){const tg=(k,l,on,sub)=>`<button class="setrow" data-set="${k}"><span><b>${l}</b>${sub?`<em>${sub}</em>`:''}</span><span class="sw${on?' on':''}"><i></i></span></button>`;
     $('#mnPanel').innerHTML=`<div class="mp-h">Settings</div><div class="setlist">${tg('sound','Sound effects',SFX.on)}${tg('music','Music',SET.music,'Procedural score that follows each region')}${tg('shake','Screen shake',SET.shake)}
+      <div class="setrow"><span><b>Damage numbers</b><em>Big only shows critical hits and abilities</em></span><span class="segs">${[['big','Big only'],['all','All']].map(([v,l])=>`<button class="seg${SET.nums===v?' on':''}" data-nums="${v}">${l}</button>`).join('')}</span></div>
       <div class="setrow"><span><b>Battle speed</b><em>Also changes with the button during a fight</em></span><span class="segs">${[1,2,4].map(s=>`<button class="seg${SET.speed===s?' on':''}" data-speed="${s}">${s}x</button>`).join('')}</span></div>
       <button class="setrow danger" data-set="reset"><span><b>Reset progress</b><em>Clears unlocked contracts, heat, relics and records</em></span></button></div>
       <div class="mp-sub">Desktop keys: D reroll · F buy XP · L lock · 1-5 buy · Space fight · M map</div>`;return}
@@ -3074,6 +3119,7 @@ function drawMenu(){
       <li><b>Buy</b> fighters in the shop; three copies merge into a stronger star level.</li>
       <li><b>Drag</b> units onto the blue hexes to field them, and between hexes and the bench to rearrange. Drag a unit onto the shop to sell it. Tap any unit to see its card.</li>
       <li><b>Lock</b> the shop to keep its recruits for the next battle.</li>
+      <li><b>Battles</b> are even: enemy armies grow with the rounds. Empty field slots fill from your bench when a fight starts, and after 20 seconds Overtime makes every blow hit harder.</li>
       <li><b>Traits</b> light up as you field 2, 4 and 6 units that share an origin or class. Only the contract's origins count.</li>
       <li><b>Items</b> drop from fights. Drag one onto a unit to equip it; two components on one unit forge an item. Tap an item to read it, and unequip from the unit's card.</li>
       <li><b>Gold</b> earns interest for every 10 you hold, and win or loss streaks pay extra.</li>
@@ -3109,7 +3155,7 @@ function frame(ts){
     else{C.time+=dt*C.speed;C.after+=dt;
       const due=C.pend.filter(h=>h.at<=C.time);C.pend=C.pend.filter(h=>h.at>C.time);due.forEach(h=>h.fn());
       if(!C.banner){C.banner=true;showBanner()}
-      if(C.after>2.8&&!C.ended){C.ended=true;endCombat()}}
+      if(C.after>2.1&&!C.ended){C.ended=true;endCombat()}}
     sheetTick+=dt;if(sheetTick>.12){sheetTick=0;tickSheet()}
   }
   if(S)drawScene();
@@ -3220,6 +3266,7 @@ document.addEventListener('click',ev=>{
     else if(k==='shake'){SET.shake=!SET.shake;saveSet()}
     else if(k==='reset'){if(ss.dataset.armed){['ashen-beaten','ashen-heat','ashen-vault','ashen-bestrun','ashen-best','ashen-openall'].forEach(x=>{try{localStorage.removeItem(x)}catch(e){}});best=0;toast('Progress reset','');}else{ss.dataset.armed=1;ss.querySelector('b').textContent='Tap again to reset everything';return}}
     return drawMenu()}
+  const nm=t.closest('[data-nums]');if(nm){SET.nums=nm.dataset.nums;saveSet();sfx.tap();return drawMenu()}
   const sp=t.closest('[data-speed]');if(sp){SET.speed=+sp.dataset.speed;saveSet();if(C)C.speed=SET.speed;sfx.tap();return drawMenu()}
   const cx=t.closest('[data-cx]');if(cx){codexTab=cx.dataset.cx;sfx.tap();return drawMenu()}
   const cr=t.closest('[data-cxrun]');if(cr){codexRun=+cr.dataset.cxrun;sfx.tap();return drawMenu()}

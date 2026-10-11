@@ -1,9 +1,15 @@
 [
  {
+  "v": "0.22.0",
+  "date": "2026-10-11",
+  "notes": "Even fights: enemy boards now grow with the rounds to match yours, so battles are close and tense instead of lopsided",
+  "latest": true
+ },
+ {
   "v": "0.21.2",
   "date": "2026-10-11",
   "notes": "A bigger battlefield: taller phones spend their spare height on deeper rows and larger fighters",
-  "latest": true
+  "commit": "2b7760c"
  },
  {
   "v": "0.21.1",
