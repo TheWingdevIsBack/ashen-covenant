@@ -1,9 +1,15 @@
 [
  {
+  "v": "0.23.0",
+  "date": "2026-10-11",
+  "notes": "The game is now fully landscape: hold your phone sideways. If it is held upright, the whole game is drawn turned so it still plays sideways",
+  "latest": true
+ },
+ {
   "v": "0.22.0",
   "date": "2026-10-11",
   "notes": "Even fights: enemy boards now grow with the rounds to match yours, so battles are close and tense instead of lopsided",
-  "latest": true
+  "commit": "944546d"
  },
  {
   "v": "0.21.2",

@@ -558,38 +558,155 @@ button:active:not(:disabled){transform:translateY(1px);filter:brightness(1.15)}
 .tb.tpop{animation:tpop .8s cubic-bezier(.2,1.6,.4,1)}
 @keyframes tpop{0%{transform:scale(1)}25%{transform:scale(1.18);filter:brightness(1.8)}100%{transform:scale(1)}}
 @media (prefers-reduced-motion:reduce){#stamp.go,.tb.tpop,#fieldCount.warn{animation:none}}
+/* ===================== LANDSCAPE (v0.23) ===================== */
+html,body{height:100%;overflow:hidden;overscroll-behavior:none}
+body{position:fixed;inset:0;margin:0}
+/* insets: in true landscape use the side insets; when the phone is upright the page is turned, so the notch is on the left */
+:root{--sl:max(8px,env(safe-area-inset-left,0px));--sr:max(8px,env(safe-area-inset-right,0px));--st:6px;--sb:max(6px,env(safe-area-inset-bottom,0px))}
+#root{position:fixed;top:0;left:0;width:100vw;height:100vh;height:100dvh;overflow:hidden;background:radial-gradient(120% 80% at 50% 0%,#221a18,#110d0c 65%)}
+@media (orientation:portrait){
+  :root{--sl:max(8px,env(safe-area-inset-top,0px));--sr:max(8px,env(safe-area-inset-bottom,0px));--st:6px;--sb:6px}
+  #root{width:100vh;width:100dvh;height:100vw;transform-origin:0 0;transform:rotate(90deg) translateY(-100%)}
+}
+#app{position:absolute;inset:0;max-width:none;margin:0;box-sizing:border-box;display:grid;gap:6px;
+  grid-template-columns:clamp(112px,15vw,190px) minmax(0,1fr) clamp(158px,21vw,250px);grid-template-rows:34px minmax(0,1fr) 56px;
+  grid-template-areas:"top top top" "left stage shop" "bot bot bot";padding:var(--st) var(--sr) var(--sb) var(--sl);min-height:0}
+@media (orientation:portrait){#app{grid-template-columns:clamp(112px,15vh,190px) minmax(0,1fr) clamp(158px,21vh,250px)}}
+#top{grid-area:top;display:flex;align-items:center;gap:6px;min-width:0}
+#roundBox{flex:1;min-width:0;flex-direction:row;align-items:center;gap:10px}
+#roundLbl{font-size:16px;flex:none;max-width:55%}
+#pips{flex:1;min-width:0}
+#left{grid-area:left;display:flex;flex-direction:column;gap:6px;min-height:0}
+#traits{flex:1;min-height:0;flex-direction:column;align-items:stretch;overflow-y:auto;overflow-x:hidden;gap:4px;scrollbar-width:none}
+#traits .tb{width:100%;justify-content:flex-start;height:30px}
+#traits .tb .tn{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#traits .traitEmpty{font-size:11.5px;line-height:1.35;padding:4px}
+#armory{flex:none;flex-wrap:wrap;overflow:visible;min-height:0;gap:3px;background:linear-gradient(180deg,#221c1a,#1a1514);border:1px solid #3a2e2a;border-radius:6px;padding:4px}
+#armory .alab{display:none}
+#armory .aempty{font-size:10.5px;line-height:1.25;flex:1}
+#armory .itm{width:28px;height:28px}
+#stage{grid-area:stage;position:relative;margin:0;min-height:0;min-width:0;border-radius:8px;overflow:hidden;border:1px solid #3a2e2a}
+#cv{position:absolute;inset:0;width:100%;height:100%!important}
+#shopRow{grid-area:shop;display:flex;flex-direction:column;gap:4px;min-height:0;position:relative}
+#shopHead{display:flex;align-items:center;gap:4px;flex:none}
+#shopHead .sh-lbl{font-family:var(--display);font-size:15px;color:#c9b8a0;margin-right:auto;padding-left:2px}
+#shopHead .sbtn{flex:none;flex-direction:row;gap:5px;padding:4px 8px;height:28px;font-size:12px}
+#shopHead .sbtn small .coin{width:10px;height:10px}
+#shop{flex:1;min-height:0;display:flex;flex-direction:column;gap:4px}
+/* shop cards become rows: portrait on the left, name, traits and cost on the right */
+#shop .card{flex:1 1 0;min-height:0;height:auto;width:100%;display:block;text-align:left}
+#shop .card .art{position:absolute;inset:0 auto 0 0;width:auto;aspect-ratio:1/1;height:100%;border-right:1px solid rgba(255,255,255,.06)}
+#shop .card .art .pc{position:absolute;inset:0}
+#shop .card .foot{position:absolute;top:3px;bottom:auto;left:calc(var(--ah,48px) + 6px);right:34px;height:auto;background:none;padding:0;justify-content:flex-start}
+#shop .card .foot .nm{font-size:14px;letter-spacing:0;text-align:left}
+#shop .card .trs{position:absolute;left:calc(var(--ah,48px) + 5px);right:4px;top:auto;bottom:3px;flex-direction:row;flex-wrap:wrap;gap:2px}
+#shop .card .trs span{height:15px}
+#shop .card .cst2{top:3px;right:3px;bottom:auto;left:auto}
+#shop .card .ci{right:auto;left:3px;bottom:3px;width:15px;height:15px;font-size:9px;line-height:13px}
+#shop .card.empty{flex:1 1 0}
+#shop .card::after{box-shadow:inset 0 0 0 1px rgba(255,255,255,.06),inset -40px 0 40px -34px color-mix(in srgb,var(--kc) 45%,transparent)}
+#bottom{grid-area:bot;display:grid;grid-template-columns:clamp(110px,14vw,170px) 62px minmax(0,1fr) auto clamp(96px,12vw,140px);gap:6px;align-items:stretch;min-width:0}
+#bottom #lvlBox{justify-content:center;gap:2px}
+#bottom #lvlBox .row{font-size:11px}#bottom #lvlBox .row b{font-size:14px}
+#bottom #odds{font-size:9px}
+#bottom #buyxp{flex-direction:column;padding:2px}
+#benchWrap{min-width:0;height:100%}
+#bench{height:100%;gap:3px;grid-template-columns:repeat(9,minmax(0,1fr))}
+#bench .slot{aspect-ratio:auto;height:100%}
+#goldBox{justify-content:center;padding:0 4px}
+#goldBox .gtop{font-size:20px}
+#fight{font-size:18px;padding:0 10px;min-width:0}
+#fieldCount{bottom:auto;top:6px;left:6px}
+#stage.bossfight #toast{top:46px}
+/* sheet becomes a drawer on the right */
+#sheet{position:fixed;top:0;bottom:0;right:0;left:auto;width:min(340px,48%);align-items:stretch;justify-content:flex-end}
+#sheet .in{max-width:none;max-height:none!important;height:100%;border-radius:12px 0 0 12px;border:1px solid #4a3c36;border-right:0;padding:12px 14px calc(12px + var(--sb)) 14px;margin:0}
+/* overlays are wide and centred */
+#overlay{padding:10px var(--sr) 10px var(--sl);place-items:center}
+.modal{max-width:min(760px,96%);max-height:calc(100% - 4px);overflow-y:auto;padding:14px 18px}
+.modal h2{font-size:25px}
+.clist{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:8px}
+.rgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:6px;max-height:none}
+.modal>.aug,.modal .reglist{width:100%}
+#modal:has([data-region]){max-width:min(700px,96%)}
+.reglist{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:8px}
+.sumteam{max-width:100%}
+/* map: wide header strip and a left-to-right climb */
+#mapv .mv{max-width:none;padding:8px var(--sr) 8px var(--sl);gap:4px}
+.mv-head h2{font-size:24px}
+.mv-head p{font-size:12px;margin-top:2px}
+#mapv .chips{margin-top:-2px}
+.mv-legend{font-size:10.5px}
+/* menu: title and buttons on the left, panel on the right */
+#menuCv{height:100%}
+#menu::after{background:linear-gradient(90deg,rgba(18,13,11,.88) 0%,rgba(18,13,11,.55) 38%,rgba(18,13,11,.2) 60%,rgba(18,13,11,.85) 100%)}
+.mn-in{max-width:none;display:grid;grid-template-columns:minmax(260px,38%) minmax(0,1fr);grid-template-rows:auto 1fr;grid-template-areas:"title panel" "btns panel";gap:10px 22px;padding:12px var(--sr) 12px var(--sl)}
+.mn-title{grid-area:title;margin:0;text-align:left}
+.mn-title .crest{margin:0 0 2px}
+.mn-title h1{font-size:40px}
+.mn-btns{grid-area:btns;align-self:end}
+.mn-row{grid-template-columns:repeat(5,1fr)}
+.mn-panel,.mn-panel.tall{grid-area:panel;max-height:none;height:auto;min-height:0;align-self:stretch;overflow-y:auto}
+.mn-in:has(.mn-panel.tall) .mn-title h1{font-size:40px}
+#ver{right:calc(var(--sr) + 2px);bottom:calc(var(--sb) - 2px)}
+#coach{width:min(460px,calc(100% - 24px));top:8px}
+#coach.bottom{bottom:8px}
+#bossCard{top:18%}
+#stamp{top:32%}
+#shop .card .trs{flex-wrap:nowrap;overflow:hidden;right:3px}
+#shop .card .trs span{flex:0 1 auto;min-width:0}
+#shop .card .trs span b{font-size:8.5px}
+#shop .card .foot .nm{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#app{grid-template-columns:clamp(128px,16vw,200px) minmax(0,1fr) clamp(158px,21vw,250px)}
+@media (orientation:portrait){#app{grid-template-columns:clamp(128px,16vh,200px) minmax(0,1fr) clamp(158px,21vh,250px)}}
+#traits .tb.origin .tn{font-size:13px}#traits .tb.class{font-size:10.5px}
+#traits .tb{padding:2px 6px 2px 3px;gap:5px}
+#top #ver{position:static;flex:none;background:none;padding:0 4px;font-size:8px;color:#6a5e56;pointer-events:auto}
+#top #ver.upd{font-size:10px;padding:3px 6px;background:rgba(40,26,14,.95)}
+.mn-in{grid-template-columns:minmax(240px,32%) minmax(0,1fr) minmax(300px,40%);grid-template-areas:"title . panel" "btns . panel"}
+#menu::after{background:linear-gradient(90deg,rgba(18,13,11,.92) 0%,rgba(18,13,11,.4) 30%,rgba(18,13,11,0) 45%,rgba(18,13,11,0) 55%,rgba(18,13,11,.6) 62%,rgba(18,13,11,.92) 100%)}
+.aug.con,.aug.reg{padding-top:34px}.aug .sky{height:28px}
+#ver{position:fixed;right:calc(var(--sr) + 2px);bottom:calc(var(--sb) + 58px);z-index:20}
+#shopRow{padding-bottom:12px}
+#menu~#ver,#ver{pointer-events:none}#ver a{pointer-events:auto}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:6px}
+#banner .bt{font-size:40px}#banner{gap:6px}#banner .mvp{padding:6px 8px}
+.modal p{font-size:13px}
+#coach.left,#coach.right{top:50%;bottom:auto;transform:translateY(-50%);width:min(380px,40%)}
+#coach.left{left:calc(var(--sl) + 150px)}#coach.right{left:auto;right:calc(var(--sr) + 200px)}
+#coach.left.pop,#coach.right.pop{animation:copop2 .35s cubic-bezier(.2,1.4,.4,1)}
+@keyframes copop2{from{transform:translateY(-46%) scale(.96);opacity:0}}
+#shopRow{container-type:inline-size}
+@container (max-width:210px){#shopHead .sh-lbl{display:none}#shopHead{justify-content:space-between}#shopHead .sbtn{flex:1;justify-content:center;padding:4px 4px}}
 </style>
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
 </head>
 <body>
-<script>window.ASHEN_VERSIONS=[{"v": "0.22.0", "date": "2026-10-11", "notes": "Even fights: enemy boards now grow with the rounds to match yours, so battles are close and tense instead of lopsided", "latest": true}, {"v": "0.21.2", "date": "2026-10-11", "notes": "A bigger battlefield: taller phones spend their spare height on deeper rows and larger fighters", "commit": "2b7760c"}, {"v": "0.21.1", "date": "2026-10-11", "notes": "The Ashward March ramps up more gently", "commit": "fabd80e"}, {"v": "0.21.0", "date": "2026-10-11", "notes": "Everything moves by dragging: drag items onto units to equip them, and drag units to place, swap or sell them", "commit": "6f61b5f"}, {"v": "0.20.2", "date": "2026-10-11", "notes": "The interface stays clear of the iPhone notch and camera cutout on every screen", "commit": "6639abb"}, {"v": "0.20.1", "date": "2026-10-11", "notes": "Boot Camp tips now pause the game: the screen dims around what the tip points at, and you tap Got it to continue", "commit": "70578de"}, {"v": "0.20.0", "date": "2026-10-11", "notes": "Boot Camp: a two-act tutorial contract with a tip for every part of the game", "commit": "19bfdf8"}, {"v": "0.19.3", "date": "2026-10-11", "notes": "The game always fetches the newest release, and offers a one-tap update if an old copy is showing", "commit": "62c85a8"}, {"v": "0.19.2", "date": "2026-10-11", "notes": "Sentinel reworked: Sentinels mark what they shoot, and the trait makes all your ranged units faster and longer-reaching", "commit": "61c8fcd"}, {"v": "0.19.1", "date": "2026-10-11", "notes": "Trait names are back on shop cards", "commit": "65aa9cc"}, {"v": "0.19.0", "date": "2026-10-11", "notes": "29 new units (110 in all): every contract can now reach the top tier of each of its origins and classes", "commit": "162ab82"}, {"v": "0.18.0", "date": "2026-10-11", "notes": "Three new contracts from the design doc: Roads of the Drowned, The Festering Road and Siege of the Cinder Throne", "commit": "0074adf"}, {"v": "0.17.0", "date": "2026-10-11", "notes": "Main menu with Continue, version history and sound settings", "commit": "57f3a6a"}, {"v": "0.16.0", "date": "2026-10-11", "commit": "d0f200d", "notes": "Covenant origin, one-screen map and flatter hexes"}, {"v": "0.15.0", "date": "2026-10-11", "commit": "817d9aa", "notes": "First web release: pixel-art company, items and the three-act campaign"}]</script>
+<script>window.ASHEN_VERSIONS=[{"v": "0.23.0", "date": "2026-10-11", "notes": "The game is now fully landscape: hold your phone sideways. If it is held upright, the whole game is drawn turned so it still plays sideways", "latest": true}, {"v": "0.22.0", "date": "2026-10-11", "notes": "Even fights: enemy boards now grow with the rounds to match yours, so battles are close and tense instead of lopsided", "commit": "944546d"}, {"v": "0.21.2", "date": "2026-10-11", "notes": "A bigger battlefield: taller phones spend their spare height on deeper rows and larger fighters", "commit": "2b7760c"}, {"v": "0.21.1", "date": "2026-10-11", "notes": "The Ashward March ramps up more gently", "commit": "fabd80e"}, {"v": "0.21.0", "date": "2026-10-11", "notes": "Everything moves by dragging: drag items onto units to equip them, and drag units to place, swap or sell them", "commit": "6f61b5f"}, {"v": "0.20.2", "date": "2026-10-11", "notes": "The interface stays clear of the iPhone notch and camera cutout on every screen", "commit": "6639abb"}, {"v": "0.20.1", "date": "2026-10-11", "notes": "Boot Camp tips now pause the game: the screen dims around what the tip points at, and you tap Got it to continue", "commit": "70578de"}, {"v": "0.20.0", "date": "2026-10-11", "notes": "Boot Camp: a two-act tutorial contract with a tip for every part of the game", "commit": "19bfdf8"}, {"v": "0.19.3", "date": "2026-10-11", "notes": "The game always fetches the newest release, and offers a one-tap update if an old copy is showing", "commit": "62c85a8"}, {"v": "0.19.2", "date": "2026-10-11", "notes": "Sentinel reworked: Sentinels mark what they shoot, and the trait makes all your ranged units faster and longer-reaching", "commit": "61c8fcd"}, {"v": "0.19.1", "date": "2026-10-11", "notes": "Trait names are back on shop cards", "commit": "65aa9cc"}, {"v": "0.19.0", "date": "2026-10-11", "notes": "29 new units (110 in all): every contract can now reach the top tier of each of its origins and classes", "commit": "162ab82"}, {"v": "0.18.0", "date": "2026-10-11", "notes": "Three new contracts from the design doc: Roads of the Drowned, The Festering Road and Siege of the Cinder Throne", "commit": "0074adf"}, {"v": "0.17.0", "date": "2026-10-11", "notes": "Main menu with Continue, version history and sound settings", "commit": "57f3a6a"}, {"v": "0.16.0", "date": "2026-10-11", "commit": "d0f200d", "notes": "Covenant origin, one-screen map and flatter hexes"}, {"v": "0.15.0", "date": "2026-10-11", "commit": "817d9aa", "notes": "First web release: pixel-art company, items and the three-act campaign"}]</script>
 
 
+<div id="root">
 <div id="app">
   <div id="top">
-    <div id="roundBox"><div id="roundLbl"></div><div id="pips"></div></div>
     <button id="menuBtn" aria-label="Menu"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M4 6h16v2.4H4zM4 10.8h16v2.4H4zM4 15.6h16V18H4z"/></svg></button>
+    <div id="roundBox"><div id="roundLbl"></div><div id="pips"></div></div>
     <button id="relBtn" aria-label="Relics"></button>
     <button id="mapBtn">Map</button>
     <div id="hpBox"><span class="heart"></span><b id="hp" class="num">30</b></div>
   </div>
-  <div id="traits"></div>
+  <aside id="left"><div id="traits"></div><div id="armory"></div></aside>
   <div id="stage"><canvas id="cv"></canvas><div id="toast"></div><div id="bossCard" hidden></div><div id="stamp" hidden></div><div id="fieldCount"></div><div id="banner" hidden></div></div>
-  <div id="armory"></div>
-  <div id="benchWrap"><div id="bench"></div><canvas id="benchCv"></canvas></div>
-  <div id="econ">
-    <div id="lvlBox"><div class="row"><span>Level</span><b id="lvl" class="num">3</b><span id="xpTxt" class="num"></span></div><div id="xpbar"><i></i></div><div id="odds" class="num"></div></div>
-    <div id="goldBox"><div class="gtop"><span class="coin"></span><span id="gold" class="num">0</span></div><div id="goldSub" class="num"></div></div>
-    <button id="fight">Fight</button>
-  </div>
-  <div id="shopRow">
-    <div id="shopBtns">
-      <button class="sbtn" id="buyxp">Buy XP<small><span class="coin"></span>4</small></button>
-      <button class="sbtn" id="reroll">Reroll<small><span class="coin"></span>2</small></button>
-      <button class="sbtn lockb" id="lockBtn" aria-label="Lock shop"></button>
-    </div>
+  <aside id="shopRow">
+    <div id="shopHead"><span class="sh-lbl">Shop</span><button class="sbtn" id="reroll">Reroll<small><span class="coin"></span>2</small></button><button class="sbtn lockb" id="lockBtn" aria-label="Lock shop"></button></div>
     <div id="shop"></div>
     <div id="selbar" hidden></div>
+  </aside>
+  <div id="bottom">
+    <div id="lvlBox"><div class="row"><span>Level</span><b id="lvl" class="num">3</b><span id="xpTxt" class="num"></span></div><div id="xpbar"><i></i></div><div id="odds" class="num"></div></div>
+    <button class="sbtn" id="buyxp">Buy XP<small><span class="coin"></span>4</small></button>
+    <div id="benchWrap"><div id="bench"></div><canvas id="benchCv"></canvas></div>
+    <div id="goldBox"><div class="gtop"><span class="coin"></span><span id="gold" class="num">0</span></div><div id="goldSub" class="num"></div></div>
+    <button id="fight">Fight</button>
   </div>
 </div>
 <div id="sheet" hidden><div class="in" id="sheetIn"></div></div>
@@ -608,15 +725,17 @@ button:active:not(:disabled){transform:translateY(1px);filter:brightness(1.15)}
     <div class="mn-panel" id="mnPanel"></div>
   </div>
 </div>
-<div id="ver" class="num"></div>
 <div id="overlay" hidden><div class="modal" id="modal"></div></div>
 <div id="coachBlock" hidden><div id="coachSpot"></div></div>
 <div id="coach" hidden></div>
+<div id="ver" class="num"></div>
+</div>
 
 <script>
 // ================= VERSION =================
-const GAME_VERSION='0.22.0',S_VERSION=9;
+const GAME_VERSION='0.23.0',S_VERSION=9;
 const CHANGELOG={
+  '0.23.0':['The game is now fully landscape: hold your phone sideways. If it is held upright, the whole game is drawn turned so it still plays sideways','A new wide layout: traits and items on the left, the battlefield in the middle, the shop on the right, and your bench, level, gold and Fight button along the bottom','The map runs left to right, unit cards open as a side drawer, and menus, choices and the tutorial are laid out for wide screens'],
   '0.22.0':['Even fights: enemy boards now grow with the rounds to match yours, so battles are close and tense instead of lopsided','Units start battles with some mana, so abilities fire sooner, and after 20 seconds Overtime makes every blow hit harder','A Fight! stamp, team-strength bars, a fielded-units counter, and a flash and chime when a trait reaches a new tier','Empty field slots fill from your bench when a fight starts, like TFT','Damage numbers show only crits, abilities and big hits by default (change in Settings)','Retrying a boss faces the same army; mini bosses rebalanced; each contract retuned'],
   '0.21.2':['A bigger battlefield: taller phones spend their spare height on deeper rows and larger fighters','While dragging, a label names exactly what will happen, such as Swap Vosk and Maren or Forge Witchsteel Sabre on Maren, with each unit\'s stars and traits, and the target glows'],
   '0.21.1':['The Ashward March ramps up more gently','Items drop about twice as often: more components from wins, a bonus from elites and mini bosses, and the odd consolation drop after a loss'],
@@ -1804,19 +1923,17 @@ const sOf=r=>.84+.16*r/4;
 function proj(r,X){const s=sOf(r);return{x:V.cx+(X-4)*V.cw*s,y:V.y0+r*V.rh,s}}
 const FIG=74;let SCL=1.78;
 const hash=(x,y)=>{const v=Math.sin(x*12.9898+y*78.233)*43758.5453;return v-Math.floor(v)};
+// The game is always landscape. Held upright, the whole page is drawn turned 90 degrees, so these helpers
+// convert screen coordinates and element boxes into the game's own (landscape) coordinates.
+const ROT=()=>window.matchMedia&&matchMedia('(orientation: portrait)').matches;
+const RW=()=>ROT()?innerHeight:innerWidth,RH=()=>ROT()?innerWidth:innerHeight;
+function P(ev){return ROT()?{x:ev.clientY,y:innerWidth-ev.clientX}:{x:ev.clientX,y:ev.clientY}}
+function RR(el){const r=el.getBoundingClientRect();return ROT()?{left:r.top,top:innerWidth-r.right,width:r.height,height:r.width,right:r.bottom,bottom:innerWidth-r.left}:{left:r.left,top:r.top,width:r.width,height:r.height,right:r.right,bottom:r.bottom}}
 function layout(){
-  const cv=$('#cv'),W=cv.parentElement.clientWidth;
-  const cw=W/9.15,bottom=cw*.7;
-  const app=$('#app'),st0=$('#stage');let rest=410;
-  if(app&&st0){const kids=[...app.children].filter(c=>c!==st0&&c.offsetParent!==null&&getComputedStyle(c).position!=='absolute');const cs=getComputedStyle(app);
-    const r2=kids.reduce((h,c)=>h+c.offsetHeight,0)+(parseFloat(cs.rowGap)||6)*kids.length+parseFloat(cs.paddingTop)+parseFloat(cs.paddingBottom);if(r2>150)rest=r2}
-  const curCard=V.cardh||128,avail=(window.innerHeight||700)-(rest-(curCard-128))-6-(V.trim||0);
-  // tall screens spend their spare height on the battlefield: rows spread out a little and fighters grow
-  const Hs=Math.max(0,avail-16),field0=4*cw*.6+bottom,tt=clamp01((Hs-(cw*2.6+field0))/(cw*3));
-  const rh=cw*(.6+.17*tt),field=4*rh+bottom;SCL=1.78+.5*tt;
-  const H=Math.round(Math.max(cw*1.1+field,Math.min(cw*8+field,Hs)));
-  V.cardh=Math.round(128+Math.max(-24,Math.min(44,avail-H)));document.documentElement.style.setProperty('--cardh',V.cardh+'px');
-  Object.assign(V,{W,cw,rh,y0:H-field,cx:W/2,H});
+  const cv=$('#cv'),st=cv.parentElement,W=V.forceWH?V.forceWH[0]:Math.max(200,st.clientWidth),H=V.forceWH?V.forceWH[1]:Math.max(150,st.clientHeight);
+  // the board fits the stage box: limited by width or by height, whichever is tighter, with sky above for the back row
+  const cw=V.forceWH?Math.min(W/11,H/6.2):Math.min(W/9.15,H/(4*.62+.7+1.45)),rh=cw*.62,bottom=cw*.7,field=4*rh+bottom;SCL=1.74;
+  Object.assign(V,{W,cw,rh,y0:H-field-cw*.12,cx:W/2,H});
   V.dpr=Math.min(2,window.devicePixelRatio||1);
   V.PX=Math.max(2,Math.round(V.dpr*1.1));V.k=V.dpr/V.PX;   // one sprite pixel = PX device pixels
   cv.width=Math.round(W*V.dpr);cv.height=Math.round(V.H*V.dpr);cv.style.height=V.H+'px';
@@ -2259,6 +2376,7 @@ function render(){
       <div class="btns"><button data-iteminfo="${id}">${isComp(id)?'Recipes':'Details'}</button></div>`}
   else sb.hidden=true;
   $('#armory').innerHTML=`<button class="abook" data-recipes aria-label="Recipe book"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M4 4h7a2 2 0 0 1 2 2v14a2 2 0 0 0-2-2H4zM20 4h-5a2 2 0 0 0-2 2v14a2 2 0 0 1 2-2h5z"/></svg></button><span class="alab">Armory</span>`+(S.items.length?S.items.map((id,i)=>`<button class="ib${selItem===i?' sel':''}" data-item="${i}" aria-label="${itemName(id)}">${itemIcon(id)}</button>`).join(''):'<span class="aempty">Win battles to earn item components</span>');
+  {const c0=$('#shop .card');if(c0)$('#shop').style.setProperty('--ah',c0.clientHeight+'px')}
   V.benchDirty=true;paintPortraits($('#shop'));S.popAt=null;S.dealt=false;
   if(!V.fitted){V.fitted=true;requestAnimationFrame(refit)}
   const plan=S.phase==='plan';
@@ -2285,7 +2403,7 @@ function drawBench(){
   const cv=$('#benchCv'),wrap=$('#benchWrap');if(!cv||!wrap||!S)return;
   const W=wrap.clientWidth,H=wrap.clientHeight,d=V.dpr||2,PX=V.PX||2;if(!W||!H)return;
   if(cv.width!==Math.round(W*d)||cv.height!==Math.round(H*d)){cv.width=Math.round(W*d);cv.height=Math.round(H*d);V.benchRects=null}
-  if(!V.benchRects||V.benchDirty){const wb=wrap.getBoundingClientRect();V.benchRects=[...document.querySelectorAll('#bench .slot')].map(s=>{const r=s.getBoundingClientRect();return{x:r.left-wb.left,y:r.top-wb.top,w:r.width,h:r.height}});V.benchDirty=false}
+  if(!V.benchRects||V.benchDirty){const wb=RR(wrap);V.benchRects=[...document.querySelectorAll('#bench .slot')].map(s=>{const r=RR(s);return{x:r.left-wb.left,y:r.top-wb.top,w:r.width,h:r.height}});V.benchDirty=false}
   const x=cv.getContext('2d');x.setTransform(1,0,0,1,0,0);x.clearRect(0,0,cv.width,cv.height);x.imageSmoothingEnabled=false;
   S.bench.forEach((u,i)=>{const R=V.benchRects[i];if(!u||!R)return;if(V.drag&&V.drag.u&&V.drag.loc.z==='n'&&V.drag.loc.i===i)return;
     const sz=LOOK[u.key].sz,sd=((u.uid||i)*.6180339)%1,ph=(V.t*.085+sd)%1,walking=ph<.28,k=walking?ph/.28:0;
@@ -2314,8 +2432,7 @@ function renderSheet(){
   if(!sheet){$('#sheet').hidden=true;return}
   $('#sheet').hidden=false;
   // never cover the battlefield: the card only uses the space below it
-  const below=(window.innerHeight||700)-$('#stage').getBoundingClientRect().bottom-4;
-  box.style.maxHeight=Math.max(200,below)+'px';
+  box.style.maxHeight='';
   if(sheet.type==='item'){
     const id=sheet.id,comp=isComp(id);
     box.innerHTML=`<div class="sh-head"><div>${itemIcon(id,'lg')}</div><div class="sh-id"><div class="sh-name">${itemName(id)}</div><div class="sh-title">${comp?'Component':'Forged item'}</div></div><button class="sh-x" data-close>✕</button></div>
@@ -2870,9 +2987,9 @@ function startAct(){
 const bossFor=k=>REGIONS[k].bosses.find(b=>!S.fought.includes(b.name))||REGIONS[k].bosses[0];
 function regionChoice(){
   modal(`<div class="eyebrow">Act ${S.act} of ${NACTS()}</div><h2>The road forks</h2><p>A region shapes your shop and the enemies you meet. Each ends in a mini boss.</p>
-    ${RUN.acts[Math.min(1,S.act-1)].map(k=>{const R=REGIONS[k];return `<button class="aug reg" data-region="${k}">${skyStrip(R.pal||'ashen')}<b>${R.name}</b><span>${R.flavor} ${R.style}.</span>
+    <div class="reglist">${RUN.acts[Math.min(1,S.act-1)].map(k=>{const R=REGIONS[k];return `<button class="aug reg" data-region="${k}">${skyStrip(R.pal||'ashen')}<b>${R.name}</b><span>${R.flavor} ${R.style}.</span>
       <div class="chips" style="margin:6px 0 4px">${R.fav.filter(o=>RUN.origins.includes(o)).map(o=>`<span class="chip">${ticon(o)}${o}</span>`).join('')}</div>
-      <span>Mini boss: <em style="color:var(--bone)">${bossFor(k).name}</em></span></button>`}).join('')}`);
+      <span>Mini boss: <em style="color:var(--bone)">${bossFor(k).name}</em></span></button>`}).join('')}</div>`);
 }
 function nodeIcon(type,x,y,c){
   if(type==='start')return `<path fill="${c}" d="M${x-5} ${y+8}V${y-8}h1.8v1L${x+7} ${y-4.5}L${x-3.2} ${y-0.5}V${y+8}z"/>`;
@@ -2903,9 +3020,10 @@ function showMap(peek){
   $('#mvLegend').innerHTML=['battle','elite','shop','event','camp','forge','boss'].map(t=>`<span><svg width="16" height="16" viewBox="-11 -11 22 22">${nodeIcon(t,0,0,NODE_COL[t])}</svg>${NODE_NAME[t]}</span>`).join('');
   $('#mapv').hidden=false;
   // fit the whole climb, muster to boss, into the space left on screen
-  const box=$('#mvWrap'),bw=Math.max(200,box.clientWidth),bh=Math.max(260,box.clientHeight);
-  const W=340,H=W*bh/bw,rows=L+2,gap=(H-48)/(rows-1),rs=Math.min(1,gap/48);
-  const pos=n=>({x:24+n.x*(W-48),y:H-22-(n.l+1)*gap});
+  const box=$('#mvWrap'),bw=Math.max(300,box.clientWidth),bh=Math.max(140,box.clientHeight);
+  // the climb runs left to right: Muster on the left, the boss on the right
+  const H=220,W=H*bw/bh,cols=L+2,gap=(W-60)/(cols-1),rs=Math.min(1,gap/46,H/(Math.max(...M.layers.map(l=>l.length))*44));
+  const pos=n=>({x:30+(n.l+1)*gap,y:16+n.x*(H-40)});
   const av=peek?[]:availableNodes().map(n=>n.id),trail=S.trail,cur=S.at==null?-1:S.at;
   const walkedEdge=(a,b)=>{const path=[-1,...trail];const i=path.indexOf(a);return i>=0&&path[i+1]===b};
   let svg='';
@@ -2918,7 +3036,7 @@ function showMap(peek){
       ${can?`<circle class="ring" cx="${p.x}" cy="${p.y}" r="${r+5}" fill="none" stroke="#c9a25a" stroke-width="2"/>`:''}
       <circle cx="${p.x}" cy="${p.y}" r="${r}" fill="${visited?'#3a2f22':'#221d1c'}" stroke="${isCur?'#c9a25a':c}" stroke-width="${isCur?3:1.5}"/>
       <g transform="translate(${p.x} ${p.y}) scale(${(r/16).toFixed(3)}) translate(${-p.x} ${-p.y})">${nodeIcon(n.type,p.x,p.y,visited&&!isCur&&n.type!=='start'?'#8a7a62':c)}</g>
-      ${label?`<text x="${p.x+(big?0:r+5)}" y="${p.y+(big?r+12:4)}" text-anchor="${big?'middle':'start'}" font-size="10.5" font-weight="600" fill="${can?'#e8dfcf':'#a39890'}" font-family="Barlow Semi Condensed, sans-serif" paint-order="stroke" stroke="#141011" stroke-width="3">${big?(R.final?RUN.boss.name:S.boss.name):NODE_NAME[n.type]}</text>`:''}
+      ${label?`<text x="${p.x}" y="${p.y+r+11}" text-anchor="middle" font-size="10.5" font-weight="600" fill="${can?'#e8dfcf':'#a39890'}" font-family="Barlow Semi Condensed, sans-serif" paint-order="stroke" stroke="#141011" stroke-width="3">${big?(R.final?RUN.boss.name:S.boss.name):NODE_NAME[n.type]}</text>`:''}
       ${can?`<rect x="${p.x-r-8}" y="${p.y-r-8}" width="${2*r+16}" height="${2*r+16}" fill="transparent"/>`:''}</g>`}
   $('#mvSvg').setAttribute('viewBox',`0 0 ${W} ${H}`);$('#mvSvg').innerHTML=svg;tutCheck();
 }
@@ -2942,15 +3060,15 @@ function afterNode(msg,sub){closeModal();S.phase='map';render();if(msg)toast(msg
 function bossReward(){
   const offers=relicOffers(3);
   modal(`<div class="eyebrow">Act ${S.act} complete</div><h2>${S.boss.name} is broken</h2><p>Take a relic from the spoils. Your company rests and you recover 5 health.</p>
-    ${offers.map(r=>`<button class="aug irow2" data-reward="${r.id}">${relicIcon(r.id)}<span><b>${r.name}</b><span>${r.desc}</span></span></button>`).join('')}`);
+    <div class="opts">${offers.map(r=>`<button class="aug irow2" data-reward="${r.id}">${relicIcon(r.id)}<span><b>${r.name}</b><span>${r.desc}</span></span></button>`).join('')}</div>`);
 }
 function merchant(){
   const oid=`m${S.act}:${S.at}`;if(!S.offer||S.offer.at!==oid)S.offer={at:oid,relics:relicOffers(3).map(r=>({id:r.id,price:rnd([6,7,8,9,10])})),vet:{key:rnd(poolCost(2,1)),price:6,sold:false},comp:{id:rnd(Object.keys(COMP)),price:4,sold:false}};
   const o=S.offer;
   modal(`<div class="eyebrow">Merchant · ${coin} ${S.gold} gold</div><h2>A Pedlar of Relics</h2><p>Buying a relic also unlocks it in your vault for future contracts.</p>
-    ${o.relics.map(x=>{const r=RELICS.find(z=>z.id===x.id),own=S.relics.includes(x.id);return `<button class="aug irow2" data-buyrelic="${x.id}" ${own||S.gold<x.price?'disabled':''}>${relicIcon(r.id)}<span><b>${r.name}<span class="price">${own?'Bought':`${coin} ${x.price}`}</span></b><span>${r.desc}</span></span></button>`}).join('')}
+    <div class="opts">${o.relics.map(x=>{const r=RELICS.find(z=>z.id===x.id),own=S.relics.includes(x.id);return `<button class="aug irow2" data-buyrelic="${x.id}" ${own||S.gold<x.price?'disabled':''}>${relicIcon(r.id)}<span><b>${r.name}<span class="price">${own?'Bought':`${coin} ${x.price}`}</span></b><span>${r.desc}</span></span></button>`}).join('')}
     <button class="aug irow2" data-buyvet ${o.vet.sold||S.gold<o.vet.price||!S.bench.includes(null)?'disabled':''}><span class="vport k${UNITS[o.vet.key].cost}"><canvas class="pc" data-key="${o.vet.key}"></canvas></span><span><b>Hire a veteran<span class="price">${o.vet.sold?'Hired':`${coin} ${o.vet.price}`}</span></b><span>${UNITS[o.vet.key].name} ★★ joins your bench.</span></span></button>
-    <button class="aug irow2" data-buycomp ${o.comp.sold||S.gold<o.comp.price?'disabled':''}>${itemIcon(o.comp.id)}<span><b>${COMP[o.comp.id].name}<span class="price">${o.comp.sold?'Bought':`${coin} ${o.comp.price}`}</span></b><span>An item component for your armory: ${itemStats(o.comp.id)}.</span></span></button>
+    <button class="aug irow2" data-buycomp ${o.comp.sold||S.gold<o.comp.price?'disabled':''}>${itemIcon(o.comp.id)}<span><b>${COMP[o.comp.id].name}<span class="price">${o.comp.sold?'Bought':`${coin} ${o.comp.price}`}</span></b><span>An item component for your armory: ${itemStats(o.comp.id)}.</span></span></button></div>
     <button class="btn go" data-leave>Leave</button>`);paintPortraits($('#modal'));
 }
 const EVENTS=[
@@ -2985,20 +3103,20 @@ function crisis(again){
     if(!pl.length){S.seen=S.seen.filter(j=>!ok(j));pl=EVENTS.map((e,j)=>j).filter(ok)}i=rnd(pl);S.seen.push(i);S.ev=i}
   const E=EVENTS[i];
   modal(`<div class="eyebrow">Crisis</div><h2>${E.title}</h2><p>${E.text}</p>
-    ${['a','b'].map(k=>`<button class="aug" data-ev="${k}" ${E[k][2]()?'':'disabled'}><b>${E[k][0]}</b><span>${E[k][1]}</span></button>`).join('')}`);
+    <div class="opts">${['a','b'].map(k=>`<button class="aug" data-ev="${k}" ${E[k][2]()?'':'disabled'}><b>${E[k][0]}</b><span>${E[k][1]}</span></button>`).join('')}</div>`);
 }
 function smithy(){const leave='<button class="linkbtn" data-leave>Leave empty-handed</button>';
   const oid=`f${S.act}:${S.at}`;if(!S.offer||S.offer.at!==oid)S.offer={at:oid,smith:shuffle(Object.keys(COMP)).slice(0,3),item:S.act>=2?{id:rnd(FULL_KEYS),price:7}:null};
   const o=S.offer;
   modal(`<div class="eyebrow">Smithy · ${coin} ${S.gold} gold</div><h2>The Wandering Smith</h2><p>An old armorer works a fire of broken swords. Take one piece of his work.</p>
-    ${o.smith.map(c=>`<button class="aug irow2" data-smith="${c}">${itemIcon(c)}<span><b>${COMP[c].name}<span class="price">Free</span></b><span>${itemStats(c)}</span></span></button>`).join('')}
-    ${o.item?`<button class="aug irow2" data-smithitem ${S.gold<o.item.price?'disabled':''}>${itemIcon(o.item.id)}<span><b>${ITEM[o.item.id].name}<span class="price">${coin} ${o.item.price}</span></b><span>Or buy a finished item: ${itemStats(o.item.id)}. ${ITEM[o.item.id].desc}</span></span></button>`:''}${leave}`);
+    <div class="opts">${o.smith.map(c=>`<button class="aug irow2" data-smith="${c}">${itemIcon(c)}<span><b>${COMP[c].name}<span class="price">Free</span></b><span>${itemStats(c)}</span></span></button>`).join('')}
+    ${o.item?`<button class="aug irow2" data-smithitem ${S.gold<o.item.price?'disabled':''}>${itemIcon(o.item.id)}<span><b>${ITEM[o.item.id].name}<span class="price">${coin} ${o.item.price}</span></b><span>Or buy a finished item: ${itemStats(o.item.id)}. ${ITEM[o.item.id].desc}</span></span></button>`:''}</div>${leave}`);
 }
 function camp(){
   modal(`<div class="eyebrow">Encampment</div><h2>A fire in the ruins</h2><p>The company makes camp for the night.</p>
-    <button class="aug" data-camp="rest" ${S.hp>=30?'disabled':''}><b>Rest</b><span>Restore 8 health (${S.hp}/30).</span></button>
+    <div class="opts"><button class="aug" data-camp="rest" ${S.hp>=30?'disabled':''}><b>Rest</b><span>Restore 8 health (${S.hp}/30).</span></button>
     <button class="aug" data-camp="drill" ${S.level>=9?'disabled':''}><b>Drill</b><span>Gain 6 XP.</span></button>
-    <button class="aug" data-leave><b>Break camp</b><span>March on at first light.</span></button>`);
+    <button class="aug" data-leave><b>Break camp</b><span>March on at first light.</span></button></div>`);
 }
 
 // ================= TUTORIAL COACH =================
@@ -3007,9 +3125,9 @@ const mvOpen=()=>!$('#mapv').hidden,ovOpen=()=>!$('#overlay').hidden,inModal=sel
 const planning=()=>S.phase==='plan'&&!ovOpen()&&!mvOpen();
 const TUT=[
  {id:'region',when:()=>inModal('[data-region]'),at:'#modal',title:'Choose a region',text:'Each act you pick a region to march through. Its favoured origins turn up more often in your shop, and it ends in a mini boss. In Boot Camp there is only one road.'},
- {id:'map',when:()=>mvOpen()&&!mapPeek,at:'#mvWrap',title:'The road',text:'Climb from the flag at the bottom to the crown at the top. ✕ battles earn gold, ◎ Merchants sell relics, ? Crises are choices, the anvil is a Smithy with free items, and the tent is a camp to heal. Tap a glowing node to march.'},
+ {id:'map',when:()=>mvOpen()&&!mapPeek,at:'#mvWrap',title:'The road',text:'March from the flag on the left to the crown on the right. ✕ battles earn gold, ◎ Merchants sell relics, ? Crises are choices, the anvil is a Smithy with free items, and the tent is a camp to heal. Tap a glowing node to march.'},
  {id:'welcome',when:()=>planning()&&S.node==='battle',at:'#stage',title:'Fight prep',text:'Your company stands on the blue hexes; the enemy waits on the red. Tap an enemy to see what it does. Nothing happens until you press Fight.'},
- {id:'shop',when:()=>planning(),at:'#shop',title:'Recruit fighters',text:'Tap a card to buy that fighter. The coin badge is its cost; the tags at the top are its traits. New recruits wait on your bench.'},
+ {id:'shop',when:()=>planning(),at:'#shop',title:'Recruit fighters',text:'Tap a card to buy that fighter. The coin badge is its cost; the tags under the name are its traits. New recruits wait on your bench.'},
  {id:'bench',when:()=>planning()&&S.bench.some(Boolean),at:'#bench',title:'Field your recruits',text:'Drag a unit from the bench onto a blue hex to field it, and drag it again to move it. Tapping a unit shows its card. Your level is how many units can fight at once.'},
  {id:'traits',when:()=>planning()&&boardCount()>=2,at:'#traits',title:'Traits',text:'Units that share an origin (big hexagon) or class (small circle) power each other up. Fielding 2, 4 and 6 of one trait unlocks stronger bonuses. Tap a badge to read it.'},
  {id:'fight',when:()=>planning()&&boardCount()>=2,at:'#fight',title:'Fight!',text:'Press Fight when you are ready. Any empty field slots fill from your bench, battles play out on their own, and your company heals fully afterwards.'},
@@ -3047,13 +3165,15 @@ function showCoach(st){
   document.querySelectorAll('.tut-hi').forEach(x=>x.classList.remove('tut-hi'));
   const tg=st.at&&$(st.at);
   // place the card on the side of the screen away from what it points at
-  let top=true;if(tg){tg.classList.add('tut-hi');const r=tg.getBoundingClientRect();top=(r.top+r.bottom)/2>window.innerHeight*.5;if(st.at==='#stage'||st.at==='#mvWrap'||st.at==='#modal')top=false}
-  el.classList.toggle('bottom',!top);el.classList.remove('pop');void el.offsetWidth;el.classList.add('pop');sfx.tap();
+  // wide screen: sit beside a small target, or along the bottom for big ones
+  let side='bottom';if(tg){tg.classList.add('tut-hi');const r=RR(tg),big=st.at==='#stage'||st.at==='#mvWrap'||st.at==='#modal'||r.width>RW()*.45;
+    if(!big)side=(r.left+r.right)/2>RW()*.5?'left':'right'}
+  el.classList.remove('bottom','left','right');el.classList.add(side);el.classList.remove('pop');void el.offsetWidth;el.classList.add('pop');sfx.tap();
   $('#coachBlock').hidden=false;placeSpot();
 }
 function placeSpot(){const sp=$('#coachSpot'),tg=coachStep&&coachStep.at&&$(coachStep.at);
   if(!tg){sp.style.cssText='left:50%;top:50%;width:0;height:0';return}
-  const r=tg.getBoundingClientRect(),m=6;sp.style.cssText=`left:${r.left-m}px;top:${r.top-m}px;width:${r.width+m*2}px;height:${r.height+m*2}px`}
+  const r=RR(tg),m=6;sp.style.cssText=`left:${r.left-m}px;top:${r.top-m}px;width:${r.width+m*2}px;height:${r.height+m*2}px`}
 window.addEventListener('resize',()=>{if(coachStep)placeSpot()});
 function hideCoach(off){if(!coachStep)return;S.tut.done.push(coachStep.id);if(off)S.tut.off=true;coachStep=null;$('#coach').hidden=true;$('#coachBlock').hidden=true;document.querySelectorAll('.tut-hi').forEach(x=>x.classList.remove('tut-hi'));saveRun();setTimeout(tutCheck,350)}
 setInterval(()=>{if(coachStep&&!S.tut)hideCoach();tutCheck()},600);
@@ -3088,13 +3208,13 @@ function codexHtml(){
   const v=store.get('ashen-vault',[]);
   return tabs+`<div class="cx-list">${RELICS.map(r=>{const own=r.starter||v.includes(r.id);return `<div class="cx-t${own?'':' locked'}">${relicIcon(r.id)}<span class="cx-m"><b>${r.name} <small>${r.starter?'Starter':own?'In your vault':'Find it at a merchant or a mini boss'}${r.need?` · ${r.need.join(', ')} contracts only`:''}</small></b><span class="cx-ab">${r.desc}</span></span></div>`}).join('')}</div>`;
 }
-const menuLineup=[['auren',2,1.2,1],['mordrake',2,2.6,1],['abbess',1,3.7,1],['sundered',3,4.6,-1],['huntsman',2,5.9,-1],['morwen',1,6.9,-1]];
+const menuLineup=[['auren',2,3.1,1],['mordrake',1,3.7,1],['abbess',3,3.9,1],['sundered',2,4.7,-1],['huntsman',1,5.4,-1],['morwen',3,5.5,-1]];
 function openMenu(fromGame){
   if(S&&S.phase==='combat')return toast('Finish the battle first','');
-  menuFromGame=!!fromGame;closeSheet();sel=null;selItem=null;V.menuMode=true;
+  menuFromGame=!!fromGame;closeSheet();sel=null;selItem=null;V.menuMode=true;V.forceWH=[RW(),RH()];layout();
   $('#menu').hidden=false;drawMenu();sfx.tap();
 }
-function closeMenu(){V.menuMode=false;$('#menu').hidden=true;if(S)render()}
+function closeMenu(){V.menuMode=false;V.forceWH=null;layout();$('#menu').hidden=true;if(S)render()}
 function versionLink(v){
   if(v.v===GAME_VERSION&&!ARCHIVED)return null;
   const onSite=location.hostname.endsWith('github.io');
@@ -3175,36 +3295,36 @@ function dragStart(ev,loc){if(coachStep||!S||S.phase!=='plan'||V.menuMode)return
 function itemDragStart(ev,i){if(coachStep||!S||S.phase!=='plan'||V.menuMode||S.items[i]==null)return;DRAG.p={x:ev.clientX,y:ev.clientY,item:i,iid:S.items[i],id:ev.pointerId,on:false}}
 // a label that follows the finger and says exactly what the drop will do, naming the units involved
 const unitTag=u=>`<span class="dt-u"><b>${UNITS[u.key].name}</b> <em>${stars(u.star)}</em><span class="dt-tr">${traitsOf(u.key).filter(isActive).map(t=>`<i style="color:${TRAITS[t].col}">${ticon(t)}${t}</i>`).join('')}</span></span>`;
-function dragTip(html,x,y){let el=$('#dragTip');if(!el){el=document.createElement('div');el.id='dragTip';document.body.appendChild(el)}
+function dragTip(html,x,y){let el=$('#dragTip');if(!el){el=document.createElement('div');el.id='dragTip';$('#root').appendChild(el)}
   if(!html){el.hidden=true;return}if(el._h!==html){el.innerHTML=html;el._h=html}el.hidden=false;
-  const w=el.offsetWidth,h=el.offsetHeight;el.style.transform=`translate(${Math.round(Math.max(8,Math.min(innerWidth-w-8,x-w/2)))}px,${Math.round(Math.max(8,y-h-78))}px)`}
+  const w=el.offsetWidth,h=el.offsetHeight;el.style.transform=`translate(${Math.round(Math.max(8,Math.min(RW()-w-8,x-w/2)))}px,${Math.round(Math.max(8,y-h-70))}px)`}
 function dragEnd(){dragTip(null);const d=DRAG.p;DRAG.p=null;if(d&&d.g)d.g.remove();$('#shopRow').classList.remove('sellzone');V.drag=null;V.dragHex=null;V.itemHover=null;document.querySelectorAll('.slot.ihov').forEach(s=>s.classList.remove('ihov'))}
 // where an item would land: one of your units on the field or the bench
-function itemTarget(x,y){const cv=$('#cv'),b=cv.getBoundingClientRect();
-  if(y>b.top&&y<b.bottom){const u=unitUnder(x-b.left,y-b.top);if(u&&u.team==='A'&&u.ref.k)return{z:'b',k:u.ref.k};return null}
-  const el=document.elementFromPoint(x,y),s=el&&el.closest&&el.closest('.slot');if(s&&S.bench[+s.dataset.i])return{z:'n',i:+s.dataset.i};return null}
+function itemTarget(ev){const cv=$('#cv'),b=RR(cv),q=P(ev);
+  if(q.y>b.top&&q.y<b.bottom&&q.x>b.left&&q.x<b.right){const u=unitUnder(q.x-b.left,q.y-b.top);if(u&&u.team==='A'&&u.ref.k)return{z:'b',k:u.ref.k};return null}
+  const el=document.elementFromPoint(ev.clientX,ev.clientY),s=el&&el.closest&&el.closest('.slot');if(s&&S.bench[+s.dataset.i])return{z:'n',i:+s.dataset.i};return null}
 document.addEventListener('pointerdown',ev=>{if(!S||S.phase!=='plan')return;
   const ib=ev.target.closest&&ev.target.closest('.ib[data-item]');if(ib){if(ev.cancelable&&ev.pointerType==='mouse')ev.preventDefault();return itemDragStart(ev,+ib.dataset.item)}
   const slot=ev.target.closest&&ev.target.closest('.slot');if(slot)return dragStart(ev,{z:'n',i:+slot.dataset.i});
-  if(ev.target.id==='cv'){const b=ev.target.getBoundingClientRect(),u=unitUnder(ev.clientX-b.left,ev.clientY-b.top);if(u&&u.team==='A'&&u.ref.k)dragStart(ev,{z:'b',k:u.ref.k})}});
+  if(ev.target.id==='cv'){const b=RR(ev.target),q=P(ev),u=unitUnder(q.x-b.left,q.y-b.top);if(u&&u.team==='A'&&u.ref.k)dragStart(ev,{z:'b',k:u.ref.k})}});
 document.addEventListener('pointermove',ev=>{const d=DRAG.p;if(!d||ev.pointerId!==d.id)return;
   if(d.item!=null){if(!d.on){if(Math.hypot(ev.clientX-d.x,ev.clientY-d.y)<8)return;d.on=true;closeSheet();sel=null;render();
-      const g=document.createElement('div');g.id='ghost';g.className='igh';g.innerHTML=itemIcon(d.iid,'lg');document.body.appendChild(g);d.g=g;sfx.tap()}
-    d.g.style.transform=`translate(${ev.clientX-26}px,${ev.clientY-60}px)`;
-    const tg=itemTarget(ev.clientX,ev.clientY);V.itemHover=tg&&tg.z==='b'?tg.k:null;
+      const g=document.createElement('div');g.id='ghost';g.className='igh';g.innerHTML=itemIcon(d.iid,'lg');$('#root').appendChild(g);d.g=g;sfx.tap()}
+    const q=P(ev);d.g.style.transform=`translate(${q.x-26}px,${q.y-60}px)`;
+    const tg=itemTarget(ev);V.itemHover=tg&&tg.z==='b'?tg.k:null;
     {const u=tg&&unitAt(tg),id=d.iid;let h=null;
       if(u){const its=u.items||[],ci=its.findIndex(isComp);
         if(isComp(id)&&ci>=0){const f=comboOf(its[ci],id);h=`<div class="dt-a">Forge ${itemIcon(f,'xs')} <b>${ITEM[f].name}</b> on</div>${unitTag(u)}`}
         else if(its.length>=3)h=`<div class="dt-a bad">Hands full</div>${unitTag(u)}`;
         else h=`<div class="dt-a">Equip ${itemIcon(id,'xs')} <b>${itemName(id)}</b> on</div>${unitTag(u)}`}
-      dragTip(h,ev.clientX,ev.clientY)}
+      dragTip(h,q.x,q.y)}
     document.querySelectorAll('.slot').forEach(s=>s.classList.toggle('ihov',!!(tg&&tg.z==='n'&&+s.dataset.i===tg.i)));
     if(ev.cancelable)ev.preventDefault();return}
   if(!d.on){if(Math.hypot(ev.clientX-d.x,ev.clientY-d.y)<10)return;d.on=true;sel=d.loc;closeSheet();render();V.drag=d;
-    const g=document.createElement('div');g.id='ghost';g.innerHTML=`<canvas class="pc" data-key="${d.u.key}" data-zoom="1.05"></canvas>`;document.body.appendChild(g);paintPortraits(g);d.g=g;
+    const g=document.createElement('div');g.id='ghost';g.innerHTML=`<canvas class="pc" data-key="${d.u.key}" data-zoom="1.05"></canvas>`;$('#root').appendChild(g);paintPortraits(g);d.g=g;
     const sr=$('#shopRow');sr.dataset.sell=`Drop to sell for ${sellValue(d.u)} gold`;sr.classList.add('sellzone');sfx.tap()}
-  d.g.style.transform=`translate(${ev.clientX-32}px,${ev.clientY-62}px)`;
-  const cv=$('#cv'),b=cv.getBoundingClientRect();const c=ev.clientY<b.bottom&&ev.clientY>b.top?hexUnder(ev.clientX-b.left,ev.clientY-b.top):null;V.dragHex=c&&c.side==='A'?K(c.r,c.c):null;
+  const q=P(ev);d.g.style.transform=`translate(${q.x-32}px,${q.y-62}px)`;
+  const cv=$('#cv'),b=RR(cv);const c=q.y<b.bottom&&q.y>b.top&&q.x>b.left&&q.x<b.right?hexUnder(q.x-b.left,q.y-b.top):null;V.dragHex=c&&c.side==='A'?K(c.r,c.c):null;
   {let h=null;const el=document.elementFromPoint(ev.clientX,ev.clientY),overShop=el&&el.closest&&el.closest('#shopRow'),slot=el&&el.closest&&el.closest('.slot');
     const tgt=V.dragHex?{z:'b',k:V.dragHex}:slot?{z:'n',i:+slot.dataset.i}:null,same=tgt&&tgt.z===d.loc.z&&tgt.k===d.loc.k&&tgt.i===d.loc.i;
     V.itemHover=tgt&&!same&&tgt.z==='b'&&S.board[tgt.k]?tgt.k:null;
@@ -3214,10 +3334,10 @@ document.addEventListener('pointermove',ev=>{const d=DRAG.p;if(!d||ev.pointerId!
       if(o)h=`<div class="dt-a">Swap</div>${unitTag(d.u)}<div class="dt-sw">⇅</div>${unitTag(o)}`;
       else if(tgt.z==='b'&&d.loc.z==='n'&&boardCount()>=boardCap())h=`<div class="dt-a bad">Field full: level ${S.level} fields ${boardCap()}</div>${unitTag(d.u)}`;
       else h=`<div class="dt-a">${tgt.z==='b'?(d.loc.z==='b'?'Move':'Field'):'Bench'}</div>${unitTag(d.u)}`}
-    dragTip(h,ev.clientX,ev.clientY)}
+    dragTip(h,q.x,q.y)}
   if(ev.cancelable)ev.preventDefault()},{passive:false});
 document.addEventListener('pointerup',ev=>{const d=DRAG.p;if(!d||ev.pointerId!==d.id)return;if(!d.on){DRAG.p=null;return}
-  if(d.item!=null){const tg=itemTarget(ev.clientX,ev.clientY);dragEnd();DRAG.suppress=performance.now();
+  if(d.item!=null){const tg=itemTarget(ev);dragEnd();DRAG.suppress=performance.now();
     if(tg&&S.items[d.item]===d.iid){const u=unitAt(tg);if(u){selItem=d.item;equip(u);selItem=null;return}}render();return}
   const hx=V.dragHex;dragEnd();DRAG.suppress=performance.now();d.g&&d.g.remove();
   const el=document.elementFromPoint(ev.clientX,ev.clientY);sel=d.loc;
@@ -3228,7 +3348,7 @@ document.addEventListener('pointerup',ev=>{const d=DRAG.p;if(!d||ev.pointerId!==
 document.addEventListener('pointercancel',()=>{if(DRAG.p&&DRAG.p.on){sel=null;render()}dragEnd()});
 $('#cv').addEventListener('click',ev=>{
   if(!S||dragSuppressed())return;
-  const b=ev.currentTarget.getBoundingClientRect(),x=ev.clientX-b.left,y=ev.clientY-b.top;
+  const b=RR(ev.currentTarget),q=P(ev),x=q.x-b.left,y=q.y-b.top;
   // 1) a unit body under the finger?
   let hitU=null,hd=1e9;
   for(const u of (V.lastUnits||[])){if(u.pose.dead>=0)continue;const P=proj(u.r,u.X),sc=P.s*V.cw*SCL/FIG,h=64*LOOK[u.key].sz*sc,w=V.cw*P.s*.45;
@@ -3314,9 +3434,7 @@ document.addEventListener('click',ev=>{
   }
 });
 // Fit the whole game to the visible screen: stage and card sizes adapt, then any leftover overflow is trimmed off the sky.
-function fitOverflow(){return Math.ceil(document.documentElement.scrollHeight-(window.visualViewport?window.visualViewport.height:window.innerHeight))}
-function refit(){V.trim=0;layout();if(S)render();
-  for(let i=0;i<3;i++){const over=fitOverflow();if(over<=1)break;V.trim+=over+2;layout();if(S)render()}}
+function refit(){if(V.menuMode)V.forceWH=[RW(),RH()];layout();if(S)render();V.benchDirty=true;if(sheet)renderSheet();if(!$('#mapv').hidden&&S&&S.map)showMap(mapPeek)}
 let refitT=0;const queueRefit=()=>{clearTimeout(refitT);refitT=setTimeout(refit,120)};
 window.addEventListener('resize',queueRefit);
 if(window.visualViewport)window.visualViewport.addEventListener('resize',queueRefit);
