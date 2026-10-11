@@ -189,15 +189,16 @@ button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 .slot.k5{box-shadow:inset 0 -2px 0 var(--c5)} .card.k5{border-color:var(--c5)} .tunit.k5{border-color:var(--c5)} .sh-port.k5,#selbar .sp.k5{border-color:var(--c5)}
 #mapBtn{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:6px 11px;font-weight:700;font-size:12.5px;letter-spacing:.04em}
 .pip.round{border-radius:50%;width:7px;height:7px}
-#mapv{position:fixed;inset:0;z-index:9;background:radial-gradient(120% 70% at 50% 0%,#2e1e19,#141011 70%);overflow-y:auto}
-#mapv .mv{max-width:520px;margin:0 auto;padding:16px 16px calc(24px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:10px}
+#mapv{position:fixed;inset:0;z-index:9;background:radial-gradient(120% 70% at 50% 0%,#2e1e19,#141011 70%);overflow:hidden}
+#mapv .mv{max-width:520px;height:100%;box-sizing:border-box;margin:0 auto;padding:calc(12px + env(safe-area-inset-top,0px)) 16px calc(12px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:7px}
+#mvWrap{flex:1;min-height:0;position:relative}
 .mv-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
-.mv-head h2{font-family:var(--display);font-weight:400;color:var(--gold);margin:3px 0 0;font-size:30px;line-height:1}
+.mv-head h2{font-family:var(--display);font-weight:400;color:var(--gold);margin:2px 0 0;font-size:26px;line-height:1}
 .mv-head p{margin:5px 0 0;color:var(--muted);font-size:13px;line-height:1.4}
 .eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:600}
-#mvSvg{width:100%;height:auto;display:block}
+#mvSvg{position:absolute;inset:0;width:100%;height:100%;display:block}
 .mv-hint{margin:0;color:var(--bone);font-size:13px;text-align:center}
-.mv-legend{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:11.5px;color:var(--muted);justify-content:center}
+.mv-legend{display:flex;flex-wrap:wrap;gap:3px 10px;font-size:11px;color:var(--muted);justify-content:center}
 .mv-legend span{display:flex;align-items:center;gap:3px}
 .node.avail{cursor:pointer}
 .node.avail .ring{animation:pulse 1.4s ease-in-out infinite}
@@ -332,7 +333,7 @@ button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 <div id="mapv" hidden><div class="mv">
   <div class="mv-head"><div><div class="eyebrow" id="mvAct"></div><h2 id="mvName"></h2><p id="mvSub"></p></div><button class="sh-x" id="mvClose" hidden>✕</button></div>
   <div class="chips" id="mvChips"></div>
-  <svg id="mvSvg" xmlns="http://www.w3.org/2000/svg"></svg>
+  <div id="mvWrap"><svg id="mvSvg" xmlns="http://www.w3.org/2000/svg"></svg></div>
   <p class="mv-hint" id="mvHint"></p>
   <div class="mv-legend" id="mvLegend"></div>
 </div></div>
@@ -341,7 +342,7 @@ button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 <script>
 // ================= RUN 1 DATA =================
 // GDD units: kael mira soot daven ossian maren grevna ironskin revgen. All others are proposed additions.
-const RUN={name:'The Ashward March',blurb:'A desperate push through the first burned territories.',origins:['Ashborn','Ironpact','Stoneblood','Forsaken']};
+const RUN={name:'The Ashward March',blurb:'A desperate push through the first burned territories.',origins:['Ashborn','Ironpact','Stoneblood','Forsaken','Covenant']};
 const U=(name,title,cost,o,c,hp,atk,as,r,ar,mr,mana,ab,p)=>({name,title,cost,o,c,hp,atk,as,r,ar,mr,mana,ab,p});
 const UNITS={
   kael:U('Kael','Ash Grunt',1,['Ashborn'],'Vanguard',650,45,.65,1,20,20,80,'shield',220),
@@ -350,13 +351,13 @@ const UNITS={
   flint:U('Brother Flint','Stone Confessor',1,['Stoneblood'],'Warden',600,40,.6,2,25,30,70,'heal',200),
   wick:U('Wick','Grave Hunter',1,['Forsaken'],'Specter',450,55,.7,4,10,15,70,'snipe',220),
   tamsin:U('Tamsin','Ash-Tongue',1,['Ashborn'],'Invoker',480,40,.6,3,10,20,60,'bolt',180),
-  daven:U('Daven','Shield-Sworn',2,['Ironpact'],'Sentinel',700,55,.65,3,30,25,80,'pavise',140),
+  daven:U('Daven','Shield-Sworn',2,['Ironpact','Covenant'],'Sentinel',700,55,.65,3,30,25,80,'pavise',140),
   ossian:U('Ossian','Exile Blade',2,['Forsaken'],'Breaker',680,65,.75,1,25,20,70,'sunder',220),
-  halla:U('Halla Grey','Oath-Archer',2,['Ironpact'],'Specter',560,65,.7,4,15,20,70,'pinshot',200),
+  halla:U('Halla Grey','Oath-Archer',2,['Ironpact','Covenant'],'Specter',560,65,.7,4,15,20,70,'pinshot',200),
   cairn:U('Cairn','the Unmoved',2,['Stoneblood','Forsaken'],'Breaker',820,60,.6,1,35,20,80,'slam',190),
   vesna:U('Vesna','Cinder Widow',2,['Ashborn'],'Hexblade',650,60,.75,1,25,25,70,'cinder',200),
   maren:U('Maren','the Ashblood',3,['Ashborn','Stoneblood'],'Vanguard',1000,65,.6,1,35,30,90,'quake',180),
-  grevna:U('Grevna','the Unwilling',3,['Ironpact'],'Warden',720,45,.65,2,25,30,70,'heal',330),
+  grevna:U('Grevna','the Unwilling',3,['Ironpact','Covenant'],'Warden',720,45,.65,2,25,30,70,'heal',330),
   ironskin:U('Ironskin Daven','',3,['Ironpact','Stoneblood'],'Sentinel',900,70,.65,3,40,30,80,'volley',170),
   basalt:U('Mother Basalt','Keeper of Cairns',3,['Stoneblood'],'Invoker',700,45,.6,3,20,35,80,'nova',260),
   penitent:U('The Penitent','',3,['Forsaken','Ironpact'],'Hexblade',880,65,.7,1,35,30,70,'scourge',200),
@@ -365,12 +366,12 @@ const UNITS={
   pyre:U('The Pyre Saint','',4,['Ashborn','Stoneblood'],'Invoker',850,55,.65,3,25,40,90,'immolate',220),
   dorn:U('Dorn','Cairn-Watch',1,['Stoneblood'],'Sentinel',680,48,.6,3,30,25,80,'boulder',150),
   magrook:U('Mag Rook','the Rabid',1,['Forsaken'],'Ravager',540,56,.85,1,15,15,70,'frenzy',120),
-  cinder:U('Sister Cinder','Pyre-Nurse',2,['Ashborn'],'Warden',640,45,.65,2,20,30,80,'mendall',160),
+  cinder:U('Sister Cinder','Pyre-Nurse',2,['Ashborn','Covenant'],'Warden',640,45,.65,2,20,30,80,'mendall',160),
   grieve:U('Grieve','the Hollow Knight',2,['Forsaken'],'Hexblade',680,62,.75,1,30,25,80,'shadowstep',240),
   brannoch:U('Brannoch','Rockbreaker',3,['Stoneblood'],'Ravager',950,80,.75,1,35,25,80,'stomp',200),
   huntress:U('The Ember Huntress','',3,['Ashborn'],'Specter',700,75,.75,4,20,25,70,'pierce',260),
   gallow:U('Gallowglass','Iron Colossus',4,['Ironpact','Stoneblood'],'Vanguard',1500,70,.6,1,50,40,110,'rally',300),
-  mourner:U('The Mourner','',4,['Forsaken'],'Warden',950,55,.65,2,30,40,90,'requiem',250),
+  mourner:U('The Mourner','',4,['Forsaken','Covenant'],'Warden',950,55,.65,2,30,40,90,'requiem',250),
   sundered:U('The Sundered King','',5,['Ashborn','Stoneblood'],'Ravager',1700,120,.8,1,50,40,90,'kingfall',480),
   briar:U('Briar','Pact Crossbow',3,['Ironpact'],'Specter',720,72,.75,4,20,25,70,'deadeye',280),
   huntsman:U('The Pale Huntsman','',4,['Forsaken','Stoneblood'],'Specter',900,85,.8,4,25,30,80,'markprey',360),
@@ -383,12 +384,13 @@ const UNITS={
   wenna:U('Wenna','Moss-Tender',2,['Stoneblood'],'Warden',640,42,.65,2,25,30,80,'mendall',140),
   esk:U('Esk','Gravecaller',2,['Forsaken'],'Invoker',540,42,.65,3,15,25,70,'nova',190),
   wallwarden:U('The Wallwarden','',4,['Stoneblood','Ashborn'],'Sentinel',1300,80,.65,3,50,40,100,'rally',320),
+  auren:U('Auren','Last of the Covenant',5,['Covenant','Forsaken'],'Hexblade',1500,105,.8,1,45,45,90,'lastoath',380),
   abbess:U('The Iron Abbess','',5,['Ironpact','Forsaken'],'Invoker',1100,60,.7,3,30,50,100,'judgement',300),
   pell:U('Pell','Hammer-Hand',1,['Ironpact'],'Breaker',600,52,.7,1,25,20,70,'crack',140),
   sorrel:U('Sorrel','Grave-Warden',2,['Forsaken'],'Sentinel',700,52,.65,3,30,25,80,'smoke',110),
   kindra:U('Kindra','Hollow Slinger',2,['Stoneblood'],'Specter',560,60,.75,4,15,20,70,'ricochet',150),
   veyl:U('Veyl','the Cinder Dancer',3,['Ashborn'],'Hexblade',820,70,.8,1,30,25,80,'cinderspin',200),
-  holt:U('Oskar Holt','Oathguard',3,['Ironpact'],'Vanguard',1000,60,.6,1,45,30,90,'oathguard',350),
+  holt:U('Oskar Holt','Oathguard',3,['Ironpact','Covenant'],'Vanguard',1000,60,.6,1,45,30,90,'oathguard',350),
   bishop:U('The Hollow Bishop','',4,['Forsaken'],'Invoker',900,55,.65,3,25,40,90,'soulchain',300),
   varr:U('Varr','Last Oathkeeper',5,['Ironpact','Ashborn'],'Sentinel',1500,95,.7,4,45,40,100,'ballista',600),
   hwarden:U('The Hollow Warden','',5,['Forsaken','Stoneblood'],'Warden',1600,70,.65,2,40,50,100,'gravecall',400),
@@ -434,6 +436,7 @@ const ABIL={
   soulchain:['Soul Chain',p=>`A chain of hollow light jumps between four enemies, starting at ${p} and weakening each jump.`],
   ballista:['Ballista Shot',p=>`Fires a bolt down the whole row, hitting every enemy in it for ${p}.`],
   gravecall:['Gravecall',p=>`Heals every ally for ${p} and shields them for ${Math.round(p*.5)}.`],
+  lastoath:['The Last Oath',p=>`Cleaves its target and the enemies beside it for ${p} magic damage, then heals every ally for ${Math.round(p*.25)}.`],
   deadeye:['Dead Eye',p=>`Shoots the weakest enemy for ${p}. A kill refunds all its mana.`],
   markprey:['Mark the Prey',p=>`Shoots the weakest enemy for ${p} and marks it: it takes 30% more damage for 5s.`],
   brand:['Hot Brand',p=>`Brands its target for ${p} magic damage; it takes 20% more damage for 4s.`],
@@ -443,6 +446,7 @@ const ABIL={
   immolate:['Immolation',p=>`Sets three enemies alight for ${p} plus ${Math.round(p*.5)} burn over 4s.`],
 };
 const TRAITS={
+  Covenant:{kind:'origin',col:'#f0d47a',th:[2,4,6],lore:'Loyal to the Blade above all factions.',t:['Covenant +15% HP, attack, armor and magic resist','Enemy abilities deal 50% less damage to Covenant units','Once per battle, a Covenant unit that would die becomes invincible for 4 seconds']},
   Ashborn:{kind:'origin',col:'#e0743a',th:[2,4,6],lore:"Soldiers who died in the Sundering's fires and came back wrong.",t:['Ashborn +15% max HP','Ashborn revive once per battle at 30% HP','On revive, adjacent enemies take 250 fire damage']},
   Ironpact:{kind:'origin',col:'#a8b0bc',th:[2,4,6],lore:'Mercenaries bound by blood oath. They don\'t break.',t:['Ironpact +20 armor','Ironpact share 20% of damage taken with adjacent allies','When an Ironpact falls, the rest gain +40% attack for 5s']},
   Stoneblood:{kind:'origin',col:'#c0a07a',th:[2,4,6],lore:'Warrior-monks with petrified magic in their veins.',t:['Stoneblood +25% max HP','Every 3rd hit stuns for 1.5s','Immune to stuns; their stuns last twice as long']},
@@ -470,13 +474,14 @@ const RELICS=[
 ];
 const REGIONS={
   ashen:{name:'Ashen Wastes',fav:['Ashborn','Stoneblood','Forsaken'],flavor:"Fire, ruin and soldiers who won't stay dead.",style:'Heavy frontlines and reviving units',bosses:[{key:'maren',name:'The Kiln-Warden'},{key:'pyre',name:'The Unburnt Saint'}]},
-  pact:{name:'Shattered Pact',fav:['Ironpact','Forsaken'],flavor:'Betrayal, and honor twisted into cruelty.',style:'Shield walls and berserkers',bosses:[{key:'vosk',name:'Oathbreaker Vosk'},{key:'penitent',name:'The Penitent Host'}]},
+  pact:{name:'Shattered Pact',fav:['Ironpact','Forsaken','Covenant'],flavor:'Betrayal, and honor twisted into cruelty.',style:'Shield walls and berserkers',bosses:[{key:'vosk',name:'Oathbreaker Vosk'},{key:'penitent',name:'The Penitent Host'}]},
   hollows:{name:'The Stone Hollows',fav:['Stoneblood','Ironpact'],flavor:'Quarry-monasteries where the monks turned to stone and kept praying.',style:'Stunning walls of stone and iron',bosses:[{key:'basalt',name:'Mother Basalt, Unquarried'},{key:'gallow',name:'The Gallowglass'}]},
   pyre:{name:"The Ashwalker's Road",fav:[],flavor:'The burned heart of the march. Everything left is waiting here.',style:'Every origin, at full strength',final:true},
 };
-const NODE_NAME={battle:'Battle',elite:'Elite',shop:'Merchant',event:'Crisis',camp:'Encampment',boss:'Mini boss',final:'Final boss'};
-const NODE_COL={battle:'#c9b8a0',elite:'#d4645a',shop:'#c9a25a',event:'#9a8ac0',camp:'#7dbb7a',boss:'#ff8a3a',final:'#ff6a2a'};
+const NODE_NAME={start:'Muster',battle:'Battle',elite:'Elite',shop:'Merchant',event:'Crisis',camp:'Encampment',boss:'Mini boss',final:'Final boss'};
+const NODE_COL={start:'#c9a25a',battle:'#c9b8a0',elite:'#d4645a',shop:'#c9a25a',event:'#9a8ac0',camp:'#7dbb7a',boss:'#ff8a3a',final:'#ff6a2a'};
 const TICON={
+  Covenant:'<path d="M10.8 2h2.4v11h-2.4zM7 5.4h10v2.2H7z"/><circle cx="12" cy="17" r="4.6" fill="none" stroke="currentColor" stroke-width="2.2"/>',
   Ashborn:'<path d="M12 2c1.2 3.6 6 6.2 6 12a6 6 0 0 1-12 0c0-3 1.6-4.8 3-6.4.4 2.2 1.6 3.4 3 3.4-.6-3 .2-6.2 0-9z"/>',
   Ironpact:'<path fill="none" stroke="currentColor" stroke-width="2.8" d="M10 7.2H7.6a4.8 4.8 0 0 0 0 9.6H10M14 7.2h2.4a4.8 4.8 0 0 1 0 9.6H14M8 12h8"/>',
   Stoneblood:'<path d="M2 20 8.5 8l3.5 5 2.5-3.5L22 20z"/><path d="M12 3.5l1.8 3.2h-3.6z"/>',
@@ -719,12 +724,14 @@ const LOOK={
   wenna:{skin:'#a89a88',body:'#4a5a3a',legs:'#2e3a26',metal:'#6a6a5a',helm:'veil',cloth:'#5a6a44',robe:true,wpn:'staff',orb:'#9cf06a',beads:true,sz:.92},
   esk:{skin:'#b0a898',body:'#2e2a34',legs:'#1e1a24',metal:'#6a6470',helm:'cowl',hood:'#3a3444',glow:'#c8a8ff',robe:true,wpn:'tome',tome:'#2a2234',sz:.94},
   wallwarden:{skin:'#8a8278',body:'#4a443e',legs:'#3a3632',metal:'#8a8a86',helm:'great',cracks:'#5fe8cc',plate:true,gauntlet:true,pauldron:true,wpn:'xbow',backShield:'#5a5650',bulk:1.25,sz:1.1},
+  auren:{skin:'#e0c4a8',body:'#e8dcc0',legs:'#8a7a5a',metal:'#d8c890',tabard:'#c8a040',helm:'circlet',hair:'long',hairCol:'#f0ecd8',halo:'#ffe08a',plate:true,gauntlet:true,pauldron:true,cloak:'#e8dcc0',wpn:'greatsword',bladeCol:'#f4e8b0',sz:1.06},
   abbess:{skin:'#d6c4b4',body:'#3e3a3a',legs:'#2a2626',metal:'#9a9ca2',cloth:'#2a2828',helm:'veil',robe:true,wpn:'tome',tome:'#3a3a40',sash:true,collar:true,halo:'#c8d8ff',plate:true,sz:1.02},
   revenant:{skin:'#3b2b25',body:'#3e3430',legs:'#2e2622',metal:'#5e5a56',helm:'hood',hood:'#3a2a24',glow:'#ff8a3a',wpn:'sword',sz:.88},
   ashwalker:{skin:'#3a2e2a',body:'#2a2220',legs:'#221c1a',metal:'#3e3a38',helm:'crowned',glow:'#ffb04a',cracks:'#ff7a2a',glowCracks:true,plate:true,gauntlet:true,cloak:'#2a100c',wpn:'greataxe',aura:'#ff6a2a',bulk:1.3,sz:1.4},
 };
 // Each origin has its own body archetype and colour cast, so a unit's origin reads at a glance.
 const ARCH={
+  Covenant:{s:1.03,w:1.06,leg:1,tint:'#a88a40'},
   Ashborn:{s:.97,w:.9,leg:.78,lean:.07,tint:'#9a3a18',embers:1},
   Ironpact:{s:1.02,w:1.12,leg:1.05,box:1,tint:'#8a2424'},
   Stoneblood:{s:1.1,w:1.32,leg:1.3,fist:1.6,tint:'#7a6a44',crystal:'#5fe8cc'},
@@ -1189,10 +1196,10 @@ const hash=(x,y)=>{const v=Math.sin(x*12.9898+y*78.233)*43758.5453;return v-Math
 function layout(){
   const cv=$('#cv'),W=cv.parentElement.clientWidth;
   const cw=W/9.6,bottom=cw*.8;
-  // use the phone's spare height for a deeper battlefield
-  const H=Math.max(cw*5.4,Math.min(cw*8.6,(window.innerHeight||700)-410));
-  const rh=Math.min(cw*.95,(H-cw*2.2-bottom)/4);
-  Object.assign(V,{W,cw,rh,y0:H-4*rh-bottom,cx:W/2,H});
+  // hex rows keep a fixed, flattened perspective; spare phone height becomes sky rather than taller tiles
+  const rh=cw*.6,field=4*rh+bottom;
+  const H=Math.max(cw*2.2+field,Math.min(cw*5.4+field,(window.innerHeight||700)-410));
+  Object.assign(V,{W,cw,rh,y0:H-field,cx:W/2,H});
   V.dpr=Math.min(2,window.devicePixelRatio||1);
   V.PX=Math.max(2,Math.round(V.dpr*1.1));V.k=V.dpr/V.PX;   // one sprite pixel = PX device pixels
   cv.width=Math.round(W*V.dpr);cv.height=Math.round(V.H*V.dpr);cv.style.height=V.H+'px';
@@ -1631,6 +1638,7 @@ function applyTraits(ents,cnt){
     if(o.includes('Ashborn')){const t=T('Ashborn');if(t>=1)e.hp*=1.15;if(t>=2)e.revive=true;if(t>=3)e.reviveBurst=true}
     if(o.includes('Ironpact')){const t=T('Ironpact');if(t>=1)e.armor+=20;if(t>=2)e.share=true;if(t>=3)e.oath=true}
     if(o.includes('Stoneblood')){const t=T('Stoneblood');if(t>=1)e.hp*=1.25;if(t>=2)e.stoner=true;if(t>=3)e.stoneImmune=true}
+    if(o.includes('Covenant')){const t=T('Covenant');if(t>=1){e.hp*=1.15;e.atk*=1.15;e.armor*=1.15;e.mr*=1.15}if(t>=2)e.abilRes=.5;if(t>=3)e.lastStand=true}
     if(o.includes('Forsaken')){const m=[1,1.1,1.25,1.45][T('Forsaken')];e.hp*=m;e.atk*=m;e.armor*=m;e.as*=m}
     e.sp*=inv;
     if(c==='Vanguard'){const add=[0,25,60,60][T('Vanguard')];e.armor+=add;e.mr+=add}
@@ -1745,6 +1753,7 @@ function step(dt){
 function mitigate(t,amt,type){return type==='phys'?amt*100/(100+Math.max(0,t.armor)):type==='magic'?amt*100/(100+Math.max(0,t.mr)):amt}
 function hit(src,t,amt,type,basic,crit){
   if(!t||t.dead)return 0;
+  if(!basic&&src&&t.abilRes)amt*=t.abilRes;
   if(basic&&src&&t.it.pale&&Math.random()<.25){fxText(t,'Dodge','#c8d8ff',11);return 0}
   if(basic&&src&&src.it){if(src.it.wraithblade)type='true';if(src.it.hook&&t.hp<t.max*.4)amt*=1.4}
   const spellHit=!basic&&src&&src.it&&type==='magic';
@@ -1778,6 +1787,7 @@ function spell(e,t,p){ // single-target spell with Invoker splash
 function applyRaw(t,d,src,type,crit){
   if(src&&!t.dead){src.dmg=(src.dmg||0)+Math.min(d,Math.max(0,t.hp+t.shield));if(type)t.kbDir=Math.sign(t.pX-src.pX)||t.kbDir||0}
   if(t.dead)return;
+  if(t.invulUntil>C.time)return;
   if(t.dr)d*=t.dr;
   if(t.vulnUntil>C.time)d*=t.vuln||1;
   if(type&&src&&src.it&&src.it.bloodletter&&!src.dead)src.hp=Math.min(src.max,src.hp+d*.2);
@@ -1793,6 +1803,7 @@ function die(t,src){
   const tm=C.time;
   const rise=(frac,label)=>{t.hp=t.max*frac;t.reviveT=tm;t.stunUntil=0;t.burns=[];fxAt('flame',t,.9);fxText(t,label,'#ff9a4a',13)};
   if(t.lives>0){t.lives--;rise(.5,'Rises again');return}
+  if(t.lastStand&&!t.lsUsed){t.lsUsed=true;t.hp=1;t.invulUntil=tm+4;t.shield=0;fxAt('ring',t,.8,'#f0d47a');fxText(t,'Covenant holds','#f0d47a',13);return}
   if(t.crown){t.crown=false;rise(.5,'Ashcrown');return}
   if(t.revive){t.revive=false;rise(.3,'Rekindled');
     if(t.reviveBurst){fxAt('ring',t,.6,'#ff7a2a');alive(foeOf(t.team)).filter(f=>dist(f,t)<=1).forEach(f=>applyRaw(f,mitigate(f,250,'magic'),t,'magic'))}return}
@@ -1829,6 +1840,7 @@ function cast(e,mult=1){
     case 'scourge':later(.25,()=>{fxAt('ring',e,.5,oc);let tot=0;near().forEach(f=>{fxAt('slash',f,.3,oc);tot+=hit(e,f,p,'magic')});if(tot>0){e.hp=Math.min(e.max,e.hp+tot*.3);fxText(e,'+'+Math.round(tot*.3),COL.good,12)}});break;
     case 'cleave':later(.25,()=>{fxAt('ring',e,.5,oc);near().forEach(f=>{fxAt('slash',f,.3,oc);hit(e,f,p,'phys')})});break;
     case 'execute':if(t)later(.25,()=>{if(!t.dead){fxAt('slash',t,.4,'#c4564a');hit(e,t,p*(t.hp/t.max<.4?2:1),'phys')}});break;
+    case 'lastoath':if(t)later(.25,()=>{fxAt('ring',t,.55,'#f0d47a');alive(t.team).filter(f=>dist(f,t)<=1).forEach(f=>{fxAt('slash',f,.3,'#f0d47a');hit(e,f,p,'magic')});alive(e.team).forEach(a=>{a.hp=Math.min(a.max,a.hp+p*.25);fxAt('heal',a,.7)})});break;
     case 'deadeye':{const w=foes().reduce((a,b)=>b.hp<a.hp?b:a,foes()[0]);if(w)shoot(e,w,p,'phys',true,x=>{if(x.dead){e.mana=e.maxMana-1;fxText(e,'Reload','#ffd36a',11)}});break}
     case 'markprey':{const w=foes().reduce((a,b)=>b.hp<a.hp?b:a,foes()[0]);if(w)shoot(e,w,p,'phys',true,x=>{x.vulnUntil=C.time+5;x.vuln=Math.max(x.vuln||1,1.3);fxText(x,'Marked','#e8f0ff',11)});break}
     case 'brand':if(t)later(.22,()=>{if(t.dead)return;fxAt('slash',t,.35,'#ff7a2a');spell(e,t,p);t.vulnUntil=C.time+4;t.vuln=Math.max(t.vuln||1,1.2);fxText(t,'Branded','#ff9a4a',11)});break;
@@ -1959,7 +1971,8 @@ function genMap(final){
   layers[L-1].forEach(a=>a.next.push(boss.id));
   return{layers,boss};
 }
-const allNodes=()=>[...S.map.layers.flat(),S.map.boss];
+const ensureStart=M=>M.start||(M.start={id:-1,l:-1,i:0,n:1,x:.5,type:'start',next:M.layers[0].map(n=>n.id)});
+const allNodes=()=>[ensureStart(S.map),...S.map.layers.flat(),S.map.boss];
 const nodeById=id=>allNodes().find(n=>n.id===id);
 const availableNodes=()=>S.at==null?S.map.layers[0]:nodeById(S.at).next.map(nodeById);
 function startAct(){
@@ -1975,6 +1988,7 @@ function regionChoice(){
       <span>Mini boss: <em style="color:var(--bone)">${bossFor(k).name}</em>${k==='hollows'?' · new region (proposed)':''}</span></button>`}).join('')}`);
 }
 function nodeIcon(type,x,y,c){
+  if(type==='start')return `<path fill="${c}" d="M${x-5} ${y+8}V${y-8}h1.8v1L${x+7} ${y-4.5}L${x-3.2} ${y-0.5}V${y+8}z"/>`;
   const st=`stroke="${c}" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"`;
   switch(type){
     case 'battle':return `<path ${st} d="M${x-6} ${y-6}L${x+6} ${y+6}M${x+6} ${y-6}L${x-6} ${y+6}M${x-7.5} ${y+1.5}L${x-1.5} ${y+7.5}M${x+7.5} ${y+1.5}L${x+1.5} ${y+7.5}"/>`;
@@ -1990,32 +2004,33 @@ function hideMap(){$('#mapv').hidden=true}
 function showMap(peek){
   if(!S.map)return;
   mapPeek=!!peek;closeSheet();sel=null;
-  const M=S.map,R=REGIONS[S.region],W=340,L=M.layers.length,gap=70,H=gap*L+90;
-  const pos=n=>({x:26+n.x*(W-52),y:H-34-n.l*gap});
-  const av=peek?[]:availableNodes().map(n=>n.id),trail=S.trail;
-  let svg='';
-  for(const a of M.layers.flat())for(const id of a.next){const b=nodeById(id),pa=pos(a),pb=pos(b);
-    const walked=trail.includes(a.id)&&trail[trail.indexOf(a.id)+1]===id;
-    svg+=`<line x1="${pa.x}" y1="${pa.y}" x2="${pb.x}" y2="${pb.y}" stroke="${walked?'#c9a25a':'#5a4a44'}" stroke-width="${walked?3:1.5}" ${walked?'':'stroke-dasharray="3 4"'}/>`}
-  for(const n of allNodes()){const p=pos(n),big=n.type==='boss'||n.type==='final',r=big?22:16,c=NODE_COL[n.type];
-    const visited=trail.includes(n.id),cur=n.id===S.at,can=av.includes(n.id);
-    svg+=`<circle cx="${p.x}" cy="${p.y}" r="${r}" fill="#161212"/><g class="node${can?' avail':''}" ${can?`data-node="${n.id}"`:''} opacity="${visited||can||big?1:.5}">
-      ${can?`<circle class="ring" cx="${p.x}" cy="${p.y}" r="${r+6}" fill="none" stroke="#c9a25a" stroke-width="2"/>`:''}
-      <circle cx="${p.x}" cy="${p.y}" r="${r}" fill="${visited?'#3a2f22':'#221d1c'}" stroke="${cur?'#c9a25a':c}" stroke-width="${cur?3:1.5}"/>
-      ${nodeIcon(n.type,p.x,p.y,visited&&!cur?'#8a7a62':c)}
-      ${can||big?`<text x="${p.x}" y="${p.y+r+14}" text-anchor="middle" font-size="11" font-weight="600" fill="${can?'#e8dfcf':'#a39890'}" font-family="Barlow Semi Condensed, sans-serif">${big?(R.final?'The Ashwalker':S.boss.name):NODE_NAME[n.type]}</text>`:''}
-      ${can?`<rect x="${p.x-r-8}" y="${p.y-r-8}" width="${2*r+16}" height="${2*r+30}" fill="transparent"/>`:''}</g>`}
-  $('#mvSvg').setAttribute('viewBox',`0 0 ${W} ${H}`);$('#mvSvg').innerHTML=svg;
+  const M=S.map,R=REGIONS[S.region],L=M.layers.length;ensureStart(M);
   $('#mvAct').textContent=`Act ${S.act} of 3 · ${RUN.name}`;$('#mvName').textContent=R.name;
   $('#mvSub').textContent=`${R.flavor} Enemies: ${R.style.toLowerCase()}.`;
   $('#mvChips').innerHTML=R.fav.length?`<span class="eyebrow" style="align-self:center">Favored</span>`+R.fav.map(o=>`<span class="chip">${ticon(o)}${o}</span>`).join(''):'';
   $('#mvHint').textContent=peek?'The road ahead. Close to return to your company.':'Choose where to march next.';
   $('#mvClose').hidden=!peek;
-  $('#mvLegend').innerHTML=['battle','elite','shop','event','camp','boss'].map(t=>`<span><svg width="18" height="18" viewBox="-11 -11 22 22">${nodeIcon(t,0,0,NODE_COL[t])}</svg>${NODE_NAME[t]}</span>`).join('');
+  $('#mvLegend').innerHTML=['battle','elite','shop','event','camp','boss'].map(t=>`<span><svg width="16" height="16" viewBox="-11 -11 22 22">${nodeIcon(t,0,0,NODE_COL[t])}</svg>${NODE_NAME[t]}</span>`).join('');
   $('#mapv').hidden=false;
-  const cur=S.at==null?null:nodeById(S.at);
-  requestAnimationFrame(()=>{const el=$('#mapv'),svgEl=$('#mvSvg'),sc=svgEl.getBoundingClientRect().width/W;
-    const y=cur?pos(cur).y:H;el.scrollTop=Math.max(0,svgEl.offsetTop+y*sc-el.clientHeight*.65)});
+  // fit the whole climb, muster to boss, into the space left on screen
+  const box=$('#mvWrap'),bw=Math.max(200,box.clientWidth),bh=Math.max(260,box.clientHeight);
+  const W=340,H=W*bh/bw,rows=L+2,gap=(H-48)/(rows-1),rs=Math.min(1,gap/48);
+  const pos=n=>({x:24+n.x*(W-48),y:H-22-(n.l+1)*gap});
+  const av=peek?[]:availableNodes().map(n=>n.id),trail=S.trail,cur=S.at==null?-1:S.at;
+  const walkedEdge=(a,b)=>{const path=[-1,...trail];const i=path.indexOf(a);return i>=0&&path[i+1]===b};
+  let svg='';
+  for(const a of [M.start,...M.layers.flat()])for(const id of a.next){const b=nodeById(id),pa=pos(a),pb=pos(b),w=walkedEdge(a.id,id);
+    svg+=`<line x1="${pa.x}" y1="${pa.y}" x2="${pb.x}" y2="${pb.y}" stroke="${w?'#c9a25a':'#5a4a44'}" stroke-width="${w?3:1.4}" ${w?'':'stroke-dasharray="3 4"'}/>`}
+  for(const n of allNodes()){const p=pos(n),big=n.type==='boss'||n.type==='final',r=(big?19:n.type==='start'?14:13)*rs+(big?2:1),c=NODE_COL[n.type];
+    const visited=n.type==='start'||trail.includes(n.id),isCur=n.id===cur,can=av.includes(n.id);
+    const label=can||big||(n.type==='start'&&!trail.length);
+    svg+=`<circle cx="${p.x}" cy="${p.y}" r="${r}" fill="#161212"/><g class="node${can?' avail':''}" ${can?`data-node="${n.id}"`:''} opacity="${visited||can||big?1:.5}">
+      ${can?`<circle class="ring" cx="${p.x}" cy="${p.y}" r="${r+5}" fill="none" stroke="#c9a25a" stroke-width="2"/>`:''}
+      <circle cx="${p.x}" cy="${p.y}" r="${r}" fill="${visited?'#3a2f22':'#221d1c'}" stroke="${isCur?'#c9a25a':c}" stroke-width="${isCur?3:1.5}"/>
+      <g transform="translate(${p.x} ${p.y}) scale(${(r/16).toFixed(3)}) translate(${-p.x} ${-p.y})">${nodeIcon(n.type,p.x,p.y,visited&&!isCur&&n.type!=='start'?'#8a7a62':c)}</g>
+      ${label?`<text x="${p.x+(big?0:r+5)}" y="${p.y+(big?r+12:4)}" text-anchor="${big?'middle':'start'}" font-size="10.5" font-weight="600" fill="${can?'#e8dfcf':'#a39890'}" font-family="Barlow Semi Condensed, sans-serif" paint-order="stroke" stroke="#141011" stroke-width="3">${big?(R.final?'The Ashwalker':S.boss.name):NODE_NAME[n.type]}</text>`:''}
+      ${can?`<rect x="${p.x-r-8}" y="${p.y-r-8}" width="${2*r+16}" height="${2*r+16}" fill="transparent"/>`:''}</g>`}
+  $('#mvSvg').setAttribute('viewBox',`0 0 ${W} ${H}`);$('#mvSvg').innerHTML=svg;
 }
 function travel(id){
   if(mapPeek||!availableNodes().some(n=>n.id===id))return;
