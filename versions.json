@@ -1,9 +1,15 @@
 [
  {
+  "v": "0.25.1",
+  "date": "2026-10-11",
+  "notes": "Shields now fade: a shield lasts 4 seconds after it was last gained (8 for shields at the start of battle)",
+  "latest": true
+ },
+ {
   "v": "0.25.0",
   "date": "2026-10-11",
   "notes": "Each contract is now its own TFT-style set of eight origins and eight classes; most units have one origin and one class",
-  "latest": true
+  "commit": "e01f21c"
  },
  {
   "v": "0.24.0",

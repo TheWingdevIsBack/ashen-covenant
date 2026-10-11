@@ -695,11 +695,18 @@ body{position:fixed;inset:0;margin:0}
 #shopBtn:disabled{opacity:.4}
 #shopPip{position:absolute;top:4px;right:6px;width:8px;height:8px;border-radius:50%;background:#ffd36a;box-shadow:0 0 8px #ffd36a}
 #ver{bottom:calc(var(--sb) + 60px)}
+/* temporary panels keep clear of the camera: inset from the edge, and on the far side from a notch */
+#sheet .in{padding-right:max(14px,calc(var(--sr) + 4px))}
+:root.notch-r #shopRow{justify-self:start;transform:translateX(-105%);border-left:0;border-right:1px solid #4a3c36;border-radius:0 8px 8px 0;box-shadow:10px 0 24px rgba(0,0,0,.5);background:linear-gradient(270deg,rgba(18,13,12,.82),rgba(22,17,16,.97) 22%)}
+:root.notch-r #shopRow.open{transform:none}
+:root.notch-r #shopClose{transform:scaleX(-1)}
+:root.notch-r #sheet{left:0;right:auto;justify-content:flex-start}
+:root.notch-r #sheet .in{border-radius:0 12px 12px 0;border:1px solid #4a3c36;border-left:0;padding-left:max(14px,calc(var(--sl) + 4px));padding-right:14px}
 </style>
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
 </head>
 <body>
-<script>window.ASHEN_VERSIONS=[{"v": "0.25.0", "date": "2026-10-11", "notes": "Each contract is now its own TFT-style set of eight origins and eight classes; most units have one origin and one class", "latest": true}, {"v": "0.24.0", "date": "2026-10-11", "notes": "A wider battlefield: 13 columns, five ranks per side and a no-man\\", "commit": "280ded1"}, {"v": "0.23.0", "date": "2026-10-11", "notes": "The game is now fully landscape: hold your phone sideways. If it is held upright, the whole game is drawn turned so it still plays sideways", "commit": "b39392b"}, {"v": "0.22.0", "date": "2026-10-11", "notes": "Even fights: enemy boards now grow with the rounds to match yours, so battles are close and tense instead of lopsided", "commit": "944546d"}, {"v": "0.21.2", "date": "2026-10-11", "notes": "A bigger battlefield: taller phones spend their spare height on deeper rows and larger fighters", "commit": "2b7760c"}, {"v": "0.21.1", "date": "2026-10-11", "notes": "The Ashward March ramps up more gently", "commit": "fabd80e"}, {"v": "0.21.0", "date": "2026-10-11", "notes": "Everything moves by dragging: drag items onto units to equip them, and drag units to place, swap or sell them", "commit": "6f61b5f"}, {"v": "0.20.2", "date": "2026-10-11", "notes": "The interface stays clear of the iPhone notch and camera cutout on every screen", "commit": "6639abb"}, {"v": "0.20.1", "date": "2026-10-11", "notes": "Boot Camp tips now pause the game: the screen dims around what the tip points at, and you tap Got it to continue", "commit": "70578de"}, {"v": "0.20.0", "date": "2026-10-11", "notes": "Boot Camp: a two-act tutorial contract with a tip for every part of the game", "commit": "19bfdf8"}, {"v": "0.19.3", "date": "2026-10-11", "notes": "The game always fetches the newest release, and offers a one-tap update if an old copy is showing", "commit": "62c85a8"}, {"v": "0.19.2", "date": "2026-10-11", "notes": "Sentinel reworked: Sentinels mark what they shoot, and the trait makes all your ranged units faster and longer-reaching", "commit": "61c8fcd"}, {"v": "0.19.1", "date": "2026-10-11", "notes": "Trait names are back on shop cards", "commit": "65aa9cc"}, {"v": "0.19.0", "date": "2026-10-11", "notes": "29 new units (110 in all): every contract can now reach the top tier of each of its origins and classes", "commit": "162ab82"}, {"v": "0.18.0", "date": "2026-10-11", "notes": "Three new contracts from the design doc: Roads of the Drowned, The Festering Road and Siege of the Cinder Throne", "commit": "0074adf"}, {"v": "0.17.0", "date": "2026-10-11", "notes": "Main menu with Continue, version history and sound settings", "commit": "57f3a6a"}, {"v": "0.16.0", "date": "2026-10-11", "commit": "d0f200d", "notes": "Covenant origin, one-screen map and flatter hexes"}, {"v": "0.15.0", "date": "2026-10-11", "commit": "817d9aa", "notes": "First web release: pixel-art company, items and the three-act campaign"}]</script>
+<script>window.ASHEN_VERSIONS=[{"v": "0.25.1", "date": "2026-10-11", "notes": "Shields now fade: a shield lasts 4 seconds after it was last gained (8 for shields at the start of battle)", "latest": true}, {"v": "0.25.0", "date": "2026-10-11", "notes": "Each contract is now its own TFT-style set of eight origins and eight classes; most units have one origin and one class", "commit": "e01f21c"}, {"v": "0.24.0", "date": "2026-10-11", "notes": "A wider battlefield: 13 columns, five ranks per side and a no-man\\", "commit": "280ded1"}, {"v": "0.23.0", "date": "2026-10-11", "notes": "The game is now fully landscape: hold your phone sideways. If it is held upright, the whole game is drawn turned so it still plays sideways", "commit": "b39392b"}, {"v": "0.22.0", "date": "2026-10-11", "notes": "Even fights: enemy boards now grow with the rounds to match yours, so battles are close and tense instead of lopsided", "commit": "944546d"}, {"v": "0.21.2", "date": "2026-10-11", "notes": "A bigger battlefield: taller phones spend their spare height on deeper rows and larger fighters", "commit": "2b7760c"}, {"v": "0.21.1", "date": "2026-10-11", "notes": "The Ashward March ramps up more gently", "commit": "fabd80e"}, {"v": "0.21.0", "date": "2026-10-11", "notes": "Everything moves by dragging: drag items onto units to equip them, and drag units to place, swap or sell them", "commit": "6f61b5f"}, {"v": "0.20.2", "date": "2026-10-11", "notes": "The interface stays clear of the iPhone notch and camera cutout on every screen", "commit": "6639abb"}, {"v": "0.20.1", "date": "2026-10-11", "notes": "Boot Camp tips now pause the game: the screen dims around what the tip points at, and you tap Got it to continue", "commit": "70578de"}, {"v": "0.20.0", "date": "2026-10-11", "notes": "Boot Camp: a two-act tutorial contract with a tip for every part of the game", "commit": "19bfdf8"}, {"v": "0.19.3", "date": "2026-10-11", "notes": "The game always fetches the newest release, and offers a one-tap update if an old copy is showing", "commit": "62c85a8"}, {"v": "0.19.2", "date": "2026-10-11", "notes": "Sentinel reworked: Sentinels mark what they shoot, and the trait makes all your ranged units faster and longer-reaching", "commit": "61c8fcd"}, {"v": "0.19.1", "date": "2026-10-11", "notes": "Trait names are back on shop cards", "commit": "65aa9cc"}, {"v": "0.19.0", "date": "2026-10-11", "notes": "29 new units (110 in all): every contract can now reach the top tier of each of its origins and classes", "commit": "162ab82"}, {"v": "0.18.0", "date": "2026-10-11", "notes": "Three new contracts from the design doc: Roads of the Drowned, The Festering Road and Siege of the Cinder Throne", "commit": "0074adf"}, {"v": "0.17.0", "date": "2026-10-11", "notes": "Main menu with Continue, version history and sound settings", "commit": "57f3a6a"}, {"v": "0.16.0", "date": "2026-10-11", "commit": "d0f200d", "notes": "Covenant origin, one-screen map and flatter hexes"}, {"v": "0.15.0", "date": "2026-10-11", "commit": "817d9aa", "notes": "First web release: pixel-art company, items and the three-act campaign"}]</script>
 
 
 <div id="root">
@@ -751,8 +758,9 @@ body{position:fixed;inset:0;margin:0}
 
 <script>
 // ================= VERSION =================
-const GAME_VERSION='0.25.0',S_VERSION=11;
+const GAME_VERSION='0.25.1',S_VERSION=11;
 const CHANGELOG={
+  '0.25.1':['Shields now fade: a shield lasts 4 seconds after it was last gained (8 for shields at the start of battle)','The shop and unit cards keep clear of the iPhone camera, and open on the other side of the screen when the camera is on the right','Slightly fewer item drops and a little less gold from loot and elites'],
   '0.25.0':['Each contract is now its own TFT-style set of eight origins and eight classes; most units have one origin and one class','15 new origins, from Militia and Carrion to Tidebound, Fungal, Hexen and Crownsworn','New classes: Stalkers leap behind the enemy line, Summoners call allies, Heralds rally those around them','71 new units with their own looks, and three new regions','A deeper battlefield: seven rows instead of five'],
   '0.24.0':['A wider battlefield: 13 columns, five ranks per side and a no-man\'s-land between the armies','The shop opens and closes with the Shop button (or S), like TFT: it opens when planning starts and gets out of the way for the fight','Fixed the relic list being cut off when choosing a contract; the March button now stays pinned at the bottom'],
   '0.23.0':['The game is now fully landscape: hold your phone sideways. If it is held upright, the whole game is drawn turned so it still plays sideways','A new wide layout: traits and items on the left, the battlefield in the middle, the shop on the right, and your bench, level, gold and Fight button along the bottom','The map runs left to right, unit cards open as a side drawer, and menus, choices and the tutorial are laid out for wide screens'],
@@ -3088,6 +3096,7 @@ function step(dt){
     if(e.it.starfall){e.sfT=(e.sfT||0)+dt;if(e.sfT>=4){e.sfT-=4;e.sp+=.1;fxText(e,'+10% spell','#ffe08a',10)}}
     if(e.it.covenant&&!e.covOn&&alive(e.team).length===1){e.covOn=true;e.atk*=3;fxText(e,'Last Covenant','#ffd36a',13);fxAt('ring',e,.7,'#ffd36a')}
     if(e.regen&&e.ab)e.mana=Math.min(e.maxMana,e.mana+e.regen*dt);
+    if(e.shield>0){if(e.shield>(e._sh||0)+.5)e.shUntil=tm+(tm<.6?8:4);if(tm>e.shUntil)e.shield=Math.max(0,e.shield-Math.max(e.shield*3,80)*dt);e._sh=e.shield}else e._sh=0;
     if(e.tide){e.tideT+=dt;if(e.tideT>=4){e.tideT-=4;const s=e.max*e.tide;if(e.shield<s)e.shield=s;fxAt('ring',e,.45,'#4aa0e8');if(e.tideSlow)alive(foeOf(e.team)).filter(f=>dist(f,e)<=1&&!f.slowImmune).forEach(f=>f.slowUntil=Math.max(f.slowUntil||0,tm+2))}}
     if(e.lanternAura){for(const a of C.ents)if(!a.dead&&a.team===e.team&&a.hp<a.max&&dist(a,e)<=2)a.hp=Math.min(a.max,a.hp+a.max*e.lanternAura*dt)}
     if(e.stunUntil>tm)continue;
@@ -3210,7 +3219,7 @@ function die(t,src){
   sfx.die();C.freeze=Math.max(C.freeze||0,.07);V.shake=Math.max(V.shake||0,2.5);debris(t,12,[t.oc||'#c9a25a','#3a302c','#8a7a6e'],{h:24,dur:.9,up:70,spread:120});
   if(!alive(t.team).length&&!C.slowDone){C.slowDone=true;C.slow=.9;C.flashT=tm;punch(.07)}
   if(t.boss)punch(.08);
-  if(t.team==='B'&&(t.elite||t.boss||Math.random()<.3)){C.loot=(C.loot||0)+(t.boss?3:1);fxAt('coin',t,1.1);setTimeout(()=>sfx.coin(),250)}
+  if(t.team==='B'&&(t.elite||t.boss||Math.random()<.22)){C.loot=(C.loot||0)+(t.boss?3:1);fxAt('coin',t,1.1);setTimeout(()=>sfx.coin(),250)}
   if(t.rot&&t.rot.n&&t.rotSpread)alive(t.team).filter(a=>dist(a,t)<=1).forEach(a=>{addRot(t.rot.src,a,Math.ceil(t.rot.n/2));fxAt('spark',a,.3)});
   if(t.rotBomb){fxAt('ring',t,.5,'#c0e84a');alive(foeOf(t.team)).filter(f=>dist(f,t)<=1).forEach(f=>addRot(t,f,3))}
   if(t.thorns&&!UNITS[t.key].token){const sp=[{r:t.r,c:t.c},...neighbors(t.r,t.c)].find(n=>!C.grid.has(K(n.r,n.c)));if(sp){const th=spawnUnit('thornling',t.team,sp.r,sp.c,{star:t.star,expire:10+(t.team==='A'&&has('verdantseed')?5:0)});fxText(th,'Thornling','#6ad84a',11)}}
@@ -3335,9 +3344,9 @@ function rollDrops(won,node){
   const d=[],cp=()=>rnd(Object.keys(COMP));
   if(won){
     if(node==='boss')d.push(rnd(FULL_KEYS),cp());
-    else if(node==='elite'){d.push(cp());if(Math.random()<.4)d.push(cp());S.dry=0}
-    else if(node!=='final'){S.dry=(S.dry||0)+1;if(Math.random()<.45||S.dry>=3){d.push(cp());S.dry=0}}
-  }else if(node!=='final'&&Math.random()<.2)d.push(cp());
+    else if(node==='elite'){d.push(cp());if(Math.random()<.3)d.push(cp());S.dry=0}
+    else if(node!=='final'){S.dry=(S.dry||0)+1;if(Math.random()<.4||S.dry>=3){d.push(cp());S.dry=0}}
+  }else if(node!=='final'&&Math.random()<.15)d.push(cp());
   return C.drops=d;
 }
 function showBanner(){
@@ -3377,7 +3386,7 @@ function endCombat(){
   if(drops.length)sub.push(`spoils: ${drops.map(itemName).join(', ')}`);
   if(won&&node==='final')return finish(true);
   if(!won&&(node==='boss'||node==='final')){S.phase='plan';V.shopOpen=true;freshShop();render();return toast(title,'The boss still holds the road. Regroup and try again.')}
-  if(won&&node==='elite'){addGold(3);sub.push('+3 spoils');const k=rnd(poolCost(Math.min(4,S.act+1)));if(giveUnit(k,1))sub.push(`${UNITS[k].name} joins you`)}
+  if(won&&node==='elite'){addGold(2);sub.push('+2 spoils');const k=rnd(poolCost(Math.min(4,S.act+1)));if(giveUnit(k,1))sub.push(`${UNITS[k].name} joins you`)}
   S.phase='map';S.enemy=[];render();toast(title,sub.join(' · '));
   const at0=S.at;setTimeout(()=>{if(S.phase!=='map'||S.at!==at0)return;if(won&&node==='boss')bossReward();else if($('#mapv').hidden)showMap()},1100);
 }
@@ -3910,7 +3919,10 @@ document.addEventListener('click',ev=>{
   }
 });
 // Fit the whole game to the visible screen: stage and card sizes adapt, then any leftover overflow is trimmed off the sky.
-function refit(){if(V.menuMode)V.forceWH=[RW(),RH()];layout();if(S)render();V.benchDirty=true;if(sheet)renderSheet();if(!$('#mapv').hidden&&S&&S.map)showMap(mapPeek)}
+// In true landscape the camera sits on one side; screen.orientation tells which, so the shop and unit cards open on the other.
+function notchSide(){const a=(screen.orientation&&screen.orientation.angle!=null)?screen.orientation.angle:(window.orientation||0);document.documentElement.classList.toggle('notch-r',!ROT()&&(a===270||a===-90))}
+notchSide();
+function refit(){notchSide();if(V.menuMode)V.forceWH=[RW(),RH()];layout();if(S)render();V.benchDirty=true;if(sheet)renderSheet();if(!$('#mapv').hidden&&S&&S.map)showMap(mapPeek)}
 let refitT=0;const queueRefit=()=>{clearTimeout(refitT);refitT=setTimeout(refit,120)};
 window.addEventListener('resize',queueRefit);
 if(window.visualViewport)window.visualViewport.addEventListener('resize',queueRefit);
