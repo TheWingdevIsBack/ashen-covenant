@@ -1,9 +1,15 @@
 [
  {
+  "v": "0.24.0",
+  "date": "2026-10-11",
+  "notes": "A wider battlefield: 13 columns, five ranks per side and a no-man\\",
+  "latest": true
+ },
+ {
   "v": "0.23.0",
   "date": "2026-10-11",
   "notes": "The game is now fully landscape: hold your phone sideways. If it is held upright, the whole game is drawn turned so it still plays sideways",
-  "latest": true
+  "commit": "b39392b"
  },
  {
   "v": "0.22.0",

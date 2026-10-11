@@ -678,11 +678,28 @@ body{position:fixed;inset:0;margin:0}
 @keyframes copop2{from{transform:translateY(-46%) scale(.96);opacity:0}}
 #shopRow{container-type:inline-size}
 @container (max-width:210px){#shopHead .sh-lbl{display:none}#shopHead{justify-content:space-between}#shopHead .sbtn{flex:1;justify-content:center;padding:4px 4px}}
+.modal>*{flex-shrink:0}
+.rgrid{overflow:visible;margin:0;padding:0}
+.modal .mn-row2{position:sticky;bottom:-14px;margin:0 -18px -14px;padding:10px 18px 14px;background:linear-gradient(180deg,rgba(26,22,21,0),#1a1615 30%);z-index:2}
+/* the shop slides over the right of the battlefield and is opened and closed with its button */
+#app{grid-template-columns:clamp(128px,16vw,200px) minmax(0,1fr) 0;grid-template-areas:"top top top" "left stage stage" "bot bot bot"}
+@media (orientation:portrait){#app{grid-template-columns:clamp(128px,16vh,200px) minmax(0,1fr) 0}}
+#shopRow{grid-area:stage;justify-self:end;align-self:stretch;width:clamp(170px,23vw,260px);z-index:4;padding:6px 6px 14px;box-sizing:border-box;
+  background:linear-gradient(90deg,rgba(18,13,12,.82),rgba(22,17,16,.97) 22%);border-left:1px solid #4a3c36;border-radius:8px 0 0 8px;box-shadow:-10px 0 24px rgba(0,0,0,.5);
+  transform:translateX(105%);transition:transform .22s cubic-bezier(.3,.9,.3,1);pointer-events:none}
+#shopRow.open{transform:none;pointer-events:auto}
+#shopHead .sh-x{width:24px;height:28px;font-size:18px;line-height:1;padding:0;flex:none}
+#bottom{grid-template-columns:clamp(110px,14vw,170px) 62px minmax(0,1fr) auto 64px clamp(96px,12vw,140px)}
+#shopBtn{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;background:var(--panel-g);border:1px solid var(--edge);border-radius:6px;box-shadow:var(--hi),var(--drop);font-size:11px;font-weight:700;color:var(--bone)}
+#shopBtn.on{border-color:var(--gold);color:var(--gold);background:linear-gradient(180deg,#3a2f22,#2a2218)}
+#shopBtn:disabled{opacity:.4}
+#shopPip{position:absolute;top:4px;right:6px;width:8px;height:8px;border-radius:50%;background:#ffd36a;box-shadow:0 0 8px #ffd36a}
+#ver{bottom:calc(var(--sb) + 60px)}
 </style>
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
 </head>
 <body>
-<script>window.ASHEN_VERSIONS=[{"v": "0.23.0", "date": "2026-10-11", "notes": "The game is now fully landscape: hold your phone sideways. If it is held upright, the whole game is drawn turned so it still plays sideways", "latest": true}, {"v": "0.22.0", "date": "2026-10-11", "notes": "Even fights: enemy boards now grow with the rounds to match yours, so battles are close and tense instead of lopsided", "commit": "944546d"}, {"v": "0.21.2", "date": "2026-10-11", "notes": "A bigger battlefield: taller phones spend their spare height on deeper rows and larger fighters", "commit": "2b7760c"}, {"v": "0.21.1", "date": "2026-10-11", "notes": "The Ashward March ramps up more gently", "commit": "fabd80e"}, {"v": "0.21.0", "date": "2026-10-11", "notes": "Everything moves by dragging: drag items onto units to equip them, and drag units to place, swap or sell them", "commit": "6f61b5f"}, {"v": "0.20.2", "date": "2026-10-11", "notes": "The interface stays clear of the iPhone notch and camera cutout on every screen", "commit": "6639abb"}, {"v": "0.20.1", "date": "2026-10-11", "notes": "Boot Camp tips now pause the game: the screen dims around what the tip points at, and you tap Got it to continue", "commit": "70578de"}, {"v": "0.20.0", "date": "2026-10-11", "notes": "Boot Camp: a two-act tutorial contract with a tip for every part of the game", "commit": "19bfdf8"}, {"v": "0.19.3", "date": "2026-10-11", "notes": "The game always fetches the newest release, and offers a one-tap update if an old copy is showing", "commit": "62c85a8"}, {"v": "0.19.2", "date": "2026-10-11", "notes": "Sentinel reworked: Sentinels mark what they shoot, and the trait makes all your ranged units faster and longer-reaching", "commit": "61c8fcd"}, {"v": "0.19.1", "date": "2026-10-11", "notes": "Trait names are back on shop cards", "commit": "65aa9cc"}, {"v": "0.19.0", "date": "2026-10-11", "notes": "29 new units (110 in all): every contract can now reach the top tier of each of its origins and classes", "commit": "162ab82"}, {"v": "0.18.0", "date": "2026-10-11", "notes": "Three new contracts from the design doc: Roads of the Drowned, The Festering Road and Siege of the Cinder Throne", "commit": "0074adf"}, {"v": "0.17.0", "date": "2026-10-11", "notes": "Main menu with Continue, version history and sound settings", "commit": "57f3a6a"}, {"v": "0.16.0", "date": "2026-10-11", "commit": "d0f200d", "notes": "Covenant origin, one-screen map and flatter hexes"}, {"v": "0.15.0", "date": "2026-10-11", "commit": "817d9aa", "notes": "First web release: pixel-art company, items and the three-act campaign"}]</script>
+<script>window.ASHEN_VERSIONS=[{"v": "0.24.0", "date": "2026-10-11", "notes": "A wider battlefield: 13 columns, five ranks per side and a no-man\\", "latest": true}, {"v": "0.23.0", "date": "2026-10-11", "notes": "The game is now fully landscape: hold your phone sideways. If it is held upright, the whole game is drawn turned so it still plays sideways", "commit": "b39392b"}, {"v": "0.22.0", "date": "2026-10-11", "notes": "Even fights: enemy boards now grow with the rounds to match yours, so battles are close and tense instead of lopsided", "commit": "944546d"}, {"v": "0.21.2", "date": "2026-10-11", "notes": "A bigger battlefield: taller phones spend their spare height on deeper rows and larger fighters", "commit": "2b7760c"}, {"v": "0.21.1", "date": "2026-10-11", "notes": "The Ashward March ramps up more gently", "commit": "fabd80e"}, {"v": "0.21.0", "date": "2026-10-11", "notes": "Everything moves by dragging: drag items onto units to equip them, and drag units to place, swap or sell them", "commit": "6f61b5f"}, {"v": "0.20.2", "date": "2026-10-11", "notes": "The interface stays clear of the iPhone notch and camera cutout on every screen", "commit": "6639abb"}, {"v": "0.20.1", "date": "2026-10-11", "notes": "Boot Camp tips now pause the game: the screen dims around what the tip points at, and you tap Got it to continue", "commit": "70578de"}, {"v": "0.20.0", "date": "2026-10-11", "notes": "Boot Camp: a two-act tutorial contract with a tip for every part of the game", "commit": "19bfdf8"}, {"v": "0.19.3", "date": "2026-10-11", "notes": "The game always fetches the newest release, and offers a one-tap update if an old copy is showing", "commit": "62c85a8"}, {"v": "0.19.2", "date": "2026-10-11", "notes": "Sentinel reworked: Sentinels mark what they shoot, and the trait makes all your ranged units faster and longer-reaching", "commit": "61c8fcd"}, {"v": "0.19.1", "date": "2026-10-11", "notes": "Trait names are back on shop cards", "commit": "65aa9cc"}, {"v": "0.19.0", "date": "2026-10-11", "notes": "29 new units (110 in all): every contract can now reach the top tier of each of its origins and classes", "commit": "162ab82"}, {"v": "0.18.0", "date": "2026-10-11", "notes": "Three new contracts from the design doc: Roads of the Drowned, The Festering Road and Siege of the Cinder Throne", "commit": "0074adf"}, {"v": "0.17.0", "date": "2026-10-11", "notes": "Main menu with Continue, version history and sound settings", "commit": "57f3a6a"}, {"v": "0.16.0", "date": "2026-10-11", "commit": "d0f200d", "notes": "Covenant origin, one-screen map and flatter hexes"}, {"v": "0.15.0", "date": "2026-10-11", "commit": "817d9aa", "notes": "First web release: pixel-art company, items and the three-act campaign"}]</script>
 
 
 <div id="root">
@@ -697,7 +714,7 @@ body{position:fixed;inset:0;margin:0}
   <aside id="left"><div id="traits"></div><div id="armory"></div></aside>
   <div id="stage"><canvas id="cv"></canvas><div id="toast"></div><div id="bossCard" hidden></div><div id="stamp" hidden></div><div id="fieldCount"></div><div id="banner" hidden></div></div>
   <aside id="shopRow">
-    <div id="shopHead"><span class="sh-lbl">Shop</span><button class="sbtn" id="reroll">Reroll<small><span class="coin"></span>2</small></button><button class="sbtn lockb" id="lockBtn" aria-label="Lock shop"></button></div>
+    <div id="shopHead"><button class="sh-x" id="shopClose" aria-label="Close shop">›</button><span class="sh-lbl">Shop</span><button class="sbtn" id="reroll">Reroll<small><span class="coin"></span>2</small></button><button class="sbtn lockb" id="lockBtn" aria-label="Lock shop"></button></div>
     <div id="shop"></div>
     <div id="selbar" hidden></div>
   </aside>
@@ -706,6 +723,7 @@ body{position:fixed;inset:0;margin:0}
     <button class="sbtn" id="buyxp">Buy XP<small><span class="coin"></span>4</small></button>
     <div id="benchWrap"><div id="bench"></div><canvas id="benchCv"></canvas></div>
     <div id="goldBox"><div class="gtop"><span class="coin"></span><span id="gold" class="num">0</span></div><div id="goldSub" class="num"></div></div>
+    <button id="shopBtn" aria-label="Shop"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M4 9h16l-1.4 11H5.4zM8 9V7a4 4 0 0 1 8 0v2h-2.2V7a1.8 1.8 0 0 0-3.6 0v2z"/></svg><span>Shop</span><i id="shopPip" hidden></i></button>
     <button id="fight">Fight</button>
   </div>
 </div>
@@ -733,8 +751,9 @@ body{position:fixed;inset:0;margin:0}
 
 <script>
 // ================= VERSION =================
-const GAME_VERSION='0.23.0',S_VERSION=9;
+const GAME_VERSION='0.24.0',S_VERSION=10;
 const CHANGELOG={
+  '0.24.0':['A wider battlefield: 13 columns, five ranks per side and a no-man\'s-land between the armies','The shop opens and closes with the Shop button (or S), like TFT: it opens when planning starts and gets out of the way for the fight','Fixed the relic list being cut off when choosing a contract; the March button now stays pinned at the bottom'],
   '0.23.0':['The game is now fully landscape: hold your phone sideways. If it is held upright, the whole game is drawn turned so it still plays sideways','A new wide layout: traits and items on the left, the battlefield in the middle, the shop on the right, and your bench, level, gold and Fight button along the bottom','The map runs left to right, unit cards open as a side drawer, and menus, choices and the tutorial are laid out for wide screens'],
   '0.22.0':['Even fights: enemy boards now grow with the rounds to match yours, so battles are close and tense instead of lopsided','Units start battles with some mana, so abilities fire sooner, and after 20 seconds Overtime makes every blow hit harder','A Fight! stamp, team-strength bars, a fielded-units counter, and a flash and chime when a trait reaches a new tier','Empty field slots fill from your bench when a fight starts, like TFT','Damage numbers show only crits, abilities and big hits by default (change in Settings)','Retrying a boss faces the same army; mini bosses rebalanced; each contract retuned'],
   '0.21.2':['A bigger battlefield: taller phones spend their spare height on deeper rows and larger fighters','While dragging, a label names exactly what will happen, such as Swap Vosk and Maren or Forge Witchsteel Sabre on Maren, with each unit\'s stars and traits, and the target glows'],
@@ -1210,9 +1229,10 @@ const COL={ally:'#6b9ac4',foe:'#c4564a',gold:'#c9a25a',good:'#7dbb7a',mana:'#7fa
 const COSTCOL=['','#8a8580','#5f9a5f','#4f86c6','#a86ad0','#d8ab4c'];
 
 // ================= GRID: 9×5 offset hex; you hold columns 1-4, column 5 is neutral, enemy holds 6-9 =================
-const ROWS=5,rowLen=r=>r%2?8:9;
+// 13 columns, 5 deep: each side holds five ranks and a three-hex no-man's-land lies between the armies
+const ROWS=5,COLS=13,MIDX=(COLS-1)/2,rowLen=r=>r%2?COLS-1:COLS;
 const Xof=(r,c)=>c+(r%2?.5:0);
-const side=(r,c)=>{const x=Xof(r,c);return x<=3.5?'A':x>=4.5?'B':'N'};
+const side=(r,c)=>{const x=Xof(r,c);return x<=4.5?'A':x>=7.5?'B':'N'};
 const ALLCELLS=[];for(let r=0;r<ROWS;r++)for(let c=0;c<rowLen(r);c++)ALLCELLS.push({r,c});
 
 // ================= HELPERS =================
@@ -1782,7 +1802,7 @@ function drawFigure(ctx,key,p){
 // ================= STATE =================
 let S,sel=null,C=null,pick=[],sheet=null,selItem=null;
 function newRun(){if(coachStep){coachStep=null;const c=$('#coach');if(c)c.hidden=true;$('#coachBlock').hidden=true;document.querySelectorAll('.tut-hi').forEach(x=>x.classList.remove('tut-hi'))}
-  S={v:9,run:RUN.id,hp:30,gold:10,level:3,xp:0,round:1,board:{},bench:Array(BENCH).fill(null),shop:[],enemy:[],relics:[],uid:1,phase:'map',act:1,region:null,map:null,at:null,trail:[],path:[],node:null,seen:[],fought:[],boss:null,items:[rnd(Object.keys(COMP))]};
+  S={v:10,run:RUN.id,hp:30,gold:10,level:3,xp:0,round:1,board:{},bench:Array(BENCH).fill(null),shop:[],enemy:[],relics:[],uid:1,phase:'map',act:1,region:null,map:null,at:null,trail:[],path:[],node:null,seen:[],fought:[],boss:null,items:[rnd(Object.keys(COMP))]};
   S.board[K(2,3)]={uid:S.uid++,key:rnd(poolCost(1)),star:1};S.stats={};
   rollShop();sel=null;C=null;sheet=null;render();
 }
@@ -1877,6 +1897,7 @@ function buy(i){
   render();if(msg)toast(msg,'Three copies combine into a stronger unit.');
 }
 function reroll(){if(S.phase!=='plan'||S.gold<2)return;S.gold-=2;S.locked=false;rollShop();sfx.reroll();st('rerolls');render()}
+function setShop(o){V.shopOpen=o;sfx.tap();render()}
 function toggleLock(){S.locked=!S.locked;sfx.tap();render();toast(S.locked?'Shop locked':'Shop unlocked',S.locked?'These recruits wait for you after the next battle.':'')}
 const sellValue=u=>{const c=UNITS[u.key].cost;return u.star===1?c:u.star===2?Math.max(1,c*3-(c>1?1:0)):c*9-(c>1?2:0)};
 const st=(k,n=1)=>{if(!S.stats)S.stats={};S.stats[k]=(S.stats[k]||0)+n};
@@ -1920,7 +1941,7 @@ const tierClass=(name,n)=>{const t=tierOf(name,n),max=TRAITS[name].th.length;ret
 // ================= STAGE =================
 const V={t:0,cells:[]};
 const sOf=r=>.84+.16*r/4;
-function proj(r,X){const s=sOf(r);return{x:V.cx+(X-4)*V.cw*s,y:V.y0+r*V.rh,s}}
+function proj(r,X){const s=sOf(r);return{x:V.cx+(X-MIDX)*V.cw*s,y:V.y0+r*V.rh,s}}
 const FIG=74;let SCL=1.78;
 const hash=(x,y)=>{const v=Math.sin(x*12.9898+y*78.233)*43758.5453;return v-Math.floor(v)};
 // The game is always landscape. Held upright, the whole page is drawn turned 90 degrees, so these helpers
@@ -1932,7 +1953,7 @@ function RR(el){const r=el.getBoundingClientRect();return ROT()?{left:r.top,top:
 function layout(){
   const cv=$('#cv'),st=cv.parentElement,W=V.forceWH?V.forceWH[0]:Math.max(200,st.clientWidth),H=V.forceWH?V.forceWH[1]:Math.max(150,st.clientHeight);
   // the board fits the stage box: limited by width or by height, whichever is tighter, with sky above for the back row
-  const cw=V.forceWH?Math.min(W/11,H/6.2):Math.min(W/9.15,H/(4*.62+.7+1.45)),rh=cw*.62,bottom=cw*.7,field=4*rh+bottom;SCL=1.74;
+  const cw=V.forceWH?Math.min(W/15,H/6.2):Math.min(W/(COLS+.2),H/(4*.62+.7+1.45)),rh=cw*.62,bottom=cw*.7,field=4*rh+bottom;SCL=1.74;
   Object.assign(V,{W,cw,rh,y0:H-field-cw*.12,cx:W/2,H});
   V.dpr=Math.min(2,window.devicePixelRatio||1);
   V.PX=Math.max(2,Math.round(V.dpr*1.1));V.k=V.dpr/V.PX;   // one sprite pixel = PX device pixels
@@ -2020,7 +2041,7 @@ function buildBackdrop(){
   V.bg=off;
 }
 function drawBraziers(lc){
-  for(const X of [-.15,8.15]){const P=proj(-.55,X),s=P.s*V.cw/40;
+  for(const X of [-.15,COLS-1+.15]){const P=proj(-.55,X),s=P.s*V.cw/40;
     const fl=Math.sin(V.t*13+X)*.15+Math.sin(V.t*7.3+X*2)*.1;
     lc.save();lc.translate(P.x,P.y);
     let g=lc.createRadialGradient(0,-14*s,1,0,-14*s,34*s);g.addColorStop(0,`rgba(255,150,60,${.35+fl*.3})`);g.addColorStop(1,'rgba(255,120,40,0)');lc.fillStyle=g;lc.beginPath();lc.arc(0,-14*s,34*s,0,7);lc.fill();
@@ -2381,6 +2402,8 @@ function render(){
   if(!V.fitted){V.fitted=true;requestAnimationFrame(refit)}
   const plan=S.phase==='plan';
   $('#reroll').disabled=!plan||S.gold<2;
+  {const open=(V.shopOpen&&plan)||!!(V.drag&&V.drag.u);$('#shopRow').classList.toggle('open',open);$('#shopBtn').classList.toggle('on',open);$('#shopBtn').disabled=!plan;
+   $('#shopPip').hidden=!(plan&&!open&&S.shop.some(k=>k&&copies(k)>=2))}
   $('#lockBtn').classList.toggle('on',!!S.locked);$('#lockBtn').innerHTML=`<svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="${S.locked?'M7 10V7a5 5 0 0 1 10 0v3h1.5v11h-13V10zm2.4 0h5.2V7a2.6 2.6 0 0 0-5.2 0z':'M7 10V7a5 5 0 0 1 9.6-2l-2.2 1A2.6 2.6 0 0 0 9.4 7v3h9.1v11h-13V10z'}"/></svg>${S.locked?'Locked':'Lock'}`;
   $('#buyxp').disabled=!plan||S.gold<4||S.level>=9;
   $('#fight').textContent=plan?(S.node==='boss'||S.node==='final'?'Fight boss':S.node==='elite'?'Fight elite':'Fight'):`Speed ${C?C.speed:1}x`;
@@ -2543,7 +2566,7 @@ function startCombat(){
      S.board[K(free[0].r,free[0].c)]=u;S.bench[bi]=null;placed++}
    if(placed)setTimeout(()=>toast(`${placed} unit${placed>1?'s':''} fielded from the bench`,'Empty slots fill themselves when the fight starts.'),950)}
   if(!boardCount())return toast('Your field is empty','Move a unit from the bench onto your side.');
-  sel=null;selItem=null;closeSheet();S.phase='combat';
+  sel=null;selItem=null;closeSheet();S.phase='combat';V.shopOpen=false;
   const lateScale=(1+Math.max(0,diff()-8)*.07)*(1+.07*RUN.scale)*(1+.06*(S.heat||0));MUS.combat=true;
   const A=Object.entries(S.board).map(([k,u])=>{const [r,c]=k.split(',').map(Number);return makeEnt(u,'A',r,c,1)});
   const B=S.enemy.map(u=>makeEnt(u,'B',u.r,u.c,u.boss?1:lateScale));
@@ -2902,7 +2925,7 @@ function endCombat(){
   S.round++;S.xp+=2;checkLevel();closeSheet();selItem=null;
   if(drops.length)sub.push(`spoils: ${drops.map(itemName).join(', ')}`);
   if(won&&node==='final')return finish(true);
-  if(!won&&(node==='boss'||node==='final')){S.phase='plan';freshShop();render();return toast(title,'The boss still holds the road. Regroup and try again.')}
+  if(!won&&(node==='boss'||node==='final')){S.phase='plan';V.shopOpen=true;freshShop();render();return toast(title,'The boss still holds the road. Regroup and try again.')}
   if(won&&node==='elite'){addGold(3);sub.push('+3 spoils');const k=rnd(poolCost(Math.min(4,S.act+1)));if(giveUnit(k,1))sub.push(`${UNITS[k].name} joins you`)}
   S.phase='map';S.enemy=[];render();toast(title,sub.join(' · '));
   const at0=S.at;setTimeout(()=>{if(S.phase!=='map'||S.at!==at0)return;if(won&&node==='boss')bossReward();else if($('#mapv').hidden)showMap()},1100);
@@ -3045,7 +3068,7 @@ function travel(id){
   const n=nodeById(id);
   S.at=id;S.trail.push(id);S.path.push(n.type);S.node=n.type;hideMap();sfx.march();
   if(['battle','elite','boss','final'].includes(n.type)){
-    S.phase='plan';freshShop();genEnemy();render();
+    S.phase='plan';V.shopOpen=true;freshShop();genEnemy();render();
     toast(n.type==='final'?RUN.boss.name:n.type==='boss'?S.boss.name:NODE_NAME[n.type],n.type==='elite'?'A hardened warband. Win for spoils and a recruit.':n.type==='boss'?'Defeat the mini boss to finish the region. Losing costs health, and you try again.':'Set your company and fight. The shop has fresh recruits.');
     if(n.type==='boss'||n.type==='final')setTimeout(bossCard,250);
     else if(isNight())setTimeout(()=>toast('Night falls','Duskbound deal 30% more attack damage in the dark.'),1500);
@@ -3127,7 +3150,7 @@ const TUT=[
  {id:'region',when:()=>inModal('[data-region]'),at:'#modal',title:'Choose a region',text:'Each act you pick a region to march through. Its favoured origins turn up more often in your shop, and it ends in a mini boss. In Boot Camp there is only one road.'},
  {id:'map',when:()=>mvOpen()&&!mapPeek,at:'#mvWrap',title:'The road',text:'March from the flag on the left to the crown on the right. ✕ battles earn gold, ◎ Merchants sell relics, ? Crises are choices, the anvil is a Smithy with free items, and the tent is a camp to heal. Tap a glowing node to march.'},
  {id:'welcome',when:()=>planning()&&S.node==='battle',at:'#stage',title:'Fight prep',text:'Your company stands on the blue hexes; the enemy waits on the red. Tap an enemy to see what it does. Nothing happens until you press Fight.'},
- {id:'shop',when:()=>planning(),at:'#shop',title:'Recruit fighters',text:'Tap a card to buy that fighter. The coin badge is its cost; the tags under the name are its traits. New recruits wait on your bench.'},
+ {id:'shop',when:()=>planning(),at:'#shop',onShow:()=>{V.shopOpen=true;render()},title:'Recruit fighters',text:'Tap a card to buy that fighter. The coin badge is its cost; the tags under the name are its traits. New recruits wait on your bench. The Shop button at the bottom opens and closes this panel to give the battlefield room.'},
  {id:'bench',when:()=>planning()&&S.bench.some(Boolean),at:'#bench',title:'Field your recruits',text:'Drag a unit from the bench onto a blue hex to field it, and drag it again to move it. Tapping a unit shows its card. Your level is how many units can fight at once.'},
  {id:'traits',when:()=>planning()&&boardCount()>=2,at:'#traits',title:'Traits',text:'Units that share an origin (big hexagon) or class (small circle) power each other up. Fielding 2, 4 and 6 of one trait unlocks stronger bonuses. Tap a badge to read it.'},
  {id:'fight',when:()=>planning()&&boardCount()>=2,at:'#fight',title:'Fight!',text:'Press Fight when you are ready. Any empty field slots fill from your bench, battles play out on their own, and your company heals fully afterwards.'},
@@ -3136,7 +3159,7 @@ const TUT=[
  {id:'items',when:()=>planning()&&S.round>=2&&S.items.length>0,at:'#armory',onShow:()=>{if(S.items.length<2){S.items.push(S.items[0]||'blade');render()}},title:'Items',text:'Battles sometimes drop item components. Drag one onto a unit to equip it; two components on the same unit forge a finished item. Tap any item to read it, or the book to see every recipe.'},
  {id:'xp',when:()=>planning()&&S.round>=3,at:'#buyxp',title:'Level up',text:'Buy XP to raise your level. Each level fields one more unit and improves the odds of rarer, stronger recruits (the coloured numbers under your XP bar).'},
  {id:'merge',when:()=>planning()&&S.round>=3,at:'#shop',onShow:tutMerge,title:'Merge three copies',text:''},
- {id:'lock',when:()=>planning()&&S.round>=4,at:'#lockBtn',title:'Lock and sell',text:'Lock keeps this shop for after the next battle; rerolling unlocks it. To sell a unit, drag it onto the shop, or tap it and press Sell on its card. You get its full value back.'},
+ {id:'lock',when:()=>planning()&&S.round>=4,at:'#lockBtn',onShow:()=>{V.shopOpen=true;render()},title:'Lock and sell',text:'Lock keeps this shop for after the next battle; rerolling unlocks it. To sell a unit, drag it onto the shop, or tap it and press Sell on its card. You get its full value back.'},
  {id:'elite',when:()=>planning()&&S.node==='elite',at:'#stage',title:'Elite',text:'An elite warband: tougher than usual, but winning drops an item component and a free recruit.'},
  {id:'merchant',when:()=>inModal('[data-buyrelic]'),at:'#modal',title:'Merchant',text:'Relics are passive bonuses that last the whole contract. Any relic you buy stays unlocked for future runs.'},
  {id:'crisis',when:()=>inModal('[data-ev]'),at:'#modal',title:'Crisis',text:'Pick one outcome. Options you cannot afford are greyed out.'},
@@ -3208,7 +3231,7 @@ function codexHtml(){
   const v=store.get('ashen-vault',[]);
   return tabs+`<div class="cx-list">${RELICS.map(r=>{const own=r.starter||v.includes(r.id);return `<div class="cx-t${own?'':' locked'}">${relicIcon(r.id)}<span class="cx-m"><b>${r.name} <small>${r.starter?'Starter':own?'In your vault':'Find it at a merchant or a mini boss'}${r.need?` · ${r.need.join(', ')} contracts only`:''}</small></b><span class="cx-ab">${r.desc}</span></span></div>`}).join('')}</div>`;
 }
-const menuLineup=[['auren',2,3.1,1],['mordrake',1,3.7,1],['abbess',3,3.9,1],['sundered',2,4.7,-1],['huntsman',1,5.4,-1],['morwen',3,5.5,-1]];
+const menuLineup=[['auren',2,4.3,1],['mordrake',1,4.9,1],['abbess',3,5.1,1],['sundered',2,5.9,-1],['huntsman',1,6.6,-1],['morwen',3,6.7,-1]];
 function openMenu(fromGame){
   if(S&&S.phase==='combat')return toast('Finish the battle first','');
   menuFromGame=!!fromGame;closeSheet();sel=null;selItem=null;V.menuMode=true;V.forceWH=[RW(),RH()];layout();
@@ -3427,6 +3450,8 @@ document.addEventListener('click',ev=>{
   if(t.id==='again'){closeModal();newRun();return contractModal()}
   if(t.closest('#reroll'))return reroll();
   if(t.closest('#lockBtn'))return toggleLock();
+  if(t.closest('#shopBtn'))return setShop(!V.shopOpen);
+  if(t.closest('#shopClose'))return setShop(false);
   if(t.closest('#buyxp'))return buyXp();
   if(t.closest('#fight')){
     if(S.phase==='plan')return startCombat();
@@ -3442,10 +3467,10 @@ window.addEventListener('orientationchange',queueRefit);
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>{if(S)queueRefit()});
 document.addEventListener('keydown',ev=>{if(coachStep){if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();hideCoach(false)}return}if(!S||V.menuMode||!$('#overlay').hidden||ev.metaKey||ev.ctrlKey)return;const k=ev.key.toLowerCase();
   if(k==='d')reroll();else if(k==='f')buyXp();else if(k==='l'&&S.phase==='plan')toggleLock();else if(k===' '||k==='enter'){if(S.phase==='plan'){ev.preventDefault();startCombat()}}
-  else if(k==='m')showMap(S.phase!=='map');else if(k==='escape'){closeSheet();sel=null;selItem=null;render()}
+  else if(k==='m')showMap(S.phase!=='map');else if(k==='s'&&S.phase==='plan')setShop(!V.shopOpen);else if(k==='escape'){closeSheet();sel=null;selItem=null;render()}
   else if(/^[1-5]$/.test(k)&&S.phase==='plan')buy(+k-1)});
 
-function resumeRun(){
+function resumeRun(){V.shopOpen=true;
   setRun(S.run||0);
   if(S.phase==='combat')S.phase='plan';
   render();
