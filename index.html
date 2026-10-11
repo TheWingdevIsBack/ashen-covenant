@@ -531,11 +531,17 @@ button:active:not(:disabled){transform:translateY(1px);filter:brightness(1.15)}
 #sheet .in{max-height:calc(100dvh - env(safe-area-inset-top,0px) - 20px)}
 .unq{flex:none;align-self:center;background:#3a2420;border:1px solid #8a4a3a;border-radius:5px;padding:5px 9px;font-size:11.5px;font-weight:700;color:#f0d0c0}
 .selits{display:flex;align-items:center;gap:3px}.selits span{font-size:10px;color:var(--muted);margin-left:4px}
+#benchWrap{position:relative}
+#benchCv{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+.slot .pstars,.slot .bitems{z-index:2}
+.slot.ihov{border-color:#ffd36a;box-shadow:0 0 0 1px #ffd36a,0 0 12px rgba(255,211,106,.55)}
+#ghost.igh{width:auto;height:auto;filter:drop-shadow(0 8px 8px rgba(0,0,0,.6)) drop-shadow(0 0 8px rgba(255,211,106,.6))}
+.ib{touch-action:none}.itm img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
 </style>
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
 </head>
 <body>
-<script>window.ASHEN_VERSIONS=[{"v": "0.20.2", "date": "2026-10-11", "notes": "The interface stays clear of the iPhone notch and camera cutout on every screen", "latest": true}, {"v": "0.20.1", "date": "2026-10-11", "notes": "Boot Camp tips now pause the game: the screen dims around what the tip points at, and you tap Got it to continue", "commit": "70578de"}, {"v": "0.20.0", "date": "2026-10-11", "notes": "Boot Camp: a two-act tutorial contract with a tip for every part of the game", "commit": "19bfdf8"}, {"v": "0.19.3", "date": "2026-10-11", "notes": "The game always fetches the newest release, and offers a one-tap update if an old copy is showing", "commit": "62c85a8"}, {"v": "0.19.2", "date": "2026-10-11", "notes": "Sentinel reworked: Sentinels mark what they shoot, and the trait makes all your ranged units faster and longer-reaching", "commit": "61c8fcd"}, {"v": "0.19.1", "date": "2026-10-11", "notes": "Trait names are back on shop cards", "commit": "65aa9cc"}, {"v": "0.19.0", "date": "2026-10-11", "notes": "29 new units (110 in all): every contract can now reach the top tier of each of its origins and classes", "commit": "162ab82"}, {"v": "0.18.0", "date": "2026-10-11", "notes": "Three new contracts from the design doc: Roads of the Drowned, The Festering Road and Siege of the Cinder Throne", "commit": "0074adf"}, {"v": "0.17.0", "date": "2026-10-11", "notes": "Main menu with Continue, version history and sound settings", "commit": "57f3a6a"}, {"v": "0.16.0", "date": "2026-10-11", "commit": "d0f200d", "notes": "Covenant origin, one-screen map and flatter hexes"}, {"v": "0.15.0", "date": "2026-10-11", "commit": "817d9aa", "notes": "First web release: pixel-art company, items and the three-act campaign"}]</script>
+<script>window.ASHEN_VERSIONS=[{"v": "0.21.0", "date": "2026-10-11", "notes": "Everything moves by dragging: drag items onto units to equip them, and drag units to place, swap or sell them", "latest": true}, {"v": "0.20.2", "date": "2026-10-11", "notes": "The interface stays clear of the iPhone notch and camera cutout on every screen", "commit": "6639abb"}, {"v": "0.20.1", "date": "2026-10-11", "notes": "Boot Camp tips now pause the game: the screen dims around what the tip points at, and you tap Got it to continue", "commit": "70578de"}, {"v": "0.20.0", "date": "2026-10-11", "notes": "Boot Camp: a two-act tutorial contract with a tip for every part of the game", "commit": "19bfdf8"}, {"v": "0.19.3", "date": "2026-10-11", "notes": "The game always fetches the newest release, and offers a one-tap update if an old copy is showing", "commit": "62c85a8"}, {"v": "0.19.2", "date": "2026-10-11", "notes": "Sentinel reworked: Sentinels mark what they shoot, and the trait makes all your ranged units faster and longer-reaching", "commit": "61c8fcd"}, {"v": "0.19.1", "date": "2026-10-11", "notes": "Trait names are back on shop cards", "commit": "65aa9cc"}, {"v": "0.19.0", "date": "2026-10-11", "notes": "29 new units (110 in all): every contract can now reach the top tier of each of its origins and classes", "commit": "162ab82"}, {"v": "0.18.0", "date": "2026-10-11", "notes": "Three new contracts from the design doc: Roads of the Drowned, The Festering Road and Siege of the Cinder Throne", "commit": "0074adf"}, {"v": "0.17.0", "date": "2026-10-11", "notes": "Main menu with Continue, version history and sound settings", "commit": "57f3a6a"}, {"v": "0.16.0", "date": "2026-10-11", "commit": "d0f200d", "notes": "Covenant origin, one-screen map and flatter hexes"}, {"v": "0.15.0", "date": "2026-10-11", "commit": "817d9aa", "notes": "First web release: pixel-art company, items and the three-act campaign"}]</script>
 
 
 <div id="app">
@@ -549,7 +555,7 @@ button:active:not(:disabled){transform:translateY(1px);filter:brightness(1.15)}
   <div id="traits"></div>
   <div id="stage"><canvas id="cv"></canvas><div id="toast"></div><div id="bossCard" hidden></div><div id="banner" hidden></div></div>
   <div id="armory"></div>
-  <div id="bench"></div>
+  <div id="benchWrap"><div id="bench"></div><canvas id="benchCv"></canvas></div>
   <div id="econ">
     <div id="lvlBox"><div class="row"><span>Level</span><b id="lvl" class="num">3</b><span id="xpTxt" class="num"></span></div><div id="xpbar"><i></i></div><div id="odds" class="num"></div></div>
     <div id="goldBox"><div class="gtop"><span class="coin"></span><span id="gold" class="num">0</span></div><div id="goldSub" class="num"></div></div>
@@ -588,8 +594,9 @@ button:active:not(:disabled){transform:translateY(1px);filter:brightness(1.15)}
 
 <script>
 // ================= VERSION =================
-const GAME_VERSION='0.20.2',S_VERSION=9;
+const GAME_VERSION='0.21.0',S_VERSION=9;
 const CHANGELOG={
+  '0.21.0':['Everything moves by dragging: drag items onto units to equip them, and drag units to place, swap or sell them','Tapping a unit, on the field or the bench, now just opens its card; tapping an item shows what it does','Your bench shows your reserves as living figures that idle and pace in their slots'],
   '0.20.2':['The interface stays clear of the iPhone notch and camera cutout on every screen','A component now combines with a component a unit already holds even when a finished item sits after it','Unequip any item from the unit info card'],
   '0.20.1':['Boot Camp tips now pause the game: the screen dims around what the tip points at, and you tap Got it to continue'],
   '0.20.0':['Boot Camp: a two-act tutorial contract with a tip for every part of the game','Larger, livelier characters: they blink, shout, fidget, and catch the light on armour and blades','Weapon swing trails, hit sparks, hitstop, camera punches, dash afterimages and slow motion on the final blow','Fallen units burn away, big spells scorch the ground, and spells, projectiles and fire light the battlefield','Rain, spores, ash-snow and ground mist by region; star auras on ★★ and ★★★ units'],
@@ -1050,8 +1057,8 @@ function iconArt(id){
   return ICON_CACHE[id]={cv,url:cv.toDataURL()};
 }
 const RCOL={ledger:'#e0b84a',badge:'#c8a04a',fragment:'#ff8a3a',crown:'#ff6a2a',ironwill:'#a8b0bc',hollowcore:'#7fe8ff',chalice:'#c8282a',vow:'#8e9a7a',whetstone:'#c8d2de',surgeon:'#c8282a',plaguevial:'#8ac83a',wraithcloak:'#a8b8ff',verdantseed:'#6ad84a',seal:'#c83a2a',warhorn:'#e8dcc0',writ:'#c8282a',tithe:'#e0b84a',emberheart:'#ff8a3a',oathring:'#a8b0bc',geode:'#5fe8cc',banner:'#f0d47a',scarf:'#8e9a7a',chorus:'#7fe8ff',gravebell:'#a8b8ff',bloodmoon:'#ff4a64',pestmask:'#c0e84a'};
-function relicIcon(id,cls=''){return `<span class="itm full relic ${cls}" style="--a:${RCOL[id]||'#c9a25a'}"><img src="${iconArt('r_'+id).url}" alt=""></span>`}
-function itemIcon(id,cls=''){return `<span class="itm ${isComp(id)?'comp':'full'} ${cls}" style="--a:${itemCol(id)}"><img src="${iconArt(id).url}" alt=""></span>`}
+function relicIcon(id,cls=''){return `<span class="itm full relic ${cls}" style="--a:${RCOL[id]||'#c9a25a'}"><img draggable="false" src="${iconArt('r_'+id).url}" alt=""></span>`}
+function itemIcon(id,cls=''){return `<span class="itm ${isComp(id)?'comp':'full'} ${cls}" style="--a:${itemCol(id)}"><img draggable="false" src="${iconArt(id).url}" alt=""></span>`}
 const STAR=[1,1.8,3.24],SPELL=[1,1.7,2.8];
 const XP_NEED={3:6,4:10,5:20,6:36,7:56,8:80};
 const ODDS={3:[75,25,0,0,0],4:[55,30,15,0,0],5:[45,33,20,2,0],6:[30,40,25,5,0],7:[19,30,35,15,1],8:[15,20,35,25,5],9:[10,15,30,30,15]};
@@ -2012,7 +2019,7 @@ function sceneUnits(){
     S.enemy.forEach((e,i)=>units.push({items:e.items,ref:{enemy:i},key:e.key,star:e.star,team:'B',r:e.r,X:Xof(e.r,e.c),boss:e.boss,elite:e.elite,sel:sheet&&sheet.enemy===i,pose:{t:V.t,seed:e.r*7+e.c,face:-1}}));
     for(const [k,u] of Object.entries(S.board)){const [r,c]=k.split(',').map(Number);if(V.drag&&V.drag.loc.z==='b'&&V.drag.loc.k===k)continue;
       const pq=V.place&&V.place.k===k?(V.t-V.place.t0)/.3:9;
-      units.push({items:u.items,ref:{k},key:u.key,star:u.star,team:'A',r,X:Xof(r,c),sel:sel&&sel.z==='b'&&sel.k===k,oy:pq<1?-(1-pq)*(1-pq)*34:0,pose:{t:V.t,seed:r*7+c,face:1,land:pq>=1&&pq<1.5?(1.5-pq)*2:0}})}
+      units.push({items:u.items,ref:{k},key:u.key,star:u.star,team:'A',r,X:Xof(r,c),sel:(sel&&sel.z==='b'&&sel.k===k)||V.itemHover===k,oy:pq<1?-(1-pq)*(1-pq)*34:0,pose:{t:V.t,seed:r*7+c,face:1,land:pq>=1&&pq<1.5?(1.5-pq)*2:0}})}
   }
   return units;
 }
@@ -2033,7 +2040,7 @@ function drawScene(){
     const tm=C.time;
     for(const f of C.fx){if(f.k!=='ring')continue;const q=(tm-f.t0)/f.dur;if(q<0||q>1)continue;const P=proj(f.r,f.X);
       lc.globalAlpha=1-q*.7;lc.strokeStyle=f.col;lc.lineWidth=(q<.5?2:1)/k;lc.beginPath();lc.ellipse(P.x,P.y,V.cw*P.s*(.3+(f.big?3:1.3)*q),V.cw*P.s*(.11+(f.big?1:.45)*q),0,0,7);lc.stroke();lc.globalAlpha=1}
-  }else if(sel&&!V.menuMode){
+  }else if(V.drag&&V.drag.u&&!V.menuMode){
     for(const cell of V.cells){if(cell.side!=='A')continue;hexPath(lc,cell.r,cell.c,.82);
       const on=V.dragHex?V.dragHex===K(cell.r,cell.c):sel.z==='b'&&sel.k===K(cell.r,cell.c);lc.strokeStyle=on?'#e8c87a':`rgba(201,162,90,${.45+.25*Math.sin(V.t*5)})`;lc.lineWidth=1/k;lc.stroke();
       if(on){lc.fillStyle='rgba(201,162,90,.3)';lc.fill()}}
@@ -2186,7 +2193,7 @@ function render(){
   const ts=Object.entries(cnt).sort((a,b)=>tierOf(b[0],b[1])-tierOf(a[0],a[1])||b[1]-a[1]);
   $('#traits').innerHTML=ts.length?ts.map(([t,n])=>`<button class="tb ${TRAITS[t].kind} ${tierClass(t,n)}${tierOf(t,n)?' on':''}" data-t="${t}" style="--tc:${TRAITS[t].col}"><span class="tbadge">${ticon(t)}</span><span class="tn">${t}</span><span class="cnt num"><b>${n}</b>/${nextTh(t,n)}</span></button>`).join('')
     :'<span class="traitEmpty">Field units to activate origins and classes</span>';
-  $('#bench').innerHTML=S.bench.map((u,i)=>`<div class="slot${S.popAt===i?' pop':''}${u?' k'+UNITS[u.key].cost:''}${sel&&sel.z==='n'&&sel.i===i?' sel':''}${sel&&!u?' drop':''}" data-i="${i}">${u?`<canvas class="pc" data-key="${u.key}"></canvas><div class="pstars">${stars(u.star)}</div>${u.items&&u.items.length?`<div class="bitems">${u.items.map(id=>itemIcon(id,'xs')).join('')}</div>`:''}`:''}</div>`).join('');
+  $('#bench').innerHTML=S.bench.map((u,i)=>`<div class="slot${S.popAt===i?' pop':''}${u?' k'+UNITS[u.key].cost:''}${sel&&sel.z==='n'&&sel.i===i?' sel':''}${V.drag&&V.drag.u&&!u?' drop':''}" data-i="${i}">${u?`<div class="pstars">${stars(u.star)}</div>${u.items&&u.items.length?`<div class="bitems">${u.items.map(id=>itemIcon(id,'xs')).join('')}</div>`:''}`:''}</div>`).join('');
   $('#shop').innerHTML=S.shop.map((k,i)=>{
     if(!k)return `<div class="card empty"></div>`;
     const d=UNITS[k];
@@ -2194,7 +2201,7 @@ function render(){
       <div class="trs">${traitsOf(k).filter(isActive).map(t=>`<span class="${cnt[t]?'hot':''}" style="--tc:${TRAITS[t].col}" title="${t}">${ticon(t)}<b>${t}</b></span>`).join('')}</div>
       <span class="ci" data-cinfo="${k}">i</span><span class="cst2">${coin}<b>${d.cost}</b></span><div class="foot"><span class="nm">${d.name.replace(/^(The|Brother|Mother|Sister|Ser|Lord|Doctor|Countess) /,'').split(' ')[0]}</span></div></button>`;
   }).join('');
-  const su=sel&&S.phase==='plan'?unitAt(sel):null,sb=$('#selbar');
+  const su=null,sb=$('#selbar');
   if(su){const d=UNITS[su.key];sb.hidden=false;sb.innerHTML=`<div class="sp k${d.cost}"><canvas class="pc" data-key="${su.key}" data-zoom="1.3"></canvas></div>
     <div class="mid"><div class="nm">${d.name}<span>${stars(su.star)}</span></div><div class="chips">${traitsOf(su.key).filter(isActive).map(t=>`<span class="chip">${ticon(t)}${t}</span>`).join('')}</div>${d.ab?`<div class="ab"><b>${ABIL[d.ab][0]}</b> <span>${d.mana-(d.c==='Hexblade'?20:0)} mana</span> · ${ABIL[d.ab][1](Math.round(d.p*SPELL[su.star-1]))}</div>`:''}<div class="hint">Tap a hex or bench slot to move.</div>${su.items&&su.items.length?`<div class="selits">${su.items.map(id=>itemIcon(id,'sm')).join('')}<span>Info to unequip</span></div>`:''}</div>
     <div class="btns"><button data-info>Info</button><button class="sell" id="sellBtn">Sell ${coin}${sellValue(su)}</button></div>`;paintPortraits(sb)}
@@ -2205,7 +2212,7 @@ function render(){
       <div class="btns"><button data-iteminfo="${id}">${isComp(id)?'Recipes':'Details'}</button></div>`}
   else sb.hidden=true;
   $('#armory').innerHTML=`<button class="abook" data-recipes aria-label="Recipe book"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M4 4h7a2 2 0 0 1 2 2v14a2 2 0 0 0-2-2H4zM20 4h-5a2 2 0 0 0-2 2v14a2 2 0 0 1 2-2h5z"/></svg></button><span class="alab">Armory</span>`+(S.items.length?S.items.map((id,i)=>`<button class="ib${selItem===i?' sel':''}" data-item="${i}" aria-label="${itemName(id)}">${itemIcon(id)}</button>`).join(''):'<span class="aempty">Win battles to earn item components</span>');
-  paintPortraits($('#bench'));paintPortraits($('#shop'));S.popAt=null;S.dealt=false;
+  V.benchDirty=true;paintPortraits($('#shop'));S.popAt=null;S.dealt=false;
   if(!V.fitted){V.fitted=true;requestAnimationFrame(refit)}
   const plan=S.phase==='plan';
   $('#reroll').disabled=!plan||S.gold<2;
@@ -2222,6 +2229,26 @@ function toast(t,s){const el=$('#toast');el.innerHTML=`<b>${t}</b>${s?`<span>${s
 // ---- bottom sheet: unit card / trait card ----
 // components you own, on hand or on a unit, excluding one armory slot
 function haveComp(c,skip){return S.items.some((x,i)=>i!==skip&&x===c)||[...Object.values(S.board),...S.bench].some(u=>u&&u.items&&u.items.includes(c))}
+function inspectMine(loc){const u=unitAt(loc);if(!u)return;
+  const same=sel&&sel.z===loc.z&&sel.k===loc.k&&sel.i===loc.i&&sheet&&sheet.type==='unit';
+  if(same){sel=null;closeSheet();return render()}
+  sel=loc;sfx.tap();openUnit({key:u.key,star:u.star,team:'A',mine:true});render()}
+// the bench shows your reserves as living figures that idle and pace about in their slots
+function drawBench(){
+  const cv=$('#benchCv'),wrap=$('#benchWrap');if(!cv||!wrap||!S)return;
+  const W=wrap.clientWidth,H=wrap.clientHeight,d=V.dpr||2,PX=V.PX||2;if(!W||!H)return;
+  if(cv.width!==Math.round(W*d)||cv.height!==Math.round(H*d)){cv.width=Math.round(W*d);cv.height=Math.round(H*d);V.benchRects=null}
+  if(!V.benchRects||V.benchDirty){const wb=wrap.getBoundingClientRect();V.benchRects=[...document.querySelectorAll('#bench .slot')].map(s=>{const r=s.getBoundingClientRect();return{x:r.left-wb.left,y:r.top-wb.top,w:r.width,h:r.height}});V.benchDirty=false}
+  const x=cv.getContext('2d');x.setTransform(1,0,0,1,0,0);x.clearRect(0,0,cv.width,cv.height);x.imageSmoothingEnabled=false;
+  S.bench.forEach((u,i)=>{const R=V.benchRects[i];if(!u||!R)return;if(V.drag&&V.drag.u&&V.drag.loc.z==='n'&&V.drag.loc.i===i)return;
+    const sz=LOOK[u.key].sz,sd=((u.uid||i)*.6180339)%1,ph=(V.t*.085+sd)%1,walking=ph<.28,k=walking?ph/.28:0;
+    const ox=walking?Math.sin(k*Math.PI*2)*R.w*.14:0,face=walking?(Math.cos(k*Math.PI*2)>=0?1:-1):(sd>.5?1:1);
+    const ps=R.h*.86/(74*Math.max(.92,sz))*d/PX;
+    const spr=spriteFrame(u.key,{t:V.t+sd*9,seed:sd*7,face,moving:walking,walk:V.t*10,cheer:S.popAt===i},ps,{pop:1,step:16,ol:sel&&sel.z==='n'&&sel.i===i?[220,180,100]:[16,30,62]});
+    x.save();x.beginPath();x.rect(R.x*d,R.y*d,R.w*d,R.h*d);x.clip();
+    x.fillStyle='rgba(0,0,0,.4)';x.beginPath();x.ellipse((R.x+R.w/2+ox)*d,(R.y+R.h-5)*d,R.w*.3*d,R.w*.09*d,0,0,7);x.fill();
+    x.drawImage(spr.cv,0,0,spr.W,spr.H,Math.round((R.x+R.w/2+ox)*d-spr.ox*PX),Math.round((R.y+R.h-5)*d-spr.oy*PX),spr.W*PX,spr.H*PX);x.restore()})
+}
 function unequip(i){const u=sel&&unitAt(sel);if(!u||!u.items||!u.items[i]||S.phase!=='plan')return;const id=u.items.splice(i,1)[0];S.items.push(id);sfx.sell();render();
   if(sheet&&sheet.type==='unit')renderSheet();toast(`${itemName(id)} unequipped`,'Returned to your armory.');const a=$('#armory');if(a){a.classList.remove('gain');void a.offsetWidth;a.classList.add('gain')}}
 function openItem(id){sheet={type:'item',id};renderSheet()}
@@ -2924,15 +2951,15 @@ const TUT=[
  {id:'map',when:()=>mvOpen()&&!mapPeek,at:'#mvWrap',title:'The road',text:'Climb from the flag at the bottom to the crown at the top. ✕ battles earn gold, ◎ Merchants sell relics, ? Crises are choices, the anvil is a Smithy with free items, and the tent is a camp to heal. Tap a glowing node to march.'},
  {id:'welcome',when:()=>planning()&&S.node==='battle',at:'#stage',title:'Fight prep',text:'Your company stands on the blue hexes; the enemy waits on the red. Tap an enemy to see what it does. Nothing happens until you press Fight.'},
  {id:'shop',when:()=>planning(),at:'#shop',title:'Recruit fighters',text:'Tap a card to buy that fighter. The coin badge is its cost; the tags at the top are its traits. New recruits wait on your bench.'},
- {id:'bench',when:()=>planning()&&S.bench.some(Boolean),at:'#bench',title:'Field your recruits',text:'Drag a unit from the bench onto a blue hex (or tap it, then tap a hex). Your level is how many units can fight at once.'},
+ {id:'bench',when:()=>planning()&&S.bench.some(Boolean),at:'#bench',title:'Field your recruits',text:'Drag a unit from the bench onto a blue hex to field it, and drag it again to move it. Tapping a unit shows its card. Your level is how many units can fight at once.'},
  {id:'traits',when:()=>planning()&&boardCount()>=2,at:'#traits',title:'Traits',text:'Units that share an origin (big hexagon) or class (small circle) power each other up. Fielding 2, 4 and 6 of one trait unlocks stronger bonuses. Tap a badge to read it.'},
  {id:'fight',when:()=>planning()&&boardCount()>=2,at:'#fight',title:'Fight!',text:'Press Fight when you are ready. Battles play out on their own, and your company heals fully afterwards.'},
  {id:'combat',when:()=>S.phase==='combat',at:'#stage',title:'In battle',text:'The green bar is health, the thin blue bar is mana: when it fills, the unit casts its ability. Tap any unit to inspect it, and tap Speed to fast-forward.'},
  {id:'gold',when:()=>S.round>=2&&(planning()||S.phase==='map')&&!mvOpen()&&!ovOpen(),at:'#goldBox',title:'Gold',text:'Every battle pays 5 gold, +1 for a win, +1 for every 10 gold you hold (the pips, up to 5) and more for win or loss streaks. Saving up pays off.'},
- {id:'items',when:()=>planning()&&S.round>=2&&S.items.length>0,at:'#armory',onShow:()=>{if(S.items.length<2){S.items.push(S.items[0]||'blade');render()}},title:'Items',text:'Battles sometimes drop item components. Tap one, then tap a unit to equip it. Two components on the same unit forge a finished item. The book lists every recipe.'},
+ {id:'items',when:()=>planning()&&S.round>=2&&S.items.length>0,at:'#armory',onShow:()=>{if(S.items.length<2){S.items.push(S.items[0]||'blade');render()}},title:'Items',text:'Battles sometimes drop item components. Drag one onto a unit to equip it; two components on the same unit forge a finished item. Tap any item to read it, or the book to see every recipe.'},
  {id:'xp',when:()=>planning()&&S.round>=3,at:'#buyxp',title:'Level up',text:'Buy XP to raise your level. Each level fields one more unit and improves the odds of rarer, stronger recruits (the coloured numbers under your XP bar).'},
  {id:'merge',when:()=>planning()&&S.round>=3,at:'#shop',onShow:tutMerge,title:'Merge three copies',text:''},
- {id:'lock',when:()=>planning()&&S.round>=4,at:'#lockBtn',title:'Lock and sell',text:'Lock keeps this shop for after the next battle; rerolling unlocks it. To sell a unit, drag it onto the shop, or tap it and press Sell. You get its full value back.'},
+ {id:'lock',when:()=>planning()&&S.round>=4,at:'#lockBtn',title:'Lock and sell',text:'Lock keeps this shop for after the next battle; rerolling unlocks it. To sell a unit, drag it onto the shop, or tap it and press Sell on its card. You get its full value back.'},
  {id:'elite',when:()=>planning()&&S.node==='elite',at:'#stage',title:'Elite',text:'An elite warband: tougher than usual, but winning drops an item component and a free recruit.'},
  {id:'merchant',when:()=>inModal('[data-buyrelic]'),at:'#modal',title:'Merchant',text:'Relics are passive bonuses that last the whole contract. Any relic you buy stays unlocked for future runs.'},
  {id:'crisis',when:()=>inModal('[data-ev]'),at:'#modal',title:'Crisis',text:'Pick one outcome. Options you cannot afford are greyed out.'},
@@ -3030,10 +3057,10 @@ function drawMenu(){
   if(menuTab==='help'){
     $('#mnPanel').innerHTML=`<div class="mp-h">How to play</div><ul>
       <li><b>Buy</b> fighters in the shop; three copies merge into a stronger star level.</li>
-      <li><b>Place</b> them on the blue hexes: drag a unit, or tap it and then a hex or bench slot. Drag a unit onto the shop to sell it.</li>
+      <li><b>Drag</b> units onto the blue hexes to field them, and between hexes and the bench to rearrange. Drag a unit onto the shop to sell it. Tap any unit to see its card.</li>
       <li><b>Lock</b> the shop to keep its recruits for the next battle.</li>
       <li><b>Traits</b> light up as you field 2, 4 and 6 units that share an origin or class. Only the contract's origins count.</li>
-      <li><b>Items</b> drop from fights. Two components on one unit forge an item; the recipe book shows every result.</li>
+      <li><b>Items</b> drop from fights. Drag one onto a unit to equip it; two components on one unit forge an item. Tap an item to read it, and unequip from the unit's card.</li>
       <li><b>Gold</b> earns interest for every 10 you hold, and win or loss streaks pay extra.</li>
       <li><b>Night</b> falls every other pair of battles. Duskbound grow stronger in the dark.</li>
       <li>Climb each region to its mini boss, then face the contract's final boss in Act 3. Merchants sell relics, Smithies give items, Crises test you.</li>
@@ -3071,6 +3098,7 @@ function frame(ts){
     sheetTick+=dt;if(sheetTick>.12){sheetTick=0;tickSheet()}
   }
   if(S)drawScene();
+  if(S&&!V.menuMode)drawBench();
   if(V.menuMode)renderMenuCanvas();
   requestAnimationFrame(frame);
 }
@@ -3081,13 +3109,25 @@ function unitUnder(x,y){let hitU=null,hd=1e9;
 function hexUnder(x,y){let cell=null,bd=1e9;for(const c of V.cells){const d=Math.hypot(c.x-x,(c.y-y)*1.6);if(d<bd){bd=d;cell=c}}return bd<V.cw*.8?cell:null}
 // ---- drag and drop: drag a unit between bench and field, or onto the shop to sell it ----
 const DRAG={p:null,suppress:0};
-const dragSuppressed=()=>performance.now()-DRAG.suppress<350;
-function dragStart(ev,loc){if(coachStep||!S||S.phase!=='plan'||selItem!=null||V.menuMode)return;const u=unitAt(loc);if(!u)return;DRAG.p={x:ev.clientX,y:ev.clientY,loc,u,id:ev.pointerId,on:false}}
-function dragEnd(){const d=DRAG.p;DRAG.p=null;if(d&&d.g)d.g.remove();$('#shopRow').classList.remove('sellzone');V.drag=null;V.dragHex=null}
+const dragSuppressed=()=>performance.now()-DRAG.suppress<150;
+function dragStart(ev,loc){if(coachStep||!S||S.phase!=='plan'||V.menuMode)return;const u=unitAt(loc);if(!u)return;DRAG.p={x:ev.clientX,y:ev.clientY,loc,u,id:ev.pointerId,on:false}}
+function itemDragStart(ev,i){if(coachStep||!S||S.phase!=='plan'||V.menuMode||S.items[i]==null)return;DRAG.p={x:ev.clientX,y:ev.clientY,item:i,iid:S.items[i],id:ev.pointerId,on:false}}
+function dragEnd(){const d=DRAG.p;DRAG.p=null;if(d&&d.g)d.g.remove();$('#shopRow').classList.remove('sellzone');V.drag=null;V.dragHex=null;V.itemHover=null;document.querySelectorAll('.slot.ihov').forEach(s=>s.classList.remove('ihov'))}
+// where an item would land: one of your units on the field or the bench
+function itemTarget(x,y){const cv=$('#cv'),b=cv.getBoundingClientRect();
+  if(y>b.top&&y<b.bottom){const u=unitUnder(x-b.left,y-b.top);if(u&&u.team==='A'&&u.ref.k)return{z:'b',k:u.ref.k};return null}
+  const el=document.elementFromPoint(x,y),s=el&&el.closest&&el.closest('.slot');if(s&&S.bench[+s.dataset.i])return{z:'n',i:+s.dataset.i};return null}
 document.addEventListener('pointerdown',ev=>{if(!S||S.phase!=='plan')return;
+  const ib=ev.target.closest&&ev.target.closest('.ib[data-item]');if(ib){if(ev.cancelable&&ev.pointerType==='mouse')ev.preventDefault();return itemDragStart(ev,+ib.dataset.item)}
   const slot=ev.target.closest&&ev.target.closest('.slot');if(slot)return dragStart(ev,{z:'n',i:+slot.dataset.i});
   if(ev.target.id==='cv'){const b=ev.target.getBoundingClientRect(),u=unitUnder(ev.clientX-b.left,ev.clientY-b.top);if(u&&u.team==='A'&&u.ref.k)dragStart(ev,{z:'b',k:u.ref.k})}});
 document.addEventListener('pointermove',ev=>{const d=DRAG.p;if(!d||ev.pointerId!==d.id)return;
+  if(d.item!=null){if(!d.on){if(Math.hypot(ev.clientX-d.x,ev.clientY-d.y)<8)return;d.on=true;closeSheet();sel=null;render();
+      const g=document.createElement('div');g.id='ghost';g.className='igh';g.innerHTML=itemIcon(d.iid,'lg');document.body.appendChild(g);d.g=g;sfx.tap()}
+    d.g.style.transform=`translate(${ev.clientX-26}px,${ev.clientY-60}px)`;
+    const tg=itemTarget(ev.clientX,ev.clientY);V.itemHover=tg&&tg.z==='b'?tg.k:null;
+    document.querySelectorAll('.slot').forEach(s=>s.classList.toggle('ihov',!!(tg&&tg.z==='n'&&+s.dataset.i===tg.i)));
+    if(ev.cancelable)ev.preventDefault();return}
   if(!d.on){if(Math.hypot(ev.clientX-d.x,ev.clientY-d.y)<10)return;d.on=true;sel=d.loc;closeSheet();render();V.drag=d;
     const g=document.createElement('div');g.id='ghost';g.innerHTML=`<canvas class="pc" data-key="${d.u.key}" data-zoom="1.05"></canvas>`;document.body.appendChild(g);paintPortraits(g);d.g=g;
     const sr=$('#shopRow');sr.dataset.sell=`Drop to sell for ${sellValue(d.u)} gold`;sr.classList.add('sellzone');sfx.tap()}
@@ -3095,6 +3135,8 @@ document.addEventListener('pointermove',ev=>{const d=DRAG.p;if(!d||ev.pointerId!
   const cv=$('#cv'),b=cv.getBoundingClientRect();const c=ev.clientY<b.bottom&&ev.clientY>b.top?hexUnder(ev.clientX-b.left,ev.clientY-b.top):null;V.dragHex=c&&c.side==='A'?K(c.r,c.c):null;
   if(ev.cancelable)ev.preventDefault()},{passive:false});
 document.addEventListener('pointerup',ev=>{const d=DRAG.p;if(!d||ev.pointerId!==d.id)return;if(!d.on){DRAG.p=null;return}
+  if(d.item!=null){const tg=itemTarget(ev.clientX,ev.clientY);dragEnd();DRAG.suppress=performance.now();
+    if(tg&&S.items[d.item]===d.iid){const u=unitAt(tg);if(u){selItem=d.item;equip(u);selItem=null;return}}render();return}
   const hx=V.dragHex;dragEnd();DRAG.suppress=performance.now();d.g&&d.g.remove();
   const el=document.elementFromPoint(ev.clientX,ev.clientY);sel=d.loc;
   if(el&&el.closest&&el.closest('#shopRow'))return sell();
@@ -3114,20 +3156,15 @@ $('#cv').addEventListener('click',ev=>{
   // 2) nearest hex
   let cell=null,bd=1e9;
   for(const c of V.cells){const d=Math.hypot(c.x-x,(c.y-y)*1.6);if(d<bd){bd=d;cell=c}}
-  if(sel){ // moving: prefer the hex under the finger
-    if(cell&&cell.side==='A'&&bd<V.cw*.8)return tapLoc({z:'b',k:K(cell.r,cell.c)});
-    if(hitU&&hitU.team==='A')return tapLoc({z:'b',k:hitU.ref.k});
-    sel=null;closeSheet();render();return;
-  }
   if(hitU){
-    if(hitU.team==='A')return tapLoc({z:'b',k:hitU.ref.k});
+    if(hitU.team==='A')return inspectMine({z:'b',k:hitU.ref.k});
     const e=S.enemy[hitU.ref.enemy];sheet=null;openUnit({key:e.key,star:e.star,team:'B',enemy:hitU.ref.enemy,elite:e.elite,boss:e.boss,bossName:e.bossName});return;
   }
-  if(cell&&bd<V.cw*.8&&cell.side==='A'){const u=S.board[K(cell.r,cell.c)];if(u)return tapLoc({z:'b',k:K(cell.r,cell.c)})}
-  closeSheet();
+  if(cell&&bd<V.cw*.8&&cell.side==='A'){const u=S.board[K(cell.r,cell.c)];if(u)return inspectMine({z:'b',k:K(cell.r,cell.c)})}
+  sel=null;closeSheet();render();
 });
 document.addEventListener('click',ev=>{
-  const t=ev.target;if(coachStep&&!(t.closest&&t.closest('#coach')))return;if(dragSuppressed()&&t.closest&&(t.closest('.slot')||t.closest('#shopRow')))return;
+  const t=ev.target;if(coachStep&&!(t.closest&&t.closest('#coach')))return;if(dragSuppressed()&&t.closest&&(t.closest('.slot')||t.closest('#shopRow')||t.closest('#armory')))return;
   if(t.closest('#cv'))return;
   if(t.closest('[data-tutok]'))return hideCoach(false);
   if(t.closest('[data-tutoff]'))return hideCoach(true);
@@ -3151,7 +3188,7 @@ document.addEventListener('click',ev=>{
   const cx=t.closest('[data-cx]');if(cx){codexTab=cx.dataset.cx;sfx.tap();return drawMenu()}
   const cr=t.closest('[data-cxrun]');if(cr){codexRun=+cr.dataset.cxrun;sfx.tap();return drawMenu()}
   const ce=t.closest('[data-cxu]');if(ce){ce.classList.toggle('open');return}
-  const slot=t.closest('.slot');if(slot)return tapLoc({z:'n',i:+slot.dataset.i});
+  const slot=t.closest('.slot');if(slot){const loc={z:'n',i:+slot.dataset.i};if(unitAt(loc))return inspectMine(loc);sel=null;closeSheet();return render()}
   const ci=t.closest('[data-cinfo]');if(ci){sel=null;render();return openUnit({key:ci.dataset.cinfo,star:1,team:'A'})}
   const card=t.closest('.card[data-s]');if(card)return buy(+card.dataset.s);
   const tr=t.closest('[data-t]');if(tr)return openTrait(tr.dataset.t);
@@ -3180,7 +3217,8 @@ document.addEventListener('click',ev=>{
   if(t.closest('#relBtn')){sel=null;sheet={type:'relics'};return renderSheet()}
   const uq=t.closest('[data-unequip]');if(uq)return unequip(+uq.dataset.unequip);
   const ii=t.closest('[data-iteminfo]');if(ii)return openItem(ii.dataset.iteminfo);
-  const it=t.closest('[data-item]');if(it){if(S.phase!=='plan')return toast('Items are equipped between battles','');const i=+it.dataset.item;selItem=selItem===i?null:i;sel=null;closeSheet();sfx.tap();return render()}
+  const it=t.closest('[data-item]');if(it){const id=S.items[+it.dataset.item];if(id){sel=null;sfx.tap();openItem(id);return render()}}
+  if(0&&it){if(S.phase!=='plan')return toast('Items are equipped between battles','');const i=+it.dataset.item;selItem=selItem===i?null:i;sel=null;closeSheet();sfx.tap();return render()}
   const evb=t.closest('[data-ev]');if(evb&&!evb.disabled){const E=EVENTS[S.ev],ch=E[evb.dataset.ev];const res=ch[3]();render();return afterNode(ch[0],typeof res==='string'?res:ch[1])}
   const cp=t.closest('[data-camp]');if(cp&&!cp.disabled){if(cp.dataset.camp==='rest'){heal(8);return afterNode('Rested','+8 health')}S.xp+=6;checkLevel();return afterNode('Drilled','+6 XP')}
   if(t.id==='again'){closeModal();newRun();return contractModal()}
