@@ -1,0 +1,20 @@
+[
+ {
+  "v": "0.17.0",
+  "date": "2026-10-11",
+  "notes": "Main menu with Continue, version history and sound settings",
+  "latest": true
+ },
+ {
+  "v": "0.16.0",
+  "date": "2026-10-11",
+  "commit": "d0f200d",
+  "notes": "Covenant origin, one-screen map and flatter hexes"
+ },
+ {
+  "v": "0.15.0",
+  "date": "2026-10-11",
+  "commit": "817d9aa",
+  "notes": "First web release: pixel-art company, items and the three-act campaign"
+ }
+]

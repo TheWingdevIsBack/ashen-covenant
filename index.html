@@ -294,6 +294,35 @@ button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 .rr-txt em{font-style:normal;color:#9cd890;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
 .ctabs{display:flex;gap:4px;flex-wrap:wrap}
 .ct{display:flex;align-items:center;gap:4px;background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:2px 7px 2px 2px;font-size:11px;font-weight:600}
+#menuBtn{background:var(--panel);border:1px solid var(--line);border-radius:4px;width:32px;height:30px;display:grid;place-items:center;color:var(--bone);padding:0}
+#ver{position:fixed;right:calc(6px + env(safe-area-inset-right,0px));bottom:calc(3px + env(safe-area-inset-bottom,0px));z-index:20;font:700 9px/1 Silkscreen,monospace;color:#8a7e76;background:rgba(18,13,11,.72);padding:3px 5px;border-radius:3px;pointer-events:none;letter-spacing:.02em}
+#ver a{color:var(--gold);pointer-events:auto}
+#menu{position:fixed;inset:0;z-index:15;background:#120d0b;display:flex;flex-direction:column;overflow:hidden}
+#menuCv{position:absolute;inset:0 0 auto 0;width:100%;height:58%;image-rendering:pixelated}
+#menu::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,13,11,0) 30%,rgba(18,13,11,.6) 50%,#120d0b 60%);pointer-events:none}
+.mn-in{position:relative;z-index:1;max-width:520px;width:100%;margin:0 auto;box-sizing:border-box;height:100%;display:flex;flex-direction:column;padding:calc(18px + env(safe-area-inset-top,0px)) 20px calc(26px + env(safe-area-inset-bottom,0px));gap:10px}
+.mn-title{text-align:center;margin-bottom:auto}
+.mn-title h1{font-family:var(--display);font-weight:400;font-size:44px;line-height:1;margin:6px 0 0;color:#ffd890;text-shadow:0 3px 0 #5a2410,0 0 24px rgba(255,140,60,.55);text-wrap:balance}
+.mn-title .eyebrow{color:#e8c8a0}
+.mn-btns{display:flex;flex-direction:column;gap:8px}
+.mb{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;border:1px solid var(--line);background:rgba(44,37,36,.92);border-radius:6px;padding:11px;font-weight:700;font-size:15px}
+.mb small{font-weight:500;color:var(--muted);font-size:11.5px}
+.mb.go{background:#7a2e1c;border-color:#c0603a;font-family:var(--display);font-weight:400;font-size:21px}
+.mb.go small{font-family:var(--body);color:#e8c8b0}
+.mn-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px}
+.mb.sm{font-size:12.5px;padding:8px 4px}
+.mb.sm.on{border-color:var(--gold);color:var(--gold)}
+.mn-panel{background:rgba(28,24,23,.94);border:1px solid var(--line);border-radius:6px;padding:10px 12px;max-height:30vh;overflow-y:auto;font-size:13px;color:var(--muted)}
+.mn-panel ul{margin:4px 0 0;padding-left:18px;display:flex;flex-direction:column;gap:3px;color:var(--bone)}
+.mp-h{font-family:Silkscreen,monospace;font-size:11px;color:var(--gold);letter-spacing:.04em}
+.mp-sub{margin-top:8px;font-size:11.5px}
+.vlist{display:flex;flex-direction:column;gap:4px;margin-top:6px}
+.vrow{display:grid;grid-template-columns:58px 1fr auto;gap:8px;align-items:center;background:var(--panel);border:1px solid #2e2726;border-radius:4px;padding:6px 8px;color:var(--bone);text-decoration:none}
+.vrow.cur{border-color:var(--gold)}
+.vv{font:700 11px Silkscreen,monospace;color:var(--gold)}
+.vn{font-size:12px;line-height:1.3;min-width:0}.vn em{display:block;font-style:normal;color:var(--muted);font-size:10.5px}
+.vt{font-size:11px;font-weight:700;color:var(--muted)}
+a.vrow .vt{color:#9cd890}
 @media (prefers-reduced-motion:reduce){#armory.gain{animation:none}}
 @media (prefers-reduced-motion:reduce){.card.deal,.slot.pop,#lvlBox.lvlup,.gfloat,#banner .bt,.card.k4::before,.card.k5::before{animation:none}}
 @media (prefers-reduced-motion:reduce){.node.avail .ring{animation:none}}
@@ -302,12 +331,13 @@ button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
 </head>
 <body>
+<script>window.ASHEN_VERSIONS=[{"v": "0.17.0", "date": "2026-10-11", "notes": "Main menu with Continue, version history and sound settings", "latest": true}, {"v": "0.16.0", "date": "2026-10-11", "commit": "d0f200d", "notes": "Covenant origin, one-screen map and flatter hexes"}, {"v": "0.15.0", "date": "2026-10-11", "commit": "817d9aa", "notes": "First web release: pixel-art company, items and the three-act campaign"}]</script>
 
 
 <div id="app">
   <div id="top">
     <div id="roundBox"><div id="roundLbl"></div><div id="pips"></div></div>
-    <button id="sfxBtn" aria-label="Sound"></button>
+    <button id="menuBtn" aria-label="Menu"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M4 6h16v2.4H4zM4 10.8h16v2.4H4zM4 15.6h16V18H4z"/></svg></button>
     <button id="mapBtn">Map</button>
     <div id="hpBox"><span class="heart"></span><b id="hp" class="num">30</b></div>
   </div>
@@ -337,9 +367,29 @@ button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
   <p class="mv-hint" id="mvHint"></p>
   <div class="mv-legend" id="mvLegend"></div>
 </div></div>
+<div id="menu" hidden>
+  <canvas id="menuCv"></canvas>
+  <div class="mn-in">
+    <div class="mn-title"><div class="eyebrow">A roguelike auto-battler</div><h1>Ashen Covenant</h1></div>
+    <div class="mn-btns" id="mnBtns"></div>
+    <div class="mn-panel" id="mnPanel"></div>
+  </div>
+</div>
+<div id="ver" class="num"></div>
 <div id="overlay" hidden><div class="modal" id="modal"></div></div>
 
 <script>
+// ================= VERSION =================
+const GAME_VERSION='0.17.0',S_VERSION=8;
+const CHANGELOG={
+  '0.17.0':['Main menu with Continue, version history and sound settings','Every release is archived and playable from the menu','Your run saves itself between battles'],
+  '0.16.0':['Covenant origin and Auren, Last of the Covenant','The region map fits on one screen and starts from a Muster node','Flatter hex perspective; scarcer item drops'],
+  '0.15.0':['First web release: pixel-art company, 48 units, items and the recipe book','Branching three-act campaign with mini bosses'],
+};
+// Filled in by the build from git tags; empty inside the Claude preview.
+const VERSIONS=(window.ASHEN_VERSIONS||[]);
+const ARCHIVED=/\/versions\/[^/]+\/?/.test(location.pathname);
+const SITE='https://thewingdevisback.github.io/ashen-covenant/';
 // ================= RUN 1 DATA =================
 // GDD units: kael mira soot daven ossian maren grevna ironskin revgen. All others are proposed additions.
 const RUN={name:'The Ashward March',blurb:'A desperate push through the first burned territories.',origins:['Ashborn','Ironpact','Stoneblood','Forsaken','Covenant']};
@@ -1350,6 +1400,7 @@ function animOf(e,tm,aDur){
 }
 function sceneUnits(){
   const units=[];
+  if(V.menuMode){menuLineup.forEach(([key,r,X,face],i)=>units.push({ref:{},key,star:1+(i%3===0),team:'A',r,X,pose:{t:V.t,seed:i*2.3,face,cheer:Math.sin(V.t*.6+i*1.3)>.92}}));return units}
   if(S.phase==='combat'&&C){
     const tm=C.time;
     for(const e of C.ents){
@@ -1374,7 +1425,7 @@ function sceneUnits(){
 function drawScene(){
   const ctx=V.ctx;if(!ctx)return;
   if(!V.bg)buildBackdrop();
-  const lc=V.lctx,k=V.k,fight=S.phase==='combat'&&C;
+  const lc=V.lctx,k=V.k,fight=!V.menuMode&&S.phase==='combat'&&C;
   lc.setTransform(1,0,0,1,0,0);lc.globalAlpha=1;lc.imageSmoothingEnabled=false;lc.drawImage(V.bg,0,0);
   lc.setTransform(k,0,0,k,0,0);
   {const hz=V.y0-V.rh*1.2;
@@ -1387,7 +1438,7 @@ function drawScene(){
     const tm=C.time;
     for(const f of C.fx){if(f.k!=='ring')continue;const q=(tm-f.t0)/f.dur;if(q<0||q>1)continue;const P=proj(f.r,f.X);
       lc.globalAlpha=1-q*.7;lc.strokeStyle=f.col;lc.lineWidth=(q<.5?2:1)/k;lc.beginPath();lc.ellipse(P.x,P.y,V.cw*P.s*(.3+(f.big?3:1.3)*q),V.cw*P.s*(.11+(f.big?1:.45)*q),0,0,7);lc.stroke();lc.globalAlpha=1}
-  }else if(sel){
+  }else if(sel&&!V.menuMode){
     for(const cell of V.cells){if(cell.side!=='A')continue;hexPath(lc,cell.r,cell.c,.82);
       const on=sel.z==='b'&&sel.k===K(cell.r,cell.c);lc.strokeStyle=on?'#e8c87a':`rgba(201,162,90,${.45+.25*Math.sin(V.t*5)})`;lc.lineWidth=1/k;lc.stroke();
       if(on){lc.fillStyle='rgba(201,162,90,.3)';lc.fill()}}
@@ -1503,7 +1554,9 @@ function render(){
   $('#pips').innerHTML=Array.from({length:11},(_,i)=>{const t=S.path[i],last=i===10;
     return `<span class="pip${last?' boss':t==='elite'?' elite':t&&t!=='battle'?' round':''}${t?' done':''}${t&&i===S.path.length-1?' cur':''}"></span>`}).join('');
   $('#mapBtn').hidden=!S.map;
-  $('#sfxBtn').innerHTML=`<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M4 9h4l5-4v14l-5-4H4z"/>${SFX.on?'<path fill="none" stroke="currentColor" stroke-width="2" d="M16 9a4 4 0 0 1 0 6M18.5 6.5a7.5 7.5 0 0 1 0 11"/>':'<path fill="none" stroke="currentColor" stroke-width="2" d="M16 9l5 6M21 9l-5 6"/>'}</svg>`;
+  $('#ver').innerHTML=`v${GAME_VERSION}${ARCHIVED?` · archived · <a href="../../">latest</a>`:''}`;
+  saveRun();
+  if(0)$('#sfxBtn').innerHTML=`<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M4 9h4l5-4v14l-5-4H4z"/>${SFX.on?'<path fill="none" stroke="currentColor" stroke-width="2" d="M16 9a4 4 0 0 1 0 6M18.5 6.5a7.5 7.5 0 0 1 0 11"/>':'<path fill="none" stroke="currentColor" stroke-width="2" d="M16 9l5 6M21 9l-5 6"/>'}</svg>`;
   {const it=Math.min(Math.floor(S.gold/10),5),sg=streakGold(),st=S.streak||0;
    $('#goldSub').innerHTML=`<span class="ipips">${[1,2,3,4,5].map(i=>`<i class="${it>=i?'on':''}"></i>`).join('')}</span>${it?`<span>+${it}</span>`:''}${st&&Math.abs(st)>=1?`<span class="stk ${st>0?'w':'l'}">${st>0?'▲':'▼'}${Math.abs(st)}${sg?` +${sg}`:''}</span>`:''}`}
   const cnt=traitCounts(Object.values(S.board),true);
@@ -1930,6 +1983,7 @@ function endCombat(){
   setTimeout(won&&node==='boss'?bossReward:showMap,1100);
 }
 function finish(victory){
+  clearRun();
   S.phase='over';closeSheet();hideMap();
   const reached=victory?4:S.act;
   if(reached>best){best=reached;store.set('ashen-best',best)}
@@ -2068,9 +2122,10 @@ const EVENTS=[
   {title:'The Ash Shrine',text:'Embers still burn on an altar to the Sundering. Something listens.',
     a:['Make an offering','−6 gold: a random unit on your field gains a star',()=>S.gold>=6&&Object.values(S.board).some(u=>u.star<3),()=>{S.gold-=6;rnd(Object.values(S.board).filter(u=>u.star<3)).star++;mergeAll()}],b:['Walk on','Nothing happens',()=>true,()=>{}]},
 ];
-function crisis(){
-  let i=EVENTS.findIndex((e,j)=>!S.seen.includes(j));if(i<0){S.seen=[];i=0}
-  const pool=EVENTS.map((e,j)=>j).filter(j=>!S.seen.includes(j));i=rnd(pool);S.seen.push(i);S.ev=i;
+function crisis(again){
+  let i=S.ev;
+  if(!again||i==null){i=EVENTS.findIndex((e,j)=>!S.seen.includes(j));if(i<0){S.seen=[];i=0}
+  const pool=EVENTS.map((e,j)=>j).filter(j=>!S.seen.includes(j));i=rnd(pool);S.seen.push(i);S.ev=i}
   const E=EVENTS[i];
   modal(`<div class="eyebrow">Crisis</div><h2>${E.title}</h2><p>${E.text}</p>
     ${['a','b'].map(k=>`<button class="aug" data-ev="${k}" ${E[k][2]()?'':'disabled'}><b>${E[k][0]}</b><span>${E[k][1]}</span></button>`).join('')}`);
@@ -2083,6 +2138,49 @@ function camp(){
 }
 
 // ================= LOOP & INPUT =================
+// ================= MAIN MENU, AUTOSAVE, VERSIONS =================
+const SAVE_KEY='ashen-run';
+function saveRun(){if(!S||!S.relics||!S.relics.length||S.phase==='combat'||S.phase==='over'||V.menuMode)return;store.set(SAVE_KEY,{ver:GAME_VERSION,S})}
+function loadRun(){const d=store.get(SAVE_KEY,null);return d&&d.S&&d.S.v===S_VERSION&&d.S.relics&&d.S.relics.length&&d.S.phase!=='over'?d.S:null}
+function clearRun(){try{localStorage.removeItem(SAVE_KEY)}catch(e){}}
+let menuTab='news',menuFromGame=false;
+const menuLineup=[['auren',2,1.2,1],['mordrake',2,2.6,1],['abbess',1,3.7,1],['sundered',3,4.6,-1],['huntsman',2,5.9,-1],['morwen',1,6.9,-1]];
+function openMenu(fromGame){
+  if(S&&S.phase==='combat')return toast('Finish the battle first','');
+  menuFromGame=!!fromGame;closeSheet();sel=null;selItem=null;V.menuMode=true;
+  $('#menu').hidden=false;drawMenu();sfx.tap();
+}
+function closeMenu(){V.menuMode=false;$('#menu').hidden=true;if(S)render()}
+function versionLink(v){
+  if(v.v===GAME_VERSION&&!ARCHIVED)return null;
+  const onSite=location.hostname.endsWith('github.io');
+  const href=v.latest?(onSite?(ARCHIVED?'../../':'./'):SITE):(onSite?(ARCHIVED?`../${v.v}/`:`versions/${v.v}/`):`${SITE}versions/${v.v}/`);
+  return {href,blank:!onSite};
+}
+function drawMenu(){
+  const saved=!menuFromGame&&loadRun();
+  $('#mnBtns').innerHTML=(menuFromGame?`<button class="mb go" data-mn="resume">Resume</button>`:saved?`<button class="mb go" data-mn="continue">Continue<small>Act ${saved.act}${saved.region?' · '+REGIONS[saved.region].name:''} · ${saved.hp} HP</small></button>`:'')
+    +`<button class="mb${menuFromGame||saved?'':' go'}" data-mn="new">New contract${menuFromGame||saved?'<small>Abandons the current run</small>':''}</button>`
+    +`<div class="mn-row"><button class="mb sm${menuTab==='news'?' on':''}" data-mntab="news">What's new</button><button class="mb sm${menuTab==='versions'?' on':''}" data-mntab="versions">Versions</button><button class="mb sm" data-mn="sound">Sound: ${SFX.on?'on':'off'}</button></div>`;
+  if(menuTab==='news'){
+    $('#mnPanel').innerHTML=`<div class="mp-h">Version ${GAME_VERSION}${ARCHIVED?' · archived':''}</div><ul>${(CHANGELOG[GAME_VERSION]||[]).map(x=>`<li>${x}</li>`).join('')}</ul>
+      <div class="mp-sub">Best result: ${best>=4?'contract complete':best?`reached Act ${best}`:'no runs yet'}</div>`;
+  }else{
+    const list=VERSIONS.length?VERSIONS:[{v:GAME_VERSION,date:'',notes:(CHANGELOG[GAME_VERSION]||[])[0]||'',latest:true}];
+    $('#mnPanel').innerHTML=`<div class="mp-h">Version history</div><div class="vlist">${list.map(v=>{const l=versionLink(v),cur=v.v===GAME_VERSION;
+      return `<${l?`a href="${l.href}"${l.blank?' target="_blank" rel="noopener"':''}`:'div'} class="vrow${cur?' cur':''}"><span class="vv">v${v.v}</span><span class="vn">${v.notes||''}${v.date?`<em>${v.date}${v.commit?' · '+v.commit:''}</em>`:''}</span><span class="vt">${cur?'Playing':v.latest?'Latest':'Play'}</span></${l?'a':'div'}>`}).join('')}</div>
+      ${VERSIONS.length?'':'<div class="mp-sub">The full archive is on the live site.</div>'}<div class="mp-sub">Archived versions share your sound setting and best result. Each keeps its own rules.</div>`;
+  }
+}
+function renderMenuCanvas(){
+  const mc=$('#menuCv');if(!mc||$('#menu').hidden)return;
+  const w=mc.clientWidth,h=mc.clientHeight;if(!w||!h)return;
+  const d=Math.min(2,window.devicePixelRatio||1);if(mc.width!==Math.round(w*d)){mc.width=Math.round(w*d);mc.height=Math.round(h*d)}
+  const x=mc.getContext('2d'),cv=$('#cv');x.imageSmoothingEnabled=false;
+  // cover-fit the live stage (sky, ruins, braziers, the lineup) into the menu backdrop
+  const sc=Math.max(mc.width/cv.width,mc.height/cv.height);x.fillStyle='#120d0b';x.fillRect(0,0,mc.width,mc.height);
+  x.drawImage(cv,(mc.width-cv.width*sc)/2,mc.height-cv.height*sc,cv.width*sc,cv.height*sc);
+}
 let lastTs=0,sheetTick=0;
 function frame(ts){
   const dt=lastTs?Math.min(.1,(ts-lastTs)/1000):0;lastTs=ts;V.t+=dt;
@@ -2096,6 +2194,7 @@ function frame(ts){
     sheetTick+=dt;if(sheetTick>.12){sheetTick=0;tickSheet()}
   }
   if(S)drawScene();
+  if(V.menuMode)renderMenuCanvas();
   requestAnimationFrame(frame);
 }
 $('#cv').addEventListener('click',ev=>{
@@ -2126,7 +2225,13 @@ document.addEventListener('click',ev=>{
   const t=ev.target;
   if(t.closest('#cv'))return;
   if(t.closest('#banner')){if(C&&C.over&&!C.ended){C.ended=true;endCombat()}return}
-  if(t.closest('#sfxBtn')){SFX.on=!SFX.on;store.set('ashen-sfx',SFX.on);if(SFX.on)sfx.tap();return render()}
+  if(t.closest('#menuBtn'))return openMenu(true);
+  const mt=t.closest('[data-mntab]');if(mt){menuTab=mt.dataset.mntab;sfx.tap();return drawMenu()}
+  const mn=t.closest('[data-mn]');if(mn){const a=mn.dataset.mn;
+    if(a==='resume')return closeMenu();
+    if(a==='continue'){const sv=loadRun();if(!sv)return drawMenu();S=sv;C=null;closeMenu();resumeRun();return}
+    if(a==='new'){clearRun();closeMenu();hideMap();closeModal();newRun();return contractModal()}
+    if(a==='sound'){SFX.on=!SFX.on;store.set('ashen-sfx',SFX.on);if(SFX.on)sfx.tap();return drawMenu()}}
   const slot=t.closest('.slot');if(slot)return tapLoc({z:'n',i:+slot.dataset.i});
   const ci=t.closest('[data-cinfo]');if(ci){sel=null;render();return openUnit({key:ci.dataset.cinfo,star:1,team:'A'})}
   const card=t.closest('.card[data-s]');if(card)return buy(+card.dataset.s);
@@ -2161,16 +2266,24 @@ document.addEventListener('click',ev=>{
 });
 window.addEventListener('resize',()=>{layout();if(S)render()});
 
+function resumeRun(){
+  if(S.phase==='combat')S.phase='plan';
+  render();
+  if(S.phase==='map'){S.map?showMap():regionChoice()}
+  else if(S.phase==='event'){if(S.node==='shop')merchant();else if(S.node==='event')crisis(true);else camp()}
+  else toast('Welcome back',`Act ${S.act}${S.region?' · '+REGIONS[S.region].name:''}`);
+}
 function start(data){
   layout();
-  if(data&&data.S&&data.S.v===8&&data.S.relics&&data.S.relics.length){S=data.S;if(S.phase==='combat')S.phase='plan';render();if(S.phase==='map'){S.map?showMap():regionChoice()}}
-  else{newRun();contractModal()}
+  if(data&&data.S&&data.S.v===S_VERSION&&data.S.relics&&data.S.relics.length){S=data.S;resumeRun()}
+  else{newRun();clearRunIfStale();openMenu(false)}
   requestAnimationFrame(frame);
 }
+function clearRunIfStale(){const d=store.get(SAVE_KEY,null);if(d&&(!d.S||d.S.v!==S_VERSION))clearRun()}
 window.claude?.hot?.snapshot?.(()=>({S:S&&S.phase!=='combat'?S:null}));
 window.claude?.hot?.ready?window.claude.hot.ready(start):start(window.claude?.hot?.data??{});
 </script>
 
-<script>if('serviceWorker' in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register('sw.js').catch(()=>{})</script>
+<script>if('serviceWorker' in navigator&&location.protocol.startsWith('http')&&!/\/versions\//.test(location.pathname))navigator.serviceWorker.register('sw.js').catch(()=>{})</script>
 </body>
 </html>
