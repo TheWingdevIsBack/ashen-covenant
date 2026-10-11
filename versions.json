@@ -1,9 +1,15 @@
 [
  {
+  "v": "0.19.2",
+  "date": "2026-10-11",
+  "notes": "Sentinel reworked: Sentinels mark what they shoot, and the trait makes all your ranged units faster and longer-reaching",
+  "latest": true
+ },
+ {
   "v": "0.19.1",
   "date": "2026-10-11",
   "notes": "Trait names are back on shop cards",
-  "latest": true
+  "commit": "65aa9cc"
  },
  {
   "v": "0.19.0",

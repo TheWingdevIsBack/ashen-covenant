@@ -512,7 +512,7 @@ button:active:not(:disabled){transform:translateY(1px);filter:brightness(1.15)}
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
 </head>
 <body>
-<script>window.ASHEN_VERSIONS=[{"v": "0.19.1", "date": "2026-10-11", "notes": "Trait names are back on shop cards", "latest": true}, {"v": "0.19.0", "date": "2026-10-11", "notes": "29 new units (110 in all): every contract can now reach the top tier of each of its origins and classes", "commit": "162ab82"}, {"v": "0.18.0", "date": "2026-10-11", "notes": "Three new contracts from the design doc: Roads of the Drowned, The Festering Road and Siege of the Cinder Throne", "commit": "0074adf"}, {"v": "0.17.0", "date": "2026-10-11", "notes": "Main menu with Continue, version history and sound settings", "commit": "57f3a6a"}, {"v": "0.16.0", "date": "2026-10-11", "commit": "d0f200d", "notes": "Covenant origin, one-screen map and flatter hexes"}, {"v": "0.15.0", "date": "2026-10-11", "commit": "817d9aa", "notes": "First web release: pixel-art company, items and the three-act campaign"}]</script>
+<script>window.ASHEN_VERSIONS=[{"v": "0.19.2", "date": "2026-10-11", "notes": "Sentinel reworked: Sentinels mark what they shoot, and the trait makes all your ranged units faster and longer-reaching", "latest": true}, {"v": "0.19.1", "date": "2026-10-11", "notes": "Trait names are back on shop cards", "commit": "65aa9cc"}, {"v": "0.19.0", "date": "2026-10-11", "notes": "29 new units (110 in all): every contract can now reach the top tier of each of its origins and classes", "commit": "162ab82"}, {"v": "0.18.0", "date": "2026-10-11", "notes": "Three new contracts from the design doc: Roads of the Drowned, The Festering Road and Siege of the Cinder Throne", "commit": "0074adf"}, {"v": "0.17.0", "date": "2026-10-11", "notes": "Main menu with Continue, version history and sound settings", "commit": "57f3a6a"}, {"v": "0.16.0", "date": "2026-10-11", "commit": "d0f200d", "notes": "Covenant origin, one-screen map and flatter hexes"}, {"v": "0.15.0", "date": "2026-10-11", "commit": "817d9aa", "notes": "First web release: pixel-art company, items and the three-act campaign"}]</script>
 
 
 <div id="app">
@@ -563,8 +563,9 @@ button:active:not(:disabled){transform:translateY(1px);filter:brightness(1.15)}
 
 <script>
 // ================= VERSION =================
-const GAME_VERSION='0.19.1',S_VERSION=9;
+const GAME_VERSION='0.19.2',S_VERSION=9;
 const CHANGELOG={
+  '0.19.2':['Sentinel reworked: Sentinels mark what they shoot, and the trait makes all your ranged units faster and longer-reaching','Traits that are not part of the current contract are hidden instead of crossed out','Fixed a Merchant or Smithy sometimes failing to open in later acts'],
   '0.19.1':['Trait names are back on shop cards','The game fits the visible screen on every phone, with no scrolling during fight prep'],
   '0.19.0':['29 new units (110 in all): every contract can now reach the top tier of each of its origins and classes','Drag units between bench and field, or onto the shop to sell them for their real value; lock the shop','Heat levels for beaten contracts, a Codex of every unit, trait, item and relic, settings and a procedural score','Relics fit the contract you are on, with 12 new relics and icons for all of them; Forsaken has its real trait','Smithy nodes, contract-specific crises, boss introductions and health bars, and a run summary','A visual overhaul: new panels, cards, map, menu and battle text'],
   '0.18.0':['Three new contracts from the design doc: Roads of the Drowned, The Festering Road and Siege of the Cinder Throne','Five new origins: Hollow, Wraithkin, Duskbound, Plagueborn and Verdant, with day and night battles','34 new units, six new regions with their own skies, and three new final bosses','Four new relics: Plague Vial, Wraithcloak, Verdant Seed and the Broken Seal'],
@@ -793,7 +794,7 @@ const TRAITS={
   Forsaken:{kind:'origin',col:'#8e9a7a',th:[2,4,6],lore:'Exiled and broken. Their shame is their strength.',t:['Each time an ally falls, Forsaken deal 8% more damage and gain 8 armor','Forsaken +20% max HP and the bonus per fallen ally doubles','The last Forsaken standing attacks 60% faster and cannot die for 3s']},
   Vanguard:{kind:'class',col:'#8a9aa8',th:[2,4,6],passive:'+15 armor. Enemies prefer to target Vanguards.',t:['Vanguards +25 armor and magic resist','Vanguards +60 armor and magic resist','Vanguards +60, and every ally gains +25 armor and magic resist']},
   Ravager:{kind:'class',col:'#c45a4a',th:[2,4,6],passive:'+12% attack speed for each kill.',t:['Ravagers +25% attack speed','Ravagers +50% attack speed and heal 25% HP on a kill','Ravagers +85% attack speed and heal 50% HP on a kill']},
-  Sentinel:{kind:'class',col:'#7a8ab0',th:[2,4,6],passive:'Intercepts projectiles aimed at adjacent allies.',t:['Intercepted shots deal 40% less damage','Intercepted shots deal 65% less; Sentinels +25% attack','Intercepted shots deal 80% less; Sentinels fire a second bolt each attack']},
+  Sentinel:{kind:'class',col:'#7a8ab0',th:[2,4,6],passive:'Marks what it shoots: your ranged units deal 15% more damage to a marked enemy for 3s.',t:['Your ranged units attack 15% faster','Your ranged units attack 35% faster and reach 1 hex further','Your ranged units attack 60% faster; Sentinels fire a second bolt each attack']},
   Breaker:{kind:'class',col:'#b08a5a',th:[2,4,6],passive:'Each hit strips 5 armor.',t:['Hits strip 8 armor','Hits strip 12 armor and 6 magic resist','Hits strip 18 armor and 12 magic resist']},
   Warden:{kind:'class',col:'#7dbb7a',th:[2,4,6],passive:'Heals adjacent allies 4% HP every 3s.',t:['Warden pulses heal 7%','Warden pulses heal 10%','Warden pulses heal 14% and reach 2 hexes']},
   Specter:{kind:'class',col:'#9a8ac0',th:[2,4,6],passive:'Hunts the enemy with the lowest HP.',t:['Specters +25% attack','Specters +50% attack and +15% critical chance','Specters +85% attack and execute enemies below 12% HP']},
@@ -1858,6 +1859,8 @@ function drawUnitHud(ctx,u){
   for(let i=0;i<u.star;i++){const sx=Math.round(P.x+(i-(u.star-1)/2)*6.5),sy=top-5;ctx.beginPath();ctx.moveTo(sx,sy-2.8);ctx.lineTo(sx+2.4,sy);ctx.lineTo(sx,sy+2.8);ctx.lineTo(sx-2.4,sy);ctx.closePath();ctx.fill();ctx.stroke()}
   if(u.items&&u.items.length){const n=u.items.length,w=10,y=top+(u.bars?9:3);ctx.imageSmoothingEnabled=false;u.items.forEach((id,i)=>{const x=Math.round(P.x+(i-(n-1)/2)*(w+2)-w/2),full=!isComp(id);
       ctx.fillStyle=full?'#d8ab4c':'#0c0808';ctx.fillRect(x-1,y-1,w+2,w+2);ctx.fillStyle='#1a1412';ctx.fillRect(x,y,w,w);ctx.drawImage(iconArt(id).cv,x,y,w,w)})}
+  if(u.marked){const mx=Math.round(P.x),my=Math.round(P.y-36*sz*sc),r=5+Math.sin(V.t*6);ctx.strokeStyle='#b8c8ff';ctx.lineWidth=1.2;ctx.beginPath();ctx.arc(mx,my,r,0,7);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(mx-r-3,my);ctx.lineTo(mx-r+2,my);ctx.moveTo(mx+r-2,my);ctx.lineTo(mx+r+3,my);ctx.moveTo(mx,my-r-3);ctx.lineTo(mx,my-r+2);ctx.moveTo(mx,my+r-2);ctx.lineTo(mx,my+r+3);ctx.stroke()}
   if(u.taunted){ctx.fillStyle='#ff5a48';ctx.fillRect(Math.round(P.x)+10,top-12,2,6);ctx.fillRect(Math.round(P.x)+10,top-5,2,2)}
   if(u.slowed){ctx.fillStyle='#a8b8c8';for(let i=0;i<2;i++)ctx.fillRect(Math.round(P.x)-14+i*3,top-6+((V.t*6+i)%2),2,2)}
   if(u.stunned){ctx.fillStyle='#f0e0a0';for(let i=0;i<3;i++){const a=V.t*5+i*2.1;ctx.fillRect(Math.round(P.x+Math.cos(a)*8)-1,Math.round(top-11+Math.sin(a)*2.5)-1,2,2)}}
@@ -1891,7 +1894,7 @@ function sceneUnits(){
       const d=disp(e),aDur=.45/Math.min(1.6,e.effAs||e.as);
       units.push({items:e.items,ref:e,key:e.key,star:e.star,team:e.team,r:d.r,X:d.X,boss:e.boss,elite:e.elite,bars:true,hp:e.hp,max:e.max,mana:e.mana,maxMana:e.maxMana,shield:e.shield,oc:e.oc,
         stunned:!e.dead&&e.stunUntil>tm,burning:e.burns.some(x=>x.until>tm),rotting:!!(e.rot&&e.rot.n&&tm<e.rot.until),invul:e.invulUntil>tm,sel:sheet&&sheet.ent===e,
-        taunted:!e.dead&&e.tauntUntil>tm,slowed:!e.dead&&e.slowUntil>tm,...animOf(e,tm,aDur),
+        taunted:!e.dead&&e.tauntUntil>tm,marked:!e.dead&&e.markUntil>tm,slowed:!e.dead&&e.slowUntil>tm,...animOf(e,tm,aDur),
         pose:{t:tm,seed:e.seed,moving:d.moving,walk:tm*11,face:e.face,hitK:clamp01(1-(tm-e.hitT)/.16),land:clamp01(1-(tm-e.spawnT-.22)/.12)*(tm>e.spawnT+.22?.6:0),cheer:C.over&&C.won&&e.team==='A'&&!e.dead,
           atk:tm-e.atkT<aDur?(tm-e.atkT)/aDur:-1,cast:tm-e.castT<.55?(tm-e.castT)/.55:-1,
           flash:Math.max(clamp01(1-(tm-e.hitT)/.14),clamp01(1-(tm-e.reviveT)/.6)),
@@ -2066,12 +2069,12 @@ function render(){
     if(!k)return `<div class="card empty"></div>`;
     const d=UNITS[k];
     return `<button style="--d:${i*45}ms" class="card${S.dealt?' deal':''} k${d.cost}${S.gold<d.cost?' poor':''}${copies(k)>=2?' pair':''}" data-s="${i}"><div class="art"><canvas class="pc" data-key="${k}" data-zoom="1.25"></canvas></div>
-      <div class="trs">${traitsOf(k).map(t=>`<span class="${isActive(t)?'':'off'}${cnt[t]?' hot':''}" style="--tc:${TRAITS[t].col}" title="${t}">${ticon(t)}<b>${t}</b></span>`).join('')}</div>
+      <div class="trs">${traitsOf(k).filter(isActive).map(t=>`<span class="${cnt[t]?'hot':''}" style="--tc:${TRAITS[t].col}" title="${t}">${ticon(t)}<b>${t}</b></span>`).join('')}</div>
       <span class="ci" data-cinfo="${k}">i</span><span class="cst2">${coin}<b>${d.cost}</b></span><div class="foot"><span class="nm">${d.name.replace(/^(The|Brother|Mother|Sister|Ser|Lord|Doctor|Countess) /,'').split(' ')[0]}</span></div></button>`;
   }).join('');
   const su=sel&&S.phase==='plan'?unitAt(sel):null,sb=$('#selbar');
   if(su){const d=UNITS[su.key];sb.hidden=false;sb.innerHTML=`<div class="sp k${d.cost}"><canvas class="pc" data-key="${su.key}" data-zoom="1.3"></canvas></div>
-    <div class="mid"><div class="nm">${d.name}<span>${stars(su.star)}</span></div><div class="chips">${traitsOf(su.key).map(t=>`<span class="chip">${ticon(t)}${t}</span>`).join('')}</div>${d.ab?`<div class="ab"><b>${ABIL[d.ab][0]}</b> <span>${d.mana-(d.c==='Hexblade'?20:0)} mana</span> · ${ABIL[d.ab][1](Math.round(d.p*SPELL[su.star-1]))}</div>`:''}<div class="hint">Tap a hex or bench slot to move.</div></div>
+    <div class="mid"><div class="nm">${d.name}<span>${stars(su.star)}</span></div><div class="chips">${traitsOf(su.key).filter(isActive).map(t=>`<span class="chip">${ticon(t)}${t}</span>`).join('')}</div>${d.ab?`<div class="ab"><b>${ABIL[d.ab][0]}</b> <span>${d.mana-(d.c==='Hexblade'?20:0)} mana</span> · ${ABIL[d.ab][1](Math.round(d.p*SPELL[su.star-1]))}</div>`:''}<div class="hint">Tap a hex or bench slot to move.</div></div>
     <div class="btns"><button data-info>Info</button><button class="sell" id="sellBtn">Sell ${coin}${sellValue(su)}</button></div>`;paintPortraits(sb)}
   else if(selItem!=null&&S.phase==='plan'&&S.items[selItem]){const id=S.items[selItem];sb.hidden=false;
     sb.innerHTML=`<div class="ibig">${itemIcon(id,'lg')}</div><div class="mid"><div class="nm">${itemName(id)}</div><div class="ab">${itemDesc(id)}</div>
@@ -2151,7 +2154,7 @@ function renderSheet(){
   box.innerHTML=`<div class="sh-head"><div class="sh-port k${d.cost}"><canvas class="pc" data-key="${sheet.key}" data-zoom="1.3"></canvas></div>
     <div class="sh-id"><div class="sh-name">${d.name}<span class="st">${stars(sheet.star)}</span></div>
       <div class="sh-title">${[d.title,sheet.boss==='ashwalker'?'Final boss: revives twice, then explodes':sheet.boss==='mini'?`Mini boss · ${sheet.bossName||''}${S.act>=2?' · revives once':''}`:sheet.elite?'Elite':''].filter(Boolean).join(' · ')}</div>
-      <div class="chips">${traitsOf(sheet.key).map(t=>`<button class="chip${isActive(t)?'':' off'}" data-t="${t}" ${isActive(t)?'':'title="Not part of this contract"'}>${ticon(t)}${t}</button>`).join('')}<span class="chip" style="color:var(--gold)">${coin}${d.cost}</span></div></div>
+      <div class="chips">${traitsOf(sheet.key).filter(isActive).map(t=>`<button class="chip" data-t="${t}">${ticon(t)}${t}</button>`).join('')}<span class="chip" style="color:var(--gold)">${coin}${d.cost}</span></div></div>
     <button class="sh-x" data-close>✕</button></div>
   <div class="bars2"><div class="bar2${sheet.team==='B'?' foe':''}" id="shHp"><i style="width:${100*st.hp/st.max}%"></i><span class="num">${Math.round(st.hp)} / ${Math.round(st.max)}${st.shield>0?` (+${Math.round(st.shield)})`:''}</span></div>
     <div class="bar2 mp" id="shMp"><i style="width:${100*st.mana/st.maxMana}%"></i><span class="num">${d.ab?`${Math.round(st.mana)} / ${st.maxMana}`:'No ability'}</span></div></div>
@@ -2179,7 +2182,7 @@ function makeEnt(u,team,r,c,scale){
     face:team==='A'?1:-1,seed:Math.random()*10,oc:TRAITS[d.o[0]]?.col||'#c9a25a',cls:d.c,o:d.o,
     hp:d.hp*m,max:0,atk:d.atk*m,as:d.as,range:d.r,armor:d.ar+(d.c==='Vanguard'?15:0),mr:d.mr,mana:0,maxMana:d.mana-(d.c==='Hexblade'?20:0),
     ab:d.ab,p:d.p*SPELL[u.star-1]*(u.elite?1.3:1),sp:1,shield:0,cd:.45+Math.random()*.4,spawnT:Math.random()*.16,mv:0,target:null,blocked:0,dead:false,
-    kills:0,hits:0,stunUntil:0,rageUntil:0,wt:3,lives:u.lives||0,bossName:u.bossName,burns:[],shred:5,mrShred:0,healPct:.04,interceptRed:1,hexMana:0,items:(u.items||[]).slice(),it:{}};
+    kills:0,hits:0,stunUntil:0,rageUntil:0,wt:3,lives:u.lives||0,bossName:u.bossName,burns:[],shred:5,mrShred:0,healPct:.04,hexMana:0,items:(u.items||[]).slice(),it:{}};
 }
 function applyItems(e){
   let atkP=0,asP=0,spP=0;
@@ -2207,7 +2210,7 @@ function applyTraits(ents,cnt){
     if(c==='Vanguard'){const add=[0,25,60,60][T('Vanguard')];e.armor+=add;e.mr+=add}
     if(vg3){e.armor+=25;e.mr+=25}
     if(c==='Ravager'){e.as*=[1,1.25,1.5,1.85][T('Ravager')];e.killHeal=[0,0,.25,.5][T('Ravager')]}
-    if(c==='Sentinel'){const t=T('Sentinel');e.interceptRed=[1,.6,.35,.2][t];if(t>=2)e.atk*=1.25;e.twin=t>=3}
+    {const t=T('Sentinel');if(e.range>1&&t>=1){e.as*=[1,1.15,1.35,1.6][t];if(t>=2)e.range+=1}if(c==='Sentinel'){e.marker=true;e.twin=t>=3}}
     if(c==='Breaker'){const t=T('Breaker');e.shred=[5,8,12,18][t];e.mrShred=[0,0,6,12][t]}
     if(c==='Warden'){e.healPct=[.04,.07,.1,.14][T('Warden')];e.healR=T('Warden')>=3?2:1}
     if(c==='Specter'){const t=T('Specter');e.atk*=[1,1.25,1.5,1.85][t];if(t>=2)e.critC=.3;e.execute=t>=3}
@@ -2293,7 +2296,6 @@ function step(dt){
   C.pend=C.pend.filter(h=>{if(h.at<=tm){h.fn();return false}return true});
   C.proj=C.proj.filter(p=>{if(p.t0+p.dur<=tm){
     let t=p.t,red=1;
-    if(t&&!t.dead&&t.cls!=='Sentinel'){const g=alive(t.team).find(a=>a.cls==='Sentinel'&&a!==t&&dist(a,t)<=1&&a.stunUntil<=tm);if(g){t=g;red=g.interceptRed;fxText(g,'Intercept',g.oc,11)}}
     hit(p.src,t,p.amt*red,p.type,!p.big,p.crit);if(p.onHit&&t&&!t.dead)p.onHit(t);return false}return true});
   C.fx=C.fx.filter(f=>tm-f.t0<f.dur);
   for(const e of C.ents){
@@ -2345,6 +2347,7 @@ function hit(src,t,amt,type,basic,crit){
   if(!basic&&src&&t.abilRes)amt*=t.abilRes;
   if(src&&src.fsk&&src.fsk.n)amt*=1+src.fsk.n*src.fsk.rate;
   if(src&&src.writ&&(t.elite||t.boss))amt*=1.2;
+  if(src&&src.range>1&&t.markUntil>C.time&&t.markTeam===src.team)amt*=1.15;
   if(basic&&src&&t.cloak){t.cloak=false;fxText(t,'Dodge','#c8d8ff',11);return 0}
   if(basic&&src&&((t.it.pale&&Math.random()<.25)||(t.dodge&&Math.random()<t.dodge))){fxText(t,'Dodge','#c8d8ff',11);
     if(t.counter&&!src.dead&&!t.dead&&t.stunUntil<=C.time){fxAt('slash',src,.25,'#a8b8ff');applyRaw(src,mitigate(src,t.atk,'phys'),t,'phys')}return 0}
@@ -2356,6 +2359,7 @@ function hit(src,t,amt,type,basic,crit){
   if(t.share){const adj=alive(t.team).filter(a=>a!==t&&dist(a,t)<=1);if(adj.length){const s=d*.2;d-=s;adj.forEach(a=>applyRaw(a,s/adj.length,src,null))}}
   applyRaw(t,d,src,type,crit);if(type){if(crit){sfx.crit();V.shake=Math.max(V.shake||0,1.6)}else sfx.hit()}
   if(basic&&src&&!t.dead){
+    if(src.marker){if(!(t.markUntil>C.time))fxText(t,'Marked','#b8c8ff',10);t.markUntil=C.time+3;t.markTeam=src.team}
     if(src.cls==='Breaker'){t.armor=Math.max(0,t.armor-src.shred);t.mr=Math.max(0,t.mr-src.mrShred)}
     if(src.stoner){src.hits++;if(src.hits%3===0)stun(t,src.stoneImmune?3:1.5)}
     if(src.rotter&&!t.dead)addRot(src,t,src.rotter);
@@ -2718,7 +2722,7 @@ function bossReward(){
     ${offers.map(r=>`<button class="aug irow2" data-reward="${r.id}">${relicIcon(r.id)}<span><b>${r.name}</b><span>${r.desc}</span></span></button>`).join('')}`);
 }
 function merchant(){
-  if(!S.offer||S.offer.at!==S.at)S.offer={at:S.at,relics:relicOffers(3).map(r=>({id:r.id,price:rnd([6,7,8,9,10])})),vet:{key:rnd(poolCost(2,1)),price:6,sold:false},comp:{id:rnd(Object.keys(COMP)),price:4,sold:false}};
+  const oid=`m${S.act}:${S.at}`;if(!S.offer||S.offer.at!==oid)S.offer={at:oid,relics:relicOffers(3).map(r=>({id:r.id,price:rnd([6,7,8,9,10])})),vet:{key:rnd(poolCost(2,1)),price:6,sold:false},comp:{id:rnd(Object.keys(COMP)),price:4,sold:false}};
   const o=S.offer;
   modal(`<div class="eyebrow">Merchant · ${coin} ${S.gold} gold</div><h2>A Pedlar of Relics</h2><p>Buying a relic also unlocks it in your vault for future contracts.</p>
     ${o.relics.map(x=>{const r=RELICS.find(z=>z.id===x.id),own=S.relics.includes(x.id);return `<button class="aug irow2" data-buyrelic="${x.id}" ${own||S.gold<x.price?'disabled':''}>${relicIcon(r.id)}<span><b>${r.name}<span class="price">${own?'Bought':`${coin} ${x.price}`}</span></b><span>${r.desc}</span></span></button>`}).join('')}
@@ -2761,7 +2765,7 @@ function crisis(again){
     ${['a','b'].map(k=>`<button class="aug" data-ev="${k}" ${E[k][2]()?'':'disabled'}><b>${E[k][0]}</b><span>${E[k][1]}</span></button>`).join('')}`);
 }
 function smithy(){const leave='<button class="linkbtn" data-leave>Leave empty-handed</button>';
-  if(!S.offer||S.offer.at!==S.at)S.offer={at:S.at,smith:shuffle(Object.keys(COMP)).slice(0,3),item:S.act>=2?{id:rnd(FULL_KEYS),price:7}:null};
+  const oid=`f${S.act}:${S.at}`;if(!S.offer||S.offer.at!==oid)S.offer={at:oid,smith:shuffle(Object.keys(COMP)).slice(0,3),item:S.act>=2?{id:rnd(FULL_KEYS),price:7}:null};
   const o=S.offer;
   modal(`<div class="eyebrow">Smithy · ${coin} ${S.gold} gold</div><h2>The Wandering Smith</h2><p>An old armorer works a fire of broken swords. Take one piece of his work.</p>
     ${o.smith.map(c=>`<button class="aug irow2" data-smith="${c}">${itemIcon(c)}<span><b>${COMP[c].name}<span class="price">Free</span></b><span>${itemStats(c)}</span></span></button>`).join('')}
