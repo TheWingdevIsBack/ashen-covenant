@@ -297,6 +297,7 @@ button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 #menuBtn{background:var(--panel);border:1px solid var(--line);border-radius:4px;width:32px;height:30px;display:grid;place-items:center;color:var(--bone);padding:0}
 #ver{position:fixed;right:calc(6px + env(safe-area-inset-right,0px));bottom:calc(3px + env(safe-area-inset-bottom,0px));z-index:20;font:700 9px/1 Silkscreen,monospace;color:#8a7e76;background:rgba(18,13,11,.72);padding:3px 5px;border-radius:3px;pointer-events:none;letter-spacing:.02em}
 #ver a{color:var(--gold);pointer-events:auto}
+#ver.upd{font-size:11px;padding:6px 8px;background:rgba(40,26,14,.95);border:1px solid var(--gold);color:#e8dfcf}
 #menu{position:fixed;inset:0;z-index:15;background:#120d0b;display:flex;flex-direction:column;overflow:hidden}
 #menuCv{position:absolute;inset:0 0 auto 0;width:100%;height:58%;image-rendering:pixelated}
 #menu::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,13,11,0) 30%,rgba(18,13,11,.6) 50%,#120d0b 60%);pointer-events:none}
@@ -512,7 +513,7 @@ button:active:not(:disabled){transform:translateY(1px);filter:brightness(1.15)}
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
 </head>
 <body>
-<script>window.ASHEN_VERSIONS=[{"v": "0.19.2", "date": "2026-10-11", "notes": "Sentinel reworked: Sentinels mark what they shoot, and the trait makes all your ranged units faster and longer-reaching", "latest": true}, {"v": "0.19.1", "date": "2026-10-11", "notes": "Trait names are back on shop cards", "commit": "65aa9cc"}, {"v": "0.19.0", "date": "2026-10-11", "notes": "29 new units (110 in all): every contract can now reach the top tier of each of its origins and classes", "commit": "162ab82"}, {"v": "0.18.0", "date": "2026-10-11", "notes": "Three new contracts from the design doc: Roads of the Drowned, The Festering Road and Siege of the Cinder Throne", "commit": "0074adf"}, {"v": "0.17.0", "date": "2026-10-11", "notes": "Main menu with Continue, version history and sound settings", "commit": "57f3a6a"}, {"v": "0.16.0", "date": "2026-10-11", "commit": "d0f200d", "notes": "Covenant origin, one-screen map and flatter hexes"}, {"v": "0.15.0", "date": "2026-10-11", "commit": "817d9aa", "notes": "First web release: pixel-art company, items and the three-act campaign"}]</script>
+<script>window.ASHEN_VERSIONS=[{"v": "0.19.3", "date": "2026-10-11", "notes": "The game always fetches the newest release, and offers a one-tap update if an old copy is showing", "latest": true}, {"v": "0.19.2", "date": "2026-10-11", "notes": "Sentinel reworked: Sentinels mark what they shoot, and the trait makes all your ranged units faster and longer-reaching", "commit": "61c8fcd"}, {"v": "0.19.1", "date": "2026-10-11", "notes": "Trait names are back on shop cards", "commit": "65aa9cc"}, {"v": "0.19.0", "date": "2026-10-11", "notes": "29 new units (110 in all): every contract can now reach the top tier of each of its origins and classes", "commit": "162ab82"}, {"v": "0.18.0", "date": "2026-10-11", "notes": "Three new contracts from the design doc: Roads of the Drowned, The Festering Road and Siege of the Cinder Throne", "commit": "0074adf"}, {"v": "0.17.0", "date": "2026-10-11", "notes": "Main menu with Continue, version history and sound settings", "commit": "57f3a6a"}, {"v": "0.16.0", "date": "2026-10-11", "commit": "d0f200d", "notes": "Covenant origin, one-screen map and flatter hexes"}, {"v": "0.15.0", "date": "2026-10-11", "commit": "817d9aa", "notes": "First web release: pixel-art company, items and the three-act campaign"}]</script>
 
 
 <div id="app">
@@ -563,8 +564,9 @@ button:active:not(:disabled){transform:translateY(1px);filter:brightness(1.15)}
 
 <script>
 // ================= VERSION =================
-const GAME_VERSION='0.19.2',S_VERSION=9;
+const GAME_VERSION='0.19.3',S_VERSION=9;
 const CHANGELOG={
+  '0.19.3':['The game always fetches the newest release, and offers a one-tap update if an old copy is showing'],
   '0.19.2':['Sentinel reworked: Sentinels mark what they shoot, and the trait makes all your ranged units faster and longer-reaching','Traits that are not part of the current contract are hidden instead of crossed out','Fixed a Merchant or Smithy sometimes failing to open in later acts'],
   '0.19.1':['Trait names are back on shop cards','The game fits the visible screen on every phone, with no scrolling during fight prep'],
   '0.19.0':['29 new units (110 in all): every contract can now reach the top tier of each of its origins and classes','Drag units between bench and field, or onto the shop to sell them for their real value; lock the shop','Heat levels for beaten contracts, a Codex of every unit, trait, item and relic, settings and a procedural score','Relics fit the contract you are on, with 12 new relics and icons for all of them; Forsaken has its real trait','Smithy nodes, contract-specific crises, boss introductions and health bars, and a run summary','A visual overhaul: new panels, cards, map, menu and battle text'],
@@ -2055,7 +2057,7 @@ function render(){
     return `<span class="pip${last?' boss':t==='elite'?' elite':t&&t!=='battle'?' round':''}${t?' done':''}${t&&i===S.path.length-1?' cur':''}"></span>`}).join('');
   $('#mapBtn').hidden=!S.map;
   $('#relBtn').hidden=!S.relics.length;$('#relBtn').innerHTML=S.relics.slice(-3).map(id=>relicIcon(id,'xs')).join('')+(S.relics.length>3?`<b>+${S.relics.length-3}</b>`:'');
-  $('#ver').innerHTML=`v${GAME_VERSION}${ARCHIVED?` · archived · <a href="../../">latest</a>`:''}`;
+  if(!$('#ver').classList.contains('upd'))$('#ver').innerHTML=`v${GAME_VERSION}${ARCHIVED?` · archived · <a href="../../">latest</a>`:''}`;
   saveRun();
   if(0)$('#sfxBtn').innerHTML=`<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M4 9h4l5-4v14l-5-4H4z"/>${SFX.on?'<path fill="none" stroke="currentColor" stroke-width="2" d="M16 9a4 4 0 0 1 0 6M18.5 6.5a7.5 7.5 0 0 1 0 11"/>':'<path fill="none" stroke="currentColor" stroke-width="2" d="M16 9l5 6M21 9l-5 6"/>'}</svg>`;
   {const it=Math.min(Math.floor(S.gold/10),maxInterest()),sg=streakGold(),st=S.streak||0;
@@ -3021,11 +3023,21 @@ function start(data){
   else{newRun();clearRunIfStale();openMenu(false)}
   requestAnimationFrame(frame);
 }
+// On the live site, check whether a newer release exists and offer a one-tap update.
+const vNum=v=>v.split('.').map(Number).reduce((a,b)=>a*1000+b,0);
+function checkUpdate(){
+  if(ARCHIVED||!location.hostname.endsWith('github.io'))return;
+  fetch('versions.json?t='+Date.now(),{cache:'no-store'}).then(r=>r.json()).then(list=>{
+    const latest=(list||[]).map(x=>x.v).sort((a,b)=>vNum(b)-vNum(a))[0];
+    if(latest&&vNum(latest)>vNum(GAME_VERSION)){const el=$('#ver');el.classList.add('upd');el.innerHTML=`v${GAME_VERSION} · <a href="#" id="updNow">update to v${latest}</a>`;
+      $('#updNow').onclick=async e=>{e.preventDefault();try{if(window.caches){const ks=await caches.keys();await Promise.all(ks.map(k=>caches.delete(k)))}const rs=navigator.serviceWorker?await navigator.serviceWorker.getRegistrations():[];await Promise.all(rs.map(r=>r.update()))}catch(x){}location.reload()}}
+  }).catch(()=>{})}
+setTimeout(checkUpdate,1500);document.addEventListener('visibilitychange',()=>{if(!document.hidden)checkUpdate()});
 function clearRunIfStale(){const d=store.get(SAVE_KEY,null);if(d&&(!d.S||d.S.v!==S_VERSION))clearRun()}
 window.claude?.hot?.snapshot?.(()=>({S:S&&S.phase!=='combat'?S:null}));
 window.claude?.hot?.ready?window.claude.hot.ready(start):start(window.claude?.hot?.data??{});
 </script>
 
-<script>if('serviceWorker' in navigator&&location.protocol.startsWith('http')&&!/\/versions\//.test(location.pathname))navigator.serviceWorker.register('sw.js').catch(()=>{})</script>
+<script>if('serviceWorker' in navigator&&location.protocol.startsWith('http')&&!/\/versions\//.test(location.pathname))navigator.serviceWorker.register('sw.js',{updateViaCache:'none'}).then(r=>r.update()).catch(()=>{})</script>
 </body>
 </html>
