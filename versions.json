@@ -1,9 +1,15 @@
 [
  {
+  "v": "0.19.0",
+  "date": "2026-10-11",
+  "notes": "29 new units (110 in all): every contract can now reach the top tier of each of its origins and classes",
+  "latest": true
+ },
+ {
   "v": "0.18.0",
   "date": "2026-10-11",
   "notes": "Three new contracts from the design doc: Roads of the Drowned, The Festering Road and Siege of the Cinder Throne",
-  "latest": true
+  "commit": "0074adf"
  },
  {
   "v": "0.17.0",
