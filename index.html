@@ -523,11 +523,14 @@ button:active:not(:disabled){transform:translateY(1px);filter:brightness(1.15)}
 @keyframes tuthi{50%{outline-color:rgba(255,211,106,.25);box-shadow:0 0 18px rgba(255,200,90,.45)}}
 .aug.con.tut{border-color:#7dbb7a}
 @media (prefers-reduced-motion:reduce){.tut-hi,#coach.pop{animation:none}}
+#coachBlock{position:fixed;inset:0;z-index:38;pointer-events:auto;touch-action:none}
+#coachSpot{position:fixed;border-radius:10px;box-shadow:0 0 0 9999px rgba(8,5,4,.62),0 0 0 2px #ffd36a,0 0 22px rgba(255,200,90,.5);pointer-events:none;transition:all .25s ease}
+#coach{z-index:40}
 </style>
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
 </head>
 <body>
-<script>window.ASHEN_VERSIONS=[{"v": "0.20.0", "date": "2026-10-11", "notes": "Boot Camp: a two-act tutorial contract with a tip for every part of the game", "latest": true}, {"v": "0.19.3", "date": "2026-10-11", "notes": "The game always fetches the newest release, and offers a one-tap update if an old copy is showing", "commit": "62c85a8"}, {"v": "0.19.2", "date": "2026-10-11", "notes": "Sentinel reworked: Sentinels mark what they shoot, and the trait makes all your ranged units faster and longer-reaching", "commit": "61c8fcd"}, {"v": "0.19.1", "date": "2026-10-11", "notes": "Trait names are back on shop cards", "commit": "65aa9cc"}, {"v": "0.19.0", "date": "2026-10-11", "notes": "29 new units (110 in all): every contract can now reach the top tier of each of its origins and classes", "commit": "162ab82"}, {"v": "0.18.0", "date": "2026-10-11", "notes": "Three new contracts from the design doc: Roads of the Drowned, The Festering Road and Siege of the Cinder Throne", "commit": "0074adf"}, {"v": "0.17.0", "date": "2026-10-11", "notes": "Main menu with Continue, version history and sound settings", "commit": "57f3a6a"}, {"v": "0.16.0", "date": "2026-10-11", "commit": "d0f200d", "notes": "Covenant origin, one-screen map and flatter hexes"}, {"v": "0.15.0", "date": "2026-10-11", "commit": "817d9aa", "notes": "First web release: pixel-art company, items and the three-act campaign"}]</script>
+<script>window.ASHEN_VERSIONS=[{"v": "0.20.1", "date": "2026-10-11", "notes": "Boot Camp tips now pause the game: the screen dims around what the tip points at, and you tap Got it to continue", "latest": true}, {"v": "0.20.0", "date": "2026-10-11", "notes": "Boot Camp: a two-act tutorial contract with a tip for every part of the game", "commit": "19bfdf8"}, {"v": "0.19.3", "date": "2026-10-11", "notes": "The game always fetches the newest release, and offers a one-tap update if an old copy is showing", "commit": "62c85a8"}, {"v": "0.19.2", "date": "2026-10-11", "notes": "Sentinel reworked: Sentinels mark what they shoot, and the trait makes all your ranged units faster and longer-reaching", "commit": "61c8fcd"}, {"v": "0.19.1", "date": "2026-10-11", "notes": "Trait names are back on shop cards", "commit": "65aa9cc"}, {"v": "0.19.0", "date": "2026-10-11", "notes": "29 new units (110 in all): every contract can now reach the top tier of each of its origins and classes", "commit": "162ab82"}, {"v": "0.18.0", "date": "2026-10-11", "notes": "Three new contracts from the design doc: Roads of the Drowned, The Festering Road and Siege of the Cinder Throne", "commit": "0074adf"}, {"v": "0.17.0", "date": "2026-10-11", "notes": "Main menu with Continue, version history and sound settings", "commit": "57f3a6a"}, {"v": "0.16.0", "date": "2026-10-11", "commit": "d0f200d", "notes": "Covenant origin, one-screen map and flatter hexes"}, {"v": "0.15.0", "date": "2026-10-11", "commit": "817d9aa", "notes": "First web release: pixel-art company, items and the three-act campaign"}]</script>
 
 
 <div id="app">
@@ -575,12 +578,14 @@ button:active:not(:disabled){transform:translateY(1px);filter:brightness(1.15)}
 </div>
 <div id="ver" class="num"></div>
 <div id="overlay" hidden><div class="modal" id="modal"></div></div>
+<div id="coachBlock" hidden><div id="coachSpot"></div></div>
 <div id="coach" hidden></div>
 
 <script>
 // ================= VERSION =================
-const GAME_VERSION='0.20.0',S_VERSION=9;
+const GAME_VERSION='0.20.1',S_VERSION=9;
 const CHANGELOG={
+  '0.20.1':['Boot Camp tips now pause the game: the screen dims around what the tip points at, and you tap Got it to continue'],
   '0.20.0':['Boot Camp: a two-act tutorial contract with a tip for every part of the game','Larger, livelier characters: they blink, shout, fidget, and catch the light on armour and blades','Weapon swing trails, hit sparks, hitstop, camera punches, dash afterimages and slow motion on the final blow','Fallen units burn away, big spells scorch the ground, and spells, projectiles and fire light the battlefield','Rain, spores, ash-snow and ground mist by region; star auras on ★★ and ★★★ units'],
   '0.19.3':['The game always fetches the newest release, and offers a one-tap update if an old copy is showing'],
   '0.19.2':['Sentinel reworked: Sentinels mark what they shoot, and the trait makes all your ranged units faster and longer-reaching','Traits that are not part of the current contract are hidden instead of crossed out','Fixed a Merchant or Smithy sometimes failing to open in later acts'],
@@ -1618,7 +1623,7 @@ function drawFigure(ctx,key,p){
 
 // ================= STATE =================
 let S,sel=null,C=null,pick=[],sheet=null,selItem=null;
-function newRun(){if(coachStep){coachStep=null;const c=$('#coach');if(c)c.hidden=true;document.querySelectorAll('.tut-hi').forEach(x=>x.classList.remove('tut-hi'))}
+function newRun(){if(coachStep){coachStep=null;const c=$('#coach');if(c)c.hidden=true;$('#coachBlock').hidden=true;document.querySelectorAll('.tut-hi').forEach(x=>x.classList.remove('tut-hi'))}
   S={v:9,run:RUN.id,hp:30,gold:10,level:3,xp:0,round:1,board:{},bench:Array(BENCH).fill(null),shop:[],enemy:[],relics:[],uid:1,phase:'map',act:1,region:null,map:null,at:null,trail:[],path:[],node:null,seen:[],fought:[],boss:null,items:[rnd(Object.keys(COMP))]};
   S.board[K(2,3)]={uid:S.uid++,key:rnd(poolCost(1)),star:1};S.stats={};
   rollShop();sel=null;C=null;sheet=null;render();
@@ -2949,8 +2954,13 @@ function showCoach(st){
   // place the card on the side of the screen away from what it points at
   let top=true;if(tg){tg.classList.add('tut-hi');const r=tg.getBoundingClientRect();top=(r.top+r.bottom)/2>window.innerHeight*.5;if(st.at==='#stage'||st.at==='#mvWrap'||st.at==='#modal')top=false}
   el.classList.toggle('bottom',!top);el.classList.remove('pop');void el.offsetWidth;el.classList.add('pop');sfx.tap();
+  $('#coachBlock').hidden=false;placeSpot();
 }
-function hideCoach(off){if(!coachStep)return;S.tut.done.push(coachStep.id);if(off)S.tut.off=true;coachStep=null;$('#coach').hidden=true;document.querySelectorAll('.tut-hi').forEach(x=>x.classList.remove('tut-hi'));saveRun();setTimeout(tutCheck,350)}
+function placeSpot(){const sp=$('#coachSpot'),tg=coachStep&&coachStep.at&&$(coachStep.at);
+  if(!tg){sp.style.cssText='left:50%;top:50%;width:0;height:0';return}
+  const r=tg.getBoundingClientRect(),m=6;sp.style.cssText=`left:${r.left-m}px;top:${r.top-m}px;width:${r.width+m*2}px;height:${r.height+m*2}px`}
+window.addEventListener('resize',()=>{if(coachStep)placeSpot()});
+function hideCoach(off){if(!coachStep)return;S.tut.done.push(coachStep.id);if(off)S.tut.off=true;coachStep=null;$('#coach').hidden=true;$('#coachBlock').hidden=true;document.querySelectorAll('.tut-hi').forEach(x=>x.classList.remove('tut-hi'));saveRun();setTimeout(tutCheck,350)}
 setInterval(()=>{if(coachStep&&!S.tut)hideCoach();tutCheck()},600);
 
 // ================= LOOP & INPUT =================
@@ -3042,7 +3052,7 @@ function renderMenuCanvas(){
 let lastTs=0,sheetTick=0;
 function frame(ts){
   const dt=lastTs?Math.min(.1,(ts-lastTs)/1000):0;lastTs=ts;V.t+=dt;
-  if(S&&S.phase==='combat'&&C){
+  if(S&&S.phase==='combat'&&C&&!coachStep){
     if(C.freeze>0)C.freeze-=dt;
     else if(!C.over){const slow=C.slow>0;if(slow)C.slow-=dt;C.acc+=dt*C.speed*(slow?.28:1);while(C.acc>=.05&&!C.over){step(.05);C.acc-=.05}}
     else{C.time+=dt*C.speed;C.after+=dt;
@@ -3063,7 +3073,7 @@ function hexUnder(x,y){let cell=null,bd=1e9;for(const c of V.cells){const d=Math
 // ---- drag and drop: drag a unit between bench and field, or onto the shop to sell it ----
 const DRAG={p:null,suppress:0};
 const dragSuppressed=()=>performance.now()-DRAG.suppress<350;
-function dragStart(ev,loc){if(!S||S.phase!=='plan'||selItem!=null||V.menuMode)return;const u=unitAt(loc);if(!u)return;DRAG.p={x:ev.clientX,y:ev.clientY,loc,u,id:ev.pointerId,on:false}}
+function dragStart(ev,loc){if(coachStep||!S||S.phase!=='plan'||selItem!=null||V.menuMode)return;const u=unitAt(loc);if(!u)return;DRAG.p={x:ev.clientX,y:ev.clientY,loc,u,id:ev.pointerId,on:false}}
 function dragEnd(){const d=DRAG.p;DRAG.p=null;if(d&&d.g)d.g.remove();$('#shopRow').classList.remove('sellzone');V.drag=null;V.dragHex=null}
 document.addEventListener('pointerdown',ev=>{if(!S||S.phase!=='plan')return;
   const slot=ev.target.closest&&ev.target.closest('.slot');if(slot)return dragStart(ev,{z:'n',i:+slot.dataset.i});
@@ -3108,7 +3118,7 @@ $('#cv').addEventListener('click',ev=>{
   closeSheet();
 });
 document.addEventListener('click',ev=>{
-  const t=ev.target;if(dragSuppressed()&&t.closest&&(t.closest('.slot')||t.closest('#shopRow')))return;
+  const t=ev.target;if(coachStep&&!(t.closest&&t.closest('#coach')))return;if(dragSuppressed()&&t.closest&&(t.closest('.slot')||t.closest('#shopRow')))return;
   if(t.closest('#cv'))return;
   if(t.closest('[data-tutok]'))return hideCoach(false);
   if(t.closest('[data-tutoff]'))return hideCoach(true);
@@ -3181,7 +3191,7 @@ window.addEventListener('resize',queueRefit);
 if(window.visualViewport)window.visualViewport.addEventListener('resize',queueRefit);
 window.addEventListener('orientationchange',queueRefit);
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>{if(S)queueRefit()});
-document.addEventListener('keydown',ev=>{if(!S||V.menuMode||!$('#overlay').hidden||ev.metaKey||ev.ctrlKey)return;const k=ev.key.toLowerCase();
+document.addEventListener('keydown',ev=>{if(coachStep){if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();hideCoach(false)}return}if(!S||V.menuMode||!$('#overlay').hidden||ev.metaKey||ev.ctrlKey)return;const k=ev.key.toLowerCase();
   if(k==='d')reroll();else if(k==='f')buyXp();else if(k==='l'&&S.phase==='plan')toggleLock();else if(k===' '||k==='enter'){if(S.phase==='plan'){ev.preventDefault();startCombat()}}
   else if(k==='m')showMap(S.phase!=='map');else if(k==='escape'){closeSheet();sel=null;selItem=null;render()}
   else if(/^[1-5]$/.test(k)&&S.phase==='plan')buy(+k-1)});

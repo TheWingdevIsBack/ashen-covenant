@@ -1,9 +1,15 @@
 [
  {
+  "v": "0.20.1",
+  "date": "2026-10-11",
+  "notes": "Boot Camp tips now pause the game: the screen dims around what the tip points at, and you tap Got it to continue",
+  "latest": true
+ },
+ {
   "v": "0.20.0",
   "date": "2026-10-11",
   "notes": "Boot Camp: a two-act tutorial contract with a tip for every part of the game",
-  "latest": true
+  "commit": "19bfdf8"
  },
  {
   "v": "0.19.3",
