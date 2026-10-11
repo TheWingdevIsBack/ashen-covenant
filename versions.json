@@ -1,9 +1,15 @@
 [
  {
+  "v": "0.21.1",
+  "date": "2026-10-11",
+  "notes": "The Ashward March ramps up more gently",
+  "latest": true
+ },
+ {
   "v": "0.21.0",
   "date": "2026-10-11",
   "notes": "Everything moves by dragging: drag items onto units to equip them, and drag units to place, swap or sell them",
-  "latest": true
+  "commit": "6f61b5f"
  },
  {
   "v": "0.20.2",

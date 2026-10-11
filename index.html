@@ -541,7 +541,7 @@ button:active:not(:disabled){transform:translateY(1px);filter:brightness(1.15)}
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
 </head>
 <body>
-<script>window.ASHEN_VERSIONS=[{"v": "0.21.0", "date": "2026-10-11", "notes": "Everything moves by dragging: drag items onto units to equip them, and drag units to place, swap or sell them", "latest": true}, {"v": "0.20.2", "date": "2026-10-11", "notes": "The interface stays clear of the iPhone notch and camera cutout on every screen", "commit": "6639abb"}, {"v": "0.20.1", "date": "2026-10-11", "notes": "Boot Camp tips now pause the game: the screen dims around what the tip points at, and you tap Got it to continue", "commit": "70578de"}, {"v": "0.20.0", "date": "2026-10-11", "notes": "Boot Camp: a two-act tutorial contract with a tip for every part of the game", "commit": "19bfdf8"}, {"v": "0.19.3", "date": "2026-10-11", "notes": "The game always fetches the newest release, and offers a one-tap update if an old copy is showing", "commit": "62c85a8"}, {"v": "0.19.2", "date": "2026-10-11", "notes": "Sentinel reworked: Sentinels mark what they shoot, and the trait makes all your ranged units faster and longer-reaching", "commit": "61c8fcd"}, {"v": "0.19.1", "date": "2026-10-11", "notes": "Trait names are back on shop cards", "commit": "65aa9cc"}, {"v": "0.19.0", "date": "2026-10-11", "notes": "29 new units (110 in all): every contract can now reach the top tier of each of its origins and classes", "commit": "162ab82"}, {"v": "0.18.0", "date": "2026-10-11", "notes": "Three new contracts from the design doc: Roads of the Drowned, The Festering Road and Siege of the Cinder Throne", "commit": "0074adf"}, {"v": "0.17.0", "date": "2026-10-11", "notes": "Main menu with Continue, version history and sound settings", "commit": "57f3a6a"}, {"v": "0.16.0", "date": "2026-10-11", "commit": "d0f200d", "notes": "Covenant origin, one-screen map and flatter hexes"}, {"v": "0.15.0", "date": "2026-10-11", "commit": "817d9aa", "notes": "First web release: pixel-art company, items and the three-act campaign"}]</script>
+<script>window.ASHEN_VERSIONS=[{"v": "0.21.1", "date": "2026-10-11", "notes": "The Ashward March ramps up more gently", "latest": true}, {"v": "0.21.0", "date": "2026-10-11", "notes": "Everything moves by dragging: drag items onto units to equip them, and drag units to place, swap or sell them", "commit": "6f61b5f"}, {"v": "0.20.2", "date": "2026-10-11", "notes": "The interface stays clear of the iPhone notch and camera cutout on every screen", "commit": "6639abb"}, {"v": "0.20.1", "date": "2026-10-11", "notes": "Boot Camp tips now pause the game: the screen dims around what the tip points at, and you tap Got it to continue", "commit": "70578de"}, {"v": "0.20.0", "date": "2026-10-11", "notes": "Boot Camp: a two-act tutorial contract with a tip for every part of the game", "commit": "19bfdf8"}, {"v": "0.19.3", "date": "2026-10-11", "notes": "The game always fetches the newest release, and offers a one-tap update if an old copy is showing", "commit": "62c85a8"}, {"v": "0.19.2", "date": "2026-10-11", "notes": "Sentinel reworked: Sentinels mark what they shoot, and the trait makes all your ranged units faster and longer-reaching", "commit": "61c8fcd"}, {"v": "0.19.1", "date": "2026-10-11", "notes": "Trait names are back on shop cards", "commit": "65aa9cc"}, {"v": "0.19.0", "date": "2026-10-11", "notes": "29 new units (110 in all): every contract can now reach the top tier of each of its origins and classes", "commit": "162ab82"}, {"v": "0.18.0", "date": "2026-10-11", "notes": "Three new contracts from the design doc: Roads of the Drowned, The Festering Road and Siege of the Cinder Throne", "commit": "0074adf"}, {"v": "0.17.0", "date": "2026-10-11", "notes": "Main menu with Continue, version history and sound settings", "commit": "57f3a6a"}, {"v": "0.16.0", "date": "2026-10-11", "commit": "d0f200d", "notes": "Covenant origin, one-screen map and flatter hexes"}, {"v": "0.15.0", "date": "2026-10-11", "commit": "817d9aa", "notes": "First web release: pixel-art company, items and the three-act campaign"}]</script>
 
 
 <div id="app">
@@ -594,8 +594,9 @@ button:active:not(:disabled){transform:translateY(1px);filter:brightness(1.15)}
 
 <script>
 // ================= VERSION =================
-const GAME_VERSION='0.21.0',S_VERSION=9;
+const GAME_VERSION='0.21.1',S_VERSION=9;
 const CHANGELOG={
+  '0.21.1':['The Ashward March ramps up more gently','Items drop about twice as often: more components from wins, a bonus from elites and mini bosses, and the odd consolation drop after a loss'],
   '0.21.0':['Everything moves by dragging: drag items onto units to equip them, and drag units to place, swap or sell them','Tapping a unit, on the field or the bench, now just opens its card; tapping an item shows what it does','Your bench shows your reserves as living figures that idle and pace in their slots'],
   '0.20.2':['The interface stays clear of the iPhone notch and camera cutout on every screen','A component now combines with a component a unit already holds even when a finished item sits after it','Unequip any item from the unit info card'],
   '0.20.1':['Boot Camp tips now pause the game: the screen dims around what the tip points at, and you tap Got it to continue'],
@@ -615,7 +616,7 @@ const ARCHIVED=/\/versions\/[^/]+\/?/.test(location.pathname);
 const SITE='https://thewingdevisback.github.io/ashen-covenant/';
 // ================= RUN 1 DATA =================
 const RUNS=[
-  {id:0,name:'The Ashward March',blurb:'A desperate push through the first burned territories.',origins:['Ashborn','Ironpact','Stoneblood','Forsaken','Covenant'],stars:1,acts:[['ashen','pact'],['ashen','pact','hollows']],final:'pyre',boss:{key:'ashwalker',name:'The Ashwalker',lives:2,desc:'Revives twice; its third death explodes across the field.'},scale:0},
+  {id:0,name:'The Ashward March',blurb:'A desperate push through the first burned territories.',origins:['Ashborn','Ironpact','Stoneblood','Forsaken','Covenant'],stars:1,grow:.54,acts:[['ashen','pact'],['ashen','pact','hollows']],final:'pyre',boss:{key:'ashwalker',name:'The Ashwalker',lives:2,desc:'Revives twice; its third death explodes across the field.'},scale:0},
   {id:1,name:'Roads of the Drowned',blurb:'Contract into the flooded ruins of the old mage city.',origins:['Hollow','Wraithkin','Duskbound','Forsaken'],stars:2,acts:[['spires','pact'],['spires','pact','drowned']],final:'spire',boss:{key:'duskmother',name:'The Duskmother',lives:0,desc:'Drinks the blood she spills; at half health she vanishes into dusk and returns healed.'},scale:1},
   {id:2,name:'The Festering Road',blurb:'Into the rot. Bring fire.',origins:['Plagueborn','Verdant','Hollow','Wraithkin'],stars:3,acts:[['festering','maw'],['festering','maw','spires']],final:'rotthrone',boss:{key:'sovereign',name:'The Plague Sovereign',lives:0,desc:'Every one of its followers bursts into Rot when it dies.'},scale:2},
   {id:3,name:'Siege of the Cinder Throne',blurb:"The last great contract. The empire's seat. Everything at once.",origins:['Ashborn','Covenant','Duskbound','Ironpact','Stoneblood'],stars:4,acts:[['cinder','ashen'],['cinder','ashen','pact']],final:'throne',boss:{key:'kingboss',name:'The Sundered King',lives:2,desc:'Three phases; each death wakes another origin in him: fire, then stone, then blood.'},scale:3},
@@ -1658,7 +1659,7 @@ function rollShop(){
 }
 const enemyCells=()=>ALLCELLS.filter(p=>side(p.r,p.c)==='B');
 // difficulty grows more slowly than the battle count, so each act has room to build up
-const diff=()=>1+(S.round-1)*.62+RUN.scale*.45*Math.min(1,.4+S.round*.1)+(S.heat||0)*.35;
+const diff=()=>1+(S.round-1)*(RUN.grow||.62)+RUN.scale*.45*Math.min(1,.4+S.round*.1)+(S.heat||0)*.35;
 function genEnemy(){
   const node=S.node||'battle',R=REGIONS[S.region]||{fav:[]};
   const r=diff()+(node==='elite'||node==='boss'?1:0);
@@ -2680,14 +2681,14 @@ function cast(e,mult=1){
 }
 function rollDrops(won,node){
   if(C.drops)return C.drops;
-  // Items are scarce: normal wins drop a component about one time in three (never more than three dry wins in a row),
-  // elites always drop one, mini bosses drop a single finished item, and losses drop nothing.
-  const d=[];
+  // Normal wins drop a component a bit under half the time (never more than two dry wins in a row); elites drop one
+  // and often a second; mini bosses drop a finished item and a component; a loss sometimes leaves a component behind.
+  const d=[],cp=()=>rnd(Object.keys(COMP));
   if(won){
-    if(node==='boss')d.push(rnd(FULL_KEYS));
-    else if(node==='elite'){d.push(rnd(Object.keys(COMP)));S.dry=0}
-    else if(node!=='final'){S.dry=(S.dry||0)+1;if(Math.random()<.3||S.dry>=4){d.push(rnd(Object.keys(COMP)));S.dry=0}}
-  }
+    if(node==='boss')d.push(rnd(FULL_KEYS),cp());
+    else if(node==='elite'){d.push(cp());if(Math.random()<.4)d.push(cp());S.dry=0}
+    else if(node!=='final'){S.dry=(S.dry||0)+1;if(Math.random()<.45||S.dry>=3){d.push(cp());S.dry=0}}
+  }else if(node!=='final'&&Math.random()<.2)d.push(cp());
   return C.drops=d;
 }
 function showBanner(){
@@ -2721,7 +2722,7 @@ function endCombat(){
   hideBanner();(won?sfx.win:sfx.lose)();
   S.streak=won?Math.max(1,(S.streak||0)+1):Math.min(-1,(S.streak||0)-1);
   const interest=Math.min(Math.floor(S.gold/10),maxInterest()),ledger=has('ledger')?1:0,sg=streakGold(),income=5+interest+(won?1:0)+ledger+sg+(C.loot||0);
-  const drops=rollDrops(won,node);S.items.push(...drops);if(drops.length)setTimeout(()=>{const a=$('#armory');if(a){a.classList.remove('gain');void a.offsetWidth;a.classList.add('gain')}},50);
+  const drops=rollDrops(won,node);S.items.push(...drops);if(drops.length)st('items',drops.length);if(drops.length)setTimeout(()=>{const a=$('#armory');if(a){a.classList.remove('gain');void a.offsetWidth;a.classList.add('gain')}},50);
   addGold(income);st('gold',income);sub.push(`+${income} gold${sg?` (${Math.abs(S.streak)} ${won?'win':'loss'} streak)`:''}${C.loot?` · ${C.loot} looted`:''}`);
   S.round++;S.xp+=2;checkLevel();closeSheet();selItem=null;
   if(drops.length)sub.push(`spoils: ${drops.map(itemName).join(', ')}`);
