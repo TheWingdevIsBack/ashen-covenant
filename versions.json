@@ -1,9 +1,15 @@
 [
  {
+  "v": "0.25.0",
+  "date": "2026-10-11",
+  "notes": "Each contract is now its own TFT-style set of eight origins and eight classes; most units have one origin and one class",
+  "latest": true
+ },
+ {
   "v": "0.24.0",
   "date": "2026-10-11",
   "notes": "A wider battlefield: 13 columns, five ranks per side and a no-man\\",
-  "latest": true
+  "commit": "280ded1"
  },
  {
   "v": "0.23.0",
