@@ -537,11 +537,21 @@ button:active:not(:disabled){transform:translateY(1px);filter:brightness(1.15)}
 .slot.ihov{border-color:#ffd36a;box-shadow:0 0 0 1px #ffd36a,0 0 12px rgba(255,211,106,.55)}
 #ghost.igh{width:auto;height:auto;filter:drop-shadow(0 8px 8px rgba(0,0,0,.6)) drop-shadow(0 0 8px rgba(255,211,106,.6))}
 .ib{touch-action:none}.itm img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
+#dragTip{position:fixed;left:0;top:0;z-index:45;pointer-events:none;background:linear-gradient(180deg,rgba(40,30,24,.97),rgba(24,18,15,.97));border:1px solid #c9a25a;border-radius:8px;padding:6px 10px;box-shadow:0 8px 20px rgba(0,0,0,.6);max-width:min(300px,calc(100vw - 16px));display:flex;flex-direction:column;gap:3px;align-items:flex-start}
+#dragTip .dt-a{font:700 10px/1.2 Silkscreen,monospace;color:#c9a25a;letter-spacing:.03em;display:flex;align-items:center;gap:4px;text-transform:uppercase}
+#dragTip .dt-a b{font:600 13px var(--display);color:#ffd890;text-transform:none;letter-spacing:0}
+#dragTip .dt-a.bad{color:#f08a6a}
+#dragTip .dt-u{display:flex;flex-direction:column;gap:1px}
+#dragTip .dt-u>b{font-family:var(--display);font-weight:400;font-size:16px;color:#f0e4cc;line-height:1.1}
+#dragTip .dt-u em{font-style:normal;color:var(--gold);font-size:11px}
+#dragTip .dt-tr{display:flex;flex-wrap:wrap;gap:2px 8px;font-size:11px;font-weight:600}
+#dragTip .dt-tr i{font-style:normal;display:flex;align-items:center;gap:3px}#dragTip .dt-tr .tic{width:11px;height:11px}
+#dragTip .dt-sw{color:#c9a25a;font-size:14px;line-height:1;margin:-1px 0}
 </style>
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
 </head>
 <body>
-<script>window.ASHEN_VERSIONS=[{"v": "0.21.1", "date": "2026-10-11", "notes": "The Ashward March ramps up more gently", "latest": true}, {"v": "0.21.0", "date": "2026-10-11", "notes": "Everything moves by dragging: drag items onto units to equip them, and drag units to place, swap or sell them", "commit": "6f61b5f"}, {"v": "0.20.2", "date": "2026-10-11", "notes": "The interface stays clear of the iPhone notch and camera cutout on every screen", "commit": "6639abb"}, {"v": "0.20.1", "date": "2026-10-11", "notes": "Boot Camp tips now pause the game: the screen dims around what the tip points at, and you tap Got it to continue", "commit": "70578de"}, {"v": "0.20.0", "date": "2026-10-11", "notes": "Boot Camp: a two-act tutorial contract with a tip for every part of the game", "commit": "19bfdf8"}, {"v": "0.19.3", "date": "2026-10-11", "notes": "The game always fetches the newest release, and offers a one-tap update if an old copy is showing", "commit": "62c85a8"}, {"v": "0.19.2", "date": "2026-10-11", "notes": "Sentinel reworked: Sentinels mark what they shoot, and the trait makes all your ranged units faster and longer-reaching", "commit": "61c8fcd"}, {"v": "0.19.1", "date": "2026-10-11", "notes": "Trait names are back on shop cards", "commit": "65aa9cc"}, {"v": "0.19.0", "date": "2026-10-11", "notes": "29 new units (110 in all): every contract can now reach the top tier of each of its origins and classes", "commit": "162ab82"}, {"v": "0.18.0", "date": "2026-10-11", "notes": "Three new contracts from the design doc: Roads of the Drowned, The Festering Road and Siege of the Cinder Throne", "commit": "0074adf"}, {"v": "0.17.0", "date": "2026-10-11", "notes": "Main menu with Continue, version history and sound settings", "commit": "57f3a6a"}, {"v": "0.16.0", "date": "2026-10-11", "commit": "d0f200d", "notes": "Covenant origin, one-screen map and flatter hexes"}, {"v": "0.15.0", "date": "2026-10-11", "commit": "817d9aa", "notes": "First web release: pixel-art company, items and the three-act campaign"}]</script>
+<script>window.ASHEN_VERSIONS=[{"v": "0.21.2", "date": "2026-10-11", "notes": "A bigger battlefield: taller phones spend their spare height on deeper rows and larger fighters", "latest": true}, {"v": "0.21.1", "date": "2026-10-11", "notes": "The Ashward March ramps up more gently", "commit": "fabd80e"}, {"v": "0.21.0", "date": "2026-10-11", "notes": "Everything moves by dragging: drag items onto units to equip them, and drag units to place, swap or sell them", "commit": "6f61b5f"}, {"v": "0.20.2", "date": "2026-10-11", "notes": "The interface stays clear of the iPhone notch and camera cutout on every screen", "commit": "6639abb"}, {"v": "0.20.1", "date": "2026-10-11", "notes": "Boot Camp tips now pause the game: the screen dims around what the tip points at, and you tap Got it to continue", "commit": "70578de"}, {"v": "0.20.0", "date": "2026-10-11", "notes": "Boot Camp: a two-act tutorial contract with a tip for every part of the game", "commit": "19bfdf8"}, {"v": "0.19.3", "date": "2026-10-11", "notes": "The game always fetches the newest release, and offers a one-tap update if an old copy is showing", "commit": "62c85a8"}, {"v": "0.19.2", "date": "2026-10-11", "notes": "Sentinel reworked: Sentinels mark what they shoot, and the trait makes all your ranged units faster and longer-reaching", "commit": "61c8fcd"}, {"v": "0.19.1", "date": "2026-10-11", "notes": "Trait names are back on shop cards", "commit": "65aa9cc"}, {"v": "0.19.0", "date": "2026-10-11", "notes": "29 new units (110 in all): every contract can now reach the top tier of each of its origins and classes", "commit": "162ab82"}, {"v": "0.18.0", "date": "2026-10-11", "notes": "Three new contracts from the design doc: Roads of the Drowned, The Festering Road and Siege of the Cinder Throne", "commit": "0074adf"}, {"v": "0.17.0", "date": "2026-10-11", "notes": "Main menu with Continue, version history and sound settings", "commit": "57f3a6a"}, {"v": "0.16.0", "date": "2026-10-11", "commit": "d0f200d", "notes": "Covenant origin, one-screen map and flatter hexes"}, {"v": "0.15.0", "date": "2026-10-11", "commit": "817d9aa", "notes": "First web release: pixel-art company, items and the three-act campaign"}]</script>
 
 
 <div id="app">
@@ -594,8 +604,9 @@ button:active:not(:disabled){transform:translateY(1px);filter:brightness(1.15)}
 
 <script>
 // ================= VERSION =================
-const GAME_VERSION='0.21.1',S_VERSION=9;
+const GAME_VERSION='0.21.2',S_VERSION=9;
 const CHANGELOG={
+  '0.21.2':['A bigger battlefield: taller phones spend their spare height on deeper rows and larger fighters','While dragging, a label names exactly what will happen, such as Swap Vosk and Maren or Forge Witchsteel Sabre on Maren, with each unit\'s stars and traits, and the target glows'],
   '0.21.1':['The Ashward March ramps up more gently','Items drop about twice as often: more components from wins, a bonus from elites and mini bosses, and the odd consolation drop after a loss'],
   '0.21.0':['Everything moves by dragging: drag items onto units to equip them, and drag units to place, swap or sell them','Tapping a unit, on the field or the bench, now just opens its card; tapping an item shows what it does','Your bench shows your reserves as living figures that idle and pace in their slots'],
   '0.20.2':['The interface stays clear of the iPhone notch and camera cutout on every screen','A component now combines with a component a unit already holds even when a finished item sits after it','Unequip any item from the unit info card'],
@@ -1775,18 +1786,19 @@ const tierClass=(name,n)=>{const t=tierOf(name,n),max=TRAITS[name].th.length;ret
 const V={t:0,cells:[]};
 const sOf=r=>.84+.16*r/4;
 function proj(r,X){const s=sOf(r);return{x:V.cx+(X-4)*V.cw*s,y:V.y0+r*V.rh,s}}
-const FIG=74,SCL=1.78;
+const FIG=74;let SCL=1.78;
 const hash=(x,y)=>{const v=Math.sin(x*12.9898+y*78.233)*43758.5453;return v-Math.floor(v)};
 function layout(){
   const cv=$('#cv'),W=cv.parentElement.clientWidth;
-  const cw=W/9.6,bottom=cw*.8;
-  // hex rows keep a fixed, flattened perspective; spare phone height becomes sky rather than taller tiles
-  const rh=cw*.6,field=4*rh+bottom;
+  const cw=W/9.15,bottom=cw*.7;
   const app=$('#app'),st0=$('#stage');let rest=410;
   if(app&&st0){const kids=[...app.children].filter(c=>c!==st0&&c.offsetParent!==null&&getComputedStyle(c).position!=='absolute');const cs=getComputedStyle(app);
     const r2=kids.reduce((h,c)=>h+c.offsetHeight,0)+(parseFloat(cs.rowGap)||6)*kids.length+parseFloat(cs.paddingTop)+parseFloat(cs.paddingBottom);if(r2>150)rest=r2}
   const curCard=V.cardh||128,avail=(window.innerHeight||700)-(rest-(curCard-128))-6-(V.trim||0);
-  const H=Math.round(Math.max(cw*1.1+field,Math.min(cw*6.4+field,avail)));
+  // tall screens spend their spare height on the battlefield: rows spread out a little and fighters grow
+  const Hs=Math.max(0,avail-16),field0=4*cw*.6+bottom,tt=clamp01((Hs-(cw*2.6+field0))/(cw*3));
+  const rh=cw*(.6+.17*tt),field=4*rh+bottom;SCL=1.78+.5*tt;
+  const H=Math.round(Math.max(cw*1.1+field,Math.min(cw*8+field,Hs)));
   V.cardh=Math.round(128+Math.max(-24,Math.min(44,avail-H)));document.documentElement.style.setProperty('--cardh',V.cardh+'px');
   Object.assign(V,{W,cw,rh,y0:H-field,cx:W/2,H});
   V.dpr=Math.min(2,window.devicePixelRatio||1);
@@ -3113,7 +3125,12 @@ const DRAG={p:null,suppress:0};
 const dragSuppressed=()=>performance.now()-DRAG.suppress<150;
 function dragStart(ev,loc){if(coachStep||!S||S.phase!=='plan'||V.menuMode)return;const u=unitAt(loc);if(!u)return;DRAG.p={x:ev.clientX,y:ev.clientY,loc,u,id:ev.pointerId,on:false}}
 function itemDragStart(ev,i){if(coachStep||!S||S.phase!=='plan'||V.menuMode||S.items[i]==null)return;DRAG.p={x:ev.clientX,y:ev.clientY,item:i,iid:S.items[i],id:ev.pointerId,on:false}}
-function dragEnd(){const d=DRAG.p;DRAG.p=null;if(d&&d.g)d.g.remove();$('#shopRow').classList.remove('sellzone');V.drag=null;V.dragHex=null;V.itemHover=null;document.querySelectorAll('.slot.ihov').forEach(s=>s.classList.remove('ihov'))}
+// a label that follows the finger and says exactly what the drop will do, naming the units involved
+const unitTag=u=>`<span class="dt-u"><b>${UNITS[u.key].name}</b> <em>${stars(u.star)}</em><span class="dt-tr">${traitsOf(u.key).filter(isActive).map(t=>`<i style="color:${TRAITS[t].col}">${ticon(t)}${t}</i>`).join('')}</span></span>`;
+function dragTip(html,x,y){let el=$('#dragTip');if(!el){el=document.createElement('div');el.id='dragTip';document.body.appendChild(el)}
+  if(!html){el.hidden=true;return}if(el._h!==html){el.innerHTML=html;el._h=html}el.hidden=false;
+  const w=el.offsetWidth,h=el.offsetHeight;el.style.transform=`translate(${Math.round(Math.max(8,Math.min(innerWidth-w-8,x-w/2)))}px,${Math.round(Math.max(8,y-h-78))}px)`}
+function dragEnd(){dragTip(null);const d=DRAG.p;DRAG.p=null;if(d&&d.g)d.g.remove();$('#shopRow').classList.remove('sellzone');V.drag=null;V.dragHex=null;V.itemHover=null;document.querySelectorAll('.slot.ihov').forEach(s=>s.classList.remove('ihov'))}
 // where an item would land: one of your units on the field or the bench
 function itemTarget(x,y){const cv=$('#cv'),b=cv.getBoundingClientRect();
   if(y>b.top&&y<b.bottom){const u=unitUnder(x-b.left,y-b.top);if(u&&u.team==='A'&&u.ref.k)return{z:'b',k:u.ref.k};return null}
@@ -3127,6 +3144,12 @@ document.addEventListener('pointermove',ev=>{const d=DRAG.p;if(!d||ev.pointerId!
       const g=document.createElement('div');g.id='ghost';g.className='igh';g.innerHTML=itemIcon(d.iid,'lg');document.body.appendChild(g);d.g=g;sfx.tap()}
     d.g.style.transform=`translate(${ev.clientX-26}px,${ev.clientY-60}px)`;
     const tg=itemTarget(ev.clientX,ev.clientY);V.itemHover=tg&&tg.z==='b'?tg.k:null;
+    {const u=tg&&unitAt(tg),id=d.iid;let h=null;
+      if(u){const its=u.items||[],ci=its.findIndex(isComp);
+        if(isComp(id)&&ci>=0){const f=comboOf(its[ci],id);h=`<div class="dt-a">Forge ${itemIcon(f,'xs')} <b>${ITEM[f].name}</b> on</div>${unitTag(u)}`}
+        else if(its.length>=3)h=`<div class="dt-a bad">Hands full</div>${unitTag(u)}`;
+        else h=`<div class="dt-a">Equip ${itemIcon(id,'xs')} <b>${itemName(id)}</b> on</div>${unitTag(u)}`}
+      dragTip(h,ev.clientX,ev.clientY)}
     document.querySelectorAll('.slot').forEach(s=>s.classList.toggle('ihov',!!(tg&&tg.z==='n'&&+s.dataset.i===tg.i)));
     if(ev.cancelable)ev.preventDefault();return}
   if(!d.on){if(Math.hypot(ev.clientX-d.x,ev.clientY-d.y)<10)return;d.on=true;sel=d.loc;closeSheet();render();V.drag=d;
@@ -3134,6 +3157,16 @@ document.addEventListener('pointermove',ev=>{const d=DRAG.p;if(!d||ev.pointerId!
     const sr=$('#shopRow');sr.dataset.sell=`Drop to sell for ${sellValue(d.u)} gold`;sr.classList.add('sellzone');sfx.tap()}
   d.g.style.transform=`translate(${ev.clientX-32}px,${ev.clientY-62}px)`;
   const cv=$('#cv'),b=cv.getBoundingClientRect();const c=ev.clientY<b.bottom&&ev.clientY>b.top?hexUnder(ev.clientX-b.left,ev.clientY-b.top):null;V.dragHex=c&&c.side==='A'?K(c.r,c.c):null;
+  {let h=null;const el=document.elementFromPoint(ev.clientX,ev.clientY),overShop=el&&el.closest&&el.closest('#shopRow'),slot=el&&el.closest&&el.closest('.slot');
+    const tgt=V.dragHex?{z:'b',k:V.dragHex}:slot?{z:'n',i:+slot.dataset.i}:null,same=tgt&&tgt.z===d.loc.z&&tgt.k===d.loc.k&&tgt.i===d.loc.i;
+    V.itemHover=tgt&&!same&&tgt.z==='b'&&S.board[tgt.k]?tgt.k:null;
+    document.querySelectorAll('.slot').forEach(s=>s.classList.toggle('ihov',!!(tgt&&!same&&tgt.z==='n'&&+s.dataset.i===tgt.i&&S.bench[tgt.i])));
+    if(overShop)h=null;
+    else if(tgt&&!same){const o=unitAt(tgt);
+      if(o)h=`<div class="dt-a">Swap</div>${unitTag(d.u)}<div class="dt-sw">⇅</div>${unitTag(o)}`;
+      else if(tgt.z==='b'&&d.loc.z==='n'&&boardCount()>=boardCap())h=`<div class="dt-a bad">Field full: level ${S.level} fields ${boardCap()}</div>${unitTag(d.u)}`;
+      else h=`<div class="dt-a">${tgt.z==='b'?(d.loc.z==='b'?'Move':'Field'):'Bench'}</div>${unitTag(d.u)}`}
+    dragTip(h,ev.clientX,ev.clientY)}
   if(ev.cancelable)ev.preventDefault()},{passive:false});
 document.addEventListener('pointerup',ev=>{const d=DRAG.p;if(!d||ev.pointerId!==d.id)return;if(!d.on){DRAG.p=null;return}
   if(d.item!=null){const tg=itemTarget(ev.clientX,ev.clientY);dragEnd();DRAG.suppress=performance.now();

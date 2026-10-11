@@ -1,9 +1,15 @@
 [
  {
+  "v": "0.21.2",
+  "date": "2026-10-11",
+  "notes": "A bigger battlefield: taller phones spend their spare height on deeper rows and larger fighters",
+  "latest": true
+ },
+ {
   "v": "0.21.1",
   "date": "2026-10-11",
   "notes": "The Ashward March ramps up more gently",
-  "latest": true
+  "commit": "fabd80e"
  },
  {
   "v": "0.21.0",
