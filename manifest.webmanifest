@@ -1,0 +1,2 @@
+{"name":"Ashen Covenant","short_name":"Ashen Covenant","start_url":"./","scope":"./","display":"standalone","orientation":"portrait","background_color":"#161313","theme_color":"#161313",
+"icons":[{"src":"icon-180.png","sizes":"180x180","type":"image/png"},{"src":"icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}]}
