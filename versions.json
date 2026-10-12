@@ -1,9 +1,15 @@
 [
  {
+  "v": "0.30.0",
+  "date": "2026-10-12",
+  "notes": "The three- and four-star contracts (III to VI) now run four acts, and the later acts ramp up hard: tougher, better-equipped armies and stronger final bosses",
+  "latest": true
+ },
+ {
   "v": "0.29.0",
   "date": "2026-10-12",
   "notes": "Two new contracts. The Witch-Hunt (now Contract IV; the Cinder Throne becomes V): the Inquisition, militia and the faithful against witches, crows and burnt-out mages, ending at the Great Pyre with the Witch-Queen",
-  "latest": true
+  "commit": "ea7c0de"
  },
  {
   "v": "0.28.0",
