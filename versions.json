@@ -1,9 +1,15 @@
 [
  {
+  "v": "0.26.2",
+  "date": "2026-10-12",
+  "notes": "A shop unit that would star up shows the stars it would reach in its corner",
+  "latest": true
+ },
+ {
   "v": "0.26.1",
   "date": "2026-10-12",
   "notes": "Creatures attack properly: a wind-up, then a lunge, pounce or bite",
-  "latest": true
+  "commit": "46f1694"
  },
  {
   "v": "0.26.0",
