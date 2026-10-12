@@ -1,9 +1,15 @@
 [
  {
+  "v": "0.26.1",
+  "date": "2026-10-12",
+  "notes": "Creatures attack properly: a wind-up, then a lunge, pounce or bite",
+  "latest": true
+ },
+ {
   "v": "0.26.0",
   "date": "2026-10-12",
   "notes": "About 40% more fights on the map, with fewer special stops; difficulty is stretched to match",
-  "latest": true
+  "commit": "bf4a026"
  },
  {
   "v": "0.25.1",

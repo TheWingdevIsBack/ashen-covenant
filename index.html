@@ -730,11 +730,15 @@ body{position:fixed;inset:0;margin:0}
 .card .cbadge{position:absolute;right:3px;bottom:3px;z-index:3;font:700 9px/1 var(--body);padding:2px 5px;border-radius:7px;background:#100c0be8;color:#f0d890;box-shadow:0 0 0 1px #8a6a3a;pointer-events:none}
 .card .cbadge.up{background:#2a6a2a;color:#eaffdc;box-shadow:0 0 0 1px #8ae08a,0 0 8px rgba(138,224,138,.6);animation:upp .8s ease-in-out infinite alternate}
 .card .cbadge.plan{bottom:auto;top:22px;background:#16324a;color:#c8ecff;box-shadow:0 0 0 1px #7dd8ff}
-.card.own::after,.card.up::after,.card.plan::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit}
-.card.own::after{box-shadow:inset 0 0 0 2px #d8ab4c}
-.card.plan:not(.own)::after{box-shadow:inset 0 0 0 2px #7dd8ff}
-.card.up::after{box-shadow:inset 0 0 0 2px #8ae08a,inset 0 0 16px rgba(138,224,138,.55);animation:upg .8s ease-in-out infinite alternate}
-@keyframes upg{to{box-shadow:inset 0 0 0 3px #c0ffc0,inset 0 0 24px rgba(160,255,160,.8)}}
+#shop .card.own::after,#shop .card.up::after,#shop .card.plan::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;z-index:2}
+#shop .card.own::after{box-shadow:inset 0 0 0 2px #c9a25a,inset 0 0 10px rgba(201,162,90,.35)}
+#shop .card.plan::after{box-shadow:inset 0 0 0 2px #6ad0ff,inset 0 0 12px rgba(106,208,255,.45)}
+#shop .card.plan.own::after{box-shadow:inset 0 0 0 2px #c9a25a,inset 0 0 0 4px #6ad0ff,inset 0 0 14px rgba(106,208,255,.4)}
+#shop .card.up::after{box-shadow:inset 0 0 0 2px #ffe08a,inset 0 0 18px rgba(255,214,110,.6),0 0 10px rgba(255,214,110,.45);animation:upg .9s ease-in-out infinite alternate}
+@keyframes upg{to{box-shadow:inset 0 0 0 3px #fff2c0,inset 0 0 26px rgba(255,226,140,.85),0 0 16px rgba(255,214,110,.7)}}
+.card .shim{position:absolute;inset:0;z-index:3;pointer-events:none;overflow:hidden;border-radius:inherit}
+.card .shim::before{content:"";position:absolute;top:-20%;bottom:-20%;width:38%;left:-50%;background:linear-gradient(100deg,transparent,rgba(255,240,190,.55),transparent);transform:skewX(-18deg);animation:shim 1.6s ease-in-out infinite}
+@keyframes shim{0%{left:-50%}60%,100%{left:120%}}
 @keyframes upp{to{transform:scale(1.1)}}
 /* team planner */
 #planBtn{font-family:var(--display);font-weight:400;font-size:14px;letter-spacing:.02em;padding:0 11px;background:var(--panel-g);border:1px solid var(--edge);box-shadow:var(--hi),var(--drop);border-radius:5px;height:32px;box-sizing:border-box}
@@ -761,7 +765,7 @@ body{position:fixed;inset:0;margin:0}
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
 </head>
 <body>
-<script>window.ASHEN_VERSIONS=[{"v": "0.26.0", "date": "2026-10-12", "notes": "About 40% more fights on the map, with fewer special stops; difficulty is stretched to match", "latest": true}, {"v": "0.25.1", "date": "2026-10-11", "notes": "Shields now fade: a shield lasts 4 seconds after it was last gained (8 for shields at the start of battle)", "commit": "73daea9"}, {"v": "0.25.0", "date": "2026-10-11", "notes": "Each contract is now its own TFT-style set of eight origins and eight classes; most units have one origin and one class", "commit": "e01f21c"}, {"v": "0.24.0", "date": "2026-10-11", "notes": "A wider battlefield: 13 columns, five ranks per side and a no-man\\", "commit": "280ded1"}, {"v": "0.23.0", "date": "2026-10-11", "notes": "The game is now fully landscape: hold your phone sideways. If it is held upright, the whole game is drawn turned so it still plays sideways", "commit": "b39392b"}, {"v": "0.22.0", "date": "2026-10-11", "notes": "Even fights: enemy boards now grow with the rounds to match yours, so battles are close and tense instead of lopsided", "commit": "944546d"}, {"v": "0.21.2", "date": "2026-10-11", "notes": "A bigger battlefield: taller phones spend their spare height on deeper rows and larger fighters", "commit": "2b7760c"}, {"v": "0.21.1", "date": "2026-10-11", "notes": "The Ashward March ramps up more gently", "commit": "fabd80e"}, {"v": "0.21.0", "date": "2026-10-11", "notes": "Everything moves by dragging: drag items onto units to equip them, and drag units to place, swap or sell them", "commit": "6f61b5f"}, {"v": "0.20.2", "date": "2026-10-11", "notes": "The interface stays clear of the iPhone notch and camera cutout on every screen", "commit": "6639abb"}, {"v": "0.20.1", "date": "2026-10-11", "notes": "Boot Camp tips now pause the game: the screen dims around what the tip points at, and you tap Got it to continue", "commit": "70578de"}, {"v": "0.20.0", "date": "2026-10-11", "notes": "Boot Camp: a two-act tutorial contract with a tip for every part of the game", "commit": "19bfdf8"}, {"v": "0.19.3", "date": "2026-10-11", "notes": "The game always fetches the newest release, and offers a one-tap update if an old copy is showing", "commit": "62c85a8"}, {"v": "0.19.2", "date": "2026-10-11", "notes": "Sentinel reworked: Sentinels mark what they shoot, and the trait makes all your ranged units faster and longer-reaching", "commit": "61c8fcd"}, {"v": "0.19.1", "date": "2026-10-11", "notes": "Trait names are back on shop cards", "commit": "65aa9cc"}, {"v": "0.19.0", "date": "2026-10-11", "notes": "29 new units (110 in all): every contract can now reach the top tier of each of its origins and classes", "commit": "162ab82"}, {"v": "0.18.0", "date": "2026-10-11", "notes": "Three new contracts from the design doc: Roads of the Drowned, The Festering Road and Siege of the Cinder Throne", "commit": "0074adf"}, {"v": "0.17.0", "date": "2026-10-11", "notes": "Main menu with Continue, version history and sound settings", "commit": "57f3a6a"}, {"v": "0.16.0", "date": "2026-10-11", "commit": "d0f200d", "notes": "Covenant origin, one-screen map and flatter hexes"}, {"v": "0.15.0", "date": "2026-10-11", "commit": "817d9aa", "notes": "First web release: pixel-art company, items and the three-act campaign"}]</script>
+<script>window.ASHEN_VERSIONS=[{"v": "0.26.1", "date": "2026-10-12", "notes": "Creatures attack properly: a wind-up, then a lunge, pounce or bite", "latest": true}, {"v": "0.26.0", "date": "2026-10-12", "notes": "About 40% more fights on the map, with fewer special stops; difficulty is stretched to match", "commit": "bf4a026"}, {"v": "0.25.1", "date": "2026-10-11", "notes": "Shields now fade: a shield lasts 4 seconds after it was last gained (8 for shields at the start of battle)", "commit": "73daea9"}, {"v": "0.25.0", "date": "2026-10-11", "notes": "Each contract is now its own TFT-style set of eight origins and eight classes; most units have one origin and one class", "commit": "e01f21c"}, {"v": "0.24.0", "date": "2026-10-11", "notes": "A wider battlefield: 13 columns, five ranks per side and a no-man\\", "commit": "280ded1"}, {"v": "0.23.0", "date": "2026-10-11", "notes": "The game is now fully landscape: hold your phone sideways. If it is held upright, the whole game is drawn turned so it still plays sideways", "commit": "b39392b"}, {"v": "0.22.0", "date": "2026-10-11", "notes": "Even fights: enemy boards now grow with the rounds to match yours, so battles are close and tense instead of lopsided", "commit": "944546d"}, {"v": "0.21.2", "date": "2026-10-11", "notes": "A bigger battlefield: taller phones spend their spare height on deeper rows and larger fighters", "commit": "2b7760c"}, {"v": "0.21.1", "date": "2026-10-11", "notes": "The Ashward March ramps up more gently", "commit": "fabd80e"}, {"v": "0.21.0", "date": "2026-10-11", "notes": "Everything moves by dragging: drag items onto units to equip them, and drag units to place, swap or sell them", "commit": "6f61b5f"}, {"v": "0.20.2", "date": "2026-10-11", "notes": "The interface stays clear of the iPhone notch and camera cutout on every screen", "commit": "6639abb"}, {"v": "0.20.1", "date": "2026-10-11", "notes": "Boot Camp tips now pause the game: the screen dims around what the tip points at, and you tap Got it to continue", "commit": "70578de"}, {"v": "0.20.0", "date": "2026-10-11", "notes": "Boot Camp: a two-act tutorial contract with a tip for every part of the game", "commit": "19bfdf8"}, {"v": "0.19.3", "date": "2026-10-11", "notes": "The game always fetches the newest release, and offers a one-tap update if an old copy is showing", "commit": "62c85a8"}, {"v": "0.19.2", "date": "2026-10-11", "notes": "Sentinel reworked: Sentinels mark what they shoot, and the trait makes all your ranged units faster and longer-reaching", "commit": "61c8fcd"}, {"v": "0.19.1", "date": "2026-10-11", "notes": "Trait names are back on shop cards", "commit": "65aa9cc"}, {"v": "0.19.0", "date": "2026-10-11", "notes": "29 new units (110 in all): every contract can now reach the top tier of each of its origins and classes", "commit": "162ab82"}, {"v": "0.18.0", "date": "2026-10-11", "notes": "Three new contracts from the design doc: Roads of the Drowned, The Festering Road and Siege of the Cinder Throne", "commit": "0074adf"}, {"v": "0.17.0", "date": "2026-10-11", "notes": "Main menu with Continue, version history and sound settings", "commit": "57f3a6a"}, {"v": "0.16.0", "date": "2026-10-11", "commit": "d0f200d", "notes": "Covenant origin, one-screen map and flatter hexes"}, {"v": "0.15.0", "date": "2026-10-11", "commit": "817d9aa", "notes": "First web release: pixel-art company, items and the three-act campaign"}]</script>
 
 
 <div id="root">
@@ -814,9 +818,10 @@ body{position:fixed;inset:0;margin:0}
 
 <script>
 // ================= VERSION =================
-const GAME_VERSION='0.26.0',S_VERSION=11;
+const GAME_VERSION='0.26.1',S_VERSION=11;
 const CHANGELOG={
-  '0.26.0':['About 40% more fights on the map, with fewer special stops; difficulty is stretched to match','Less gold: base income is 4 and enemies drop gold less often','Summons last 6 seconds, each summoner keeps at most 2 alive (3 at ★★★), and the ability text shows their HP and attack','Summons, Abyssal horrors, swarm bugs, mushrooms, books, ghosts, the wolf-pup and the Rook-Mother have their own creature bodies','Unit cards show ability power and HP and attack at each star','★★★ units are much stronger and come with a free component; a new relic makes the first reroll each round free','A team planner (Plan button): browse this contract\'s roster, filter by origin or class, and see the traits your plan reaches; planned units are tagged in the shop','The shop marks units you own and glows on any unit that would star up if you bought it','Cross-class units: some high-cost units now have two classes','More species: boars, bears, wolves, a stag king, rats, frogs, fish-folk, skeletons, a goat-headed horror and a stone golem','Melee units have 10% more HP; Vanguards take 8% less damage, Ravagers heal for 10% of their damage, Breakers hit for 3% of max HP','Menus and choice screens are compact on phones'],
+  '0.26.1':['Creatures attack properly: a wind-up, then a lunge, pounce or bite','The shop marks owned, planned and star-up units with colour and a shimmer instead of tags','Unit cards list ability power, HP and attack as plain values per star','★★★ no longer gives a free component'],
+  '0.26.0':['About 40% more fights on the map, with fewer special stops; difficulty is stretched to match','Less gold: base income is 4 and enemies drop gold less often','Summons last 6 seconds, each summoner keeps at most 2 alive (3 at ★★★), and the ability text shows their HP and attack','Summons, Abyssal horrors, swarm bugs, mushrooms, books, ghosts, the wolf-pup and the Rook-Mother have their own creature bodies','Unit cards show ability power and HP and attack at each star','★★★ units are much stronger; a new relic makes the first reroll each round free','A team planner (Plan button): browse this contract\'s roster, filter by origin or class, and see the traits your plan reaches; planned units are tagged in the shop','The shop marks units you own and glows on any unit that would star up if you bought it','Cross-class units: some high-cost units now have two classes','More species: boars, bears, wolves, a stag king, rats, frogs, fish-folk, skeletons, a goat-headed horror and a stone golem','Melee units have 10% more HP; Vanguards take 8% less damage, Ravagers heal for 10% of their damage, Breakers hit for 3% of max HP','Menus and choice screens are compact on phones'],
   '0.25.1':['Shields now fade: a shield lasts 4 seconds after it was last gained (8 for shields at the start of battle)','The shop and unit cards keep clear of the iPhone camera, and open on the other side of the screen when the camera is on the right','Slightly fewer item drops and a little less gold from loot and elites'],
   '0.25.0':['Each contract is now its own TFT-style set of eight origins and eight classes; most units have one origin and one class','15 new origins, from Militia and Carrion to Tidebound, Fungal, Hexen and Crownsworn','New classes: Stalkers leap behind the enemy line, Summoners call allies, Heralds rally those around them','71 new units with their own looks, and three new regions','A deeper battlefield: seven rows instead of five'],
   '0.24.0':['A wider battlefield: 13 columns, five ranks per side and a no-man\'s-land between the armies','The shop opens and closes with the Shop button (or S), like TFT: it opens when planning starts and gets out of the way for the fight','Fixed the relic list being cut off when choosing a contract; the March button now stays pinned at the bottom'],
@@ -1224,7 +1229,7 @@ const SUMMON_TOK={raise:'thrall',shades:'shade',pages:'page',rats:'swarmling',pu
  ['murder','soulchain','Murder of Crows',p=>`Crows leap between four enemies, starting at ${p} magic damage and weakening with each jump.`],
 ].forEach(([k,b,n,d])=>{ALIAS[k]=b;ABIL[k]=[n,d||ABIL[b][1]]});
 [['raise','Raise the Drowned'],['shades','Call Shades'],['pages','Loose Pages'],['rats','Rat Tide'],['puff','Puffling Brood'],['crows','Black Wings'],['thorns','Thornbirth']].forEach(([k,n])=>{ALIAS[k]='summon';
-  ABIL[k]=[n,p=>{const u=UNITS[SUMMON_TOK[k]];return `Summons two ${u.name}s for 6s, with at most 2 alive at once (3 at ★★★); at the cap it heals them instead. Each has ${Math.round(u.hp*p/100)} HP and ${Math.round(u.atk*p/100)} attack: ${p}% of a base ${u.name}, growing with this unit's stars and spell power. Summons attack normally and can crit (15%), but carry no items, burns or traits.`}]});
+  ABIL[k]=[n,p=>{const u=UNITS[SUMMON_TOK[k]];return `Summons two ${u.name}s for 6s, with at most 2 / 2 / 3 alive at once; at the cap it heals them instead. Each has ${Math.round(u.hp*p/100)} HP and ${Math.round(u.atk*p/100)} attack: ${p}% of a base ${u.name}, growing with this unit's stars and spell power. Summons attack normally and can crit (15%), but carry no items, burns or traits.`}]});
 const abBase=ab=>ALIAS[ab]||ab;
 
 const TRAITS={
@@ -1980,15 +1985,18 @@ function drawFigure(ctx,key,p){
   const OCOL=(TRAITS[(UNITS[key]&&UNITS[key].o[0])||'']||{}).col||'#c9a25a';
   ctx.save();ctx.scale((p.face||1)*D.sz,D.sz);
   {let sq=1+Math.sin((p.t||0)*2.2+(p.seed||0))*.018;const a=p.atk??-1;
-   if(p.moving)sq=1-.06*(1-Math.abs(Math.sin(p.walk||0)));
-   if(a>=0)sq*=a<.38?1-.07*(a/.38):a<.55?1.07:1;
+   if(p.moving&&!D.form)sq=1-.06*(1-Math.abs(Math.sin(p.walk||0)));
+   if(a>=0&&!D.form)sq*=a<.38?1-.07*(a/.38):a<.55?1.07:1;
    if(p.hitK)sq*=1-.12*p.hitK;if(p.land)sq*=1-.15*p.land;if(p.cheer)sq*=1+.05*Math.sin((p.t||0)*12);
    ctx.scale(1+(1-sq)*.6,sq)}
   ctx.strokeStyle=OLC;ctx.lineJoin='round';ctx.lineCap='round';
   if(dead>=0){const k=clamp01(dead*1.7);ctx.globalAlpha*=p.noFade?1:clamp01(1.6-dead*1.6);ctx.translate(-10*k,0);ctx.rotate(-k*1.42)}
   // ---- creatures: summons and monsters with their own bodies instead of the humanoid rig ----
   if(D.form){
-    const sw=moving?Math.sin(walk):0,L=atk>=.3&&atk<.75?5*Math.sin((atk-.3)/.45*PI):0,cg=cast>=0?Math.sin(clamp01(cast)*PI):0;
+    const sw=moving?Math.sin(walk):0,L=0,cg=cast>=0?Math.sin(clamp01(cast)*PI):0;
+    // attacks read as a wind-up, then a lunge or pounce at the target, then a recovery
+    const e3=x=>x*x*(3-2*x),A1=atk<0?0:atk<.38?e3(atk/.38):atk<.6?1-e3((atk-.38)/.22):0,S1=atk<.38?0:atk<.62?Math.sin((atk-.38)/.24*PI/2):Math.max(0,1-(atk-.62)/.38),fly=['bird','ghost','book','eye'].includes(D.form);
+    ctx.save();ctx.translate(-3*A1+9*S1,fly?3*S1:-3*S1);if(!fly){ctx.translate(0,-8);ctx.rotate(-.12*A1+.16*S1);ctx.translate(0,8)}
     const bobY=moving?-Math.abs(Math.sin(walk))*1.6:Math.sin(t*2.2+seed)*.6,hov=Math.sin(t*2.4+seed)*1.8;
     const eye=(x,y,r,c)=>{if(blink&&!c){ctx.fillStyle=OLC;ctx.fillRect(x-r,y-.3,r*2,.7);return}if(c)glowDot(x,y,r,c,6+6*cg);else{sh('#ece4d6',()=>ci(x,y,r),true);ctx.fillStyle=OLC;ctx.beginPath();PR.arc.call(ctx,x+r*.35,y,r*.55,0,7);ctx.fill()}};
     const legs=(xs,len,c,w=3.2)=>xs.forEach(([x,ph])=>{const a=moving?Math.sin(walk+ph)*.55:0;ctx.save();ctx.translate(x,-len);ctx.rotate(a);sh(c,()=>rr(-w/2,0,w,len+.5,w/2));ctx.restore()});
@@ -2005,7 +2013,7 @@ function drawFigure(ctx,key,p){
         sh(dk(fur),()=>{ctx.moveTo(hx-2,hy-4);ctx.lineTo(hx-1,hy-11);ctx.lineTo(hx+2.5,hy-5);ctx.closePath()});
         sh(fur,()=>{ctx.moveTo(hx+1,hy-5);ctx.lineTo(hx+3,hy-11);ctx.lineTo(hx+5,hy-5);ctx.closePath()});
         ctx.fillStyle=OLC;ctx.fillRect(hx+11,hy-1.4,1.6,1.6);
-        if(shout){ctx.fillStyle='#2a0e0a';ctx.fillRect(hx+5,hy+2,7,1.6);ctx.fillStyle='#f0e8d0';ctx.fillRect(hx+6,hy+2,1,1);ctx.fillRect(hx+9.5,hy+2,1,1)}
+        if(shout||S1>.15){const o=1.6+3.2*S1;ctx.fillStyle='#2a0e0a';ctx.fillRect(hx+4,hy+2,8,o);ctx.fillStyle='#f0e8d0';ctx.fillRect(hx+6,hy+2,1,1.2);ctx.fillRect(hx+9.5,hy+2,1,1.2);ctx.fillRect(hx+7.5,hy+1+o,1,1)}
         eye(hx+5,hy-2,1.1,gl);
         ctx.fillStyle=col(shade(fur,.25));for(let i=0;i<4;i++)ctx.fillRect(-9+i*4+L*.4,y-7.2,1.6,1.1);break}
       case 'bird':{ // crow
@@ -2132,7 +2140,7 @@ function drawFigure(ctx,key,p){
         eye(3+L*.4,y-16,1.1,gl||'#e0ff8a');eye(6.5+L*.4,y-16,1,gl||'#e0ff8a');
         ctx.fillStyle=col('#e85a7a');[[-6,-22],[7,-20]].forEach(([x,yy])=>ctx.fillRect(x+L*.4,y+yy,1.4,1.4));break}
     }
-    ctx.restore();['moveTo','lineTo','quadraticCurveTo','arcTo','arc','ellipse'].forEach(m=>delete ctx[m]);return;
+    ctx.restore();ctx.restore();['moveTo','lineTo','quadraticCurveTo','arcTo','arc','ellipse'].forEach(m=>delete ctx[m]);return;
   }
   const A=poseArms(D,atk,cast,sw*.7);A.lean+=AR.lean||0;
   if(p.cheer){const w=Math.sin((p.t||0)*10+(p.seed||0))*.25;A.near=[2.6+w,.25];A.far=[2.3-w,.35];A.lean=-.05}
@@ -2521,7 +2529,7 @@ function mergeAll(){
       if(g.length>=3){
         const [keep,...rest]=g.slice(0,3);keep.u.star++;
         rest.forEach(e=>{(e.u.items||[]).forEach(id=>{const k=keep.u.items||(keep.u.items=[]);if(k.length<3)k.push(id);else S.items.push(id)});if(e.z==='b')delete S.board[e.k];else S.bench[e.i]=null});
-        msg=`${UNITS[keep.u.key].name} ${stars(keep.u.star)}!`;if(keep.u.star===3){const c=rnd(Object.keys(COMP));S.items.push(c);msg+=` Masterwork: +${COMP[c].name}`}mergeAll.last=keep;merged=true;break;
+        msg=`${UNITS[keep.u.key].name} ${stars(keep.u.star)}!`;mergeAll.last=keep;merged=true;break;
       }
     }
   }
@@ -3038,7 +3046,7 @@ function render(){
     if(!k)return `<div class="card empty"></div>`;
     const d=UNITS[k];
     const mine=[...Object.values(S.board),...S.bench].filter(u=>u&&u.key===k),c1=mine.filter(u=>u.star===1).length,c2=mine.filter(u=>u.star===2).length,up=c1>=2?(c2>=2?3:2):0,pl=(S.plan||[]).includes(k);
-    return `<button style="--d:${i*45}ms" class="card${S.dealt?' deal':''} k${d.cost}${S.gold<d.cost?' poor':''}${mine.length?' own':''}${up?' up':''}${pl?' plan':''}" data-s="${i}">${up?`<span class="cbadge up">Buy for ${stars(up)}</span>`:mine.length?`<span class="cbadge">Owned ×${mine.length}</span>`:''}${pl?'<span class="cbadge plan">Plan</span>':''}<div class="art"><canvas class="pc" data-key="${k}" data-zoom="1.25"></canvas></div>
+    return `<button style="--d:${i*45}ms" class="card${S.dealt?' deal':''} k${d.cost}${S.gold<d.cost?' poor':''}${mine.length?' own':''}${up?' up':''}${pl?' plan':''}" data-s="${i}">${up?'<i class="shim"></i>':''}<div class="art"><canvas class="pc" data-key="${k}" data-zoom="1.25"></canvas></div>
       <div class="trs">${traitsOf(k).filter(isActive).map(t=>`<span class="${cnt[t]?'hot':''}" style="--tc:${TRAITS[t].col}" title="${t}">${ticon(t)}<b>${t}</b></span>`).join('')}</div>
       <span class="ci" data-cinfo="${k}">i</span><span class="cst2">${coin}<b>${d.cost}</b></span><div class="foot"><span class="nm">${d.name.replace(/^(The|Brother|Mother|Sister|Ser|Lord|Doctor|Countess) /,'').split(' ')[0]}</span></div></button>`;
   }).join('');
@@ -3163,7 +3171,7 @@ function renderSheet(){
 }
 // The numbers in an ability text are its ability power: they grow with stars and are multiplied by spell power.
 function scalingHtml(d,star,sp){const P=SPELL.map(m=>Math.round(d.p*m)),H=STAR.map(m=>Math.round(d.hp*m)),A=STAR.map(m=>Math.round(d.atk*m)),row=v=>v.map((x,i)=>`<b class="${i===star-1?'on':''}">${x}</b>`).join(' / ');
-  return `<div class="scal">Ability power ★/★★/★★★: ${row(P)}, then × spell power (now ${Math.round((sp||1)*100)}%). Base attacks deal physical damage from attack.</div><div class="scal">Starring up: HP ${row(H)} · attack ${row(A)}. Three copies make ★★, three ★★ make ★★★, which also gives a free component.</div>`}
+  return `<div class="scal">Ability power ${row(P)}, × spell power (now ${Math.round((sp||1)*100)}%). Basic attacks deal physical damage equal to attack.</div><div class="scal">HP ${row(H)} · Attack ${row(A)}</div>`}
 function tickSheet(){
   if(!sheet||!sheet.ent)return;
   const st=unitStats(sheet),hp=$('#shHp'),mp=$('#shMp');if(!hp)return;
