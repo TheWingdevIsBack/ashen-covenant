@@ -1,5 +1,5 @@
 // Caches the game (and its fonts once seen) so it launches offline from the home screen.
-const CACHE='ashen-covenant-v0.27.0';
+const CACHE='ashen-covenant-v0.28.0';
 self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(['./','index.html','manifest.webmanifest','icon-180.png','icon-512.png'])));self.skipWaiting()});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==CACHE).map(k=>caches.delete(k)))));self.clients.claim()});
 self.addEventListener('fetch',e=>{if(e.request.method!=='GET')return;
