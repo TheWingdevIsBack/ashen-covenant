@@ -731,9 +731,9 @@ body{position:fixed;inset:0;margin:0}
 .card .cbadge.up{background:#2a6a2a;color:#eaffdc;box-shadow:0 0 0 1px #8ae08a,0 0 8px rgba(138,224,138,.6);animation:upp .8s ease-in-out infinite alternate}
 .card .cbadge.plan{bottom:auto;top:22px;background:#16324a;color:#c8ecff;box-shadow:0 0 0 1px #7dd8ff}
 #shop .card.own::after,#shop .card.up::after,#shop .card.plan::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;z-index:2}
-#shop .card.own::after{box-shadow:none;outline:2px dashed rgba(255,255,255,.85);outline-offset:-4px}
+#shop .card.own::after{box-shadow:inset 0 0 0 2px rgba(236,240,255,.9),inset 0 0 14px rgba(220,230,255,.4)}
 #shop .card.plan::after{box-shadow:inset 0 0 0 3px #ff7ab0,inset 0 0 14px rgba(255,122,176,.55)}
-#shop .card.plan.own::after{box-shadow:inset 0 0 0 3px #ff7ab0,inset 0 0 14px rgba(255,122,176,.45);outline:2px dashed rgba(255,255,255,.85);outline-offset:-7px}
+#shop .card.plan.own::after{box-shadow:inset 0 0 0 2px rgba(236,240,255,.9),inset 0 0 0 4px #ff7ab0,inset 0 0 14px rgba(255,122,176,.45)}
 #shop .card.up::after{outline:none;box-shadow:inset 0 0 0 3px #ffe08a,inset 0 0 18px rgba(255,214,110,.6);animation:upg .9s ease-in-out infinite alternate}
 #shop .card .cup{position:absolute;top:2px;right:3px;z-index:4;font-size:13px;line-height:1;letter-spacing:-1px;color:#ffe08a;text-shadow:0 0 4px #000,0 0 8px rgba(255,214,110,.9);pointer-events:none;animation:upp .9s ease-in-out infinite alternate}
 #shop .card.up .cst2{top:19px}
@@ -767,7 +767,7 @@ body{position:fixed;inset:0;margin:0}
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
 </head>
 <body>
-<script>window.ASHEN_VERSIONS=[{"v": "0.26.2", "date": "2026-10-12", "notes": "A shop unit that would star up shows the stars it would reach in its corner", "latest": true}, {"v": "0.26.1", "date": "2026-10-12", "notes": "Creatures attack properly: a wind-up, then a lunge, pounce or bite", "commit": "46f1694"}, {"v": "0.26.0", "date": "2026-10-12", "notes": "About 40% more fights on the map, with fewer special stops; difficulty is stretched to match", "commit": "bf4a026"}, {"v": "0.25.1", "date": "2026-10-11", "notes": "Shields now fade: a shield lasts 4 seconds after it was last gained (8 for shields at the start of battle)", "commit": "73daea9"}, {"v": "0.25.0", "date": "2026-10-11", "notes": "Each contract is now its own TFT-style set of eight origins and eight classes; most units have one origin and one class", "commit": "e01f21c"}, {"v": "0.24.0", "date": "2026-10-11", "notes": "A wider battlefield: 13 columns, five ranks per side and a no-man\\", "commit": "280ded1"}, {"v": "0.23.0", "date": "2026-10-11", "notes": "The game is now fully landscape: hold your phone sideways. If it is held upright, the whole game is drawn turned so it still plays sideways", "commit": "b39392b"}, {"v": "0.22.0", "date": "2026-10-11", "notes": "Even fights: enemy boards now grow with the rounds to match yours, so battles are close and tense instead of lopsided", "commit": "944546d"}, {"v": "0.21.2", "date": "2026-10-11", "notes": "A bigger battlefield: taller phones spend their spare height on deeper rows and larger fighters", "commit": "2b7760c"}, {"v": "0.21.1", "date": "2026-10-11", "notes": "The Ashward March ramps up more gently", "commit": "fabd80e"}, {"v": "0.21.0", "date": "2026-10-11", "notes": "Everything moves by dragging: drag items onto units to equip them, and drag units to place, swap or sell them", "commit": "6f61b5f"}, {"v": "0.20.2", "date": "2026-10-11", "notes": "The interface stays clear of the iPhone notch and camera cutout on every screen", "commit": "6639abb"}, {"v": "0.20.1", "date": "2026-10-11", "notes": "Boot Camp tips now pause the game: the screen dims around what the tip points at, and you tap Got it to continue", "commit": "70578de"}, {"v": "0.20.0", "date": "2026-10-11", "notes": "Boot Camp: a two-act tutorial contract with a tip for every part of the game", "commit": "19bfdf8"}, {"v": "0.19.3", "date": "2026-10-11", "notes": "The game always fetches the newest release, and offers a one-tap update if an old copy is showing", "commit": "62c85a8"}, {"v": "0.19.2", "date": "2026-10-11", "notes": "Sentinel reworked: Sentinels mark what they shoot, and the trait makes all your ranged units faster and longer-reaching", "commit": "61c8fcd"}, {"v": "0.19.1", "date": "2026-10-11", "notes": "Trait names are back on shop cards", "commit": "65aa9cc"}, {"v": "0.19.0", "date": "2026-10-11", "notes": "29 new units (110 in all): every contract can now reach the top tier of each of its origins and classes", "commit": "162ab82"}, {"v": "0.18.0", "date": "2026-10-11", "notes": "Three new contracts from the design doc: Roads of the Drowned, The Festering Road and Siege of the Cinder Throne", "commit": "0074adf"}, {"v": "0.17.0", "date": "2026-10-11", "notes": "Main menu with Continue, version history and sound settings", "commit": "57f3a6a"}, {"v": "0.16.0", "date": "2026-10-11", "commit": "d0f200d", "notes": "Covenant origin, one-screen map and flatter hexes"}, {"v": "0.15.0", "date": "2026-10-11", "commit": "817d9aa", "notes": "First web release: pixel-art company, items and the three-act campaign"}]</script>
+<script>window.ASHEN_VERSIONS=[{"v": "0.27.0", "date": "2026-10-12", "notes": "Summons each have a role: drowned brutes (1/1/2) are huge tanks, shades (1/1/2) leap onto the weakest enemy, the Rat-King calls swarms of rats (2/3/4), pages cut from range (3/3/4), crows dive the back line (3/4/5), pufflings burst into healing spores", "latest": true}, {"v": "0.26.2", "date": "2026-10-12", "notes": "A shop unit that would star up shows the stars it would reach in its corner", "commit": "4a16263"}, {"v": "0.26.1", "date": "2026-10-12", "notes": "Creatures attack properly: a wind-up, then a lunge, pounce or bite", "commit": "46f1694"}, {"v": "0.26.0", "date": "2026-10-12", "notes": "About 40% more fights on the map, with fewer special stops; difficulty is stretched to match", "commit": "bf4a026"}, {"v": "0.25.1", "date": "2026-10-11", "notes": "Shields now fade: a shield lasts 4 seconds after it was last gained (8 for shields at the start of battle)", "commit": "73daea9"}, {"v": "0.25.0", "date": "2026-10-11", "notes": "Each contract is now its own TFT-style set of eight origins and eight classes; most units have one origin and one class", "commit": "e01f21c"}, {"v": "0.24.0", "date": "2026-10-11", "notes": "A wider battlefield: 13 columns, five ranks per side and a no-man\\", "commit": "280ded1"}, {"v": "0.23.0", "date": "2026-10-11", "notes": "The game is now fully landscape: hold your phone sideways. If it is held upright, the whole game is drawn turned so it still plays sideways", "commit": "b39392b"}, {"v": "0.22.0", "date": "2026-10-11", "notes": "Even fights: enemy boards now grow with the rounds to match yours, so battles are close and tense instead of lopsided", "commit": "944546d"}, {"v": "0.21.2", "date": "2026-10-11", "notes": "A bigger battlefield: taller phones spend their spare height on deeper rows and larger fighters", "commit": "2b7760c"}, {"v": "0.21.1", "date": "2026-10-11", "notes": "The Ashward March ramps up more gently", "commit": "fabd80e"}, {"v": "0.21.0", "date": "2026-10-11", "notes": "Everything moves by dragging: drag items onto units to equip them, and drag units to place, swap or sell them", "commit": "6f61b5f"}, {"v": "0.20.2", "date": "2026-10-11", "notes": "The interface stays clear of the iPhone notch and camera cutout on every screen", "commit": "6639abb"}, {"v": "0.20.1", "date": "2026-10-11", "notes": "Boot Camp tips now pause the game: the screen dims around what the tip points at, and you tap Got it to continue", "commit": "70578de"}, {"v": "0.20.0", "date": "2026-10-11", "notes": "Boot Camp: a two-act tutorial contract with a tip for every part of the game", "commit": "19bfdf8"}, {"v": "0.19.3", "date": "2026-10-11", "notes": "The game always fetches the newest release, and offers a one-tap update if an old copy is showing", "commit": "62c85a8"}, {"v": "0.19.2", "date": "2026-10-11", "notes": "Sentinel reworked: Sentinels mark what they shoot, and the trait makes all your ranged units faster and longer-reaching", "commit": "61c8fcd"}, {"v": "0.19.1", "date": "2026-10-11", "notes": "Trait names are back on shop cards", "commit": "65aa9cc"}, {"v": "0.19.0", "date": "2026-10-11", "notes": "29 new units (110 in all): every contract can now reach the top tier of each of its origins and classes", "commit": "162ab82"}, {"v": "0.18.0", "date": "2026-10-11", "notes": "Three new contracts from the design doc: Roads of the Drowned, The Festering Road and Siege of the Cinder Throne", "commit": "0074adf"}, {"v": "0.17.0", "date": "2026-10-11", "notes": "Main menu with Continue, version history and sound settings", "commit": "57f3a6a"}, {"v": "0.16.0", "date": "2026-10-11", "commit": "d0f200d", "notes": "Covenant origin, one-screen map and flatter hexes"}, {"v": "0.15.0", "date": "2026-10-11", "commit": "817d9aa", "notes": "First web release: pixel-art company, items and the three-act campaign"}]</script>
 
 
 <div id="root">
@@ -820,8 +820,9 @@ body{position:fixed;inset:0;margin:0}
 
 <script>
 // ================= VERSION =================
-const GAME_VERSION='0.26.2',S_VERSION=11;
+const GAME_VERSION='0.27.0',S_VERSION=11;
 const CHANGELOG={
+  '0.27.0':['Summons each have a role: drowned brutes (1/1/2) are huge tanks, shades (1/1/2) leap onto the weakest enemy, the Rat-King calls swarms of rats (2/3/4), pages cut from range (3/3/4), crows dive the back line (3/4/5), pufflings burst into healing spores','A slower climb: base income is 3, fights give 1 XP and road stops 2 gold, and enemy armies grow more slowly to match','Owned units in the shop get a soft silver glow instead of a dashed line'],
   '0.26.2':['A shop unit that would star up shows the stars it would reach in its corner','Shop highlights no longer look like cost borders: owned units get a dashed white outline, planned units a pink one, star-ups a gold glow and shimmer'],
   '0.26.1':['Creatures attack properly: a wind-up, then a lunge, pounce or bite','The shop marks owned, planned and star-up units with colour and a shimmer instead of tags','Unit cards list ability power, HP and attack as plain values per star','★★★ no longer gives a free component'],
   '0.26.0':['About 40% more fights on the map, with fewer special stops; difficulty is stretched to match','Less gold: base income is 4 and enemies drop gold less often','Summons last 6 seconds, each summoner keeps at most 2 alive (3 at ★★★), and the ability text shows their HP and attack','Summons, Abyssal horrors, swarm bugs, mushrooms, books, ghosts, the wolf-pup and the Rook-Mother have their own creature bodies','Unit cards show ability power and HP and attack at each star','★★★ units are much stronger; a new relic makes the first reroll each round free','A team planner (Plan button): browse this contract\'s roster, filter by origin or class, and see the traits your plan reaches; planned units are tagged in the shop','The shop marks units you own and glows on any unit that would star up if you bought it','Cross-class units: some high-cost units now have two classes','More species: boars, bears, wolves, a stag king, rats, frogs, fish-folk, skeletons, a goat-headed horror and a stone golem','Melee units have 10% more HP; Vanguards take 8% less damage, Ravagers heal for 10% of their damage, Breakers hit for 3% of max HP','Menus and choice screens are compact on phones'],
@@ -851,10 +852,10 @@ const ARCHIVED=/\/versions\/[^/]+\/?/.test(location.pathname);
 const SITE='https://thewingdevisback.github.io/ashen-covenant/';
 // ================= RUN 1 DATA =================
 const RUNS=[
-  {id:0,name:'The Ashward March',blurb:'A desperate push through the first burned territories, with levies, smiths and crows at your back.',origins:['Ashborn','Ironpact','Stoneblood','Covenant','Forsaken','Militia','Emberforged','Carrion'],stars:1,grow:.56,acts:[['ashen','pact'],['ashen','pact','hollows']],final:'pyre',boss:{key:'ashwalker',name:'The Ashwalker',lives:2,desc:'Revives twice; its third death explodes across the field.'},scale:0},
-  {id:1,name:'Roads of the Drowned',blurb:'Into the flooded mage city, where drowned sailors, living spells and things from the deep wait.',origins:['Hollow','Wraithkin','Duskbound','Forsaken','Tidebound','Spellwrought','Lantern','Abyssal'],stars:2,acts:[['spires','drowned'],['spires','drowned','deep']],final:'spire',boss:{key:'duskmother',name:'The Duskmother',lives:0,desc:'Drinks the blood she spills; at half health she vanishes into dusk and returns healed.'},scale:1},
-  {id:2,name:'The Festering Road',blurb:'Into the rot: beast-folk, swarms, bog-people, mushrooms and witches. Bring fire.',origins:['Plagueborn','Verdant','Carrion','Beastkin','Swarm','Mirefolk','Fungal','Hexen'],stars:3,acts:[['festering','maw'],['festering','maw','rookery']],final:'rotthrone',boss:{key:'sovereign',name:'The Plague Sovereign',lives:0,desc:'Every one of its followers bursts into Rot when it dies.'},scale:1.4,grow:.62},
-  {id:3,name:'Siege of the Cinder Throne',blurb:"The last great contract: the legions, the Inquisition and the royal house itself.",origins:['Ashborn','Covenant','Duskbound','Emberforged','Imperial','Inquisition','Crownsworn'],stars:4,acts:[['cinder','ashen'],['cinder','ashen','court']],final:'throne',boss:{key:'kingboss',name:'The Sundered King',lives:2,desc:'Three phases; each death wakes another power in him: fire, then stone, then blood.'},scale:1.95,grow:.52},
+  {id:0,name:'The Ashward March',blurb:'A desperate push through the first burned territories, with levies, smiths and crows at your back.',origins:['Ashborn','Ironpact','Stoneblood','Covenant','Forsaken','Militia','Emberforged','Carrion'],stars:1,grow:.62,acts:[['ashen','pact'],['ashen','pact','hollows']],final:'pyre',boss:{key:'ashwalker',name:'The Ashwalker',lives:2,desc:'Revives twice; its third death explodes across the field.'},scale:0},
+  {id:1,name:'Roads of the Drowned',blurb:'Into the flooded mage city, where drowned sailors, living spells and things from the deep wait.',origins:['Hollow','Wraithkin','Duskbound','Forsaken','Tidebound','Spellwrought','Lantern','Abyssal'],stars:2,grow:.64,acts:[['spires','drowned'],['spires','drowned','deep']],final:'spire',boss:{key:'duskmother',name:'The Duskmother',lives:0,desc:'Drinks the blood she spills; at half health she vanishes into dusk and returns healed.'},scale:1},
+  {id:2,name:'The Festering Road',blurb:'Into the rot: beast-folk, swarms, bog-people, mushrooms and witches. Bring fire.',origins:['Plagueborn','Verdant','Carrion','Beastkin','Swarm','Mirefolk','Fungal','Hexen'],stars:3,acts:[['festering','maw'],['festering','maw','rookery']],final:'rotthrone',boss:{key:'sovereign',name:'The Plague Sovereign',lives:0,desc:'Every one of its followers bursts into Rot when it dies.'},scale:1.2,grow:.62},
+  {id:3,name:'Siege of the Cinder Throne',blurb:"The last great contract: the legions, the Inquisition and the royal house itself.",origins:['Ashborn','Covenant','Duskbound','Emberforged','Imperial','Inquisition','Crownsworn'],stars:4,acts:[['cinder','ashen'],['cinder','ashen','court']],final:'throne',boss:{key:'kingboss',name:'The Sundered King',lives:2,desc:'Three phases; each death wakes another power in him: fire, then stone, then blood.'},scale:2.3,grow:.52},
   {id:4,tutorial:true,name:'Boot Camp',blurb:'Learn every part of the game in two short acts. Start here.',origins:['Ashborn','Ironpact','Militia'],stars:0,acts:[['muster']],final:'yard',nActs:2,short:true,boss:{key:'drillmaster',name:'The Drillmaster',lives:0,desc:'A grizzled veteran who tests everything you have learned.'},scale:-1.4},
 ];
 let RUN=RUNS[0];
@@ -1095,12 +1096,13 @@ Object.assign(UNITS,{
   novice:NU('Brother Aldo','Covenant Novice',1,['Covenant'],'Warden','prayer',190),
   anvilguard:NU('Harl','Forge-Warden',2,['Emberforged'],'Vanguard','anvilward',200),
   // summoned allies
-  thrall:{...U('Drowned Thrall','',1,[],'Vanguard',420,40,.65,1,20,15,999,null,0),token:true},
-  shade:{...U('Shade','',1,[],'Ravager',360,44,.85,1,10,20,999,null,0),token:true},
-  page:{...U('Animated Page','',1,[],'Ravager',320,40,.9,1,10,25,999,null,0),token:true},
+  thrall:{...U('Drowned Brute','',1,[],'Vanguard',900,52,.55,1,35,25,999,null,0),token:true},
+  shade:{...U('Shade','',1,[],'Specter',300,68,.95,1,5,20,999,null,0),token:true},
+  rat:{...U('Plague Rat','',1,[],'Ravager',170,24,1.2,1,5,10,999,null,0),token:true},
+  page:{...U('Animated Page','',1,[],'Invoker',170,26,1,2,5,25,999,null,0),token:true},
   swarmling:{...U('Swarmling','',1,[],'Ravager',300,36,1,1,10,10,999,null,0),token:true},
-  puffling:{...U('Puffling','',1,[],'Vanguard',400,30,.6,1,20,20,999,null,0),token:true},
-  crow:{...U('Carrion Crow','',1,[],'Ravager',280,40,1,1,5,10,999,null,0),token:true},
+  puffling:{...U('Puffling','',1,[],'Vanguard',650,22,.5,1,25,25,999,null,0),token:true},
+  crow:{...U('Carrion Crow','',1,[],'Ravager',150,30,1.15,1,5,10,999,null,0),token:true},
   levy:{...U('Levy Recruit','',1,[],'Vanguard',480,44,.65,1,25,15,999,null,0),token:true},
 });
 UNITS.kingboss.o=['Crownsworn','Ashborn','Duskbound'];
@@ -1220,7 +1222,15 @@ Object.assign(ABIL,{
 });
 // Many units share a mechanic under their own name.
 const ALIAS={};
-const SUMMON_TOK={raise:'thrall',shades:'shade',pages:'page',rats:'swarmling',puff:'puffling',crows:'crow',thorns:'thornling'};
+// Every summon ability has its own shape: how many come per cast at each star, how many may live at once, and what they do.
+const SUM={raise:{tok:'thrall',n:[1,1,2],cap:[1,1,2],dur:7,role:'A hulking drowned brute that soaks up blows'},
+  shades:{tok:'shade',n:[1,1,2],cap:[2,2,3],dur:6,leap:true,role:'Assassins that leap onto the weakest enemy and crit often'},
+  pages:{tok:'page',n:[3,3,4],cap:[3,4,6],dur:6,role:'A flutter of pages that cut from range'},
+  rats:{tok:'rat',n:[2,3,4],cap:[4,6,8],dur:6,role:'A swarm of fast, fragile rats whose bites spread Rot'},
+  puff:{tok:'puffling',n:[2,2,3],cap:[2,3,4],dur:7,role:'Spongy tanks that burst into healing spores when they fall'},
+  crows:{tok:'crow',n:[3,4,5],cap:[4,6,8],dur:6,leap:true,role:'A murder of crows that dives onto the enemy back line'},
+  thorns:{tok:'thornling',n:[2,2,3],cap:[2,3,4],dur:7,role:'Briar creatures that hold the line'}};
+const SUMMON_TOK=Object.fromEntries(Object.entries(SUM).map(([k,v])=>[k,v.tok]));
 [['spade','bash','Spade Swing'],['barnacle','shield','Barnacle Hide'],['runeward','pavise','Rune Ward'],['verse','heal','Restoring Verse'],['spellcut','soulrend','Spellcut'],
  ['clockwork','volley','Clockwork Volley'],['barrage','judgement','Arcane Barrage'],['lunge','shadowstep','From the Deep'],['eelbite','drain','Eel Bite'],['reefhymn','mendall','Reef Hymn'],
  ['gaze','markprey','Abyssal Gaze'],['pounce','shadowstep','Pounce'],['tusk','gore','Tusk Charge'],['bearmaul','stomp','Bear Maul'],['antlercrown','entangle','Crown of Antlers'],
@@ -1232,7 +1242,7 @@ const SUMMON_TOK={raise:'thrall',shades:'shade',pages:'page',rats:'swarmling',pu
  ['murder','soulchain','Murder of Crows',p=>`Crows leap between four enemies, starting at ${p} magic damage and weakening with each jump.`],
 ].forEach(([k,b,n,d])=>{ALIAS[k]=b;ABIL[k]=[n,d||ABIL[b][1]]});
 [['raise','Raise the Drowned'],['shades','Call Shades'],['pages','Loose Pages'],['rats','Rat Tide'],['puff','Puffling Brood'],['crows','Black Wings'],['thorns','Thornbirth']].forEach(([k,n])=>{ALIAS[k]='summon';
-  ABIL[k]=[n,p=>{const u=UNITS[SUMMON_TOK[k]];return `Summons two ${u.name}s for 6s, with at most 2 / 2 / 3 alive at once; at the cap it heals them instead. Each has ${Math.round(u.hp*p/100)} HP and ${Math.round(u.atk*p/100)} attack: ${p}% of a base ${u.name}, growing with this unit's stars and spell power. Summons attack normally and can crit (15%), but carry no items, burns or traits.`}]});
+  ABIL[k]=[n,p=>{const c=SUM[k],u=UNITS[c.tok];return `Summons ${c.n.join(' / ')} ${u.name}s for ${c.dur}s, with at most ${c.cap.join(' / ')} alive (at the cap it heals them instead). ${c.role}. Each has ${Math.round(u.hp*p/100)} HP and ${Math.round(u.atk*p/100)} attack (${p}% strength, growing with stars and spell power). Summons carry no items or traits.`}]});
 const abBase=ab=>ALIAS[ab]||ab;
 
 const TRAITS={
@@ -1843,11 +1853,12 @@ Object.assign(LOOK,{
   puffling:{form:'shroom',skin:'#e8dcc8',body:'#e8dcc8',cap:'#c84a3a',capR:9,sz:1.15,archOf:'Fungal'},
   sporeling:{form:'shroom',skin:'#e0d4c0',body:'#e0d4c0',cap:'#d06a3a',capR:10,orb:'#e8a8a0',sz:1.35},
   puffball:{form:'shroom',puff:true,skin:'#e8e0c8',body:'#e8e0c8',orb:'#f0e0a0',sz:1.45},
-  page:{form:'book',small:true,tome:'#6a5a8a',metal:'#c8b070',glow:'#c890ff',body:'#e0d4b8',skin:'#e0d4b8',sz:1.5,archOf:'Spellwrought'},
+  page:{form:'book',small:true,tome:'#6a5a8a',metal:'#c8b070',glow:'#c890ff',orb:'#f0e6cc',body:'#e0d4b8',skin:'#e0d4b8',sz:1.3,archOf:'Spellwrought'},
   livingtome:{form:'book',tome:'#6a1e1a',metal:'#c8a050',glow:'#c890ff',orb:'#c890ff',body:'#5a2a1a',skin:'#e8dcc0',sz:1.5},
   shade:{form:'ghost',body:'#8a98c0',skin:'#8a98c0',glow:'#a8d8ff',sz:1.05,archOf:'Wraithkin'},
   wisp:{form:'ghost',body:'#a8c0e0',skin:'#a8c0e0',glow:'#e0f4ff',sz:1.1},
-  thrall:{form:'fishman',skin:'#5a8a88',body:'#5a8a88',glow:'#9ad8ff',fin:'#2a5a5a',sz:1.05,archOf:'Tidebound'},
+  thrall:{form:'fishman',skin:'#4a7a78',body:'#4a7a78',glow:'#9ad8ff',fin:'#2a5a5a',sz:1.55,archOf:'Tidebound'},
+  rat:{form:'rat',body:'#6a5a4a',skin:'#6a5a4a',glow:'#ff6a3a',sz:1.1},
   deepspawn:{form:'fishman',skin:'#3a7a6a',body:'#3a7a6a',glow:'#30d0a0',fin:'#1e4a4a',sz:1.15},
   eelwitch:{form:'naga',skin:'#4a8a80',body:'#1e3a3a',hairCol:'#143030',glow:'#30d0a0',fin:'#2a6a60',sz:1.12},
   abysswatcher:{form:'eye',skin:'#2a4a5a',body:'#2a4a5a',glow:'#30ffc0',orb:'#30ffc0',sz:1.1},
@@ -2019,6 +2030,11 @@ function drawFigure(ctx,key,p){
         if(shout||S1>.15){const o=1.6+3.2*S1;ctx.fillStyle='#2a0e0a';ctx.fillRect(hx+4,hy+2,8,o);ctx.fillStyle='#f0e8d0';ctx.fillRect(hx+6,hy+2,1,1.2);ctx.fillRect(hx+9.5,hy+2,1,1.2);ctx.fillRect(hx+7.5,hy+1+o,1,1)}
         eye(hx+5,hy-2,1.1,gl);
         ctx.fillStyle=col(shade(fur,.25));for(let i=0;i<4;i++)ctx.fillRect(-9+i*4+L*.4,y-7.2,1.6,1.1);break}
+      case 'rat':{const y=-8+bobY;legs([[-6,PI],[4,0]],7,dk(fur),2.4);
+        const tw=Math.sin(t*4+seed)*2+(moving?sw*2:0);ctx.save();ctx.lineCap='round';ctx.strokeStyle=OLC;ctx.lineWidth=2.2;ctx.beginPath();PR.moveTo.call(ctx,-9,y+1);PR.quadraticCurveTo.call(ctx,-18,y-3+tw,-23,y+4+tw);ctx.stroke();ctx.strokeStyle=col('#d8a0a0');ctx.lineWidth=1;ctx.stroke();ctx.restore();
+        sh(fur,()=>el(0,y,10,5.6));legs([[-3,0],[6,PI]],7,fur,2.4);
+        const hx=9,hy=y-2;sh(fur,()=>{ctx.moveTo(hx-4,hy-4.5);ctx.lineTo(hx+9,hy+1);ctx.lineTo(hx-3,hy+4);ctx.closePath()});sh('#e8a8a8',()=>ci(hx-1,hy-5,2.4));sh('#e8a8a8',()=>ci(hx+9,hy+1,.9),true);eye(hx+2,hy-1,.9,gl);
+        if(S1>.15){ctx.fillStyle='#f0e8d0';ctx.fillRect(hx+5,hy+2,1,1.6);ctx.fillRect(hx+6.6,hy+2,1,1.6)}break}
       case 'bird':{ // crow
         const fy=-22+hov+(moving?-Math.abs(Math.sin(walk))*2:0),fl=Math.sin(t*(moving||atk>=0?16:7)+seed);
         sh(dk(fur),()=>{ctx.moveTo(-6,fy+1);ctx.lineTo(-16,fy+4);ctx.lineTo(-15,fy+7);ctx.lineTo(-5,fy+4);ctx.closePath()});
@@ -2488,12 +2504,12 @@ function rollShop(){
 }
 const enemyCells=()=>ALLCELLS.filter(p=>side(p.r,p.c)==='B');
 // difficulty grows more slowly than the battle count, so each act has room to build up
-const diff=()=>1+(S.round-1)*(RUN.grow||.62)*.72+RUN.scale*.45*Math.min(1,.4+S.round*.072)+(S.heat||0)*.35;
+const diff=()=>1+(S.round-1)*(RUN.grow||.62)*.7+RUN.scale*.45*Math.min(1,.4+S.round*.072)+(S.heat||0)*.35;
 function genEnemy(){
   const node=S.node||'battle',R=REGIONS[S.region]||{fav:[]};
   const r=diff()+(node==='elite'?1:0);
   // enemy boards are as big as yours should be by now (TFT-style even fights); their strength comes from cost, stars and items
-  const sched=S.round===1?2:Math.min(9,3+Math.floor((S.round-1)*.26));
+  const sched=S.round===1?2:Math.min(9,3+Math.floor((S.round-1)*.23));
   const n=Math.min(9,sched+(node==='elite'?1:0));
   const maxCost=r<3.5?1:r<5.5?2:r<8.5?3:r<12?4:5;
   const list=[];
@@ -3513,6 +3529,7 @@ function die(t,src){
   if(!UNITS[t.key].token)C.deaths=(C.deaths||0)+1;
   C.ents.forEach(a=>{if(a.dead||!a.carrion)return;if(a.carrion.n<10)a.carrion.n++;if(a.carrion.heal)a.hp=Math.min(a.max,a.hp+a.max*.1)});
   if(src&&src.carrion&&src.carrion.gold&&src.team==='A'&&t.team==='B'&&(C.cgold||0)<3){C.cgold=(C.cgold||0)+1;C.loot=(C.loot||0)+1;fxAt('coin',t,1.1)}
+  if(t.burst){fxAt('ring',t,.6,'#f08a7a');alive(t.team).filter(a=>dist(a,t)<=1).forEach(a=>{a.hp=Math.min(a.max,a.hp+a.max*.1);fxAt('heal',a,.6)});alive(foeOf(t.team)).filter(f=>dist(f,t)<=1).forEach(f=>addRot(t,f,2))}
   if(t.swarmN&&!UNITS[t.key].token){[{r:t.r,c:t.c},...neighbors(t.r,t.c)].filter(n=>!C.grid.has(K(n.r,n.c))).slice(0,t.swarmN).forEach(n=>{const s=spawnUnit('swarmling',t.team,n.r,n.c,{expire:8,pow:t.swarmN>=3?2:1});fxText(s,'Swarm!','#e0c040',10)})}
   if(t.crowned){const nx=alive(t.team).filter(a=>a.crownPct&&!a.crowned).sort((a,b)=>b.hp-a.hp)[0];if(nx){const p=nx.crownPct;nx.crowned=true;nx.max*=1+p;nx.hp*=1+p;nx.atk*=1+p;fxText(nx,'The crown passes','#58c8ff',12,true);fxAt('ring',nx,.7,'#58c8ff')}}
   if(t.boss==='ashwalker'){C.flashT=tm;sfx.boom();V.shake=10;fxAt('ring',t,.9,'#ff7a2a',{big:true});
@@ -3526,10 +3543,10 @@ function cast(e,mult=1){
   const foes=()=>alive(foeOf(e.team));
   if(mult===1)for(const a of C.ents)if(a.spellGain&&!a.dead&&a.team===e.team&&a!==e)a.sp+=a.spellGain;
   switch(abBase(e.ab)){
-    case 'summon':{const tok=SUMMON_TOK[e.ab]||'thrall',cap=e.star>=3?3:2,mine=C.ents.filter(s=>!s.dead&&s.owner===e),n=cap-mine.length,dur=6+(isC(e,'Summoner')?2:0),cells=[],seen=new Set([K(e.r,e.c)]),q=[{r:e.r,c:e.c}];
+    case 'summon':{const SC=SUM[e.ab]||SUM.raise,tok=SC.tok,si=Math.min(2,e.star-1),cap=SC.cap[si],mine=C.ents.filter(s=>!s.dead&&s.owner===e),n=Math.min(SC.n[si],cap-mine.length),dur=SC.dur+(isC(e,'Summoner')?2:0),cells=[],seen=new Set([K(e.r,e.c)]),q=[{r:e.r,c:e.c}];
       if(n<=0){later(.2,()=>mine.forEach(s=>{if(!s.dead){s.hp=s.max;fxAt('heal',s,.6)}}));break}
       for(let i=0;i<q.length&&cells.length<n&&i<60;i++)for(const nb of neighbors(q[i].r,q[i].c)){const k=K(nb.r,nb.c);if(seen.has(k))continue;seen.add(k);q.push(nb);if(!C.grid.has(k)&&cells.length<n)cells.push(nb)}
-      later(.2,()=>{if(e.dead)return;fxAt('ring',e,.6,oc);cells.forEach(nb=>{if(C.grid.has(K(nb.r,nb.c)))return;const s=spawnUnit(tok,e.team,nb.r,nb.c,{expire:dur,pow:p/100});s.owner=e;s.face=e.face;fxAt('dust',s,.4)})});break}
+      later(.2,()=>{if(e.dead)return;fxAt('ring',e,.6,oc);cells.forEach(nb=>{if(C.grid.has(K(nb.r,nb.c)))return;const s=spawnUnit(tok,e.team,nb.r,nb.c,{expire:dur,pow:p/100});s.owner=e;s.face=e.face;fxAt('dust',s,.4);if(tok==='shade')s.critC=.35;if(tok==='rat')s.rotter=1;if(tok==='puffling')s.burst=true;if(SC.leap)later(.25,()=>{if(!s.dead)stalkerLeap(s)})})});break}
     case 'warcry':later(.2,()=>{fxAt('ring',e,.7,'#e0c060',{big:true});alive(e.team).filter(a=>dist(a,e)<=2).forEach(a=>{a.shield+=p;a.warUntil=C.time+4;fxText(a,'+'+Math.round(p),'#ffe8a0',10)})});break;
     case 'harpoon':{const inr=foes().filter(f=>dist(f,e)<=e.range+1);const w=inr.length?inr.reduce((a,b)=>dist(b,e)>dist(a,e)?b:a):t;if(w)shoot(e,w,p,'phys',true,x=>{if(!x.slowImmune){x.slowUntil=C.time+3;fxText(x,'Slowed','#9ad8ff',10)}});break}
     case 'tidewave':if(t)later(.28,()=>{fxAt('ring',t,.7,'#4aa0e8',{big:true});alive(t.team).filter(f=>dist(f,t)<=1).forEach(f=>{hit(e,f,p,'magic');if(!f.slowImmune)f.slowUntil=C.time+3})});break;
@@ -3662,10 +3679,10 @@ function endCombat(){
   }
   hideBanner();(won?sfx.win:sfx.lose)();
   S.streak=won?Math.max(1,(S.streak||0)+1):Math.min(-1,(S.streak||0)-1);
-  const interest=Math.min(Math.floor(S.gold/10),maxInterest()),ledger=has('ledger')?1:0,sg=streakGold(),income=4+interest+(won?1:0)+ledger+sg+(C.loot||0);
+  const interest=Math.min(Math.floor(S.gold/10),maxInterest()),ledger=has('ledger')?1:0,sg=streakGold(),income=3+interest+(won?1:0)+ledger+sg+(C.loot||0);
   const drops=rollDrops(won,node).slice();if(won&&node!=='final'){const et=tierOf('Emberforged',traitCounts(Object.values(S.board),true).Emberforged||0);if(et>=2&&Math.random()<(et>=3?1:.4))drops.push(rnd(Object.keys(COMP)))}S.items.push(...drops);if(drops.length)st('items',drops.length);if(drops.length)setTimeout(()=>{const a=$('#armory');if(a){a.classList.remove('gain');void a.offsetWidth;a.classList.add('gain')}},50);
   addGold(income);st('gold',income);sub.push(`+${income} gold${sg?` (${Math.abs(S.streak)} ${won?'win':'loss'} streak)`:''}${C.loot?` · ${C.loot} looted`:''}`);
-  S.round++;S.xp+=2;checkLevel();closeSheet();selItem=null;
+  S.round++;S.xp+=1;checkLevel();closeSheet();selItem=null;
   if(drops.length)sub.push(`spoils: ${drops.map(itemName).join(', ')}`);
   if(won&&node==='final')return finish(true);
   if(!won&&(node==='boss'||node==='final')){S.phase='plan';V.shopOpen=true;freshShop();render();return toast(title,'The boss still holds the road. Regroup and try again.')}
@@ -3835,7 +3852,7 @@ function travel(id){
     toast(n.type==='final'?RUN.boss.name:n.type==='boss'?S.boss.name:NODE_NAME[n.type],n.type==='elite'?'A hardened warband. Win for spoils and a recruit.':n.type==='boss'?'Defeat the mini boss to finish the region. Losing costs health, and you try again.':'Set your company and fight. The shop has fresh recruits.');
     if(n.type==='boss'||n.type==='final')setTimeout(bossCard,250);
     else if(isNight())setTimeout(()=>toast('Night falls','Duskbound deal 30% more attack damage in the dark.'),1500);
-  }else{S.phase='event';addGold(3);S.xp+=2;checkLevel();render();toast('On the road','+3 gold · +2 XP');if(n.type==='shop')merchant();else if(n.type==='event')crisis();else if(n.type==='forge')smithy();else camp()}
+  }else{S.phase='event';addGold(2);S.xp+=1;checkLevel();render();toast('On the road','+2 gold · +1 XP');if(n.type==='shop')merchant();else if(n.type==='event')crisis();else if(n.type==='forge')smithy();else camp()}
 }
 function bossCard(){
   const fin=S.node==='final',key=fin?RUN.boss.key:S.boss.key,name=fin?RUN.boss.name:S.boss.name;

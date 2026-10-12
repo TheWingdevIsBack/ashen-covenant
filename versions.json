@@ -1,9 +1,15 @@
 [
  {
+  "v": "0.27.0",
+  "date": "2026-10-12",
+  "notes": "Summons each have a role: drowned brutes (1/1/2) are huge tanks, shades (1/1/2) leap onto the weakest enemy, the Rat-King calls swarms of rats (2/3/4), pages cut from range (3/3/4), crows dive the back line (3/4/5), pufflings burst into healing spores",
+  "latest": true
+ },
+ {
   "v": "0.26.2",
   "date": "2026-10-12",
   "notes": "A shop unit that would star up shows the stars it would reach in its corner",
-  "latest": true
+  "commit": "4a16263"
  },
  {
   "v": "0.26.1",
