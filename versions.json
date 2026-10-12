@@ -1,9 +1,15 @@
 [
  {
+  "v": "0.26.0",
+  "date": "2026-10-12",
+  "notes": "About 40% more fights on the map, with fewer special stops; difficulty is stretched to match",
+  "latest": true
+ },
+ {
   "v": "0.25.1",
   "date": "2026-10-11",
   "notes": "Shields now fade: a shield lasts 4 seconds after it was last gained (8 for shields at the start of battle)",
-  "latest": true
+  "commit": "73daea9"
  },
  {
   "v": "0.25.0",
