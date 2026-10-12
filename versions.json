@@ -1,9 +1,15 @@
 [
  {
+  "v": "0.29.0",
+  "date": "2026-10-12",
+  "notes": "Two new contracts. The Witch-Hunt (now Contract IV; the Cinder Throne becomes V): the Inquisition, militia and the faithful against witches, crows and burnt-out mages, ending at the Great Pyre with the Witch-Queen",
+  "latest": true
+ },
+ {
   "v": "0.28.0",
   "date": "2026-10-12",
   "notes": "Signature spell effects: pillars of light and lightning strikes, crashing waves, void vortexes, bursting roots, rot and spore clouds, ground-splitting quakes, shield domes, souls drained across the field, falling meteors, curse sigils, claw rakes and executioner\\",
-  "latest": true
+  "commit": "f6d68fd"
  },
  {
   "v": "0.27.0",
