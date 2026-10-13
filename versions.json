@@ -1,9 +1,15 @@
 [
  {
+  "v": "0.33.0",
+  "date": "2026-10-13",
+  "notes": "Every trait now has a signature move. Ravagers leap to the weakest enemy after a kill; Specters vanish and crit; Hexblades charge their next attacks after casting",
+  "latest": true
+ },
+ {
   "v": "0.32.0",
   "date": "2026-10-13",
   "notes": "Ironpact sign a contract before every battle (win fast, lose no one, score kills, keep your company standing) and get paid when they fulfil it",
-  "latest": true
+  "commit": "a6f6a68"
  },
  {
   "v": "0.31.0",
