@@ -1,9 +1,15 @@
 [
  {
+  "v": "0.34.0",
+  "date": "2026-10-13",
+  "notes": "Every unit now has its own ability, built from its origin and class: 130 new spells, from Ironpact shield-shoves and Mirefolk ambushes to Inquisition stakes, Skald sagas and Verdant fairy rings",
+  "latest": true
+ },
+ {
   "v": "0.33.0",
   "date": "2026-10-13",
   "notes": "Every trait now has a signature move. Ravagers leap to the weakest enemy after a kill; Specters vanish and crit; Hexblades charge their next attacks after casting",
-  "latest": true
+  "commit": "8abd3cd"
  },
  {
   "v": "0.32.0",

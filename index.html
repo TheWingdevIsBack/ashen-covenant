@@ -366,6 +366,7 @@ button:active:not(:disabled){transform:translateY(1px);filter:brightness(1.15)}
 /* economy */
 #fight{background:var(--ember);border:1px solid #d0703a;box-shadow:inset 0 1px 0 rgba(255,200,150,.3),0 0 0 1px #3a1408,0 4px 14px rgba(160,60,20,.35);border-radius:6px;font-size:19px;text-shadow:0 1px 0 #3a1006;padding:9px 18px}
 #fight:not(:disabled){animation:fglow 2.6s ease-in-out infinite}
+#fight.march{background:linear-gradient(#6a5424,#40321a);border-color:#e0b860;text-shadow:0 1px 0 #1a1208}
 @keyframes fglow{50%{box-shadow:inset 0 1px 0 rgba(255,200,150,.3),0 0 0 1px #3a1408,0 4px 22px rgba(220,90,30,.55)}}
 #xpbar{height:6px;background:#1a1414;box-shadow:inset 0 1px 2px #000}#xpbar i{background:linear-gradient(90deg,#4a7ac0,#8ac0f0)}
 #goldBox .gtop{font-family:var(--display);font-weight:400;font-size:24px;color:#f0c870;text-shadow:0 1px 0 #3a2408}
@@ -767,7 +768,7 @@ body{position:fixed;inset:0;margin:0}
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
 </head>
 <body>
-<script>window.ASHEN_VERSIONS=[{"v": "0.33.0", "date": "2026-10-13", "notes": "Every trait now has a signature move. Ravagers leap to the weakest enemy after a kill; Specters vanish and crit; Hexblades charge their next attacks after casting", "latest": true}, {"v": "0.32.0", "date": "2026-10-13", "notes": "Ironpact sign a contract before every battle (win fast, lose no one, score kills, keep your company standing) and get paid when they fulfil it", "commit": "a6f6a68"}, {"v": "0.31.0", "date": "2026-10-13", "notes": "No more gold cap: save as much as you like (interest still tops out at 5)", "commit": "39e1b40"}, {"v": "0.30.0", "date": "2026-10-12", "notes": "The three- and four-star contracts (III to VI) now run four acts, and the later acts ramp up hard: tougher, better-equipped armies and stronger final bosses", "commit": "658032c"}, {"v": "0.29.0", "date": "2026-10-12", "notes": "Two new contracts. The Witch-Hunt (now Contract IV; the Cinder Throne becomes V): the Inquisition, militia and the faithful against witches, crows and burnt-out mages, ending at the Great Pyre with the Witch-Queen", "commit": "ea7c0de"}, {"v": "0.28.0", "date": "2026-10-12", "notes": "Signature spell effects: pillars of light and lightning strikes, crashing waves, void vortexes, bursting roots, rot and spore clouds, ground-splitting quakes, shield domes, souls drained across the field, falling meteors, curse sigils, claw rakes and executioner\\", "commit": "f6d68fd"}, {"v": "0.27.0", "date": "2026-10-12", "notes": "Summons each have a role: drowned brutes (1/1/2) are huge tanks, shades (1/1/2) leap onto the weakest enemy, the Rat-King calls swarms of rats (2/3/4), pages cut from range (3/3/4), crows dive the back line (3/4/5), pufflings burst into healing spores", "commit": "9b2c14a"}, {"v": "0.26.2", "date": "2026-10-12", "notes": "A shop unit that would star up shows the stars it would reach in its corner", "commit": "4a16263"}, {"v": "0.26.1", "date": "2026-10-12", "notes": "Creatures attack properly: a wind-up, then a lunge, pounce or bite", "commit": "46f1694"}, {"v": "0.26.0", "date": "2026-10-12", "notes": "About 40% more fights on the map, with fewer special stops; difficulty is stretched to match", "commit": "bf4a026"}, {"v": "0.25.1", "date": "2026-10-11", "notes": "Shields now fade: a shield lasts 4 seconds after it was last gained (8 for shields at the start of battle)", "commit": "73daea9"}, {"v": "0.25.0", "date": "2026-10-11", "notes": "Each contract is now its own TFT-style set of eight origins and eight classes; most units have one origin and one class", "commit": "e01f21c"}, {"v": "0.24.0", "date": "2026-10-11", "notes": "A wider battlefield: 13 columns, five ranks per side and a no-man\\", "commit": "280ded1"}, {"v": "0.23.0", "date": "2026-10-11", "notes": "The game is now fully landscape: hold your phone sideways. If it is held upright, the whole game is drawn turned so it still plays sideways", "commit": "b39392b"}, {"v": "0.22.0", "date": "2026-10-11", "notes": "Even fights: enemy boards now grow with the rounds to match yours, so battles are close and tense instead of lopsided", "commit": "944546d"}, {"v": "0.21.2", "date": "2026-10-11", "notes": "A bigger battlefield: taller phones spend their spare height on deeper rows and larger fighters", "commit": "2b7760c"}, {"v": "0.21.1", "date": "2026-10-11", "notes": "The Ashward March ramps up more gently", "commit": "fabd80e"}, {"v": "0.21.0", "date": "2026-10-11", "notes": "Everything moves by dragging: drag items onto units to equip them, and drag units to place, swap or sell them", "commit": "6f61b5f"}, {"v": "0.20.2", "date": "2026-10-11", "notes": "The interface stays clear of the iPhone notch and camera cutout on every screen", "commit": "6639abb"}, {"v": "0.20.1", "date": "2026-10-11", "notes": "Boot Camp tips now pause the game: the screen dims around what the tip points at, and you tap Got it to continue", "commit": "70578de"}, {"v": "0.20.0", "date": "2026-10-11", "notes": "Boot Camp: a two-act tutorial contract with a tip for every part of the game", "commit": "19bfdf8"}, {"v": "0.19.3", "date": "2026-10-11", "notes": "The game always fetches the newest release, and offers a one-tap update if an old copy is showing", "commit": "62c85a8"}, {"v": "0.19.2", "date": "2026-10-11", "notes": "Sentinel reworked: Sentinels mark what they shoot, and the trait makes all your ranged units faster and longer-reaching", "commit": "61c8fcd"}, {"v": "0.19.1", "date": "2026-10-11", "notes": "Trait names are back on shop cards", "commit": "65aa9cc"}, {"v": "0.19.0", "date": "2026-10-11", "notes": "29 new units (110 in all): every contract can now reach the top tier of each of its origins and classes", "commit": "162ab82"}, {"v": "0.18.0", "date": "2026-10-11", "notes": "Three new contracts from the design doc: Roads of the Drowned, The Festering Road and Siege of the Cinder Throne", "commit": "0074adf"}, {"v": "0.17.0", "date": "2026-10-11", "notes": "Main menu with Continue, version history and sound settings", "commit": "57f3a6a"}, {"v": "0.16.0", "date": "2026-10-11", "commit": "d0f200d", "notes": "Covenant origin, one-screen map and flatter hexes"}, {"v": "0.15.0", "date": "2026-10-11", "commit": "817d9aa", "notes": "First web release: pixel-art company, items and the three-act campaign"}]</script>
+<script>window.ASHEN_VERSIONS=[{"v": "0.34.0", "date": "2026-10-13", "notes": "Every unit now has its own ability, built from its origin and class: 130 new spells, from Ironpact shield-shoves and Mirefolk ambushes to Inquisition stakes, Skald sagas and Verdant fairy rings", "latest": true}, {"v": "0.33.0", "date": "2026-10-13", "notes": "Every trait now has a signature move. Ravagers leap to the weakest enemy after a kill; Specters vanish and crit; Hexblades charge their next attacks after casting", "commit": "8abd3cd"}, {"v": "0.32.0", "date": "2026-10-13", "notes": "Ironpact sign a contract before every battle (win fast, lose no one, score kills, keep your company standing) and get paid when they fulfil it", "commit": "a6f6a68"}, {"v": "0.31.0", "date": "2026-10-13", "notes": "No more gold cap: save as much as you like (interest still tops out at 5)", "commit": "39e1b40"}, {"v": "0.30.0", "date": "2026-10-12", "notes": "The three- and four-star contracts (III to VI) now run four acts, and the later acts ramp up hard: tougher, better-equipped armies and stronger final bosses", "commit": "658032c"}, {"v": "0.29.0", "date": "2026-10-12", "notes": "Two new contracts. The Witch-Hunt (now Contract IV; the Cinder Throne becomes V): the Inquisition, militia and the faithful against witches, crows and burnt-out mages, ending at the Great Pyre with the Witch-Queen", "commit": "ea7c0de"}, {"v": "0.28.0", "date": "2026-10-12", "notes": "Signature spell effects: pillars of light and lightning strikes, crashing waves, void vortexes, bursting roots, rot and spore clouds, ground-splitting quakes, shield domes, souls drained across the field, falling meteors, curse sigils, claw rakes and executioner\\", "commit": "f6d68fd"}, {"v": "0.27.0", "date": "2026-10-12", "notes": "Summons each have a role: drowned brutes (1/1/2) are huge tanks, shades (1/1/2) leap onto the weakest enemy, the Rat-King calls swarms of rats (2/3/4), pages cut from range (3/3/4), crows dive the back line (3/4/5), pufflings burst into healing spores", "commit": "9b2c14a"}, {"v": "0.26.2", "date": "2026-10-12", "notes": "A shop unit that would star up shows the stars it would reach in its corner", "commit": "4a16263"}, {"v": "0.26.1", "date": "2026-10-12", "notes": "Creatures attack properly: a wind-up, then a lunge, pounce or bite", "commit": "46f1694"}, {"v": "0.26.0", "date": "2026-10-12", "notes": "About 40% more fights on the map, with fewer special stops; difficulty is stretched to match", "commit": "bf4a026"}, {"v": "0.25.1", "date": "2026-10-11", "notes": "Shields now fade: a shield lasts 4 seconds after it was last gained (8 for shields at the start of battle)", "commit": "73daea9"}, {"v": "0.25.0", "date": "2026-10-11", "notes": "Each contract is now its own TFT-style set of eight origins and eight classes; most units have one origin and one class", "commit": "e01f21c"}, {"v": "0.24.0", "date": "2026-10-11", "notes": "A wider battlefield: 13 columns, five ranks per side and a no-man\\", "commit": "280ded1"}, {"v": "0.23.0", "date": "2026-10-11", "notes": "The game is now fully landscape: hold your phone sideways. If it is held upright, the whole game is drawn turned so it still plays sideways", "commit": "b39392b"}, {"v": "0.22.0", "date": "2026-10-11", "notes": "Even fights: enemy boards now grow with the rounds to match yours, so battles are close and tense instead of lopsided", "commit": "944546d"}, {"v": "0.21.2", "date": "2026-10-11", "notes": "A bigger battlefield: taller phones spend their spare height on deeper rows and larger fighters", "commit": "2b7760c"}, {"v": "0.21.1", "date": "2026-10-11", "notes": "The Ashward March ramps up more gently", "commit": "fabd80e"}, {"v": "0.21.0", "date": "2026-10-11", "notes": "Everything moves by dragging: drag items onto units to equip them, and drag units to place, swap or sell them", "commit": "6f61b5f"}, {"v": "0.20.2", "date": "2026-10-11", "notes": "The interface stays clear of the iPhone notch and camera cutout on every screen", "commit": "6639abb"}, {"v": "0.20.1", "date": "2026-10-11", "notes": "Boot Camp tips now pause the game: the screen dims around what the tip points at, and you tap Got it to continue", "commit": "70578de"}, {"v": "0.20.0", "date": "2026-10-11", "notes": "Boot Camp: a two-act tutorial contract with a tip for every part of the game", "commit": "19bfdf8"}, {"v": "0.19.3", "date": "2026-10-11", "notes": "The game always fetches the newest release, and offers a one-tap update if an old copy is showing", "commit": "62c85a8"}, {"v": "0.19.2", "date": "2026-10-11", "notes": "Sentinel reworked: Sentinels mark what they shoot, and the trait makes all your ranged units faster and longer-reaching", "commit": "61c8fcd"}, {"v": "0.19.1", "date": "2026-10-11", "notes": "Trait names are back on shop cards", "commit": "65aa9cc"}, {"v": "0.19.0", "date": "2026-10-11", "notes": "29 new units (110 in all): every contract can now reach the top tier of each of its origins and classes", "commit": "162ab82"}, {"v": "0.18.0", "date": "2026-10-11", "notes": "Three new contracts from the design doc: Roads of the Drowned, The Festering Road and Siege of the Cinder Throne", "commit": "0074adf"}, {"v": "0.17.0", "date": "2026-10-11", "notes": "Main menu with Continue, version history and sound settings", "commit": "57f3a6a"}, {"v": "0.16.0", "date": "2026-10-11", "commit": "d0f200d", "notes": "Covenant origin, one-screen map and flatter hexes"}, {"v": "0.15.0", "date": "2026-10-11", "commit": "817d9aa", "notes": "First web release: pixel-art company, items and the three-act campaign"}]</script>
 
 
 <div id="root">
@@ -820,8 +821,9 @@ body{position:fixed;inset:0;margin:0}
 
 <script>
 // ================= VERSION =================
-const GAME_VERSION='0.33.0',S_VERSION=11;
+const GAME_VERSION='0.34.0',S_VERSION=11;
 const CHANGELOG={
+  '0.34.0':['Every unit now has its own ability, built from its origin and class: 130 new spells, from Ironpact shield-shoves and Mirefolk ambushes to Inquisition stakes, Skald sagas and Verdant fairy rings','Far fewer plain shields and heals: abilities now push, pull, root, blind, silence, block hits, reflect damage, stop healing, leave fire and spores on the ground and rally allies with timed buffs','No two units share a summon any more: new Ink Blots, Bell Wraiths, Hollow Echoes, Bramblekin, a Great Rook, Wailing Spirits and Hornets','After every fight and encounter you return to your board; press March on to open the map when you are ready','Encounters pay interest; tapping the board tucks the shop away','The Ashward March ramps a little harder to match the stronger spells'],
   '0.33.0':['Every trait now has a signature move. Ravagers leap to the weakest enemy after a kill; Specters vanish and crit; Hexblades charge their next attacks after casting','Breakers leave enemies Exposed to the whole team; Sentinels fire volleys; Wardens save you health when you lose','The tide rises for Tidebound, Beastkin howl when one of the pack falls, and Mirefolk drag their prey under','Fixed effects that were queued by melee hits (like the Stoneblood stone breaking) sometimes never happening'],
   '0.32.0':['Ironpact sign a contract before every battle (win fast, lose no one, score kills, keep your company standing) and get paid when they fulfil it','Stoneblood turn to stone at half HP to heal, and break out with a stun at full strength','Vanguards plant their feet at half HP: a shield and a taunt','Verdant root enemies in place; Giantkin grow with every battle they fight for you; Invoker casts feed mana to the whole team'],
   '0.31.0':['No more gold cap: save as much as you like (interest still tops out at 5)','Traits now reward different ways to play. Militia recruit a free unit after every battle and grow stronger with every 3★ unit you own','Heralds earn extra XP for fast levelling; Forsaken bank Shame on losses and cash it in on the next win; the Inquisition brands a Witch and is paid for burning it','Covenant units grow more loyal with every battle they fight for you; Skald sagas add a verse each battle; Hexen give free rerolls'],
@@ -858,7 +860,7 @@ const ARCHIVED=/\/versions\/[^/]+\/?/.test(location.pathname);
 const SITE='https://thewingdevisback.github.io/ashen-covenant/';
 // ================= RUN 1 DATA =================
 const RUNS=[
-  {id:0,name:'The Ashward March',blurb:'A desperate push through the first burned territories, with levies, smiths and crows at your back.',origins:['Ashborn','Ironpact','Stoneblood','Covenant','Forsaken','Militia','Emberforged','Carrion'],stars:1,grow:.56,acts:[['ashen','pact'],['ashen','pact','hollows']],final:'pyre',boss:{key:'ashwalker',name:'The Ashwalker',lives:2,desc:'Revives twice; its third death explodes across the field.'},scale:0},
+  {id:0,name:'The Ashward March',blurb:'A desperate push through the first burned territories, with levies, smiths and crows at your back.',origins:['Ashborn','Ironpact','Stoneblood','Covenant','Forsaken','Militia','Emberforged','Carrion'],stars:1,grow:.61,acts:[['ashen','pact'],['ashen','pact','hollows']],final:'pyre',boss:{key:'ashwalker',name:'The Ashwalker',lives:2,desc:'Revives twice; its third death explodes across the field.'},scale:0},
   {id:1,name:'Roads of the Drowned',blurb:'Into the flooded mage city, where drowned sailors, living spells and things from the deep wait.',origins:['Hollow','Wraithkin','Duskbound','Forsaken','Tidebound','Spellwrought','Lantern','Abyssal'],stars:2,grow:.64,acts:[['spires','drowned'],['spires','drowned','deep']],final:'spire',boss:{key:'duskmother',name:'The Duskmother',lives:0,desc:'Drinks the blood she spills; at half health she vanishes into dusk and returns healed.'},scale:1},
   {id:2,name:'The Festering Road',blurb:'Into the rot: beast-folk, swarms, bog-people, mushrooms and witches. Bring fire.',origins:['Plagueborn','Verdant','Carrion','Beastkin','Swarm','Mirefolk','Fungal','Hexen'],stars:3,acts:[['festering','maw'],['festering','maw','rookery']],nActs:4,final:'rotthrone',boss:{key:'sovereign',name:'The Plague Sovereign',lives:0,desc:'Every one of its followers bursts into Rot when it dies.'},scale:1.2,grow:.62},
   {id:3,name:'Siege of the Cinder Throne',blurb:"The empire's burning seat: the legions, the Inquisition and the royal house itself.",origins:['Ashborn','Covenant','Duskbound','Emberforged','Imperial','Inquisition','Crownsworn'],stars:4,acts:[['cinder','ashen'],['cinder','ashen','court']],nActs:4,final:'throne',boss:{key:'kingboss',name:'The Sundered King',lives:2,desc:'Three phases; each death wakes another power in him: fire, then stone, then blood.'},scale:2.3,grow:.52},
@@ -1016,13 +1018,13 @@ RE('pyre',['Ashborn','Covenant'],'Invoker');RE('gallow',['Ironpact','Emberforged
 RE('varr',['Ironpact'],'Sentinel');RE('abbess',['Ironpact','Covenant'],'Invoker');RE('mordrake',['Stoneblood'],'Breaker');RE('auren',['Covenant','Forsaken'],'Ravager');
 // ---- II: Roads of the Drowned ----
 RE('wisp',['Wraithkin'],'Stalker');RE('nettle',['Duskbound'],'Stalker');RE('lanternmaid',['Lantern'],'Sentinel');RE('emberwight',['Hollow'],'Stalker');
-RE('belltoller',['Wraithkin'],'Summoner',{ab:'raise',p:75});RE('lisbet',['Lantern'],'Sentinel',{ab:'flare',p:125});RE('vex',['Hollow'],'Summoner',{ab:'shades',p:95});
+RE('belltoller',['Wraithkin'],'Summoner',{ab:'bells',p:75});RE('lisbet',['Lantern'],'Sentinel',{ab:'flare',p:125});RE('vex',['Hollow'],'Summoner',{ab:'echoes',p:95});
 RE('wraithmere',['Wraithkin'],'Summoner',{ab:'shades',p:95});RE('ferryman',['Tidebound'],'Sentinel');RE('drownedknight',['Tidebound'],'Hexblade');
 RE('voidcaller',['Hollow','Abyssal'],'Invoker');RE('grimwall',['Tidebound'],'Vanguard');RE('lantern',['Lantern','Hollow'],'Sentinel');RE('severin',['Duskbound','Forsaken'],'Stalker');RE('oracle',['Lantern','Hollow'],'Warden');
 // ---- III: The Festering Road ----
 RE('briarling',['Verdant'],'Specter');RE('wolfmother',['Beastkin'],'Ravager');RE('ratking',['Swarm','Plagueborn'],'Summoner',{cost:2,ab:'rats',p:75});RE('sow',['Mirefolk'],'Vanguard');
 RE('mirelurker',['Mirefolk'],'Stalker',{ab:'ambush',p:240});RE('antler',['Beastkin'],'Specter');RE('moss',['Fungal'],'Vanguard');RE('tender',['Fungal'],'Warden');
-RE('barkbishop',['Verdant'],'Summoner',{ab:'thorns',p:120});RE('thornking',['Verdant'],'Vanguard');RE('rotstag',['Beastkin','Plagueborn'],'Breaker');RE('mothsaint',['Swarm','Plagueborn'],'Specter');
+RE('barkbishop',['Verdant'],'Summoner',{ab:'briars',p:120});RE('thornking',['Verdant'],'Vanguard');RE('rotstag',['Beastkin','Plagueborn'],'Breaker');RE('mothsaint',['Swarm','Plagueborn'],'Specter');
 RE('palewarden',['Verdant'],'Warden');RE('mildew',['Fungal','Plagueborn'],'Vanguard');
 // ---- IV: Siege of the Cinder Throne ----
 RE('corvin',['Duskbound'],'Stalker',{ab:'shadowstep',p:240});RE('veyl',['Ashborn'],'Stalker');RE('penitent',['Inquisition'],'Vanguard');RE('revgen',['Ashborn'],'Ravager');
@@ -1049,7 +1051,7 @@ Object.assign(UNITS,{
   harpooner:NU('Moll Gaff','Harpooner',2,['Tidebound'],'Specter','harpoon',180),
   tidecaller:NU('Ysolde','the Tidecaller',3,['Tidebound'],'Invoker','tidewave',125),
   brine:NU('Admiral Brine','of the Drowned Fleet',5,['Tidebound','Abyssal'],'Summoner','raise',60),
-  inkling:NU('Inkling','a Spilled Spell',1,['Spellwrought'],'Summoner','pages',60),
+  inkling:NU('Inkling','a Spilled Spell',1,['Spellwrought'],'Summoner','ink',60),
   runeguard:NU('Runeguard','Graven Sentry',1,['Spellwrought'],'Vanguard','runeward',120),
   librarian:NU('Brother Quire','Drowned Librarian',2,['Spellwrought'],'Warden','verse',190),
   magister:NU('Magister Vell','Spellblade',3,['Spellwrought'],'Hexblade','spellcut',190),
@@ -1113,6 +1115,13 @@ Object.assign(UNITS,{
   swarmling:{...U('Swarmling','',1,[],'Ravager',300,36,1,1,10,10,999,null,0),token:true},
   puffling:{...U('Puffling','',1,[],'Vanguard',650,22,.5,1,25,25,999,null,0),token:true},
   crow:{...U('Carrion Crow','',1,[],'Ravager',150,30,1.15,1,5,10,999,null,0),token:true},
+  inkblot:{...U('Ink Blot','',1,[],'Invoker',200,26,1,2,5,25,999,null,0),token:true},
+  bellwraith:{...U('Bell Wraith','',1,[],'Vanguard',650,40,.7,1,25,30,999,null,0),token:true},
+  echo:{...U('Hollow Echo','',1,[],'Invoker',260,50,.8,3,5,30,999,null,0),token:true},
+  bramblekin:{...U('Bramblekin','',1,[],'Vanguard',520,34,.75,1,25,15,999,null,0),token:true},
+  rook:{...U('Great Rook','',1,[],'Specter',380,55,1,1,10,10,999,null,0),token:true},
+  wail:{...U('Wailing Spirit','',1,[],'Specter',260,40,.9,1,5,30,999,null,0),token:true},
+  hornet:{...U('Hornet','',1,[],'Ravager',180,26,1.3,1,5,10,999,null,0),token:true},
   levy:{...U('Levy Recruit','',1,[],'Vanguard',480,44,.65,1,25,15,999,null,0),token:true},
 });
 UNITS.kingboss.o=['Crownsworn','Ashborn','Duskbound'];
@@ -1272,9 +1281,15 @@ const SUM={raise:{tok:'thrall',n:[1,1,2],cap:[1,1,2],dur:7,role:'A hulking drown
   crows:{tok:'crow',n:[3,4,5],cap:[3,4,5],dur:6,leap:true,role:'A murder of crows that dives onto the enemy back line'},
   thorns:{tok:'thornling',n:[2,2,3],cap:[2,2,3],dur:7,role:'Briar creatures that hold the line'},
   wolves:{tok:'wolf',n:[1,2,2],cap:[1,2,2],dur:7,role:'Grey wolves that run down the enemy'},
-  bugs:{tok:'swarmling',n:[2,3,4],cap:[2,3,4],dur:6,role:'A boiling swarm of biting insects'}};
+  ink:{tok:'inkblot',n:[2,3,3],cap:[2,3,3],dur:6,role:'Blots of living ink that fight from range and slow whatever they hit'},
+  bells:{tok:'bellwraith',n:[1,1,2],cap:[1,1,2],dur:7,role:'Drowned bell-ringers whose blows silence their target for 1.5s'},
+  echoes:{tok:'echo',n:[1,2,2],cap:[1,2,2],dur:6,role:'Echoes of burnt-out mages that strike from 3 hexes away'},
+  briars:{tok:'bramblekin',n:[2,2,3],cap:[2,2,3],dur:7,role:'Walking briars that hold the line; every third blow roots its target'},
+  rooks:{tok:'rook',n:[1,1,1],cap:[1,1,2],dur:7,leap:true,role:'A great rook that drops onto the enemy back line and blinds what it strikes'},
+  wails:{tok:'wail',n:[1,1,2],cap:[1,1,2],dur:6,role:'Wailing spirits that burst when they fade, slowing every enemy beside them'},
+  hornets:{tok:'hornet',n:[2,3,4],cap:[2,3,4],dur:6,role:'Fast hornets whose stings slow'}};
 // units whose second class is Summoner call these alongside their own ability
-const EXTRA_SUM={stagking:'wolves',banshee:'shades',rookmother:'crows',swarmlord:'bugs'};
+const EXTRA_SUM={stagking:'wolves',banshee:'wails',rookmother:'rooks',swarmlord:'hornets'};
 const sumText=(k,p)=>{const c=SUM[k],u=UNITS[c.tok];return `Summons ${c.n.join(' / ')} ${u.name}s for ${c.dur}s; casting again while they live refreshes and heals them instead. ${c.role}. Each has ${Math.round(u.hp*p/100)} HP and ${Math.round(u.atk*p/100)} attack (${p}% strength, growing with stars and spell power). Summons carry no items or traits.`};
 const SUMMON_TOK=Object.fromEntries(Object.entries(SUM).map(([k,v])=>[k,v.tok]));
 [['spade','bash','Spade Swing'],['barnacle','shield','Barnacle Hide'],['runeward','pavise','Rune Ward'],['verse','heal','Restoring Verse'],['spellcut','soulrend','Spellcut'],
@@ -1289,7 +1304,7 @@ const SUMMON_TOK=Object.fromEntries(Object.entries(SUM).map(([k,v])=>[k,v.tok]))
  ['rockthrow','boulder','Boulder Toss'],['giantfist','slam',"Giant's Fist"],['avalanche','quake','Avalanche'],['wardrum','frenzy','War-Drum'],['deathsaga','keen','Death Saga'],['holdlaw','rally','Law of the Hold'],
  ['murder','soulchain','Murder of Crows',p=>`Crows leap between four enemies, starting at ${p} magic damage and weakening with each jump.`],
 ].forEach(([k,b,n,d])=>{ALIAS[k]=b;ABIL[k]=[n,d||ABIL[b][1]]});
-[['raise','Raise the Drowned'],['shades','Call Shades'],['pages','Loose Pages'],['rats','Rat Tide'],['puff','Puffling Brood'],['crows','Black Wings'],['thorns','Thornbirth']].forEach(([k,n])=>{ALIAS[k]='summon';
+[['raise','Raise the Drowned'],['shades','Call Shades'],['pages','Loose Pages'],['rats','Rat Tide'],['puff','Puffling Brood'],['crows','Black Wings'],['thorns','Thornbirth'],['ink','Inkspill'],['bells','Toll the Drowned'],['echoes','Call Echoes'],['briars','Bramble-Birth']].forEach(([k,n])=>{ALIAS[k]='summon';
   ABIL[k]=[n,p=>sumText(k,p)]});
 const abBase=ab=>ALIAS[ab]||ab;
 
@@ -1933,6 +1948,13 @@ Object.assign(LOOK,{
   inkling:{form:'blob',body:'#24243e',skin:'#24243e',glow:'#9ab8ff',orb:'#9ab8ff',sz:1.5},
   bogling:{form:'blob',body:'#4a4428',skin:'#4a4428',reeds:true,sz:1.55},
   thornling:{form:'treant',body:'#3a6a24',skin:'#3a6a24',glow:'#e0ff8a',sz:1.25,archOf:'Verdant'},
+  inkblot:{form:'blob',body:'#141428',skin:'#141428',glow:'#9ab8ff',orb:'#9ab8ff',sz:.95},
+  bellwraith:{form:'ghost',body:'#5a8494',skin:'#5a8494',glow:'#9ad8ff',sz:1.3},
+  echo:{form:'ghost',body:'#2e7a8a',skin:'#2e7a8a',glow:'#7fe8ff',sz:1},
+  bramblekin:{form:'treant',body:'#5a4a24',skin:'#5a4a24',glow:'#d8f070',sz:1.05},
+  rook:{form:'bird',body:'#141018',skin:'#2a2228',metal:'#6a5a4a',glow:'#ff6a5a',sz:1.4},
+  wail:{form:'ghost',body:'#e8e0f0',skin:'#e8e0f0',glow:'#ff4a5a',sz:.95},
+  hornet:{form:'bug',body:'#b88a18',skin:'#b88a18',glow:'#ffe040',wings:true,sz:1},
 });
 Object.assign(LOOK,{
   frostling:{skin:'#bfe0f0',body:'#5a7a9a',legs:'#3a5a7a',metal:'#c8e0f0',helm:'none',hair:'wild',hairCol:'#e8f8ff',glow:'#bfe8ff',wpn:'knives',bulk:.8,sz:.82},
@@ -3233,7 +3255,8 @@ function render(){
    $('#shopPip').hidden=!(plan&&!open&&S.shop.some(k=>k&&copies(k)>=2))}
   $('#lockBtn').classList.toggle('on',!!S.locked);$('#lockBtn').innerHTML=`<svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="${S.locked?'M7 10V7a5 5 0 0 1 10 0v3h1.5v11h-13V10zm2.4 0h5.2V7a2.6 2.6 0 0 0-5.2 0z':'M7 10V7a5 5 0 0 1 9.6-2l-2.2 1A2.6 2.6 0 0 0 9.4 7v3h9.1v11h-13V10z'}"/></svg>${S.locked?'Locked':'Lock'}`;
   $('#buyxp').disabled=!plan||S.gold<4||S.level>=9;
-  $('#fight').textContent=plan?(S.node==='boss'||S.node==='final'?'Fight boss':S.node==='elite'?'Fight elite':'Fight'):`Speed ${C?C.speed:1}x`;
+  $('#fight').classList.toggle('march',plan&&!!S.camp);
+  $('#fight').textContent=plan&&S.camp?'March on':plan?(S.node==='boss'||S.node==='final'?'Fight boss':S.node==='elite'?'Fight elite':'Fight'):`Speed ${C?C.speed:1}x`;
   $('#fight').disabled=!(plan||S.phase==='combat');
   tutCheck();
 }
@@ -3434,7 +3457,7 @@ function stalkerLeap(e){const foes=alive(foeOf(e.team));if(!foes.length||e.stunU
     const r0=e.pr,X0=e.pX,X1=Xof(spot.r,spot.c);for(let i=0;i<5;i++)ghost(e,r0+(spot.r-r0)*i/5,X0+(X1-X0)*i/5,.3+i*.06);
     C.grid.delete(K(e.r,e.c));e.r=spot.r;e.c=spot.c;e.pr=spot.r;e.pX=X1;C.grid.set(K(e.r,e.c),e);e.target=w;e.face=Math.sign(Xof(w.r,w.c)-X1)||e.face;e.shield+=e.max*.25;fxAt('dust',e,.4);return}}
 function startCombat(){
-  if(S.phase!=='plan')return;
+  if(S.phase!=='plan'||S.camp)return;
   // like TFT, empty field slots are filled from the bench when the fight starts: strongest first, melee in front, ranged behind
   {let placed=0;const val=u=>UNITS[u.key].cost*Math.pow(3,u.star-1);
    while(boardCount()<boardCap()){const bi=S.bench.map((u,i)=>u?i:-1).filter(i=>i>=0).sort((a,b)=>val(S.bench[b])-val(S.bench[a]))[0];if(bi==null)break;
@@ -3548,17 +3571,22 @@ function step(dt){
   if(tm>OT){if(!C.otOn){C.otOn=true;toast('Overtime','Every blow now lands harder.');sfx.boom()}C.ot=1+.22*(tm-OT)}
   // run due callbacks after detaching them, so anything they schedule is kept
   {const due=C.pend.filter(h=>h.at<=tm);if(due.length){C.pend=C.pend.filter(h=>h.at>tm);due.forEach(h=>h.fn())}}
+  // ground effects: fire pits, fairy rings, standards
+  if(C.zones&&C.zones.length)C.zones=C.zones.filter(z=>{if(tm>z.u)return false;if(tm>=z.nt){z.nt=tm+z.every;z.fn(z)}return true});
   C.proj=C.proj.filter(p=>{if(p.t0+p.dur<=tm){
     let t=p.t,red=1;
     hit(p.src,t,p.amt*red,p.type,!p.big,p.crit);if(p.onHit&&t&&!t.dead)p.onHit(t);return false}return true});
   C.fx=C.fx.filter(f=>tm-f.t0<f.dur);
   for(const e of C.ents){
     if(e.dead)continue;
+    // healing is blocked while noHealUntil runs; spent buffs are dropped
+    if(e.noHealUntil>tm){if(e.hp>e._nh)e.hp=e._nh;e._nh=e.hp}else e._nh=e.hp;
+    if(e.bf&&e.bf.length>5)e.bf=e.bf.filter(b=>b.u>tm);
     if(!e.landed&&tm>e.spawnT+.22){e.landed=true;fxAt('dust',e,.35);if(throttle('land',120))tone(90,.06,'sine',.03,.6)}
     if(e.burns.length){e.burns=e.burns.filter(b=>b.until>tm);let d=0;e.burns.forEach(b=>d+=b.dps*dt);if(d>0)applyRaw(e,mitigate(e,d,'magic'),e.burns[0]?.src,null);if(e.dead)continue}
     {const tx=Xof(e.r,e.c),dx=tx-e.pX,dr=(e.r-e.pr)*.866,d=Math.hypot(dx,dr);e.gap=d;
       if(d>1e-3&&e.stunUntil<=tm){const k=Math.min(1,dt/MOVE/d);e.pX+=dx*k;e.pr+=(e.r-e.pr)*k;e.moving=true;if(Math.abs(dx)>.05)e.face=Math.sign(dx);if(Math.random()<dt*3)fxAt('dust',e,.45);if(e.o.includes('Wraithkin')&&Math.random()<dt*7)ghost(e,e.pr,e.pX,.3)}else e.moving=false}
-    if(e.expire&&tm>e.expire){e.dead=true;e.hp=0;e.deadT=tm;C.grid.delete(K(e.r,e.c));fxAt('ashes',e,1,'#6ad84a');continue}
+    if(e.expire&&tm>e.expire){e.dead=true;e.hp=0;e.deadT=tm;C.grid.delete(K(e.r,e.c));fxAt('ashes',e,1,'#6ad84a');if(e.wailer)wailBurst(e);continue}
     if(e.rot&&e.rot.n){if(tm>e.rot.until)e.rot.n=0;else{applyRaw(e,mitigate(e,e.rot.n*9*dt*(e.rot.src&&e.rot.src.pest?1.5:1),'magic'),e.rot.src,null);if(e.dead)continue}}
     if(e.vregen)e.hp=Math.min(e.max,e.hp+e.max*e.vregen*dt);
     if(e.vroot){e.vrT+=dt;if(e.vrT>=e.vroot.cd){const f=alive(foeOf(e.team)).filter(f=>!f.stoneImmune&&!(f.stunUntil>tm)).sort((a,b)=>dist(a,e)-dist(b,e))[0];if(f){e.vrT=0;f.stunUntil=Math.max(f.stunUntil,tm+e.vroot.dur);fxAt('roots',f,e.vroot.dur+.3,'#6ad84a');fxText(f,'Rooted','#8ae86a',10)}}}
@@ -3579,10 +3607,10 @@ function step(dt){
     let t=e.target;if(!t)continue;
     const dx=Xof(t.r,t.c)-e.pX;if(!e.moving&&Math.abs(dx)>.1)e.face=Math.sign(dx);
     if(dist(e,t)<=e.range){
-      e.effAs=e.as*(isC(e,'Ravager')?1+.12*e.kills:1)*(e.frenzyUntil>tm?1.6:1)*(e.slowUntil>tm?.6:1)*(1+.06*(e.fury||0))*(e.covOn?2:1)*(e.horn&&tm<5?1.3:1)*(e.fskOn>tm?1.6:1)*(e.carrion?1+e.carrion.rate*e.carrion.n:1)*(e.warUntil>tm?1.25:1)*(e.skaldN?1+e.skaldR*e.skaldN:1)*(e.beast?1+e.beast*Math.max(0,alive(e.team).filter(a=>a.o.includes('Beastkin')&&!UNITS[a.key].token).length-1):1);
+      e.effAs=e.as*(isC(e,'Ravager')?1+.12*e.kills:1)*(e.frenzyUntil>tm?1.6:1)*(e.slowUntil>tm?.6:1)*(1+.06*(e.fury||0))*(e.covOn?2:1)*(e.horn&&tm<5?1.3:1)*(e.fskOn>tm?1.6:1)*(e.carrion?1+e.carrion.rate*e.carrion.n:1)*(e.warUntil>tm?1.25:1)*(e.skaldN?1+e.skaldR*e.skaldN:1)*(e.beast?1+e.beast*Math.max(0,alive(e.team).filter(a=>a.o.includes('Beastkin')&&!UNITS[a.key].token).length-1):1)*bmul(e,'as');
       if(e.cd<=0&&e.gap<.15){
         e.cd=1/e.effAs;e.atkT=tm;if(!(e.silUntil>tm))e.mana+=10+e.hexMana;
-        const atk=e.atk*(e.rageUntil>tm?1.4:1)*(e.decreeUntil>tm?1.2:1);
+        const atk=e.atk*(e.rageUntil>tm?1.4:1)*(e.decreeUntil>tm?1.2:1)*bmul(e,'atk');
         const crit=e.nextCrit||Math.random()<(e.critC||.15);e.nextCrit=false;const dmg=atk*(crit?(e.critM||1.6):1);
         if(e.range>1){shoot(e,t,dmg,'phys',false,null,crit);if(e.twin){const o=rnd(alive(foeOf(e.team)));if(o)C.pend.push({at:tm+.12,fn:()=>{if(!e.dead&&!o.dead)shoot(e,o,atk*.7,'phys',false)}})}}
         else C.pend.push({at:tm+.2/Math.min(1.6,e.effAs),fn:()=>{if(!e.dead&&!t.dead){hit(e,t,dmg,'phys',true,crit);fxAt('spark',t,.25)}}});
@@ -3608,8 +3636,11 @@ function hit(src,t,amt,type,basic,crit){
   if(src&&src.writ&&(t.elite||t.boss))amt*=1.2;
   if(src&&src.witchDmg&&t.witch===src.team)amt*=src.witchDmg;
   if(src&&t.exposed===src.team)amt*=1.12;
+  if(src&&src.bf)amt*=bmul(src,'amp');
   if(src&&src.range>1&&t.markUntil>C.time&&t.markTeam===src.team)amt*=1.15;
   if(basic&&src&&src.blindUntil>C.time){fxText(t,'Miss','#ffe08a',10);return 0}
+  if(basic&&src&&t.dodgeUntil>C.time){fxText(t,'Dodge','#c8d8ff',11);return 0}
+  if(basic&&src&&t.blocks>0){t.blocks--;fxText(t,'Blocked','#ffd890',11);fxAt('spark',t,.25,'#ffd36a');return 0}
   if(basic&&src&&t.cloak){t.cloak=false;fxText(t,'Dodge','#c8d8ff',11);return 0}
   if(!basic&&src&&src.abyss>=2&&t.slowUntil>C.time)amt*=1.3;
   if(basic&&src&&((t.it.pale&&Math.random()<.25)||(t.dodge&&Math.random()<t.dodge))){fxText(t,'Dodge','#c8d8ff',11);
@@ -3620,9 +3651,14 @@ function hit(src,t,amt,type,basic,crit){
   if(spellHit&&src.it.moth&&!t.mothed){t.mr=Math.max(0,t.mr-20);t.mothed=true}
   let d=mitigate(t,amt,type);
   if(t.share){const adj=alive(t.team).filter(a=>a!==t&&dist(a,t)<=1);if(adj.length){const s=d*.2;d-=s;adj.forEach(a=>applyRaw(a,s/adj.length,src,null))}}
-  t._basic=basic;applyRaw(t,d,src,type,crit);t._basic=false;if(type){if(crit){sfx.crit();V.shake=Math.max(V.shake||0,1.6);C.freeze=Math.max(C.freeze||0,.045)}else sfx.hit()}
+  t._basic=basic;applyRaw(t,d,src,type,crit);t._basic=false;
+  if(basic&&src&&t.bf&&src.range<=1&&!src.dead){const sp=bsum(t,'spike');if(sp)applyRaw(src,mitigate(src,sp,'magic'),t,'magic');const sb=bsum(t,'spikeBurn');if(sb)burn(t,src,sb,3);if(bsum(t,'spikeSlow')&&!src.slowImmune)src.slowUntil=Math.max(src.slowUntil||0,C.time+2)}
+if(type){if(crit){sfx.crit();V.shake=Math.max(V.shake||0,1.6);C.freeze=Math.max(C.freeze||0,.045)}else sfx.hit()}
   if(type&&src&&(crit||C.time-(t._db||-9)>.18)){t._db=C.time;debris(t,crit?9:basic?3:4,type==='phys'?['#fff3c8','#ffb04a','#ffd36a']:[src.oc||'#ffcf7a','#fff4e0'],{h:28,dur:crit?.7:.45,up:crit?80:50,spread:crit?130:80})}
   if(basic&&src&&!t.dead){
+    if(src.bf){const mb=bsum(src,'manaBurn');if(mb)t.mana=Math.max(0,t.mana-mb)}
+    if(src.hitSlow&&!t.slowImmune)t.slowUntil=Math.max(t.slowUntil||0,C.time+1.5);if(src.hitSil)t.silUntil=C.time+1.5;if(src.hitBlind)t.blindUntil=C.time+1.5;
+    if(src.hitRoot){src.hr=(src.hr||0)+1;if(src.hr%3===0&&!t.stoneImmune){t.stunUntil=Math.max(t.stunUntil,C.time+1);fxAt('roots',t,1.1,'#c8e060')}}
     if(src.marker){if(!(t.markUntil>C.time))fxText(t,'Marked','#b8c8ff',10);t.markUntil=C.time+3;t.markTeam=src.team}
     if(isC(src,'Breaker')&&t.armor-src.shred<=0&&t.exposed!==src.team){t.exposed=src.team;fxText(t,'Exposed','#e0b07a',11);fxAt('quake',t,.4,'#b08a5a')}
     if(isC(src,'Breaker')){t.armor=Math.max(0,t.armor-src.shred);t.mr=Math.max(0,t.mr-src.mrShred);if(src.breakHp&&!t.dead)applyRaw(t,mitigate(t,Math.min(t.max*src.breakHp,400),'phys'),src,'phys')}
@@ -3664,6 +3700,7 @@ function applyRaw(t,d,src,type,crit){
   if(t.dead)return;
   if(t.invulUntil>C.time)return;
   if(t.dr)d*=t.dr;
+  if(t.bf)d*=bmul(t,'dr');
   if(type&&C.ot>1)d*=C.ot;
   if(type&&src&&src.frost>=3&&t.stunUntil>C.time)d*=1.3;
   if(t.vulnUntil>C.time)d*=t.vuln||1;
@@ -3723,6 +3760,7 @@ function die(t,src){
   if(t.witch==='A'){C.loot=(C.loot||0)+t.witchPay;fxText(t,`Witch burned +${t.witchPay}`,'#ffd36a',13,true);fxAt('coin',t,1.2);fxAt('pillar',t,.8,'#ffb04a');setTimeout(()=>sfx.coin(),250)}
   if(src&&src.carrion&&src.carrion.gold&&src.team==='A'&&t.team==='B'&&(C.cgold||0)<3){C.cgold=(C.cgold||0)+1;C.loot=(C.loot||0)+1;fxAt('coin',t,1.1)}
   if(t.burst){fxAt('ring',t,.6,'#f08a7a');alive(t.team).filter(a=>dist(a,t)<=1).forEach(a=>{a.hp=Math.min(a.max,a.hp+a.max*.1);fxAt('heal',a,.6)});alive(foeOf(t.team)).filter(f=>dist(f,t)<=1).forEach(f=>addRot(t,f,2))}
+  if(t.wailer)wailBurst(t);
   if(t.swarmN&&!UNITS[t.key].token){[{r:t.r,c:t.c},...neighbors(t.r,t.c)].filter(n=>!C.grid.has(K(n.r,n.c))).slice(0,t.swarmN).forEach(n=>{const s=spawnUnit('swarmling',t.team,n.r,n.c,{expire:8,pow:t.swarmN>=3?2:1});fxText(s,'Swarm!','#e0c040',10)})}
   if(t.crowned){const nx=alive(t.team).filter(a=>a.crownPct&&!a.crowned).sort((a,b)=>b.hp-a.hp)[0];if(nx){const p=nx.crownPct;nx.crowned=true;nx.max*=1+p;nx.hp*=1+p;nx.atk*=1+p;fxText(nx,'The crown passes','#58c8ff',12,true);fxAt('ring',nx,.7,'#58c8ff')}}
   if(t.boss==='ashwalker'){C.flashT=tm;sfx.boom();V.shake=10;fxAt('ring',t,.9,'#ff7a2a',{big:true});
@@ -3735,7 +3773,7 @@ function doSummon(e,key,p){const SC=SUM[key]||SUM.raise,tok=SC.tok,si=Math.min(2
   const cells=[],seen=new Set([K(e.r,e.c)]),q=[{r:e.r,c:e.c}];
   for(let i=0;i<q.length&&cells.length<n&&i<60;i++)for(const nb of neighbors(q[i].r,q[i].c)){const k=K(nb.r,nb.c);if(seen.has(k))continue;seen.add(k);q.push(nb);if(!C.grid.has(k)&&cells.length<n)cells.push(nb)}
   later(.2,()=>{if(e.dead)return;fxAt('ring',e,.6,e.oc);cells.forEach(nb=>{if(C.grid.has(K(nb.r,nb.c)))return;const s=spawnUnit(tok,e.team,nb.r,nb.c,{expire:dur,pow:p/100});s.owner=e;s.face=e.face;fxAt('dust',s,.4);
-    if(tok==='shade')s.critC=.35;if(tok==='rat')s.rotter=1;if(tok==='puffling')s.burst=true;if(SC.leap)C.pend.push({at:C.time+.25,fn:()=>{if(!s.dead)stalkerLeap(s)}})})})}
+    if(tok==='shade')s.critC=.35;if(tok==='rat')s.rotter=1;if(tok==='puffling')s.burst=true;if(TOKF[tok])TOKF[tok](s);if(SC.leap)C.pend.push({at:C.time+.25,fn:()=>{if(!s.dead)stalkerLeap(s)}})})})}
 const extraSumP=(d,star)=>Math.round(60*CAB[d.cost-1]*SPELL[star-1]);
 function castFx(e,B,t){const oc=e.oc,tm=C.time,later=(dt,fn)=>C.pend.push({at:tm+dt,fn}),fx=(k,u,dur,col,ex)=>{if(u&&!u.dead)fxAt(k,u,dur,col,ex)},al=r=>alive(e.team).filter(a=>dist(a,e)<=r),dir=e.team==='A'?1:-1,foesNear=r=>alive(foeOf(e.team)).filter(f=>dist(f,e)<=r);
   if(['shield','pavise','rally','oathguard','stonefist','cinderspin','lanternlight','gravecall'].includes(B))later(.2,()=>{(B==='pavise'?al(1):B==='rally'||B==='lanternlight'?al(2):B==='gravecall'?alive(e.team):[e]).forEach(a=>fx('dome',a,.9,B==='gravecall'?'#7fe0c8':oc))});
@@ -3762,6 +3800,363 @@ const sfxV=k=>{if(!throttle('v'+k,120))return;
   else if(k==='splash'){noise(.4,.05,500);tone(220,.2,'sine',.03,.5)}
   else if(k==='hiss')noise(.5,.025,2200);
   else if(k==='horn'){tone(196,.35,'sawtooth',.03);tone(294,.35,'sawtooth',.025,0,.08)}};
+// ===== Spell kit: every unit's ability is written with these small verbs =====
+const bmul=(e,k)=>{if(!e.bf||!e.bf.length)return 1;let m=1;for(const b of e.bf)if(b.u>C.time&&b[k]!=null)m*=b[k];return m};
+const bsum=(e,k)=>{if(!e.bf||!e.bf.length)return 0;let m=0;for(const b of e.bf)if(b.u>C.time&&b[k]!=null)m+=b[k];return m};
+function moveTo(u,spot,n=4){if(!spot||C.grid.has(K(spot.r,spot.c)))return false;const r0=u.pr,X0=u.pX,X1=Xof(spot.r,spot.c);
+  for(let i=0;i<n;i++)ghost(u,r0+(spot.r-r0)*i/n,X0+(X1-X0)*i/n,.25+i*.05);C.grid.delete(K(u.r,u.c));u.r=spot.r;u.c=spot.c;u.pr=spot.r;u.pX=X1;C.grid.set(K(u.r,u.c),u);return true}
+function kit(e,p,mult){
+  const foeT=foeOf(e.team),F=()=>alive(foeT),A=()=>alive(e.team),ok=u=>u&&!u.dead;
+  const s={e,p,m:mult,F,A,ok,dir:e.team==='A'?1:-1,
+    L:(dt,fn)=>C.pend.push({at:C.time+dt,fn}),
+    t:()=>{const t=e.target;return ok(t)&&t.team===foeT?t:s.near()},
+    near:(u=e,L=F())=>L.slice().sort((a,b)=>dist(a,u)-dist(b,u))[0],
+    far:(u=e,L=F())=>L.slice().sort((a,b)=>dist(b,u)-dist(a,u))[0],
+    weak:(L=F())=>L.slice().sort((a,b)=>a.hp-b.hp)[0],
+    low:(L=A())=>L.slice().sort((a,b)=>a.hp/a.max-b.hp/b.max)[0],
+    tank:(L=F())=>L.slice().sort((a,b)=>b.max-a.max)[0],
+    caster:(L=F())=>L.filter(f=>f.ab).sort((a,b)=>b.mana/b.maxMana-a.mana/a.maxMana)[0]||L[0],
+    carry:(L=F())=>L.slice().sort((a,b)=>b.atk*b.as-a.atk*a.as)[0],
+    in:(u,r,L=F())=>u?L.filter(f=>dist(f,u)<=r):[],
+    row:(u,L=F())=>u?L.filter(f=>Math.abs(f.pr-u.pr)<.6):[],
+    behind:(u,n=1)=>u?F().filter(f=>f!==u&&dist(f,u)<=1&&Math.abs(f.pX-e.pX)>Math.abs(u.pX-e.pX)).slice(0,n):[],
+    rnd:(n,L=F())=>shuffle(L.slice()).slice(0,n),
+    D:(f,a,ty='magic')=>ok(f)?hit(e,f,a,ty):0,
+    S:(f,a)=>ok(f)?spell(e,f,a):0,
+    stun:(f,d)=>{if(ok(f))stun(f,d)},
+    root:(f,d)=>{if(ok(f)&&!f.stoneImmune){f.stunUntil=Math.max(f.stunUntil,C.time+d);fxAt('roots',f,d+.2,'#6ad84a');fxText(f,'Rooted','#8ae86a',10)}},
+    slow:(f,d)=>{if(ok(f)&&!f.slowImmune){f.slowUntil=Math.max(f.slowUntil||0,C.time+d)}},
+    blind:(f,d)=>{if(ok(f)){f.blindUntil=Math.max(f.blindUntil||0,C.time+d);fxText(f,'Blinded','#ffe08a',10)}},
+    burn:(f,a,d=3)=>{if(ok(f))burn(e,f,a,d)},
+    rot:(f,n)=>{if(ok(f))addRot(e,f,n)},
+    vuln:(f,m,d)=>{if(!ok(f))return;f.vuln=Math.max(f.vulnUntil>C.time?f.vuln||1:1,m);f.vulnUntil=Math.max(f.vulnUntil||0,C.time+d)},
+    shred:(f,ar,mr=0)=>{if(ok(f)){f.armor=Math.max(0,f.armor-ar);f.mr=Math.max(0,f.mr-mr)}},
+    sil:(f,d)=>{if(ok(f)){f.silUntil=C.time+d;fxText(f,'Silenced','#f4f0e0',10)}},
+    noheal:(f,d)=>{if(ok(f)){f.noHealUntil=C.time+d;fxText(f,'No healing','#ff9a7a',10)}},
+    burnMana:(f,n)=>{if(ok(f)){const b=Math.min(f.mana,n);f.mana-=b;return b}return 0},
+    mana:(a,n)=>{if(ok(a)&&a.ab&&!(a.silUntil>C.time))a.mana=Math.min(a.maxMana-1,a.mana+n)},
+    H:(a,amt)=>{if(!ok(a)||a.noHealUntil>C.time)return 0;const h=Math.max(0,Math.min(amt,a.max-a.hp));a.hp+=h;fxAt('heal',a,.7);if(h>=20)fxText(a,'+'+Math.round(h),COL.good,12);return h},
+    HoT:(a,amt,d)=>{const n=Math.round(d*2);for(let i=1;i<=n;i++)s.L(i*.5,()=>{if(ok(a)&&!(a.noHealUntil>C.time))a.hp=Math.min(a.max,a.hp+amt/n)});fxAt('heal',a,.8)},
+    SH:(a,amt)=>{if(ok(a)){a.shield+=amt;fxText(a,'+'+Math.round(amt),'#e8dfcf',10)}},
+    buff:(a,o,d)=>{if(ok(a))(a.bf||(a.bf=[])).push({...o,u:C.time+d})},
+    stat:(a,k,v,d)=>{if(!ok(a))return;a[k]+=v;s.L(d,()=>{a[k]-=v})},
+    taunt:(f,d)=>{if(ok(f)){f.target=e;f.taunter=e;f.tauntUntil=C.time+d}},
+    inv:(a,d)=>{if(ok(a))a.invulUntil=Math.max(a.invulUntil||0,C.time+d)},
+    cleanse:a=>{if(!ok(a))return;a.burns=[];if(a.rot)a.rot.n=0;a.slowUntil=0;a.vulnUntil=0;a.blindUntil=0},
+    leap:w=>ok(w)&&leapTo(e,w),
+    push:(f,n=1,from=e)=>{for(let i=0;i<n;i++){if(!ok(f)||f.boss)return;const sp=neighbors(f.r,f.c).filter(x=>!C.grid.has(K(x.r,x.c))&&dist(x,from)>dist(f,from)).sort((a,b)=>dist(b,from)-dist(a,from))[0];if(!sp)return;moveTo(f,sp,3);fxAt('dust',f,.35)}},
+    pull:(f,to=e)=>{if(!ok(f)||f.boss||dist(f,to)<=1)return;const sp=neighbors(to.r,to.c).filter(n=>!C.grid.has(K(n.r,n.c))).sort((a,b)=>dist(a,f)-dist(b,f))[0];if(sp){moveTo(f,sp,4);fxAt('dust',f,.35)}},
+    orb:(w,col,on,kind='orb',dly=.15)=>{if(ok(w))C.proj.push({src:e,t:w,amt:0,type:'magic',big:true,kind,col,fr:e.pr,fX:e.pX,t0:C.time+dly,dur:.14+.07*dist(e,w),onHit:on})},
+    fx:(k,u,d,col,ex)=>{if(u&&!u.dead)fxAt(k,u,d,col,ex)},
+    ring:(u,col,big)=>{if(u)fxAt('ring',u,.6,col,big?{big:true}:undefined)},
+    beam:(a,b,col,d=.35)=>{if(!a||!b)return;const x=disp(a),y=disp(b);C.fx.push({k:'beam',r:x.r,X:x.X,r2:y.r,X2:y.X,t0:C.time,dur:d,col})},
+    soul:(a,b,col)=>{if(!a||!b)return;const x=disp(a),y=disp(b);C.fx.push({k:'soul',r:x.r,X:x.X,r2:y.r,X2:y.X,t0:C.time,dur:.7,col})},
+    txt:(u,t,col,size=11,pill)=>{if(u)fxText(u,t,col,size,pill)},
+    shake:n=>{V.shake=Math.max(V.shake||0,n)},
+    zone:(at,R,dur,every,fn,col)=>{const z={r:at.r,c:at.c,pr:at.pr,pX:at.pX,R,u:C.time+dur,nt:C.time+.05,every,fn,col,team:e.team,src:e};(C.zones||(C.zones=[])).push(z);return z},
+    sum:key=>{if(mult===1)doSummon(e,key,p)},
+    dead:()=>C.ents.filter(a=>a.team===e.team&&a.dead&&!UNITS[a.key].token).length,
+    snd:k=>sfxV(k)};
+  return s}
+
+// ===== Every unit's own ability. Each is built from its origin and class: [name, description, effect] =====
+const rd=Math.round;
+const SPELLS={
+// ---- Ashborn: fire that will not go out
+tamsin:['Kindle',p=>`Hurls an ember at its target for ${p} magic damage and sets it burning for ${rd(p*.3)} more. If the target was already burning, the ember bursts onto the enemies beside it for ${rd(p*.5)}.`,
+  s=>{const t=s.t();s.orb(t,'#ff8a3a',x=>{const lit=x.burns.some(b=>b.until>C.time);s.S(x,s.p);s.burn(x,s.p*.3);if(lit){s.ring(x,'#ff7a2a');s.in(x,1).filter(f=>f!==x).forEach(f=>{s.D(f,s.p*.5);s.fx('flame',f,.5)})}})}],
+soot:['Cinder Flurry',p=>`Three quick cuts of ${rd(p*.6)} physical damage, each leaving a burn of ${rd(p*.25)}.`,
+  s=>{const t=s.t();[0,.12,.24].forEach(d=>s.L(.15+d,()=>{if(!s.ok(t))return;s.fx('slash',t,.25,'#ff7a2a');s.D(t,s.p*.6,'phys');s.burn(t,s.p*.25)}))}],
+kael:['Smoulder',p=>`Wreathes itself in embers: a ${rd(p*.9)} shield, and for 4s any enemy that strikes it in melee is set burning for ${rd(p*.25)}.`,
+  s=>s.L(.2,()=>{s.SH(s.e,s.p*.9);s.buff(s.e,{spikeBurn:s.p*.25},4);s.fx('flame',s.e,.8);s.fx('dome',s.e,.8,'#ff8a3a')})],
+revgen:['Death March',p=>`Sweeps every adjacent enemy for ${p} physical damage and sets them burning for ${rd(p*.3)}. Every enemy it kills this way restores 20% of its HP.`,
+  s=>s.L(.25,()=>{s.ring(s.e,'#ff7a2a',true);s.in(s.e,1).forEach(f=>{s.fx('slash',f,.3,'#ff7a2a');s.D(f,s.p,'phys');s.burn(f,s.p*.3);if(f.dead)s.H(s.e,s.e.max*.2)});s.shake(3.5)})],
+huntress:['Cinder Shaft',p=>`A burning arrow for ${p} that punches through every enemy behind the target, dealing 70% to each and setting all of them alight for ${rd(p*.25)}.`,
+  s=>{const t=s.t();s.orb(t,'#ff8a3a',x=>{s.D(x,s.p,'phys');s.burn(x,s.p*.25);s.row(x).filter(f=>f!==x&&Math.sign(f.pX-x.pX)===Math.sign(x.pX-s.e.pX)).forEach(f=>{s.fx('flame',f,.5);s.D(f,s.p*.7,'phys');s.burn(f,s.p*.25)})},'arrow')}],
+// ---- Ironpact: mercenary steel
+mira:['Shield Bash',p=>`Slams its shield into its target for ${p} magic damage, shoves it back a hex and stuns it for 1s.`,
+  s=>{const t=s.t();s.L(.22,()=>{if(!s.ok(t))return;s.fx('star',t,.35,'#fff0c0');s.S(t,s.p);s.push(t,1);s.stun(t,1)})}],
+sigrun:['Death March',p=>`Cleaves every adjacent enemy for ${rd(p*.8)} physical damage, then attacks 10% faster for 5s for each enemy she hit.`,
+  s=>s.L(.25,()=>{const n=s.in(s.e,1);s.ring(s.e,s.e.oc);n.forEach(f=>{s.fx('slash',f,.3,s.e.oc);s.D(f,s.p*.8,'phys')});if(n.length)s.buff(s.e,{as:1+.1*n.length},5)})],
+daven:['Pin Down',p=>`Shoots the enemy closest to your back line for ${rd(p*1.2)} physical damage and pins it in place for 1.5s.`,
+  s=>{const back=s.A().sort((a,b)=>s.dir*(a.pX-b.pX))[0]||s.e,w=s.near(back);s.orb(w,'#c8d0dc',x=>{s.D(x,s.p*1.2,'phys');s.root(x,1.5)},'bolt')}],
+// ---- Stoneblood: patient stone
+dorn:['Cairnstone',p=>`Lobs a stone at the farthest enemy within 4 hexes for ${p} magic damage, stunning it for 1.25s.`,
+  s=>{const L=s.in(s.e,4),w=L.length?s.far(s.e,L):s.t();s.orb(w,'#c0a07a',x=>{s.S(x,s.p);s.stun(x,1.25);s.fx('quake',x,.5,'#c0a07a')},'orb')}],
+flint:['Stoneskin',p=>`The most wounded ally partly turns to stone: it takes 40% less damage for 3s and heals ${rd(p*.8)}.`,
+  s=>s.L(.25,()=>{const w=s.low();if(!w)return;s.buff(w,{dr:.6},3);s.H(w,s.p*.8);s.fx('dome',w,.9,'#c0a07a');s.txt(w,'Stoneskin','#d8c0a0')})],
+basalt:['Rockfall',p=>`Drops a boulder on its target and the enemies beside it for ${rd(p*.9)}; the rubble slows them for 3s.`,
+  s=>{const t=s.t();if(!t)return;s.fx('rock',t,.5);s.L(.32,()=>{s.ring(t,'#c0a07a');s.in(t,1).forEach(f=>{s.D(f,s.p*.9);s.slow(f,3)});s.snd('rumble');s.shake(3)})}],
+mordrake:['Earthsplitter',p=>`Splits the earth along its target's row: every enemy in it takes ${rd(p*.85)} physical damage and is stunned for 1s.`,
+  s=>{const t=s.t();if(!t)return;s.shake(6);s.row(t).forEach(f=>s.L(.2+.05*Math.abs(f.pX-s.e.pX),()=>{if(!s.ok(f))return;s.fx('quake',f,.6,'#c0a07a');s.D(f,s.p*.85,'phys');s.stun(f,1)}));s.snd('rumble')}],
+// ---- Covenant: the oath holds
+novice:['Prayer',p=>`Prays over the most wounded ally: heals it for ${rd(p*.8)} and lifts its burns, Rot, slows and curses.`,
+  s=>s.L(.25,()=>{const w=s.low();if(!w)return;s.cleanse(w);s.H(w,s.p*.8);s.fx('pillar',w,.6,'#fff2c0')})],
+halla:['Guardian Shot',p=>`Shoots the enemy that is attacking your most wounded ally for ${p} magic damage and stuns it for 1s.`,
+  s=>{const w=s.low(),att=s.F().find(f=>f.target===w)||s.t();s.orb(att,'#f0d47a',x=>{s.S(x,s.p);s.stun(x,1)},'arrow')}],
+cinder:['Pyre Hymn',p=>`Heals itself and every ally within 2 hexes for ${rd(p*.6)}; enemies beside it are scorched for ${rd(p*.3)}.`,
+  s=>s.L(.25,()=>{s.ring(s.e,'#ffb04a',true);s.in(s.e,2,s.A()).forEach(a=>s.H(a,s.p*.6));s.in(s.e,1).forEach(f=>{s.fx('flame',f,.5);s.D(f,s.p*.3)})})],
+grevna:['Covenant Hymn',p=>`Allies within 2 hexes heal ${rd(p*.5)} and deal 25% more damage for 4s.`,
+  s=>{s.snd('horn');s.L(.2,()=>{s.ring(s.e,'#f0d47a',true);s.in(s.e,2,s.A()).forEach(a=>{s.H(a,s.p*.5);s.buff(a,{amp:1.25},4)})})}],
+// ---- Forsaken: the shamed fight dirty
+magrook:['Spite',p=>`Attacks 50% faster for 4s, plus 15% for every ally that has already fallen, and heals ${rd(p*.8)}.`,
+  s=>s.L(.15,()=>{s.buff(s.e,{as:1.5+.15*s.dead()},4);s.H(s.e,s.p*.8);s.txt(s.e,'Spite','#b8c8a0')})],
+grieve:['Grief',p=>`Steps out of the shadows behind the weakest enemy and strikes for ${p} magic damage, plus 25% for every ally that has fallen.`,
+  s=>{const w=s.weak();if(!w)return;s.leap(w);s.L(.18,()=>{s.fx('slash',w,.35,'#b8c8a0');s.S(w,s.p*(1+.25*s.dead()))})}],
+ossian:['Sunder',p=>`Hacks its target for ${p} magic damage and strips 20 armor, or 40 from a Vanguard.`,
+  s=>{const t=s.t();s.L(.22,()=>{if(!s.ok(t))return;s.fx('cross',t,.45,s.e.oc);s.S(t,s.p);s.shred(t,isC(t,'Vanguard')?40:20)})}],
+// ---- Carrion: every death feeds them
+crowboy:['Pick the Bones',p=>`Leaps onto the weakest enemy within 2 hexes and strikes for ${p} physical damage. A kill heals it for ${p}.`,
+  s=>{const L=s.in(s.e,2),w=s.weak(L.length?L:s.F());if(!w)return;if(dist(w,s.e)>1)s.leap(w);s.L(.18,()=>{s.fx('claw',w,.4,'#9a86c0',{dir:s.dir});s.D(w,s.p,'phys');if(w.dead)s.H(s.e,s.p)})}],
+wick:['Last Rites',p=>`Fires at the weakest enemy for ${p} magic damage. If it dies within 3s you loot 1 gold (once per battle).`,
+  s=>{const w=s.weak();s.orb(w,'#c8b8ff',x=>{s.S(x,s.p);if(s.e.team==='A'){const chk=()=>{if(x.dead&&!C.wickGold){C.wickGold=1;C.loot=(C.loot||0)+1;fxAt('coin',x,1.1);s.txt(x,'+1 gold','#ffd36a',12,true)}};chk();s.L(3,chk)}})}],
+gravedigger:['Shallow Grave',p=>`Buries its target up to the neck: ${p} magic damage, stunned for 1.5s and taking 20% more damage for 4s.`,
+  s=>{const t=s.t();s.L(.25,()=>{if(!s.ok(t))return;s.fx('quake',t,.5,'#6a5a4a');s.S(t,s.p);s.stun(t,1.5);s.vuln(t,1.2,4);s.txt(t,'Buried','#c8b898')})}],
+esk:['Murder of Crows',p=>`Crows mob the three lowest-HP enemies, pecking each for ${rd(p*.75)} magic damage and blinding them for 1.5s.`,
+  s=>s.F().sort((a,b)=>a.hp-b.hp).slice(0,3).forEach((f,i)=>s.L(.15+i*.1,()=>{s.fx('claw',f,.35,'#2a2430',{dir:s.dir});s.D(f,s.p*.75);s.blind(f,1.5)}))],
+// ---- Militia: farm tools and stubbornness
+levyman:['Brace',p=>`Plants his pitchfork: for 4s he takes 35% less damage, and every enemy that strikes him in melee takes ${rd(p*.3)}.`,
+  s=>s.L(.2,()=>{s.buff(s.e,{dr:.65,spike:s.p*.3},4);s.fx('dome',s.e,.8,'#a8c060');s.txt(s.e,'Braced','#d8e8a0')})],
+archerlass:['Pinning Shot',p=>`Shoots its target for ${p} physical damage and pins it to the ground for 1.5s.`,
+  s=>{const t=s.t();s.orb(t,'#a8c060',x=>{s.D(x,s.p,'phys');s.root(x,1.5)},'arrow')}],
+flailer:['Thresh',p=>`Whirls his flail through every adjacent enemy twice, ${rd(p*.5)} physical damage a hit.`,
+  s=>[0,.18].forEach(d=>s.L(.2+d,()=>{s.ring(s.e,'#a8c060');s.in(s.e,1).forEach(f=>{s.fx('slash',f,.25,'#c8b898');s.D(f,s.p*.5,'phys')})}))],
+shepherd:['Hedge Remedy',p=>`Heals the two most wounded allies for ${rd(p*.5)} each.`,
+  s=>s.L(.25,()=>s.A().sort((a,b)=>a.hp/a.max-b.hp/b.max).slice(0,2).forEach(a=>{s.H(a,s.p*.5);s.fx('star',a,.4,'#c8e8a0')}))],
+yeoman:['Longbow Pair',p=>`Looses two arrows at the two weakest enemies, ${rd(p*.8)} physical damage each.`,
+  s=>s.F().sort((a,b)=>a.hp-b.hp).slice(0,2).forEach((f,i)=>s.orb(f,'#a8c060',x=>s.D(x,s.p*.8,'phys'),'arrow',.12+i*.12))],
+reeve:['Muster the Levy',p=>`Allies within 2 hexes attack 35% faster for 4s; every Militia ally also gains 15 mana.`,
+  s=>{s.snd('horn');s.L(.2,()=>{s.ring(s.e,'#a8c060',true);s.in(s.e,2,s.A()).forEach(a=>{s.buff(a,{as:1.35},4);s.fx('star',a,.4,'#e0c060')});s.A().filter(a=>a.o.includes('Militia')).forEach(a=>s.mana(a,15))})}],
+captain:['Rally the Levy',p=>`Hews her target for ${rd(p*.8)} physical damage, doubled below 40% HP, and every Militia ally deals 25% more damage for 4s.`,
+  s=>{const t=s.t();s.snd('horn');s.L(.25,()=>{if(s.ok(t)){s.fx('cross',t,.45,'#c4564a');s.D(t,s.p*.8*(t.hp/t.max<.4?2:1),'phys')}s.A().filter(a=>a.o.includes('Militia')).forEach(a=>{s.buff(a,{amp:1.25},4);s.fx('star',a,.4,'#a8c060')})})}],
+// ---- Emberforged: the forge never cools
+hask:['Quench',p=>`Hammers its target for ${p} magic damage, +25% for each item it carries, and strips 15 armor.`,
+  s=>{const t=s.t();s.L(.25,()=>{if(!s.ok(t))return;s.fx('quake',t,.4,'#ffa020');s.S(t,s.p*(1+.25*(t.items||[]).length));s.shred(t,15);debris(t,8,['#ffd36a','#ff8a2a'],{h:24,dur:.6})})}],
+anvilguard:['Anvil Ward',p=>`Raises the anvil: the next 3 attacks against it are blocked outright, and enemies beside it must attack it for 3s.`,
+  s=>s.L(.2,()=>{s.e.blocks=3;s.fx('dome',s.e,.9,'#ffa020');s.in(s.e,1).forEach(f=>s.taunt(f,3));s.txt(s.e,'Anvil Ward','#ffd890')})],
+smithmother:['Temper Steel',p=>`Allies within 2 hexes deal 30% more damage for 5s; those carrying items also gain 25 armor.`,
+  s=>{s.snd('horn');s.L(.2,()=>{s.ring(s.e,'#ffa020',true);s.in(s.e,2,s.A()).forEach(a=>{s.buff(a,{amp:1.3},5);if(a.items.length)s.stat(a,'armor',25,5);s.fx('spark',a,.4,'#ffd36a')})})}],
+gallow:['Gallowglass',p=>`Swings a great axe through every adjacent enemy for ${rd(p*.8)} physical damage, stripping 20 armor from each and adding it to its own armor for 5s.`,
+  s=>s.L(.25,()=>{const n=s.in(s.e,1);s.ring(s.e,'#a8b0bc',true);n.forEach(f=>{s.fx('slash',f,.3,'#a8b0bc');s.D(f,s.p*.8,'phys');s.shred(f,20)});if(n.length)s.stat(s.e,'armor',20*n.length,5)})],
+embersworn:['Forge-Oath',p=>`Shields every ally within 2 hexes for ${rd(p*.5)}; enemies beside it are set burning for ${rd(p*.5)}.`,
+  s=>s.L(.25,()=>{s.ring(s.e,'#ffa020',true);s.in(s.e,2,s.A()).forEach(a=>{s.SH(a,s.p*.5);s.fx('dome',a,.8,'#ffa020')});s.in(s.e,1).forEach(f=>{s.fx('flame',f,.6);s.burn(f,s.p*.5)})})],
+// ---- Inquisition: fire and silence
+flagellant:['Scourging',p=>`Whips himself for 10% of his HP, then attacks 80% faster for 4s; his hits burn 10 mana.`,
+  s=>s.L(.15,()=>{s.e.hp=Math.max(1,s.e.hp-s.e.max*.1);s.buff(s.e,{as:1.8,manaBurn:10},4);s.fx('slash',s.e,.3,'#ff7a5a');s.txt(s.e,'Scourged','#f4f0e0')})],
+witchfinder:['Witch-Pricker',p=>`Stabs the enemy with the most mana for ${p} magic damage and empties its mana.`,
+  s=>{const w=s.caster();s.orb(w,'#f4f0e0',x=>{s.S(x,s.p);x.mana=0;s.txt(x,'Pricked','#f4f0e0')},'bolt')}],
+brandsister:['Purifying Brand',p=>`Brands its target for ${p} magic damage; for 4s it cannot be healed.`,
+  s=>{const t=s.t();s.L(.22,()=>{if(!s.ok(t))return;s.fx('sigil',t,.9,'#ff7a2a');s.S(t,s.p);s.noheal(t,4)})}],
+silencer:['Silence',p=>`Leaps onto the enemy with the most mana, strikes for ${p} magic damage, empties its mana and silences it for 3s.`,
+  s=>{const w=s.caster();if(!w)return;s.leap(w);s.L(.2,()=>{s.fx('sigil',w,.9,'#f4f0e0');s.S(w,s.p);w.mana=0;s.sil(w,3)})}],
+arbiter:['Dusk Verdict',p=>`Passes judgement on the enemy with the most mana: if it is below 30% HP it is executed; otherwise it takes ${p} magic damage and is silenced for 2s.`,
+  s=>{const w=s.caster();if(!w)return;s.fx('pillar',w,.6,'#f4f0e0');s.L(.3,()=>{if(!s.ok(w))return;if(w.hp<w.max*.3&&!w.boss){s.txt(w,'Executed','#f4f0e0',13,true);applyRaw(w,w.hp+w.shield+1,s.e,'true')}else{s.S(w,s.p);s.sil(w,2)}})}],
+inquisitor:['Burn the Witch',p=>`Binds the enemy with the most mana to a stake: stunned for 2s and burning for ${rd(p*2)} over 3s; the flames leap to the enemies beside it for ${rd(p*.8)} and set them burning for ${rd(p*.4)}.`,
+  s=>{const w=s.caster();if(!w)return;s.fx('pillar',w,.8,'#ff8a3a');s.L(.3,()=>{if(!s.ok(w))return;s.stun(w,2);s.burn(w,s.p*2,3);s.fx('flame',w,1);s.txt(w,'Burn the Witch','#ffb04a',13,true);s.in(w,1).filter(f=>f!==w).forEach(f=>{s.D(f,s.p*.8);s.burn(f,s.p*.4);s.fx('flame',f,.5)})})}],
+// ---- Hollow: burnt-out souls
+hollowmonk:['Burnt Offering',p=>`Burns 10% of its own HP to heal the most wounded ally for ${p} and give it 20 mana.`,
+  s=>s.L(.25,()=>{const w=s.low();if(!w)return;s.e.hp=Math.max(1,s.e.hp-s.e.max*.1);s.soul(s.e,w,'#7fe8ff');s.H(w,s.p);s.mana(w,20)})],
+acolyte:['Hollow Bolt',p=>`A bolt of burnt soul for ${p} magic damage that burns 25 mana; the acolyte keeps what it burns.`,
+  s=>{const t=s.t();s.orb(t,'#7fe8ff',x=>{s.S(x,s.p);const b=s.burnMana(x,25);s.mana(s.e,b)})}],
+kess:['Hollow Shot',p=>`Shoots the enemy with the most mana for ${rd(p*1.25)} physical damage; if it was more than half full, its mana is emptied.`,
+  s=>{const w=s.caster();s.orb(w,'#7fe8ff',x=>{const full=x.ab&&x.mana>x.maxMana/2;s.D(x,s.p*1.25,'phys');if(full){x.mana=0;s.txt(x,'Emptied','#7fe8ff')}},'arrow')}],
+emberwight:['Ember Wraith',p=>`Passes straight through its target, coming out behind it: ${p} magic damage and 30 mana burned.`,
+  s=>{const t=s.t();if(!t)return;const sp=neighbors(t.r,t.c).filter(n=>!C.grid.has(K(n.r,n.c))).sort((a,b)=>dist(b,s.e)-dist(a,s.e))[0];if(sp)moveTo(s.e,sp,5);s.L(.15,()=>{s.fx('slash',t,.35,'#7fe8ff');s.S(t,s.p);s.burnMana(t,30)})}],
+// ---- Wraithkin: half-dead
+wisp:['Will-o\'-Wisp',p=>`Blinks between up to three nearby enemies, striking each for ${rd(p*.8)} magic damage.`,
+  s=>{const L=s.in(s.e,3);const tg=(L.length?L:s.F()).sort((a,b)=>a.hp-b.hp).slice(0,3);tg.forEach((f,i)=>s.L(.1+i*.2,()=>{if(!s.ok(f))return;s.leap(f);s.fx('spark',f,.3,'#a8b8ff');s.D(f,s.p*.8)}))}],
+gloam:['Grave Touch',p=>`Reaches through its target for ${p} magic damage and steals 20 of its mana.`,
+  s=>{const t=s.t();s.L(.2,()=>{if(!s.ok(t))return;s.soul(t,s.e,'#a8b8ff');s.S(t,s.p);s.mana(s.e,s.burnMana(t,20))})}],
+// ---- Duskbound: blood and night
+nettle:['Nightbite',p=>`Bites its target for ${p} magic damage and heals for 60% of it, or all of it at night.`,
+  s=>{const t=s.t();s.L(.22,()=>{if(!s.ok(t))return;s.fx('claw',t,.35,'#ff3a4a',{dir:s.dir});const d=s.S(t,s.p);s.H(s.e,d*(isNight()?1:.6))})}],
+corvin:['Bat Swarm',p=>`Bursts into bats and re-forms behind the weakest enemy, striking for ${p} magic damage and healing for half of it.`,
+  s=>{const w=s.weak();if(!w)return;s.fx('cloud',s.e,.5,'#3a1a24');s.leap(w);s.L(.2,()=>{s.fx('claw',w,.35,'#ff3a4a',{dir:s.dir});s.H(s.e,s.S(w,s.p)*.5)})}],
+ilse:['Blood Rain',p=>`Blood falls on its target and the enemies beside it for ${rd(p*.8)} magic damage; she heals for 30% of the total.`,
+  s=>{const t=s.t();if(!t)return;s.fx('cloud',t,.8,'#a01a2a');s.L(.3,()=>{let tot=0;s.in(t,1).forEach(f=>tot+=s.D(f,s.p*.8));s.H(s.e,tot*.3)})}],
+confessor:['Confession',p=>`Drains its target for ${p} magic damage, heals for 60% of it, and silences it for 2s.`,
+  s=>{const t=s.t();s.L(.22,()=>{if(!s.ok(t))return;s.soul(t,s.e,'#ff3a4a');s.H(s.e,s.S(t,s.p)*.6);s.sil(t,2)})}],
+bride:['Hollow Vow',p=>`Drifts untouchable to the weakest enemy and drains it for ${p} magic damage, healing for all of it. At night she also drains the enemies beside it for half.`,
+  s=>{const w=s.weak();if(!w)return;s.inv(s.e,.6);s.leap(w);s.L(.25,()=>{s.soul(w,s.e,'#ff3a4a');s.H(s.e,s.S(w,s.p));if(isNight())s.in(w,1).filter(f=>f!==w).forEach(f=>{s.soul(f,s.e,'#ff3a4a');s.H(s.e,s.D(f,s.p*.5))})})}],
+mallory:['Blood Oath',p=>`Enemies within 2 hexes must attack her for 2.5s; she heals ${rd(p*.4)} now and for 50% of the damage she deals for 4s.`,
+  s=>s.L(.2,()=>{s.ring(s.e,'#ff4a64',true);s.in(s.e,2).forEach(f=>{s.taunt(f,2.5);s.txt(f,'Taunted','#e06a5a',10)});s.stat(s.e,'ls',.5,4);s.H(s.e,s.p*.4);s.fx('dome',s.e,.8,'#ff4a64')})],
+// ---- Plagueborn: rot spreads
+gaunt:['Plague Bite',p=>`Bites for ${p} physical damage and applies 3 Rot, or 6 if the target is already rotting.`,
+  s=>{const t=s.t();s.L(.2,()=>{if(!s.ok(t))return;s.fx('claw',t,.3,'#c0e84a',{dir:s.dir});const was=t.rot&&t.rot.n>0;s.D(t,s.p,'phys');s.rot(t,was?6:3)})}],
+crane:['Miracle Cure',p=>`Injects its target with an experimental cure: ${p} magic damage and 5 Rot, and the infection spreads to every enemy within 2 hexes of it for ${rd(p*.5)} and 3 Rot.`,
+  s=>{const t=s.t();s.orb(t,'#c0e84a',x=>{s.S(x,s.p);s.rot(x,5);s.fx('cloud',x,1,'#a8d040');s.in(x,2).filter(f=>f!==x).forEach(f=>{s.D(f,s.p*.5);s.rot(f,3)})})}],
+halveth:['Rot-Prince\'s Due',p=>`A rot cloud bursts on its target and the enemies beside it: ${rd(p*.7)} magic damage and 3 Rot each; enemies already carrying 5 Rot or more take double.`,
+  s=>{const t=s.t();if(!t)return;s.fx('cloud',t,1,'#a8d040');s.L(.25,()=>s.in(t,1).forEach(f=>{const heavy=f.rot&&f.rot.n>=5;s.D(f,s.p*.7*(heavy?2:1));s.rot(f,3)}))}],
+// ---- Verdant: the wild bites
+thren:['Sap-Mend',p=>`Coats the most wounded ally in living sap that heals ${rd(p*1.2)} over 4s.`,
+  s=>s.L(.25,()=>{const w=s.low();if(w){s.HoT(w,s.p*1.2,4);s.fx('roots',w,.8,'#9ae86a')}})],
+briarling:['Seed Pod',p=>`Spits a seed pod at its target for ${rd(p*.6)}; 1.5s later it bursts into thorns, hitting it and the enemies beside it for ${rd(p*.45)} and rooting them for 1s.`,
+  s=>{const t=s.t();s.orb(t,'#6ad84a',x=>{s.D(x,s.p*.6);s.L(1.5,()=>{if(!s.ok(x))return;s.ring(x,'#6ad84a');s.in(x,1).forEach(f=>{s.D(f,s.p*.45);s.root(f,1)})})})}],
+thornback:['Bristle',p=>`Raises its thorns for 4s: every enemy that strikes it in melee takes ${rd(p*.25)}. It heals ${rd(p*.7)}.`,
+  s=>s.L(.15,()=>{s.buff(s.e,{spike:s.p*.25},4);s.H(s.e,s.p*.7);s.fx('roots',s.e,.8,'#6ad84a')})],
+thornking:['Strangling Roots',p=>`Roots erupt around him: every enemy within 2 hexes takes ${rd(p*.7)} and is rooted for 1.5s. He heals 5% of his HP for each one caught.`,
+  s=>s.L(.3,()=>{const L=s.in(s.e,2);s.ring(s.e,'#6ad84a',true);L.forEach(f=>{s.D(f,s.p*.7);s.root(f,1.5)});s.H(s.e,s.e.max*.05*L.length)})],
+palewarden:['Grave-Bloom',p=>`Pale flowers open across the field: every ally heals ${rd(p*.6)} at once and another ${rd(p*.6)} over 4s.`,
+  s=>s.L(.3,()=>{s.ring(s.e,'#7fe0c8',true);s.A().forEach(a=>{s.H(a,s.p*.6);s.HoT(a,s.p*.6,4)})})],
+// ---- Tidebound: the sea takes back
+deckhand:['Heave-Ho',p=>`Hurls a rope at the farthest enemy within 3 hexes, hauls it to him and stuns it for 1s, dealing ${p} physical damage.`,
+  s=>{const L=s.in(s.e,3),w=L.length?s.far(s.e,L):s.t();if(!w)return;s.beam(s.e,w,'#c8b898',.4);s.L(.2,()=>{if(!s.ok(w))return;s.pull(w);s.D(w,s.p,'phys');s.stun(w,1)})}],
+drownedknight:['Tide-Sunder',p=>`Cleaves its target for ${p} magic damage, strips 20 armor and leaves it slowed for 3s.`,
+  s=>{const t=s.t();s.L(.22,()=>{if(!s.ok(t))return;s.fx('wave',t,.5,'#4aa0e8',{dir:s.dir});s.S(t,s.p);s.shred(t,20);s.slow(t,3)})}],
+ferryman:['Mist of the Crossing',p=>`Grey mist rolls over its target: it and the enemies beside it take ${rd(p*.6)} and are slowed and blinded for 2s.`,
+  s=>{const t=s.t();s.orb(t,'#9aa08a',x=>{s.fx('cloud',x,1,'#9aa08a');s.in(x,1).forEach(f=>{s.D(f,s.p*.6);s.slow(f,2);s.blind(f,2)})})}],
+grimwall:['Breakwater',p=>`A wall of water rises: allies within 2 hexes gain a ${rd(p*.7)} shield, and adjacent enemies are hurled back a hex.`,
+  s=>s.L(.25,()=>{s.fx('wave',s.e,.7,'#4aa0e8',{dir:s.dir});s.in(s.e,2,s.A()).forEach(a=>s.SH(a,s.p*.7));s.in(s.e,1).forEach(f=>s.push(f,1));s.snd('splash')})],
+// ---- Spellwrought: living spells
+runeguard:['Rune Ward',p=>`Inscribes runes on itself and adjacent allies: +40 magic resist for 5s and a ${rd(p*.6)} shield.`,
+  s=>s.L(.2,()=>s.in(s.e,1,s.A()).forEach(a=>{s.stat(a,'mr',40,5);s.SH(a,s.p*.6);s.fx('sigil',a,.7,'#c890ff')}))],
+librarian:['Restoring Verse',p=>`Reads a verse over the most wounded ally: heals ${rd(p*.7)} and gives it 25 mana.`,
+  s=>s.L(.25,()=>{const w=s.low();if(!w)return;s.H(w,s.p*.7);s.mana(w,25);s.fx('sigil',w,.7,'#c890ff')})],
+magister:['Spellcut',p=>`Cuts its target for ${p} magic damage and steals 15% of its spell power for the rest of the battle.`,
+  s=>{const t=s.t();s.L(.2,()=>{if(!s.ok(t))return;s.fx('slash',t,.35,'#c890ff');s.S(t,s.p);t.sp=Math.max(.3,t.sp-.15);s.e.sp+=.15;s.txt(t,'−15% spell power','#c890ff',10)})}],
+automaton:['Clockwork Volley',p=>`Fires three bolts of ${rd(p*.85)} at random enemies, plus one more for every 4 spells your team has cast this battle (up to 6).`,
+  s=>{const n=Math.min(6,3+Math.floor(((C.casts||{})[s.e.team]||0)/4));for(let i=0;i<n;i++){const f=rnd(s.F());s.orb(f,'#c890ff',x=>s.D(x,s.p*.85),'bolt',.08+i*.09)}}],
+archmage:['Arcane Barrage',p=>`Calls down a missile of ${rd(p*.8)} on a random enemy for every 2 spells your team has cast this battle (at least 5, at most 10).`,
+  s=>{const n=Math.max(5,Math.min(10,Math.floor(((C.casts||{})[s.e.team]||0)/2)));for(let i=0;i<n;i++)s.L(i*.1,()=>{const f=rnd(s.F());if(!f)return;s.fx('bolt',f,.5,'#c890ff');s.L(.12,()=>{s.D(f,s.p*.8);s.fx('star',f,.3,'#f0e0ff')})});s.snd('zap')}],
+// ---- Lantern: light in the drowned dark
+lanternmaid:['Swing the Lamp',p=>`Swings her lamp at her target: it and the enemies beside it take ${rd(p*.7)} and are blinded for 2s.`,
+  s=>{const t=s.t();s.L(.22,()=>{if(!t)return;s.fx('star',t,.5,'#fff2b0');s.in(t,1).forEach(f=>{s.D(f,s.p*.7);s.blind(f,2)})})}],
+lampknight:['Last Lamp',p=>`Raises the last lamp: enemies within 2 hexes take ${rd(p*.5)}, are blinded for 2.5s and must attack him.`,
+  s=>s.L(.25,()=>{s.fx('star',s.e,.6,'#fff2b0');C.flashT=C.time;s.in(s.e,2).forEach(f=>{s.D(f,s.p*.5);s.blind(f,2.5);s.taunt(f,2.5)});s.snd('zap')})],
+// ---- Abyssal: from the deep
+deepspawn:['Undertow',p=>`Sinks out of sight and surfaces beneath the weakest enemy: ${p} magic damage to it and the enemies beside it are slowed for 3s.`,
+  s=>{const w=s.weak();if(!w)return;s.inv(s.e,.5);s.fx('vortex',s.e,.4,'#30d0a0');s.leap(w);s.L(.25,()=>{s.fx('wave',w,.5,'#30d0a0',{dir:s.dir});s.S(w,s.p);s.in(w,1).forEach(f=>s.slow(f,3))})}],
+eelwitch:['Eel Bite',p=>`A shocking bite: ${p} magic damage and a 2s slow, then the charge jumps to an adjacent enemy for half.`,
+  s=>{const t=s.t();s.L(.22,()=>{if(!s.ok(t))return;s.fx('spark',t,.35,'#9af0ff');s.S(t,s.p);s.slow(t,2);const n=s.in(t,1).find(f=>f!==t);if(n){s.beam(t,n,'#9af0ff');s.D(n,s.p*.5)}})}],
+reefpriest:['Reef Hymn',p=>`Heals itself and allies within 2 hexes for ${rd(p*.5)}; coral grips adjacent enemies, slowing them for 2s.`,
+  s=>s.L(.25,()=>{s.ring(s.e,'#30d0a0',true);s.in(s.e,2,s.A()).forEach(a=>s.H(a,s.p*.5));s.in(s.e,1).forEach(f=>s.slow(f,2))})],
+abysswatcher:['Abyssal Gaze',p=>`A beam from the deep crosses the whole of its target's row: ${rd(p*.65)} magic damage and a 3s slow to every enemy in it.`,
+  s=>{const t=s.t();if(!t)return;const L=s.row(t),far=s.far(s.e,L)||t;s.beam(s.e,far,'#30d0a0',.6);L.forEach(f=>s.L(.15,()=>{s.D(f,s.p*.65);s.slow(f,3)}))}],
+// ---- Beastkin: the pack hunts
+pup:['Pounce',p=>`Pounces on the weakest enemy for ${p} physical damage; the other Beastkin attack 30% faster for 3s.`,
+  s=>{const w=s.weak();if(!w)return;s.leap(w);s.L(.18,()=>{s.fx('claw',w,.35,'#d08a4a',{dir:s.dir});s.D(w,s.p,'phys');s.A().filter(a=>a!==s.e&&a.o.includes('Beastkin')).forEach(a=>s.buff(a,{as:1.3},3))})}],
+wolfmother:['Call the Pack',p=>`Howls: every Beastkin ally attacks 60% faster for 3s and she heals ${rd(p*.7)}.`,
+  s=>{s.snd('horn');s.L(.2,()=>{s.A().filter(a=>a.o.includes('Beastkin')).forEach(a=>{a.frenzyUntil=Math.max(a.frenzyUntil||0,C.time+3);s.fx('star',a,.4,'#d08a4a')});s.H(s.e,s.p*.7);s.txt(s.e,'Awooo','#e0a060',12,true)})}],
+boarman:['Tusk Charge',p=>`Gores its target for ${p} physical damage, tosses it back a hex and stuns it for 1s.`,
+  s=>{const t=s.t();s.L(.25,()=>{if(!s.ok(t))return;s.fx('claw',t,.4,'#d08a4a',{dir:s.dir});s.D(t,s.p,'phys');s.push(t,1);s.stun(t,1);s.shake(3)})}],
+antler:['Hunter\'s Arrow',p=>`Shoots the weakest enemy for ${rd(p*1.25)} physical damage, +15% for each other Beastkin still standing.`,
+  s=>{const w=s.weak(),n=s.A().filter(a=>a!==s.e&&a.o.includes('Beastkin')).length;s.orb(w,'#d08a4a',x=>s.D(x,s.p*1.25*(1+.15*n),'phys'),'arrow')}],
+bearwife:['Bear Maul',p=>`Mauls her target three times for ${rd(p*.6)} physical damage, each blow stripping 10 armor; the last one stuns it for 1s.`,
+  s=>{const t=s.t();[0,.15,.3].forEach(d=>s.L(.15+d,()=>{if(!s.ok(t))return;s.fx('claw',t,.3,'#d08a4a',{dir:s.dir});s.D(t,s.p*.6,'phys');s.shred(t,10);if(d===.3)s.stun(t,1)}))}],
+rotstag:['Rotten Antlers',p=>`Charges its target for ${p} physical damage, stuns it for 1.5s and fills it with 5 Rot; enemies beside it catch 2 Rot.`,
+  s=>{const t=s.t();s.L(.25,()=>{if(!s.ok(t))return;s.fx('claw',t,.4,'#c0e84a',{dir:s.dir});s.D(t,s.p,'phys');s.stun(t,1.5);s.rot(t,5);s.in(t,1).filter(f=>f!==t).forEach(f=>s.rot(f,2));s.shake(3)})}],
+stagking:['Crown of Antlers',p=>`Lowers his crown and charges: his target and the enemies beside it take ${p} physical damage and are stunned for 1s; Beastkin allies attack 30% faster for 4s.`,
+  s=>{const t=s.t();s.L(.25,()=>{if(s.ok(t)){s.fx('claw',t,.45,'#d0b070',{dir:s.dir});s.in(t,1).forEach(f=>{s.D(f,s.p,'phys');s.stun(f,1)});s.shake(4)}s.A().filter(a=>a.o.includes('Beastkin')).forEach(a=>s.buff(a,{as:1.3},4))})}],
+// ---- Swarm: one will, many mouths
+roach:['Scuttle',p=>`Scuttles about: dodges every attack for 2s and bites its target for ${p} physical damage.`,
+  s=>{const t=s.t();s.e.dodgeUntil=C.time+2;s.txt(s.e,'Scuttle','#e0c040');s.L(.2,()=>{if(s.ok(t)){s.fx('claw',t,.3,'#e0c040',{dir:s.dir});s.D(t,s.p,'phys')}})}],
+hivewife:['Royal Jelly',p=>`Feeds the most wounded ally royal jelly: it heals ${p} and attacks 30% faster for 3s.`,
+  s=>s.L(.25,()=>{const w=s.low();if(!w)return;s.H(w,s.p);s.buff(w,{as:1.3},3);s.fx('star',w,.4,'#e0c040')})],
+locust:['Locust Leap',p=>`Leaps onto the weakest enemy and the swarm boils out: it and every enemy beside it take ${rd(p*.5)} and 2 Rot.`,
+  s=>{const w=s.weak();if(!w)return;s.leap(w);s.L(.2,()=>{s.fx('cloud',w,.7,'#e0c040');s.in(w,1).forEach(f=>{s.D(f,s.p*.5);s.rot(f,2)})})}],
+mothsaint:['Moth Dust',p=>`A cloud of moths settles on the weakest enemy: it and the enemies beside it take ${rd(p*.45)}, 3 Rot and are blinded for 2s.`,
+  s=>{const w=s.weak();if(!w)return;s.fx('cloud',w,1.1,'#d8c8a0');s.L(.3,()=>s.in(w,1).forEach(f=>{s.D(f,s.p*.45);s.rot(f,3);s.blind(f,2)}))}],
+swarmlord:['Devouring Cloud',p=>`A biting cloud hangs over its target's hex for 4s, chewing every enemy within 1 hex for ${rd(p*.28)} each half second.`,
+  s=>{const t=s.t();if(!t)return;s.zone(t,1,4,.5,z=>{fxAt('cloud',z,.55,'#c0a030');s.F().filter(f=>dist(f,z)<=1).forEach(f=>s.D(f,s.p*.28))})}],
+// ---- Mirefolk: dragged under
+bogling:['Mud Slam',p=>`Slams its target for ${p} magic damage, strips 15 armor and leaves it slowed for 3s.`,
+  s=>{const t=s.t();s.L(.25,()=>{if(!s.ok(t))return;s.fx('quake',t,.45,'#5aa090');s.S(t,s.p);s.shred(t,15);s.slow(t,3)})}],
+eelcatcher:['Eel Trap',p=>`Throws a weighted net over the weakest enemy: ${rd(p*.6)} physical damage and rooted for 2s.`,
+  s=>{const w=s.weak();s.orb(w,'#5aa090',x=>{s.D(x,s.p*.6,'phys');s.root(x,2)},'bolt')}],
+mirelurker:['Ambush',p=>`Drags the weakest enemy through the mud to its side, strikes for ${p} magic damage and stuns it for 1s.`,
+  s=>{const w=s.weak();if(!w)return;s.fx('roots',w,.6,'#5aa090');s.pull(w);s.L(.25,()=>{if(!s.ok(w))return;s.S(w,s.p);s.stun(w,1)})}],
+sow:['Wallow',p=>`Wallows in the muck: adjacent enemies take ${rd(p*.7)} and are slowed for 3s, and she takes 30% less damage for 3s.`,
+  s=>s.L(.25,()=>{s.fx('cloud',s.e,.8,'#6a6a3a');s.in(s.e,1).forEach(f=>{s.D(f,s.p*.7);s.slow(f,3)});s.buff(s.e,{dr:.7},3)})],
+drowner:['Drag Under',p=>`Hews its target for ${p} physical damage, doubled below 40% HP, and drags it under: stunned for 1s.`,
+  s=>{const t=s.t();s.L(.25,()=>{if(!s.ok(t))return;s.fx('wave',t,.5,'#5aa090',{dir:s.dir});s.D(t,s.p*(t.hp/t.max<.4?2:1),'phys');s.stun(t,1)})}],
+mirehag:['Bog Curse',p=>`The bog swallows its target and the enemies beside it: ${rd(p*.7)} magic damage, rooted for 1.5s and taking 25% more damage for 4s.`,
+  s=>{const t=s.t();if(!t)return;s.fx('sigil',t,1,'#d060e0');s.L(.3,()=>s.in(t,1).forEach(f=>{s.D(f,s.p*.7);s.root(f,1.5);s.vuln(f,1.25,4)}))}],
+// ---- Fungal: the rot that grows
+moss:['Puff Up',p=>`Swells with spores: heals ${rd(p*.6)}, and adjacent enemies take ${rd(p*.5)} and 2 Rot.`,
+  s=>s.L(.25,()=>{s.fx('cloud',s.e,.8,'#f08a7a');s.H(s.e,s.p*.6);s.in(s.e,1).forEach(f=>{s.D(f,s.p*.5);s.rot(f,2)})})],
+tender:['Fairy Ring',p=>`A ring of mushrooms springs up around it for 4s: allies within 1 hex heal ${rd(p*.12)} every half second.`,
+  s=>s.zone(s.e,1,4,.5,z=>{fxAt('ring',z,.5,'#f08a7a');s.A().filter(a=>dist(a,z)<=1).forEach(a=>{if(!(a.noHealUntil>C.time))a.hp=Math.min(a.max,a.hp+s.p*.12)})})],
+// ---- Hexen: curses
+bramble:['Pox Hex',p=>`Curses its target for ${rd(p*.8)} magic damage: it takes 25% more damage for 4s, and when the curse ends it bursts on the enemies beside it for ${rd(p*.6)}.`,
+  s=>{const t=s.t();s.L(.22,()=>{if(!s.ok(t))return;s.fx('sigil',t,.9,'#d060e0');s.S(t,s.p*.8);s.vuln(t,1.25,4);s.L(4,()=>{if(!t)return;s.ring(t,'#d060e0');s.in(t,1).filter(f=>f!==t).forEach(f=>s.D(f,s.p*.6))})})}],
+curser:['Evil Eye',p=>`Glares at the weakest enemy: ${p} magic damage, and it misses its attacks for 2s.`,
+  s=>{const w=s.weak();s.orb(w,'#d060e0',x=>{s.S(x,s.p);s.blind(x,2);s.fx('sigil',x,.7,'#d060e0')})}],
+covenmother:['Coven Rite',p=>`Heals itself and allies within 2 hexes for ${rd(p*.7)} and curses enemies within 2 hexes: they take 15% more damage for 4s.`,
+  s=>s.L(.25,()=>{s.ring(s.e,'#d060e0',true);s.in(s.e,2,s.A()).forEach(a=>s.H(a,s.p*.7));s.in(s.e,2).forEach(f=>{s.vuln(f,1.15,4);s.fx('sigil',f,.6,'#d060e0')})})],
+hornedone:['Horned Rush',p=>`Charges the farthest enemy: it and the enemies beside it take ${rd(p*1.25)} physical damage, are stunned for 1s and cursed to take 25% more damage for 4s.`,
+  s=>{const w=s.far();if(!w)return;s.leap(w);s.shake(5);s.L(.2,()=>{s.ring(w,'#d060e0',true);s.in(w,1).forEach(f=>{s.D(f,s.p*1.25,'phys');s.stun(f,1);s.vuln(f,1.25,4)})})}],
+// ---- Imperial: the legion
+legionary:['Testudo',p=>`Locks shields: he and adjacent allies take 30% less damage for 3s.`,
+  s=>s.L(.2,()=>s.in(s.e,1,s.A()).forEach(a=>{s.buff(a,{dr:.7},3);s.fx('dome',a,.8,'#b070ff')}))],
+pike:['Pike Thrust',p=>`Skewers its target and the enemy behind it for ${rd(p*.9)} physical damage, stripping 15 armor from both.`,
+  s=>{const t=s.t();s.L(.22,()=>{if(!s.ok(t))return;[t,...s.behind(t)].forEach(f=>{s.fx('slash',f,.3,'#b070ff');s.D(f,s.p*.9,'phys');s.shred(f,15)})})}],
+medica:['Field Dressing',p=>`Binds the most wounded ally's wounds for ${p}, or half again as much if it is below 30% HP.`,
+  s=>s.L(.25,()=>{const w=s.low();if(w)s.H(w,s.p*(w.hp/w.max<.3?1.5:1))})],
+arbalest:['Arbalest Bolt',p=>`A heavy bolt for ${rd(p*1.15)} physical damage that knocks its target back a hex.`,
+  s=>{const t=s.t();s.orb(t,'#b070ff',x=>{s.D(x,s.p*1.15,'phys');s.push(x,1)},'bolt')}],
+signifer:['Raise the Eagle',p=>`Allies within 2 hexes deal 25% more damage for 4s; Imperials among them also gain 25 armor.`,
+  s=>{s.snd('horn');s.L(.2,()=>{s.ring(s.e,'#b070ff',true);s.in(s.e,2,s.A()).forEach(a=>{s.buff(a,{amp:1.25},4);if(a.o.includes('Imperial'))s.stat(a,'armor',25,4)})})}],
+centurion:['Decimate',p=>`Strikes its target and the enemies beside it for ${rd(p*.7)} physical damage, +15% for every Imperial standing next to him.`,
+  s=>{const t=s.t(),n=s.in(s.e,1,s.A()).filter(a=>a!==s.e&&a.o.includes('Imperial')).length;s.L(.25,()=>{if(!t)return;s.ring(t,'#b070ff');s.in(t,1).forEach(f=>{s.fx('slash',f,.3,'#b070ff');s.D(f,s.p*.7*(1+.15*n),'phys')})})}],
+praetor:['Imperial Decree',p=>`Every ally deals 20% more damage for 5s; those standing next to another ally also take 20% less damage.`,
+  s=>s.L(.25,()=>{s.ring(s.e,'#b070ff',true);const L=s.A();L.forEach(a=>{s.buff(a,L.some(b=>b!==a&&dist(a,b)<=1)?{amp:1.2,dr:.8}:{amp:1.2},5);s.fx('dome',a,.7,'#b070ff')})})],
+marshal:['The Last Charge',p=>`Sounds the charge: every ally attacks 40% faster for 4s, and he crashes into the nearest enemy, dealing ${rd(p*1.25)} physical damage to it and the enemies beside it and stunning them for 1s.`,
+  s=>{s.snd('horn');s.A().forEach(a=>s.buff(a,{as:1.4},4));const t=s.t();if(!t)return;s.leap(t);s.shake(5);s.L(.25,()=>{s.ring(t,'#b070ff',true);s.in(t,1).forEach(f=>{s.D(f,s.p*1.25,'phys');s.stun(f,1)})})}],
+// ---- Crownsworn: the royal house
+heir:['Heir\'s Strike',p=>`Leaps onto the weakest enemy and strikes for ${p} magic damage, doubled while wearing the crown.`,
+  s=>{const w=s.weak();if(!w)return;s.leap(w);s.L(.2,()=>{s.fx('slash',w,.35,'#58c8ff');s.S(w,s.p*(s.e.crowned?2:1))})}],
+kingsblade:['King\'s Edge',p=>`Leaps onto the enemy with the highest attack and strikes for ${rd(p*1.4)} magic damage. If it dies, the Kingsblade gains 20% attack and attack speed for the battle.`,
+  s=>{const w=s.carry();if(!w)return;s.leap(w);s.L(.2,()=>{s.fx('cross',w,.45,'#58c8ff');s.S(w,s.p*1.4);if(w.dead){s.e.atk*=1.2;s.e.as*=1.2;s.txt(s.e,'Usurper','#58c8ff',12,true)}})}],
+queen:['Royal Fire',p=>`Blue fire falls on the five enemies nearest your crowned unit, ${rd(p*.65)} each, and the crowned one attacks 30% faster for 4s.`,
+  s=>{const c=s.A().find(a=>a.crowned)||s.e;s.F().sort((a,b)=>dist(a,c)-dist(b,c)).slice(0,5).forEach((f,i)=>s.L(i*.12,()=>{s.fx('pillar',f,.55,'#58c8ff');s.L(.12,()=>s.D(f,s.p*.65))}));s.buff(c,{as:1.3},4);s.fx('star',c,.5,'#58c8ff')}],
+regent:['Regent\'s Writ',p=>`Every ally deals 25% more damage for 5s; your crowned unit also gains a ${rd(p*1.2)} shield and cannot be stunned for 5s.`,
+  s=>s.L(.25,()=>{s.ring(s.e,'#58c8ff',true);s.A().forEach(a=>s.buff(a,{amp:1.25},5));const c=s.A().find(a=>a.crowned)||s.e;s.SH(c,s.p*1.2);if(!c.stoneImmune){c.stoneImmune=true;s.L(5,()=>{c.stoneImmune=false})}s.fx('dome',c,.9,'#58c8ff')})],
+// ---- Frostborn: the long winter
+frostling:['Ice Stab',p=>`Slips behind the weakest enemy and stabs it for ${p} magic damage, freezing it for 1s.`,
+  s=>{const w=s.weak();if(!w)return;s.leap(w);s.L(.18,()=>{s.fx('star',w,.35,'#e8f8ff');s.S(w,s.p);s.stun(w,1)})}],
+icewife:['Winter Balm',p=>`Heals itself and allies within 2 hexes for ${rd(p*.5)} and coats them in rime: +20 armor for 4s. Adjacent enemies are chilled, slowed for 2s.`,
+  s=>s.L(.25,()=>{s.ring(s.e,'#bfe8ff',true);s.in(s.e,2,s.A()).forEach(a=>{s.H(a,s.p*.5);s.stat(a,'armor',20,4)});s.in(s.e,1).forEach(f=>s.slow(f,2))})],
+shardcaster:['Ice Shards',p=>`Fires three shards of ${rd(p*.85)} at random enemies; each shard chills, and a third chill freezes.`,
+  s=>s.rnd(3).forEach((f,i)=>s.orb(f,'#bfe8ff',x=>{s.D(x,s.p*.85);x.chill=(x.chill||0)+1;if(x.chill>=3){x.chill=0;s.stun(x,1);s.fx('star',x,.35,'#e8f8ff')}},'bolt',.1+i*.1))],
+snowhunter:['Frost Arrow',p=>`An arrow for ${rd(p*1.15)} physical damage that freezes its target solid for 1.5s.`,
+  s=>{const t=s.t();s.orb(t,'#bfe8ff',x=>{s.D(x,s.p*1.15,'phys');s.stun(x,1.5);s.fx('star',x,.4,'#e8f8ff')},'arrow')}],
+frostguard:['Rime Armour',p=>`Coats itself in ice: a ${rd(p*.8)} shield, and for 4s anything that strikes it in melee is slowed for 2s.`,
+  s=>s.L(.2,()=>{s.SH(s.e,s.p*.8);s.buff(s.e,{spikeSlow:2},4);s.fx('dome',s.e,.9,'#bfe8ff')})],
+rimequeen:['Blizzard',p=>`A howling blizzard: ${p} magic damage to every enemy within 3 hexes, freezing them for 1.5s, while her saga drives your team to attack 20% faster for 4s.`,
+  s=>s.L(.3,()=>{s.ring(s.e,'#bfe8ff',true);C.flashT=C.time;s.in(s.e,3).forEach(f=>{s.D(f,s.p);s.stun(f,1.5);s.fx('star',f,.4,'#e8f8ff')});s.A().forEach(a=>s.buff(a,{as:1.2},4))})],
+// ---- Giantkin: the mountains walk
+hillgiant:['Boulder Toss',p=>`Hurls a boulder at the farthest enemy within 3 hexes: ${p} magic damage and a 1.5s stun, and ${rd(p*.5)} to the enemies beside it.`,
+  s=>{const L=s.in(s.e,3),w=L.length?s.far(s.e,L):s.t();if(!w)return;s.fx('rock',w,.5);s.L(.35,()=>{if(!s.ok(w))return;s.fx('quake',w,.6,'#c8a878');s.S(w,s.p);s.stun(w,1.5);s.in(w,1).filter(f=>f!==w).forEach(f=>s.D(f,s.p*.5));s.shake(4)})}],
+stonegiant:['Giant\'s Fist',p=>`Slams its target for ${p} magic damage and stuns it for 1s; the shock throws the enemies beside it back a hex.`,
+  s=>{const t=s.t();s.L(.25,()=>{if(!s.ok(t))return;s.fx('quake',t,.6,'#c8a878');s.S(t,s.p);s.stun(t,1);s.in(t,1).filter(f=>f!==t).forEach(f=>s.push(f,1,t));s.shake(4)})}],
+glacierbreaker:['Glacier Crush',p=>`Drives a wall of ice through its target, the enemies beside it and everything behind it in the row: ${rd(p*.9)} magic damage and frozen for 1.5s.`,
+  s=>{const t=s.t();if(!t)return;[...new Set([...s.row(t).filter(f=>f===t||Math.sign(f.pX-t.pX)===Math.sign(t.pX-s.e.pX)),...s.in(t,1)])].forEach(f=>s.L(.15+.05*Math.abs(f.pX-s.e.pX),()=>{s.fx('star',f,.45,'#e8f8ff');s.D(f,s.p*.9);s.stun(f,1.5)}));s.shake(5);s.snd('rumble')}],
+mountainking:['Avalanche',p=>`Brings the mountainside down around its target: ${rd(p*.8)} to every enemy within 2 hexes of it and a 1.5s stun. The first cast each battle also makes the Mountain King 15% larger in HP.`,
+  s=>{const t=s.t();if(!t)return;s.fx('rock',t,.5);s.L(.35,()=>{s.ring(t,'#e8f0f8',true);s.in(t,2).forEach(f=>{s.D(f,s.p*.8);s.stun(f,1.5)});if(!s.e.grown){s.e.grown=1;s.e.max*=1.15;s.e.hp*=1.15}s.shake(7);s.snd('rumble')})}],
+// ---- Skald: songs of the hold
+drumboy:['War-Drum',p=>`Beats the war-drum: he and adjacent allies attack 30% faster for 4s, and he heals ${rd(p*.7)}.`,
+  s=>s.L(.15,()=>{s.in(s.e,1,s.A()).forEach(a=>{s.buff(a,{as:1.3},4);s.fx('star',a,.35,'#ffb860')});s.H(s.e,s.p*.7);s.snd('horn')})],
+hornblower:['Horn of the Hold',p=>`A blast of the great horn: allies within 2 hexes attack 35% faster for 4s, and adjacent enemies are staggered for 0.8s.`,
+  s=>{s.snd('horn');s.L(.2,()=>{s.ring(s.e,'#ffb860',true);s.in(s.e,2,s.A()).forEach(a=>s.buff(a,{as:1.35},4));s.in(s.e,1).forEach(f=>s.stun(f,.8))})}],
+sagasinger:['Death Saga',p=>`Sings of death: every enemy within 2 hexes takes ${rd(p*.8)} magic damage, +2% for every verse of your Saga, and is slowed for 3s.`,
+  s=>{const v=s.e.team==='A'?(S.saga||0):0;for(let i=0;i<3;i++)s.L(.2+i*.12,()=>s.fx('wave',s.e,.6,'#ffb860',{dir:i%2?-s.dir:s.dir}));s.L(.3,()=>s.in(s.e,2).forEach(f=>{s.D(f,s.p*.8*(1+.02*v));s.slow(f,3)}))}],
+lawspeaker:['Law of the Hold',p=>`Speaks the law: allies within 2 hexes heal ${rd(p*.5)}, and enemies within 2 hexes are silenced for 2s.`,
+  s=>s.L(.25,()=>{s.ring(s.e,'#ffb860',true);s.in(s.e,2,s.A()).forEach(a=>s.H(a,s.p*.5));s.in(s.e,2).forEach(f=>s.sil(f,2))})],
+// ---- the last few
+standard:['Raise the Standard',p=>`Plants the company standard for 5s: allies within 2 hexes of it attack 30% faster and take 15% less damage while they stand there.`,
+  s=>s.zone(s.e,2,5,.5,z=>{fxAt('ring',z,.5,'#a8b0bc');s.A().filter(a=>dist(a,z)<=2).forEach(a=>s.buff(a,{as:1.3,dr:.85},.55))})],
+rookmother:['Swoop',p=>`Drops out of the sky onto the weakest enemy: ${rd(p*1.3)} magic damage, and it is blinded for 2s.`,
+  s=>{const w=s.weak();if(!w)return;s.leap(w);s.L(.2,()=>{s.fx('claw',w,.4,'#2a2430',{dir:s.dir});s.S(w,s.p*1.3);s.blind(w,2)})}],
+severin:['The Feast',p=>`Leaps onto the weakest enemy and tears into every enemy around him for ${p} physical damage, healing for half of it.`,
+  s=>{const w=s.weak();if(w)s.leap(w);s.L(.25,()=>{s.ring(s.e,'#ff3a4a',true);let tot=0;s.in(s.e,1).forEach(f=>{s.fx('slash',f,.3,'#ff3a4a');tot+=s.D(f,s.p,'phys')});s.H(s.e,tot*.5)})}],
+voidcaller:['Void Rift',p=>`Tears a rift under its target that drags every enemy within 2 hexes toward it: ${rd(p*.85)} magic damage and 20 mana burned from each.`,
+  s=>{const t=s.t();if(!t)return;s.fx('vortex',t,1,'#b896ff');s.L(.3,()=>{s.shake(3);s.in(t,2).forEach(f=>{if(f!==t)s.pull(f,t);s.D(f,s.p*.85);s.burnMana(f,20)})})}],
+};
+
+// each unit's spell replaces the shared one it used to have
+for(const [k,v] of Object.entries(SPELLS)){if(!UNITS[k])continue;ABIL['u_'+k]=[v[0],v[1]];UNITS[k].ab='u_'+k}
+function wailBurst(t){fxAt('ring',t,.6,'#ff4a5a');fxText(t,'Wail','#ffb0b8',11);alive(foeOf(t.team)).filter(f=>dist(f,t)<=1&&!f.slowImmune).forEach(f=>f.slowUntil=Math.max(f.slowUntil||0,C.time+2.5))}
+const TOKF={inkblot:s=>s.hitSlow=1,bellwraith:s=>s.hitSil=1,bramblekin:s=>s.hitRoot=1,rook:s=>s.hitBlind=1,wail:s=>s.wailer=1,hornet:s=>s.hitSlow=1};
 function cast(e,mult=1){
   const tm=C.time,p=e.p*e.sp*mult,oc=e.oc,t=e.target;
   e.castT=tm;
@@ -3772,7 +4167,9 @@ function cast(e,mult=1){
   if(mult===1&&isC(e,'Hexblade')){e.sstrike=3;e.ssDmg=e.p*e.sp*.25}
   if(mult===1&&e.invMana){alive(e.team).forEach(a=>{if(a!==e&&a.ab&&!(a.silUntil>C.time))a.mana=Math.min(a.maxMana,a.mana+e.invMana)});fxAt('ring',e,.5,'#d08a4a')}
   if(mult===1&&e.skald){for(const a of C.ents)if(!a.dead&&a.team===e.team){a.skaldN=Math.min(5,(a.skaldN||0)+1);a.skaldR=[0,.06,.12][e.skald]}sfxV('horn')}
-  switch(abBase(e.ab)){
+  if(mult===1){const cc=C.casts||(C.casts={A:0,B:0});cc[e.team]++}
+  const SPx=e.ab&&e.ab.startsWith('u_')?SPELLS[e.ab.slice(2)]:null;
+  if(SPx)SPx[2](kit(e,p,mult));else switch(abBase(e.ab)){
     case 'summon':if(mult===1)doSummon(e,e.ab,p);break;
     case 'warcry':later(.2,()=>{fxAt('ring',e,.7,'#e0c060',{big:true});alive(e.team).filter(a=>dist(a,e)<=2).forEach(a=>{a.shield+=p;a.warUntil=C.time+4;fxText(a,'+'+Math.round(p),'#ffe8a0',10)})});break;
     case 'harpoon':{const inr=foes().filter(f=>dist(f,e)<=e.range+1);const w=inr.length?inr.reduce((a,b)=>dist(b,e)>dist(a,e)?b:a):t;if(w)shoot(e,w,p,'phys',true,x=>{if(!x.slowImmune){x.slowUntil=C.time+3;fxText(x,'Slowed','#9ad8ff',10)}});break}
@@ -3936,8 +4333,8 @@ function endCombat(){
   if(won&&node==='final')return finish(true);
   if(!won&&(node==='boss'||node==='final')){S.phase='plan';V.shopOpen=true;freshShop();render();return toast(title,'The boss still holds the road. Regroup and try again.')}
   if(won&&node==='elite'){addGold(2);sub.push('+2 spoils');const k=rnd(poolCost(Math.min(4,S.act+1)));if(giveUnit(k,1))sub.push(`${UNITS[k].name} joins you`)}
-  S.phase='map';S.enemy=[];render();toast(title,sub.join(' · '));
-  const at0=S.at;setTimeout(()=>{if(S.phase!=='map'||S.at!==at0)return;if(won&&node==='boss')bossReward();else if($('#mapv').hidden)showMap()},1100);
+  S.enemy=[];if(won&&node==='boss'){S.phase='map';render();toast(title,sub.join(' · '));const at0=S.at;setTimeout(()=>{if(S.phase==='map'&&S.at===at0)bossReward()},1100)}
+  else{toCamp();toast(title,sub.join(' · '))}
 }
 function finish(victory){
   clearRun();
@@ -4032,7 +4429,7 @@ const allNodes=()=>[ensureStart(S.map),...S.map.layers.flat(),S.map.boss];
 const nodeById=id=>allNodes().find(n=>n.id===id);
 const availableNodes=()=>S.at==null?S.map.layers[0]:nodeById(S.at).next.map(nodeById);
 function startAct(){
-  S.phase='map';S.path=[];S.trail=[];S.at=null;S.node=null;S.enemy=[];
+  S.phase='map';S.camp=false;S.path=[];S.trail=[];S.at=null;S.node=null;S.enemy=[];
   if(S.act>=NACTS()){S.region=RUN.final;V.bg=null;S.map=genMap(true);render();showMap()}
   else{S.region=null;S.map=null;render();regionChoice()}
 }
@@ -4097,18 +4494,20 @@ function travel(id){
   const n=nodeById(id);
   S.at=id;S.trail.push(id);S.path.push(n.type);S.node=n.type;hideMap();sfx.march();
   if(['battle','elite','boss','final'].includes(n.type)){
-    S.phase='plan';V.shopOpen=true;freshShop();genEnemy();render();
-    toast(n.type==='final'?RUN.boss.name:n.type==='boss'?S.boss.name:NODE_NAME[n.type],n.type==='elite'?'A hardened warband. Win for spoils and a recruit.':n.type==='boss'?'Defeat the mini boss to finish the region. Losing costs health, and you try again.':'Set your company and fight. The shop has fresh recruits.');
+    S.phase='plan';S.camp=false;V.shopOpen=false;genEnemy();render();
+    toast(n.type==='final'?RUN.boss.name:n.type==='boss'?S.boss.name:NODE_NAME[n.type],n.type==='elite'?'A hardened warband. Win for spoils and a recruit.':n.type==='boss'?'Defeat the mini boss to finish the region. Losing costs health, and you try again.':'Set your company and fight.');
     if(n.type==='boss'||n.type==='final')setTimeout(bossCard,250);
     else if(isNight())setTimeout(()=>toast('Night falls','Duskbound deal 30% more attack damage in the dark.'),1500);
-  }else{S.phase='event';addGold(2);S.xp+=1;checkLevel();render();toast('On the road','+2 gold · +1 XP');if(n.type==='shop')merchant();else if(n.type==='event')crisis();else if(n.type==='forge')smithy();else camp()}
+  }else{const it=Math.min(Math.floor(S.gold/10),maxInterest());S.camp=false;S.phase='event';if(it){addGold(it);st('gold',it)}S.xp+=1;checkLevel();render();toast('On the road',`${it?`+${it} gold interest · `:''}+1 XP`);if(n.type==='shop')merchant();else if(n.type==='event')crisis();else if(n.type==='forge')smithy();else camp()}
 }
 function bossCard(){
   const fin=S.node==='final',key=fin?RUN.boss.key:S.boss.key,name=fin?RUN.boss.name:S.boss.name;
   const desc=fin?RUN.boss.desc:(S.act>=2?'A veteran champion of the region. Carries two items and rises once after falling.':'A champion of the region, carrying two items. Defeat it to finish the act.');
   const el=$('#bossCard');el.innerHTML=`<div class="bc-in"><div class="bc-port"><canvas class="pc" data-key="${key}" data-zoom="1.3"></canvas></div><div class="bc-t"><div class="ml">${fin?'Final boss':'Mini boss'}${S.heat?` · Heat ${S.heat}`:''}</div><div class="bc-name">${name}</div><div class="bc-desc">${desc}</div></div></div>`;
   el.hidden=false;el.classList.remove('go');void el.offsetWidth;el.classList.add('go');paintPortraits(el);sfx.boom();clearTimeout(bossCard.t);bossCard.t=setTimeout(()=>el.hidden=true,4200)}
-function afterNode(msg,sub){closeModal();S.phase='map';render();if(msg)toast(msg,sub||'');const at0=S.at;setTimeout(()=>{if(S.phase==='map'&&S.at===at0&&$('#mapv').hidden)showMap()},msg?700:0)}
+// Between nodes the company stands on its board: shop, rearrange, then march on to the map when ready
+function toCamp(fresh=true){S.phase='plan';S.camp=true;S.node=null;S.enemy=[];V.shopOpen=false;if(fresh)freshShop();render()}
+function afterNode(msg,sub){closeModal();toCamp(false);if(msg)toast(msg,sub||'')}
 function bossReward(){
   const offers=relicOffers(3);
   modal(`<div class="eyebrow">Act ${S.act} complete</div><h2>${S.boss.name} is broken</h2><p>Take a relic from the spoils. Your company rests and you recover 5 health.</p>
@@ -4182,7 +4581,7 @@ const TUT=[
  {id:'shop',when:()=>planning(),at:'#shop',onShow:()=>{V.shopOpen=true;render()},title:'Recruit fighters',text:'Tap a card to buy that fighter. The coin badge is its cost; the tags under the name are its traits. New recruits wait on your bench. The Shop button at the bottom opens and closes this panel to give the battlefield room.'},
  {id:'bench',when:()=>planning()&&S.bench.some(Boolean),at:'#bench',title:'Field your recruits',text:'Drag a unit from the bench onto a blue hex to field it, and drag it again to move it. Tapping a unit shows its card. Your level is how many units can fight at once.'},
  {id:'traits',when:()=>planning()&&boardCount()>=2,at:'#traits',title:'Traits',text:'Units that share an origin (big hexagon) or class (small circle) power each other up. Fielding 2, 4 and 6 of one trait unlocks stronger bonuses. Tap a badge to read it.'},
- {id:'fight',when:()=>planning()&&boardCount()>=2,at:'#fight',title:'Fight!',text:'Press Fight when you are ready. Any empty field slots fill from your bench, battles play out on their own, and your company heals fully afterwards.'},
+ {id:'fight',when:()=>planning()&&!S.camp&&boardCount()>=2,at:'#fight',title:'Fight!',text:'Press Fight when you are ready. Any empty field slots fill from your bench, battles play out on their own, and your company heals fully afterwards.'},
  {id:'combat',when:()=>S.phase==='combat',at:'#stage',title:'In battle',text:'The green bar is health, the thin blue bar is mana: when it fills, the unit casts its ability. Tap any unit to inspect it, and tap Speed to fast-forward.'},
  {id:'gold',when:()=>S.round>=2&&(planning()||S.phase==='map')&&!mvOpen()&&!ovOpen(),at:'#goldBox',title:'Gold',text:'Every battle pays 5 gold, +1 for a win, +1 for every 10 gold you hold (the pips, up to 5) and more for win or loss streaks. Saving up pays off.'},
  {id:'items',when:()=>planning()&&S.round>=2&&S.items.length>0,at:'#armory',onShow:()=>{if(S.items.length<2){S.items.push(S.items[0]||'blade');render()}},title:'Items',text:'Battles sometimes drop item components. Drag one onto a unit to equip it; two components on the same unit forge a finished item. Tap any item to read it, or the book to see every recipe.'},
@@ -4407,6 +4806,7 @@ $('#cv').addEventListener('click',ev=>{
     if(x>P.x-w&&x<P.x+w&&y>P.y-h&&y<P.y+4){const d=Math.abs(x-P.x)+Math.abs(y-(P.y-h/2))*.5-u.r*2;if(d<hd){hd=d;hitU=u}}}
   if(S.phase==='combat'){if(hitU&&hitU.ref.key){openUnit({key:hitU.key,star:hitU.star,team:hitU.team,ent:hitU.ref,elite:hitU.elite,boss:hitU.boss,bossName:hitU.ref.bossName})}else closeSheet();return}
   if(S.phase!=='plan')return;
+  if(V.shopOpen){V.shopOpen=false;render()}
   // 2) nearest hex
   let cell=null,bd=1e9;
   for(const c of V.cells){const d=Math.hypot(c.x-x,(c.y-y)*1.6);if(d<bd){bd=d;cell=c}}
@@ -4465,7 +4865,7 @@ document.addEventListener('click',ev=>{
   const rg=t.closest('[data-region]');if(rg){S.region=rg.dataset.region;V.bg=null;S.boss=bossFor(S.region);S.fought.push(S.boss.name);S.map=genMap(false);closeModal();render();return showMap()}
   const nd=t.closest('[data-node]');if(nd)return travel(+nd.dataset.node);
   if(t.closest('#mvClose'))return hideMap();
-  if(t.closest('#mapBtn'))return S.phase==='map'?showMap():showMap(true);
+  if(t.closest('#mapBtn'))return S.phase==='map'||(S.phase==='plan'&&S.camp)?showMap():showMap(true);
   const rw=t.closest('[data-reward]');if(rw){S.relics.push(rw.dataset.reward);unlock(rw.dataset.reward);heal(5);closeModal();S.act++;return startAct()}
   const br=t.closest('[data-buyrelic]');if(br&&!br.disabled){const x=S.offer.relics.find(z=>z.id===br.dataset.buyrelic);if(S.gold>=x.price){S.gold-=x.price;S.relics.push(x.id);unlock(x.id);render()}return merchant()}
   if(t.closest('[data-buyvet]')&&!t.closest('[data-buyvet]').disabled){const v=S.offer.vet;if(S.gold>=v.price&&giveUnit(v.key,2)){S.gold-=v.price;v.sold=true;render()}return merchant()}
@@ -4488,6 +4888,7 @@ document.addEventListener('click',ev=>{
   if(t.closest('#shopClose'))return setShop(false);
   if(t.closest('#buyxp'))return buyXp();
   if(t.closest('#fight')){
+    if(S.phase==='plan'&&S.camp)return showMap();
     if(S.phase==='plan')return startCombat();
     if(S.phase==='combat'&&C){C.speed=C.speed===1?2:C.speed===2?4:1;SET.speed=C.speed;saveSet();$('#fight').textContent=`Speed ${C.speed}x`}
   }
@@ -4503,8 +4904,8 @@ if(window.visualViewport)window.visualViewport.addEventListener('resize',queueRe
 window.addEventListener('orientationchange',queueRefit);
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>{if(S)queueRefit()});
 document.addEventListener('keydown',ev=>{if(coachStep){if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();hideCoach(false)}return}if(!S||V.menuMode||!$('#overlay').hidden||ev.metaKey||ev.ctrlKey)return;const k=ev.key.toLowerCase();
-  if(k==='d')reroll();else if(k==='f')buyXp();else if(k==='l'&&S.phase==='plan')toggleLock();else if(k===' '||k==='enter'){if(S.phase==='plan'){ev.preventDefault();startCombat()}}
-  else if(k==='m')showMap(S.phase!=='map');else if(k==='s'&&S.phase==='plan')setShop(!V.shopOpen);else if(k==='escape'){closeSheet();sel=null;selItem=null;render()}
+  if(k==='d')reroll();else if(k==='f')buyXp();else if(k==='l'&&S.phase==='plan')toggleLock();else if(k===' '||k==='enter'){if(S.phase==='plan'){ev.preventDefault();S.camp?showMap():startCombat()}}
+  else if(k==='m')showMap(!(S.phase==='map'||(S.phase==='plan'&&S.camp)));else if(k==='s'&&S.phase==='plan')setShop(!V.shopOpen);else if(k==='escape'){closeSheet();sel=null;selItem=null;render()}
   else if(/^[1-5]$/.test(k)&&S.phase==='plan')buy(+k-1)});
 
 function resumeRun(){V.shopOpen=true;
