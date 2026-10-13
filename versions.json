@@ -1,9 +1,15 @@
 [
  {
+  "v": "0.31.0",
+  "date": "2026-10-13",
+  "notes": "No more gold cap: save as much as you like (interest still tops out at 5)",
+  "latest": true
+ },
+ {
   "v": "0.30.0",
   "date": "2026-10-12",
   "notes": "The three- and four-star contracts (III to VI) now run four acts, and the later acts ramp up hard: tougher, better-equipped armies and stronger final bosses",
-  "latest": true
+  "commit": "658032c"
  },
  {
   "v": "0.29.0",
