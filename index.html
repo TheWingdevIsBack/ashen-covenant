@@ -565,14 +565,14 @@ body{position:fixed;inset:0;margin:0}
 /* insets: in true landscape use the side insets; when the phone is upright the page is turned, so the notch is on the left */
 :root{--sl:max(8px,env(safe-area-inset-left,0px));--sr:max(8px,env(safe-area-inset-right,0px));--st:6px;--sb:max(6px,env(safe-area-inset-bottom,0px))}
 #root{position:fixed;top:0;left:0;width:100vw;height:100vh;height:100dvh;overflow:hidden;background:radial-gradient(120% 80% at 50% 0%,#221a18,#110d0c 65%)}
-@media (orientation:portrait){
+@media (orientation:portrait) and (pointer:coarse){
   :root{--sl:max(8px,env(safe-area-inset-top,0px));--sr:max(8px,env(safe-area-inset-bottom,0px));--st:6px;--sb:6px}
   #root{width:100vh;width:100dvh;height:100vw;transform-origin:0 0;transform:rotate(90deg) translateY(-100%)}
 }
 #app{position:absolute;inset:0;max-width:none;margin:0;box-sizing:border-box;display:grid;gap:6px;
   grid-template-columns:clamp(112px,15vw,190px) minmax(0,1fr) clamp(158px,21vw,250px);grid-template-rows:34px minmax(0,1fr) 56px;
   grid-template-areas:"top top top" "left stage shop" "bot bot bot";padding:var(--st) var(--sr) var(--sb) var(--sl);min-height:0}
-@media (orientation:portrait){#app{grid-template-columns:clamp(112px,15vh,190px) minmax(0,1fr) clamp(158px,21vh,250px)}}
+@media (orientation:portrait) and (pointer:coarse){#app{grid-template-columns:clamp(112px,15vh,190px) minmax(0,1fr) clamp(158px,21vh,250px)}}
 #top{grid-area:top;display:flex;align-items:center;gap:6px;min-width:0}
 #roundBox{flex:1;min-width:0;flex-direction:row;align-items:center;gap:10px}
 #roundLbl{font-size:16px;flex:none;max-width:55%}
@@ -659,7 +659,7 @@ body{position:fixed;inset:0;margin:0}
 #shop .card .trs span b{font-size:8.5px}
 #shop .card .foot .nm{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 #app{grid-template-columns:clamp(128px,16vw,200px) minmax(0,1fr) clamp(158px,21vw,250px)}
-@media (orientation:portrait){#app{grid-template-columns:clamp(128px,16vh,200px) minmax(0,1fr) clamp(158px,21vh,250px)}}
+@media (orientation:portrait) and (pointer:coarse){#app{grid-template-columns:clamp(128px,16vh,200px) minmax(0,1fr) clamp(158px,21vh,250px)}}
 #traits .tb.origin .tn{font-size:13px}#traits .tb.class{font-size:10.5px}
 #traits .tb{padding:2px 6px 2px 3px;gap:5px}
 #top #ver{position:static;flex:none;background:none;padding:0 4px;font-size:8px;color:#6a5e56;pointer-events:auto}
@@ -678,13 +678,29 @@ body{position:fixed;inset:0;margin:0}
 #coach.left.pop,#coach.right.pop{animation:copop2 .35s cubic-bezier(.2,1.4,.4,1)}
 @keyframes copop2{from{transform:translateY(-46%) scale(.96);opacity:0}}
 #shopRow{container-type:inline-size}
+/* ===== Desktop: the shop is docked beside the battlefield, always in view during planning ===== */
+:root.desk #app{grid-template-columns:clamp(150px,15%,200px) minmax(0,1fr) 248px;grid-template-areas:"top top top" "left stage shop" "bot bot bot"}
+:root.desk #shopRow{grid-area:shop;justify-self:stretch;width:auto;transform:none;pointer-events:auto;transition:opacity .2s;border:1px solid #3a2e2a;border-radius:8px;box-shadow:none;background:linear-gradient(180deg,rgba(26,20,19,.96),rgba(20,15,14,.96))}
+:root.desk #shopRow:not(.live){opacity:.5}
+:root.desk #shopClose,:root.desk #shopBtn{display:none}
+:root.desk #bottom{grid-template-columns:clamp(110px,14%,170px) 62px minmax(0,1fr) auto clamp(96px,12%,140px)}
+:root.desk #sheet{width:min(360px,40%)}
+/* mouse affordances */
+:root.desk .card:not(.empty),:root.desk .slot,:root.desk .sbtn,:root.desk .tb,:root.desk .itm,:root.desk .ib,:root.desk button:not(:disabled){cursor:pointer}
+:root.desk #shop .card:not(.empty):hover{filter:brightness(1.12);transform:translateY(-1px)}
+:root.desk .slot:hover{filter:brightness(1.15)}
+:root.desk #traits .tb:hover{filter:brightness(1.2)}
+:root.desk #cv{cursor:default}
+:root.desk #cv.hov{cursor:pointer}:root.desk #cv.own{cursor:grab}
+:root.desk #root.dragging,:root.desk #root.dragging *{cursor:grabbing!important}
+
 @container (max-width:210px){#shopHead .sh-lbl{display:none}#shopHead{justify-content:space-between}#shopHead .sbtn{flex:1;justify-content:center;padding:4px 4px}}
 .modal>*{flex-shrink:0}
 .rgrid{overflow:visible;margin:0;padding:0}
 .modal .mn-row2{position:sticky;bottom:-14px;margin:0 -18px -14px;padding:10px 18px 14px;background:linear-gradient(180deg,rgba(26,22,21,0),#1a1615 30%);z-index:2}
 /* the shop slides over the right of the battlefield and is opened and closed with its button */
 #app{grid-template-columns:clamp(128px,16vw,200px) minmax(0,1fr) 0;grid-template-areas:"top top top" "left stage stage" "bot bot bot"}
-@media (orientation:portrait){#app{grid-template-columns:clamp(128px,16vh,200px) minmax(0,1fr) 0}}
+@media (orientation:portrait) and (pointer:coarse){#app{grid-template-columns:clamp(128px,16vh,200px) minmax(0,1fr) 0}}
 #shopRow{grid-area:stage;justify-self:end;align-self:stretch;width:clamp(170px,23vw,260px);z-index:4;padding:6px 6px 14px;box-sizing:border-box;
   background:linear-gradient(90deg,rgba(18,13,12,.82),rgba(22,17,16,.97) 22%);border-left:1px solid #4a3c36;border-radius:8px 0 0 8px;box-shadow:-10px 0 24px rgba(0,0,0,.5);
   transform:translateX(105%);transition:transform .22s cubic-bezier(.3,.9,.3,1);pointer-events:none}
@@ -768,7 +784,7 @@ body{position:fixed;inset:0;margin:0}
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
 </head>
 <body>
-<script>window.ASHEN_VERSIONS=[{"v": "0.34.2", "date": "2026-10-13", "notes": "Marching to an encounter refreshes the shop too, and it opens when you return to your board", "latest": true}, {"v": "0.34.1", "date": "2026-10-13", "notes": "The shop keeps its recruits after a fight and refreshes (and opens) when you march into the next battle", "commit": "69b9408"}, {"v": "0.34.0", "date": "2026-10-13", "notes": "Every unit now has its own ability, built from its origin and class: 130 new spells, from Ironpact shield-shoves and Mirefolk ambushes to Inquisition stakes, Skald sagas and Verdant fairy rings", "commit": "1a91314"}, {"v": "0.33.0", "date": "2026-10-13", "notes": "Every trait now has a signature move. Ravagers leap to the weakest enemy after a kill; Specters vanish and crit; Hexblades charge their next attacks after casting", "commit": "8abd3cd"}, {"v": "0.32.0", "date": "2026-10-13", "notes": "Ironpact sign a contract before every battle (win fast, lose no one, score kills, keep your company standing) and get paid when they fulfil it", "commit": "a6f6a68"}, {"v": "0.31.0", "date": "2026-10-13", "notes": "No more gold cap: save as much as you like (interest still tops out at 5)", "commit": "39e1b40"}, {"v": "0.30.0", "date": "2026-10-12", "notes": "The three- and four-star contracts (III to VI) now run four acts, and the later acts ramp up hard: tougher, better-equipped armies and stronger final bosses", "commit": "658032c"}, {"v": "0.29.0", "date": "2026-10-12", "notes": "Two new contracts. The Witch-Hunt (now Contract IV; the Cinder Throne becomes V): the Inquisition, militia and the faithful against witches, crows and burnt-out mages, ending at the Great Pyre with the Witch-Queen", "commit": "ea7c0de"}, {"v": "0.28.0", "date": "2026-10-12", "notes": "Signature spell effects: pillars of light and lightning strikes, crashing waves, void vortexes, bursting roots, rot and spore clouds, ground-splitting quakes, shield domes, souls drained across the field, falling meteors, curse sigils, claw rakes and executioner\\", "commit": "f6d68fd"}, {"v": "0.27.0", "date": "2026-10-12", "notes": "Summons each have a role: drowned brutes (1/1/2) are huge tanks, shades (1/1/2) leap onto the weakest enemy, the Rat-King calls swarms of rats (2/3/4), pages cut from range (3/3/4), crows dive the back line (3/4/5), pufflings burst into healing spores", "commit": "9b2c14a"}, {"v": "0.26.2", "date": "2026-10-12", "notes": "A shop unit that would star up shows the stars it would reach in its corner", "commit": "4a16263"}, {"v": "0.26.1", "date": "2026-10-12", "notes": "Creatures attack properly: a wind-up, then a lunge, pounce or bite", "commit": "46f1694"}, {"v": "0.26.0", "date": "2026-10-12", "notes": "About 40% more fights on the map, with fewer special stops; difficulty is stretched to match", "commit": "bf4a026"}, {"v": "0.25.1", "date": "2026-10-11", "notes": "Shields now fade: a shield lasts 4 seconds after it was last gained (8 for shields at the start of battle)", "commit": "73daea9"}, {"v": "0.25.0", "date": "2026-10-11", "notes": "Each contract is now its own TFT-style set of eight origins and eight classes; most units have one origin and one class", "commit": "e01f21c"}, {"v": "0.24.0", "date": "2026-10-11", "notes": "A wider battlefield: 13 columns, five ranks per side and a no-man\\", "commit": "280ded1"}, {"v": "0.23.0", "date": "2026-10-11", "notes": "The game is now fully landscape: hold your phone sideways. If it is held upright, the whole game is drawn turned so it still plays sideways", "commit": "b39392b"}, {"v": "0.22.0", "date": "2026-10-11", "notes": "Even fights: enemy boards now grow with the rounds to match yours, so battles are close and tense instead of lopsided", "commit": "944546d"}, {"v": "0.21.2", "date": "2026-10-11", "notes": "A bigger battlefield: taller phones spend their spare height on deeper rows and larger fighters", "commit": "2b7760c"}, {"v": "0.21.1", "date": "2026-10-11", "notes": "The Ashward March ramps up more gently", "commit": "fabd80e"}, {"v": "0.21.0", "date": "2026-10-11", "notes": "Everything moves by dragging: drag items onto units to equip them, and drag units to place, swap or sell them", "commit": "6f61b5f"}, {"v": "0.20.2", "date": "2026-10-11", "notes": "The interface stays clear of the iPhone notch and camera cutout on every screen", "commit": "6639abb"}, {"v": "0.20.1", "date": "2026-10-11", "notes": "Boot Camp tips now pause the game: the screen dims around what the tip points at, and you tap Got it to continue", "commit": "70578de"}, {"v": "0.20.0", "date": "2026-10-11", "notes": "Boot Camp: a two-act tutorial contract with a tip for every part of the game", "commit": "19bfdf8"}, {"v": "0.19.3", "date": "2026-10-11", "notes": "The game always fetches the newest release, and offers a one-tap update if an old copy is showing", "commit": "62c85a8"}, {"v": "0.19.2", "date": "2026-10-11", "notes": "Sentinel reworked: Sentinels mark what they shoot, and the trait makes all your ranged units faster and longer-reaching", "commit": "61c8fcd"}, {"v": "0.19.1", "date": "2026-10-11", "notes": "Trait names are back on shop cards", "commit": "65aa9cc"}, {"v": "0.19.0", "date": "2026-10-11", "notes": "29 new units (110 in all): every contract can now reach the top tier of each of its origins and classes", "commit": "162ab82"}, {"v": "0.18.0", "date": "2026-10-11", "notes": "Three new contracts from the design doc: Roads of the Drowned, The Festering Road and Siege of the Cinder Throne", "commit": "0074adf"}, {"v": "0.17.0", "date": "2026-10-11", "notes": "Main menu with Continue, version history and sound settings", "commit": "57f3a6a"}, {"v": "0.16.0", "date": "2026-10-11", "commit": "d0f200d", "notes": "Covenant origin, one-screen map and flatter hexes"}, {"v": "0.15.0", "date": "2026-10-11", "commit": "817d9aa", "notes": "First web release: pixel-art company, items and the three-act campaign"}]</script>
+<script>window.ASHEN_VERSIONS=[{"v": "0.35.0", "date": "2026-10-13", "notes": "Proper desktop support: on computer screens the whole game scales up crisply to fill the window, with readable text at any size from laptops to 4K", "latest": true}, {"v": "0.34.2", "date": "2026-10-13", "notes": "Marching to an encounter refreshes the shop too, and it opens when you return to your board", "commit": "9478a1a"}, {"v": "0.34.1", "date": "2026-10-13", "notes": "The shop keeps its recruits after a fight and refreshes (and opens) when you march into the next battle", "commit": "69b9408"}, {"v": "0.34.0", "date": "2026-10-13", "notes": "Every unit now has its own ability, built from its origin and class: 130 new spells, from Ironpact shield-shoves and Mirefolk ambushes to Inquisition stakes, Skald sagas and Verdant fairy rings", "commit": "1a91314"}, {"v": "0.33.0", "date": "2026-10-13", "notes": "Every trait now has a signature move. Ravagers leap to the weakest enemy after a kill; Specters vanish and crit; Hexblades charge their next attacks after casting", "commit": "8abd3cd"}, {"v": "0.32.0", "date": "2026-10-13", "notes": "Ironpact sign a contract before every battle (win fast, lose no one, score kills, keep your company standing) and get paid when they fulfil it", "commit": "a6f6a68"}, {"v": "0.31.0", "date": "2026-10-13", "notes": "No more gold cap: save as much as you like (interest still tops out at 5)", "commit": "39e1b40"}, {"v": "0.30.0", "date": "2026-10-12", "notes": "The three- and four-star contracts (III to VI) now run four acts, and the later acts ramp up hard: tougher, better-equipped armies and stronger final bosses", "commit": "658032c"}, {"v": "0.29.0", "date": "2026-10-12", "notes": "Two new contracts. The Witch-Hunt (now Contract IV; the Cinder Throne becomes V): the Inquisition, militia and the faithful against witches, crows and burnt-out mages, ending at the Great Pyre with the Witch-Queen", "commit": "ea7c0de"}, {"v": "0.28.0", "date": "2026-10-12", "notes": "Signature spell effects: pillars of light and lightning strikes, crashing waves, void vortexes, bursting roots, rot and spore clouds, ground-splitting quakes, shield domes, souls drained across the field, falling meteors, curse sigils, claw rakes and executioner\\", "commit": "f6d68fd"}, {"v": "0.27.0", "date": "2026-10-12", "notes": "Summons each have a role: drowned brutes (1/1/2) are huge tanks, shades (1/1/2) leap onto the weakest enemy, the Rat-King calls swarms of rats (2/3/4), pages cut from range (3/3/4), crows dive the back line (3/4/5), pufflings burst into healing spores", "commit": "9b2c14a"}, {"v": "0.26.2", "date": "2026-10-12", "notes": "A shop unit that would star up shows the stars it would reach in its corner", "commit": "4a16263"}, {"v": "0.26.1", "date": "2026-10-12", "notes": "Creatures attack properly: a wind-up, then a lunge, pounce or bite", "commit": "46f1694"}, {"v": "0.26.0", "date": "2026-10-12", "notes": "About 40% more fights on the map, with fewer special stops; difficulty is stretched to match", "commit": "bf4a026"}, {"v": "0.25.1", "date": "2026-10-11", "notes": "Shields now fade: a shield lasts 4 seconds after it was last gained (8 for shields at the start of battle)", "commit": "73daea9"}, {"v": "0.25.0", "date": "2026-10-11", "notes": "Each contract is now its own TFT-style set of eight origins and eight classes; most units have one origin and one class", "commit": "e01f21c"}, {"v": "0.24.0", "date": "2026-10-11", "notes": "A wider battlefield: 13 columns, five ranks per side and a no-man\\", "commit": "280ded1"}, {"v": "0.23.0", "date": "2026-10-11", "notes": "The game is now fully landscape: hold your phone sideways. If it is held upright, the whole game is drawn turned so it still plays sideways", "commit": "b39392b"}, {"v": "0.22.0", "date": "2026-10-11", "notes": "Even fights: enemy boards now grow with the rounds to match yours, so battles are close and tense instead of lopsided", "commit": "944546d"}, {"v": "0.21.2", "date": "2026-10-11", "notes": "A bigger battlefield: taller phones spend their spare height on deeper rows and larger fighters", "commit": "2b7760c"}, {"v": "0.21.1", "date": "2026-10-11", "notes": "The Ashward March ramps up more gently", "commit": "fabd80e"}, {"v": "0.21.0", "date": "2026-10-11", "notes": "Everything moves by dragging: drag items onto units to equip them, and drag units to place, swap or sell them", "commit": "6f61b5f"}, {"v": "0.20.2", "date": "2026-10-11", "notes": "The interface stays clear of the iPhone notch and camera cutout on every screen", "commit": "6639abb"}, {"v": "0.20.1", "date": "2026-10-11", "notes": "Boot Camp tips now pause the game: the screen dims around what the tip points at, and you tap Got it to continue", "commit": "70578de"}, {"v": "0.20.0", "date": "2026-10-11", "notes": "Boot Camp: a two-act tutorial contract with a tip for every part of the game", "commit": "19bfdf8"}, {"v": "0.19.3", "date": "2026-10-11", "notes": "The game always fetches the newest release, and offers a one-tap update if an old copy is showing", "commit": "62c85a8"}, {"v": "0.19.2", "date": "2026-10-11", "notes": "Sentinel reworked: Sentinels mark what they shoot, and the trait makes all your ranged units faster and longer-reaching", "commit": "61c8fcd"}, {"v": "0.19.1", "date": "2026-10-11", "notes": "Trait names are back on shop cards", "commit": "65aa9cc"}, {"v": "0.19.0", "date": "2026-10-11", "notes": "29 new units (110 in all): every contract can now reach the top tier of each of its origins and classes", "commit": "162ab82"}, {"v": "0.18.0", "date": "2026-10-11", "notes": "Three new contracts from the design doc: Roads of the Drowned, The Festering Road and Siege of the Cinder Throne", "commit": "0074adf"}, {"v": "0.17.0", "date": "2026-10-11", "notes": "Main menu with Continue, version history and sound settings", "commit": "57f3a6a"}, {"v": "0.16.0", "date": "2026-10-11", "commit": "d0f200d", "notes": "Covenant origin, one-screen map and flatter hexes"}, {"v": "0.15.0", "date": "2026-10-11", "commit": "817d9aa", "notes": "First web release: pixel-art company, items and the three-act campaign"}]</script>
 
 
 <div id="root">
@@ -821,8 +837,9 @@ body{position:fixed;inset:0;margin:0}
 
 <script>
 // ================= VERSION =================
-const GAME_VERSION='0.34.2',S_VERSION=11;
+const GAME_VERSION='0.35.0',S_VERSION=11;
 const CHANGELOG={
+  '0.35.0':['Proper desktop support: on computer screens the whole game scales up crisply to fill the window, with readable text at any size from laptops to 4K','On desktop the shop is docked beside the battlefield instead of sliding over it','Mouse play: pointer and grab cursors over units, hover highlights, and every drag works at any window size','New key E sells the selected unit; the Guide lists every shortcut','A tall or narrow desktop window no longer turns the game sideways; that is only for phones held upright','The map leaves room for the boss name'],
   '0.34.2':['Marching to an encounter refreshes the shop too, and it opens when you return to your board'],
   '0.34.1':['The shop keeps its recruits after a fight and refreshes (and opens) when you march into the next battle'],
   '0.34.0':['Every unit now has its own ability, built from its origin and class: 130 new spells, from Ironpact shield-shoves and Mirefolk ambushes to Inquisition stakes, Skald sagas and Verdant fairy rings','Far fewer plain shields and heals: abilities now push, pull, root, blind, silence, block hits, reflect damage, stop healing, leave fire and spores on the ground and rally allies with timed buffs','No two units share a summon any more: new Ink Blots, Bell Wraiths, Hollow Echoes, Bramblekin, a Great Rook, Wailing Spirits and Hornets','After every fight and encounter you return to your board; press March on to open the map when you are ready','Encounters pay interest; tapping the board tucks the shop away','The Ashward March ramps a little harder to match the stronger spells'],
@@ -2744,16 +2761,21 @@ const FIG=74;let SCL=1.78;
 const hash=(x,y)=>{const v=Math.sin(x*12.9898+y*78.233)*43758.5453;return v-Math.floor(v)};
 // The game is always landscape. Held upright, the whole page is drawn turned 90 degrees, so these helpers
 // convert screen coordinates and element boxes into the game's own (landscape) coordinates.
-const ROT=()=>window.matchMedia&&matchMedia('(orientation: portrait)').matches;
-const RW=()=>ROT()?innerHeight:innerWidth,RH=()=>ROT()?innerWidth:innerHeight;
-function P(ev){return ROT()?{x:ev.clientY,y:innerWidth-ev.clientX}:{x:ev.clientX,y:ev.clientY}}
-function RR(el){const r=el.getBoundingClientRect();return ROT()?{left:r.top,top:innerWidth-r.right,width:r.height,height:r.width,right:r.bottom,bottom:innerWidth-r.left}:{left:r.left,top:r.top,width:r.width,height:r.height,right:r.right,bottom:r.bottom}}
+const ROT=()=>window.matchMedia&&matchMedia('(orientation: portrait) and (pointer: coarse)').matches;
+// Desktop: big screens get a roomy ~1180x680 layout scaled up crisply, with the shop docked beside the battlefield
+let UIZ=1;
+function applyScale(){const desk=!ROT()&&innerWidth>=960&&innerHeight>=560;document.documentElement.classList.toggle('desk',desk);
+  UIZ=desk?Math.max(1,Math.min(3,innerWidth/1180,innerHeight/680)):1;const r=document.getElementById('root');if(!r)return;
+  if(UIZ>1){r.style.width=(innerWidth/UIZ)+'px';r.style.height=(innerHeight/UIZ)+'px';r.style.transformOrigin='0 0';r.style.transform=`scale(${UIZ})`}else{r.style.width=r.style.height=r.style.transform=r.style.transformOrigin=''}}
+const RW=()=>ROT()?innerHeight:innerWidth/UIZ,RH=()=>ROT()?innerWidth:innerHeight/UIZ;
+function P(ev){return ROT()?{x:ev.clientY,y:innerWidth-ev.clientX}:{x:ev.clientX/UIZ,y:ev.clientY/UIZ}}
+function RR(el){const r0=el.getBoundingClientRect(),z=ROT()?1:UIZ,r=z===1?r0:{left:r0.left/z,top:r0.top/z,width:r0.width/z,height:r0.height/z,right:r0.right/z,bottom:r0.bottom/z};return ROT()?{left:r.top,top:innerWidth-r.right,width:r.height,height:r.width,right:r.bottom,bottom:innerWidth-r.left}:{left:r.left,top:r.top,width:r.width,height:r.height,right:r.right,bottom:r.bottom}}
 function layout(){
   const cv=$('#cv'),st=cv.parentElement,W=V.forceWH?V.forceWH[0]:Math.max(200,st.clientWidth),H=V.forceWH?V.forceWH[1]:Math.max(150,st.clientHeight);
   // the board fits the stage box: limited by width or by height, whichever is tighter, with sky above for the back row
   const cw=V.forceWH?Math.min(W/15,H/((ROWS-1)*RHK+3.72)):Math.min(W/(COLS+.2),H/((ROWS-1)*RHK+.7+1.45)),rh=cw*RHK,bottom=cw*.7,field=(ROWS-1)*rh+bottom;SCL=1.74;
   Object.assign(V,{W,cw,rh,y0:H-field-cw*.12,cx:W/2,H});
-  V.dpr=Math.min(2,window.devicePixelRatio||1);
+  V.dpr=Math.min(4,Math.min(2,window.devicePixelRatio||1)*UIZ);
   V.PX=Math.max(2,Math.round(V.dpr*1.1));V.k=V.dpr/V.PX;   // one sprite pixel = PX device pixels
   cv.width=Math.round(W*V.dpr);cv.height=Math.round(V.H*V.dpr);cv.style.height=V.H+'px';
   V.ctx=cv.getContext('2d');
@@ -3253,7 +3275,7 @@ function render(){
   if(!V.fitted){V.fitted=true;requestAnimationFrame(refit)}
   const plan=S.phase==='plan';
   $('#reroll').disabled=!plan||S.gold<rerollCost();$('#reroll small').innerHTML=`<span class="coin"></span>${rerollCost()}`;
-  {const open=(V.shopOpen&&plan)||!!(V.drag&&V.drag.u);$('#shopRow').classList.toggle('open',open);$('#shopBtn').classList.toggle('on',open);$('#shopBtn').disabled=!plan;
+  {const open=(V.shopOpen&&plan)||!!(V.drag&&V.drag.u);$('#shopRow').classList.toggle('open',open);$('#shopRow').classList.toggle('live',plan||!!(V.drag&&V.drag.u));$('#shopBtn').classList.toggle('on',open);$('#shopBtn').disabled=!plan;
    $('#shopPip').hidden=!(plan&&!open&&S.shop.some(k=>k&&copies(k)>=2))}
   $('#lockBtn').classList.toggle('on',!!S.locked);$('#lockBtn').innerHTML=`<svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="${S.locked?'M7 10V7a5 5 0 0 1 10 0v3h1.5v11h-13V10zm2.4 0h5.2V7a2.6 2.6 0 0 0-5.2 0z':'M7 10V7a5 5 0 0 1 9.6-2l-2.2 1A2.6 2.6 0 0 0 9.4 7v3h9.1v11h-13V10z'}"/></svg>${S.locked?'Locked':'Lock'}`;
   $('#buyxp').disabled=!plan||S.gold<4||S.level>=9;
@@ -4473,8 +4495,8 @@ function showMap(peek){
   // fit the whole climb, muster to boss, into the space left on screen
   const box=$('#mvWrap'),bw=Math.max(300,box.clientWidth),bh=Math.max(140,box.clientHeight);
   // the climb runs left to right: Muster on the left, the boss on the right
-  const H=220,W=H*bw/bh,cols=L+2,gap=(W-60)/(cols-1),rs=Math.min(1,gap/46,H/(Math.max(...M.layers.map(l=>l.length))*44));
-  const pos=n=>({x:30+(n.l+1)*gap,y:16+n.x*(H-40)});
+  const H=Math.max(220,bh/1.9),W=H*bw/bh,cols=L+2,gap=(W-130)/(cols-1),rs=Math.min(1,gap/46,H/(Math.max(...M.layers.map(l=>l.length))*44));
+  const pos=n=>({x:44+(n.l+1)*gap,y:16+n.x*(H-40)});
   const av=peek?[]:availableNodes().map(n=>n.id),trail=S.trail,cur=S.at==null?-1:S.at;
   const walkedEdge=(a,b)=>{const path=[-1,...trail];const i=path.indexOf(a);return i>=0&&path[i+1]===b};
   let svg='';
@@ -4581,7 +4603,7 @@ const TUT=[
  {id:'region',when:()=>inModal('[data-region]'),at:'#modal',title:'Choose a region',text:'Each act you pick a region to march through. Its favoured origins turn up more often in your shop, and it ends in a mini boss. In Boot Camp there is only one road.'},
  {id:'map',when:()=>mvOpen()&&!mapPeek,at:'#mvWrap',title:'The road',text:'March from the flag on the left to the crown on the right. ✕ battles earn gold, ◎ Merchants sell relics, ? Crises are choices, the anvil is a Smithy with free items, and the tent is a camp to heal. Tap a glowing node to march.'},
  {id:'welcome',when:()=>planning()&&S.node==='battle',at:'#stage',title:'Fight prep',text:'Your company stands on the blue hexes; the enemy waits on the red. Tap an enemy to see what it does. Nothing happens until you press Fight.'},
- {id:'shop',when:()=>planning(),at:'#shop',onShow:()=>{V.shopOpen=true;render()},title:'Recruit fighters',text:'Tap a card to buy that fighter. The coin badge is its cost; the tags under the name are its traits. New recruits wait on your bench. The Shop button at the bottom opens and closes this panel to give the battlefield room.'},
+ {id:'shop',when:()=>planning(),at:'#shop',onShow:()=>{V.shopOpen=true;render()},title:'Recruit fighters',text:'Tap a card to buy that fighter. The coin badge is its cost; the tags under the name are its traits. New recruits wait on your bench. On a phone, the Shop button at the bottom opens and closes this panel to give the battlefield room.'},
  {id:'bench',when:()=>planning()&&S.bench.some(Boolean),at:'#bench',title:'Field your recruits',text:'Drag a unit from the bench onto a blue hex to field it, and drag it again to move it. Tapping a unit shows its card. Your level is how many units can fight at once.'},
  {id:'traits',when:()=>planning()&&boardCount()>=2,at:'#traits',title:'Traits',text:'Units that share an origin (big hexagon) or class (small circle) power each other up. Fielding 2, 4 and 6 of one trait unlocks stronger bonuses. Tap a badge to read it.'},
  {id:'fight',when:()=>planning()&&!S.camp&&boardCount()>=2,at:'#fight',title:'Fight!',text:'Press Fight when you are ready. Any empty field slots fill from your bench, battles play out on their own, and your company heals fully afterwards.'},
@@ -4698,9 +4720,10 @@ function drawMenu(){
       <li><b>Items</b> drop from fights. Drag one onto a unit to equip it; two components on one unit forge an item. Tap an item to read it, and unequip from the unit's card.</li>
       <li><b>Gold</b> earns 1 interest for every 10 you hold, up to 5 a round. There is no limit on how much you can save, and win or loss streaks pay extra.</li>
       <li><b>Night</b> falls every other pair of battles. Duskbound grow stronger in the dark.</li>
-      <li>Climb each region to its mini boss, then face the contract's final boss in Act 3. Merchants sell relics, Smithies give items, Crises test you.</li>
+      <li>Climb each region to its mini boss, then face the contract's final boss in its last act. Merchants sell relics, Smithies give items, Crises test you.</li>
       <li>Beat a contract to unlock the next, and to raise its <b>Heat</b> for a harder run.</li>
-      <li>New here? Play <b>Boot Camp</b>, the tutorial contract at the top of the board.</li></ul>`;
+      <li>New here? Play <b>Boot Camp</b>, the tutorial contract at the top of the board.</li>
+      <li><b>On a computer</b>: drag units and items with the mouse, click anything to inspect it. Keys: <b>Space</b> fight or march on, <b>D</b> reroll, <b>F</b> buy XP, <b>1–5</b> buy, <b>L</b> lock the shop, <b>E</b> sell the selected unit, <b>M</b> map, <b>Esc</b> close.</li></ul>`;
   }else if(menuTab==='news'){
     $('#mnPanel').innerHTML=`<div class="mp-h">Version ${GAME_VERSION}${ARCHIVED?' · archived':''}</div><ul>${(CHANGELOG[GAME_VERSION]||[]).map(x=>`<li>${x}</li>`).join('')}</ul>
       <div class="mp-sub">Best result: ${best>=4?'contract complete':best?`reached Act ${best}`:'no runs yet'}</div>`;
@@ -4737,6 +4760,8 @@ function frame(ts){
   if(V.menuMode)renderMenuCanvas();
   requestAnimationFrame(frame);
 }
+document.addEventListener('pointermove',ev=>{if(ev.pointerType!=='mouse'||!S||DRAG.p)return;const cv=$('#cv');if(ev.target!==cv){cv.classList.remove('hov','own');return}
+  const b=RR(cv),q=P(ev),u=unitUnder(q.x-b.left,q.y-b.top);cv.classList.toggle('hov',!!u);cv.classList.toggle('own',!!(u&&u.team==='A'&&S.phase==='plan'&&u.ref&&u.ref.k))});
 function unitUnder(x,y){let hitU=null,hd=1e9;
   for(const u of (V.lastUnits||[])){if(u.pose.dead>=0)continue;const P=proj(u.r,u.X),sc=P.s*V.cw*SCL/FIG,h=64*LOOK[u.key].sz*sc,w=V.cw*P.s*.45;
     if(x>P.x-w&&x<P.x+w&&y>P.y-h&&y<P.y+4){const d=Math.abs(x-P.x)+Math.abs(y-(P.y-h/2))*.5-u.r*2;if(d<hd){hd=d;hitU=u}}}
@@ -4752,7 +4777,7 @@ const unitTag=u=>`<span class="dt-u"><b>${UNITS[u.key].name}</b> <em>${stars(u.s
 function dragTip(html,x,y){let el=$('#dragTip');if(!el){el=document.createElement('div');el.id='dragTip';$('#root').appendChild(el)}
   if(!html){el.hidden=true;return}if(el._h!==html){el.innerHTML=html;el._h=html}el.hidden=false;
   const w=el.offsetWidth,h=el.offsetHeight;el.style.transform=`translate(${Math.round(Math.max(8,Math.min(RW()-w-8,x-w/2)))}px,${Math.round(Math.max(8,y-h-70))}px)`}
-function dragEnd(){dragTip(null);const d=DRAG.p;DRAG.p=null;if(d&&d.g)d.g.remove();$('#shopRow').classList.remove('sellzone');V.drag=null;V.dragHex=null;V.itemHover=null;document.querySelectorAll('.slot.ihov').forEach(s=>s.classList.remove('ihov'))}
+function dragEnd(){$('#root').classList.remove('dragging');dragTip(null);const d=DRAG.p;DRAG.p=null;if(d&&d.g)d.g.remove();$('#shopRow').classList.remove('sellzone');V.drag=null;V.dragHex=null;V.itemHover=null;document.querySelectorAll('.slot.ihov').forEach(s=>s.classList.remove('ihov'))}
 // where an item would land: one of your units on the field or the bench
 function itemTarget(ev){const cv=$('#cv'),b=RR(cv),q=P(ev);
   if(q.y>b.top&&q.y<b.bottom&&q.x>b.left&&q.x<b.right){const u=unitUnder(q.x-b.left,q.y-b.top);if(u&&u.team==='A'&&u.ref.k)return{z:'b',k:u.ref.k};return null}
@@ -4774,7 +4799,7 @@ document.addEventListener('pointermove',ev=>{const d=DRAG.p;if(!d||ev.pointerId!
       dragTip(h,q.x,q.y)}
     document.querySelectorAll('.slot').forEach(s=>s.classList.toggle('ihov',!!(tg&&tg.z==='n'&&+s.dataset.i===tg.i)));
     if(ev.cancelable)ev.preventDefault();return}
-  if(!d.on){if(Math.hypot(ev.clientX-d.x,ev.clientY-d.y)<10)return;d.on=true;sel=d.loc;closeSheet();render();V.drag=d;
+  if(!d.on){if(Math.hypot(ev.clientX-d.x,ev.clientY-d.y)<10)return;d.on=true;$('#root').classList.add('dragging');sel=d.loc;closeSheet();render();V.drag=d;
     const g=document.createElement('div');g.id='ghost';g.innerHTML=`<canvas class="pc" data-key="${d.u.key}" data-zoom="1.05"></canvas>`;$('#root').appendChild(g);paintPortraits(g);d.g=g;
     const sr=$('#shopRow');sr.dataset.sell=`Drop to sell for ${sellValue(d.u)} gold`;sr.classList.add('sellzone');sfx.tap()}
   const q=P(ev);d.g.style.transform=`translate(${q.x-32}px,${q.y-62}px)`;
@@ -4900,14 +4925,14 @@ document.addEventListener('click',ev=>{
 // In true landscape the camera sits on one side; screen.orientation tells which, so the shop and unit cards open on the other.
 function notchSide(){const a=(screen.orientation&&screen.orientation.angle!=null)?screen.orientation.angle:(window.orientation||0);document.documentElement.classList.toggle('notch-r',!ROT()&&(a===270||a===-90))}
 notchSide();
-function refit(){notchSide();if(V.menuMode)V.forceWH=[RW(),RH()];layout();if(S)render();V.benchDirty=true;if(sheet)renderSheet();if(!$('#mapv').hidden&&S&&S.map)showMap(mapPeek)}
+function refit(){applyScale();notchSide();if(V.menuMode)V.forceWH=[RW(),RH()];layout();if(S)render();V.benchDirty=true;if(sheet)renderSheet();if(!$('#mapv').hidden&&S&&S.map)showMap(mapPeek)}
 let refitT=0;const queueRefit=()=>{clearTimeout(refitT);refitT=setTimeout(refit,120)};
 window.addEventListener('resize',queueRefit);
 if(window.visualViewport)window.visualViewport.addEventListener('resize',queueRefit);
 window.addEventListener('orientationchange',queueRefit);
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>{if(S)queueRefit()});
 document.addEventListener('keydown',ev=>{if(coachStep){if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();hideCoach(false)}return}if(!S||V.menuMode||!$('#overlay').hidden||ev.metaKey||ev.ctrlKey)return;const k=ev.key.toLowerCase();
-  if(k==='d')reroll();else if(k==='f')buyXp();else if(k==='l'&&S.phase==='plan')toggleLock();else if(k===' '||k==='enter'){if(S.phase==='plan'){ev.preventDefault();S.camp?showMap():startCombat()}}
+  if(k==='d')reroll();else if(k==='f')buyXp();else if(k==='l'&&S.phase==='plan')toggleLock();else if(k==='e'&&S.phase==='plan'&&sel&&unitAt(sel))sell();else if(k===' '||k==='enter'){if(S.phase==='plan'){ev.preventDefault();S.camp?showMap():startCombat()}}
   else if(k==='m')showMap(!(S.phase==='map'||(S.phase==='plan'&&S.camp)));else if(k==='s'&&S.phase==='plan')setShop(!V.shopOpen);else if(k==='escape'){closeSheet();sel=null;selItem=null;render()}
   else if(/^[1-5]$/.test(k)&&S.phase==='plan')buy(+k-1)});
 
@@ -4920,7 +4945,7 @@ function resumeRun(){V.shopOpen=true;
   else toast('Welcome back',`Act ${S.act}${S.region?' · '+REGIONS[S.region].name:''}`);
 }
 function start(data){
-  layout();
+  applyScale();layout();
   if(data&&data.S&&data.S.v===S_VERSION&&data.S.relics&&data.S.relics.length){S=data.S;resumeRun()}
   else{newRun();clearRunIfStale();openMenu(false)}
   requestAnimationFrame(frame);
