@@ -678,6 +678,35 @@ body{position:fixed;inset:0;margin:0}
 #coach.left.pop,#coach.right.pop{animation:copop2 .35s cubic-bezier(.2,1.4,.4,1)}
 @keyframes copop2{from{transform:translateY(-46%) scale(.96);opacity:0}}
 #shopRow{container-type:inline-size}
+/* ===== battle report, live meter, pause, scouting ===== */
+#meter{display:none;flex:none;flex-direction:column;gap:2px;background:linear-gradient(180deg,#221c1a,#1a1514);border:1px solid #3a2e2a;border-radius:6px;padding:5px 6px}
+#meter.on{display:flex}
+#meter .mh{font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:#a39488;display:flex;justify-content:space-between}
+#meter .mr{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px;font-size:10.5px;color:#e8dfcf;position:relative;padding:1px 3px;border-radius:3px;overflow:hidden}
+#meter .mr i{position:absolute;top:0;bottom:0;left:0;height:auto;margin:0;opacity:.38;border-radius:3px;display:block}
+#meter .mr span,#meter .mr b{position:relative;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#meter .mr.dead{opacity:.5}
+#pauseBtn,#repBtn{display:none}
+#pauseBtn.on,#repBtn.on{display:inline-flex}
+#pauseBtn.paused{border-color:var(--gold);color:var(--gold)}
+#pauseTag{position:absolute;inset:0;display:grid;place-items:center;z-index:5;pointer-events:none;font-family:var(--display);font-size:46px;color:#ffe0a0;text-shadow:0 3px 0 #3a1806,0 0 20px rgba(0,0,0,.8);background:rgba(10,6,6,.35)}
+#scout{position:absolute;top:6px;right:8px;z-index:3;display:flex;align-items:center;gap:3px;padding:3px 6px;border-radius:6px;background:rgba(18,12,12,.72);border:1px solid #4a2a26;font-size:10px;color:#e8a898;pointer-events:none}
+#scout .si{display:inline-flex;align-items:center;gap:1px;font-weight:700;color:#f0dcc8}
+#scout .si .tic{width:13px;height:13px}
+:root.desk #scout{right:10px}
+.card .trs span.tier{box-shadow:0 0 0 1px var(--tc),0 0 9px var(--tc);animation:tierGlow 1.4s ease-in-out infinite}
+.card .trs span.tier b{color:#fff}
+@keyframes tierGlow{50%{box-shadow:0 0 0 1px var(--tc),0 0 2px var(--tc)}}
+@media (prefers-reduced-motion:reduce){.card .trs span.tier{animation:none}}
+.rep{display:grid;grid-template-columns:auto minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);gap:4px 10px;align-items:center;font-size:12px}
+.rep .rh{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#a39488}
+.rep .ru{display:flex;align-items:center;gap:6px;white-space:nowrap}
+.rep .ru .vport{width:30px;height:30px}
+.rep .rb{position:relative;height:16px;background:#1e1816;border-radius:3px;overflow:hidden}
+.rep .rb i{position:absolute;inset:0 auto 0 0;border-radius:3px}
+.rep .rb b{position:relative;padding-left:5px;font-size:11px;line-height:16px;color:#f0e4cc}
+.rep .dead{opacity:.55}
+
 /* ===== Desktop: the shop is docked beside the battlefield, always in view during planning ===== */
 :root.desk #app{grid-template-columns:clamp(150px,15%,200px) minmax(0,1fr) 248px;grid-template-areas:"top top top" "left stage shop" "bot bot bot"}
 :root.desk #shopRow{grid-area:shop;justify-self:stretch;width:auto;transform:none;pointer-events:auto;transition:opacity .2s;border:1px solid #3a2e2a;border-radius:8px;box-shadow:none;background:linear-gradient(180deg,rgba(26,20,19,.96),rgba(20,15,14,.96))}
@@ -784,7 +813,7 @@ body{position:fixed;inset:0;margin:0}
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
 </head>
 <body>
-<script>window.ASHEN_VERSIONS=[{"v": "0.35.0", "date": "2026-10-13", "notes": "Proper desktop support: on computer screens the whole game scales up crisply to fill the window, with readable text at any size from laptops to 4K", "latest": true}, {"v": "0.34.2", "date": "2026-10-13", "notes": "Marching to an encounter refreshes the shop too, and it opens when you return to your board", "commit": "9478a1a"}, {"v": "0.34.1", "date": "2026-10-13", "notes": "The shop keeps its recruits after a fight and refreshes (and opens) when you march into the next battle", "commit": "69b9408"}, {"v": "0.34.0", "date": "2026-10-13", "notes": "Every unit now has its own ability, built from its origin and class: 130 new spells, from Ironpact shield-shoves and Mirefolk ambushes to Inquisition stakes, Skald sagas and Verdant fairy rings", "commit": "1a91314"}, {"v": "0.33.0", "date": "2026-10-13", "notes": "Every trait now has a signature move. Ravagers leap to the weakest enemy after a kill; Specters vanish and crit; Hexblades charge their next attacks after casting", "commit": "8abd3cd"}, {"v": "0.32.0", "date": "2026-10-13", "notes": "Ironpact sign a contract before every battle (win fast, lose no one, score kills, keep your company standing) and get paid when they fulfil it", "commit": "a6f6a68"}, {"v": "0.31.0", "date": "2026-10-13", "notes": "No more gold cap: save as much as you like (interest still tops out at 5)", "commit": "39e1b40"}, {"v": "0.30.0", "date": "2026-10-12", "notes": "The three- and four-star contracts (III to VI) now run four acts, and the later acts ramp up hard: tougher, better-equipped armies and stronger final bosses", "commit": "658032c"}, {"v": "0.29.0", "date": "2026-10-12", "notes": "Two new contracts. The Witch-Hunt (now Contract IV; the Cinder Throne becomes V): the Inquisition, militia and the faithful against witches, crows and burnt-out mages, ending at the Great Pyre with the Witch-Queen", "commit": "ea7c0de"}, {"v": "0.28.0", "date": "2026-10-12", "notes": "Signature spell effects: pillars of light and lightning strikes, crashing waves, void vortexes, bursting roots, rot and spore clouds, ground-splitting quakes, shield domes, souls drained across the field, falling meteors, curse sigils, claw rakes and executioner\\", "commit": "f6d68fd"}, {"v": "0.27.0", "date": "2026-10-12", "notes": "Summons each have a role: drowned brutes (1/1/2) are huge tanks, shades (1/1/2) leap onto the weakest enemy, the Rat-King calls swarms of rats (2/3/4), pages cut from range (3/3/4), crows dive the back line (3/4/5), pufflings burst into healing spores", "commit": "9b2c14a"}, {"v": "0.26.2", "date": "2026-10-12", "notes": "A shop unit that would star up shows the stars it would reach in its corner", "commit": "4a16263"}, {"v": "0.26.1", "date": "2026-10-12", "notes": "Creatures attack properly: a wind-up, then a lunge, pounce or bite", "commit": "46f1694"}, {"v": "0.26.0", "date": "2026-10-12", "notes": "About 40% more fights on the map, with fewer special stops; difficulty is stretched to match", "commit": "bf4a026"}, {"v": "0.25.1", "date": "2026-10-11", "notes": "Shields now fade: a shield lasts 4 seconds after it was last gained (8 for shields at the start of battle)", "commit": "73daea9"}, {"v": "0.25.0", "date": "2026-10-11", "notes": "Each contract is now its own TFT-style set of eight origins and eight classes; most units have one origin and one class", "commit": "e01f21c"}, {"v": "0.24.0", "date": "2026-10-11", "notes": "A wider battlefield: 13 columns, five ranks per side and a no-man\\", "commit": "280ded1"}, {"v": "0.23.0", "date": "2026-10-11", "notes": "The game is now fully landscape: hold your phone sideways. If it is held upright, the whole game is drawn turned so it still plays sideways", "commit": "b39392b"}, {"v": "0.22.0", "date": "2026-10-11", "notes": "Even fights: enemy boards now grow with the rounds to match yours, so battles are close and tense instead of lopsided", "commit": "944546d"}, {"v": "0.21.2", "date": "2026-10-11", "notes": "A bigger battlefield: taller phones spend their spare height on deeper rows and larger fighters", "commit": "2b7760c"}, {"v": "0.21.1", "date": "2026-10-11", "notes": "The Ashward March ramps up more gently", "commit": "fabd80e"}, {"v": "0.21.0", "date": "2026-10-11", "notes": "Everything moves by dragging: drag items onto units to equip them, and drag units to place, swap or sell them", "commit": "6f61b5f"}, {"v": "0.20.2", "date": "2026-10-11", "notes": "The interface stays clear of the iPhone notch and camera cutout on every screen", "commit": "6639abb"}, {"v": "0.20.1", "date": "2026-10-11", "notes": "Boot Camp tips now pause the game: the screen dims around what the tip points at, and you tap Got it to continue", "commit": "70578de"}, {"v": "0.20.0", "date": "2026-10-11", "notes": "Boot Camp: a two-act tutorial contract with a tip for every part of the game", "commit": "19bfdf8"}, {"v": "0.19.3", "date": "2026-10-11", "notes": "The game always fetches the newest release, and offers a one-tap update if an old copy is showing", "commit": "62c85a8"}, {"v": "0.19.2", "date": "2026-10-11", "notes": "Sentinel reworked: Sentinels mark what they shoot, and the trait makes all your ranged units faster and longer-reaching", "commit": "61c8fcd"}, {"v": "0.19.1", "date": "2026-10-11", "notes": "Trait names are back on shop cards", "commit": "65aa9cc"}, {"v": "0.19.0", "date": "2026-10-11", "notes": "29 new units (110 in all): every contract can now reach the top tier of each of its origins and classes", "commit": "162ab82"}, {"v": "0.18.0", "date": "2026-10-11", "notes": "Three new contracts from the design doc: Roads of the Drowned, The Festering Road and Siege of the Cinder Throne", "commit": "0074adf"}, {"v": "0.17.0", "date": "2026-10-11", "notes": "Main menu with Continue, version history and sound settings", "commit": "57f3a6a"}, {"v": "0.16.0", "date": "2026-10-11", "commit": "d0f200d", "notes": "Covenant origin, one-screen map and flatter hexes"}, {"v": "0.15.0", "date": "2026-10-11", "commit": "817d9aa", "notes": "First web release: pixel-art company, items and the three-act campaign"}]</script>
+<script>window.ASHEN_VERSIONS=[{"v": "0.36.0", "date": "2026-10-13", "notes": "Battle report: after every fight, see damage dealt, damage taken and healing for each of your units (Report button, or R)", "latest": true}, {"v": "0.35.0", "date": "2026-10-13", "notes": "Proper desktop support: on computer screens the whole game scales up crisply to fill the window, with readable text at any size from laptops to 4K", "commit": "0fa5ae2"}, {"v": "0.34.2", "date": "2026-10-13", "notes": "Marching to an encounter refreshes the shop too, and it opens when you return to your board", "commit": "9478a1a"}, {"v": "0.34.1", "date": "2026-10-13", "notes": "The shop keeps its recruits after a fight and refreshes (and opens) when you march into the next battle", "commit": "69b9408"}, {"v": "0.34.0", "date": "2026-10-13", "notes": "Every unit now has its own ability, built from its origin and class: 130 new spells, from Ironpact shield-shoves and Mirefolk ambushes to Inquisition stakes, Skald sagas and Verdant fairy rings", "commit": "1a91314"}, {"v": "0.33.0", "date": "2026-10-13", "notes": "Every trait now has a signature move. Ravagers leap to the weakest enemy after a kill; Specters vanish and crit; Hexblades charge their next attacks after casting", "commit": "8abd3cd"}, {"v": "0.32.0", "date": "2026-10-13", "notes": "Ironpact sign a contract before every battle (win fast, lose no one, score kills, keep your company standing) and get paid when they fulfil it", "commit": "a6f6a68"}, {"v": "0.31.0", "date": "2026-10-13", "notes": "No more gold cap: save as much as you like (interest still tops out at 5)", "commit": "39e1b40"}, {"v": "0.30.0", "date": "2026-10-12", "notes": "The three- and four-star contracts (III to VI) now run four acts, and the later acts ramp up hard: tougher, better-equipped armies and stronger final bosses", "commit": "658032c"}, {"v": "0.29.0", "date": "2026-10-12", "notes": "Two new contracts. The Witch-Hunt (now Contract IV; the Cinder Throne becomes V): the Inquisition, militia and the faithful against witches, crows and burnt-out mages, ending at the Great Pyre with the Witch-Queen", "commit": "ea7c0de"}, {"v": "0.28.0", "date": "2026-10-12", "notes": "Signature spell effects: pillars of light and lightning strikes, crashing waves, void vortexes, bursting roots, rot and spore clouds, ground-splitting quakes, shield domes, souls drained across the field, falling meteors, curse sigils, claw rakes and executioner\\", "commit": "f6d68fd"}, {"v": "0.27.0", "date": "2026-10-12", "notes": "Summons each have a role: drowned brutes (1/1/2) are huge tanks, shades (1/1/2) leap onto the weakest enemy, the Rat-King calls swarms of rats (2/3/4), pages cut from range (3/3/4), crows dive the back line (3/4/5), pufflings burst into healing spores", "commit": "9b2c14a"}, {"v": "0.26.2", "date": "2026-10-12", "notes": "A shop unit that would star up shows the stars it would reach in its corner", "commit": "4a16263"}, {"v": "0.26.1", "date": "2026-10-12", "notes": "Creatures attack properly: a wind-up, then a lunge, pounce or bite", "commit": "46f1694"}, {"v": "0.26.0", "date": "2026-10-12", "notes": "About 40% more fights on the map, with fewer special stops; difficulty is stretched to match", "commit": "bf4a026"}, {"v": "0.25.1", "date": "2026-10-11", "notes": "Shields now fade: a shield lasts 4 seconds after it was last gained (8 for shields at the start of battle)", "commit": "73daea9"}, {"v": "0.25.0", "date": "2026-10-11", "notes": "Each contract is now its own TFT-style set of eight origins and eight classes; most units have one origin and one class", "commit": "e01f21c"}, {"v": "0.24.0", "date": "2026-10-11", "notes": "A wider battlefield: 13 columns, five ranks per side and a no-man\\", "commit": "280ded1"}, {"v": "0.23.0", "date": "2026-10-11", "notes": "The game is now fully landscape: hold your phone sideways. If it is held upright, the whole game is drawn turned so it still plays sideways", "commit": "b39392b"}, {"v": "0.22.0", "date": "2026-10-11", "notes": "Even fights: enemy boards now grow with the rounds to match yours, so battles are close and tense instead of lopsided", "commit": "944546d"}, {"v": "0.21.2", "date": "2026-10-11", "notes": "A bigger battlefield: taller phones spend their spare height on deeper rows and larger fighters", "commit": "2b7760c"}, {"v": "0.21.1", "date": "2026-10-11", "notes": "The Ashward March ramps up more gently", "commit": "fabd80e"}, {"v": "0.21.0", "date": "2026-10-11", "notes": "Everything moves by dragging: drag items onto units to equip them, and drag units to place, swap or sell them", "commit": "6f61b5f"}, {"v": "0.20.2", "date": "2026-10-11", "notes": "The interface stays clear of the iPhone notch and camera cutout on every screen", "commit": "6639abb"}, {"v": "0.20.1", "date": "2026-10-11", "notes": "Boot Camp tips now pause the game: the screen dims around what the tip points at, and you tap Got it to continue", "commit": "70578de"}, {"v": "0.20.0", "date": "2026-10-11", "notes": "Boot Camp: a two-act tutorial contract with a tip for every part of the game", "commit": "19bfdf8"}, {"v": "0.19.3", "date": "2026-10-11", "notes": "The game always fetches the newest release, and offers a one-tap update if an old copy is showing", "commit": "62c85a8"}, {"v": "0.19.2", "date": "2026-10-11", "notes": "Sentinel reworked: Sentinels mark what they shoot, and the trait makes all your ranged units faster and longer-reaching", "commit": "61c8fcd"}, {"v": "0.19.1", "date": "2026-10-11", "notes": "Trait names are back on shop cards", "commit": "65aa9cc"}, {"v": "0.19.0", "date": "2026-10-11", "notes": "29 new units (110 in all): every contract can now reach the top tier of each of its origins and classes", "commit": "162ab82"}, {"v": "0.18.0", "date": "2026-10-11", "notes": "Three new contracts from the design doc: Roads of the Drowned, The Festering Road and Siege of the Cinder Throne", "commit": "0074adf"}, {"v": "0.17.0", "date": "2026-10-11", "notes": "Main menu with Continue, version history and sound settings", "commit": "57f3a6a"}, {"v": "0.16.0", "date": "2026-10-11", "commit": "d0f200d", "notes": "Covenant origin, one-screen map and flatter hexes"}, {"v": "0.15.0", "date": "2026-10-11", "commit": "817d9aa", "notes": "First web release: pixel-art company, items and the three-act campaign"}]</script>
 
 
 <div id="root">
@@ -793,12 +822,12 @@ body{position:fixed;inset:0;margin:0}
     <button id="menuBtn" aria-label="Menu"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M4 6h16v2.4H4zM4 10.8h16v2.4H4zM4 15.6h16V18H4z"/></svg></button>
     <div id="roundBox"><div id="roundLbl"></div><div id="pips"></div></div>
     <button id="relBtn" aria-label="Relics"></button>
-    <button id="planBtn" aria-label="Team planner">Plan</button>
+    <button id="pauseBtn" aria-label="Pause">Pause</button><button id="repBtn" aria-label="Last battle report">Report</button><button id="planBtn" aria-label="Team planner">Plan</button>
     <button id="mapBtn">Map</button>
     <div id="hpBox"><span class="heart"></span><b id="hp" class="num">30</b></div>
   </div>
-  <aside id="left"><div id="traits"></div><div id="armory"></div></aside>
-  <div id="stage"><canvas id="cv"></canvas><div id="toast"></div><div id="bossCard" hidden></div><div id="stamp" hidden></div><div id="fieldCount"></div><div id="banner" hidden></div></div>
+  <aside id="left"><div id="traits"></div><div id="meter"></div><div id="armory"></div></aside>
+  <div id="stage"><canvas id="cv"></canvas><div id="toast"></div><div id="bossCard" hidden></div><div id="stamp" hidden></div><div id="fieldCount"></div><div id="scout" hidden></div><div id="pauseTag" hidden>Paused</div><div id="banner" hidden></div></div>
   <aside id="shopRow">
     <div id="shopHead"><button class="sh-x" id="shopClose" aria-label="Close shop">›</button><span class="sh-lbl">Shop</span><button class="sbtn" id="reroll">Reroll<small><span class="coin"></span>2</small></button><button class="sbtn lockb" id="lockBtn" aria-label="Lock shop"></button></div>
     <div id="shop"></div>
@@ -837,8 +866,9 @@ body{position:fixed;inset:0;margin:0}
 
 <script>
 // ================= VERSION =================
-const GAME_VERSION='0.35.0',S_VERSION=11;
+const GAME_VERSION='0.36.0',S_VERSION=11;
 const CHANGELOG={
+  '0.36.0':['Battle report: after every fight, see damage dealt, damage taken and healing for each of your units (Report button, or R)','A live damage meter beside the battlefield during fights','Pause any fight with the Pause button, P or Space','Shop cards make a trait tag glow when buying them would lift that trait to its next tier','Scout the enemy: their active traits show above the battlefield while you plan','The unit panel shows how many copies you own towards the next star; hover your gold on desktop for next round\'s income','Smoother fights: walking and moving units reuse cached frames instead of being redrawn every frame'],
   '0.35.0':['Proper desktop support: on computer screens the whole game scales up crisply to fill the window, with readable text at any size from laptops to 4K','On desktop the shop is docked beside the battlefield instead of sliding over it','Mouse play: pointer and grab cursors over units, hover highlights, and every drag works at any window size','New key E sells the selected unit; the Guide lists every shortcut','A tall or narrow desktop window no longer turns the game sideways; that is only for phones held upright','The map leaves room for the boss name'],
   '0.34.2':['Marching to an encounter refreshes the shop too, and it opens when you return to your board'],
   '0.34.1':['The shop keeps its recruits after a fight and refreshes (and opens) when you march into the next battle'],
@@ -2061,10 +2091,12 @@ function pixelize(img,o={}){
 // Sprite frames are cached: limbs animate at a pixel-art 12 fps while units still move smoothly.
 const SPRITE_CACHE=new Map();
 function spriteFrame(key,pose,ps,o){
+  // snap the scale to ~3% steps so units walking between rows reuse cached frames instead of redrawing every frame
+  ps=Math.exp(Math.round(Math.log(Math.max(.05,ps))*32)/32);
   const q=(v,n)=>v==null||v<0?-1:Math.round(v*n)/n,b=v=>v>.5?1:v>0?.5:0;
   // idle motion loops every 6s at 10fps, so a fighter's frames are drawn once and then reused from the cache
   const busy=pose.moving||(pose.atk!=null&&pose.atk>=0)||(pose.cast!=null&&pose.cast>=0)||(pose.dead!=null&&pose.dead>=0)||pose.hitK>0||pose.flash>0,tr=10;
-  const qp={...pose,t:busy?(pose.moving?Math.floor((((pose.t||0)%2)+2)%2*4)/4:0):Math.floor((((pose.t||0)%6)+6)%6*tr)/tr,atk:q(pose.atk,10),cast:q(pose.cast,8),dead:q(pose.dead,12),flash:b(pose.flash||0),hitK:b(pose.hitK||0),land:b(pose.land||0),walk:Math.round((pose.walk||0)/(Math.PI/5))*(Math.PI/5)};
+  const qp={...pose,t:busy?0:Math.floor((((pose.t||0)%6)+6)%6*tr)/tr,atk:q(pose.atk,10),cast:q(pose.cast,8),dead:q(pose.dead,12),flash:b(pose.flash||0),hitK:b(pose.hitK||0),land:b(pose.land||0),walk:((Math.round((pose.walk||0)/(Math.PI/5))%10+10)%10)*(Math.PI/5)};
   const id=[key,ps.toFixed(3),o.ol,qp.t,qp.atk,qp.cast,qp.dead,qp.flash,qp.hitK,qp.land,qp.moving?qp.walk:'s',qp.face,qp.cheer?1:0,qp.seed].join('|');
   let f=SPRITE_CACHE.get(id);
   if(f){SPRITE_CACHE.delete(id);SPRITE_CACHE.set(id,f);return f}
@@ -3225,6 +3257,7 @@ function paintPortraits(root=document){
 const coin='<span class="coin"></span>';
 function render(){
   $('#hp').textContent=S.hp;$('#gold').textContent=S.gold;$('#lvl').textContent=S.level;
+  hudExtras();
   $('#xpTxt').textContent=S.level<9?`${S.xp} / ${XP_NEED[S.level]} XP`:'Max';
   $('#xpbar i').style.width=S.level<9?(100*S.xp/XP_NEED[S.level])+'%':'100%';
   $('#odds').innerHTML=ODDS[S.level].map((o,i)=>`<span style="color:${COSTCOL[i+1]}">${o}%</span>`).join('');
@@ -3251,12 +3284,13 @@ function render(){
      [523,784,1046].forEach((f,i)=>tone(f,.12,'triangle',.05,0,i*.06));toast(`${t} ${TRAITS[t].th[ti-1]} active`,TRAITS[t].t[ti-1])}}
   {const fc=$('#fieldCount'),n=boardCount(),cap=boardCap(),spare=S.bench.some(Boolean)&&n<cap;fc.hidden=S.phase!=='plan';fc.className=n>=cap?'full':spare?'warn':'';fc.innerHTML=`<b>${n}</b>/${cap} fielded${spare?' · room for more':''}`}
   $('#bench').innerHTML=S.bench.map((u,i)=>`<div class="slot${S.popAt===i?' pop':''}${u?' k'+UNITS[u.key].cost:''}${sel&&sel.z==='n'&&sel.i===i?' sel':''}${V.drag&&V.drag.u&&!u?' drop':''}" data-i="${i}">${u?`<div class="pstars">${stars(u.star)}</div>${u.items&&u.items.length?`<div class="bitems">${u.items.map(id=>itemIcon(id,'xs')).join('')}</div>`:''}`:''}</div>`).join('');
+  const onBoard=new Set(Object.values(S.board).map(u=>u.key));
   $('#shop').innerHTML=S.shop.map((k,i)=>{
     if(!k)return `<div class="card empty"></div>`;
     const d=UNITS[k];
     const mine=[...Object.values(S.board),...S.bench].filter(u=>u&&u.key===k),c1=mine.filter(u=>u.star===1).length,c2=mine.filter(u=>u.star===2).length,up=c1>=2?(c2>=2?3:2):0,pl=(S.plan||[]).includes(k);
     return `<button style="--d:${i*45}ms" class="card${S.dealt?' deal':''} k${d.cost}${S.gold<d.cost?' poor':''}${mine.length?' own':''}${up?' up':''}${pl?' plan':''}" data-s="${i}">${up?`<i class="shim"></i><span class="cup">${stars(up)}</span>`:''}<div class="art"><canvas class="pc" data-key="${k}" data-zoom="1.25"></canvas></div>
-      <div class="trs">${traitsOf(k).filter(isActive).map(t=>`<span class="${cnt[t]?'hot':''}" style="--tc:${TRAITS[t].col}" title="${t}">${ticon(t)}<b>${t}</b></span>`).join('')}</div>
+      <div class="trs">${traitsOf(k).filter(isActive).map(t=>`<span class="${cnt[t]?'hot':''}${!onBoard.has(k)&&tierOf(t,(cnt[t]||0)+1)>tierOf(t,cnt[t]||0)?' tier':''}" style="--tc:${TRAITS[t].col}" title="${t}">${ticon(t)}<b>${t}</b></span>`).join('')}</div>
       <span class="ci" data-cinfo="${k}">i</span><span class="cst2">${coin}<b>${d.cost}</b></span><div class="foot"><span class="nm">${d.name.replace(/^(The|Brother|Mother|Sister|Ser|Lord|Doctor|Countess) /,'').split(' ')[0]}</span></div></button>`;
   }).join('');
   const su=null,sb=$('#selbar');
@@ -3369,6 +3403,7 @@ function renderSheet(){
       <div class="sh-title">${[d.title,sheet.boss==='ashwalker'?'Final boss: revives twice, then explodes':sheet.boss==='mini'?`Mini boss · ${sheet.bossName||''}${S.act>=2?' · revives once':''}`:sheet.elite?'Elite':''].filter(Boolean).join(' · ')}</div>
       <div class="chips">${traitsOf(sheet.key).filter(isActive).map(t=>`<button class="chip" data-t="${t}">${ticon(t)}${t}</button>`).join('')}<span class="chip" style="color:var(--gold)">${coin}${d.cost}</span></div></div>
     <button class="sh-x" data-close>✕</button></div>
+  ${sheet.team!=='B'&&!d.token?copiesLine(sheet.key):''}
   <div class="bars2"><div class="bar2${sheet.team==='B'?' foe':''}" id="shHp"><i style="width:${100*st.hp/st.max}%"></i><span class="num">${Math.round(st.hp)} / ${Math.round(st.max)}${st.shield>0?` (+${Math.round(st.shield)})`:''}</span></div>
     <div class="bar2 mp" id="shMp"><i style="width:${100*st.mana/st.maxMana}%"></i><span class="num">${d.ab?`${Math.round(st.mana)} / ${st.maxMana}`:'No ability'}</span></div></div>
   ${(()=>{const its=sheet.ent?sheet.ent.items:sheet.mine&&sel?(unitAt(sel)||{}).items:sheet.enemy!=null?(S.enemy[sheet.enemy]||{}).items:null;return its&&its.length?`<div class="abil"><div class="h">Items</div>${its.map((id,i)=>`<div class="irow">${itemIcon(id)}<span><b>${itemName(id)}</b> ${itemDesc(id)}</span>${sheet.mine&&plan&&!sheet.ent?`<button class="unq" data-unequip="${i}">Unequip</button>`:''}</div>`).join('')}</div>`:''})()}
@@ -3605,6 +3640,7 @@ function step(dt){
     if(e.dead)continue;
     // healing is blocked while noHealUntil runs; spent buffs are dropped
     if(e.noHealUntil>tm){if(e.hp>e._nh)e.hp=e._nh;e._nh=e.hp}else e._nh=e.hp;
+    if(e._ph!=null&&e.hp>e._ph)e.healed=(e.healed||0)+(e.hp-e._ph);e._ph=e.hp;
     if(e.bf&&e.bf.length>5)e.bf=e.bf.filter(b=>b.u>tm);
     if(!e.landed&&tm>e.spawnT+.22){e.landed=true;fxAt('dust',e,.35);if(throttle('land',120))tone(90,.06,'sine',.03,.6)}
     if(e.burns.length){e.burns=e.burns.filter(b=>b.until>tm);let d=0;e.burns.forEach(b=>d+=b.dps*dt);if(d>0)applyRaw(e,mitigate(e,d,'magic'),e.burns[0]?.src,null);if(e.dead)continue}
@@ -3728,6 +3764,7 @@ function applyRaw(t,d,src,type,crit){
   if(type&&C.ot>1)d*=C.ot;
   if(type&&src&&src.frost>=3&&t.stunUntil>C.time)d*=1.3;
   if(t.vulnUntil>C.time)d*=t.vuln||1;
+  if(type)t.taken=(t.taken||0)+d;
   if(type&&src&&src.it&&src.it.bloodletter&&!src.dead)src.hp=Math.min(src.max,src.hp+d*.2);
   if(type==='magic'&&src&&src.hexVamp&&!src.dead)src.hp=Math.min(src.max,src.hp+d*.25);
   if(type&&src&&src.ls&&!src.dead&&src!==t){const h=d*src.ls,room=src.max-src.hp;src.hp=Math.min(src.max,src.hp+h);if(src.overShield&&h>room)src.shield=Math.min(src.max*.5,src.shield+(h-room))}
@@ -4313,6 +4350,27 @@ function showBanner(){
     ${C.loot?`<div class="loot"><span class="coin"></span>${C.loot} gold looted</div>`:''}${rollDrops(won,S.node).length?`<div class="loot">Spoils ${C.drops.map(id=>itemIcon(id)).join('')}</div>`:''}<div class="skip">Tap to continue</div>`;
   el.hidden=false;paintPortraits(el);
 }
+// ===== small HUD helpers: income preview, pause, report, scouting, live meter =====
+// how close you are to the next star: copies owned at each level
+function copiesLine(k){const mine=[...Object.values(S.board),...S.bench].filter(u=>u&&u.key===k);if(!mine.length)return '';const c1=mine.filter(u=>u.star===1).length,c2=mine.filter(u=>u.star===2).length,c3=mine.some(u=>u.star>=3);
+  if(c3)return `<div class="scal"><b>You own it at ★★★.</b></div>`;const parts=[];if(c1)parts.push(`${c1} of 3 ★ copies for ★★`);if(c2)parts.push(`${c2} of 3 ★★ copies for ★★★`);return parts.length?`<div class="scal"><b>Owned:</b> ${parts.join(' · ')}</div>`:''}
+function nextIncome(){const it=Math.min(Math.floor(S.gold/10),maxInterest()),sg=streakGold(),l=has('ledger')?1:0;return {it,sg,l,base:3,total:3+it+sg+l}}
+function hudExtras(){
+  const n=nextIncome();$('#goldBox').title=`Next battle pays ${n.total} gold: 3 base + ${n.it} interest${n.sg?` + ${n.sg} streak`:''}${n.l?' + 1 ledger':''}, and +1 more if you win. Every 10 gold you hold adds 1 interest, up to ${maxInterest()}.`;
+  const fight=S.phase==='combat'&&C&&!C.over;$('#pauseBtn').classList.toggle('on',fight);$('#pauseBtn').classList.toggle('paused',!!(C&&C.paused));$('#pauseBtn').textContent=C&&C.paused?'Resume':'Pause';
+  $('#pauseTag').hidden=!(fight&&C.paused);$('#repBtn').classList.toggle('on',!!S.lastReport&&S.phase==='plan');
+  $('#meter').classList.toggle('on',S.phase==='combat'&&!!C);
+  const sc=$('#scout');if(S.phase==='plan'&&!S.camp&&S.enemy&&S.enemy.length){const cnt=traitCounts(S.enemy),act=Object.keys(cnt).filter(t=>tierOf(t,cnt[t])>0).sort((a,b)=>tierOf(b,cnt[b])-tierOf(a,cnt[a])||cnt[b]-cnt[a]);
+    sc.hidden=!act.length;sc.innerHTML=`<span>Enemy</span>${act.slice(0,6).map(t=>`<span class="si" style="color:${TRAITS[t].col}">${ticon(t)}<b>${cnt[t]}</b></span>`).join('')}`}else sc.hidden=true}
+function togglePause(){if(!(S.phase==='combat'&&C&&!C.over))return;C.paused=!C.paused;sfx.tap();hudExtras()}
+function tickMeter(){const el=$('#meter');if(!el||!C)return;const L=C.ents.filter(e=>e.team==='A'&&!UNITS[e.key].token).sort((a,b)=>(b.dmg||0)-(a.dmg||0)),mx=Math.max(1,...L.map(e=>e.dmg||0)),tot=L.reduce((s,e)=>s+(e.dmg||0),0);
+  el.innerHTML=`<div class="mh"><span>Damage</span><span class="num">${Math.round(tot)}</span></div>`+L.slice(0,7).map(e=>`<div class="mr${e.dead?' dead':''}"><i style="width:${100*(e.dmg||0)/mx}%;background:${e.oc}"></i><span>${shortName(e.key)}</span><b class="num">${Math.round(e.dmg||0)}</b></div>`).join('')}
+function saveReport(won){S.lastReport={won,round:S.round,units:C.ents.filter(e=>e.team==='A'&&!UNITS[e.key].token).map(e=>({key:e.key,star:e.star,dmg:Math.round(e.dmg||0),taken:Math.round(e.taken||0),healed:Math.round(e.healed||0),dead:!!e.dead}))}}
+function battleReport(){const R=S.lastReport;if(!R)return;const U=R.units.slice().sort((a,b)=>b.dmg-a.dmg),mx=k=>Math.max(1,...U.map(u=>u[k]));const bar=(v,m,c)=>`<div class="rb"><i style="width:${100*v/m}%;background:${c}"></i><b class="num">${v}</b></div>`;
+  modal(`<div class="eyebrow">Battle report</div><h2>${R.won?'Victory':'Defeat'}</h2><p>How each of your units did in the last fight. Damage counts everything they dealt; taken counts hits before shields; healed counts health restored.</p>
+    <div class="rep"><span></span><span class="rh">Damage dealt</span><span class="rh">Damage taken</span><span class="rh">Healed</span>
+    ${U.map(u=>`<span class="ru${u.dead?' dead':''}"><span class="vport k${UNITS[u.key].cost}"><canvas class="pc" data-key="${u.key}"></canvas></span>${shortName(u.key)} <span class="pstars">${stars(u.star)}</span></span>${bar(u.dmg,mx('dmg'),'#d8703f')}${bar(u.taken,mx('taken'),'#8a9aa8')}${bar(u.healed,mx('healed'),'#6ad84a')}`).join('')}</div>
+    <button class="btn go" data-close-modal>Close</button>`);paintPortraits($('#modal'))}
 function hideBanner(){const el=$('#banner');if(el)el.hidden=true}
 function heal(n){S.hp=Math.min(30,S.hp+n)}
 function giveUnit(key,star){const i=S.bench.indexOf(null);if(i<0)return false;S.bench[i]={uid:S.uid++,key,star};mergeAll();return true}
@@ -4337,7 +4395,7 @@ function unlock(id){const v=store.get('ashen-vault',[]);if(!v.includes(id)){v.pu
 function endCombat(){
   hideBanner();MUS.combat=false;$('#stage').classList.remove('bossfight');
   {const won0=!alive('B').length&&alive('A').length>0;st(won0?'won':'lost');const dm=S.stats.dmg||(S.stats.dmg={});C.ents.filter(e=>e.team==='A'&&!UNITS[e.key].token).forEach(e=>dm[e.key]=(dm[e.key]||0)+Math.round(e.dmg||0))}
-  const survivors=alive('B'),won=!survivors.length&&alive('A').length>0,node=S.node;
+  const survivors=alive('B'),won=!survivors.length&&alive('A').length>0,node=S.node;saveReport(won);
   let title;const sub=[];
   if(won){title=node==='boss'?'Mini boss defeated':node==='elite'?'Elite defeated':'Victory';if(has('surgeon'))heal(2);if(!C.ents.some(e=>e.team==='A'&&e.dead&&!UNITS[e.key].token)){title='Flawless victory';S.xp+=1;sub.push('+1 XP for a flawless fight')}}
   else{
@@ -4723,7 +4781,7 @@ function drawMenu(){
       <li>Climb each region to its mini boss, then face the contract's final boss in its last act. Merchants sell relics, Smithies give items, Crises test you.</li>
       <li>Beat a contract to unlock the next, and to raise its <b>Heat</b> for a harder run.</li>
       <li>New here? Play <b>Boot Camp</b>, the tutorial contract at the top of the board.</li>
-      <li><b>On a computer</b>: drag units and items with the mouse, click anything to inspect it. Keys: <b>Space</b> fight or march on, <b>D</b> reroll, <b>F</b> buy XP, <b>1–5</b> buy, <b>L</b> lock the shop, <b>E</b> sell the selected unit, <b>M</b> map, <b>Esc</b> close.</li></ul>`;
+      <li><b>On a computer</b>: drag units and items with the mouse, click anything to inspect it. Keys: <b>Space</b> fight or march on (and pause a fight), <b>P</b> pause, <b>R</b> last battle report, <b>D</b> reroll, <b>F</b> buy XP, <b>1–5</b> buy, <b>L</b> lock the shop, <b>E</b> sell the selected unit, <b>M</b> map, <b>Esc</b> close.</li></ul>`;
   }else if(menuTab==='news'){
     $('#mnPanel').innerHTML=`<div class="mp-h">Version ${GAME_VERSION}${ARCHIVED?' · archived':''}</div><ul>${(CHANGELOG[GAME_VERSION]||[]).map(x=>`<li>${x}</li>`).join('')}</ul>
       <div class="mp-sub">Best result: ${best>=4?'contract complete':best?`reached Act ${best}`:'no runs yet'}</div>`;
@@ -4743,17 +4801,17 @@ function renderMenuCanvas(){
   const sc=Math.max(mc.width/cv.width,mc.height/cv.height);x.fillStyle='#120d0b';x.fillRect(0,0,mc.width,mc.height);
   x.drawImage(cv,(mc.width-cv.width*sc)/2,mc.height-cv.height*sc,cv.width*sc,cv.height*sc);
 }
-let lastTs=0,sheetTick=0;
+let lastTs=0,sheetTick=0,meterTick=0;
 function frame(ts){
   const dt=lastTs?Math.min(.1,(ts-lastTs)/1000):0;lastTs=ts;V.t+=dt;
-  if(S&&S.phase==='combat'&&C&&!coachStep){
+  if(S&&S.phase==='combat'&&C&&!coachStep&&!C.paused){
     if(C.freeze>0)C.freeze-=dt;
     else if(!C.over){const slow=C.slow>0;if(slow)C.slow-=dt;C.acc+=dt*C.speed*(slow?.28:1);while(C.acc>=.05&&!C.over){step(.05);C.acc-=.05}}
     else{C.time+=dt*C.speed;C.after+=dt;
       const due=C.pend.filter(h=>h.at<=C.time);C.pend=C.pend.filter(h=>h.at>C.time);due.forEach(h=>h.fn());
       if(!C.banner){C.banner=true;showBanner()}
       if(C.after>2.1&&!C.ended){C.ended=true;endCombat()}}
-    sheetTick+=dt;if(sheetTick>.12){sheetTick=0;tickSheet()}
+    sheetTick+=dt;if(sheetTick>.12){sheetTick=0;tickSheet();meterTick=(meterTick||0)+1;if(meterTick%2===0)tickMeter()}
   }
   if(S)drawScene();
   if(S&&!V.menuMode)drawBench();
@@ -4876,6 +4934,9 @@ document.addEventListener('click',ev=>{
   if(t.closest('[data-plclear]')){S.plan=[];render();return planner()}
   if(t.closest('[data-plclose]')){closeModal();return render()}
   if(t.closest('#planBtn'))return planner();
+  if(t.closest('[data-close-modal]'))return closeModal();
+  if(t.closest('#pauseBtn'))return togglePause();
+  if(t.closest('#repBtn'))return battleReport();
   const slot=t.closest('.slot');if(slot){const loc={z:'n',i:+slot.dataset.i};if(unitAt(loc))return inspectMine(loc);sel=null;closeSheet();return render()}
   const ci=t.closest('[data-cinfo]');if(ci){sel=null;render();return openUnit({key:ci.dataset.cinfo,star:1,team:'A'})}
   const card=t.closest('.card[data-s]');if(card)return buy(+card.dataset.s);
@@ -4932,7 +4993,7 @@ if(window.visualViewport)window.visualViewport.addEventListener('resize',queueRe
 window.addEventListener('orientationchange',queueRefit);
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>{if(S)queueRefit()});
 document.addEventListener('keydown',ev=>{if(coachStep){if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();hideCoach(false)}return}if(!S||V.menuMode||!$('#overlay').hidden||ev.metaKey||ev.ctrlKey)return;const k=ev.key.toLowerCase();
-  if(k==='d')reroll();else if(k==='f')buyXp();else if(k==='l'&&S.phase==='plan')toggleLock();else if(k==='e'&&S.phase==='plan'&&sel&&unitAt(sel))sell();else if(k===' '||k==='enter'){if(S.phase==='plan'){ev.preventDefault();S.camp?showMap():startCombat()}}
+  if(k==='d')reroll();else if(k==='f')buyXp();else if(k==='l'&&S.phase==='plan')toggleLock();else if(k==='e'&&S.phase==='plan'&&sel&&unitAt(sel))sell();else if(k==='p'&&S.phase==='combat')togglePause();else if(k==='r'&&S.lastReport)battleReport();else if(k===' '||k==='enter'){if(S.phase==='plan'){ev.preventDefault();S.camp?showMap():startCombat()}else if(S.phase==='combat'){ev.preventDefault();togglePause()}}
   else if(k==='m')showMap(!(S.phase==='map'||(S.phase==='plan'&&S.camp)));else if(k==='s'&&S.phase==='plan')setShop(!V.shopOpen);else if(k==='escape'){closeSheet();sel=null;selItem=null;render()}
   else if(/^[1-5]$/.test(k)&&S.phase==='plan')buy(+k-1)});
 

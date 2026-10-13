@@ -1,9 +1,15 @@
 [
  {
+  "v": "0.36.0",
+  "date": "2026-10-13",
+  "notes": "Battle report: after every fight, see damage dealt, damage taken and healing for each of your units (Report button, or R)",
+  "latest": true
+ },
+ {
   "v": "0.35.0",
   "date": "2026-10-13",
   "notes": "Proper desktop support: on computer screens the whole game scales up crisply to fill the window, with readable text at any size from laptops to 4K",
-  "latest": true
+  "commit": "0fa5ae2"
  },
  {
   "v": "0.34.2",
