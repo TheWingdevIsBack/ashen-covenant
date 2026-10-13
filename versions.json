@@ -1,9 +1,15 @@
 [
  {
+  "v": "0.34.2",
+  "date": "2026-10-13",
+  "notes": "Marching to an encounter refreshes the shop too, and it opens when you return to your board",
+  "latest": true
+ },
+ {
   "v": "0.34.1",
   "date": "2026-10-13",
   "notes": "The shop keeps its recruits after a fight and refreshes (and opens) when you march into the next battle",
-  "latest": true
+  "commit": "69b9408"
  },
  {
   "v": "0.34.0",
