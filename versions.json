@@ -1,9 +1,15 @@
 [
  {
+  "v": "0.34.1",
+  "date": "2026-10-13",
+  "notes": "The shop keeps its recruits after a fight and refreshes (and opens) when you march into the next battle",
+  "latest": true
+ },
+ {
   "v": "0.34.0",
   "date": "2026-10-13",
   "notes": "Every unit now has its own ability, built from its origin and class: 130 new spells, from Ironpact shield-shoves and Mirefolk ambushes to Inquisition stakes, Skald sagas and Verdant fairy rings",
-  "latest": true
+  "commit": "1a91314"
  },
  {
   "v": "0.33.0",
