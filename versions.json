@@ -1,9 +1,15 @@
 [
  {
+  "v": "0.32.0",
+  "date": "2026-10-13",
+  "notes": "Ironpact sign a contract before every battle (win fast, lose no one, score kills, keep your company standing) and get paid when they fulfil it",
+  "latest": true
+ },
+ {
   "v": "0.31.0",
   "date": "2026-10-13",
   "notes": "No more gold cap: save as much as you like (interest still tops out at 5)",
-  "latest": true
+  "commit": "39e1b40"
  },
  {
   "v": "0.30.0",
