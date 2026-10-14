@@ -1,9 +1,15 @@
 [
  {
+  "v": "0.44.0",
+  "date": "2026-10-14",
+  "notes": "Every unit has a line of its own story on its card",
+  "latest": true
+ },
+ {
   "v": "0.43.0",
   "date": "2026-10-14",
   "notes": "Clearer text throughout: an up-to-date Guide and Boot Camp tips, and unit cards that show each soldier\\",
-  "latest": true
+  "commit": "d73f908"
  },
  {
   "v": "0.42.0",
