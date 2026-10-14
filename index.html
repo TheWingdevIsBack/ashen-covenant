@@ -413,7 +413,7 @@ button:active:not(:disabled){transform:translateY(1px);filter:brightness(1.15)}
 /* sheet + modal chrome */
 #sheet .in{background:linear-gradient(180deg,#241e1c,#191514);border-color:#4a3c36;box-shadow:0 -12px 30px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,220,170,.08)}
 .sh-name{font-size:22px;color:#f0dcb0}
-#overlay{background:radial-gradient(circle at 50% 40%,rgba(20,12,10,.82),rgba(6,4,4,.94));backdrop-filter:blur(2px)}
+#overlay{background:radial-gradient(circle at 50% 40%,rgba(20,12,10,.82),rgba(6,4,4,.94))}
 .modal{background:linear-gradient(180deg,#261f1d,#1a1615);border:1px solid #5a4632;border-radius:8px;box-shadow:0 0 0 1px #120d0b,0 0 0 4px rgba(90,70,50,.18),0 20px 50px rgba(0,0,0,.7),inset 0 1px 0 rgba(255,220,170,.08);position:relative;animation:min .28s cubic-bezier(.2,1.2,.4,1)}
 @keyframes min{from{transform:translateY(14px) scale(.97);opacity:0}}
 .modal::before{content:"";position:absolute;left:18px;right:18px;top:-1px;height:2px;background:linear-gradient(90deg,transparent,#c9a25a,transparent)}
@@ -790,6 +790,8 @@ body{position:fixed;inset:0;margin:0}
 @keyframes upg{to{box-shadow:inset 0 0 0 4px #fff2c0,inset 0 0 26px rgba(255,226,140,.85)}}
 .card .shim{position:absolute;inset:0;z-index:3;pointer-events:none;overflow:hidden;border-radius:inherit}
 .card .shim::before{content:"";position:absolute;top:-20%;bottom:-20%;width:38%;left:-50%;background:linear-gradient(100deg,transparent,rgba(255,240,190,.55),transparent);transform:skewX(-18deg);animation:shim 1.6s ease-in-out infinite}
+/* battery saver: the always-on glows hold still instead of repainting every frame */
+html.saver #fight:not(:disabled),html.saver #buyxp.ready:not(:disabled),html.saver .card .trs span.tier,html.saver .kw{animation:none}
 @keyframes artg{50%{box-shadow:0 0 12px var(--a),inset 0 0 8px color-mix(in srgb,var(--a) 60%,transparent)}}
 @keyframes artsh{0%{transform:translateX(-120%) skewX(-20deg)}55%,100%{transform:translateX(220%) skewX(-20deg)}}
 .itm.art{position:relative;overflow:hidden;border:1.5px solid var(--a);box-shadow:0 0 6px var(--a),inset 0 0 6px color-mix(in srgb,var(--a) 45%,transparent);animation:artg 2.4s ease-in-out infinite}
@@ -851,7 +853,7 @@ body{position:fixed;inset:0;margin:0}
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
 </head>
 <body>
-<script>window.ASHEN_VERSIONS=[{"v": "0.46.0", "date": "2026-10-14", "notes": "Artifacts: ten one-of-a-kind relics of war, sold only by merchants. The Ninth Bell tolls and stuns everything near it, the Comet Lance calls down comets, the Sunforged Aegis raises domes of sunlight, the Drowned Mirror brings a double into battle, the Tempest Standard calls lightning, and more", "latest": true}, {"v": "0.45.0", "date": "2026-10-14", "notes": "You can now hold up to 2500 gold (3500 with the Tithe Box)", "commit": "d7938de"}, {"v": "0.44.1", "date": "2026-10-14", "notes": "The maximum level is now 10: one more unit on the field, and the best odds of rare recruits. Late enemy armies grow to match", "commit": "6225d6c"}, {"v": "0.44.0", "date": "2026-10-14", "notes": "Every unit has a line of its own story on its card", "commit": "3134617"}, {"v": "0.43.0", "date": "2026-10-14", "notes": "Clearer text throughout: an up-to-date Guide and Boot Camp tips, and unit cards that show each soldier\\", "commit": "d73f908"}, {"v": "0.42.0", "date": "2026-10-14", "notes": "Bands with a single-target spell now cast it with every soldier: when the leader casts, each soldier strikes its own target with a share of the power, and comrades pick different enemies where they can", "commit": "89a2c5d"}, {"v": "0.41.0", "date": "2026-10-14", "notes": "Bands across every contract: every 1-cost is now a regiment (summoners aside), most 2- and 3-costs too, and a few 4-costs are elite trios. Around three soldiers per unit at 1 to 3 cost, one at 4 and 5", "commit": "1f01692"}, {"v": "0.40.0", "date": "2026-10-14", "notes": "Squads, first on The Ashward March: 29 units there are now bands of 3 to 5 soldiers, led by the named character (Hobb and his Pitchfork Levy, Kael and the Ash Grunts, Wat and his Yeomen, Captain Edda and her Burnt Levy veterans and more)", "commit": "8178d18"}, {"v": "0.39.0", "date": "2026-10-14", "notes": "The battlefield is twice as big: 21 hexes long and 11 deep, with nine ranks a side", "commit": "786d612"}, {"v": "0.38.0", "date": "2026-10-14", "notes": "The Revenant General\\", "commit": "bc801de"}, {"v": "0.37.0", "date": "2026-10-13", "notes": "A new economy: prices are 25 times finer, so a 4-cost costs 100, a reroll 50 and each battle pays 75 (25 more for a win)", "commit": "b9f792f"}, {"v": "0.36.0", "date": "2026-10-13", "notes": "Battle report: after every fight, see damage dealt, damage taken and healing for each of your units (Report button, or R)", "commit": "bbbc71c"}, {"v": "0.35.0", "date": "2026-10-13", "notes": "Proper desktop support: on computer screens the whole game scales up crisply to fill the window, with readable text at any size from laptops to 4K", "commit": "0fa5ae2"}, {"v": "0.34.2", "date": "2026-10-13", "notes": "Marching to an encounter refreshes the shop too, and it opens when you return to your board", "commit": "9478a1a"}, {"v": "0.34.1", "date": "2026-10-13", "notes": "The shop keeps its recruits after a fight and refreshes (and opens) when you march into the next battle", "commit": "69b9408"}, {"v": "0.34.0", "date": "2026-10-13", "notes": "Every unit now has its own ability, built from its origin and class: 130 new spells, from Ironpact shield-shoves and Mirefolk ambushes to Inquisition stakes, Skald sagas and Verdant fairy rings", "commit": "1a91314"}, {"v": "0.33.0", "date": "2026-10-13", "notes": "Every trait now has a signature move. Ravagers leap to the weakest enemy after a kill; Specters vanish and crit; Hexblades charge their next attacks after casting", "commit": "8abd3cd"}, {"v": "0.32.0", "date": "2026-10-13", "notes": "Ironpact sign a contract before every battle (win fast, lose no one, score kills, keep your company standing) and get paid when they fulfil it", "commit": "a6f6a68"}, {"v": "0.31.0", "date": "2026-10-13", "notes": "No more gold cap: save as much as you like (interest still tops out at 5)", "commit": "39e1b40"}, {"v": "0.30.0", "date": "2026-10-12", "notes": "The three- and four-star contracts (III to VI) now run four acts, and the later acts ramp up hard: tougher, better-equipped armies and stronger final bosses", "commit": "658032c"}, {"v": "0.29.0", "date": "2026-10-12", "notes": "Two new contracts. The Witch-Hunt (now Contract IV; the Cinder Throne becomes V): the Inquisition, militia and the faithful against witches, crows and burnt-out mages, ending at the Great Pyre with the Witch-Queen", "commit": "ea7c0de"}, {"v": "0.28.0", "date": "2026-10-12", "notes": "Signature spell effects: pillars of light and lightning strikes, crashing waves, void vortexes, bursting roots, rot and spore clouds, ground-splitting quakes, shield domes, souls drained across the field, falling meteors, curse sigils, claw rakes and executioner\\", "commit": "f6d68fd"}, {"v": "0.27.0", "date": "2026-10-12", "notes": "Summons each have a role: drowned brutes (1/1/2) are huge tanks, shades (1/1/2) leap onto the weakest enemy, the Rat-King calls swarms of rats (2/3/4), pages cut from range (3/3/4), crows dive the back line (3/4/5), pufflings burst into healing spores", "commit": "9b2c14a"}, {"v": "0.26.2", "date": "2026-10-12", "notes": "A shop unit that would star up shows the stars it would reach in its corner", "commit": "4a16263"}, {"v": "0.26.1", "date": "2026-10-12", "notes": "Creatures attack properly: a wind-up, then a lunge, pounce or bite", "commit": "46f1694"}, {"v": "0.26.0", "date": "2026-10-12", "notes": "About 40% more fights on the map, with fewer special stops; difficulty is stretched to match", "commit": "bf4a026"}, {"v": "0.25.1", "date": "2026-10-11", "notes": "Shields now fade: a shield lasts 4 seconds after it was last gained (8 for shields at the start of battle)", "commit": "73daea9"}, {"v": "0.25.0", "date": "2026-10-11", "notes": "Each contract is now its own TFT-style set of eight origins and eight classes; most units have one origin and one class", "commit": "e01f21c"}, {"v": "0.24.0", "date": "2026-10-11", "notes": "A wider battlefield: 13 columns, five ranks per side and a no-man\\", "commit": "280ded1"}, {"v": "0.23.0", "date": "2026-10-11", "notes": "The game is now fully landscape: hold your phone sideways. If it is held upright, the whole game is drawn turned so it still plays sideways", "commit": "b39392b"}, {"v": "0.22.0", "date": "2026-10-11", "notes": "Even fights: enemy boards now grow with the rounds to match yours, so battles are close and tense instead of lopsided", "commit": "944546d"}, {"v": "0.21.2", "date": "2026-10-11", "notes": "A bigger battlefield: taller phones spend their spare height on deeper rows and larger fighters", "commit": "2b7760c"}, {"v": "0.21.1", "date": "2026-10-11", "notes": "The Ashward March ramps up more gently", "commit": "fabd80e"}, {"v": "0.21.0", "date": "2026-10-11", "notes": "Everything moves by dragging: drag items onto units to equip them, and drag units to place, swap or sell them", "commit": "6f61b5f"}, {"v": "0.20.2", "date": "2026-10-11", "notes": "The interface stays clear of the iPhone notch and camera cutout on every screen", "commit": "6639abb"}, {"v": "0.20.1", "date": "2026-10-11", "notes": "Boot Camp tips now pause the game: the screen dims around what the tip points at, and you tap Got it to continue", "commit": "70578de"}, {"v": "0.20.0", "date": "2026-10-11", "notes": "Boot Camp: a two-act tutorial contract with a tip for every part of the game", "commit": "19bfdf8"}, {"v": "0.19.3", "date": "2026-10-11", "notes": "The game always fetches the newest release, and offers a one-tap update if an old copy is showing", "commit": "62c85a8"}, {"v": "0.19.2", "date": "2026-10-11", "notes": "Sentinel reworked: Sentinels mark what they shoot, and the trait makes all your ranged units faster and longer-reaching", "commit": "61c8fcd"}, {"v": "0.19.1", "date": "2026-10-11", "notes": "Trait names are back on shop cards", "commit": "65aa9cc"}, {"v": "0.19.0", "date": "2026-10-11", "notes": "29 new units (110 in all): every contract can now reach the top tier of each of its origins and classes", "commit": "162ab82"}, {"v": "0.18.0", "date": "2026-10-11", "notes": "Three new contracts from the design doc: Roads of the Drowned, The Festering Road and Siege of the Cinder Throne", "commit": "0074adf"}, {"v": "0.17.0", "date": "2026-10-11", "notes": "Main menu with Continue, version history and sound settings", "commit": "57f3a6a"}, {"v": "0.16.0", "date": "2026-10-11", "commit": "d0f200d", "notes": "Covenant origin, one-screen map and flatter hexes"}, {"v": "0.15.0", "date": "2026-10-11", "commit": "817d9aa", "notes": "First web release: pixel-art company, items and the three-act campaign"}]</script>
+<script>window.ASHEN_VERSIONS=[{"v": "0.46.1", "date": "2026-10-14", "notes": "Much lighter on phone batteries: a new Battery saver setting (on by default on phones) draws fewer frames, slows right down while you think, and stills the always-on glows", "latest": true}, {"v": "0.46.0", "date": "2026-10-14", "notes": "Artifacts: ten one-of-a-kind relics of war, sold only by merchants. The Ninth Bell tolls and stuns everything near it, the Comet Lance calls down comets, the Sunforged Aegis raises domes of sunlight, the Drowned Mirror brings a double into battle, the Tempest Standard calls lightning, and more", "commit": "db45ccb"}, {"v": "0.45.0", "date": "2026-10-14", "notes": "You can now hold up to 2500 gold (3500 with the Tithe Box)", "commit": "d7938de"}, {"v": "0.44.1", "date": "2026-10-14", "notes": "The maximum level is now 10: one more unit on the field, and the best odds of rare recruits. Late enemy armies grow to match", "commit": "6225d6c"}, {"v": "0.44.0", "date": "2026-10-14", "notes": "Every unit has a line of its own story on its card", "commit": "3134617"}, {"v": "0.43.0", "date": "2026-10-14", "notes": "Clearer text throughout: an up-to-date Guide and Boot Camp tips, and unit cards that show each soldier\\", "commit": "d73f908"}, {"v": "0.42.0", "date": "2026-10-14", "notes": "Bands with a single-target spell now cast it with every soldier: when the leader casts, each soldier strikes its own target with a share of the power, and comrades pick different enemies where they can", "commit": "89a2c5d"}, {"v": "0.41.0", "date": "2026-10-14", "notes": "Bands across every contract: every 1-cost is now a regiment (summoners aside), most 2- and 3-costs too, and a few 4-costs are elite trios. Around three soldiers per unit at 1 to 3 cost, one at 4 and 5", "commit": "1f01692"}, {"v": "0.40.0", "date": "2026-10-14", "notes": "Squads, first on The Ashward March: 29 units there are now bands of 3 to 5 soldiers, led by the named character (Hobb and his Pitchfork Levy, Kael and the Ash Grunts, Wat and his Yeomen, Captain Edda and her Burnt Levy veterans and more)", "commit": "8178d18"}, {"v": "0.39.0", "date": "2026-10-14", "notes": "The battlefield is twice as big: 21 hexes long and 11 deep, with nine ranks a side", "commit": "786d612"}, {"v": "0.38.0", "date": "2026-10-14", "notes": "The Revenant General\\", "commit": "bc801de"}, {"v": "0.37.0", "date": "2026-10-13", "notes": "A new economy: prices are 25 times finer, so a 4-cost costs 100, a reroll 50 and each battle pays 75 (25 more for a win)", "commit": "b9f792f"}, {"v": "0.36.0", "date": "2026-10-13", "notes": "Battle report: after every fight, see damage dealt, damage taken and healing for each of your units (Report button, or R)", "commit": "bbbc71c"}, {"v": "0.35.0", "date": "2026-10-13", "notes": "Proper desktop support: on computer screens the whole game scales up crisply to fill the window, with readable text at any size from laptops to 4K", "commit": "0fa5ae2"}, {"v": "0.34.2", "date": "2026-10-13", "notes": "Marching to an encounter refreshes the shop too, and it opens when you return to your board", "commit": "9478a1a"}, {"v": "0.34.1", "date": "2026-10-13", "notes": "The shop keeps its recruits after a fight and refreshes (and opens) when you march into the next battle", "commit": "69b9408"}, {"v": "0.34.0", "date": "2026-10-13", "notes": "Every unit now has its own ability, built from its origin and class: 130 new spells, from Ironpact shield-shoves and Mirefolk ambushes to Inquisition stakes, Skald sagas and Verdant fairy rings", "commit": "1a91314"}, {"v": "0.33.0", "date": "2026-10-13", "notes": "Every trait now has a signature move. Ravagers leap to the weakest enemy after a kill; Specters vanish and crit; Hexblades charge their next attacks after casting", "commit": "8abd3cd"}, {"v": "0.32.0", "date": "2026-10-13", "notes": "Ironpact sign a contract before every battle (win fast, lose no one, score kills, keep your company standing) and get paid when they fulfil it", "commit": "a6f6a68"}, {"v": "0.31.0", "date": "2026-10-13", "notes": "No more gold cap: save as much as you like (interest still tops out at 5)", "commit": "39e1b40"}, {"v": "0.30.0", "date": "2026-10-12", "notes": "The three- and four-star contracts (III to VI) now run four acts, and the later acts ramp up hard: tougher, better-equipped armies and stronger final bosses", "commit": "658032c"}, {"v": "0.29.0", "date": "2026-10-12", "notes": "Two new contracts. The Witch-Hunt (now Contract IV; the Cinder Throne becomes V): the Inquisition, militia and the faithful against witches, crows and burnt-out mages, ending at the Great Pyre with the Witch-Queen", "commit": "ea7c0de"}, {"v": "0.28.0", "date": "2026-10-12", "notes": "Signature spell effects: pillars of light and lightning strikes, crashing waves, void vortexes, bursting roots, rot and spore clouds, ground-splitting quakes, shield domes, souls drained across the field, falling meteors, curse sigils, claw rakes and executioner\\", "commit": "f6d68fd"}, {"v": "0.27.0", "date": "2026-10-12", "notes": "Summons each have a role: drowned brutes (1/1/2) are huge tanks, shades (1/1/2) leap onto the weakest enemy, the Rat-King calls swarms of rats (2/3/4), pages cut from range (3/3/4), crows dive the back line (3/4/5), pufflings burst into healing spores", "commit": "9b2c14a"}, {"v": "0.26.2", "date": "2026-10-12", "notes": "A shop unit that would star up shows the stars it would reach in its corner", "commit": "4a16263"}, {"v": "0.26.1", "date": "2026-10-12", "notes": "Creatures attack properly: a wind-up, then a lunge, pounce or bite", "commit": "46f1694"}, {"v": "0.26.0", "date": "2026-10-12", "notes": "About 40% more fights on the map, with fewer special stops; difficulty is stretched to match", "commit": "bf4a026"}, {"v": "0.25.1", "date": "2026-10-11", "notes": "Shields now fade: a shield lasts 4 seconds after it was last gained (8 for shields at the start of battle)", "commit": "73daea9"}, {"v": "0.25.0", "date": "2026-10-11", "notes": "Each contract is now its own TFT-style set of eight origins and eight classes; most units have one origin and one class", "commit": "e01f21c"}, {"v": "0.24.0", "date": "2026-10-11", "notes": "A wider battlefield: 13 columns, five ranks per side and a no-man\\", "commit": "280ded1"}, {"v": "0.23.0", "date": "2026-10-11", "notes": "The game is now fully landscape: hold your phone sideways. If it is held upright, the whole game is drawn turned so it still plays sideways", "commit": "b39392b"}, {"v": "0.22.0", "date": "2026-10-11", "notes": "Even fights: enemy boards now grow with the rounds to match yours, so battles are close and tense instead of lopsided", "commit": "944546d"}, {"v": "0.21.2", "date": "2026-10-11", "notes": "A bigger battlefield: taller phones spend their spare height on deeper rows and larger fighters", "commit": "2b7760c"}, {"v": "0.21.1", "date": "2026-10-11", "notes": "The Ashward March ramps up more gently", "commit": "fabd80e"}, {"v": "0.21.0", "date": "2026-10-11", "notes": "Everything moves by dragging: drag items onto units to equip them, and drag units to place, swap or sell them", "commit": "6f61b5f"}, {"v": "0.20.2", "date": "2026-10-11", "notes": "The interface stays clear of the iPhone notch and camera cutout on every screen", "commit": "6639abb"}, {"v": "0.20.1", "date": "2026-10-11", "notes": "Boot Camp tips now pause the game: the screen dims around what the tip points at, and you tap Got it to continue", "commit": "70578de"}, {"v": "0.20.0", "date": "2026-10-11", "notes": "Boot Camp: a two-act tutorial contract with a tip for every part of the game", "commit": "19bfdf8"}, {"v": "0.19.3", "date": "2026-10-11", "notes": "The game always fetches the newest release, and offers a one-tap update if an old copy is showing", "commit": "62c85a8"}, {"v": "0.19.2", "date": "2026-10-11", "notes": "Sentinel reworked: Sentinels mark what they shoot, and the trait makes all your ranged units faster and longer-reaching", "commit": "61c8fcd"}, {"v": "0.19.1", "date": "2026-10-11", "notes": "Trait names are back on shop cards", "commit": "65aa9cc"}, {"v": "0.19.0", "date": "2026-10-11", "notes": "29 new units (110 in all): every contract can now reach the top tier of each of its origins and classes", "commit": "162ab82"}, {"v": "0.18.0", "date": "2026-10-11", "notes": "Three new contracts from the design doc: Roads of the Drowned, The Festering Road and Siege of the Cinder Throne", "commit": "0074adf"}, {"v": "0.17.0", "date": "2026-10-11", "notes": "Main menu with Continue, version history and sound settings", "commit": "57f3a6a"}, {"v": "0.16.0", "date": "2026-10-11", "commit": "d0f200d", "notes": "Covenant origin, one-screen map and flatter hexes"}, {"v": "0.15.0", "date": "2026-10-11", "commit": "817d9aa", "notes": "First web release: pixel-art company, items and the three-act campaign"}]</script>
 
 
 <div id="root">
@@ -904,8 +906,9 @@ body{position:fixed;inset:0;margin:0}
 
 <script>
 // ================= VERSION =================
-const GAME_VERSION='0.46.0',S_VERSION=13;
+const GAME_VERSION='0.46.1',S_VERSION=13;
 const CHANGELOG={
+  '0.46.1':['Much lighter on phone batteries: a new Battery saver setting (on by default on phones) draws fewer frames, slows right down while you think, and stills the always-on glows','Every phone and computer now redraws soldiers far less often, by reusing frames and mirroring soldiers who face left','The sound engine sleeps when the game is in the background or has been silent for a while','Unit sheets now show items straight away: spell power, armor and the rest change the moment you equip, and ability numbers include your spell power'],
   '0.46.0':['Artifacts: ten one-of-a-kind relics of war, sold only by merchants. The Ninth Bell tolls and stuns everything near it, the Comet Lance calls down comets, the Sunforged Aegis raises domes of sunlight, the Drowned Mirror brings a double into battle, the Tempest Standard calls lightning, and more','Whoever carries an artifact stands in a slow halo of its colour, and artifact icons shimmer','Bosses from act 3 onwards may carry an artifact','The new relics have proper icons, and item stats read magic resist in full'],
   '0.45.0':['You can now hold up to 2500 gold (3500 with the Tithe Box)','Every item has been reforged with a clear job: Headsman\'s Axe builds critical strikes, Wraithblade fades after a kill, Oathbreaker\'s Edge leaves stripped foes Exposed, the Executioner\'s Hook and Thornmail Wound, the Siege Quiver looses a second shot, Hunter\'s Chain rips through bands, Storm Censer lightning leaps between foes, Penitent\'s Chain pulls enemies onto its bearer, and more','Items now feed one another: magic from the Quickening Blade and the Storm Censer sets off Pyre Heart, the Veil of the Moth and the Iron Psalter; Kindled Fury stokes faster on burning foes; a shielded Covenant Ward hits harder','Each item\'s sheet has a Works with panel showing the items it pairs with, and key words glow in their own colour','The Ember Phial now gives starting mana instead of mana over time','New relics: Gallows Coin, Tinderbox and Quartermaster\'s Rack'],
   '0.44.1':['The maximum level is now 10: one more unit on the field, and the best odds of rare recruits. Late enemy armies grow to match'],
@@ -1995,9 +1998,9 @@ const sfx={
 };
 
 // ---- settings and procedural music: a low drone under slow plucks, with a war-drum pulse during battle ----
-const SET=Object.assign({music:true,shake:true,speed:1,vol:.7,nums:'big'},store.get('ashen-settings',{}));
-const saveSet=()=>store.set('ashen-settings',SET);
-function actx(){if(!SFX.ctx){try{SFX.ctx=new(window.AudioContext||window.webkitAudioContext)()}catch(e){return null}}if(SFX.ctx.state==='suspended')SFX.ctx.resume();return SFX.ctx}
+const SET=Object.assign({music:true,shake:true,speed:1,vol:.7,nums:'big',saver:matchMedia('(pointer: coarse)').matches},store.get('ashen-settings',{}));
+const saveSet=()=>{store.set('ashen-settings',SET);document.documentElement.classList.toggle('saver',!!SET.saver)};document.documentElement.classList.toggle('saver',!!SET.saver);
+function actx(){SFX.lastUse=performance.now();if(!SFX.ctx){try{SFX.ctx=new(window.AudioContext||window.webkitAudioContext)()}catch(e){return null}}if(SFX.ctx.state==='suspended')SFX.ctx.resume();return SFX.ctx}
 const MUS={nodes:null,timer:0,mood:'ashen',combat:false,beat:0};
 const MOODS={tundra:{root:46.2,scale:[0,2,3,5,7,8,10]},fjord:{root:41.2,scale:[0,1,3,5,7,8,10]},winterhall:{root:49,scale:[0,2,3,5,7,8,11]},ashen:{root:55,scale:[0,1,3,5,7,8,10]},pact:{root:49,scale:[0,2,3,5,7,8,10]},hollows:{root:41.2,scale:[0,2,3,5,7,8,11]},spires:{root:73.4,scale:[0,2,3,6,7,9,10]},drowned:{root:61.7,scale:[0,1,3,5,7,8,10]},
   festering:{root:46.2,scale:[0,1,4,5,7,8,10]},maw:{root:51.9,scale:[0,2,3,5,7,9,10]},cinder:{root:58.3,scale:[0,1,3,5,6,8,10]},spire:{root:65.4,scale:[0,1,3,5,7,8,11]},rotthrone:{root:43.7,scale:[0,1,4,5,7,8,10]},throne:{root:55,scale:[0,1,3,5,6,8,11]}};
@@ -2491,20 +2494,27 @@ function pixelize(img,o={}){
 }
 // Sprite frames are cached: limbs animate at a pixel-art 12 fps while units still move smoothly.
 const SPRITE_CACHE=new Map();
-function spriteFrame(key,pose,ps,o){
+// draw a cached sprite, mirrored when it faces left (only right-facing frames are cached)
+function blitSpr(x,spr,dx,dy,dw,dh){if(!spr.flip){x.drawImage(spr.cv,0,0,spr.W,spr.H,dx,dy,dw,dh);return}x.save();x.translate(dx+dw,dy);x.scale(-1,1);x.drawImage(spr.cv,0,0,spr.W,spr.H,0,0,dw,dh);x.restore()}
+// new frames cost a full redraw, so each screen refresh only draws a handful; a unit whose frame is not ready yet keeps its last one for a moment
+let SPR_BUDGET=99;
+function spriteFrame(key,pose,ps,o,fb){
+  const flip=(pose.face||1)<0;if(flip)pose={...pose,face:1};const out=f=>{const r=flip?f.fl||(f.fl={cv:f.cv,W:f.W,H:f.H,ox:f.W-f.ox,oy:f.oy,flip:true}):f;if(fb)fb._spr=r;return r};
   // snap the scale to ~3% steps so units walking between rows reuse cached frames instead of redrawing every frame
   ps=Math.exp(Math.round(Math.log(Math.max(.05,ps))*32)/32);
   const q=(v,n)=>v==null||v<0?-1:Math.round(v*n)/n,b=v=>v>.5?1:v>0?.5:0;
   // idle motion loops every 6s at 10fps, so a fighter's frames are drawn once and then reused from the cache
   const busy=pose.moving||(pose.atk!=null&&pose.atk>=0)||(pose.cast!=null&&pose.cast>=0)||(pose.dead!=null&&pose.dead>=0)||pose.hitK>0||pose.flash>0,tr=10;
-  const qp={...pose,t:busy?0:Math.floor((((pose.t||0)%6)+6)%6*tr)/tr,atk:q(pose.atk,10),cast:q(pose.cast,8),dead:q(pose.dead,12),flash:b(pose.flash||0),hitK:b(pose.hitK||0),land:b(pose.land||0),walk:((Math.round((pose.walk||0)/(Math.PI/5))%10+10)%10)*(Math.PI/5)};
+  const qp={...pose,seed:busy?0:Math.floor((((pose.seed||0)%10)+10)%10/2.5)*2.5,t:busy?0:Math.floor(((((pose.t||0)+((pose.seed||0)%2.5)*.9)%6)+6)%6*tr)/tr,atk:q(pose.atk,8),cast:q(pose.cast,7),dead:q(pose.dead,10),flash:pose.flash>.3?1:0,hitK:pose.hitK>.3?1:0,land:b(pose.land||0),walk:((Math.round((pose.walk||0)/(Math.PI/5))%10+10)%10)*(Math.PI/5)};
   const id=[key,ps.toFixed(3),o.ol,qp.t,qp.atk,qp.cast,qp.dead,qp.flash,qp.hitK,qp.land,qp.moving?qp.walk:'s',qp.face,qp.cheer?1:0,qp.seed].join('|');
   let f=SPRITE_CACHE.get(id);
-  if(f){SPRITE_CACHE.delete(id);SPRITE_CACHE.set(id,f);return f}
+  if(f){SPRITE_CACHE.delete(id);SPRITE_CACHE.set(id,f);return out(f)}
+  if(fb&&fb._spr&&SPR_BUDGET<=0)return fb._spr;
+  SPR_BUDGET--;
   const s=makeSprite(key,qp,ps,o),cv=document.createElement('canvas');cv.width=s.W;cv.height=s.H;cv.getContext('2d').drawImage(s.cv,0,0,s.W,s.H,0,0,s.W,s.H);
   f={cv,W:s.W,H:s.H,ox:s.ox,oy:s.oy};SPRITE_CACHE.set(id,f);
-  if(SPRITE_CACHE.size>1400)SPRITE_CACHE.delete(SPRITE_CACHE.keys().next().value);
-  return f;
+  if(SPRITE_CACHE.size>2400)SPRITE_CACHE.delete(SPRITE_CACHE.keys().next().value);
+  return out(f);
 }
 function makeSprite(key,pose,ps,o){
   const sz=LOOK[key].sz,ox=Math.ceil(62*sz*ps)+2,oy=Math.ceil(100*sz*ps)+2,W=Math.ceil(128*sz*ps)+4,H=Math.ceil(112*sz*ps)+4;
@@ -3161,7 +3171,9 @@ const st=(k,n=1)=>{if(!S.stats)S.stats={};S.stats[k]=(S.stats[k]||0)+n};
 function buyXp(){levelUp()}
 const unitAt=loc=>loc.z==='b'?S.board[loc.k]:S.bench[loc.i];
 function setAt(loc,u){if(loc.z==='b'){if(u)S.board[loc.k]=u;else delete S.board[loc.k]}else S.bench[loc.i]=u||null}
-function equip(u){
+// an open unit sheet follows its unit's items as they go on
+function equip(u){const r=equip0(u);if(sheet&&sheet.type==='unit'&&!sheet.ent)renderSheet();return r}
+function equip0(u){
   const id=S.items[selItem];if(id==null)return;
   const its=u.items||(u.items=[]),ci=its.findIndex(x=>isComp(x));
   // a component combines with any loose component the unit already holds, wherever it sits
@@ -3354,12 +3366,12 @@ function drawUnitLow(lc,u){
   }
   lc.restore();
   const fade=alive?1:clamp01(1.25-pose.dead*1.3);if(fade<=0)return;
-  const spr=spriteFrame(drawKeyOf(u.key,u.follower),pose,sc*k,{pop:1,step:16,ol:u.sel?[220,180,100]:u.team==='A'?[16,30,62]:[66,12,10]});
+  const spr=spriteFrame(drawKeyOf(u.key,u.follower),pose,sc*k,{pop:1,step:16,ol:u.sel?[220,180,100]:u.team==='A'?[16,30,62]:[66,12,10]},u.ref&&u.ref.team?u.ref:null);
   lc.save();lc.setTransform(1,0,0,1,0,0);lc.globalAlpha=alive?(u.invul?.45+.25*Math.sin(V.t*14):u.phantom?.55+.1*Math.sin(V.t*3):1):1;lc.imageSmoothingEnabled=false;
   const dx0=Math.round((P.x+ox)*k)-spr.ox,dy0=Math.round((P.y+oy)*k)-spr.oy;
-  if(alive)lc.drawImage(spr.cv,0,0,spr.W,spr.H,dx0,dy0,spr.W,spr.H);
+  if(alive)blitSpr(lc,spr,dx0,dy0,spr.W,spr.H);
   else{ // the fallen crumble away pixel by pixel, with a burning edge
-    const tc=V.dtmp||(V.dtmp=document.createElement('canvas'));tc.width=spr.W;tc.height=spr.H;const tx=tc.getContext('2d',{willReadFrequently:true});tx.drawImage(spr.cv,0,0,spr.W,spr.H,0,0,spr.W,spr.H);
+    const tc=V.dtmp||(V.dtmp=document.createElement('canvas'));tc.width=spr.W;tc.height=spr.H;const tx=tc.getContext('2d',{willReadFrequently:true});blitSpr(tx,spr,0,0,spr.W,spr.H);
     const img=tx.getImageData(0,0,spr.W,spr.H),d=img.data,W=spr.W,ec=u.team==='A'?[120,200,255]:[255,150,50];
     for(let y=0;y<spr.H;y++)for(let x=0;x<W;x++){const j=(y*W+x)*4;if(!d[j+3])continue;const th=(BAYER[(y&3)*4+(x&3)]/16)*.22+(1-y/spr.H)*.78;
       if(th>fade)d[j+3]=0;else if(th>fade-.07){d[j]=ec[0];d[j+1]=ec[1];d[j+2]=ec[2]}else if(th>fade-.14){d[j]=(d[j]+ec[0])>>1;d[j+1]=(d[j+1]+ec[1])>>1;d[j+2]=(d[j+2]+ec[2])>>1}}
@@ -3481,7 +3493,7 @@ function sceneUnits(){
   }
   return units;
 }
-function drawScene(){
+function drawScene(){SPR_BUDGET=SET.saver?3:10;
   const ctx=V.ctx;if(!ctx)return;
   if(!V.bg)buildBackdrop();
   const lc=V.lctx,k=V.k,fight=!V.menuMode&&S.phase==='combat'&&C;
@@ -3513,14 +3525,14 @@ function drawScene(){
       if(tm-d.t0<1.2){lc.globalAlpha=(1-(tm-d.t0)/1.2)*.7;lc.strokeStyle=d.col||'#ff7a2a';lc.beginPath();lc.ellipse(P.x,P.y,R*.7,R*.24,0,0,7);lc.stroke()}lc.restore()}}
   if(fight){const tm=C.time;for(const f of C.fx){if(f.k!=='ghost')continue;const q=(tm-f.t0)/f.dur;if(q<0||q>1)continue;const P=proj(f.r,f.X),sc=P.s*V.cw*SCL/FIG;
       const spr=spriteFrame(f.key,{t:f.t0,face:f.face,seed:f.seed,moving:true,walk:1.6},sc*k,{pop:1,step:16,ol:f.team==='A'?[60,110,200]:[200,60,50]});
-      lc.save();lc.setTransform(1,0,0,1,0,0);lc.globalAlpha=.42*(1-q);lc.globalCompositeOperation='lighter';lc.drawImage(spr.cv,0,0,spr.W,spr.H,Math.round(P.x*k)-spr.ox,Math.round(P.y*k)-spr.oy,spr.W,spr.H);lc.restore()}}
+      lc.save();lc.setTransform(1,0,0,1,0,0);lc.globalAlpha=.42*(1-q);lc.globalCompositeOperation='lighter';blitSpr(lc,spr,Math.round(P.x*k)-spr.ox,Math.round(P.y*k)-spr.oy,spr.W,spr.H);lc.restore()}}
   const units=sceneUnits();V.lastUnits=units;
   units.sort((a,b)=>a.r-b.r||a.X-b.X).forEach(u=>drawUnitLow(lc,u));
   units.forEach(u=>drawArtAura(lc,u));
   if(!fight&&V.drag&&V.drag.u&&V.dragHex&&!S.board[V.dragHex]){const [r,c]=V.dragHex.split(',').map(Number),me=V.drag.loc.z==='b'?V.drag.loc.k:null;
     const tk=new Set();for(const [ak,f] of boardFoot())if(ak!==me)f.forEach(p=>tk.add(K(p.r,p.c)));
     footFor('A',V.drag.u.key,{r,c},tk).forEach(p=>{const P=proj(p.r,Xof(p.r,p.c)),sc=P.s*V.cw*SCL/FIG,spr=spriteFrame(V.drag.u.key,{t:V.t,face:1,seed:1},sc*k,{pop:1,step:16,ol:[60,110,200]});
-      lc.save();lc.setTransform(1,0,0,1,0,0);lc.globalAlpha=.55;lc.drawImage(spr.cv,0,0,spr.W,spr.H,Math.round(P.x*k)-spr.ox,Math.round(P.y*k)-spr.oy,spr.W,spr.H);lc.restore()})}
+      lc.save();lc.setTransform(1,0,0,1,0,0);lc.globalAlpha=.55;blitSpr(lc,spr,Math.round(P.x*k)-spr.ox,Math.round(P.y*k)-spr.oy,spr.W,spr.H);lc.restore()})}
   if(fight)drawFxLow();
   if(fight)drawLights(lc,units);
   drawWeather(lc);
@@ -3674,7 +3686,7 @@ function drawFxLow(){
   fc.setTransform(1,0,0,1,0,0);
   const X0=Math.max(0,Math.floor(bx0*k)),Y0=Math.max(0,Math.floor(by0*k)),X1=Math.min(V.fxc.width,Math.ceil(bx1*k)),Y1=Math.min(V.fxc.height,Math.ceil(by1*k));
   if(X1<=X0||Y1<=Y0)return;
-  const img=fc.getImageData(X0,Y0,X1-X0,Y1-Y0);pixelize(img,{rim:false,th:90,step:24,ol:[26,12,8]});fc.putImageData(img,X0,Y0);
+  if(!SET.saver){const img=fc.getImageData(X0,Y0,X1-X0,Y1-Y0);pixelize(img,{rim:false,th:90,step:24,ol:[26,12,8]});fc.putImageData(img,X0,Y0)}
   const lc=V.lctx;lc.save();lc.setTransform(1,0,0,1,0,0);lc.drawImage(V.fxc,X0,Y0,X1-X0,Y1-Y0,X0,Y0,X1-X0,Y1-Y0);lc.restore();
 }
 function drawTextFx(ctx){
@@ -3705,7 +3717,7 @@ function paintPortraits(root=document){
     const key=cv.dataset.key,sz=LOOK[key].sz,fm=LOOK[key].form,zoom=fm?1:+(cv.dataset.zoom||1),fh=fm?{quad:30,bird:42,bug:24,shroom:34,book:44,ghost:46,fishman:50,naga:50,eye:64,angler:46,blob:24,treant:30}[fm]*1.2:74;
     const hh=Math.min(h,w*1.9),sc=hh*.9*zoom/(fh*sz),spr=makeSprite(key,{t:0,face:1,seed:3},sc*d/PX,{pop:1,step:16});
     const fx=(zoom>1?w*.58:w/2-1)*d,fy=(zoom>1?h-hh*.02+hh*.26-(h-hh)*.35:h-hh*.03)*d;
-    x.drawImage(spr.cv,0,0,spr.W,spr.H,Math.round(fx-spr.ox*PX),Math.round(fy-spr.oy*PX),spr.W*PX,spr.H*PX);
+    blitSpr(x,spr,Math.round(fx-spr.ox*PX),Math.round(fy-spr.oy*PX),spr.W*PX,spr.H*PX);
   });
 }
 const coin='<span class="coin"></span>';
@@ -3797,7 +3809,7 @@ function drawBench(){
     const spr=spriteFrame(u.key,{t:V.t+sd*9,seed:sd*7,face,moving:walking,walk:V.t*10,cheer:S.popAt===i},ps,{pop:1,step:16,ol:sel&&sel.z==='n'&&sel.i===i?[220,180,100]:[16,30,62]});
     x.save();x.beginPath();x.rect(R.x*d,R.y*d,R.w*d,R.h*d);x.clip();
     x.fillStyle='rgba(0,0,0,.4)';x.beginPath();x.ellipse((R.x+R.w/2+ox)*d,(R.y+R.h-5)*d,R.w*.3*d,R.w*.09*d,0,0,7);x.fill();
-    x.drawImage(spr.cv,0,0,spr.W,spr.H,Math.round((R.x+R.w/2+ox)*d-spr.ox*PX),Math.round((R.y+R.h-5)*d-spr.oy*PX),spr.W*PX,spr.H*PX);x.restore()})
+    blitSpr(x,spr,Math.round((R.x+R.w/2+ox)*d-spr.ox*PX),Math.round((R.y+R.h-5)*d-spr.oy*PX),spr.W*PX,spr.H*PX);x.restore()})
 }
 function unequip(i){const u=sel&&unitAt(sel);if(!u||!u.items||!u.items[i]||S.phase!=='plan')return;const id=u.items.splice(i,1)[0];S.items.push(id);sfx.sell();render();
   if(sheet&&sheet.type==='unit')renderSheet();toast(`${itemName(id)} unequipped`,'Returned to your armory.');const a=$('#armory');if(a){a.classList.remove('gain');void a.offsetWidth;a.classList.add('gain')}}
@@ -3807,10 +3819,15 @@ function recipeRow(f){const [a,b]=ITEM[f].c,ready=a===b?S.items.filter(x=>x===a)
 function closeSheet(){sheet=null;$('#sheet').hidden=true}
 function openUnit(info){sheet={type:'unit',...info};renderSheet()}
 function openTrait(name){sel=null;sheet={type:'trait',name};renderSheet();render()}
+function sheetItems(s){return s.ent?s.ent.items:s.mine&&typeof sel!=='undefined'&&sel?(unitAt(sel)||{}).items:s.enemy!=null&&S.enemy?(S.enemy[s.enemy]||{}).items:null}
 function unitStats(s){
   const d=UNITS[s.key],m=STAR[s.star-1]*(s.elite?1.5:1),e=s.ent;
   if(e)return{hp:e.hp,max:e.max,mana:e.mana,maxMana:e.maxMana,atk:e.atk,as:e.effAs||e.as,ar:e.armor,mr:e.mr,range:e.range,sp:e.sp,shield:e.shield};
-  const n=sqN(s.key);return{hp:d.hp*m/n,max:d.hp*m/n,mana:0,maxMana:d.mana-(d.c==='Hexblade'?20:0),atk:d.atk*m/n,as:d.as,ar:d.ar+(d.c==='Vanguard'?15:0),mr:d.mr,range:d.r,sp:1,shield:0};
+  const n=sqN(s.key),its=sheetItems(s);
+  // outside battle, preview the unit with its items on, so spell power, armor and the rest move the moment an item goes on
+  if(its&&its.length){const p=makeEnt({key:s.key,star:s.star,elite:s.elite,items:its},'A',0,0,1/n);if(n>1)p.sq={n};try{applyItems(p)}catch(err){}p.max=p.hp;
+    return{hp:p.hp,max:p.hp,mana:0,maxMana:p.maxMana,atk:p.atk,as:p.as,ar:p.armor,mr:p.mr,range:p.range,sp:p.sp,shield:p.it&&p.it.ward?p.hp*.3:0}}
+  return{hp:d.hp*m/n,max:d.hp*m/n,mana:0,maxMana:d.mana-(d.c==='Hexblade'?20:0),atk:d.atk*m/n,as:d.as,ar:d.ar+(d.c==='Vanguard'?15:0),mr:d.mr,range:d.r,sp:1,shield:0};
 }
 function renderSheet(){
   const box=$('#sheetIn');
@@ -3862,11 +3879,11 @@ function renderSheet(){
   ${sheet.team!=='B'&&!d.token?copiesLine(sheet.key):''}
   <div class="bars2"><div class="bar2${sheet.team==='B'?' foe':''}" id="shHp"><i style="width:${100*st.hp/st.max}%"></i><span class="num">${Math.round(st.hp)} / ${Math.round(st.max)}${st.shield>0?` (+${Math.round(st.shield)})`:''}</span></div>
     <div class="bar2 mp" id="shMp"><i style="width:${100*st.mana/st.maxMana}%"></i><span class="num">${d.ab?`${Math.round(st.mana)} / ${st.maxMana}`:'No ability'}</span></div></div>
-  ${(()=>{const its=sheet.ent?sheet.ent.items:sheet.mine&&sel?(unitAt(sel)||{}).items:sheet.enemy!=null?(S.enemy[sheet.enemy]||{}).items:null;return its&&its.length?`<div class="abil"><div class="h">Items</div>${its.map((id,i)=>`<div class="irow">${itemIcon(id)}<span><b>${itemName(id)}</b> ${itemDesc(id)}</span>${sheet.mine&&plan&&!sheet.ent?`<button class="unq" data-unequip="${i}">Unequip</button>`:''}</div>`).join('')}</div>`:''})()}
+  ${(()=>{const its=sheetItems(sheet);return its&&its.length?`<div class="abil"><div class="h">Items</div>${its.map((id,i)=>`<div class="irow">${itemIcon(id)}<span><b>${itemName(id)}</b> ${itemDesc(id)}</span>${sheet.mine&&plan&&!sheet.ent?`<button class="unq" data-unequip="${i}">Unequip</button>`:''}</div>`).join('')}</div>`:''})()}
   ${loyalHtml(d,sheet.ent||(sheet.mine&&sel?unitAt(sel):null))}
   <div class="sgrid num"><div>Attack<b>${Math.round(st.atk)}</b></div><div>Speed<b>${st.as.toFixed(2)}</b></div><div>Range<b>${st.range}</b></div>
     <div>Armor<b>${Math.round(st.ar)}</b></div><div>Magic res.<b>${Math.round(st.mr)}</b></div><div>Spell pow.<b>${Math.round(st.sp*100)}%</b></div></div>
-  ${a?`<div class="abil"><div class="h">${a[0]}<span>${st.maxMana} mana</span></div>${a[1](Math.round(d.p*SPELL[sheet.star-1]*(sheet.elite?1.3:1)))}${EXTRA_SUM[sheet.key]?`<div class="scal"><b>Also:</b> ${sumText(EXTRA_SUM[sheet.key],extraSumP(d,sheet.star))}</div>`:''}${scalingHtml(d,sheet.star,st.sp)}</div>`:''}
+  ${a?`<div class="abil"><div class="h">${a[0]}<span>${st.maxMana} mana</span></div>${a[1](Math.round(d.p*SPELL[sheet.star-1]*(sheet.elite?1.3:1)*(st.sp||1)))}${EXTRA_SUM[sheet.key]?`<div class="scal"><b>Also:</b> ${sumText(EXTRA_SUM[sheet.key],extraSumP(d,sheet.star))}</div>`:''}${scalingHtml(d,sheet.star,st.sp)}</div>`:''}
   ${[d.c,d.c2].filter(Boolean).map(c=>`<div class="abil"><div class="h">${c}</div>${TRAITS[c].passive}</div>`).join('')}
   ${sheet.mine&&plan&&sel&&unitAt(sel)?`<div class="sh-act"><button class="sell" id="sellBtn">Sell ${coin} ${sellValue(unitAt(sel))}</button></div>`:''}`;
   paintPortraits(box);
@@ -3881,7 +3898,7 @@ function traitNote(n){const v=x=>`<div class="abil tnote">${x}</div>`;
   if(n==='Hexen'||n==='Herald'||n==='Inquisition'||n==='Covenant')return '';return ''}
 function loyalHtml(d,u){if(!u||!d.o.includes('Covenant')||!isActive('Covenant'))return '';return `<div class="scal"><b>Loyalty:</b> ${Math.min(10,u.vet||0)} battle${(u.vet||0)===1?'':'s'} fought for you${(u.vet||0)>10?' (max)':''}</div>`}
 function scalingHtml(d,star,sp){const n=d.sq?d.sq.n:1,k=Object.keys(UNITS).find(x=>UNITS[x]===d),pn=typeof SPLIT!=='undefined'&&SPLIT.has(k)?n:1,P=SPELL.map(m=>Math.round(d.p*m/pn)),H=STAR.map(m=>Math.round(d.hp*m/n)),A=STAR.map(m=>Math.round(d.atk*m/n)),row=v=>v.map((x,i)=>`<b class="${i===star-1?'on':''}">${x}</b>`).join(' / ');
-  return `<div class="scal">Ability power${pn>1?' per soldier':''} ${row(P)}, × spell power (now ${Math.round((sp||1)*100)}%). Basic attacks deal physical damage equal to attack.</div><div class="scal">${n>1?'Each soldier: ':''}HP ${row(H)} · Attack ${row(A)}</div>`}
+  return `<div class="scal">Ability power${pn>1?' per soldier':''} ${row(P)}, × spell power (now ${Math.round((sp||1)*100)}%${Math.abs((sp||1)-1)>.005?', already counted in the numbers above':''}). Basic attacks deal physical damage equal to attack.</div><div class="scal">${n>1?'Each soldier: ':''}HP ${row(H)} · Attack ${row(A)}</div>`}
 function tickSheet(){
   if(!sheet||!sheet.ent)return;
   const st=unitStats(sheet),hp=$('#shHp'),mp=$('#shMp');if(!hp)return;
@@ -6493,7 +6510,7 @@ function drawMenu(){
   $('#mnPanel').classList.toggle('tall',menuTab==='codex'||menuTab==='settings');
   if(menuTab==='codex'){$('#mnPanel').innerHTML=codexHtml();paintPortraits($('#mnPanel'));return}
   if(menuTab==='settings'){const tg=(k,l,on,sub)=>`<button class="setrow" data-set="${k}"><span><b>${l}</b>${sub?`<em>${sub}</em>`:''}</span><span class="sw${on?' on':''}"><i></i></span></button>`;
-    $('#mnPanel').innerHTML=`<div class="mp-h">Settings</div><div class="setlist">${tg('sound','Sound effects',SFX.on)}${tg('music','Music',SET.music,'Procedural score that follows each region')}${tg('shake','Screen shake',SET.shake)}
+    $('#mnPanel').innerHTML=`<div class="mp-h">Settings</div><div class="setlist">${tg('sound','Sound effects',SFX.on)}${tg('music','Music',SET.music,'Procedural score that follows each region')}${tg('shake','Screen shake',SET.shake)}${tg('saver','Battery saver',SET.saver,'Draws fewer frames, and slows right down when nothing is happening')}
       <div class="setrow"><span><b>Damage numbers</b><em>Big only shows critical hits and abilities</em></span><span class="segs">${[['big','Big only'],['all','All']].map(([v,l])=>`<button class="seg${SET.nums===v?' on':''}" data-nums="${v}">${l}</button>`).join('')}</span></div>
       <div class="setrow"><span><b>Battle speed</b><em>Also changes with the button during a fight</em></span><span class="segs">${[1,2,4].map(s=>`<button class="seg${SET.speed===s?' on':''}" data-speed="${s}">${s}x</button>`).join('')}</span></div>
       <button class="setrow danger" data-set="reset"><span><b>Reset progress</b><em>Clears unlocked contracts, heat, relics and records</em></span></button></div>
@@ -6533,8 +6550,23 @@ function renderMenuCanvas(){
   x.drawImage(cv,(mc.width-cv.width*sc)/2,mc.height-cv.height*sc,cv.width*sc,cv.height*sc);
 }
 let lastTs=0,sheetTick=0,meterTick=0;
+// how often to redraw: every frame on a desktop; on battery saver 30 a second in battle, 30 while you plan, and a trickle when nothing moves
+let lastIn=0,ptrDown=false;
+['pointerdown','pointermove','wheel','keydown','touchstart'].forEach(ev=>document.addEventListener(ev,()=>{lastIn=performance.now();if(ev==='pointerdown'||ev==='touchstart')ptrDown=true},{passive:true}));
+['pointerup','pointercancel','touchend'].forEach(ev=>document.addEventListener(ev,()=>{ptrDown=false;lastIn=performance.now()},{passive:true}));
+function frameGap(ts){
+  const ov=!$('#overlay').hidden,menu=V.menuMode,fight=S&&S.phase==='combat';
+  if(!SET.saver)return ov&&!fight?1000/30:0;
+  if(ptrDown&&!ov)return 1000/60;
+  if(ov)return 1000/12;
+  if(fight)return 1000/30;
+  const idle=ts-lastIn;
+  if(menu)return idle>8000?1000/12:1000/24;
+  return idle>10000?1000/10:1000/30}
+let lastDraw=0;
 function frame(ts){
-  const dt=lastTs?Math.min(.1,(ts-lastTs)/1000):0;lastTs=ts;V.t+=dt;
+  const gap=frameGap(ts);if(gap&&ts-lastDraw<gap-3){requestAnimationFrame(frame);return}lastDraw=ts;
+  const dt=lastTs?Math.min(.12,(ts-lastTs)/1000):0;lastTs=ts;V.t+=dt;
   if(S&&S.phase==='plan'&&!V.menuMode&&!coachStep&&!S.camp&&V.t>2&&!V.zoomTip){V.zoomTip=true;if(!store.get('ashen-zoomtip',false)){store.set('ashen-zoomtip',true);setTimeout(()=>toast('Zoom in on the fight',matchMedia('(pointer: coarse)').matches?'Pinch to zoom, drag the ground to look around.':'Scroll to zoom, drag the ground to look around.'),600)}}
   if(S&&S.phase==='combat'&&C&&!coachStep&&!C.paused){
     if(C.freeze>0)C.freeze-=dt;
@@ -6674,6 +6706,7 @@ document.addEventListener('click',ev=>{
     if(k==='sound'){SFX.on=!SFX.on;store.set('ashen-sfx',SFX.on);if(SFX.on)sfx.tap()}
     else if(k==='music'){SET.music=!SET.music;saveSet();SET.music?musicStart():musicStop()}
     else if(k==='shake'){SET.shake=!SET.shake;saveSet()}
+    else if(k==='saver'){SET.saver=!SET.saver;saveSet()}
     else if(k==='reset'){if(ss.dataset.armed){['ashen-beaten','ashen-heat','ashen-vault','ashen-bestrun','ashen-best','ashen-openall'].forEach(x=>{try{localStorage.removeItem(x)}catch(e){}});best=0;toast('Progress reset','');}else{ss.dataset.armed=1;ss.querySelector('b').textContent='Tap again to reset everything';return}}
     return drawMenu()}
   const nm=t.closest('[data-nums]');if(nm){SET.nums=nm.dataset.nums;saveSet();sfx.tap();return drawMenu()}
@@ -6773,7 +6806,8 @@ function checkUpdate(){
     if(latest&&vNum(latest)>vNum(GAME_VERSION)){const el=$('#ver');el.classList.add('upd');el.innerHTML=`v${GAME_VERSION} · <a href="#" id="updNow">update to v${latest}</a>`;
       $('#updNow').onclick=async e=>{e.preventDefault();try{if(window.caches){const ks=await caches.keys();await Promise.all(ks.map(k=>caches.delete(k)))}const rs=navigator.serviceWorker?await navigator.serviceWorker.getRegistrations():[];await Promise.all(rs.map(r=>r.update()))}catch(x){}location.reload()}}
   }).catch(()=>{})}
-setTimeout(checkUpdate,1500);document.addEventListener('visibilitychange',()=>{if(!document.hidden)checkUpdate()});
+setTimeout(checkUpdate,1500);document.addEventListener('visibilitychange',()=>{if(!document.hidden)checkUpdate();const a=SFX.ctx;if(!a)return;if(document.hidden)a.suspend();else if(SET.music&&MUS.nodes)a.resume()});
+setInterval(()=>{const a=SFX.ctx;if(a&&a.state==='running'&&!MUS.nodes&&performance.now()-(SFX.lastUse||0)>5000)a.suspend()},3000);
 function clearRunIfStale(){const d=store.get(SAVE_KEY,null);if(d&&d.S)migrateS(d.S);if(d&&(!d.S||d.S.v!==S_VERSION))clearRun()}
 window.claude?.hot?.snapshot?.(()=>({S:S&&S.phase!=='combat'?S:null}));
 window.claude?.hot?.ready?window.claude.hot.ready(start):start(window.claude?.hot?.data??{});
