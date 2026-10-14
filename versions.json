@@ -1,9 +1,15 @@
 [
  {
+  "v": "0.47.2",
+  "date": "2026-10-14",
+  "notes": "More new names: the spellcasters are Magi, the bow and crossbow lookouts are Watchmen, and the druids and bark-folk are the Wildwood",
+  "latest": true
+ },
+ {
   "v": "0.47.1",
   "date": "2026-10-14",
   "notes": "Two classes have new names: the armoured front line are Stalwarts, and the shield-bearers are the Aegis",
-  "latest": true
+  "commit": "9715d84"
  },
  {
   "v": "0.47.0",
