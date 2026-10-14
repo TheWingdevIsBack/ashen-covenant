@@ -1,9 +1,15 @@
 [
  {
+  "v": "0.39.0",
+  "date": "2026-10-14",
+  "notes": "The battlefield is twice as big: 21 hexes long and 11 deep, with nine ranks a side",
+  "latest": true
+ },
+ {
   "v": "0.38.0",
   "date": "2026-10-14",
   "notes": "The Revenant General\\",
-  "latest": true
+  "commit": "bc801de"
  },
  {
   "v": "0.37.0",
