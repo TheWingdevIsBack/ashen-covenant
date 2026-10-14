@@ -1,9 +1,15 @@
 [
  {
+  "v": "0.42.0",
+  "date": "2026-10-14",
+  "notes": "Bands with a single-target spell now cast it with every soldier: when the leader casts, each soldier strikes its own target with a share of the power, and comrades pick different enemies where they can",
+  "latest": true
+ },
+ {
   "v": "0.41.0",
   "date": "2026-10-14",
   "notes": "Bands across every contract: every 1-cost is now a regiment (summoners aside), most 2- and 3-costs too, and a few 4-costs are elite trios. Around three soldiers per unit at 1 to 3 cost, one at 4 and 5",
-  "latest": true
+  "commit": "1f01692"
  },
  {
   "v": "0.40.0",
