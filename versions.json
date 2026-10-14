@@ -1,9 +1,15 @@
 [
  {
+  "v": "0.41.0",
+  "date": "2026-10-14",
+  "notes": "Bands across every contract: every 1-cost is now a regiment (summoners aside), most 2- and 3-costs too, and a few 4-costs are elite trios. Around three soldiers per unit at 1 to 3 cost, one at 4 and 5",
+  "latest": true
+ },
+ {
   "v": "0.40.0",
   "date": "2026-10-14",
   "notes": "Squads, first on The Ashward March: 29 units there are now bands of 3 to 5 soldiers, led by the named character (Hobb and his Pitchfork Levy, Kael and the Ash Grunts, Wat and his Yeomen, Captain Edda and her Burnt Levy veterans and more)",
-  "latest": true
+  "commit": "8178d18"
  },
  {
   "v": "0.39.0",
