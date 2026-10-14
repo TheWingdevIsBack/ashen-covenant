@@ -1,9 +1,15 @@
 [
  {
+  "v": "0.47.0",
+  "date": "2026-10-14",
+  "notes": "A new class, the Bastion: shield-bearers who guard the allies beside them. Their neighbours take less damage and part of every blow lands on the Bastion, they raise a shield wall when battle starts, and at full strength they throw themselves in front of killing blows",
+  "latest": true
+ },
+ {
   "v": "0.46.2",
   "date": "2026-10-14",
   "notes": "Abilities are far easier to read: every cast lights its caster with a ring and a column of its own colour, and bright streaks fly from the caster to everything its spell strikes. Champions and 3-star units cast bigger",
-  "latest": true
+  "commit": "1c335ce"
  },
  {
   "v": "0.46.1",
