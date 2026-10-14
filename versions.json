@@ -1,9 +1,15 @@
 [
  {
+  "v": "0.46.2",
+  "date": "2026-10-14",
+  "notes": "Abilities are far easier to read: every cast lights its caster with a ring and a column of its own colour, and bright streaks fly from the caster to everything its spell strikes. Champions and 3-star units cast bigger",
+  "latest": true
+ },
+ {
   "v": "0.46.1",
   "date": "2026-10-14",
   "notes": "Much lighter on phone batteries: a new Battery saver setting (on by default on phones) draws fewer frames, slows right down while you think, and stills the always-on glows",
-  "latest": true
+  "commit": "fd2a78e"
  },
  {
   "v": "0.46.0",
