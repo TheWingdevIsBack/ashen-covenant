@@ -1,9 +1,15 @@
 [
  {
+  "v": "0.47.1",
+  "date": "2026-10-14",
+  "notes": "Two classes have new names: the armoured front line are Stalwarts, and the shield-bearers are the Aegis",
+  "latest": true
+ },
+ {
   "v": "0.47.0",
   "date": "2026-10-14",
   "notes": "A new class, the Bastion: shield-bearers who guard the allies beside them. Their neighbours take less damage and part of every blow lands on the Bastion, they raise a shield wall when battle starts, and at full strength they throw themselves in front of killing blows",
-  "latest": true
+  "commit": "2998d67"
  },
  {
   "v": "0.46.2",
