@@ -1,9 +1,15 @@
 [
  {
+  "v": "0.43.0",
+  "date": "2026-10-14",
+  "notes": "Clearer text throughout: an up-to-date Guide and Boot Camp tips, and unit cards that show each soldier\\",
+  "latest": true
+ },
+ {
   "v": "0.42.0",
   "date": "2026-10-14",
   "notes": "Bands with a single-target spell now cast it with every soldier: when the leader casts, each soldier strikes its own target with a share of the power, and comrades pick different enemies where they can",
-  "latest": true
+  "commit": "89a2c5d"
  },
  {
   "v": "0.41.0",
