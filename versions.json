@@ -1,9 +1,15 @@
 [
  {
+  "v": "0.46.0",
+  "date": "2026-10-14",
+  "notes": "Artifacts: ten one-of-a-kind relics of war, sold only by merchants. The Ninth Bell tolls and stuns everything near it, the Comet Lance calls down comets, the Sunforged Aegis raises domes of sunlight, the Drowned Mirror brings a double into battle, the Tempest Standard calls lightning, and more",
+  "latest": true
+ },
+ {
   "v": "0.45.0",
   "date": "2026-10-14",
   "notes": "You can now hold up to 2500 gold (3500 with the Tithe Box)",
-  "latest": true
+  "commit": "d7938de"
  },
  {
   "v": "0.44.1",
