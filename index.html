@@ -790,6 +790,10 @@ body{position:fixed;inset:0;margin:0}
 @keyframes upg{to{box-shadow:inset 0 0 0 4px #fff2c0,inset 0 0 26px rgba(255,226,140,.85)}}
 .card .shim{position:absolute;inset:0;z-index:3;pointer-events:none;overflow:hidden;border-radius:inherit}
 .card .shim::before{content:"";position:absolute;top:-20%;bottom:-20%;width:38%;left:-50%;background:linear-gradient(100deg,transparent,rgba(255,240,190,.55),transparent);transform:skewX(-18deg);animation:shim 1.6s ease-in-out infinite}
+@keyframes kwg{50%{text-shadow:0 0 7px var(--kc)}}
+.kw{color:var(--kc);font-weight:600;text-shadow:0 0 3px color-mix(in srgb,var(--kc) 55%,transparent);animation:kwg 2.6s ease-in-out infinite}
+.ifam{display:flex;flex-direction:column;gap:4px;padding:6px 8px;margin-top:6px;border-left:2px solid var(--kc);background:color-mix(in srgb,var(--kc) 9%,transparent);border-radius:6px}
+.ifam b{color:var(--kc);text-shadow:0 0 6px color-mix(in srgb,var(--kc) 60%,transparent)}.ifam-i{display:flex;flex-wrap:wrap;gap:4px}.ifam-i>span{cursor:pointer}.ifam>span:last-child{font-size:.92em;opacity:.85}
 @keyframes shim{0%{left:-50%}60%,100%{left:120%}}
 @keyframes upp{to{transform:scale(1.1)}}
 /* team planner */
@@ -840,7 +844,7 @@ body{position:fixed;inset:0;margin:0}
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
 </head>
 <body>
-<script>window.ASHEN_VERSIONS=[{"v": "0.44.1", "date": "2026-10-14", "notes": "The maximum level is now 10: one more unit on the field, and the best odds of rare recruits. Late enemy armies grow to match", "latest": true}, {"v": "0.44.0", "date": "2026-10-14", "notes": "Every unit has a line of its own story on its card", "commit": "3134617"}, {"v": "0.43.0", "date": "2026-10-14", "notes": "Clearer text throughout: an up-to-date Guide and Boot Camp tips, and unit cards that show each soldier\\", "commit": "d73f908"}, {"v": "0.42.0", "date": "2026-10-14", "notes": "Bands with a single-target spell now cast it with every soldier: when the leader casts, each soldier strikes its own target with a share of the power, and comrades pick different enemies where they can", "commit": "89a2c5d"}, {"v": "0.41.0", "date": "2026-10-14", "notes": "Bands across every contract: every 1-cost is now a regiment (summoners aside), most 2- and 3-costs too, and a few 4-costs are elite trios. Around three soldiers per unit at 1 to 3 cost, one at 4 and 5", "commit": "1f01692"}, {"v": "0.40.0", "date": "2026-10-14", "notes": "Squads, first on The Ashward March: 29 units there are now bands of 3 to 5 soldiers, led by the named character (Hobb and his Pitchfork Levy, Kael and the Ash Grunts, Wat and his Yeomen, Captain Edda and her Burnt Levy veterans and more)", "commit": "8178d18"}, {"v": "0.39.0", "date": "2026-10-14", "notes": "The battlefield is twice as big: 21 hexes long and 11 deep, with nine ranks a side", "commit": "786d612"}, {"v": "0.38.0", "date": "2026-10-14", "notes": "The Revenant General\\", "commit": "bc801de"}, {"v": "0.37.0", "date": "2026-10-13", "notes": "A new economy: prices are 25 times finer, so a 4-cost costs 100, a reroll 50 and each battle pays 75 (25 more for a win)", "commit": "b9f792f"}, {"v": "0.36.0", "date": "2026-10-13", "notes": "Battle report: after every fight, see damage dealt, damage taken and healing for each of your units (Report button, or R)", "commit": "bbbc71c"}, {"v": "0.35.0", "date": "2026-10-13", "notes": "Proper desktop support: on computer screens the whole game scales up crisply to fill the window, with readable text at any size from laptops to 4K", "commit": "0fa5ae2"}, {"v": "0.34.2", "date": "2026-10-13", "notes": "Marching to an encounter refreshes the shop too, and it opens when you return to your board", "commit": "9478a1a"}, {"v": "0.34.1", "date": "2026-10-13", "notes": "The shop keeps its recruits after a fight and refreshes (and opens) when you march into the next battle", "commit": "69b9408"}, {"v": "0.34.0", "date": "2026-10-13", "notes": "Every unit now has its own ability, built from its origin and class: 130 new spells, from Ironpact shield-shoves and Mirefolk ambushes to Inquisition stakes, Skald sagas and Verdant fairy rings", "commit": "1a91314"}, {"v": "0.33.0", "date": "2026-10-13", "notes": "Every trait now has a signature move. Ravagers leap to the weakest enemy after a kill; Specters vanish and crit; Hexblades charge their next attacks after casting", "commit": "8abd3cd"}, {"v": "0.32.0", "date": "2026-10-13", "notes": "Ironpact sign a contract before every battle (win fast, lose no one, score kills, keep your company standing) and get paid when they fulfil it", "commit": "a6f6a68"}, {"v": "0.31.0", "date": "2026-10-13", "notes": "No more gold cap: save as much as you like (interest still tops out at 5)", "commit": "39e1b40"}, {"v": "0.30.0", "date": "2026-10-12", "notes": "The three- and four-star contracts (III to VI) now run four acts, and the later acts ramp up hard: tougher, better-equipped armies and stronger final bosses", "commit": "658032c"}, {"v": "0.29.0", "date": "2026-10-12", "notes": "Two new contracts. The Witch-Hunt (now Contract IV; the Cinder Throne becomes V): the Inquisition, militia and the faithful against witches, crows and burnt-out mages, ending at the Great Pyre with the Witch-Queen", "commit": "ea7c0de"}, {"v": "0.28.0", "date": "2026-10-12", "notes": "Signature spell effects: pillars of light and lightning strikes, crashing waves, void vortexes, bursting roots, rot and spore clouds, ground-splitting quakes, shield domes, souls drained across the field, falling meteors, curse sigils, claw rakes and executioner\\", "commit": "f6d68fd"}, {"v": "0.27.0", "date": "2026-10-12", "notes": "Summons each have a role: drowned brutes (1/1/2) are huge tanks, shades (1/1/2) leap onto the weakest enemy, the Rat-King calls swarms of rats (2/3/4), pages cut from range (3/3/4), crows dive the back line (3/4/5), pufflings burst into healing spores", "commit": "9b2c14a"}, {"v": "0.26.2", "date": "2026-10-12", "notes": "A shop unit that would star up shows the stars it would reach in its corner", "commit": "4a16263"}, {"v": "0.26.1", "date": "2026-10-12", "notes": "Creatures attack properly: a wind-up, then a lunge, pounce or bite", "commit": "46f1694"}, {"v": "0.26.0", "date": "2026-10-12", "notes": "About 40% more fights on the map, with fewer special stops; difficulty is stretched to match", "commit": "bf4a026"}, {"v": "0.25.1", "date": "2026-10-11", "notes": "Shields now fade: a shield lasts 4 seconds after it was last gained (8 for shields at the start of battle)", "commit": "73daea9"}, {"v": "0.25.0", "date": "2026-10-11", "notes": "Each contract is now its own TFT-style set of eight origins and eight classes; most units have one origin and one class", "commit": "e01f21c"}, {"v": "0.24.0", "date": "2026-10-11", "notes": "A wider battlefield: 13 columns, five ranks per side and a no-man\\", "commit": "280ded1"}, {"v": "0.23.0", "date": "2026-10-11", "notes": "The game is now fully landscape: hold your phone sideways. If it is held upright, the whole game is drawn turned so it still plays sideways", "commit": "b39392b"}, {"v": "0.22.0", "date": "2026-10-11", "notes": "Even fights: enemy boards now grow with the rounds to match yours, so battles are close and tense instead of lopsided", "commit": "944546d"}, {"v": "0.21.2", "date": "2026-10-11", "notes": "A bigger battlefield: taller phones spend their spare height on deeper rows and larger fighters", "commit": "2b7760c"}, {"v": "0.21.1", "date": "2026-10-11", "notes": "The Ashward March ramps up more gently", "commit": "fabd80e"}, {"v": "0.21.0", "date": "2026-10-11", "notes": "Everything moves by dragging: drag items onto units to equip them, and drag units to place, swap or sell them", "commit": "6f61b5f"}, {"v": "0.20.2", "date": "2026-10-11", "notes": "The interface stays clear of the iPhone notch and camera cutout on every screen", "commit": "6639abb"}, {"v": "0.20.1", "date": "2026-10-11", "notes": "Boot Camp tips now pause the game: the screen dims around what the tip points at, and you tap Got it to continue", "commit": "70578de"}, {"v": "0.20.0", "date": "2026-10-11", "notes": "Boot Camp: a two-act tutorial contract with a tip for every part of the game", "commit": "19bfdf8"}, {"v": "0.19.3", "date": "2026-10-11", "notes": "The game always fetches the newest release, and offers a one-tap update if an old copy is showing", "commit": "62c85a8"}, {"v": "0.19.2", "date": "2026-10-11", "notes": "Sentinel reworked: Sentinels mark what they shoot, and the trait makes all your ranged units faster and longer-reaching", "commit": "61c8fcd"}, {"v": "0.19.1", "date": "2026-10-11", "notes": "Trait names are back on shop cards", "commit": "65aa9cc"}, {"v": "0.19.0", "date": "2026-10-11", "notes": "29 new units (110 in all): every contract can now reach the top tier of each of its origins and classes", "commit": "162ab82"}, {"v": "0.18.0", "date": "2026-10-11", "notes": "Three new contracts from the design doc: Roads of the Drowned, The Festering Road and Siege of the Cinder Throne", "commit": "0074adf"}, {"v": "0.17.0", "date": "2026-10-11", "notes": "Main menu with Continue, version history and sound settings", "commit": "57f3a6a"}, {"v": "0.16.0", "date": "2026-10-11", "commit": "d0f200d", "notes": "Covenant origin, one-screen map and flatter hexes"}, {"v": "0.15.0", "date": "2026-10-11", "commit": "817d9aa", "notes": "First web release: pixel-art company, items and the three-act campaign"}]</script>
+<script>window.ASHEN_VERSIONS=[{"v": "0.45.0", "date": "2026-10-14", "notes": "You can now hold up to 2500 gold (3500 with the Tithe Box)", "latest": true}, {"v": "0.44.1", "date": "2026-10-14", "notes": "The maximum level is now 10: one more unit on the field, and the best odds of rare recruits. Late enemy armies grow to match", "commit": "6225d6c"}, {"v": "0.44.0", "date": "2026-10-14", "notes": "Every unit has a line of its own story on its card", "commit": "3134617"}, {"v": "0.43.0", "date": "2026-10-14", "notes": "Clearer text throughout: an up-to-date Guide and Boot Camp tips, and unit cards that show each soldier\\", "commit": "d73f908"}, {"v": "0.42.0", "date": "2026-10-14", "notes": "Bands with a single-target spell now cast it with every soldier: when the leader casts, each soldier strikes its own target with a share of the power, and comrades pick different enemies where they can", "commit": "89a2c5d"}, {"v": "0.41.0", "date": "2026-10-14", "notes": "Bands across every contract: every 1-cost is now a regiment (summoners aside), most 2- and 3-costs too, and a few 4-costs are elite trios. Around three soldiers per unit at 1 to 3 cost, one at 4 and 5", "commit": "1f01692"}, {"v": "0.40.0", "date": "2026-10-14", "notes": "Squads, first on The Ashward March: 29 units there are now bands of 3 to 5 soldiers, led by the named character (Hobb and his Pitchfork Levy, Kael and the Ash Grunts, Wat and his Yeomen, Captain Edda and her Burnt Levy veterans and more)", "commit": "8178d18"}, {"v": "0.39.0", "date": "2026-10-14", "notes": "The battlefield is twice as big: 21 hexes long and 11 deep, with nine ranks a side", "commit": "786d612"}, {"v": "0.38.0", "date": "2026-10-14", "notes": "The Revenant General\\", "commit": "bc801de"}, {"v": "0.37.0", "date": "2026-10-13", "notes": "A new economy: prices are 25 times finer, so a 4-cost costs 100, a reroll 50 and each battle pays 75 (25 more for a win)", "commit": "b9f792f"}, {"v": "0.36.0", "date": "2026-10-13", "notes": "Battle report: after every fight, see damage dealt, damage taken and healing for each of your units (Report button, or R)", "commit": "bbbc71c"}, {"v": "0.35.0", "date": "2026-10-13", "notes": "Proper desktop support: on computer screens the whole game scales up crisply to fill the window, with readable text at any size from laptops to 4K", "commit": "0fa5ae2"}, {"v": "0.34.2", "date": "2026-10-13", "notes": "Marching to an encounter refreshes the shop too, and it opens when you return to your board", "commit": "9478a1a"}, {"v": "0.34.1", "date": "2026-10-13", "notes": "The shop keeps its recruits after a fight and refreshes (and opens) when you march into the next battle", "commit": "69b9408"}, {"v": "0.34.0", "date": "2026-10-13", "notes": "Every unit now has its own ability, built from its origin and class: 130 new spells, from Ironpact shield-shoves and Mirefolk ambushes to Inquisition stakes, Skald sagas and Verdant fairy rings", "commit": "1a91314"}, {"v": "0.33.0", "date": "2026-10-13", "notes": "Every trait now has a signature move. Ravagers leap to the weakest enemy after a kill; Specters vanish and crit; Hexblades charge their next attacks after casting", "commit": "8abd3cd"}, {"v": "0.32.0", "date": "2026-10-13", "notes": "Ironpact sign a contract before every battle (win fast, lose no one, score kills, keep your company standing) and get paid when they fulfil it", "commit": "a6f6a68"}, {"v": "0.31.0", "date": "2026-10-13", "notes": "No more gold cap: save as much as you like (interest still tops out at 5)", "commit": "39e1b40"}, {"v": "0.30.0", "date": "2026-10-12", "notes": "The three- and four-star contracts (III to VI) now run four acts, and the later acts ramp up hard: tougher, better-equipped armies and stronger final bosses", "commit": "658032c"}, {"v": "0.29.0", "date": "2026-10-12", "notes": "Two new contracts. The Witch-Hunt (now Contract IV; the Cinder Throne becomes V): the Inquisition, militia and the faithful against witches, crows and burnt-out mages, ending at the Great Pyre with the Witch-Queen", "commit": "ea7c0de"}, {"v": "0.28.0", "date": "2026-10-12", "notes": "Signature spell effects: pillars of light and lightning strikes, crashing waves, void vortexes, bursting roots, rot and spore clouds, ground-splitting quakes, shield domes, souls drained across the field, falling meteors, curse sigils, claw rakes and executioner\\", "commit": "f6d68fd"}, {"v": "0.27.0", "date": "2026-10-12", "notes": "Summons each have a role: drowned brutes (1/1/2) are huge tanks, shades (1/1/2) leap onto the weakest enemy, the Rat-King calls swarms of rats (2/3/4), pages cut from range (3/3/4), crows dive the back line (3/4/5), pufflings burst into healing spores", "commit": "9b2c14a"}, {"v": "0.26.2", "date": "2026-10-12", "notes": "A shop unit that would star up shows the stars it would reach in its corner", "commit": "4a16263"}, {"v": "0.26.1", "date": "2026-10-12", "notes": "Creatures attack properly: a wind-up, then a lunge, pounce or bite", "commit": "46f1694"}, {"v": "0.26.0", "date": "2026-10-12", "notes": "About 40% more fights on the map, with fewer special stops; difficulty is stretched to match", "commit": "bf4a026"}, {"v": "0.25.1", "date": "2026-10-11", "notes": "Shields now fade: a shield lasts 4 seconds after it was last gained (8 for shields at the start of battle)", "commit": "73daea9"}, {"v": "0.25.0", "date": "2026-10-11", "notes": "Each contract is now its own TFT-style set of eight origins and eight classes; most units have one origin and one class", "commit": "e01f21c"}, {"v": "0.24.0", "date": "2026-10-11", "notes": "A wider battlefield: 13 columns, five ranks per side and a no-man\\", "commit": "280ded1"}, {"v": "0.23.0", "date": "2026-10-11", "notes": "The game is now fully landscape: hold your phone sideways. If it is held upright, the whole game is drawn turned so it still plays sideways", "commit": "b39392b"}, {"v": "0.22.0", "date": "2026-10-11", "notes": "Even fights: enemy boards now grow with the rounds to match yours, so battles are close and tense instead of lopsided", "commit": "944546d"}, {"v": "0.21.2", "date": "2026-10-11", "notes": "A bigger battlefield: taller phones spend their spare height on deeper rows and larger fighters", "commit": "2b7760c"}, {"v": "0.21.1", "date": "2026-10-11", "notes": "The Ashward March ramps up more gently", "commit": "fabd80e"}, {"v": "0.21.0", "date": "2026-10-11", "notes": "Everything moves by dragging: drag items onto units to equip them, and drag units to place, swap or sell them", "commit": "6f61b5f"}, {"v": "0.20.2", "date": "2026-10-11", "notes": "The interface stays clear of the iPhone notch and camera cutout on every screen", "commit": "6639abb"}, {"v": "0.20.1", "date": "2026-10-11", "notes": "Boot Camp tips now pause the game: the screen dims around what the tip points at, and you tap Got it to continue", "commit": "70578de"}, {"v": "0.20.0", "date": "2026-10-11", "notes": "Boot Camp: a two-act tutorial contract with a tip for every part of the game", "commit": "19bfdf8"}, {"v": "0.19.3", "date": "2026-10-11", "notes": "The game always fetches the newest release, and offers a one-tap update if an old copy is showing", "commit": "62c85a8"}, {"v": "0.19.2", "date": "2026-10-11", "notes": "Sentinel reworked: Sentinels mark what they shoot, and the trait makes all your ranged units faster and longer-reaching", "commit": "61c8fcd"}, {"v": "0.19.1", "date": "2026-10-11", "notes": "Trait names are back on shop cards", "commit": "65aa9cc"}, {"v": "0.19.0", "date": "2026-10-11", "notes": "29 new units (110 in all): every contract can now reach the top tier of each of its origins and classes", "commit": "162ab82"}, {"v": "0.18.0", "date": "2026-10-11", "notes": "Three new contracts from the design doc: Roads of the Drowned, The Festering Road and Siege of the Cinder Throne", "commit": "0074adf"}, {"v": "0.17.0", "date": "2026-10-11", "notes": "Main menu with Continue, version history and sound settings", "commit": "57f3a6a"}, {"v": "0.16.0", "date": "2026-10-11", "commit": "d0f200d", "notes": "Covenant origin, one-screen map and flatter hexes"}, {"v": "0.15.0", "date": "2026-10-11", "commit": "817d9aa", "notes": "First web release: pixel-art company, items and the three-act campaign"}]</script>
 
 
 <div id="root">
@@ -893,8 +897,9 @@ body{position:fixed;inset:0;margin:0}
 
 <script>
 // ================= VERSION =================
-const GAME_VERSION='0.44.1',S_VERSION=13;
+const GAME_VERSION='0.45.0',S_VERSION=13;
 const CHANGELOG={
+  '0.45.0':['You can now hold up to 2500 gold (3500 with the Tithe Box)','Every item has been reforged with a clear job: Headsman\'s Axe builds critical strikes, Wraithblade fades after a kill, Oathbreaker\'s Edge leaves stripped foes Exposed, the Executioner\'s Hook and Thornmail Wound, the Siege Quiver looses a second shot, Hunter\'s Chain rips through bands, Storm Censer lightning leaps between foes, Penitent\'s Chain pulls enemies onto its bearer, and more','Items now feed one another: magic from the Quickening Blade and the Storm Censer sets off Pyre Heart, the Veil of the Moth and the Iron Psalter; Kindled Fury stokes faster on burning foes; a shielded Covenant Ward hits harder','Each item\'s sheet has a Works with panel showing the items it pairs with, and key words glow in their own colour','The Ember Phial now gives starting mana instead of mana over time','New relics: Gallows Coin, Tinderbox and Quartermaster\'s Rack'],
   '0.44.1':['The maximum level is now 10: one more unit on the field, and the best odds of rare recruits. Late enemy armies grow to match'],
   '0.44.0':['Every unit has a line of its own story on its card','Every spell description rewritten: bands now speak as bands ("each archer shoots her target", "the lamplighters swing their lamps"), with the numbers each soldier actually deals','Summoner cards say what their summons are first, then the numbers'],
   '0.43.0':['Clearer text throughout: an up-to-date Guide and Boot Camp tips, and unit cards that show each soldier\'s health, attack and ability power','A cleaner contract board','Fixed a few trait descriptions that showed the wrong numbers'],
@@ -1554,7 +1559,7 @@ const RELICS=[
   {id:'seal',name:'The Broken Seal',desc:'Your largest origin counts one extra unit'},
   {id:'warhorn',name:'Cracked Warhorn',desc:'Your units attack 30% faster for the first 5 seconds of battle'},
   {id:'writ',name:"Headsman's Writ",desc:'Your units deal 20% more damage to elites and bosses'},
-  {id:'tithe',name:'Tithe Box',desc:'You can hold 1000 more gold (3000 in all)'},
+  {id:'tithe',name:'Tithe Box',desc:'You can hold 1000 more gold (3500 in all)'},
   {id:'usury',name:"Moneylender's Scales",desc:'Interest is 15% instead of 10%'},
   {id:'emberheart',name:'Emberheart',need:['Ashborn'],desc:'Ashborn revive at 60% HP instead of 30%'},
   {id:'oathring',name:'Oath-Ring',need:['Ironpact'],desc:'Ironpact units attack 20% faster'},
@@ -1565,6 +1570,9 @@ const RELICS=[
   {id:'gravebell',name:'Grave Bell',need:['Wraithkin'],desc:'Wraithkin dodge 12% more attacks'},
   {id:'bloodmoon',name:'Blood Moon',need:['Duskbound'],desc:'It is always night for your Duskbound, and they heal 5% more'},
   {id:'whistle',name:"Recruiter's Whistle",desc:'The first reroll in each planning phase is free'},
+  {id:'gallows',name:'Gallows Coin',desc:'Your units gain +10% critical strike chance, and their critical hits Wound: the target cannot be healed for 2s'},
+  {id:'tinder',name:'Tinderbox',desc:'Burns your units set deal 25% more damage and last 2s longer'},
+  {id:'armory',name:"Quartermaster's Rack",desc:'Units carrying three items gain 15% more HP and attack'},
   {id:'pestmask',name:'Beaked Mask',need:['Plagueborn'],desc:'Rot you apply deals 50% more damage'},
 ];
 const REGIONS={
@@ -1731,37 +1739,37 @@ const COMP={
   vest:{name:'Riveted Hauberk',col:'#8fa0b8',stat:{ar:20}},
   cloak:{name:'Hexward Mantle',col:'#a47ae0',stat:{mr:20}},
   belt:{name:'Ox-Hide Girdle',col:'#c8703a',stat:{hp:180}},
-  tear:{name:'Ember Phial',col:'#5ab4f0',stat:{regen:2}},
+  tear:{name:'Ember Phial',col:'#5ab4f0',stat:{mana:.15}},
   rune:{name:'Cinder Rune',col:'#ff8a3a',stat:{sp:.15}},
 };
 const ITEM={};
-[['blade','blade','headsman',"Headsman's Axe",'#c8d2de','+30% more attack.'],
- ['blade','bow','bloodletter','Bloodletter','#d04a40','Heals for 20% of all damage it deals.'],
- ['blade','vest','oathedge',"Oathbreaker's Edge",'#c04030','Attacks strip 10 armor.'],
- ['blade','cloak','wraithblade','Wraithblade','#a8f0d0','Attacks ignore armor.'],
- ['blade','belt','hook',"Executioner's Hook",'#9aa0a8','+40% damage to enemies below 40% HP.'],
- ['blade','tear','spellblade','Quickening Blade','#8ac8ff','Attacks deal 25% bonus magic damage and give 4 extra mana.'],
- ['blade','rune','witchsteel','Witchsteel Sabre','#ff9a4a','Its abilities can critically strike (25% for 60% more).'],
- ['bow','bow','quiver','Siege Quiver','#e0904a','+30% more attack speed.'],
- ['bow','vest','fury','Kindled Fury','#ff6a22','Each attack grants +6% attack speed, stacking 10 times.'],
- ['bow','cloak','pale','Wind of the Pale','#e8ecf4','25% chance to dodge attacks.'],
- ['bow','belt','chain',"Hunter's Chain",'#a8aeb6','Attacks also hit a nearby enemy for 40%.'],
- ['bow','tear','hourglass','Ember Hourglass','#ffb04a','Every third attack restores 20 mana.'],
- ['bow','rune','stormcenser','Storm Censer','#8ad0ff','Every fourth attack calls a 120 magic-damage bolt (scales with spell power) on a random enemy.'],
- ['vest','vest','bulwark','Bulwark of the Pact','#8fa0b8','+40 more armor and takes 12% less damage.'],
- ['vest','cloak','ward','Covenant Ward','#7a6ac8','Starts battle with a shield of 30% max HP.'],
- ['vest','belt','thornmail','Thornmail of the Wild','#6a8a3a','Returns 25% of attack damage taken.'],
- ['vest','tear','penance',"Penitent's Chain",'#7a7a84','Regenerates 2% max HP every second.'],
- ['vest','rune','psalter','Iron Psalter','#6a5a7a','Its magic damage grants a shield of 20% of the damage dealt.'],
- ['cloak','cloak','veil',"Saint's Veil",'#f0ece0','+40 more magic resist. Cannot be stunned.'],
- ['cloak','belt','shroud',"Mourner's Shroud",'#5a5662','The first time it drops below 40% HP, heals 30%.'],
- ['cloak','tear','hollow','Hollow Amulet','#5ae0d0','Abilities cost 25% less mana.'],
- ['cloak','rune','moth','Veil of the Moth','#b88ae0','Its magic damage strips 20 magic resist from each target.'],
- ['belt','belt','covenant','Last Covenant','#e8dcc0','As the last ally standing: triple attack, double speed.'],
+[['blade','blade','headsman',"Headsman's Axe",'#c8d2de','+20% critical strike chance, and critical hits deal 40% more damage.'],
+ ['blade','bow','bloodletter','Bloodletter','#d04a40','Heals for 20% of all damage it deals. Healing beyond full health becomes a shield, up to 25% of max HP.'],
+ ['blade','vest','oathedge',"Oathbreaker's Edge",'#c04030','Attacks strip 8 armor. An enemy stripped to 0 armor is Exposed and takes 12% more damage from your whole team.'],
+ ['blade','cloak','wraithblade','Wraithblade','#a8f0d0','Attacks ignore armor. After a kill it fades for 1s, untargetable, and its next attack is a critical hit.'],
+ ['blade','belt','hook',"Executioner's Hook",'#9aa0a8','+35% damage to enemies below 40% HP, and its attacks Wound: the target cannot be healed for 2s.'],
+ ['blade','tear','spellblade','Quickening Blade','#8ac8ff','Attacks deal 20% bonus magic damage and give 5 extra mana. The bonus counts as magic damage for your other items.'],
+ ['blade','rune','witchsteel','Witchsteel Sabre','#ff9a4a','+15% critical strike chance and +15% spell power, and its abilities can critically strike too.'],
+ ['bow','bow','quiver','Siege Quiver','#e0904a','+30% more attack speed, and every third attack looses a second shot at another enemy.'],
+ ['bow','vest','fury','Kindled Fury','#ff6a22','Each attack grants +6% attack speed, stacking 10 times. Attacks on burning enemies grant two stacks.'],
+ ['bow','cloak','pale','Wind of the Pale','#e8ecf4','25% chance to dodge attacks. After a dodge, its next attack is a critical hit.'],
+ ['bow','belt','chain',"Hunter's Chain",'#a8aeb6','Attacks also strike another enemy within 2 hexes for 40%, or 70% if it fights in the same band as the target.'],
+ ['bow','tear','hourglass','Ember Hourglass','#ffb04a','Every third attack restores 12% of its max mana.'],
+ ['bow','rune','stormcenser','Storm Censer','#8ad0ff','Every fourth attack calls lightning that leaps through three enemies for 100 magic damage each (scales with spell power).'],
+ ['vest','vest','bulwark','Bulwark of the Pact','#8fa0b8','+40 more armor and takes 12% less damage. Allies standing beside it when battle starts take 8% less damage.'],
+ ['vest','cloak','ward','Covenant Ward','#7a6ac8','Starts battle with a shield of 30% max HP. While it holds any shield, it deals 15% more damage.'],
+ ['vest','belt','thornmail','Thornmail of the Wild','#6a8a3a','Returns 25% of attack damage taken, and attackers are Wounded: they cannot be healed for 2s.'],
+ ['vest','tear','penance',"Penitent's Chain",'#7a7a84','When it casts, enemies within 2 hexes must attack it for 2s, and it gains 20 armor and magic resist for 4s.'],
+ ['vest','rune','psalter','Iron Psalter','#6a5a7a','Its magic damage grants it a shield of 30% of the damage dealt.'],
+ ['cloak','cloak','veil',"Saint's Veil",'#f0ece0','+40 more magic resist. Cannot be stunned, and takes 30% less damage from abilities.'],
+ ['cloak','belt','shroud',"Mourner's Shroud",'#5a5662','The first time it drops below 40% HP, it heals 30%, sheds its burns, Rot and curses, and allies within 2 hexes heal 10%.'],
+ ['cloak','tear','hollow','Hollow Amulet','#5ae0d0','Abilities cost 20% less mana, and each cast gives the allies beside it 10 mana.'],
+ ['cloak','rune','moth','Veil of the Moth','#b88ae0','It deals 15% more magic damage, and its magic damage strips 25 magic resist from each target it hits.'],
+ ['belt','belt','covenant','Last Covenant','#e8dcc0','+10% max HP. As the last soldier of its band, or the last ally standing, it triples its attack and attacks twice as fast.'],
  ['belt','tear','ashcrown','Ashcrown','#e0b040','Revives once at 50% HP.'],
- ['belt','rune','pyreheart','Pyre Heart','#d0282a','Its magic damage sets targets burning for 20% more over 3s.'],
+ ['belt','rune','pyreheart','Pyre Heart','#d0282a','Its magic damage sets targets burning for 40% more over 3s.'],
  ['tear','tear','voidpact','Voidpact Seal','#8a5ae0','Its ability fires twice; the echo deals 50%.'],
- ['tear','rune','starfall','Starfall Lantern','#ffe08a','Gains +10% spell power every 4 seconds of battle.'],
+ ['tear','rune','starfall','Starfall Lantern','#ffe08a','Gains +12% spell power every 3 seconds of battle.'],
  ['rune','rune','grimoire','Grimoire of Ash','#ff7a2a','+40% more spell power.'],
 ].forEach(([a,b,id,name,col,desc])=>ITEM[id]={c:[a,b],name,col,desc});
 const GDD_ITEMS=new Set(['thornmail','ashcrown','covenant','voidpact','wraithblade']);
@@ -1772,7 +1780,19 @@ const itemName=id=>isComp(id)?COMP[id].name:ITEM[id].name;
 const itemCol=id=>isComp(id)?COMP[id].col:ITEM[id].col;
 const FULL_KEYS=Object.keys(ITEM);
 function itemStats(id){const tot={};compsOf(id).forEach(c=>{for(const[k,v] of Object.entries(COMP[c].stat))tot[k]=(tot[k]||0)+v});
-  return Object.entries(tot).map(([k,v])=>k==='atkP'?`+${Math.round(v*100)}% attack`:k==='asP'?`+${Math.round(v*100)}% speed`:k==='ar'?`+${v} armor`:k==='mr'?`+${v} magic res.`:k==='hp'?`+${v} HP`:k==='sp'?`+${Math.round(v*100)}% spell power`:k==='regen'?`+${v} mana per second`:`+${v} mana`).join(' · ')}
+  return Object.entries(tot).map(([k,v])=>k==='atkP'?`+${Math.round(v*100)}% attack`:k==='asP'?`+${Math.round(v*100)}% speed`:k==='ar'?`+${v} armor`:k==='mr'?`+${v} magic res.`:k==='hp'?`+${v} HP`:k==='sp'?`+${Math.round(v*100)}% spell power`:k==='mana'?`+${Math.round(v*100)}% starting mana`:`+${v} mana`).join(' · ')}
+// items that feed one another: each family names what they share and the colour its keyword glows in
+const IFAM=[{k:'crit',name:'Critical strikes',col:'#ffd36a',ids:['headsman','witchsteel','pale','wraithblade'],why:'Crit chance, crit damage and sure crits stack into one deadly blow.'},
+ {k:'magic',name:'Magic damage',col:'#c48aff',ids:['spellblade','stormcenser','psalter','pyreheart','moth','witchsteel'],why:'The Quickening Blade and the Storm Censer turn attacks into magic damage, which sets off every magic item.'},
+ {k:'burn',name:'Burning',col:'#ff7a32',ids:['pyreheart','fury','stormcenser'],why:'Pyre Heart sets foes alight, the Storm Censer spreads the fire through a crowd, and Kindled Fury stokes twice as fast on burning targets.'},
+ {k:'wound',name:'Wounds',col:'#e0484a',ids:['hook','thornmail','bloodletter'],why:'Wounded foes cannot heal, so they lose the long fights that a Bloodletter wins.'},
+ {k:'shield',name:'Shields',col:'#7ac8ff',ids:['ward','psalter','bloodletter'],why:'The Psalter and the Bloodletter keep shields topped up, and a shielded Covenant Ward hits harder.'},
+ {k:'mana',name:'Mana',col:'#5ae0d0',ids:['hourglass','hollow','voidpact','spellblade','penance'],why:'Faster casting means more echoes, more taunts and more mana for the allies beside it.'},
+ {k:'guard',name:'Holding the line',col:'#b8c4d8',ids:['bulwark','penance','thornmail','veil'],why:'Pull foes onto a carrier that shrugs off blows and punishes every one.'},
+ {k:'band',name:'Bands',col:'#e8dcc0',ids:['chain','covenant','ashcrown','bulwark'],why:'Strike a band from end to end, guard it, and let its last soldier fight on in fury.'}];
+const KWS=[[/\bcritical (strike|hit)s?\b|\bcritically strike\b/gi,'#ffd36a'],[/\bmagic damage\b/gi,'#c48aff'],[/\bburn(ing|s)?\b/gi,'#ff7a32'],[/\bWound(ed|s)?\b/g,'#e0484a'],[/\bExposed\b/g,'#e0b07a'],[/\bshield\b/gi,'#7ac8ff'],[/\bmana\b/gi,'#5ae0d0'],[/\bspell power\b/gi,'#ff9a4a']];
+const kwHl=t=>KWS.reduce((s,[re,c])=>s.replace(re,m=>`<span class="kw" style="--kc:${c}">${m}</span>`),t);
+const famHtml=id=>{const F=IFAM.filter(f=>f.ids.includes(id));return F.length?`<div class="abil"><div class="h">Works with</div>${F.map(f=>`<div class="ifam" style="--kc:${f.col}"><b>${f.name}</b><span class="ifam-i">${f.ids.filter(x=>x!==id).map(x=>`<span data-iteminfo="${x}">${itemIcon(x,'xs')}</span>`).join('')}</span><span>${f.why}</span></div>`).join('')}</div>`:''};
 const itemDesc=id=>isComp(id)?`${itemStats(id)}. Combine two components on a unit to forge an item.`:`${itemStats(id)}. ${ITEM[id].desc}`;
 
 // ---- pixel-art item icons: each item is drawn on a 24px canvas, then pixelized like the sprites ----
@@ -3069,9 +3089,9 @@ function mergeAll(){
   return msg;
 }
 const copies=key=>[...Object.values(S.board),...S.bench].filter(u=>u&&u.key===key&&u.star===1).length;
-// The economy runs in fine-grained gold: a 4-cost costs 100. You can hold up to 2000 (more with the Tithe Box), and earn 10% interest on what you hold.
+// The economy runs in fine-grained gold: a 4-cost costs 100. You can hold up to 2500 (more with the Tithe Box), and earn 10% interest on what you hold.
 const GP=25,price=k=>UNITS[k].cost*GP;
-const goldCap=()=>2000+(S&&S.relics&&S.relics.includes('tithe')?1000:0),interestRate=()=>.1+(S&&S.relics&&S.relics.includes('usury')?.05:0),interestOf=g=>Math.floor(Math.min(g,goldCap())*interestRate());
+const goldCap=()=>2500+(S&&S.relics&&S.relics.includes('tithe')?1000:0),interestRate=()=>.1+(S&&S.relics&&S.relics.includes('usury')?.05:0),interestOf=g=>Math.floor(Math.min(g,goldCap())*interestRate());
 const maxInterest=()=>interestOf(goldCap());
 const addGold=n=>{const g0=S.gold;S.gold=Math.min(goldCap(),S.gold+n);const got=S.gold-g0;if(got>0)goldFloat(got);if(n>0&&got<n)setTimeout(()=>toast('Your coffers are full',`You can hold ${goldCap()} gold.`),400)};
 function goldFloat(n){const b=$('#goldBox');if(!b)return;const e=document.createElement('span');e.className='gfloat num';e.textContent='+'+n;b.appendChild(e);setTimeout(()=>e.remove(),1100);sfx.coin()}
@@ -3755,7 +3775,7 @@ function renderSheet(){
   if(sheet.type==='item'){
     const id=sheet.id,comp=isComp(id);
     box.innerHTML=`<div class="sh-head"><div>${itemIcon(id,'lg')}</div><div class="sh-id"><div class="sh-name">${itemName(id)}</div><div class="sh-title">${comp?'Component':'Forged item'}</div></div><button class="sh-x" data-close>✕</button></div>
-      <div class="abil"><div class="h">${itemStats(id)}</div>${comp?'Put two components on one unit to forge them into an item. Every pairing below is fixed.':ITEM[id].desc}</div>
+      <div class="abil"><div class="h">${itemStats(id)}</div>${comp?'Put two components on one unit to forge them into an item. Every pairing below is fixed.':kwHl(ITEM[id].desc)}</div>${comp?'':famHtml(id)}
       ${comp?`<div class="rlist">${Object.keys(COMP).map(c=>recipeRow(comboOf(id,c))).join('')}</div>`
         :`<div class="abil"><div class="h">Forged from</div><div class="irow">${itemIcon(ITEM[id].c[0])}<span>${COMP[ITEM[id].c[0]].name}</span></div><div class="irow">${itemIcon(ITEM[id].c[1])}<span>${COMP[ITEM[id].c[1]].name}</span></div></div>`}`;
     return;
@@ -3836,10 +3856,11 @@ function makeEnt(u,team,r,c,scale){
 function applyItems(e){
   // every soldier in a band carries the band's items; flat health and regeneration are shared out between them
   let atkP=0,asP=0,spP=0;const sh=e.sq?1/e.sq.n:1;
-  for(const id of e.items){for(const c of compsOf(id)){const st=COMP[c].stat;atkP+=st.atkP||0;asP+=st.asP||0;spP+=st.sp||0;e.armor+=st.ar||0;e.mr+=st.mr||0;e.hp+=(st.hp||0)*sh;e.regen=(e.regen||0)+(st.regen||0)*sh}if(!isComp(id))e.it[id]=true}
+  for(const id of e.items){for(const c of compsOf(id)){const st=COMP[c].stat;atkP+=st.atkP||0;asP+=st.asP||0;spP+=st.sp||0;e.armor+=st.ar||0;e.mr+=st.mr||0;e.hp+=(st.hp||0)*sh;e.startMana=(e.startMana||0)+(st.mana||0)}if(!isComp(id))e.it[id]=true}
   e.atk*=1+atkP;e.as*=1+asP;e.sp*=1+spP;const I=e.it;if(I.grimoire)e.sp*=1.4;
-  if(I.headsman)e.atk*=1.3;if(I.quiver)e.as*=1.3;if(I.bulwark){e.armor+=40;e.dr=(e.dr||1)*.88}if(I.veil){e.mr+=40;e.stoneImmune=true}
-  if(I.hollow)e.maxMana=Math.round(e.maxMana*.75);if(I.ashcrown)e.crown=true;
+  if(I.headsman){e.critC=(e.critC||.15)+.2;e.critM=(e.critM||1.6)+.4}if(I.witchsteel){e.critC=(e.critC||.15)+.15;e.sp*=1.15}
+  if(I.quiver)e.as*=1.3;if(I.bulwark){e.armor+=40;e.dr=(e.dr||1)*.88}if(I.veil){e.mr+=40;e.stoneImmune=true;e.abilRes=(e.abilRes||1)*.7}
+  if(I.hollow)e.maxMana=Math.round(e.maxMana*.8);if(I.ashcrown)e.crown=true;if(I.covenant)e.hp*=1.1;
 }
 // 3★ units a side owns: the player's whole roster (bench included), or the enemy's army
 function threeStars(team,ents){return team==='A'?[...Object.values(S.board),...S.bench].filter(u=>u&&u.star>=3&&!UNITS[u.key].token).length:ents.filter(e=>e.team===team&&e.star>=3&&!UNITS[e.key].token).length}
@@ -3856,7 +3877,7 @@ function applyTraits(ents,cnt){
     if(o.includes('Duskbound')){const t=T('Duskbound'),moon=e.team==='A'&&has('bloodmoon');if(t>=1)e.ls=Math.max(e.ls||0,.1);if(t>=2&&(isNight()||moon))e.atk*=1.3;if(t>=3){e.ls=.2;e.overShield=true}if(moon&&e.ls)e.ls+=.05}
     if(o.includes('Plagueborn')){const t=T('Plagueborn');if(t>=1)e.rotter=1;if(t>=2)e.rotSpread=true;if(t>=3){e.rotLong=true;e.stoneImmune=true;e.slowImmune=true;e.burnImmune=true}}
     if(o.includes('Verdant')){const t=T('Verdant');if(t>=1){e.vregen=.02;e.vroot={cd:5,dur:1};e.vrT=Math.random()*2}if(t>=2){e.hp*=1.2;e.vregen=.04;e.vroot={cd:4,dur:1.5}}if(t>=3)e.thorns=true}
-    if(o.includes('Covenant')){const t=T('Covenant');if(t>=1){const m=1.05+[0,.015,.025,.035][t]*Math.min(10,e.vet||0);e.hp*=m;e.atk*=m;e.armor*=m;e.mr*=m}if(t>=2)e.abilRes=.5;if(t>=3)e.lastStand=true}
+    if(o.includes('Covenant')){const t=T('Covenant');if(t>=1){const m=1.05+[0,.015,.025,.035][t]*Math.min(10,e.vet||0);e.hp*=m;e.atk*=m;e.armor*=m;e.mr*=m}if(t>=2)e.abilRes=(e.abilRes||1)*.5;if(t>=3)e.lastStand=true}
     if(o.includes('Forsaken')){const t=T('Forsaken');if(t>=1)e.fsk={rate:t>=2?.16:.08,n:0};if(t>=2)e.hp*=1.2;if(t>=3)e.fskLast=true}
     e.sp*=inv;
     const C2=x=>e.cls===x||e.cls2===x;
@@ -3942,6 +3963,8 @@ function startCombat(){
   if(has('wraithcloak'))A.forEach(e=>e.cloak=true);
   if(has('verdantseed'))A.forEach(e=>e.vregen=(e.vregen||0)+.01);
   if(has('warhorn'))A.forEach(e=>e.horn=true);
+  if(has('gallows'))A.forEach(e=>{e.critC=(e.critC||.15)+.1;e.gallows=true});
+  if(has('tinder'))A.forEach(e=>e.tinder=true);
   if(has('writ'))A.forEach(e=>e.writ=true);
   A.forEach(e=>{const o=e.o;
     if(has('oathring')&&o.includes('Ironpact'))e.as*=1.2;
@@ -3962,7 +3985,7 @@ function startCombat(){
   // Skald saga: every verse sung so far strengthens the whole company
   if(S.trophy&&Object.values(S.board).some(u=>u.key==='grisel'))A.forEach(e=>(e.bf||(e.bf=[])).push({amp:1+.03*Math.min(10,S.trophy),u:999}));
   {const sk=tierOf('Skald',cntA.Skald||0);if(sk&&S.saga)A.forEach(e=>e.atk*=1+[0,.01,.02][sk]*Math.min(25,S.saga))}
-  const ents=[...A,...B];ents.forEach(applyItems);squads.forEach(q=>q.lead.maxMana*=q.n);ents.forEach(e=>{if(e.emberAtk&&e.items.length)e.atk*=1+e.emberAtk*e.items.length;e.max=e.hp;e.mana=e.follower?0:Math.min(Math.max(e.mana,Math.round(e.maxMana*.25)),e.maxMana-1);if(e.it.ward)e.shield+=e.max*.3;if(e.geode)e.shield+=e.max*.2;if(e.startShield)e.shield+=e.startShield});
+  const ents=[...A,...B];ents.forEach(applyItems);if(has('armory'))A.forEach(e=>{if((e.items||[]).length>=3){e.hp*=1.15;e.max*=1.15;e.atk*=1.15}});ents.filter(e=>e.it.bulwark).forEach(b=>ents.filter(a=>a!==b&&a.team===b.team&&dist(a,b)<=1).forEach(a=>a.dr=(a.dr||1)*.92));squads.forEach(q=>q.lead.maxMana*=q.n);ents.forEach(e=>{if(e.emberAtk&&e.items.length)e.atk*=1+e.emberAtk*e.items.length;e.max=e.hp;e.mana=e.follower?0:Math.min(Math.max(e.mana,Math.round(e.maxMana*.25))+Math.round(e.maxMana*(e.startMana||0)),e.maxMana-1);if(e.it.ward)e.shield+=e.max*.3;if(e.geode)e.shield+=e.max*.2;if(e.startShield)e.shield+=e.startShield});
   // class auras: Summoners start closer to their first summon; allies near a Herald fight faster and start with mana
   [['A',cntA],['B',cntB]].forEach(([tm,cn])=>{const L=ents.filter(e=>e.team===tm),up=(e,n)=>e.mana=Math.min(e.maxMana-1,e.mana+n);
     const st=tierOf('Summoner',cn.Summoner||0);if(st)L.filter(e=>isC(e,'Summoner')).forEach(e=>up(e,[0,20,40][st]));
@@ -4008,7 +4031,7 @@ function spawnUnit(key,team,r,c,o={}){
   const e=makeEnt({key,star:o.star||1},team,r,c,1);applyItems(e);{const m=(o.pow||1)*(1+((C.sumB&&C.sumB[team])||0));e.hp*=m;e.atk*=m}e.max=e.hp;e.spawnT=C.time;e.expire=o.expire?C.time+o.expire:0;e.landed=false;
   C.ents.push(e);C.grid.set(K(r,c),e);return e}
 function stun(t,dur){if(t.dead||t.stoneImmune||(t.berserk&&t.hp<t.max*.3))return;t.stunUntil=Math.max(t.stunUntil,C.time+dur);fxText(t,'Stunned','#f0e0a0',11)}
-function burn(src,t,total,dur){if(t.burnImmune)return;t.burns.push({src,until:C.time+dur,dps:total/dur})}
+function burn(src,t,total,dur){if(t.burnImmune)return;if(src&&src.tinder){total*=1.25*(dur+2)/dur;dur+=2}t.burns.push({src,until:C.time+dur,dps:total/dur})}
 function pickTarget(e){
   const foes=alive(foeOf(e.team));if(!foes.length)return null;
   if(e.inq){const w=foes.find(f=>f.witch===e.team);if(w)return w}
@@ -4069,9 +4092,8 @@ function step(dt){
     if(e.wyrm){e.wyrm.t-=dt;if(e.wyrm.t<=0){e.wyrm.t=5;const t=e.target&&!e.target.dead?e.target:alive(foeOf(e.team))[0];if(t){const x=disp(e),y=disp(t);C.fx.push({k:'beam',r:x.r,X:x.X,r2:y.r,X2:y.X,t0:tm,dur:.5,col:'#e8f8ff'});alive(t.team).filter(f=>dist(f,t)<=1).forEach(f=>{hit(e,f,e.p*e.sp*.6,'magic');stun(f,1);fxAt('star',f,.35,'#e8f8ff')})}}}
     if(e.sabbath&&isNight()&&!(e._sbT>tm)){e._sbT=tm+1;alive(e.team).forEach(a=>{if(!(a.noHealUntil>tm))a.hp=Math.min(a.max,a.hp+a.max*.02)})}
     if(e.vroot){e.vrT+=dt;if(e.vrT>=e.vroot.cd){const f=alive(foeOf(e.team)).filter(f=>!f.stoneImmune&&!(f.stunUntil>tm)).sort((a,b)=>dist(a,e)-dist(b,e))[0];if(f){e.vrT=0;f.stunUntil=Math.max(f.stunUntil,tm+e.vroot.dur);fxAt('roots',f,e.vroot.dur+.3,'#6ad84a');fxText(f,'Rooted','#8ae86a',10)}}}
-    if(e.it.penance)e.hp=Math.min(e.max,e.hp+e.max*.02*dt);
-    if(e.it.starfall){e.sfT=(e.sfT||0)+dt;if(e.sfT>=4){e.sfT-=4;e.sp+=.1;fxText(e,'+10% spell','#ffe08a',10)}}
-    if(e.it.covenant&&!e.covOn&&alive(e.team).length===1){e.covOn=true;e.atk*=3;fxText(e,'Last Covenant','#ffd36a',13);fxAt('ring',e,.7,'#ffd36a')}
+    if(e.it.starfall){e.sfT=(e.sfT||0)+dt;if(e.sfT>=3){e.sfT-=3;e.sp+=.12;fxText(e,'+12% spell','#ffe08a',10)}}
+    if(e.it.covenant&&!e.covOn&&(alive(e.team).length===1||(e.sq&&e.sq.members.every(m=>m===e||m.dead)))){e.covOn=true;e.atk*=3;fxText(e,'Last Covenant','#ffd36a',13);fxAt('ring',e,.7,'#ffd36a')}
     if(e.regen&&e.ab)e.mana=Math.min(e.maxMana,e.mana+e.regen*dt);
     if(e.shield>0){if(e.shield>(e._sh||0)+.5)e.shUntil=tm+(tm<.6?8:4);if(tm>e.shUntil)e.shield=Math.max(0,e.shield-Math.max(e.shield*3,80)*dt);e._sh=e.shield}else e._sh=0;
     if(e.tide){e.tideT+=dt;if(e.tideT>=4){e.tideT-=4;e.tideN=(e.tideN||0)+1;const s=e.max*e.tide*(1+.2*(e.tideN-1));if(e.shield<s)e.shield=s;fxAt('ring',e,.45,'#4aa0e8');if(e.tideSlow)alive(foeOf(e.team)).filter(f=>dist(f,e)<=1&&!f.slowImmune).forEach(f=>f.slowUntil=Math.max(f.slowUntil||0,tm+2))}}
@@ -4122,12 +4144,13 @@ function hit(src,t,amt,type,basic,crit){
   if(basic&&src&&t.blocks>0){t.blocks--;fxText(t,'Blocked','#ffd890',11);fxAt('spark',t,.25,'#ffd36a');return 0}
   if(basic&&src&&t.cloak){t.cloak=false;fxText(t,'Dodge','#c8d8ff',11);return 0}
   if(!basic&&src&&src.abyss>=2&&t.slowUntil>C.time)amt*=1.3;
-  if(basic&&src&&((t.it.pale&&Math.random()<.25)||(t.dodge&&Math.random()<t.dodge))){fxText(t,'Dodge','#c8d8ff',11);
+  if(basic&&src&&((t.it.pale&&Math.random()<.25)||(t.dodge&&Math.random()<t.dodge))){fxText(t,'Dodge','#c8d8ff',11);if(t.it.pale)t.nextCrit=true;
     if(t.counter&&!src.dead&&!t.dead&&t.stunUntil<=C.time){fxAt('slash',src,.25,'#a8b8ff');applyRaw(src,mitigate(src,t.atk,'phys'),t,'phys')}return 0}
-  if(basic&&src&&src.it){if(src.it.wraithblade)type='true';if(src.it.hook&&t.hp<t.max*.4)amt*=1.4}
+  if(basic&&src&&src.it){if(src.it.wraithblade)type='true';if(src.it.hook&&t.hp<t.max*.4)amt*=1.35}
+  if(src&&src.it&&src.it.ward&&src.shield>0)amt*=1.15;
+  if(src&&src.it&&src.it.moth&&type==='magic')amt*=1.15;
   const spellHit=!basic&&src&&src.it&&type==='magic';
-  if(spellHit&&src.it.witchsteel&&!crit&&Math.random()<.25){amt*=1.6;crit=true}
-  if(spellHit&&src.it.moth&&!t.mothed){t.mr=Math.max(0,t.mr-20);t.mothed=true}
+  if(spellHit&&src.it.witchsteel&&!crit&&Math.random()<(src.critC||.15)){amt*=src.critM||1.6;crit=true}
   let d=mitigate(t,amt,type);
   if(t.share){const adj=alive(t.team).filter(a=>a!==t&&dist(a,t)<=1);if(adj.length){const s=d*.2;d-=s;adj.forEach(a=>applyRaw(a,s/adj.length,src,null))}}
   const pre=t.hp+(t.shield||0);t._basic=basic;applyRaw(t,d,src,type,crit);t._basic=false;
@@ -4161,20 +4184,25 @@ if(type){if(crit){sfx.crit();V.shake=Math.max(V.shake||0,1.6);C.freeze=Math.max(
     if(src.stoner2){src.hits2=(src.hits2||0)+1;if(src.hits2%3===0)stun(t,1.2)}
     if(src.execute&&!t.dead&&t.hp<t.max*.12&&!t.boss){fxText(t,'Execute','#e8d0ff',12);applyRaw(t,t.hp+t.shield+1,src,'true')}
   }
-  if(spellHit&&!src.dead){if(src.it.psalter)src.shield+=d*.2;if(src.it.pyreheart&&!t.dead)burn(src,t,d*.2,3)}
+  if(spellHit&&!src.dead)magicProcs(src,t,d);
   if(!basic&&src&&src.hexen&&!t.dead){t.vuln=t.vulnUntil>C.time?Math.max(t.vuln||1,src.hexen):src.hexen;t.vulnUntil=Math.max(t.vulnUntil||0,C.time+4)}
   if(src&&src.abyss>=3&&!t.dead&&t.hp<t.max*.15&&!t.boss){fxText(t,'Dragged under','#30d0a0',12);applyRaw(t,t.hp+t.shield+1,src,'true')}
   if(basic&&src&&!src.dead){const I=src.it;
-    if(I.stormcenser){src.scc=(src.scc||0)+1;if(src.scc%4===0){const f=rnd(alive(foeOf(src.team)));if(f){fxAt('spark',f,.35);applyRaw(f,mitigate(f,120*src.sp,'magic'),src,'magic')}}}
-    if(I.oathedge&&!t.dead)t.armor=Math.max(0,t.armor-10);
-    if(I.spellblade){if(!t.dead)applyRaw(t,mitigate(t,src.atk*.25,'magic'),src,'magic');src.mana=Math.min(src.maxMana,src.mana+4)}
-    if(I.chain){const n=alive(t.team).filter(f=>f!==t&&dist(f,t)<=2)[0];if(n){fxAt('spark',n,.25);applyRaw(n,mitigate(n,amt*.4,'phys'),src,'phys')}}
-    if(I.hourglass){src.hgc=(src.hgc||0)+1;if(src.hgc%3===0)src.mana=Math.min(src.maxMana,src.mana+20)}
-    if(I.fury)src.fury=Math.min(10,(src.fury||0)+1);
-    if(t.it.thornmail)applyRaw(src,d*.25,t,null);
+    if(I.stormcenser){src.scc=(src.scc||0)+1;if(src.scc%4===0){let f=t,prev=null;const hitL=[];for(let i=0;i<3&&f;i++){hitL.push(f);const a=disp(prev||src),b=disp(f);C.fx.push({k:'beam',r:a.r,X:a.X,r2:b.r,X2:b.X,t0:C.time,dur:.3,col:'#8ad0ff'});const dd=mitigate(f,100*src.sp,'magic');applyRaw(f,dd,src,'magic');magicProcs(src,f,dd);prev=f;f=alive(f.team).filter(x=>!hitL.includes(x)&&dist(x,prev)<=2).sort((x,y)=>dist(x,prev)-dist(y,prev))[0]}}}
+    if(I.oathedge&&!t.dead){t.armor=Math.max(0,t.armor-8);if(t.armor<=0&&t.exposed!==src.team){t.exposed=src.team;fxText(t,'Exposed','#e0b07a',11)}}
+    if(I.spellblade){if(!t.dead){const dd=mitigate(t,src.atk*.2,'magic');applyRaw(t,dd,src,'magic');magicProcs(src,t,dd)}src.mana=Math.min(src.maxMana,src.mana+5)}
+    if(I.chain){const L=alive(t.team).filter(f=>f!==t&&dist(f,t)<=2),same=t.sq?L.find(f=>f.sq===t.sq):null,n=same||L[0];if(n){fxAt('spark',n,.25);applyRaw(n,mitigate(n,amt*(same?.7:.4),'phys'),src,'phys')}}
+    if(I.quiver&&src.range>1){src.qvc=(src.qvc||0)+1;if(src.qvc%3===0){const o=alive(t.team).filter(f=>f!==t).sort((a,b)=>dist(a,src)-dist(b,src))[0];if(o)shoot(src,o,amt,'phys',false)}}
+    if(I.hourglass){src.hgc=(src.hgc||0)+1;if(src.hgc%3===0)src.mana=Math.min(src.maxMana,src.mana+src.maxMana*.12)}
+    if(I.fury)src.fury=Math.min(10,(src.fury||0)+(t.burns&&t.burns.some(b=>b.until>C.time)?2:1));
+    if(src.gallows&&crit&&!t.dead)t.noHealUntil=Math.max(t.noHealUntil||0,C.time+2);
+    if(I.hook&&!t.dead)t.noHealUntil=Math.max(t.noHealUntil||0,C.time+2);
+    if(t.it.thornmail){applyRaw(src,d*.25,t,null);src.noHealUntil=Math.max(src.noHealUntil||0,C.time+2)}
   }
   return d;
 }
+// effects that fire on any magic damage the holder deals: spells, Quickening Blade's edge and Storm Censer's lightning alike
+function magicProcs(src,t,d){if(!src.it||src.dead)return;if(src.it.psalter)src.shield=Math.min(src.max,(src.shield||0)+d*.3);if(src.it.pyreheart&&!t.dead)burn(src,t,d*.4,3);if(src.it.moth&&!t.dead&&!t.mothed){t.mr=Math.max(0,t.mr-25);t.mothed=true}}
 function spell(e,t,p){ // single-target spell with Invoker splash
   const d=hit(e,t,p,'magic');
   if(isC(e,'Invoker'))alive(t.team).filter(f=>f!==t&&dist(f,t)<=1).forEach(f=>hit(e,f,p*.5,'magic'));
@@ -4191,7 +4219,7 @@ function applyRaw(t,d,src,type,crit){
   if(type&&src&&src.frost>=3&&t.stunUntil>C.time)d*=1.3;
   if(t.vulnUntil>C.time)d*=t.vuln||1;
   if(type)t.taken=(t.taken||0)+d;
-  if(type&&src&&src.it&&src.it.bloodletter&&!src.dead)src.hp=Math.min(src.max,src.hp+d*.2);
+  if(type&&src&&src.it&&src.it.bloodletter&&!src.dead&&!(src.noHealUntil>C.time)){const h=d*.2,room=src.max-src.hp;src.hp=Math.min(src.max,src.hp+h);if(h>room)src.shield=Math.min(src.max*.25,(src.shield||0)+(h-room))}
   if(type==='magic'&&src&&src.hexVamp&&!src.dead)src.hp=Math.min(src.max,src.hp+d*.25);
   if(type&&src&&src.ls&&!src.dead&&src!==t){const h=d*src.ls,room=src.max-src.hp;src.hp=Math.min(src.max,src.hp+h);if(src.overShield&&h>room)src.shield=Math.min(src.max*.5,src.shield+(h-room))}
   if(t.shield>0){const a=Math.min(t.shield,d);t.shield-=a;d-=a}
@@ -4206,7 +4234,7 @@ function applyRaw(t,d,src,type,crit){
     alive(foeOf(t.team)).filter(f=>dist(f,t)<=t.vgR).forEach(f=>{f.target=t;f.taunter=t;f.tauntUntil=C.time+2})}
   if(t.fade&&!t.fadeUsed&&t.hp>0&&t.hp<t.max*.3){t.fadeUsed=true;t.invulUntil=C.time+2;fxText(t,'Fades','#c8d8ff',12)}
   if(t.boss==='duskmother'&&!t.phased&&t.hp>0&&t.hp<t.max*.5){t.phased=true;t.invulUntil=C.time+3;t.hp=Math.min(t.max,t.hp+t.max*.15);C.flashT=C.time;fxAt('ring',t,.9,'#ff3a4a',{big:true});fxText(t,'Veil of Dusk','#ff6a7a',14);V.shake=4}
-  if(t.it&&t.it.shroud&&!t.shroudUsed&&t.hp>0&&t.hp<t.max*.4){t.shroudUsed=true;t.hp+=t.max*.3;fxAt('heal',t,.8);fxText(t,'Shroud','#c8b8ff',11)}
+  if(t.it&&t.it.shroud&&!t.shroudUsed&&t.hp>0&&t.hp<t.max*.4){t.shroudUsed=true;t.hp+=t.max*.3;t.burns=[];if(t.rot)t.rot.n=0;t.vulnUntil=0;alive(t.team).filter(a=>a!==t&&dist(a,t)<=2).forEach(a=>{a.hp=Math.min(a.max,a.hp+a.max*.1);fxAt('heal',a,.6)});fxAt('heal',t,.8);fxText(t,'Shroud','#c8b8ff',11)}
   if(t.spore&&type&&t.hp>0&&C.time-(t.sporeT||-9)>=2){t.sporeT=C.time;fxAt('ring',t,.4,'#f08a7a');alive(t.team).filter(a=>a!==t&&dist(a,t)<=1).forEach(a=>{a.hp=Math.min(a.max,a.hp+a.max*t.spore)});if(t.sporeRot)alive(foeOf(t.team)).filter(f=>dist(f,t)<=1).forEach(f=>addRot(t,f,2))}
   if(t.hp<=0)die(t,src);
 }
@@ -4237,7 +4265,7 @@ function die(t,src){
   if(t.thorns&&!UNITS[t.key].token){const sp=[{r:t.r,c:t.c},...neighbors(t.r,t.c)].find(n=>!C.grid.has(K(n.r,n.c)));if(sp){const th=spawnUnit('thornling',t.team,sp.r,sp.c,{star:t.star,expire:10+(t.team==='A'&&has('verdantseed')?5:0)});fxText(th,'Thornling','#6ad84a',11)}}
   if(src&&!src.dead&&src.hollowKill)src.mana=Math.min(src.maxMana,src.mana+src.hollowKill);
   if(src&&!src.dead&&src!==t&&!UNITS[t.key].token){src.streak=tm-(src.lkT??-9)<3?(src.streak||1)+1:1;src.lkT=tm;if(src.streak>=2){fxText(src,src.streak===2?'Double kill':src.streak===3?'Triple kill':'Rampage!','#ffd36a',13,true);if(src.streak>=3){punch(.04);sfxV('horn')}}}
-  if(src&&!src.dead&&src!==t){src.kills++;if(src.killHeal){src.hp=Math.min(src.max,src.hp+src.max*src.killHeal);fxAt('heal',src,.6)}
+  if(src&&!src.dead&&src!==t){src.kills++;if(src.it&&src.it.wraithblade){src.invulUntil=Math.max(src.invulUntil||0,C.time+1);src.nextCrit=true}if(src.killHeal){src.hp=Math.min(src.max,src.hp+src.max*src.killHeal);fxAt('heal',src,.6)}
     if(isC(src,'Specter')&&!UNITS[src.key].token){src.invulUntil=Math.max(src.invulUntil||0,tm+1);src.nextCrit=true;src.target=null;ghost(src,src.pr,src.pX,.5);fxText(src,'Vanish','#c8b8ff',11)}
     if(isC(src,'Ravager')&&!UNITS[src.key].token)C.pend.push({at:tm+.15,fn:()=>{if(src.dead||src.stunUntil>C.time)return;const w=alive(t.team).filter(f=>dist(f,src)<=3).sort((a,b)=>a.hp-b.hp)[0];if(w&&dist(w,src)>1&&leapTo(src,w))fxText(src,'Bloodlust','#e06a5a',11)}})}
   if(t.beast&&!UNITS[t.key].token){const P=alive(t.team).filter(a=>a.beast);P.forEach(a=>a.frenzyUntil=Math.max(a.frenzyUntil||0,tm+3));if(P.length){fxText(P[0],'The pack howls','#e0a060',12,true);sfxV('horn')}}
@@ -5940,6 +5968,8 @@ function castCore(e,mult,share){
   if(mult===1&&EXTRA_SUM[e.key]&&abBase(e.ab)!=='summon')doSummon(e,EXTRA_SUM[e.key],extraSumP(UNITS[e.key],e.star)*e.sp);
   if(mult===1){castFx(e,abBase(e.ab),t);if(UNITS[e.key].cost>=4&&!UNITS[e.key].token){C.freeze=Math.max(C.freeze||0,.06);punch(.035);fxAt('ring',e,.6,oc,{big:true})}}
   if(mult===1&&e.it.voidpact)later(.5,()=>{if(!e.dead)cast(e,.5)});
+  if(mult===1&&e.it.penance){alive(foeOf(e.team)).filter(f=>dist(f,e)<=2).forEach(f=>{f.target=e;f.taunter=e;f.tauntUntil=C.time+2});e.armor+=20;e.mr+=20;later(4,()=>{e.armor-=20;e.mr-=20});fxAt('ring',e,.6,'#9a9aa8')}
+  if(mult===1&&e.it.hollow)alive(e.team).filter(a=>a!==e&&dist(a,e)<=1&&a.ab).forEach(a=>a.mana=Math.min(a.maxMana,a.mana+10));
   if(mult===1&&e.hollowEcho)later(.65,()=>{if(!e.dead)cast(e,.4)});
   if(!e._split){fxText(e,mult<1?'Echo':ABIL[e.ab][0],oc,11,true);sfx.cast()}
   {const B=abBase(e.ab);if(['kingfall','earthsplit','voidrift','entangle','bloom','keen','judgement','ballista','gore','slag','decree','gulp'].includes(B)&&mult===1){punch(B==='kingfall'?.08:.045);C.freeze=Math.max(C.freeze||0,.05)}if(['quake','stomp','kingfall','judgement','cleave','slag'].includes(B))V.shake=Math.max(V.shake||0,B==='kingfall'?7:3.5)}
@@ -6287,7 +6317,7 @@ const TUT=[
  {id:'traits',when:()=>planning()&&boardCount()>=2,at:'#traits',title:'Traits',text:'Units that share an origin (big hexagon) or class (small circle) power each other up. Each trait shows how many units it needs for its next tier. Tap a badge to read it.'},
  {id:'fight',when:()=>planning()&&!S.camp&&boardCount()>=2,at:'#fight',title:'Fight!',text:'Press Fight when you are ready. Any empty field slots fill from your bench, battles play out on their own, and your company heals fully afterwards.'},
  {id:'combat',when:()=>S.phase==='combat',at:'#stage',title:'In battle',text:'The green bar is health, the thin blue bar is mana: when it fills, the unit casts its ability. In a band only the leader carries the mana bar, and every soldier helps fill it. Tap any unit to inspect it, and tap Speed to fast-forward.'},
- {id:'gold',when:()=>S.round>=2&&(planning()||S.phase==='map')&&!mvOpen()&&!ovOpen(),at:'#goldBox',title:'Gold',text:'Every battle pays 75 gold, 25 more for a win, plus 10% interest on what you hold (shown as +N under your gold). You can hold up to 2000, shown beside it. Win or loss streaks pay extra, so saving up pays off.'},
+ {id:'gold',when:()=>S.round>=2&&(planning()||S.phase==='map')&&!mvOpen()&&!ovOpen(),at:'#goldBox',title:'Gold',text:'Every battle pays 75 gold, 25 more for a win, plus 10% interest on what you hold (shown as +N under your gold). You can hold up to 2500, shown beside it. Win or loss streaks pay extra, so saving up pays off.'},
  {id:'items',when:()=>planning()&&S.round>=2&&S.items.length>0,at:'#armory',onShow:()=>{if(S.items.length<2){S.items.push(S.items[0]||'blade');render()}},title:'Items',text:'Battles sometimes drop item components. Drag one onto a unit to equip it; two components on the same unit forge a finished item. Tap any item to read it, or the book to see every recipe.'},
  {id:'xp',when:()=>planning()&&S.round>=3,at:'#buyxp',title:'Level up',text:'Level up costs gold, and the price drops by 25 after every battle. It never happens on its own: press Level up when you can afford it, or wait for it to get cheaper. Each level fields one more unit and improves the odds of rarer, stronger recruits (the coloured numbers under your level).'},
  {id:'merge',when:()=>planning()&&S.round>=3,at:'#shop',onShow:tutMerge,title:'Merge three copies',text:''},
@@ -6363,7 +6393,7 @@ function codexHtml(){
   if(codexTab==='traits')return tabs+`<div class="cx-list">${Object.entries(TRAITS).map(([n,T])=>`<div class="cx-t"><span class="tb ${T.kind} t3 on big" style="--tc:${T.col}"><span class="tbadge">${ticon(n)}</span></span><span class="cx-m"><b>${n} <small>${T.kind==='origin'?'Origin':'Class'} · ${SHOP_KEYS.filter(k=>traitsOf(k).includes(n)).length} units${T.kind==='origin'?` · contracts ${RUNS.filter(r=>!r.tutorial&&r.origins.includes(n)).map(r=>ROMAN(r.id)).join(', ')}`:''}</small></b>
     ${T.lore?`<span class="cx-ab">${T.lore}</span>`:''}${T.passive?`<span class="cx-ab"><em>Every ${n}:</em> ${T.passive}</span>`:''}<span class="cx-ab">${T.th.map((x,i)=>`<em>${x}</em> ${T.t[i]}`).join('<br>')}</span></span></div>`).join('')}</div>`;
   if(codexTab==='items')return tabs+`<div class="cx-list">${Object.keys(COMP).map(c=>`<div class="cx-t">${itemIcon(c)}<span class="cx-m"><b>${COMP[c].name} <small>Component</small></b><span class="cx-ab">${itemStats(c)}</span></span></div>`).join('')}
-    ${FULL_KEYS.map(f=>`<div class="cx-t">${itemIcon(f)}<span class="cx-m"><b>${ITEM[f].name}</b><span class="cx-ab">${itemIcon(ITEM[f].c[0],'xs')} + ${itemIcon(ITEM[f].c[1],'xs')} · ${itemStats(f)}. ${ITEM[f].desc}</span></span></div>`).join('')}</div>`;
+    ${FULL_KEYS.map(f=>`<div class="cx-t">${itemIcon(f)}<span class="cx-m"><b>${ITEM[f].name}</b><span class="cx-ab">${itemIcon(ITEM[f].c[0],'xs')} + ${itemIcon(ITEM[f].c[1],'xs')} · ${itemStats(f)}. ${kwHl(ITEM[f].desc)}</span></span></div>`).join('')}</div>`;
   const v=store.get('ashen-vault',[]);
   return tabs+`<div class="cx-list">${RELICS.map(r=>{const own=r.starter||v.includes(r.id);return `<div class="cx-t${own?'':' locked'}">${relicIcon(r.id)}<span class="cx-m"><b>${r.name} <small>${r.starter?'Starter':own?'In your vault':'Find it at a merchant or a mini boss'}${r.need?` · ${r.need.join(', ')} contracts only`:''}</small></b><span class="cx-ab">${r.desc}</span></span></div>`}).join('')}</div>`;
 }
@@ -6401,7 +6431,7 @@ function drawMenu(){
       <li><b>Battles</b> play out on their own. Enemy armies grow with the rounds. Empty field slots are filled from your bench when the fight starts, and after 20 seconds Overtime makes every blow hit harder.</li>
       <li><b>Traits</b>: units that share an origin or class power each other up once you field enough of them. Each trait shows how many it needs for each tier; tap one to read it.</li>
       <li><b>Items</b> drop from fights. Drag one onto a unit to equip it; two components on the same unit forge a finished item. A band's soldiers all carry its items. Tap an item to read it, and unequip it from the unit's card.</li>
-      <li><b>Gold</b>: every battle pays 75, 25 more for a win, plus 10% interest on what you hold. You can hold up to 2000. Win and loss streaks pay extra.</li>
+      <li><b>Gold</b>: every battle pays 75, 25 more for a win, plus 10% interest on what you hold. You can hold up to 2500. Win and loss streaks pay extra.</li>
       <li><b>Level up</b> costs gold. Its price drops by 25 after every battle and waits at 0 until you press it. Each level fields one more unit and makes rarer recruits more likely.</li>
       <li><b>Night</b> falls every other pair of battles. Duskbound grow stronger in the dark.</li>
       <li><b>The road</b>: climb each region to its mini boss, then face the contract's final boss in the last act. Merchants sell relics, Smithies give items, Crises test you and Encampments let you rest.</li>

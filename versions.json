@@ -1,9 +1,15 @@
 [
  {
+  "v": "0.45.0",
+  "date": "2026-10-14",
+  "notes": "You can now hold up to 2500 gold (3500 with the Tithe Box)",
+  "latest": true
+ },
+ {
   "v": "0.44.1",
   "date": "2026-10-14",
   "notes": "The maximum level is now 10: one more unit on the field, and the best odds of rare recruits. Late enemy armies grow to match",
-  "latest": true
+  "commit": "6225d6c"
  },
  {
   "v": "0.44.0",
