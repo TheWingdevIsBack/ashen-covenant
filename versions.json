@@ -1,9 +1,15 @@
 [
  {
+  "v": "0.50.0",
+  "date": "2026-10-15",
+  "notes": "Every sprite is now hand-inked: tonal shading bands, inner contour lines, rim light from above and a coloured outline that marks friend and foe.",
+  "latest": true
+ },
+ {
   "v": "0.49.0",
   "date": "2026-10-15",
   "notes": "Spells hit much harder on screen: a champion or 3-star unit\\",
-  "latest": true
+  "commit": "44577bb"
  },
  {
   "v": "0.48.3",
