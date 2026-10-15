@@ -3411,7 +3411,9 @@ function autoCam(dt){if(!V.base||performance.now()-(V.camT||0)<5000)return;V.aut
     for(const e of L){const d=disp(e),p=proj(d.r,d.X),bx=(p.x-(V.tx||0))/z,by=(p.y-(V.ty||0))/z,h=V.base.cw*1.6*p.s;x0=Math.min(x0,bx-V.base.cw);x1=Math.max(x1,bx+V.base.cw);y0=Math.min(y0,by-h);y1=Math.max(y1,by+V.base.cw*.5)}
     let tz=Math.max(1,Math.min(2.2,Math.min(V.W/(x1-x0),V.H/(y1-y0))));tz=Math.round(tz*8)/8;if(Math.abs(tz-(V.camZ||1))>.12||!V.camGoal)V.camZ=tz;
     const zz=V.camZ||1;V.camGoal={z:zz,tx:V.W/2-(x0+x1)/2*zz,ty:V.H/2-(y0+y1)/2*zz}}}
-  const g=V.camGoal;if(!g)return;const k=Math.min(1,dt*2.2);V.z=(V.z||1)+(g.z-(V.z||1))*k;V.tx=(V.tx||0)+(g.tx-(V.tx||0))*k;V.ty=(V.ty||0)+(g.ty-(V.ty||0))*k;applyCam()}
+  const g=V.camGoal;if(!g)return;const k=Math.min(1,dt*2.2);V.z=SET.saver?g.z:(V.z||1)+(g.z-(V.z||1))*k; // on battery saver the zoom steps instead of gliding, so soldiers are not redrawn at every size in between
+  const dx=g.tx-(V.tx||0),dy=g.ty-(V.ty||0),dz=g.z-(V.z||1);if(Math.abs(dx)<.6&&Math.abs(dy)<.6&&Math.abs(dz)<.004){if(dx||dy||dz){V.z=g.z;V.tx=g.tx;V.ty=g.ty;applyCam()}return}
+  V.tx=(V.tx||0)+dx*k;V.ty=(V.ty||0)+dy*k;applyCam();V.camMoveT=performance.now()}
 function zoomReset(){V.z=1;V.tx=V.ty=0;applyCam();V.camT=performance.now()}
 function hexPath(x,r,c,k){
   const X=Xof(r,c),R=.577*k;x.beginPath();
@@ -3668,7 +3670,7 @@ function drawScene(){SPR_BUDGET=SET.saver?3:10;
   {const bc=V.bgCam||{z:1,tx:0,ty:0},z=V.z||1;
    if(bc.z===z&&bc.tx===(V.tx||0)&&bc.ty===(V.ty||0))lc.drawImage(V.bg,0,0);
    else{const s=z/bc.z;lc.fillStyle='#120d0b';lc.fillRect(0,0,V.low.width,V.low.height);lc.drawImage(V.bg,Math.round(((V.tx||0)-bc.tx*s)*k),Math.round(((V.ty||0)-bc.ty*s)*k),V.bg.width*s,V.bg.height*s);
-     if(!PZ.pinch&&performance.now()-(V.camT||0)>160)V.bg=null}}
+     if(!PZ.pinch&&performance.now()-Math.max(V.camT||0,V.camMoveT||0)>160)V.bg=null}}
   lc.setTransform(k,0,0,k,0,0);
   {const hz=V.y0-V.rh*1.2;
    for(let i=0;i<5;i++){const sx=((i*97+V.t*(4+i*1.5))%(V.W+V.cw*4))-V.cw*2,sy=hz*(.25+i*.12);lc.fillStyle=`rgba(30,14,24,${.18+i*.03})`;
