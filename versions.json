@@ -1,9 +1,15 @@
 [
  {
+  "v": "0.52.0",
+  "date": "2026-10-15",
+  "notes": "Every creature has been redrawn with a body of its own. Beetles open their mandibles to bite, locusts leap on their great hind legs with wings spread, wasps dive stinger-first, leeches lunge with ringed mouths and ice-grubs rear up to chomp.",
+  "latest": true
+ },
+ {
   "v": "0.51.0",
   "date": "2026-10-15",
   "notes": "Every unit has been redrawn from the ground up: new proportions with real faces, knees and hands, and a hand-painted light on every part, with cool shadows on one side and a warm rim on the other.",
-  "latest": true
+  "commit": "92c16f1"
  },
  {
   "v": "0.50.0",
