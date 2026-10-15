@@ -1,9 +1,15 @@
 [
  {
+  "v": "0.48.0",
+  "date": "2026-10-15",
+  "notes": "Relics reforged: forty relics that change how a contract plays, marked Coin, War, Trait or Arms. Take 800 gold on a Blood Debt, raise a Banner of the Last Stand, make every origin you field count one more with the Standard of Many Houses, or open a Reliquary Key for an artifact",
+  "latest": true
+ },
+ {
   "v": "0.47.2",
   "date": "2026-10-14",
   "notes": "More new names: the spellcasters are Magi, the bow and crossbow lookouts are Watchmen, and the druids and bark-folk are the Wildwood",
-  "latest": true
+  "commit": "ebf159e"
  },
  {
   "v": "0.47.1",
