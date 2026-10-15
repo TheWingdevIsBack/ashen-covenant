@@ -1,9 +1,15 @@
 [
  {
+  "v": "0.48.2",
+  "date": "2026-10-15",
+  "notes": "The battle camera glides smoothly as the fight moves, keeps a margin around the armies, never zooms in too far on a small skirmish, and keeps the fighting clear of the traits and damage panel",
+  "latest": true
+ },
+ {
   "v": "0.48.1",
   "date": "2026-10-15",
   "notes": "The pause button is back during battles",
-  "latest": true
+  "commit": "a89c15a"
  },
  {
   "v": "0.48.0",
