@@ -436,6 +436,8 @@ button:active:not(:disabled){transform:translateY(1px);filter:brightness(1.15)}
 .aug .sky{position:absolute;left:0;right:0;top:0;height:36px;opacity:.95}
 .aug .sky::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 70%,rgba(42,35,33,.9))}
 .aug .sky i{position:absolute;bottom:2px;left:0;right:0;height:14px;background:var(--rn);clip-path:polygon(0 100%,0 60%,6% 60%,6% 20%,9% 20%,9% 50%,15% 50%,17% 10%,19% 50%,26% 50%,26% 30%,31% 30%,31% 64%,40% 64%,42% 0,44% 64%,52% 64%,52% 36%,58% 36%,58% 70%,66% 70%,68% 24%,70% 70%,78% 70%,78% 44%,84% 44%,86% 14%,88% 44%,94% 44%,94% 66%,100% 66%,100% 100%)}
+.aug .sky.desert i{clip-path:polygon(0 100%,0 70%,8% 62%,14% 66%,18% 66%,26% 4%,34% 66%,40% 58%,47% 64%,51% 64%,51% 14%,52.5% 6%,54% 14%,54% 64%,60% 68%,63% 66%,69% 30%,75% 66%,82% 60%,90% 66%,96% 62%,100% 66%,100% 100%)}
+.aug .sky.jungle i{clip-path:polygon(0 100%,0 50%,4% 40%,8% 52%,12% 36%,16% 48%,20% 40%,24% 18%,24% 10%,28% 10%,28% 0,34% 0,34% 10%,38% 10%,38% 18%,42% 40%,46% 50%,50% 34%,55% 46%,60% 38%,64% 50%,68% 36%,72% 44%,76% 30%,80% 46%,85% 36%,90% 48%,95% 38%,100% 46%,100% 100%)}
 .aug .sky em{position:absolute;right:12px;top:8px;font-style:normal;font-family:Silkscreen,monospace;font-size:10px;color:#ffe0a0;text-shadow:0 1px 0 #000}
 .heat{display:flex;gap:5px;align-items:center}.hb{width:34px;height:30px;border-radius:5px;border:1px solid var(--edge);background:var(--panel-g);font-weight:700;color:#e0a070}
 .hb.on{border-color:#ff7a3a;background:linear-gradient(180deg,#5a2a14,#3a1a0e);color:#ffd0a0;box-shadow:0 0 10px rgba(255,110,40,.4)}
@@ -872,7 +874,7 @@ html.fighting #left{background:transparent!important;border:0!important;box-shad
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
 </head>
 <body>
-<script>window.ASHEN_VERSIONS=[{"v": "0.52.1", "date": "2026-10-15", "notes": "Effects that help your side now reach further across the bigger field. Every heal, shield, buff and aura that works on nearby allies reaches one hex further: 1 becomes 2, 2 becomes 3 and 3 becomes 4. Effects that only touched adjacent allies now reach 2 hexes.", "latest": true}, {"v": "0.52.0", "date": "2026-10-15", "notes": "Every creature has been redrawn with a body of its own. Beetles open their mandibles to bite, locusts leap on their great hind legs with wings spread, wasps dive stinger-first, leeches lunge with ringed mouths and ice-grubs rear up to chomp.", "commit": "174deb0"}, {"v": "0.51.0", "date": "2026-10-15", "notes": "Every unit has been redrawn from the ground up: new proportions with real faces, knees and hands, and a hand-painted light on every part, with cool shadows on one side and a warm rim on the other.", "commit": "92c16f1"}, {"v": "0.50.0", "date": "2026-10-15", "notes": "Every sprite is now hand-inked: tonal shading bands, inner contour lines, rim light from above and a coloured outline that marks friend and foe.", "commit": "3de9858"}, {"v": "0.49.0", "date": "2026-10-15", "notes": "Spells hit much harder on screen: a champion or 3-star unit\\", "commit": "44577bb"}, {"v": "0.48.3", "date": "2026-10-15", "notes": "Fixed: with the Smuggler\\", "commit": "40ad324"}, {"v": "0.48.2", "date": "2026-10-15", "notes": "The battle camera glides smoothly as the fight moves, keeps a margin around the armies, never zooms in too far on a small skirmish, and keeps the fighting clear of the traits and damage panel", "commit": "78082ef"}, {"v": "0.48.1", "date": "2026-10-15", "notes": "The pause button is back during battles", "commit": "a89c15a"}, {"v": "0.48.0", "date": "2026-10-15", "notes": "Relics reforged: forty relics that change how a contract plays, marked Coin, War, Trait or Arms. Take 800 gold on a Blood Debt, raise a Banner of the Last Stand, make every origin you field count one more with the Standard of Many Houses, or open a Reliquary Key for an artifact", "commit": "2d0f619"}, {"v": "0.47.2", "date": "2026-10-14", "notes": "More new names: the spellcasters are Magi, the bow and crossbow lookouts are Watchmen, and the druids and bark-folk are the Wildwood", "commit": "ebf159e"}, {"v": "0.47.1", "date": "2026-10-14", "notes": "Two classes have new names: the armoured front line are Stalwarts, and the shield-bearers are the Aegis", "commit": "9715d84"}, {"v": "0.47.0", "date": "2026-10-14", "notes": "A new class, the Bastion: shield-bearers who guard the allies beside them. Their neighbours take less damage and part of every blow lands on the Bastion, they raise a shield wall when battle starts, and at full strength they throw themselves in front of killing blows", "commit": "2998d67"}, {"v": "0.46.2", "date": "2026-10-14", "notes": "Abilities are far easier to read: every cast lights its caster with a ring and a column of its own colour, and bright streaks fly from the caster to everything its spell strikes. Champions and 3-star units cast bigger", "commit": "1c335ce"}, {"v": "0.46.1", "date": "2026-10-14", "notes": "Much lighter on phone batteries: a new Battery saver setting (on by default on phones) draws fewer frames, slows right down while you think, and stills the always-on glows", "commit": "fd2a78e"}, {"v": "0.46.0", "date": "2026-10-14", "notes": "Artifacts: ten one-of-a-kind relics of war, sold only by merchants. The Ninth Bell tolls and stuns everything near it, the Comet Lance calls down comets, the Sunforged Aegis raises domes of sunlight, the Drowned Mirror brings a double into battle, the Tempest Standard calls lightning, and more", "commit": "db45ccb"}, {"v": "0.45.0", "date": "2026-10-14", "notes": "You can now hold up to 2500 gold (3500 with the Tithe Box)", "commit": "d7938de"}, {"v": "0.44.1", "date": "2026-10-14", "notes": "The maximum level is now 10: one more unit on the field, and the best odds of rare recruits. Late enemy armies grow to match", "commit": "6225d6c"}, {"v": "0.44.0", "date": "2026-10-14", "notes": "Every unit has a line of its own story on its card", "commit": "3134617"}, {"v": "0.43.0", "date": "2026-10-14", "notes": "Clearer text throughout: an up-to-date Guide and Boot Camp tips, and unit cards that show each soldier\\", "commit": "d73f908"}, {"v": "0.42.0", "date": "2026-10-14", "notes": "Bands with a single-target spell now cast it with every soldier: when the leader casts, each soldier strikes its own target with a share of the power, and comrades pick different enemies where they can", "commit": "89a2c5d"}, {"v": "0.41.0", "date": "2026-10-14", "notes": "Bands across every contract: every 1-cost is now a regiment (summoners aside), most 2- and 3-costs too, and a few 4-costs are elite trios. Around three soldiers per unit at 1 to 3 cost, one at 4 and 5", "commit": "1f01692"}, {"v": "0.40.0", "date": "2026-10-14", "notes": "Squads, first on The Ashward March: 29 units there are now bands of 3 to 5 soldiers, led by the named character (Hobb and his Pitchfork Levy, Kael and the Ash Grunts, Wat and his Yeomen, Captain Edda and her Burnt Levy veterans and more)", "commit": "8178d18"}, {"v": "0.39.0", "date": "2026-10-14", "notes": "The battlefield is twice as big: 21 hexes long and 11 deep, with nine ranks a side", "commit": "786d612"}, {"v": "0.38.0", "date": "2026-10-14", "notes": "The Revenant General\\", "commit": "bc801de"}, {"v": "0.37.0", "date": "2026-10-13", "notes": "A new economy: prices are 25 times finer, so a 4-cost costs 100, a reroll 50 and each battle pays 75 (25 more for a win)", "commit": "b9f792f"}, {"v": "0.36.0", "date": "2026-10-13", "notes": "Battle report: after every fight, see damage dealt, damage taken and healing for each of your units (Report button, or R)", "commit": "bbbc71c"}, {"v": "0.35.0", "date": "2026-10-13", "notes": "Proper desktop support: on computer screens the whole game scales up crisply to fill the window, with readable text at any size from laptops to 4K", "commit": "0fa5ae2"}, {"v": "0.34.2", "date": "2026-10-13", "notes": "Marching to an encounter refreshes the shop too, and it opens when you return to your board", "commit": "9478a1a"}, {"v": "0.34.1", "date": "2026-10-13", "notes": "The shop keeps its recruits after a fight and refreshes (and opens) when you march into the next battle", "commit": "69b9408"}, {"v": "0.34.0", "date": "2026-10-13", "notes": "Every unit now has its own ability, built from its origin and class: 130 new spells, from Ironpact shield-shoves and Mirefolk ambushes to Inquisition stakes, Skald sagas and Verdant fairy rings", "commit": "1a91314"}, {"v": "0.33.0", "date": "2026-10-13", "notes": "Every trait now has a signature move. Ravagers leap to the weakest enemy after a kill; Specters vanish and crit; Hexblades charge their next attacks after casting", "commit": "8abd3cd"}, {"v": "0.32.0", "date": "2026-10-13", "notes": "Ironpact sign a contract before every battle (win fast, lose no one, score kills, keep your company standing) and get paid when they fulfil it", "commit": "a6f6a68"}, {"v": "0.31.0", "date": "2026-10-13", "notes": "No more gold cap: save as much as you like (interest still tops out at 5)", "commit": "39e1b40"}, {"v": "0.30.0", "date": "2026-10-12", "notes": "The three- and four-star contracts (III to VI) now run four acts, and the later acts ramp up hard: tougher, better-equipped armies and stronger final bosses", "commit": "658032c"}, {"v": "0.29.0", "date": "2026-10-12", "notes": "Two new contracts. The Witch-Hunt (now Contract IV; the Cinder Throne becomes V): the Inquisition, militia and the faithful against witches, crows and burnt-out mages, ending at the Great Pyre with the Witch-Queen", "commit": "ea7c0de"}, {"v": "0.28.0", "date": "2026-10-12", "notes": "Signature spell effects: pillars of light and lightning strikes, crashing waves, void vortexes, bursting roots, rot and spore clouds, ground-splitting quakes, shield domes, souls drained across the field, falling meteors, curse sigils, claw rakes and executioner\\", "commit": "f6d68fd"}, {"v": "0.27.0", "date": "2026-10-12", "notes": "Summons each have a role: drowned brutes (1/1/2) are huge tanks, shades (1/1/2) leap onto the weakest enemy, the Rat-King calls swarms of rats (2/3/4), pages cut from range (3/3/4), crows dive the back line (3/4/5), pufflings burst into healing spores", "commit": "9b2c14a"}, {"v": "0.26.2", "date": "2026-10-12", "notes": "A shop unit that would star up shows the stars it would reach in its corner", "commit": "4a16263"}, {"v": "0.26.1", "date": "2026-10-12", "notes": "Creatures attack properly: a wind-up, then a lunge, pounce or bite", "commit": "46f1694"}, {"v": "0.26.0", "date": "2026-10-12", "notes": "About 40% more fights on the map, with fewer special stops; difficulty is stretched to match", "commit": "bf4a026"}, {"v": "0.25.1", "date": "2026-10-11", "notes": "Shields now fade: a shield lasts 4 seconds after it was last gained (8 for shields at the start of battle)", "commit": "73daea9"}, {"v": "0.25.0", "date": "2026-10-11", "notes": "Each contract is now its own TFT-style set of eight origins and eight classes; most units have one origin and one class", "commit": "e01f21c"}, {"v": "0.24.0", "date": "2026-10-11", "notes": "A wider battlefield: 13 columns, five ranks per side and a no-man\\", "commit": "280ded1"}, {"v": "0.23.0", "date": "2026-10-11", "notes": "The game is now fully landscape: hold your phone sideways. If it is held upright, the whole game is drawn turned so it still plays sideways", "commit": "b39392b"}, {"v": "0.22.0", "date": "2026-10-11", "notes": "Even fights: enemy boards now grow with the rounds to match yours, so battles are close and tense instead of lopsided", "commit": "944546d"}, {"v": "0.21.2", "date": "2026-10-11", "notes": "A bigger battlefield: taller phones spend their spare height on deeper rows and larger fighters", "commit": "2b7760c"}, {"v": "0.21.1", "date": "2026-10-11", "notes": "The Ashward March ramps up more gently", "commit": "fabd80e"}, {"v": "0.21.0", "date": "2026-10-11", "notes": "Everything moves by dragging: drag items onto units to equip them, and drag units to place, swap or sell them", "commit": "6f61b5f"}, {"v": "0.20.2", "date": "2026-10-11", "notes": "The interface stays clear of the iPhone notch and camera cutout on every screen", "commit": "6639abb"}, {"v": "0.20.1", "date": "2026-10-11", "notes": "Boot Camp tips now pause the game: the screen dims around what the tip points at, and you tap Got it to continue", "commit": "70578de"}, {"v": "0.20.0", "date": "2026-10-11", "notes": "Boot Camp: a two-act tutorial contract with a tip for every part of the game", "commit": "19bfdf8"}, {"v": "0.19.3", "date": "2026-10-11", "notes": "The game always fetches the newest release, and offers a one-tap update if an old copy is showing", "commit": "62c85a8"}, {"v": "0.19.2", "date": "2026-10-11", "notes": "Sentinel reworked: Sentinels mark what they shoot, and the trait makes all your ranged units faster and longer-reaching", "commit": "61c8fcd"}, {"v": "0.19.1", "date": "2026-10-11", "notes": "Trait names are back on shop cards", "commit": "65aa9cc"}, {"v": "0.19.0", "date": "2026-10-11", "notes": "29 new units (110 in all): every contract can now reach the top tier of each of its origins and classes", "commit": "162ab82"}, {"v": "0.18.0", "date": "2026-10-11", "notes": "Three new contracts from the design doc: Roads of the Drowned, The Festering Road and Siege of the Cinder Throne", "commit": "0074adf"}, {"v": "0.17.0", "date": "2026-10-11", "notes": "Main menu with Continue, version history and sound settings", "commit": "57f3a6a"}, {"v": "0.16.0", "date": "2026-10-11", "commit": "d0f200d", "notes": "Covenant origin, one-screen map and flatter hexes"}, {"v": "0.15.0", "date": "2026-10-11", "commit": "817d9aa", "notes": "First web release: pixel-art company, items and the three-act campaign"}]</script>
+<script>window.ASHEN_VERSIONS=[{"v": "0.53.0", "date": "2026-10-18", "notes": "Two new contracts. VII, The Glass Sea: south to a desert a fallen sun turned to glass, against the wrapped dead of the old dynasties, the riders of the dunes and soldiers made of sand, ending at the Sun Pyramid and the Glass Pharaoh. VIII, The Coiled Jungle: under the canopy with the jaguar clans, the sun-priests and the venom cults, ending at the Coiled Altar where the Coiled God wakes", "latest": true}, {"v": "0.52.1", "date": "2026-10-15", "notes": "Effects that help your side now reach further across the bigger field. Every heal, shield, buff and aura that works on nearby allies reaches one hex further: 1 becomes 2, 2 becomes 3 and 3 becomes 4. Effects that only touched adjacent allies now reach 2 hexes.", "commit": "016c952"}, {"v": "0.52.0", "date": "2026-10-15", "notes": "Every creature has been redrawn with a body of its own. Beetles open their mandibles to bite, locusts leap on their great hind legs with wings spread, wasps dive stinger-first, leeches lunge with ringed mouths and ice-grubs rear up to chomp.", "commit": "174deb0"}, {"v": "0.51.0", "date": "2026-10-15", "notes": "Every unit has been redrawn from the ground up: new proportions with real faces, knees and hands, and a hand-painted light on every part, with cool shadows on one side and a warm rim on the other.", "commit": "92c16f1"}, {"v": "0.50.0", "date": "2026-10-15", "notes": "Every sprite is now hand-inked: tonal shading bands, inner contour lines, rim light from above and a coloured outline that marks friend and foe.", "commit": "3de9858"}, {"v": "0.49.0", "date": "2026-10-15", "notes": "Spells hit much harder on screen: a champion or 3-star unit\\", "commit": "44577bb"}, {"v": "0.48.3", "date": "2026-10-15", "notes": "Fixed: with the Smuggler\\", "commit": "40ad324"}, {"v": "0.48.2", "date": "2026-10-15", "notes": "The battle camera glides smoothly as the fight moves, keeps a margin around the armies, never zooms in too far on a small skirmish, and keeps the fighting clear of the traits and damage panel", "commit": "78082ef"}, {"v": "0.48.1", "date": "2026-10-15", "notes": "The pause button is back during battles", "commit": "a89c15a"}, {"v": "0.48.0", "date": "2026-10-15", "notes": "Relics reforged: forty relics that change how a contract plays, marked Coin, War, Trait or Arms. Take 800 gold on a Blood Debt, raise a Banner of the Last Stand, make every origin you field count one more with the Standard of Many Houses, or open a Reliquary Key for an artifact", "commit": "2d0f619"}, {"v": "0.47.2", "date": "2026-10-14", "notes": "More new names: the spellcasters are Magi, the bow and crossbow lookouts are Watchmen, and the druids and bark-folk are the Wildwood", "commit": "ebf159e"}, {"v": "0.47.1", "date": "2026-10-14", "notes": "Two classes have new names: the armoured front line are Stalwarts, and the shield-bearers are the Aegis", "commit": "9715d84"}, {"v": "0.47.0", "date": "2026-10-14", "notes": "A new class, the Bastion: shield-bearers who guard the allies beside them. Their neighbours take less damage and part of every blow lands on the Bastion, they raise a shield wall when battle starts, and at full strength they throw themselves in front of killing blows", "commit": "2998d67"}, {"v": "0.46.2", "date": "2026-10-14", "notes": "Abilities are far easier to read: every cast lights its caster with a ring and a column of its own colour, and bright streaks fly from the caster to everything its spell strikes. Champions and 3-star units cast bigger", "commit": "1c335ce"}, {"v": "0.46.1", "date": "2026-10-14", "notes": "Much lighter on phone batteries: a new Battery saver setting (on by default on phones) draws fewer frames, slows right down while you think, and stills the always-on glows", "commit": "fd2a78e"}, {"v": "0.46.0", "date": "2026-10-14", "notes": "Artifacts: ten one-of-a-kind relics of war, sold only by merchants. The Ninth Bell tolls and stuns everything near it, the Comet Lance calls down comets, the Sunforged Aegis raises domes of sunlight, the Drowned Mirror brings a double into battle, the Tempest Standard calls lightning, and more", "commit": "db45ccb"}, {"v": "0.45.0", "date": "2026-10-14", "notes": "You can now hold up to 2500 gold (3500 with the Tithe Box)", "commit": "d7938de"}, {"v": "0.44.1", "date": "2026-10-14", "notes": "The maximum level is now 10: one more unit on the field, and the best odds of rare recruits. Late enemy armies grow to match", "commit": "6225d6c"}, {"v": "0.44.0", "date": "2026-10-14", "notes": "Every unit has a line of its own story on its card", "commit": "3134617"}, {"v": "0.43.0", "date": "2026-10-14", "notes": "Clearer text throughout: an up-to-date Guide and Boot Camp tips, and unit cards that show each soldier\\", "commit": "d73f908"}, {"v": "0.42.0", "date": "2026-10-14", "notes": "Bands with a single-target spell now cast it with every soldier: when the leader casts, each soldier strikes its own target with a share of the power, and comrades pick different enemies where they can", "commit": "89a2c5d"}, {"v": "0.41.0", "date": "2026-10-14", "notes": "Bands across every contract: every 1-cost is now a regiment (summoners aside), most 2- and 3-costs too, and a few 4-costs are elite trios. Around three soldiers per unit at 1 to 3 cost, one at 4 and 5", "commit": "1f01692"}, {"v": "0.40.0", "date": "2026-10-14", "notes": "Squads, first on The Ashward March: 29 units there are now bands of 3 to 5 soldiers, led by the named character (Hobb and his Pitchfork Levy, Kael and the Ash Grunts, Wat and his Yeomen, Captain Edda and her Burnt Levy veterans and more)", "commit": "8178d18"}, {"v": "0.39.0", "date": "2026-10-14", "notes": "The battlefield is twice as big: 21 hexes long and 11 deep, with nine ranks a side", "commit": "786d612"}, {"v": "0.38.0", "date": "2026-10-14", "notes": "The Revenant General\\", "commit": "bc801de"}, {"v": "0.37.0", "date": "2026-10-13", "notes": "A new economy: prices are 25 times finer, so a 4-cost costs 100, a reroll 50 and each battle pays 75 (25 more for a win)", "commit": "b9f792f"}, {"v": "0.36.0", "date": "2026-10-13", "notes": "Battle report: after every fight, see damage dealt, damage taken and healing for each of your units (Report button, or R)", "commit": "bbbc71c"}, {"v": "0.35.0", "date": "2026-10-13", "notes": "Proper desktop support: on computer screens the whole game scales up crisply to fill the window, with readable text at any size from laptops to 4K", "commit": "0fa5ae2"}, {"v": "0.34.2", "date": "2026-10-13", "notes": "Marching to an encounter refreshes the shop too, and it opens when you return to your board", "commit": "9478a1a"}, {"v": "0.34.1", "date": "2026-10-13", "notes": "The shop keeps its recruits after a fight and refreshes (and opens) when you march into the next battle", "commit": "69b9408"}, {"v": "0.34.0", "date": "2026-10-13", "notes": "Every unit now has its own ability, built from its origin and class: 130 new spells, from Ironpact shield-shoves and Mirefolk ambushes to Inquisition stakes, Skald sagas and Verdant fairy rings", "commit": "1a91314"}, {"v": "0.33.0", "date": "2026-10-13", "notes": "Every trait now has a signature move. Ravagers leap to the weakest enemy after a kill; Specters vanish and crit; Hexblades charge their next attacks after casting", "commit": "8abd3cd"}, {"v": "0.32.0", "date": "2026-10-13", "notes": "Ironpact sign a contract before every battle (win fast, lose no one, score kills, keep your company standing) and get paid when they fulfil it", "commit": "a6f6a68"}, {"v": "0.31.0", "date": "2026-10-13", "notes": "No more gold cap: save as much as you like (interest still tops out at 5)", "commit": "39e1b40"}, {"v": "0.30.0", "date": "2026-10-12", "notes": "The three- and four-star contracts (III to VI) now run four acts, and the later acts ramp up hard: tougher, better-equipped armies and stronger final bosses", "commit": "658032c"}, {"v": "0.29.0", "date": "2026-10-12", "notes": "Two new contracts. The Witch-Hunt (now Contract IV; the Cinder Throne becomes V): the Inquisition, militia and the faithful against witches, crows and burnt-out mages, ending at the Great Pyre with the Witch-Queen", "commit": "ea7c0de"}, {"v": "0.28.0", "date": "2026-10-12", "notes": "Signature spell effects: pillars of light and lightning strikes, crashing waves, void vortexes, bursting roots, rot and spore clouds, ground-splitting quakes, shield domes, souls drained across the field, falling meteors, curse sigils, claw rakes and executioner\\", "commit": "f6d68fd"}, {"v": "0.27.0", "date": "2026-10-12", "notes": "Summons each have a role: drowned brutes (1/1/2) are huge tanks, shades (1/1/2) leap onto the weakest enemy, the Rat-King calls swarms of rats (2/3/4), pages cut from range (3/3/4), crows dive the back line (3/4/5), pufflings burst into healing spores", "commit": "9b2c14a"}, {"v": "0.26.2", "date": "2026-10-12", "notes": "A shop unit that would star up shows the stars it would reach in its corner", "commit": "4a16263"}, {"v": "0.26.1", "date": "2026-10-12", "notes": "Creatures attack properly: a wind-up, then a lunge, pounce or bite", "commit": "46f1694"}, {"v": "0.26.0", "date": "2026-10-12", "notes": "About 40% more fights on the map, with fewer special stops; difficulty is stretched to match", "commit": "bf4a026"}, {"v": "0.25.1", "date": "2026-10-11", "notes": "Shields now fade: a shield lasts 4 seconds after it was last gained (8 for shields at the start of battle)", "commit": "73daea9"}, {"v": "0.25.0", "date": "2026-10-11", "notes": "Each contract is now its own TFT-style set of eight origins and eight classes; most units have one origin and one class", "commit": "e01f21c"}, {"v": "0.24.0", "date": "2026-10-11", "notes": "A wider battlefield: 13 columns, five ranks per side and a no-man\\", "commit": "280ded1"}, {"v": "0.23.0", "date": "2026-10-11", "notes": "The game is now fully landscape: hold your phone sideways. If it is held upright, the whole game is drawn turned so it still plays sideways", "commit": "b39392b"}, {"v": "0.22.0", "date": "2026-10-11", "notes": "Even fights: enemy boards now grow with the rounds to match yours, so battles are close and tense instead of lopsided", "commit": "944546d"}, {"v": "0.21.2", "date": "2026-10-11", "notes": "A bigger battlefield: taller phones spend their spare height on deeper rows and larger fighters", "commit": "2b7760c"}, {"v": "0.21.1", "date": "2026-10-11", "notes": "The Ashward March ramps up more gently", "commit": "fabd80e"}, {"v": "0.21.0", "date": "2026-10-11", "notes": "Everything moves by dragging: drag items onto units to equip them, and drag units to place, swap or sell them", "commit": "6f61b5f"}, {"v": "0.20.2", "date": "2026-10-11", "notes": "The interface stays clear of the iPhone notch and camera cutout on every screen", "commit": "6639abb"}, {"v": "0.20.1", "date": "2026-10-11", "notes": "Boot Camp tips now pause the game: the screen dims around what the tip points at, and you tap Got it to continue", "commit": "70578de"}, {"v": "0.20.0", "date": "2026-10-11", "notes": "Boot Camp: a two-act tutorial contract with a tip for every part of the game", "commit": "19bfdf8"}, {"v": "0.19.3", "date": "2026-10-11", "notes": "The game always fetches the newest release, and offers a one-tap update if an old copy is showing", "commit": "62c85a8"}, {"v": "0.19.2", "date": "2026-10-11", "notes": "Sentinel reworked: Sentinels mark what they shoot, and the trait makes all your ranged units faster and longer-reaching", "commit": "61c8fcd"}, {"v": "0.19.1", "date": "2026-10-11", "notes": "Trait names are back on shop cards", "commit": "65aa9cc"}, {"v": "0.19.0", "date": "2026-10-11", "notes": "29 new units (110 in all): every contract can now reach the top tier of each of its origins and classes", "commit": "162ab82"}, {"v": "0.18.0", "date": "2026-10-11", "notes": "Three new contracts from the design doc: Roads of the Drowned, The Festering Road and Siege of the Cinder Throne", "commit": "0074adf"}, {"v": "0.17.0", "date": "2026-10-11", "notes": "Main menu with Continue, version history and sound settings", "commit": "57f3a6a"}, {"v": "0.16.0", "date": "2026-10-11", "commit": "d0f200d", "notes": "Covenant origin, one-screen map and flatter hexes"}, {"v": "0.15.0", "date": "2026-10-11", "commit": "817d9aa", "notes": "First web release: pixel-art company, items and the three-act campaign"}]</script>
 
 
 <div id="root">
@@ -925,8 +927,9 @@ html.fighting #left{background:transparent!important;border:0!important;box-shad
 
 <script>
 // ================= VERSION =================
-const GAME_VERSION='0.52.1',S_VERSION=13;
+const GAME_VERSION='0.53.0',S_VERSION=13;
 const CHANGELOG={
+  '0.53.0':['Two new contracts. VII, The Glass Sea: south to a desert a fallen sun turned to glass, against the wrapped dead of the old dynasties, the riders of the dunes and soldiers made of sand, ending at the Sun Pyramid and the Glass Pharaoh. VIII, The Coiled Jungle: under the canopy with the jaguar clans, the sun-priests and the venom cults, ending at the Coiled Altar where the Coiled God wakes','Six new origins. Embalmed wear linen wards that rewrap themselves. Nomads open every battle hidden in the heat-haze and strike out of it. Glasswrought turn spells aside and shatter when they fall. Jaguars savage the wounded and pounce after every kill. Every Feathered spell pays the sun a Tribute until it rises over your company. Venomblood slow their prey stack by stack until it is paralysed','Fifty new units, each with its own spell and look, among them the Sphinx, the Black Jaguar, the Glass Colossus, the Serpent-Mother and four legends: Queen Nefre the Undying, Rasul of the Thousand Tents, Ochre the Night-Hunter and Hu\'ama the Sun-Speaker','Four new summons: golden scarabs, glass soldiers, jaguar cubs and vipers','Six new regions with their own skies, skylines, weather and music: dunes and pyramids, a city of tombs, glass fields, the endless canopy, the serpent river and the stepped temples','Two new relics, the Canopic Jar and the Jade Fang, and four new crises','New headgear and weapons: the nemes, turbans, feathered headdresses, jaguar and eagle helms, the khopesh, the scimitar, the obsidian club, slings and blowguns'],
   '0.52.1':['Effects that help your side now reach further across the bigger field. Every heal, shield, buff and aura that works on nearby allies reaches one hex further: 1 becomes 2, 2 becomes 3 and 3 becomes 4. Effects that only touched adjacent allies now reach 2 hexes.','Heralds now inspire every ally within 4 hexes.','Imperials count their neighbours within 2 hexes, Ironpact share damage with allies within 2 hexes, and Aegis units guard allies within 2 hexes.','Area damage against enemies keeps its old reach, so squads do not melt to a single blast.'],
   '0.52.0':['Every creature has been redrawn with a body of its own. Beetles open their mandibles to bite, locusts leap on their great hind legs with wings spread, wasps dive stinger-first, leeches lunge with ringed mouths and ice-grubs rear up to chomp.','The dead now take many shapes: hooded shades with long claws, flickering wisps, a banshee whose scream ripples outward, a ghost with a bell for a body, chime-spirits and a helmed rune-ghost.','The Sunken Bell and the Bell of Saint Drowne are real bells now, hanging from chains and crusted with barnacles, with a burning eye where the clapper should be.','Mushrooms have gills, faces and spores. Spore-Callers raise glowing arms and Grandmother Spore leans on her cane. The Great Toad is a toad that lashes its tongue, the Boglings are mounds of mud and reed, and the Inklings are dripping ink with a quill stuck in.','Fish-folk walk on bowed legs with fins and gills and jaws that gape. The Salt King wears a coral crown and wields a trident. Serpent-witches coil on scaled tails, the Pale Thing grins, and the Gulper\'s jaw opens to its belly.','Living tomes flap their pages with a bookmark tongue. Saplings wear crowns of leaves, Thornlings roll in as balls of thorns, and the Bramblekin are walking stumps that club with their branches.'],
   '0.51.0':['Every unit has been redrawn from the ground up: new proportions with real faces, knees and hands, and a hand-painted light on every part, with cool shadows on one side and a warm rim on the other.','Every one of the 300+ units has its own look: its own colours, headgear and gear. There are now thirty kinds of hat and helm, from Imperial crests and plague-doctor beaks to crowns, wizard hats, mitres and wolf pelts, along with robes, gowns, coats, mail and bare-chested brutes.','New weapons and gear: axes, maces, cleavers, scythes, halberds, picks, rapiers, tridents, pitchforks, harpoons, whips, torches, bells, horns, lanterns, nets and shields of every shape, painted with each house\'s heraldry.','Warriors now stand at the ready: blades held in guard, spears raised, and great weapons planted at their feet until the swing.','No two units in the same origin or class should look alike any more. Origin marks such as soul-flames, vines and crowns are worn by a few units rather than every one.','Health bars sit above the taller figures, and battles run a little lighter on battery than before.'],
@@ -1000,10 +1003,12 @@ const RUNS=[
   {id:4,tutorial:true,name:'Boot Camp',blurb:'Learn every part of the game in two short acts. Start here.',origins:['Ashborn','Ironpact','Militia'],stars:0,acts:[['muster']],final:'yard',nActs:2,short:true,boss:{key:'drillmaster',name:'The Drillmaster',lives:0,desc:'A grizzled veteran who tests everything you have learned.'},scale:-1.4},
   {id:5,name:'The Witch-Hunt',blurb:'The Inquisition burns its way through the hill villages. The coven is waiting for them.',origins:['Inquisition','Hexen','Covenant','Lantern','Hollow','Militia','Carrion','Spellwrought'],stars:3,grow:.62,acts:[['hamlets','coven'],['hamlets','coven','cathedral']],nActs:4,final:'pyreyard',boss:{key:'witchqueen',name:'The Witch-Queen',lives:1,desc:'Curses your whole company when she casts; the first time she falls she rises again in a storm of crows.'},scale:1.3},
   {id:6,name:'The Frostbound North',blurb:'Past the edge of the maps: frost-spirits, war-singers and giants that walk like mountains.',origins:['Frostborn','Giantkin','Skald','Beastkin','Stoneblood','Ironpact','Wraithkin','Tidebound'],stars:4,grow:.55,acts:[['tundra','fjord'],['tundra','fjord','peaks']],nActs:4,final:'winterhall',boss:{key:'winterking',name:'The Winter King',lives:1,desc:'His blizzard freezes everything near him; when he falls he rises again, colder and stronger.'},scale:2.7},
+  {id:7,name:'The Glass Sea',blurb:'South, where a fallen sun turned the desert to glass: riders of the dunes, the wrapped dead of the old dynasties, and soldiers made of sand.',origins:['Embalmed','Nomad','Glasswrought','Imperial','Swarm','Spellwrought','Ironpact','Beastkin'],stars:4,grow:.55,acts:[['dunes','necropolis'],['dunes','necropolis','glassfields']],nActs:4,final:'sunpyramid',boss:{key:'glasspharaoh',name:'The Glass Pharaoh',lives:1,desc:'Wrapped in linen that keeps rewrapping; when he falls he rises again as living glass, and the shards of his body blind everything near him.'},scale:2.9},
+  {id:8,name:'The Coiled Jungle',blurb:'Under the canopy the jaguar clans hunt, the sun-priests pay their tribute, and the venom cults wait for their god to wake.',origins:['Jaguar','Feathered','Venomblood','Wildwood','Mirefolk','Fungal','Hexen','Abyssal'],stars:5,grow:.55,acts:[['canopy','river'],['canopy','river','temples']],nActs:4,final:'altar',boss:{key:'coiledgod',name:'The Coiled God',lives:1,desc:'Its fangs paralyse whatever they bite; when it falls it sheds its skin, every ailment with it, and strikes faster with twice the venom.'},scale:3.1},
 ];
 let RUN=RUNS[0];
 const NACTS=()=>RUN.nActs||3;
-const RUN_ORDER=[4,0,1,2,5,3,6];
+const RUN_ORDER=[4,0,1,2,5,3,6,7,8];
 const ORD=()=>RUN_ORDER.filter(x=>!RUNS[x].tutorial),PREV=i=>{const o=ORD(),k=o.indexOf(i);return k>0?o[k-1]:null},NEXT=i=>{const o=ORD(),k=o.indexOf(i);return k>=0&&k<o.length-1?o[k+1]:null};
 const ROMAN=i=>RUNS[i]&&RUNS[i].tutorial?'Tutorial':['I','II','III','IV','V','VI','VII','VIII'][ORD().indexOf(i)];
 const U=(name,title,cost,o,c,hp,atk,as,r,ar,mr,mana,ab,p)=>({name,title,cost,o,c,hp,atk,as,r,ar,mr,mana,ab,p});
@@ -1419,6 +1424,72 @@ Object.assign(UNITS,{
   shieldwall:NU("Shield-Wall","",3,["Skald"],"Aegis",null,200),
   aldric:NU("Brother Aldric","the Last Wall",5,["Covenant","Ironpact"],"Aegis",null,330)
 });
+// ---- VII: The Glass Sea brings the wrapped dead, the desert riders and the soldiers of fused glass; VIII: The Coiled Jungle brings the jaguar clans, the sun-priests and the venom cults ----
+Object.assign(UNITS,{
+  // Embalmed: the wrapped dead of the sun-dynasties
+  wrapped:NU('Wrapped Dead','',1,['Embalmed'],'Stalwart',null,170),
+  canopic:NU('Canopic Priests','',1,['Embalmed'],'Warden',null,170),
+  jackalguard:NU('Jackal-Guard','',2,['Embalmed'],'Aegis',null,160),
+  scarabcaller:NU('Scarab-Caller','',2,['Embalmed','Swarm'],'Summoner','scarabs',60),
+  linenwitch:NU('Linen-Witches','',3,['Embalmed'],'Magus',null,190),
+  embalmer:NU('Embalmer','',3,['Embalmed'],'Alchemist',null,180),
+  tombking:NU('Tomb-King','',4,['Embalmed'],'Herald',null,170),
+  sphinx:NU('Sphinx','',4,['Embalmed','Glasswrought'],'Breaker',null,200),
+  nefre:NU('Queen Nefre','the Undying',5,['Dynasty','Embalmed'],'Magus',null,150),
+  // Nomad: riders of the glass sea
+  dunerunner:NU('Dune-Runners','',1,['Nomad'],'Stalker',null,150),
+  sandslinger:NU('Sand-Slingers','',1,['Nomad'],'Specter',null,160),
+  outrider:NU('Outriders','',2,['Nomad'],'Ravager',null,150),
+  miragedancer:NU('Mirage-Dancers','',2,['Nomad'],'Hexblade',null,170),
+  caravanguard:NU('Caravan-Guard','',3,['Nomad','Ironpact'],'Aegis',null,170),
+  falconer:NU('Falconer','',3,['Nomad'],'Watchman',null,170),
+  sandseer:NU('Sand-Seers','',3,['Nomad'],'Warden',null,170),
+  sandkhan:NU('Sand-Khan','',4,['Nomad'],'Herald',null,160),
+  rasul:NU('Rasul','of the Thousand Tents',5,['Caravan','Nomad'],'Ravager',null,170),
+  // Glasswrought: the desert fused into soldiers
+  shardling:NU('Shardlings','',1,['Glasswrought'],'Ravager',null,150),
+  glasssentinel:NU('Glass Sentinels','',2,['Glasswrought'],'Stalwart',null,170),
+  prismmage:NU('Prism-Mages','',2,['Glasswrought','Spellwrought'],'Magus',null,170),
+  mirrorknight:NU('Mirror-Knights','',3,['Glasswrought'],'Hexblade',null,190),
+  sandsculptor:NU('Sand-Sculptor','',3,['Glasswrought'],'Summoner','glass',60),
+  lenswarden:NU('Lens-Warden','',4,['Glasswrought','Imperial'],'Watchman',null,160),
+  glasscolossus:NU('Glass Colossus','',4,['Glasswrought'],'Stalwart',null,200),
+  // Jaguar: the clans who hunt from the canopy
+  jaguarcub:NU('Jaguar-Cubs','',1,['Jaguar'],'Stalker',null,150),
+  jaguarscout:NU('Jaguar Scouts','',1,['Jaguar'],'Ravager',null,150),
+  nightstalker:NU('Night-Stalkers','',2,['Jaguar','Venomblood'],'Stalker',null,160),
+  clawpriest:NU('Claw-Priests','',2,['Jaguar'],'Hexblade',null,170),
+  jaguarknight:NU('Jaguar Knights','',3,['Jaguar'],'Stalwart',null,190),
+  beastspeaker:NU('Beast-Speaker','',3,['Jaguar','Wildwood'],'Summoner','cubs',60),
+  blackjaguar:NU('Black Jaguar','',4,['Jaguar'],'Stalker',null,180),
+  ochre:NU('Ochre','the Night-Hunter',5,['Eclipse','Jaguar'],'Stalker',null,170),
+  // Feathered: priests who pay the sun
+  sunacolyte:NU('Sun-Acolytes','',1,['Feathered'],'Warden',null,170),
+  eaglewarrior:NU('Eagle Warriors','',2,['Feathered'],'Breaker',null,160),
+  sunsinger:NU('Sun-Singers','',2,['Feathered'],'Magus',null,170),
+  plumedguard:NU('Plumed Guard','',3,['Feathered','Jaguar'],'Aegis',null,170),
+  serpentdancer:NU('Serpent-Dancers','',3,['Feathered','Venomblood'],'Hexblade',null,180),
+  skypriest:NU('Sky-Priest','',3,['Feathered'],'Herald',null,170),
+  sunpriest:NU('High Sun-Priest','',4,['Feathered'],'Cultist',null,170),
+  eaglelord:NU('Eagle Lord','',4,['Feathered'],'Breaker',null,190),
+  huama:NU("Hu'ama",'the Sun-Speaker',5,['Sun Disc','Feathered'],'Magus',null,150),
+  // Venomblood: the cults of the god's fangs
+  dartfrog:NU('Dart-Frogs','',1,['Venomblood'],'Ravager',null,150),
+  blowgunner:NU('Blowgunners','',1,['Venomblood'],'Specter',null,160),
+  snakecharmer:NU('Snake-Charmer','',2,['Venomblood'],'Summoner','vipers',60),
+  spitter:NU('Spitting Cobras','',2,['Venomblood'],'Specter',null,160),
+  spiderpriest:NU('Spider-Priestesses','',2,['Venomblood','Hexen'],'Hexblade',null,170),
+  venombrewer:NU('Venom-Brewers','',3,['Venomblood'],'Alchemist',null,180),
+  viperguard:NU('Viper Guard','',3,['Venomblood'],'Breaker',null,180),
+  serpentmother:NU('Serpent-Mother','',4,['Venomblood','Abyssal'],'Magus',null,170),
+  // summoned allies and the two final foes
+  scarab:{...U('Gold Scarab','',1,[],'Ravager',300,34,1,1,25,10,999,null,0),token:true},
+  glassling:{...U('Glass Soldier','',1,[],'Stalwart',700,40,.6,1,35,35,999,null,0),token:true},
+  cub:{...U('Jaguar Cub','',1,[],'Stalker',340,44,1,1,10,10,999,null,0),token:true},
+  viper:{...U('Viper','',1,[],'Ravager',230,28,1.15,1,5,10,999,null,0),token:true},
+  glasspharaoh:{...U('The Glass Pharaoh','Final boss',5,['Embalmed','Glasswrought'],'Magus',2800,105,.7,3,40,45,80,null,260),token:true},
+  coiledgod:{...U('The Coiled God','Final boss',5,['Venomblood','Feathered'],'Ravager',3300,120,.75,1,45,40,85,null,280),token:true},
+});
 const ROSTER={
   0:['kael','soot','tamsin','mira','flint','dorn','magrook','pell','crowboy','wick','levyman','archerlass',
      'sigrun','daven','cairn','kindra','ossian','sorrel','halla','cinder','apprentice','gravedigger','esk','flailer','shepherd',
@@ -1451,6 +1522,16 @@ ROSTER[6]=['frostling','drumboy','pup','flint','dorn','mira','wisp','deckhand','
   'frostguard','snowhunter','stonegiant','sagasinger','antler','bearwife','brannoch','standard','wraithmere','ferryman','tidecaller',
   'glacierbreaker','lawspeaker','vosk','grimwall','gallow',
   'rimequeen','mountainking','stagking','mordrake','varr','banshee','brine'];
+ROSTER[7]=['wrapped','canopic','dunerunner','sandslinger','shardling','legionary','pike','roach','ratcatcher','runeguard','mira','pup','retiarius','murmillo',
+  'jackalguard','scarabcaller','outrider','miragedancer','glasssentinel','prismmage','arbalest','medica','signifer','librarian','daven','sigrun','wolfmother','boarman','secutor',
+  'linenwitch','embalmer','caravanguard','falconer','sandseer','mirrorknight','sandsculptor','centurion','tribune','locust','hivewife','magister','automaton','standard','briar','hunthound','bearwife','bestiarius',
+  'tombking','sphinx','sandkhan','lenswarden','glasscolossus','praetor','legate','waspqueen','livingtome','vosk','champion',
+  'nefre','rasul','marshal','emperor','swarmlord','archmage','varr'];
+ROSTER[8]=['jaguarcub','jaguarscout','sunacolyte','dartfrog','blowgunner','thren','briarling','sapling','herbwife','bogling','sporeling','bramble','novicecult','deepspawn','blackcat',
+  'nightstalker','clawpriest','eaglewarrior','sunsinger','snakecharmer','spitter','spiderpriest','thornback','thistle','barkhide','sow','mirelurker','eelcatcher','puffball','curser','eelwitch','reefpriest','toad',
+  'jaguarknight','beastspeaker','plumedguard','serpentdancer','skypriest','venombrewer','viperguard','drowner','mireboar','tender','moss','sporecaller','gulper','raven',
+  'blackjaguar','sunpriest','eaglelord','serpentmother','barkbishop','thornking','mirehag','mycelia','covenmother','fenhag','highpriestess','abysskin','owl',
+  'ochre','huama','palewarden','mildew','hornedone','sporegran'];
 ROSTER[4]=ROSTER[0].filter(k=>UNITS[k].o.some(o=>['Ashborn','Ironpact','Militia'].includes(o)));
 // cross-class units: a second class on some high-cost units bridges two class traits
 [['gallow','Breaker'],['captain','Herald'],['auren','Stalwart'],['varr','Specter'],['vulturequeen','Magus'],
@@ -1459,7 +1540,7 @@ ROSTER[4]=ROSTER[0].filter(k=>UNITS[k].o.some(o=>['Ashborn','Ironpact','Militia'
  ['mountainking','Breaker'],['rimequeen','Herald'],['sundered','Breaker'],['regent','Stalwart'],['marshal','Herald'],['inquisitor','Hexblade'],['queen','Herald'],['kingsblade','Stalker']].forEach(([k,c])=>UNITS[k].c2=c);
 // new units join their contracts (Boot Camp keeps its small roster)
 [["ropeboy",[0]],["kindler",[0]],["engineer",[0]],["ashknight",[0, 3]],["mortarman",[0]],["trebuchet",[0]],["sapqueen",[0]],["pyrelord",[0]],["graveknight",[0]],["quartermaster",[0, 5]],["stonecaller",[0, 6]],["crowlord",[0, 5]],["grisel",[0, 6]],["ashsaint",[0, 3]],["siegeking",[0]],["emberwyrm",[0, 3]],["bellringer",[1]],["eelrunner",[1]],["candlewick",[1]],["drownedpage",[1, 5]],["chimewisp",[1]],["docksider",[1]],["bellwarden",[1]],["deepbell",[1]],["wraithlord",[1]],["abysskin",[1]],["contrabander",[1]],["tomekeeper",[1, 5]],["hollowlord",[1, 5]],["tidebride",[1, 6]],["morrow",[1]],["elspeth",[1]],["greatbell",[1]],["saltking",[1]],["hollowqueen",[1]],["leechling",[2]],["herbwife",[2]],["ratcatcher",[2]],["bogleech",[2]],["pestilent",[2]],["leechwitch",[2]],["mireboar",[2]],["sporecaller",[2]],["blightknight",[2]],["hunthound",[2, 6]],["leechlord",[2]],["plaguedoctor",[2]],["fenhag",[2]],["waspqueen",[2]],["vulturelord",[2]],["sporegran",[2]],["wolfking",[2, 6]],["panacea",[2]],["plaguewyrm",[2]],["retiarius",[3]],["murmillo",[3]],["pagelet",[3]],["velite",[3]],["cinderboy",[3]],["altarboy",[3]],["secutor",[3]],["perfumer",[3]],["tribune",[3]],["chamberlain",[3]],["bestiarius",[3]],["forgepriest",[3]],["nightwarden",[3]],["champion",[3]],["spymaster",[3]],["legate",[3]],["cinderabbess",[3, 5]],["ironmaiden",[3]],["bloodcount",[3, 1]],["emperor",[3]],["phoenix",[3]],["queenmother",[3]],["colossus",[3]],["blackcat",[5]],["novicecult",[5]],["toad",[5]],["zealot",[5]],["hedgewitch",[5]],["raven",[5]],["lampwarden",[5]],["spellthief",[5]],["highpriestess",[5]],["ashbishop",[5]],["witchknight",[5]],["owl",[5]],["crowfather",[5]],["hollowseer",[5]],["malleus",[5]],["blackgoat",[5]],["prophet",[5]],["archlibrarian",[5]],["mayor",[5, 0]],["runeboy",[6]],["shieldmaid",[6]],["snowfox",[6]],["drownedthrall",[6]],["sagaboy",[6]],["icegrub",[6]],["runesmith",[6]],["ulfhednar",[6]],["frostcaller",[6]],["runequeen",[6]],["bjorn",[6]],["yeti",[6]],["trollmother",[6]],["volva",[6]],["barrowking",[6]],["icebear",[6]],["stonewarden",[6]],["runeghost",[6]],["hrothgar",[6]],["frostwyrm",[6]],["wanderer",[6]]].forEach(([k,rs])=>rs.forEach(r=>ROSTER[r].push(k)));
-RUNS.forEach(r=>{const NEWO=["Siegeworks", "Bellfolk", "Leechfolk", "Gladiator", "Familiar", "Runecarver", "Warlord", "Martyr", "Ghost Ship", "Last Light", "Bloom-Mother", "Apex", "Ascendant", "Rebirth", "Hammer", "Sabbath", "Jarl", "Wyrm"];ROSTER[r.id].forEach(k=>UNITS[k].o.forEach(o=>{if(NEWO.includes(o)&&!r.origins.includes(o))r.origins.push(o)}))});
+RUNS.forEach(r=>{const NEWO=["Siegeworks", "Bellfolk", "Leechfolk", "Gladiator", "Familiar", "Runecarver", "Warlord", "Martyr", "Ghost Ship", "Last Light", "Bloom-Mother", "Apex", "Ascendant", "Rebirth", "Hammer", "Sabbath", "Jarl", "Wyrm", "Dynasty", "Caravan", "Eclipse", "Sun Disc"];ROSTER[r.id].forEach(k=>UNITS[k].o.forEach(o=>{if(NEWO.includes(o)&&!r.origins.includes(o))r.origins.push(o)}))});
 [['mantlet',[0]],['coffin',[0,2,5]],['tombdoor',[0,1]],['barrowshield',[1,6]],['householdguard',[3]],['reliquary',[1,5]],['rimeshield',[6]],['shrinebearer',[3,5]],['barkhide',[2]],['shieldwall',[6]],['aldric',[0,3,5,6]]]
   .forEach(([k,rs])=>rs.forEach(i=>{if(!ROSTER[i].includes(k))ROSTER[i].push(k)}));
 RUNS.forEach(r=>{r.roster=ROSTER[r.id];if(!r.classes)r.classes=[...new Set(r.roster.flatMap(k=>[UNITS[k].c,UNITS[k].c2].filter(Boolean)))]});
@@ -1586,6 +1667,11 @@ const SUMMON_TOK=Object.fromEntries(Object.entries(SUM).map(([k,v])=>[k,v.tok]))
 ].forEach(([k,b,n,d])=>{ALIAS[k]=b;ABIL[k]=[n,d||ABIL[b][1]]});
 [['raise','Raise the Drowned'],['shades','Call Shades'],['pages','Loose Pages'],['rats','Rat Tide'],['puff','Puffling Brood'],['crows','Black Wings'],['thorns','Thornbirth'],['ink','Inkspill'],['bells','Toll the Drowned'],['echoes','Call Echoes'],['briars','Bramble-Birth']].forEach(([k,n])=>{ALIAS[k]='summon';
   ABIL[k]=[n,p=>sumText(k,p)]});
+Object.assign(SUM,{scarabs:{tok:'scarab',n:[2,2,3],cap:[2,2,3],dur:7,role:'Golden scarabs whose bites strip 6 armour'},
+  glass:{tok:'glassling',n:[1,2,2],cap:[1,2,2],dur:8,role:'Soldiers of fused sand that hold the line, shrug off spells and shatter when they fall'},
+  cubs:{tok:'cub',n:[2,2,3],cap:[2,2,3],dur:6,leap:true,role:'Jaguar cubs that pounce on the enemy back line'},
+  vipers:{tok:'viper',n:[2,2,3],cap:[2,2,3],dur:6,role:'Vipers whose every bite carries Venom'}});
+[['scarabs','Scarab Tide'],['glass','Sculpt the Sand'],['cubs','Call the Cubs'],['vipers','Charm the Vipers']].forEach(([k,n])=>{ALIAS[k]='summon';ABIL[k]=[n,p=>sumText(k,p)];SUMMON_TOK[k]=SUM[k].tok});
 const abBase=ab=>ALIAS[ab]||ab;
 
 const TRAITS={
@@ -1647,6 +1733,8 @@ const RELICS=[
   {id:'bloodmoon',cat:'trait',name:'Blood Moon',need:['Duskbound'],desc:'It is always night for your Duskbound, and they heal 10% more from their lifesteal.'},
   {id:'verdantseed',cat:'trait',name:'Wildwood Seed',need:['Wildwood'],desc:'Your units regenerate 2% HP every second, and Thornlings last 8 seconds longer.'},
   {id:'pestmask',cat:'trait',name:'Beaked Mask',need:['Plagueborn'],desc:'Rot you apply deals double damage.'},
+  {id:'canopic',cat:'trait',name:'Canopic Jar',need:['Embalmed'],desc:'Embalmed linen wards are 10% of max HP thicker and rewrap after 2s instead of 4.'},
+  {id:'jadefang',cat:'trait',name:'Jade Fang',need:['Venomblood'],desc:'Your Venom paralyses at 4 stacks instead of 6.'},
   {id:'relickey',cat:'arms',name:'Reliquary Key',desc:'Gain a random artifact now.'},
   {id:'smugglermap',cat:'arms',name:"Smuggler's Chart",desc:'Every merchant offers two artifacts, and artifacts cost 30% less.'},
   {id:'tinkerbag',cat:'arms',name:"Tinker's Satchel",desc:'Gain three random item components now, and another after every boss you break.'},
@@ -1687,6 +1775,16 @@ const REGIONS={
   yard:{pal:'hollows',name:'The Proving Yard',fav:[],flavor:'Sand, straw targets and one very large veteran.',style:'A final test',final:true},
   pyre:{name:"The Ashwalker's Road",fav:[],flavor:'The burned heart of the march. Everything left is waiting here.',style:'Every origin, at full strength',final:true},
 };
+Object.assign(REGIONS,{
+  dunes:{pal:'dunes',name:'The Dune Sea',fav:['Nomad','Beastkin','Ironpact'],flavor:'Sand fused to glass by a fallen sun, and riders who cross it by the stars.',style:'Raiders, hawks and blades out of the haze',bosses:[{key:'sandkhan',name:'The Sand-Khan'},{key:'falconer',name:'The Falconer of the Wastes'}]},
+  necropolis:{pal:'necro',name:'The City of Tombs',fav:['Embalmed','Swarm','Spellwrought'],flavor:'A city built for the dead, and the dead still keep it.',style:'Wrapped dead, scarab swarms and tomb-magic',bosses:[{key:'tombking',name:'The Tomb-King'},{key:'sphinx',name:'The Riddling Sphinx'}]},
+  glassfields:{pal:'glass',name:'The Shattered Fields',fav:['Glasswrought','Imperial','Gladiator'],flavor:'Where a lost legion marched, the sand stood up as glass to meet it.',style:'Glass soldiers and the last of a legion',bosses:[{key:'glasscolossus',name:'The Glass Colossus'},{key:'lenswarden',name:'The Lens-Warden'}]},
+  sunpyramid:{name:'The Sun Pyramid',fav:[],flavor:'The Pharaoh sleeps in a tomb of glass at the heart of the sea.',style:'Every origin, at full strength',final:true,pal:'pyramid'},
+  canopy:{pal:'canopy',name:'The Endless Canopy',fav:['Jaguar','Wildwood','Familiar'],flavor:'A roof of leaves a hundred feet up, and eyes in every branch.',style:'Jaguar clans, beasts and briars',bosses:[{key:'blackjaguar',name:'The Black Jaguar'},{key:'beastspeaker',name:'The Beast-Speaker'}]},
+  river:{pal:'river',name:'The Serpent River',fav:['Venomblood','Mirefolk','Abyssal'],flavor:'Brown water, slow and warm, and something long moving under it.',style:'Venom, bog-folk and things from the deep',bosses:[{key:'serpentmother',name:'The Serpent-Mother'},{key:'viperguard',name:'Captain of the Viper Guard'}]},
+  temples:{pal:'temple',name:'The Stepped Temples',fav:['Feathered','Hexen','Fungal'],flavor:'Stairs to the sun, slick with offerings.',style:'Sun-priests, witches and spores',bosses:[{key:'sunpriest',name:'The High Sun-Priest'},{key:'eaglelord',name:'The Eagle Lord'}]},
+  altar:{name:'The Coiled Altar',fav:[],flavor:'At the top of the highest temple, the god uncoils.',style:'Every origin, at full strength',final:true,pal:'altar'},
+});
 const NODE_NAME={start:'Muster',battle:'Battle',elite:'Elite',shop:'Merchant',event:'Crisis',camp:'Encampment',forge:'Smithy',boss:'Mini boss',final:'Final boss'};
 const NODE_COL={start:'#c9a25a',battle:'#c9b8a0',elite:'#d4645a',shop:'#c9a25a',event:'#9a8ac0',camp:'#7dbb7a',forge:'#e0a060',boss:'#ff8a3a',final:'#ff6a2a'};
 const TICON={
@@ -1759,6 +1857,31 @@ Object.assign(TICON,{
   Frostborn:'<path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M12 2v20M3.3 7l17.4 10M3.3 17 20.7 7M9 3.5l3 3 3-3M9 20.5l3-3 3 3M2.8 10.6l4.1 1.1-1.1 4.1M21.2 13.4l-4.1-1.1 1.1-4.1"/>',
   Giantkin:'<path d="M8 21c-3 0-4.5-2-4.5-5 0-4 2-6 2.5-10 .3-2.2 2-3.5 4-3.5s3.2 1.6 3.5 3.5c.6 4 3 5.5 3 10 0 3-1.8 5-4.5 5z"/><circle cx="17.5" cy="5" r="1.8"/><circle cx="20" cy="8.5" r="1.6"/><circle cx="20.8" cy="12.6" r="1.4"/>',
   Skald:'<path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" d="M6 21V7c0-3 2.5-5 6-5s6 2 6 5v14z"/><path fill="none" stroke="currentColor" stroke-width="1.2" d="M9 7v13M12 5v15M15 7v13"/>',
+});
+// ===== VII and VIII: the wrapped dead, the dune riders and the glass; the jaguar clans, the sun-priests and the venom cults =====
+Object.assign(TRAITS,{
+  Embalmed:{kind:'origin',col:'#e0c060',th:[2,4,6],lore:'The sun-kings were wrapped for eternity, and eternity has not ended.',t:['Embalmed wear a linen ward of 15% of their max HP that soaks up damage and rewraps itself after 4s without being hit','The ward is 25% of max HP, and whoever tears it away deals 20% less damage for 4s','The ward is 40% of max HP, and whatever kills an Embalmed withers for 6% of its own max HP a second for 4s']},
+  Nomad:{kind:'origin',col:'#e8905a',th:[2,4,6],lore:'They cross the glass sea by the stars, and you never see them coming.',t:['Nomads start every battle hidden in the heat-haze for 2s, where nothing can harm them. Their first attack out of the haze deals 50% more damage','Nomads dodge 20% of attacks, and slip back into the haze for 1.5s every 7s','Attacks from the haze deal double damage and leave the target bleeding for 30% of the blow']},
+  Glasswrought:{kind:'origin',col:'#9ae8e8',th:[2,3,4],lore:'The fallen sun fused the desert, and the desert stood up.',t:['Glasswrought take 25% less magic damage. When one falls it shatters, dealing 15% of its max HP to the enemies beside it','35% less magic damage; the shards fly 2 hexes for 25% of its max HP','50% less magic damage; the shards deal 35% of its max HP and blind for 2s']},
+  Jaguar:{kind:'origin',col:'#f0a030',th:[2,4,6],lore:'The clans hunt from the canopy. They only come down for the kill.',t:['Jaguars deal 20% more damage to enemies below half health, and after every kill they pounce on the weakest enemy within 4 hexes','40% more damage to the wounded, and the pounce strikes as it lands','70% more damage to the wounded, and nothing can touch a Jaguar for 1s after it pounces']},
+  Feathered:{kind:'origin',col:'#4ad8a8',th:[2,3,4,5],lore:'Every song is a payment. The sun keeps count.',t:['Every spell a Feathered casts pays the sun a Tribute. At 4 Tributes the sun rises: every ally heals 8% of its max HP and your Feathered attack 20% faster for 5s','Allies heal 12%, and Feathered attack 30% faster','Allies heal 16%, Feathered attack 40% faster, and the sunrise scorches every enemy for 6% of its max HP','The sun rises every 3 Tributes: allies heal 20%, Feathered attack 50% faster, and every enemy is scorched for 10%']},
+  Venomblood:{kind:'origin',col:'#a8e040',th:[2,3,4],lore:"The god's fangs are many, and every one of them is wet.",t:['Venomblood attacks and spells add Venom: each stack makes its target attack 4% slower. At 6 stacks the venom paralyses it for 1s','6% slower per stack; paralysis lasts 1.5s',"8% slower per stack; paralysis lasts 2s and bursts for 10% of the target's max HP"]},
+  Dynasty:{kind:'origin',col:'#80d8ff',th:[1],lore:'Queen of the Undying Court. Her servants do not get to rest.',t:['Three times a battle, an Embalmed ally that falls while Queen Nefre lives rises again at 40% HP']},
+  Caravan:{kind:'origin',col:'#e8c080',th:[1],lore:'A thousand tents, and every one of them pays tribute.',t:['After every battle Rasul fights, you earn 5 gold for each enemy he killed (up to 50)']},
+  Eclipse:{kind:'origin',col:'#b890ff',th:[1],lore:'When she hunts, the moon covers its face.',t:['Whenever Ochre makes a kill, your Jaguars and Stalkers attack 40% faster and deal 20% more damage for 3s']},
+  'Sun Disc':{kind:'origin',col:'#ffd040',th:[1],lore:'She speaks, and the sun answers.',t:["Hu'ama's spells pay the sun two Tributes, and every sunrise blinds all enemies for 2s"]},
+});
+Object.assign(TICON,{
+  Embalmed:'<path d="M7.5 4.5C8 2.8 9.8 2 12 2s4 .8 4.5 2.5L17 9l-.8 12H7.8L7 9z" fill-opacity=".4"/><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" d="M7.2 6.6l9.6 1.8M7 10.6l10-2.4M7.4 14.2l9.4 1.6M7.6 18.2l8.8-2"/><circle cx="10" cy="6" r="1.1"/><circle cx="14.2" cy="6.6" r="1.1"/>',
+  Nomad:'<path d="M1.5 21c3-4.4 6.4-6.6 10.5-6.6S19.5 16.6 22.5 21z"/><path d="M15.4 2.6a6 6 0 1 0 5.2 9 4.8 4.8 0 0 1-5.2-9z"/>',
+  Glasswrought:'<path d="M12 2l6.5 7.5L12 22 5.5 9.5z" fill-opacity=".45"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M12 2l6.5 7.5L12 22 5.5 9.5zM5.5 9.5h13M12 2v20M9 9.5 12 22l3-12.5"/>',
+  Jaguar:'<ellipse cx="12" cy="16" rx="5.2" ry="4.6"/><ellipse cx="5.4" cy="10" rx="2.1" ry="2.7"/><ellipse cx="9.6" cy="6" rx="2.1" ry="2.7"/><ellipse cx="14.4" cy="6" rx="2.1" ry="2.7"/><ellipse cx="18.6" cy="10" rx="2.1" ry="2.7"/>',
+  Feathered:'<path d="M12 21.5c-1.2-5.5-1.2-12 0-19.5 1.2 7.5 1.2 14 0 19.5z"/><path d="M11 20.5C6.6 16.6 4.4 11.4 4.4 4.6c3.4 4.4 5.6 9.6 6.6 15.9z" fill-opacity=".7"/><path d="M13 20.5c4.4-3.9 6.6-9.1 6.6-15.9-3.4 4.4-5.6 9.6-6.6 15.9z" fill-opacity=".7"/>',
+  Venomblood:'<path d="M5.5 2.5h13l-2.4 3.6L12 15.4 7.9 6.1z"/><path d="M12 15.2c-1.7 2.3-2.5 3.7-2.5 4.8a2.5 2.5 0 0 0 5 0c0-1.1-.8-2.5-2.5-4.8z"/>',
+  Dynasty:'<path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" d="M12 11.2C8.8 8.6 8.4 2.6 12 2.6s3.2 6 0 8.6zM12 11.2V22M6.2 12.8h11.6"/>',
+  Caravan:'<path d="M1.5 20.5 12 3.5l10.5 17z" fill-opacity=".85"/><path d="M12 11.5l-3.4 9h6.8z" fill-opacity=".35"/><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3.5V1"/>',
+  Eclipse:'<circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-dasharray="2.2 2"/><circle cx="12" cy="12" r="6.8"/><circle cx="14.4" cy="10.4" r="5.6" fill-opacity=".35"/>',
+  'Sun Disc':'<circle cx="12" cy="12" r="5.2"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 1.8v3M12 19.2v3M1.8 12h3M19.2 12h3M4.8 4.8l2.1 2.1M17.1 17.1l2.1 2.1M4.8 19.2l2.1-2.1M17.1 6.9l2.1-2.1"/>',
 });
 // ===== New traits for the 65-unit contracts: small origins and classes with low breakpoints, and one-unit legends =====
 Object.assign(TRAITS,{
@@ -2018,6 +2141,10 @@ Object.assign(ICONS,{
   eye:g=>{g.poly('#2a2a3a',[[2,12],[7,6],[17,6],[22,12],[17,18],[7,18]]);g.poly('#e8ecf4',[[4,12],[8,7.6],[16,7.6],[20,12],[16,16.4],[8,16.4]]);g.circ(12,12,4.2,'#8ab0e0');g.circ(12,12,2.2,'#101018');g.circ(13.2,10.8,1,'#ffffff');g.bar(12,1,12,4,1,'#d8e8ff');g.bar(12,20,12,23,1,'#d8e8ff');g.bar(3,4,5,6,1,'#d8e8ff');g.bar(21,4,19,6,1,'#d8e8ff')},
 });
 const ICON_CACHE={};
+Object.assign(ICONS,{
+  r_canopic:g=>{g.poly('#c8b080',[[7,10],[17,10],[18.4,15],[15.6,21.4],[8.4,21.4],[5.6,15]]);g.rect(6.4,13,11.2,1.4,'#2a5aa0');g.rect(6.8,16.6,10.4,1.4,'#2a5aa0');g.rect(7.4,8.8,9.2,1.6,'#e0c060');
+    g.poly('#1e1a20',[[8,9],[16,9],[16.4,6],[14,4.6],[10,4.6],[7.6,6]]);g.poly('#1e1a20',[[8.6,6],[9.4,1.4],[11,5]]);g.poly('#1e1a20',[[13,5],[14.6,1.4],[15.4,6]]);g.px(13.4,6.6,'#e0c060',1.2);g.poly('#1e1a20',[[16,6.4],[19,7.6],[16,8.4]])},
+  r_jadefang:g=>{g.poly('#2a7a4a',[[7,3],[17,3],[15,9],[12,20],[9,9]]);g.poly('#5ac080',[[8.6,4],[12,4],[11.2,13]]);g.rect(6,2,12,2,'#c8b080');g.circ(12,21,1.8,'#c8f060');g.px(10,6,'#e8fff0',1.2)}});
 function iconArt(id){
   if(ICON_CACHE[id])return ICON_CACHE[id];
   const N=26,cv=document.createElement('canvas');cv.width=cv.height=N;
@@ -2027,6 +2154,7 @@ function iconArt(id){
   return ICON_CACHE[id]={cv,url:cv.toDataURL()};
 }
 const RCOL={graverobber:'#c8a04a',debt:'#c82a2a',pilgrim:'#a8804a',patron:'#b07ad0',laststand:'#c8282a',standard:'#5a8ac8',drill:'#c89a5a',relickey:'#c8a040',smugglermap:'#c8b080',tinkerbag:'#8a6a3a',anvil:'#8a8a92',gallows:'#c8a04a',tinder:'#ff7a32',armory:'#c8d2de',ledger:'#e0b84a',badge:'#c8a04a',fragment:'#ff8a3a',crown:'#ff6a2a',ironwill:'#a8b0bc',hollowcore:'#7fe8ff',chalice:'#c8282a',vow:'#8e9a7a',whetstone:'#c8d2de',surgeon:'#c8282a',plaguevial:'#8ac83a',wraithcloak:'#a8b8ff',verdantseed:'#6ad84a',seal:'#c83a2a',warhorn:'#e8dcc0',writ:'#c8282a',tithe:'#e0b84a',usury:'#e0b84a',emberheart:'#ff8a3a',oathring:'#a8b0bc',geode:'#5fe8cc',banner:'#f0d47a',scarf:'#8e9a7a',chorus:'#7fe8ff',gravebell:'#a8b8ff',bloodmoon:'#ff4a64',pestmask:'#c0e84a',whistle:'#c8a04a'};
+Object.assign(RCOL,{canopic:'#e0c060',jadefang:'#4ab070'});
 function relicIcon(id,cls=''){return `<span class="itm full relic ${cls}" style="--a:${RCOL[id]||'#c9a25a'}"><img draggable="false" src="${iconArt('r_'+id).url}" alt=""></span>`}
 function itemIcon(id,cls=''){return `<span class="itm ${isComp(id)?'comp':isArt(id)?'full art':'full'} ${cls}" style="--a:${itemCol(id)}"><img draggable="false" src="${iconArt(id).url}" alt=""></span>`}
 const STAR=[1,1.8,3.6],SPELL=[1,1.7,3.3];
@@ -2097,6 +2225,8 @@ function actx(){SFX.lastUse=performance.now();if(!SFX.ctx){try{SFX.ctx=new(windo
 const MUS={nodes:null,timer:0,mood:'ashen',combat:false,beat:0};
 const MOODS={tundra:{root:46.2,scale:[0,2,3,5,7,8,10]},fjord:{root:41.2,scale:[0,1,3,5,7,8,10]},winterhall:{root:49,scale:[0,2,3,5,7,8,11]},ashen:{root:55,scale:[0,1,3,5,7,8,10]},pact:{root:49,scale:[0,2,3,5,7,8,10]},hollows:{root:41.2,scale:[0,2,3,5,7,8,11]},spires:{root:73.4,scale:[0,2,3,6,7,9,10]},drowned:{root:61.7,scale:[0,1,3,5,7,8,10]},
   festering:{root:46.2,scale:[0,1,4,5,7,8,10]},maw:{root:51.9,scale:[0,2,3,5,7,9,10]},cinder:{root:58.3,scale:[0,1,3,5,6,8,10]},spire:{root:65.4,scale:[0,1,3,5,7,8,11]},rotthrone:{root:43.7,scale:[0,1,4,5,7,8,10]},throne:{root:55,scale:[0,1,3,5,6,8,11]}};
+Object.assign(MOODS,{dunes:{root:55,scale:[0,1,4,5,7,8,11]},necro:{root:49,scale:[0,1,4,5,7,8,10]},glass:{root:61.7,scale:[0,1,4,5,7,8,11]},pyramid:{root:46.2,scale:[0,1,4,5,7,8,11]},
+  canopy:{root:51.9,scale:[0,2,3,5,7,9,10]},river:{root:43.7,scale:[0,2,3,5,7,8,10]},temple:{root:58.3,scale:[0,2,4,5,7,9,10]},altar:{root:41.2,scale:[0,1,3,5,7,8,10]}});
 function musicStart(){
   if(!SET.music||MUS.nodes)return;const a=actx();if(!a)return;
   const master=a.createGain();master.gain.value=0;master.connect(a.destination);master.gain.linearRampToValueAtTime(.06*SET.vol,a.currentTime+4);
@@ -2931,6 +3061,66 @@ Object.assign(LOOK2,{
   revenant:{helm:'beast',head:'skull',skin:'#3b2b25',glow:'#ff8a3a',top:'leather',leather:'#3e3430',wpn:'sword',sz:.88},
   levy:{skin:'#c89a78',helm:'kettle',metal:'#7a7470',top:'tunic',body:'#8a7a58',legs:'#5a4a34',wpn:'pitchfork',bulk:.9,sz:.86},
 });
+// ===== VII: the Glass Sea. Embalmed: linen, gold and lapis; Nomad: indigo, sand and terracotta; Glasswrought: sea-glass with a sun-amber core =====
+Object.assign(LOOK2,{
+  wrapped:{skin:'#c8bc9a',helm:'wrapped',wraps:'#d6caa8',glow:'#5ae8d0',top:'bare',wrapBody:'#d6caa8',wrapLoose:true,kilt:'#6a5a40',legwear:'wraps',legs:'#c8bc9a',barefoot:true,wpn:'khopesh',bladeCol:'#b8965a',bulk:.92,sz:.92},
+  canopic:{skin:'#8a6448',face:'old',helm:'nemes',nemesCol:'#ece4d2',nemesStripe:'#3a6a9a',nemesBand:'#e0c060',top:'robe',body:'#ece4d2',trim:'#e0c060',beads:true,beadMark:'#3ab0a0',wpn:'staff',staffTop:'ankh',staffMetal:'#e0c060',off:'vial',vial:'#5ae8d0',sz:.94},
+  jackalguard:{helm:'beast',head:'wolf',skin:'#1e1a22',glow:'#e0c060',top:'leather',leather:'#2e2a26',body:'#2e2a26',legwear:'kilt',kiltCol:'#ece4d2',kiltTrim:'#e0c060',pauldron:true,pauldronCol:'#e0c060',bracer:'#e0c060',wpn:'khopesh',bladeCol:'#d8b060',shield:'tower',shieldCol:'#2a3a6a',shieldMark:'eye',shieldMarkCol:'#e0c060',rimCol:'#e0c060',bulk:1.1,sz:1},
+  scarabcaller:{skin:'#8a6448',face:'young',helm:'bare',hair:'bald',top:'robe',body:'#ece4d2',trim:'#e0c060',mantle:'#2a5aa0',mantleTrim:'#e0c060',beads:true,beadMark:'#3ab0a0',wpn:'scepter',staffMetal:'#e0c060',orb:'#e0c060',orbit:true,orbitCol:'#c8a030',sz:.96},
+  linenwitch:{skin:'#c8bc9a',face:'f',helm:'veil',cloth:'#d6caa8',faceVeil:'#c8bc9a',veilBand:'#3ab0a0',glow:'#5ae8d0',top:'dress',body:'#d6caa8',skirt:'#b8ac8e',wrapBody:'#ece0c4',trim:'#3ab0a0',wpn:'staff',staffTop:'orb',staffMetal:'#e0c060',orb:'#5ae8d0',sz:.95},
+  embalmer:{skin:'#9a7050',face:'old',helm:'hood',hood:'#1e1a22',top:'robe',body:'#2a2228',trim:'#e0c060',apron:'#c8bc9a',wpn:'staff',staffTop:'hook',staffMetal:'#c8c0a8',off:'vial',vial:'#e0c060',sz:.98},
+  tombking:{skin:'#b8a888',face:'old',helm:'nemes',nemesCol:'#e0c060',nemesStripe:'#2a5aa0',uraeus:'#5ae8d0',glow:'#5ae8d0',wrapBody:'#d6caa8',top:'robe',body:'#ece4d2',trim:'#e0c060',mantle:'#2a5aa0',mantleTrim:'#e0c060',cloak:'#2a5aa0',capeTrim:'#e0c060',wpn:'scepter',staffMetal:'#e0c060',orb:'#5ae8d0',bulk:1.08,sz:1.06},
+  nefre:{skin:'#c8b8a0',face:'f',helm:'nemes',nemesCol:'#2a5aa0',nemesStripe:'#e0c060',nemesBand:'#e0c060',uraeus:'#ff7a3a',glow:'#80d8ff',top:'dress',body:'#ece4d2',skirt:'#d6caa8',trim:'#e0c060',mantle:'#e0c060',mantleTrim:'#80d8ff',wings:'#3ab0a0',wpn:'staff',staffTop:'ankh',staffMetal:'#e0c060',orb:'#80d8ff',aura:'#80d8ff',archOf:'Embalmed',sz:1.1},
+  sphinx:{form:'quad',sp:'sphinx',body:'#c8a868',skin:'#e0c890',faceCol:'#c8a070',nemesCol:'#e0c060',nemesStripe:'#2a5aa0',glow:'#9ae8e8',metal:'#e0c060',sz:1.45},
+  dunerunner:{skin:'#a8784e',face:'young',helm:'turban',turbanCol:'#2a3a6a',mouthVeil:'#2a3a6a',top:'tunic',body:'#d8b878',legs:'#8a6a40',sash:'#a8502a',wpn:'knives',bladeCol:'#d0d6de',barefoot:true,bulk:.86,sz:.88},
+  sandslinger:{skin:'#9a6a44',helm:'turban',turbanCol:'#ece4d2',top:'tunic',body:'#a8502a',legs:'#5a4430',bandolier:'#6a4a2a',bandoCol:'#c8a878',wpn:'sling',sz:.9},
+  outrider:{skin:'#a8784e',beard:'full',beardCol:'#1a1210',helm:'turban',turbanCol:'#a8502a',turbanGem:'#3ab0e0',top:'coat',body:'#2a3a6a',trim:'#d8b878',cloak:'#d8b878',legs:'#4a3a2a',boots:'#3a2a1a',wpn:'scimitar',sz:.98},
+  miragedancer:{skin:'#b88a5e',face:'f',helm:'veil',cloth:'#e8c0a0',faceVeil:'#e8c0a0',veilBand:'#3ab0e0',top:'dress',body:'#3ab0b0',skirt:'#e8a050',sash:'#e8c040',trim:'#ffd070',wpn:'scimitar',bladeCol:'#ece8f4',wisp:'#ffe0b0',sz:.94},
+  caravanguard:{skin:'#9a6a44',beard:'full',beardCol:'#2a1a10',helm:'turban',turbanCol:'#ece4d2',top:'mail',metal:'#a8a090',body:'#a8502a',tabard:'#2a3a6a',tabardTrim:'#d8b878',mark:'moon',markCol:'#d8b878',wpn:'scimitar',shield:'round',shieldCol:'#2a3a6a',shieldMark:'moon',shieldMarkCol:'#e0c060',rimCol:BRASS,bulk:1.15,sz:1},
+  falconer:{skin:'#a8784e',face:'old',beard:'long',beardCol:'#ece4d2',helm:'turban',turbanCol:'#2a3a6a',top:'coat',body:'#d8b878',trim:'#a8502a',glove:'#6a4a2a',wpn:'bow',bowCol:'#5a3a20',quiver:true,fletch:'#a8502a',perch:true,sz:1},
+  sandseer:{skin:'#8a5a3a',face:'old',helm:'hood',hood:'#d8b878',top:'robe',body:'#a8502a',trim:'#e0c060',beads:true,beadMark:'#3ab0e0',wpn:'staff',staffTop:'orb',orb:'#ffd070',staffMetal:BRASS,sz:.96},
+  sandkhan:{skin:'#a8784e',face:'old',beard:'braided',beardCol:'#1a1210',helm:'turban',turbanCol:'#ece4d2',turbanGem:'#ff4a3a',top:'coat',body:'#7a1a1a',trim:GOLD,cloak:'#2a3a6a',capeTrim:GOLD,sash:GOLD,banner:'#2a3a6a',bannerMark:'moon',wpn:'scimitar',bladeCol:'#f0e8c8',bulk:1.1,sz:1.08},
+  rasul:{skin:'#9a6a44',face:'brute',beard:'full',beardCol:'#2a1a10',scar:true,helm:'turban',turbanCol:'#1a1a2a',mouthVeil:'#1a1a2a',turbanGem:'#e0c060',top:'mail',metal:'#8a8478',body:'#2a3a6a',cloak:'#a8502a',capeTrim:GOLD,sash:'#e0c060',pauldron:true,pauldronCol:GOLD,wpn:'scimitar',bladeCol:'#ece4d2',bladeGlow:'#ffd070',aura:'#e8a050',archOf:'Nomad',bulk:1.15,sz:1.12},
+  shardling:{skin:'#8ad8d8',helm:'beast',head:'stone',glow:'#ffb040',cracks:'#e8ffff',glowCracks:true,crystals:'#bff4f4',top:'bare',kilt:'#3a8a8a',legwear:'wraps',legs:'#6ab8b8',barefoot:true,wpn:'knives',bladeCol:'#e8ffff',bulk:.82,sz:.86},
+  glasssentinel:{helm:'great',helmCol:'#9ae8e8',glow:'#ffb040',top:'plate',metal:'#9ae8e8',body:'#3a8a8a',crystals:'#d8fff8',wpn:'spear',bladeCol:'#e8ffff',shield:'tower',shieldCol:'#7ad0d0',shieldMark:'sun',shieldMarkCol:'#ffb040',rimCol:'#d8fff8',bulk:1.15,sz:1},
+  prismmage:{skin:'#a8e0e0',helm:'cowl',hood:'#3a8a8a',glow:'#ffb040',top:'robe',body:'#2a6a6a',trim:'#e8ffff',crystals:'#d8fff8',wpn:'staff',staffTop:'crystal',orb:'#e8ffff',staffMetal:'#9ae8e8',sz:.95},
+  mirrorknight:{helm:'barbute',helmCol:'#c8f4f4',glow:'#ffb040',top:'plate',metal:'#c8f4f4',body:'#2a5a6a',cloak:'#3a8a8a',wpn:'sword',bladeCol:'#e8ffff',bladeGlow:'#9ae8e8',shield:'heater',shieldCol:'#d8fff8',shieldMark:'eye',shieldMarkCol:'#3a8a8a',rimCol:'#9ae8e8',sz:1},
+  sandsculptor:{skin:'#a8784e',face:'old',beard:'long',beardCol:'#d8b878',helm:'turban',turbanCol:'#d8b878',top:'robe',body:'#6a5a40',apron:'#3a8a8a',trim:'#9ae8e8',wpn:'staff',staffTop:'crystal',orb:'#9ae8e8',off:'orb',sz:.98},
+  lenswarden:{helm:'great',helmCol:'#d8b060',glow:'#ffe080',top:'plate',metal:'#d8b060',body:'#8a1a1a',legwear:'kilt',kiltCol:'#8a1a1a',crystals:'#bff4f4',wpn:'staff',staffTop:'lens',staffMetal:'#d8b060',orb:'#ffe8a0',bulk:1.1,sz:1.04},
+  glasscolossus:{skin:'#7ac8c8',helm:'beast',head:'stone',cracks:'#ffb040',glowCracks:true,crystals:'#d8fff8',top:'bare',kilt:'#3a8a8a',legwear:'wraps',legs:'#6ab8b8',barefoot:true,wpn:'maul',headCol:'#9ae8e8',bulk:1.5,sz:1.18},
+  scarab:{form:'bug',sp:'roach',body:'#c8a030',skin:'#e8c040',glow:'#5ae8d0',sz:.9,archOf:'Embalmed'},
+  glassling:{skin:'#8ad8d8',helm:'great',helmCol:'#9ae8e8',glow:'#ffb040',top:'plate',metal:'#9ae8e8',body:'#3a8a8a',wpn:'sword',bladeCol:'#e8ffff',shield:'round',shieldCol:'#7ad0d0',sz:.84,archOf:'Glasswrought'},
+  glasspharaoh:{skin:'#b8a888',face:'old',helm:'nemes',nemesCol:'#9ae8e8',nemesStripe:'#e0c060',nemesBand:'#e0c060',uraeus:'#ffb040',glow:'#5ae8d0',wrapBody:'#d6caa8',top:'robe',body:'#ece4d2',trim:'#e0c060',mantle:'#9ae8e8',mantleTrim:'#e0c060',crystals:'#d8fff8',cloak:'#2a5aa0',capeTrim:'#e0c060',wpn:'staff',staffTop:'ankh',staffMetal:'#e0c060',orb:'#9ae8e8',aura:'#9ae8e8',bulk:1.2,sz:1.4},
+// ===== VIII: the Coiled Jungle. Jaguar: gold pelts and obsidian; Feathered: turquoise, gold and cotton; Venomblood: lime, moss and black =====
+  jaguarcub:{form:'quad',sp:'jaguar',body:'#d89a30',skin:'#f0dcb0',spots:'#2a1a10',metal:'#2a1a10',sz:.95},
+  jaguarscout:{skin:'#9a6a44',helm:'jaguarhelm',peltCol:'#d89a30',top:'bare',kilt:'#ece4d2',legwear:'wraps',legs:'#8a5a34',warpaint:'#a82a1a',bracer:'#d89a30',barefoot:true,wpn:'knives',bladeCol:'#2a2a3a',bulk:.9,sz:.9},
+  nightstalker:{skin:'#6a4a34',helm:'jaguarhelm',peltCol:'#2a2a2e',glow:'#c8f040',top:'leather',leather:'#2a2420',legs:'#1e1a16',warpaint:'#a8e040',wpn:'knives',bladeCol:'#1e1e28',sz:.92},
+  clawpriest:{skin:'#8a5a3a',face:'old',helm:'jaguarhelm',peltCol:'#d89a30',top:'robe',body:'#a82a1a',trim:'#d89a30',beads:true,beadMark:'#3ab070',warpaint:'#1a1a1a',wpn:'knives',bladeCol:'#2a2a3a',glow:'#ff8a3a',sz:.96},
+  jaguarknight:{skin:'#8a5a3a',helm:'jaguarhelm',peltCol:'#e0a838',top:'leather',leather:'#ece0c8',body:'#ece0c8',legwear:'wraps',legs:'#6a4a30',wpn:'macuahuitl',obsidian:'#1e1e2a',shield:'round',shieldCol:'#d89a30',shieldMark:'claw',shieldMarkCol:'#2a1a10',rimCol:'#3ab070',bulk:1.15,sz:1},
+  beastspeaker:{skin:'#7a5034',face:'old',hair:'wild',hairCol:'#1a1210',helm:'bare',warpaint:'#e0a838',top:'robe',body:'#3a6a2a',trim:'#d89a30',mantle:'#d89a30',mantleTrim:'#2a1a10',beads:true,wpn:'staff',staffTop:'skull',orb:'#e8f040',archOf:'Jaguar',sz:1},
+  blackjaguar:{form:'quad',sp:'jaguar',body:'#22202a',skin:'#3a3644',spots:'#0c0a10',glow:'#e8f040',metal:'#0c0a10',sz:1.45},
+  ochre:{skin:'#6a4a34',face:'f',hair:'long',hairCol:'#141010',helm:'jaguarhelm',peltCol:'#1e1a22',glow:'#b890ff',warpaint:'#e8a030',top:'leather',leather:'#2a2026',body:'#2a2026',cloak:'#1e1a22',capeTrim:'#b890ff',wpn:'knives',bladeCol:'#b890ff',bladeGlow:'#b890ff',aura:'#b890ff',smoke:true,archOf:'Jaguar',sz:1.06},
+  cub:{form:'quad',sp:'jaguar',body:'#e0a838',skin:'#f0dcb0',spots:'#2a1a10',metal:'#2a1a10',sz:.8,archOf:'Jaguar'},
+  sunacolyte:{skin:'#9a6a44',face:'young',helm:'headdress',plumes:['#2ab890','#e8c040'],plumeN:5,plumeLen:8,top:'robe',body:'#f0e8d8',trim:'#2ab890',wpn:'staff',staffTop:'sun',staffMetal:'#e8c040',orb:'#ffe080',sz:.9},
+  eaglewarrior:{skin:'#8a5a3a',helm:'eagle',eagleCol:'#5a3a24',beakCol:'#e8b030',top:'leather',leather:'#ece0c8',body:'#ece0c8',legwear:'wraps',legs:'#5a3a24',wpn:'macuahuitl',obsidian:'#1e1e2a',shield:'round',shieldCol:'#2a6ab0',shieldMark:'eagle',shieldMarkCol:'#e8c040',rimCol:'#c83a2a',bulk:1.05,sz:.98},
+  sunsinger:{skin:'#9a6a44',face:'f',hair:'long',hairCol:'#141010',helm:'headdress',plumes:['#e8c040','#c83a2a','#e8c040'],plumeN:5,plumeLen:9,top:'dress',body:'#c83a2a',skirt:'#f0e8d8',trim:'#e8c040',beads:true,wpn:'staff',staffTop:'sun',staffMetal:'#e8c040',orb:'#ffd040',sz:.94},
+  plumedguard:{skin:'#8a5a3a',helm:'headdress',plumes:['#2ab890','#2a6ab0','#2ab890'],plumeN:5,plumeLen:11,top:'leather',leather:'#f0e8d8',legwear:'wraps',legs:'#6a4a30',wpn:'spear',bladeCol:'#2a2a3a',shield:'round',shieldCol:'#2ab890',shieldMark:'sun',shieldMarkCol:'#e8c040',rimCol:'#e8c040',bulk:1.1,sz:1},
+  serpentdancer:{skin:'#9a6a44',face:'f',hair:'braid',hairCol:'#141010',helm:'circlet',circletCol:'#e8c040',gem:'#2ab890',top:'dress',body:'#2ab890',skirt:'#3a7a2a',sash:'#e8c040',bracer:'#e8c040',wpn:'whip',sz:.94},
+  skypriest:{skin:'#8a5a3a',face:'old',helm:'headdress',plumes:['#2ab890','#e8c040','#2a6ab0','#e8c040'],plumeN:9,plumeLen:14,top:'robe',body:'#2a6ab0',trim:'#e8c040',mantle:'#2ab890',mantleTrim:'#e8c040',wpn:'staff',staffTop:'sun',staffMetal:'#e8c040',orb:'#ffe080',sz:1.02},
+  sunpriest:{skin:'#7a4a2a',face:'gaunt',helm:'headdress',plumes:['#c83a2a','#e8c040','#c83a2a'],plumeN:9,plumeLen:15,top:'robe',body:'#1e1a1a',trim:'#c83a2a',mantle:'#e8c040',warpaint:'#1a1a1a',wpn:'staff',staffTop:'sun',staffMetal:'#e8c040',orb:'#ff6a3a',off:'dagger',aura:'#ff9a3a',sz:1.04},
+  eaglelord:{skin:'#8a5a3a',face:'brute',helm:'eagle',eagleCol:'#3a2a1a',beakCol:'#f0c040',wings:'#5a3a24',top:'leather',leather:'#e8c040',body:'#c83a2a',pauldron:'big',pauldronCol:'#e8c040',legwear:'greaves',metal:'#e8c040',wpn:'macuahuitl',obsidian:'#141420',bulk:1.2,sz:1.1},
+  huama:{skin:'#9a6a44',face:'f',hair:'long',hairCol:'#141010',helm:'headdress',plumes:['#2ab890','#e8c040','#2a6ab0','#c83a2a','#e8c040'],plumeN:11,plumeLen:17,halo:'#ffd040',top:'dress',body:'#f0e8d8',skirt:'#2ab890',trim:'#e8c040',mantle:'#e8c040',mantleTrim:'#ffd040',wpn:'staff',staffTop:'sun',staffMetal:'#e8c040',orb:'#ffd040',aura:'#ffd040',archOf:'Feathered',sz:1.1},
+  dartfrog:{form:'blob',sp:'toad',body:'#2a7ae8',skin:'#5aa8f8',spotCol:'#101018',sz:.9},
+  blowgunner:{skin:'#7a5034',face:'young',helm:'bandana',hatCol:'#3a6a2a',top:'bare',kilt:'#2a4a1a',legwear:'wraps',legs:'#5a3a24',warpaint:'#a8e040',barefoot:true,wpn:'blowgun',wood:'#6a5a30',bulk:.85,sz:.88},
+  snakecharmer:{skin:'#8a5a3a',face:'old',beard:'long',beardCol:'#ece4d2',helm:'bare',hair:'bald',top:'robe',body:'#2a4a1a',trim:'#a8e040',beads:true,beadMark:'#c83a2a',wpn:'staff',staffTop:'crook',off:'horn',sz:.98},
+  spitter:{form:'bug',sp:'snake',body:'#3a5a2a',skin:'#c8d060',hoodMark:'#e8e070',glow:'#e0f040',sz:1.2},
+  spiderpriest:{skin:'#6a4a3a',face:'f',hair:'long',hairCol:'#141010',helm:'veil',cloth:'#141414',veilBand:'#a8e040',glow:'#a8e040',top:'dress',body:'#1e1e1a',skirt:'#141414',trim:'#a8e040',beads:true,beadMark:'#c83a2a',wpn:'staff',staffTop:'crystal',orb:'#c8f040',sz:.95},
+  venombrewer:{skin:'#7a5a3a',face:'old',helm:'hood',hood:'#3a4a2a',top:'robe',body:'#2a3a1a',apron:'#5a4a2a',trim:'#a8e040',wpn:'censer',censerCol:'#6a7a3a',censerGlow:'#a8e040',sz:.96},
+  viperguard:{skin:'#7a5034',helm:'pelt',peltCol:'#3a6a2a',top:'leather',leather:'#2a3a1a',legwear:'wraps',legs:'#4a3a2a',warpaint:'#a8e040',wpn:'spear',bladeCol:'#ece8c8',shield:'round',shieldCol:'#2a4a1a',shieldMark:'drop',shieldMarkCol:'#a8e040',rimCol:'#141414',bulk:1.05,sz:.98},
+  serpentmother:{form:'naga',skin:'#4a7a3a',body:'#2a4a1a',hairCol:'#141414',glow:'#c8f040',fin:'#e8c040',top:'#c83a2a',sz:1.35},
+  viper:{form:'bug',sp:'snake',body:'#4a6a2a',skin:'#c8d060',hood:false,glow:'#e0f040',sz:.8,archOf:'Venomblood'},
+  coiledgod:{form:'quad',sp:'drake',body:'#3a6a2a',skin:'#c8d060',metal:'#e8c040',plumes:['#2ab890','#e8c040','#c83a2a','#2a6ab0'],glow:'#e8f040',sz:2},
+});
 for(const [k,v] of Object.entries(LOOK2)){const old=LOOK[k]||{};if(old.form&&!v.form)continue;LOOK[k]=Object.assign({},v,old.archOf?{archOf:old.archOf}:{})}
 const ARCH={
   Covenant:{s:1.03,w:1.06,leg:1,tint:'#a88a40'},
@@ -2964,6 +3154,7 @@ const ARCH={
 };
 const mixHex=(a,b,t)=>{const A=parseInt(a.slice(1),16),B=parseInt(b.slice(1),16),ch=s=>Math.round(((A>>s)&255)*(1-t)+((B>>s)&255)*t);return '#'+((1<<24)|(ch(16)<<16)|(ch(8)<<8)|ch(0)).toString(16).slice(1)};
 Object.assign(ARCH,{Siegeworks:{s:1,w:1.04,leg:1,tint:'#6a5030'},Bellfolk:{s:.98,w:.96,leg:.95,tint:'#3a4a5a'},Leechfolk:{s:.98,w:.98,leg:.96,tint:'#5a1a22'},Gladiator:{s:1.02,w:1.08,leg:1,tint:'#7a3a1a'},Familiar:{s:.95,w:.95,leg:.95,tint:'#3a4a1a'},Runecarver:{s:1,w:1.02,leg:1,tint:'#2a4a6a'}});
+Object.assign(ARCH,{Embalmed:{s:1,w:.94,leg:.95,tint:'#8a7a50',sand:'#e0d0a8'},Nomad:{s:1,w:.98,leg:1,tint:'#8a5a30'},Glasswrought:{s:1.02,w:1.04,leg:1,tint:'#3a7a7a',glint:'#e8ffff'},Jaguar:{s:1.02,w:1.06,leg:1.02,lean:.06,tint:'#7a4a1a'},Feathered:{s:1,w:1,leg:1,tint:'#1a6a5a',feathers:'#2ab890'},Venomblood:{s:.98,w:.96,leg:.95,lean:.08,tint:'#3a5a1a',drip:'#a8e040'}});
 for(const [k,v] of Object.entries({"roach": "roach", "swarmling": "roach", "locust": "locust", "hornet": "wasp", "waspqueen": "wasp", "leechling": "leech", "icegrub": "grub", "wisp": "wisp", "shade": "shade", "bellwraith": "bell", "echo": "echo", "wail": "wail", "chimewisp": "chime", "runeghost": "rune", "sapling": "sapling", "thornling": "thorn", "bramblekin": "stump", "inkling": "ink", "inkblot": "ink", "bogling": "mud", "bogleech": "leech", "toad": "toad", "sporeling": "cap", "puffling": "cap", "puffball": "puff", "sporecaller": "caller", "sporegran": "gran", "deepspawn": "spawn", "thrall": "brute", "saltking": "king", "eelwitch": "eel", "abysskin": "pale", "leechlord": "leech", "abysswatcher": "eye", "deepbell": "bell", "greatbell": "bell"}))if(LOOK[k])LOOK[k].sp=v;Object.assign(LOOK.icegrub||{},{frost:true});Object.assign(LOOK.greatbell||{},{bellCol:'#8a7038'});Object.assign(LOOK.deepbell||{},{bellCol:'#7a8a7a'});
 Object.assign(LOOK.crowlord,{glow:'#ff6a3a',metal:'#c8a040'});Object.assign(LOOK.rookmother,{body:'#4a4a56',skin:'#d8d0c0'});Object.assign(LOOK.raven,{body:'#1e2840',skin:'#3a4a6a',glow:'#9ad8ff'});Object.assign(LOOK.runeghost,{body:'#2a3a6a',skin:'#3a4a8a'});Object.assign(LOOK.leechling,{body:'#7a1e2a',skin:'#8a2a34'});
 for(const k in LOOK){const o=LOOK[k].archOf||(UNITS[k]&&UNITS[k].o[0]),A=ARCH[o];if(!A)continue;const D=LOOK[k];
@@ -2972,6 +3163,7 @@ for(const k in LOOK){const o=LOOK[k].archOf||(UNITS[k]&&UNITS[k].o[0]),A=ARCH[o]
   if(D.form){D.body=mixHex(D.body,A.tint,.15);if(D.legs)D.legs=mixHex(D.legs,A.tint,.22)}
   if(o==='Stoneblood'&&!D.cracks&&!D.form){D.cracks=A.crystal;D.glowCracks=true}}
 const STYLE_OF={axe:'swing',mace:'swing',cleaver:'swing',whip:'swing',torch:'swing',club:'heavy',scythe:'heavy',halberd:'heavy',pick:'heavy',shovel:'heavy',trident:'thrust',pitchfork:'thrust',harpoon:'thrust',rapier:'thrust',wand:'raise',scepter:'raise',bell:'raise',horn:'raise',lanternstaff:'raise',sword:'swing',flamesword:'swing',greatsword:'heavy',greataxe:'heavy',hammer:'heavy',maul:'heavy',flail:'swing',knives:'knives',spear:'thrust',xbow:'aim',bow:'draw',censer:'raise',staff:'raise',tome:'raise'};
+Object.assign(STYLE_OF,{khopesh:'swing',scimitar:'swing',macuahuitl:'swing',sling:'swing',blowgun:'aim'});
 const OLC='rgba(22,13,9,.85)';
 // ===== Sprite pipeline =====
 // A figure is drawn at sprite resolution, then turned into pixel art: a hard alpha edge, an ordered-dither
@@ -3157,7 +3349,7 @@ function drawFigure(ctx,key,p){
     const dot=(x,y,r,c,a=1)=>{ctx.save();ctx.globalAlpha*=a;ctx.fillStyle=col(c);ctx.beginPath();PR.arc.call(ctx,x,y,r,0,7);ctx.fill();ctx.restore()};
     switch(D.form){
       case 'quad':{ // four-legged beasts with real anatomy: wolves pounce, bears rear and maul, boars charge, goats ram, drakes lunge
-        const SP=D.sp||'wolf',CF={wolf:[15,7,12,6],fox:[13,5.5,10,5],cat:[12,5.5,10,4],bear:[17,10.5,11,4],boar:[16,9.5,9,3],goat:[14,7.5,13,6],drake:[19,8,12,10]}[SP]||[15,7,12,6];
+        const SP=D.sp||'wolf',CF={wolf:[15,7,12,6],fox:[13,5.5,10,5],cat:[12,5.5,10,4],jaguar:[15,7,8,4.5],sphinx:[17,8.5,8.5,5],bear:[17,10.5,11,4],boar:[16,9.5,9,3],goat:[14,7.5,13,6],drake:[19,8,12,10]}[SP]||[15,7,12,6];
         const [BL,BH,LG,NK]=CF,e3=x=>x<=0?0:x>=1?1:x*x*(3-2*x),cl=x=>x<0?0:x>1?1:x,acc=D.metal||dk(fur),belly=skin,fd=dk(fur),fdd=shade(fur,-.5);
         // attack phases: crouch, spring, strike, recover
         const ak=atk<0?-1:atk,cr=ak<0?0:ak<.3?e3(ak/.3):ak<.42?1-e3((ak-.3)/.12):0,u=cl((ak-.3)/.3),lp=ak>=.3&&ak<.6?Math.sin(u*PI):0,rc=ak>=.6?1-e3((ak-.6)/.4):0;
@@ -3182,7 +3374,7 @@ function drawFigure(ctx,key,p){
           const kx=x+Math.cos(ang1)*L1,ky=BH*.35+Math.sin(ang1)*L1,fx=kx+Math.cos(ang2)*L2,fy=ky+Math.sin(ang2)*L2,c=far?fdd:fd,w=legW*(far?.9:1);
           const seg=(x1,y1,x2,y2,w1,w2)=>{const dx=x2-x1,dy=y2-y1,l=Math.hypot(dx,dy)||1,nx=-dy/l,ny=dx/l;sh(c,()=>{ctx.moveTo(x1+nx*w1,y1+ny*w1);ctx.lineTo(x2+nx*w2,y2+ny*w2);ctx.lineTo(x2-nx*w2,y2-ny*w2);ctx.lineTo(x1-nx*w1,y1-ny*w1);ctx.closePath()},true)};
           seg(x,BH*.1,kx,ky,w*.75,w*.45);seg(kx,ky,fx,fy,w*.45,w*.32);sh(shade(c,-.15),()=>el(fx+1.2,fy,w*.62,w*.38),true);
-          if(SP==='drake'||SP==='bear'||SP==='cat'){ctx.fillStyle=col(SP==='drake'?'#e8dcc0':'#d8d0c0');for(let i=0;i<3;i++)ctx.fillRect(fx+1.4+i*1.1,fy+.4,.7,.9)}
+          if(SP==='drake'||SP==='bear'||SP==='cat'||SP==='sphinx'||SP==='jaguar'){ctx.fillStyle=col(SP==='drake'?'#e8dcc0':'#d8d0c0');for(let i=0;i<3;i++)ctx.fillRect(fx+1.4+i*1.1,fy+.4,.7,.9)}
           if(SP==='boar'||SP==='goat'){ctx.fillStyle=col('#1a1210');ctx.fillRect(fx-.6,fy-.2,2.6,1.4)}};
         leg(hipX+2,PI,false,true);leg(shX+2,0,true,true);
         // tail
@@ -3190,7 +3382,7 @@ function drawFigure(ctx,key,p){
         ctx.save();ctx.translate(-BL*.95,-BH*.35);ctx.rotate(tw);
         if(SP==='wolf'||SP==='fox')sh(fur,()=>{ctx.moveTo(0,-1);ctx.quadraticCurveTo(-9,-4,-15,2);ctx.quadraticCurveTo(-9,5,0,3);ctx.closePath()});
         if(SP==='fox')sh('#f0ece4',()=>{ctx.moveTo(-11,1);ctx.quadraticCurveTo(-14,-1,-15.5,2);ctx.quadraticCurveTo(-13,4,-11,3);ctx.closePath()},true);
-        if(SP==='cat'){ctx.save();ctx.lineCap='round';ctx.strokeStyle=col(fur);ctx.lineWidth=2.2;ctx.beginPath();PR.moveTo.call(ctx,0,0);PR.quadraticCurveTo.call(ctx,-10,2,-11,-11);ctx.stroke();ctx.restore()}
+        if(SP==='cat'||SP==='sphinx'||SP==='jaguar'){ctx.save();ctx.lineCap='round';ctx.strokeStyle=col(fur);ctx.lineWidth=SP==='jaguar'?3:2.2;ctx.beginPath();PR.moveTo.call(ctx,0,0);PR.quadraticCurveTo.call(ctx,-10,2,-11,-11);ctx.stroke();ctx.restore()}
         if(SP==='bear')sh(fur,()=>ci(-1,0,2.6));
         if(SP==='boar'){ctx.save();ctx.strokeStyle=col(fd);ctx.lineWidth=1.2;ctx.beginPath();PR.moveTo.call(ctx,0,0);PR.quadraticCurveTo.call(ctx,-5,-3,-3,-6);ctx.stroke();ctx.restore()}
         if(SP==='goat')sh(fur,()=>{ctx.moveTo(0,-1);ctx.lineTo(-5,-5);ctx.lineTo(-3,1);ctx.closePath()});
@@ -3212,6 +3404,8 @@ function drawFigure(ctx,key,p){
           const wo=lp>0?lp:cast>=0?Math.sin(cl(cast)*PI):Math.max(0,Math.sin(t*1.3+seed)*.12);ctx.save();ctx.translate(BL*.1,-BH*.9);ctx.rotate(-.35-wo*.9);
           sh(shade(fur,-.2),()=>{ctx.moveTo(0,0);ctx.lineTo(-6,-14-wo*6);ctx.lineTo(-18-wo*6,-10-wo*4);ctx.quadraticCurveTo(-12,-4,-16,1);ctx.quadraticCurveTo(-8,-1,0,2);ctx.closePath()});
           ctx.strokeStyle=col(acc);ctx.lineWidth=.9;ctx.beginPath();PR.moveTo.call(ctx,0,0);PR.lineTo.call(ctx,-6,-14-wo*6);PR.lineTo.call(ctx,-18-wo*6,-10-wo*4);PR.moveTo.call(ctx,-6,-14-wo*6);PR.lineTo.call(ctx,-11,-2);ctx.stroke();ctx.restore()}
+        if(D.spots){const sp=i=>[-BL*.85+(i%5)*BL*.36+(i>4?BL*.16:0),-BH*(i>4?.15:.6)+Math.sin(i*2.1)*1.1];ctx.fillStyle=col(D.spots);for(let i=0;i<10;i++){const [xx,yy]=sp(i);ctx.beginPath();PR.arc.call(ctx,xx,yy,i%3?1.4:1.8,0,7);ctx.fill()}
+          ctx.fillStyle=col(shade(fur,.12));for(let i=0;i<10;i+=2){const [xx,yy]=sp(i);ctx.fillRect(xx-.35,yy-.35,.7,.7)}}
         leg(hipX,0,false,false);leg(shX,PI,true,false);
         // neck and head
         const hl=ak<0?0:ak<.3?.25*cr:ak<.6?-.15*lp:0,hx=BL*.95+NK*.55,hy=-BH*.95-NK*.35+(SP==='boar'?BH*.55:0);
@@ -3230,13 +3424,22 @@ function drawFigure(ctx,key,p){
           ctx.save();ctx.translate(2,1.6);ctx.rotate(jaw);sh(shade(fur,-.15),()=>{ctx.moveTo(0,0);ctx.lineTo(10.5,.2);ctx.lineTo(9,2.2);ctx.lineTo(0,2.8);ctx.closePath()});ctx.fillStyle=col('#f0e8d8');for(let i=0;i<4;i++)ctx.fillRect(3+i*2,-.6,.8,1);ctx.restore();
           ctx.fillStyle=col('#f0e8d8');for(let i=0;i<4;i++)ctx.fillRect(4+i*2,1.4,.8,1);
           sh(acc,()=>{ctx.moveTo(-2,-3.6);ctx.lineTo(-9,-8.5);ctx.lineTo(-1,-5.4);ctx.closePath()});sh(acc,()=>{ctx.moveTo(1,-4.2);ctx.lineTo(-4,-10);ctx.lineTo(3,-4.6);ctx.closePath()});eye(5,-1.8,1.1,eyeC||'#ffd040');
-          if(jaw>.3&&(D.glow)){ctx.save();ctx.globalAlpha=jaw;glowDot(13,1.2,2.2,D.glow,8);ctx.restore()}}
-        else{const sn=SP==='cat'?5:SP==='fox'?9:10;sh(fur,()=>{ctx.moveTo(-4,-3.4);ctx.quadraticCurveTo(0,-5.6,4,-4);ctx.lineTo(4+sn,-1);ctx.lineTo(4+sn,1.4);ctx.lineTo(3,2.6);ctx.quadraticCurveTo(-3,3.6,-4,-3.4);ctx.closePath()});
+          if(jaw>.3&&(D.glow)){ctx.save();ctx.globalAlpha=jaw;glowDot(13,1.2,2.2,D.glow,8);ctx.restore()}
+          if(D.plumes){const pc=D.plumes,fl=Math.sin(t*2.6+seed)*.08;for(let i=0;i<6;i++){const a=-2.7+i*.3+fl,L=9+(i%2)*4;sh(pc[i%pc.length],()=>{ctx.moveTo(-1.2,-3);ctx.quadraticCurveTo(Math.cos(a)*L*.6-2.6,-3+Math.sin(a)*L*.6,Math.cos(a)*L-2,-3+Math.sin(a)*L);ctx.quadraticCurveTo(Math.cos(a)*L*.5+.6,-2+Math.sin(a)*L*.5,1,-3.8);ctx.closePath()},true)}}}
+        else if(SP==='sphinx'){const nc=D.nemesCol||'#e0c060',ns=D.nemesStripe||'#2a5aa0',fc=D.faceCol||'#c8a070';
+          sh(nc,()=>{ctx.moveTo(-6,7);ctx.lineTo(-7,-3);ctx.quadraticCurveTo(-2,-11.4,5.4,-7.6);ctx.lineTo(6.2,-4.6);ctx.lineTo(1.4,-4);ctx.lineTo(0,7);ctx.closePath()});
+          ctx.save();ctx.strokeStyle=col(ns);ctx.lineWidth=.9;ctx.beginPath();for(let i=0;i<5;i++){PR.moveTo.call(ctx,-6.4+i*.2,-3+i*2.4);PR.lineTo.call(ctx,.6,-4.6+i*2.6)}ctx.stroke();ctx.restore();
+          sh(fc,()=>{ctx.moveTo(1,-4.4);ctx.quadraticCurveTo(7.4,-5.4,7.8,-.4);ctx.lineTo(8.6,.8);ctx.lineTo(7.6,1.4);ctx.quadraticCurveTo(7,4.6,3.6,4.8);ctx.quadraticCurveTo(1,4.4,1,-4.4);ctx.closePath()});
+          sh(nc,()=>{ctx.moveTo(1.2,-4.6);ctx.quadraticCurveTo(4,-6.8,7.4,-4.6);ctx.lineTo(7,-3.2);ctx.quadraticCurveTo(4,-4.4,1.4,-3);ctx.closePath()},true);
+          sh(nc,()=>{ctx.moveTo(.6,-2);ctx.lineTo(2.6,-1.6);ctx.lineTo(2.6,8.6);ctx.lineTo(.2,8.6);ctx.closePath()});ln(ns,.7,[.4,2,2.6,2],.9);ln(ns,.7,[.4,5,2.6,5],.9);
+          sh(D.metal||'#e0c060',()=>rr(4.6,4.4,1.6,3.8,.6),true);eye(4.8,-1.6,.9,eyeC);ln(OLC,.6,[5,1.8,7.2,1.6],.9);if(jaw>.2){ctx.fillStyle='#2a0e0a';ctx.beginPath();PR.ellipse.call(ctx,6,2.4,1.2,.4+jaw,0,0,7);ctx.fill()}
+          glowDot(4.2,-6.6,1,D.glow||'#9ae8e8',5)}
+        else{const sn=SP==='cat'?5:SP==='jaguar'?6:SP==='fox'?9:10;sh(fur,()=>{ctx.moveTo(-4,-3.4);ctx.quadraticCurveTo(0,-5.6,4,-4);ctx.lineTo(4+sn,-1);ctx.lineTo(4+sn,1.4);ctx.lineTo(3,2.6);ctx.quadraticCurveTo(-3,3.6,-4,-3.4);ctx.closePath()});
           sh(belly,()=>{ctx.moveTo(4,.2);ctx.lineTo(4+sn,.6);ctx.lineTo(3+sn,1.6);ctx.lineTo(3,2.4);ctx.closePath()},true);
           ctx.save();ctx.translate(2.6,1.8);ctx.rotate(jaw);sh(shade(fur,-.12),()=>{ctx.moveTo(0,0);ctx.lineTo(sn-.6,.4);ctx.lineTo(sn-2,2);ctx.lineTo(0,2.2);ctx.closePath()});ctx.fillStyle=col('#f4ecd8');ctx.fillRect(sn-2.6,-.6,.9,1.2);ctx.fillRect(sn-5,-.4,.8,1);ctx.restore();
           if(jaw>.15){ctx.fillStyle=col('#f4ecd8');ctx.fillRect(4+sn-3,1.6,.9,1.2);ctx.fillRect(4+sn-6,1.7,.8,1)}
           ctx.fillStyle=OLC;ctx.fillRect(3.4+sn,-1.3,1.5,1.4);
-          const er=SP==='cat'?1:1.25;sh(fd,()=>{ctx.moveTo(-3.4,-3);ctx.lineTo(-2.6,-9.5*er);ctx.lineTo(.6,-3.8);ctx.closePath()});sh(fur,()=>{ctx.moveTo(-.4,-3.8);ctx.lineTo(1.4,-10*er);ctx.lineTo(3.6,-3.6);ctx.closePath()});
+          const er=SP==='cat'?1:SP==='jaguar'?.55:1.25;sh(fd,()=>{ctx.moveTo(-3.4,-3);ctx.lineTo(-2.6,-9.5*er);ctx.lineTo(.6,-3.8);ctx.closePath()});sh(fur,()=>{ctx.moveTo(-.4,-3.8);ctx.lineTo(1.4,-10*er);ctx.lineTo(3.6,-3.6);ctx.closePath()});
           sh(shade(belly,-.1),()=>{ctx.moveTo(.6,-4.2);ctx.lineTo(1.5,-8*er);ctx.lineTo(2.7,-4);ctx.closePath()},true);eye(2.6,-1.4,1.05,eyeC)}
         ctx.restore();
         // a bite or a maul leaves a slash of light at the point of contact
@@ -3280,6 +3483,17 @@ function drawFigure(ctx,key,p){
           [[-1,1],[1,-1]].forEach(([s])=>sh('#3a2a20',()=>{ctx.moveTo(hx+2,hy+s*.6);ctx.quadraticCurveTo(hx+6,hy+s*(1.4+op*2.6),hx+5.6,hy+s*(3+op*1.2));ctx.lineTo(hx+3,hy+s*1.6);ctx.closePath()},true));
           eye(hx+.6,hy-1.6,.8,gl);eye(hx+2.2,hy-1.2,.7,gl);
           if(D.frost)for(let i=0;i<3;i++)sh('#e8f8ff',()=>{ctx.moveTo(-8+i*5,y-4);ctx.lineTo(-7+i*5,y-8.6);ctx.lineTo(-6+i*5,y-4);ctx.closePath()},true);ctx.restore();break}
+        if(SP==='snake'){const wv=t*3+seed,body=fur,bl=shade(skin,.2),pts=[];for(let i=0;i<=9;i++){const k=i/9;pts.push([-15+k*16+lp*k*4,-2.4-Math.sin(k*PI*2+wv)*1.6*(1-k)-(moving?Math.abs(Math.sin(walk*1.5+i*.7))*.6:0),2.2+k*1.4])}
+          pts.forEach(([x,y,r],i)=>sh(i%2?body:shade(body,.08),()=>el(x,y,r*1.25,r),true));ctx.fillStyle=col(bl);for(let i=1;i<9;i++){const [x,y,r]=pts[i];ctx.fillRect(x-r*.6,y+r*.3,r*1.1,.7)}
+          const nx=2+lp*7,ny=-15+lp*3+Math.sin(t*2+seed)*.6;
+          sh(body,()=>{ctx.moveTo(-1,-4);ctx.quadraticCurveTo(nx-5,-8,nx-1.6,ny+2);ctx.lineTo(nx+1.6,ny+2.4);ctx.quadraticCurveTo(nx-1,-6,2.6,-1.6);ctx.closePath()});
+          if(D.hood!==false){sh(shade(body,-.1),()=>el(nx-.6,ny+4,3.6+lp,5.8));ctx.fillStyle=col(D.hoodMark||skin);ctx.beginPath();PR.ellipse.call(ctx,nx-.4,ny+4,1.4,2.8,0,0,7);ctx.fill();ctx.fillStyle=col(body);ctx.beginPath();PR.ellipse.call(ctx,nx-.4,ny+4.2,.6,1.6,0,0,7);ctx.fill()}
+          sh(bl,()=>{ctx.moveTo(nx-.4,ny+1);ctx.lineTo(nx+.9,ny+9);ctx.lineTo(nx-.9,ny+9);ctx.closePath()},true);
+          sh(body,()=>{ctx.moveTo(nx-2.4,ny-1.6);ctx.quadraticCurveTo(nx+1,ny-3.8,nx+5.8,ny-.6);ctx.quadraticCurveTo(nx+5.2,ny+1.6,nx,ny+1.6);ctx.quadraticCurveTo(nx-2.6,ny+1,nx-2.4,ny-1.6);ctx.closePath()});
+          eye(nx+1.4,ny-1,.8,gl||'#e0d040');const op=ak>=.3&&ak<.66?Math.sin((ak-.3)/.36*PI):shout?.4:0;
+          if(op>.1){sh('#3a0a0a',()=>{ctx.moveTo(nx+1,ny+.6);ctx.lineTo(nx+6,ny-.2+op*.4);ctx.lineTo(nx+5.2,ny+1.6+op*2);ctx.closePath()},true);ctx.fillStyle='#f0e8d0';ctx.fillRect(nx+4.6,ny+.4,.6,1.2)}
+          if(op>.25||cast>=0){ctx.save();ctx.globalAlpha*=.85;ln('#c8f060',1,[nx+5.8,ny+.4,nx+9,ny+1.2,nx+11,ny]);ctx.restore()}
+          break}
         if(SP==='locust'){const y=-9+bobY*.4-lp*8,wo=Math.max(lp,moving?.25+.2*Math.sin(t*30):0);
           jl(-4,y+1,1,14,dk(fur),1.1,true);jl(1,y+1,2,9,dk(fur),1);
           ctx.save();ctx.globalAlpha*=.6;sh('#d8e0b0',()=>{ctx.moveTo(-2,y-3);ctx.quadraticCurveTo(-12,y-6-wo*8,-19,y-2-wo*10);ctx.quadraticCurveTo(-11,y-1,-2,y-1);ctx.closePath()},true);ctx.restore();
@@ -3511,7 +3725,7 @@ function drawFigure(ctx,key,p){
           sh(fur,()=>{ctx.moveTo(-11,ty-3);ctx.quadraticCurveTo(-10,ty-13,0,ty-13);ctx.quadraticCurveTo(10,ty-12.6,11,ty-5);ctx.quadraticCurveTo(10,ty,1,ty);ctx.quadraticCurveTo(-9,ty+.6,-11,ty-3);ctx.closePath()});
           sh(shade(skin,.35),()=>{ctx.moveTo(10,ty-4);ctx.quadraticCurveTo(8,ty+.4,0,ty);ctx.quadraticCurveTo(4,ty-4,10,ty-4);ctx.closePath()},true);
           if(gul)sh('#e8d8a0',()=>el(8,ty-1.6+gul,3.4*gul,2.6*gul),true);
-          ctx.fillStyle=col(shade(fur,-.3));[[-7,-9],[-3,-11],[2,-10],[-5,-6],[4,-7]].forEach(([x,yy])=>{ctx.beginPath();PR.arc.call(ctx,x,ty+yy,1,0,7);ctx.fill()});
+          ctx.fillStyle=col(D.spotCol||shade(fur,-.3));[[-7,-9],[-3,-11],[2,-10],[-5,-6],[4,-7]].forEach(([x,yy])=>{ctx.beginPath();PR.arc.call(ctx,x,ty+yy,1,0,7);ctx.fill()});
           sh(fur,()=>{ctx.moveTo(4,ty-1);ctx.lineTo(6,y);ctx.lineTo(10,y);ctx.lineTo(7,ty-2);ctx.closePath()});
           [[2.6,-13.6],[7.2,-12.6]].forEach(([x,yy])=>{sh(fur,()=>ci(x,ty+yy,2.6));if(blink)ln(OLC,.7,[x-1.4,ty+yy,x+1.4,ty+yy]);else{sh('#e0d070',()=>ci(x+.4,ty+yy,1.6),true);ctx.fillStyle='#0a0806';ctx.fillRect(x-.4,ty+yy-.4,1.8,.8)}});
           ln(OLC,.8,[4,ty-6,11,ty-6.4]);if(st>0){ln('#e88a8a',1.4,[11,ty-6,11+st*12,ty-7]);dot(11+st*12,ty-7,1.2,'#e88a8a')}
@@ -3611,7 +3825,7 @@ function drawFigure(ctx,key,p){
     }ctx.restore()};
   const sway=Math.sin(t*2+seed)*1.3+(moving?2.5:0),fx=sw*1.8;
   // hair that hangs behind the head and shoulders
-  const hidesHair=['hood','cowl','veil','mask','great','crowned','barbute','sallet','coif','plague','beast','skullmask','pelt'].includes(helm);
+  const hidesHair=['nemes','turban','eagle','jaguarhelm','wrapped','hood','cowl','veil','mask','great','crowned','barbute','sallet','coif','plague','beast','skullmask','pelt'].includes(helm);
   // ---- back layer: banner, cape, long hair, quiver, things worn on the back ----
   ctx.save();bodyT();
   if(D.banner){const wv=Math.sin(t*3+seed)*1.5,px=-7.5*W;sh('#3a2a20',()=>rr(px-1.1,-86,2.2,64,1));shM(D.trim||'#c9a25a',()=>{ctx.moveTo(px-2.2,-86);ctx.lineTo(px,-91);ctx.lineTo(px+2.2,-86);ctx.closePath()});
@@ -3746,6 +3960,7 @@ function drawFigure(ctx,key,p){
       else if(tp==='branch'){ctx.save();ctx.lineWidth=1.2;ctx.strokeStyle=col(WC);ctx.beginPath();PR.moveTo.call(ctx,0,-31);PR.quadraticCurveTo.call(ctx,-3,-36,-5,-41);PR.moveTo.call(ctx,0,-32);PR.quadraticCurveTo.call(ctx,3,-37,4,-42);ctx.stroke();ctx.restore();[[-5,-41],[4,-42],[-2,-37],[2.6,-37.6]].forEach(([x,y],i)=>sh(i%2?'#6aa83a':'#4a8a2a',()=>el(x,y,1.8,1.1,i)));if(D.orb)glowDot(0,-36,1.4,oc,5+8*g)}
       else if(tp==='hook'){ln(D.staffMetal||mt,1.4,[0,-31,0,-36]);ctx.save();ctx.lineWidth=1.4;ctx.strokeStyle=col(D.staffMetal||mt);ctx.beginPath();PR.arc.call(ctx,2.6,-36,2.6,PI,PI*2.2);ctx.stroke();ctx.restore()}
       else if(tp==='sun'){ctx.save();ctx.shadowColor=oc;ctx.shadowBlur=6+10*g;shM(D.staffMetal||'#d8b050',()=>ci(0,-36,3.4));ctx.restore();for(let i=0;i<8;i++){const a=i*PI/4;ln(D.staffMetal||'#d8b050',1,[Math.cos(a)*3.8,-36+Math.sin(a)*3.8,Math.cos(a)*6,-36+Math.sin(a)*6])}glowDot(0,-36,1.4,oc,4+6*g)}
+      else if(tp==='lens'){ctx.save();ctx.shadowColor=oc;ctx.shadowBlur=6+12*g;shM(D.staffMetal||'#d8b060',()=>ci(0,-37,5.2));ctx.restore();sh(oc,()=>ci(0,-37,3.8),true);dot(-1.3,-38.4,1.2,'#ffffff',.85);if(cast>=0)glowDot(0,-37,2.4,'#ffffff',14)}
       else if(tp==='bell'){shM('#b8964a',()=>{ctx.moveTo(-3.6,-31);ctx.quadraticCurveTo(-3.4,-39,0,-39);ctx.quadraticCurveTo(3.4,-39,3.6,-31);ctx.closePath()});dot(0,-30.4,1,'#5a4420')}},
     wand:()=>{ctx.rotate(.9+grip-.5);sh(WC,()=>rr(-2,-1,13,2,1));glowDot(12,0,1.5,D.orb||'#ffd070',6+(cast>=0?10:4))},
     scepter:()=>{ctx.rotate(.9+grip-.8);shM(D.staffMetal||'#d8b050',()=>rr(-3,-1.1,16,2.2,1));shM(D.staffMetal||'#d8b050',()=>ci(14,0,2.6));glowDot(14,0,1.3,D.orb||'#58c8ff',5+(cast>=0?10:3))},
@@ -3755,6 +3970,14 @@ function drawFigure(ctx,key,p){
     tome:()=>{},
     torch:fa=>{ctx.rotate(fa);sh(WC,()=>rr(-1.2,-14,2.4,18,1));sh('#4a3020',()=>rr(-1.8,-15,3.6,3,.8));const fk2=Math.sin(t*14+seed)*.6;ctx.save();ctx.shadowColor='#ff8a2a';ctx.shadowBlur=10;ctx.fillStyle=col('#ffb040');ctx.beginPath();PR.moveTo.call(ctx,-2.4,-15);PR.quadraticCurveTo.call(ctx,-2.6,-20,fk2,-24);PR.quadraticCurveTo.call(ctx,2.8,-20,2.4,-15);ctx.fill();ctx.fillStyle='#fff0c0';ctx.beginPath();PR.ellipse.call(ctx,0,-17.4,1,2,0,0,7);ctx.fill();ctx.restore()},
   };
+  Object.assign(WP,{
+    khopesh:()=>{ctx.rotate(.9+grip);hilt(2.6,5);shM(D.bladeCol||'#d8b060',()=>{ctx.moveTo(2.4,-1.1);ctx.lineTo(9,-1.3);ctx.quadraticCurveTo(18.4,-5.4,19,2.4);ctx.quadraticCurveTo(16.4,6.8,12,5.6);ctx.quadraticCurveTo(15.6,3.6,14.6,1.2);ctx.quadraticCurveTo(12,.6,9,1.1);ctx.lineTo(2.4,1.1);ctx.closePath()});ln('#ffffff',.6,[10,-1.6,17.6,-.2],.55);glint(14,-1)},
+    scimitar:()=>{ctx.rotate(.9+grip);hilt(3.4,4.6);shM(D.bladeCol||'#d0d6de',()=>{ctx.moveTo(2.6,-1.4);ctx.quadraticCurveTo(12,-2.6,20.4,-6.6);ctx.quadraticCurveTo(21.4,-2,17,1.8);ctx.quadraticCurveTo(10,2.2,2.6,1.4);ctx.closePath()});ln('#ffffff',.6,[4,-1.2,19.4,-5.6],.55);if(D.bladeGlow){ctx.save();ctx.globalAlpha*=.5;ln(D.bladeGlow,1.4,[4,-.6,19,-4.6]);ctx.restore()}glint(16,-3)},
+    macuahuitl:()=>{ctx.rotate(.9+grip);sh(WC,()=>{ctx.moveTo(-5,-1.2);ctx.lineTo(6,-1.6);ctx.lineTo(6,-3);ctx.lineTo(21,-3.4);ctx.quadraticCurveTo(23.4,0,21,3.4);ctx.lineTo(6,3);ctx.lineTo(6,1.6);ctx.lineTo(-5,1.2);ctx.closePath()});
+      for(let i=0;i<5;i++){const x=7.6+i*2.9,ob=D.obsidian||'#2a2a3a';shM(ob,()=>{ctx.moveTo(x,-3.2);ctx.lineTo(x+1.4,-5.8);ctx.lineTo(x+2.6,-3.2);ctx.closePath()},true);shM(ob,()=>{ctx.moveTo(x,3.2);ctx.lineTo(x+1.4,5.8);ctx.lineTo(x+2.6,3.2);ctx.closePath()},true)}ln(D.trim||'#d8b040',.8,[0,0,5,0],.8)},
+    sling:()=>{ctx.rotate(.9+grip);const a=atk>=0?atk*PI*5:Math.sin(t*3+seed)*.5,bx=7+Math.cos(a)*3.4,by=Math.sin(a)*5;ctx.save();ctx.strokeStyle=col('#6a4a2a');ctx.lineWidth=.9;ctx.beginPath();PR.moveTo.call(ctx,0,0);PR.lineTo.call(ctx,bx,by);ctx.stroke();ctx.restore();sh('#8a7a6a',()=>ci(bx,by,1.7));if(atk>=0||cast>=0)glowDot(bx,by,.8,'#ffb060',4)},
+    blowgun:()=>{sh(D.wood||'#6a5a30',()=>rr(-1,-12,2,32,1));ln('#3a2a14',.7,[-1.1,-6,1.1,-6],.85);ln('#3a2a14',.7,[-1.1,8,1.1,8],.85);dot(0,19.6,1,'#1a1208');if(atk>=0&&atk<.5)glowDot(0,21,.8,'#c8f040',4)},
+  });
   WP.lanternstaff=WP.staff;
   // ---- arms: a shoulder, elbow and fist; plate, sleeves or bare skin ----
   const plateArms=D.armPlate!=null?D.armPlate:(TOP==='plate'||D.gauntlet),bareArms=D.bareArms!=null?D.bareArms:TOP==='bare';
@@ -3799,7 +4022,7 @@ function drawFigure(ctx,key,p){
       orb:fa=>{glowDot(1,2,2.6,D.orb||'#ffd070',8+(cast>=0?10:4));dot(.2,1,.8,'#ffffff',.8)},bell:WP.bell,horn:WP.horn,
       net:fa=>{ctx.rotate(fa*.6);ctx.save();ctx.strokeStyle=col('#c8b890');ctx.lineWidth=.6;ctx.beginPath();for(let i=0;i<4;i++){PR.moveTo.call(ctx,-5+i*3,0);PR.lineTo.call(ctx,-6+i*3.4,12)}for(let j=0;j<4;j++){PR.moveTo.call(ctx,-5,j*3.4);PR.lineTo.call(ctx,5,j*3.4+.6)}ctx.stroke();ctx.restore()},
       vial:fa=>{ctx.rotate(fa*.4);sh('#d8e8e0',()=>rr(-1,-3,2,2.4,.4));glowDot(0,1.4,2.2,D.vial||'#9cf06a',6)},
-      book:fa=>{ctx.rotate(fa*.6);sh(D.tome||'#5a2a1a',()=>rr(-3,-1,6,8,1));sh('#efe4c8',()=>rr(-2.6,-.6,1.2,7.2,.4),true)}}[D.off]:null;
+      book:fa=>{ctx.rotate(fa*.6);sh(D.tome||'#5a2a1a',()=>rr(-3,-1,6,8,1));sh('#efe4c8',()=>rr(-2.6,-.6,1.2,7.2,.4),true)},falcon:fa=>{ctx.rotate(fa*.4);const fl=Math.sin(t*5+seed)*.2;sh('#8a6a4a',()=>el(0,-3.4,2.8,3.6));sh('#5a4430',()=>{ctx.moveTo(-1.6,-5);ctx.quadraticCurveTo(-7,-7-fl*6,-8,-1);ctx.lineTo(-1.4,-1.6);ctx.closePath()});sh('#d8c8a8',()=>ci(1.2,-7.4,1.9));shM('#e8b030',()=>{ctx.moveTo(2.8,-7.8);ctx.lineTo(4.6,-6.8);ctx.lineTo(2.8,-6.4);ctx.closePath()},true);dot(1.6,-7.8,.55,'#1a1210');ln('#3a2a1a',.6,[0,0,0,1.6],.8)}}[D.off]:null;
   arm(-3.1*W,-44.2,A.far,true,farW);
   // ---- torso and what is worn over it ----
   const T=W;
@@ -3843,6 +4066,8 @@ function drawFigure(ctx,key,p){
     mark(CX+.7*T,-38.4,1.05,D.mark||'cross',D.markCol||D.tabardTrim||trim||'#d8b860')}
   else if(D.mark&&D.markChest!==false)mark(CX+.6*T,-39,.95,D.mark,D.markCol||trim||'#d8b860');
   if(D.sash){ln(D.sash===true?'#7a1e1a':D.sash,2.6,[-4.6*T,-45,5.8*T,-30],1);ln(shade(D.sash===true?'#7a1e1a':D.sash,.3),.6,[-4.4*T,-45.6,5.8*T,-30.8],.6)}
+  if(D.wrapBody){const wc=D.wrapBody;for(let i=0;i<6;i++){const y=-45+i*3.6;ln(wc,1.6,[-5*T,y+1.4,6.4*T,y-1.2+(i%2)*1.4],.92)}ln(shade(wc,-.35),.5,[-5*T,-30.6,6.4*T,-31.4],.6);
+    if(D.wrapLoose){const wv=Math.sin(t*2.8+seed)*1.4;ln(wc,1.2,[5.6*T,-30,7.4*T+wv,-22,6.6*T+wv*1.5,-16],.9)}}
   if(D.bandolier){ln(D.bandolier,1.8,[5*T,-45.4,-4.6*T,-29],1);for(let i=0;i<4;i++)shM(D.bandoCol||'#a89060',()=>rr(3.4*T-i*2.4*T,-42.6+i*3.4,1.6,2.2,.4),true)}
   if(D.chains){ctx.save();ctx.setLineDash([1.6,1.1]);ctx.strokeStyle=col('#8a8680');ctx.lineWidth=1.3;ctx.beginPath();PR.moveTo.call(ctx,-5*T,-44);PR.quadraticCurveTo.call(ctx,1*T,-33,6.6*T,-38);ctx.stroke();ctx.restore()}
   if(D.beads){for(let i=0;i<8;i++){const a=.25+i*.34;dot(1.4*T+Math.cos(a)*5.6*T,-46+Math.sin(a)*7.6,1,i===4?(D.beadMark||'#c8a050'):'#7a5a3a')}}
@@ -4012,11 +4237,13 @@ function drawFigure(ctx,key,p){
     case 'skullmask':{sh(D.hood||cloth,hoodP);sh('#e8e0cc',()=>{ctx.moveTo(3.4,-61.6);ctx.quadraticCurveTo(10.6,-62,10.8,-56);ctx.lineTo(10.2,-51);ctx.lineTo(8,-48.6);ctx.lineTo(4.4,-49);ctx.quadraticCurveTo(2.8,-55,3.4,-61.6);ctx.closePath()});
       ctx.fillStyle='#120a08';ctx.beginPath();PR.ellipse.call(ctx,5.8,-56.6,1.6,1.4,0,0,7);PR.ellipse.call(ctx,9,-56.6,1.3,1.3,0,0,7);ctx.fill();ctx.fillRect(7.6,-54.4,1,1.4);for(let i=0;i<4;i++)ctx.fillRect(5+i*1.4,-51.6,.6,1.6);
       if(D.glow){glowDot(5.8,-56.6,.7,D.glow,5);glowDot(9,-56.6,.6,D.glow,5)}ln(shade(D.hood||cloth,.3),.8,[-4.4,-61.6,1,-65.8,6.8,-64.6],.7);break}
-    case 'pelt':{const pc=D.peltCol||'#6a6058';face();beard();
+    case 'pelt':case 'jaguarhelm':{const pc=D.peltCol||(helm==='jaguarhelm'?'#d89a30':'#6a6058');face();beard();
       sh(pc,()=>{ctx.moveTo(-6,-44);ctx.quadraticCurveTo(-8,-56,-4,-62.6);ctx.quadraticCurveTo(1,-67.4,7,-65.6);ctx.quadraticCurveTo(13,-64.6,15.4,-60.6);ctx.lineTo(13.6,-58.6);ctx.quadraticCurveTo(9,-61,4.4,-60);ctx.quadraticCurveTo(1,-58,.6,-54);ctx.quadraticCurveTo(0,-49,-1,-44);ctx.closePath()});
       sh(shade(pc,.12),()=>{ctx.moveTo(4,-62.6);ctx.quadraticCurveTo(10,-64.6,15.4,-60.6);ctx.lineTo(14.6,-59.2);ctx.quadraticCurveTo(9,-61.6,4,-60.4);ctx.closePath()},true);
       sh(pc,()=>{ctx.moveTo(-.6,-64.6);ctx.lineTo(-.2,-70.6);ctx.lineTo(3,-65.4);ctx.closePath()});sh('#f0e8d8',()=>{ctx.moveTo(10,-59.6);ctx.lineTo(10.6,-57.6);ctx.lineTo(11.4,-59.4);ctx.moveTo(12.6,-59.2);ctx.lineTo(13,-57.6);ctx.lineTo(13.6,-59);ctx.closePath()},true);
-      dot(9,-62.4,.7,D.glow||'#1a1210');dot(15,-61.2,.8,'#1a1210');break}
+      dot(9,-62.4,.7,D.glow||'#1a1210');dot(15,-61.2,.8,'#1a1210');
+      if(helm==='jaguarhelm'){ctx.fillStyle=col(shade(pc,-.6));[[-3.6,-58.4],[-.6,-62.8],[3.4,-64],[7.4,-63.2],[-5,-52.6],[-3.2,-47.6],[11.4,-61.6],[-1.6,-56]].forEach(([x,y],i)=>{ctx.beginPath();PR.arc.call(ctx,x,y,i%2?1.2:1.5,0,7);ctx.fill()});sh(pc,()=>{ctx.moveTo(-2.6,-63.6);ctx.lineTo(-2.2,-69.4);ctx.lineTo(1.4,-64.6);ctx.closePath()});
+        if(D.glow)glowDot(9,-62.4,.8,D.glow,4)}break}
     case 'circlet':face();hairTop();beard();ln(D.circletCol||'#c9a25a',1.4,[-3.8,-60.4,4,-61.4,9.4,-60.2],1);glowDot(8.8,-60.4,1.1,D.gem||'#ff7a2a',5);break;
     case 'crown':face();hairTop();beard();shM(D.crownCol||'#d8b040',()=>{ctx.moveTo(-3.6,-61);ctx.lineTo(-4,-67);ctx.lineTo(-1.2,-64);ctx.lineTo(1.6,-68.6);ctx.lineTo(4.2,-64);ctx.lineTo(7,-67.6);ctx.lineTo(8.8,-61);ctx.quadraticCurveTo(2.6,-62.6,-3.6,-61);ctx.closePath()});glowDot(1.6,-62.6,.9,D.gem||'#58c8ff',4);break;
     case 'laurel':face();hairTop();beard();for(let i=0;i<7;i++){const a=PI*.95+i*.2;sh(i%2?'#7aa83a':'#5a8a2a',()=>el(2.8+Math.cos(a)*6.6,-58.6+Math.sin(a)*4.4,1.6,.8,a+PI/2),true)}break;
@@ -4024,6 +4251,33 @@ function drawFigure(ctx,key,p){
       {const hc=D.hatCol||'#4a5a2a';sh(hc,()=>{ctx.moveTo(-4.4,-59.4);ctx.quadraticCurveTo(-3.6,-66.4,3,-66.2);ctx.quadraticCurveTo(9,-66,12.4,-60.2);ctx.quadraticCurveTo(4,-61.6,-4.4,-59.4);ctx.closePath()});ln(shade(hc,-.3),.8,[-4.2,-59.6,4,-61,12,-60.4],.8);if(D.feather)qn(D.feather,1.3,-1,-63,-7,-71,-11,-69,1)}break;
     case 'bandana':face();beard();{const hc=D.hatCol||'#8a2a24';sh(hc,()=>{ctx.moveTo(-4,-58);ctx.quadraticCurveTo(-4.2,-65,2.8,-65);ctx.quadraticCurveTo(9.4,-65,9.8,-59);ctx.quadraticCurveTo(3,-61.4,-4,-58);ctx.closePath()});const wv=Math.sin(t*3+seed)*.8;
       sh(hc,()=>{ctx.moveTo(-3.4,-59.6);ctx.lineTo(-8.6+wv,-56.6);ctx.lineTo(-7.4+wv,-55);ctx.lineTo(-3,-57.6);ctx.closePath()});dot(1,-62.6,.6,'#e8dcc0',.8);dot(5,-62.8,.6,'#e8dcc0',.8)}break;
+    case 'nemes':{const nc=D.nemesCol||'#e0c060',ns=D.nemesStripe||'#2a5aa0';face();beard();
+      sh(nc,()=>{ctx.moveTo(-6.6,-44);ctx.lineTo(-5.4,-60);ctx.quadraticCurveTo(2,-68.6,9.8,-61.4);ctx.lineTo(10.2,-59);ctx.lineTo(4,-59.6);ctx.lineTo(3.4,-52);ctx.lineTo(2,-44);ctx.closePath()});
+      ctx.save();ctx.strokeStyle=col(ns);ctx.lineWidth=.9;ctx.beginPath();for(let i=0;i<5;i++){const y=-62+i*3.6;PR.moveTo.call(ctx,-5.8+i*.1,y+1.2);PR.lineTo.call(ctx,3.2,y-1.4+i*.3)}PR.moveTo.call(ctx,-1.4,-62.4);PR.lineTo.call(ctx,8.6,-62.2);ctx.stroke();ctx.restore();
+      sh(nc,()=>{ctx.moveTo(3.2,-52.4);ctx.lineTo(5.8,-51.6);ctx.lineTo(6,-42.6);ctx.lineTo(2.2,-42.6);ctx.closePath()});ln(ns,.8,[2.8,-49,5.8,-49.2],.9);ln(ns,.8,[2.6,-46,5.9,-46.2],.9);
+      ln(D.nemesBand||'#e8d070',1.1,[-5.4,-59.8,4,-60.6,10,-59.8],.95);if(D.uraeus){shM('#e0c060',()=>{ctx.moveTo(6.6,-60.6);ctx.quadraticCurveTo(8.4,-64,7,-66);ctx.lineTo(8.2,-66.4);ctx.quadraticCurveTo(9.8,-63,8,-60.4);ctx.closePath()},true);glowDot(7.6,-65.6,1,D.uraeus,5)}break}
+    case 'turban':{const tc=D.turbanCol||'#e8dcc0';face();if(!D.mouthVeil)beard();
+      sh(tc,()=>{ctx.moveTo(-5.2,-58);ctx.quadraticCurveTo(-6.8,-66.4,0,-68.6);ctx.quadraticCurveTo(7.2,-69.8,10.8,-63);ctx.quadraticCurveTo(11.2,-59.4,9.8,-58.6);ctx.quadraticCurveTo(3,-61.2,-5.2,-58);ctx.closePath()});
+      ctx.save();ctx.strokeStyle='rgba(0,0,0,.3)';ctx.lineWidth=.7;ctx.beginPath();PR.moveTo.call(ctx,-4.8,-61.4);PR.quadraticCurveTo.call(ctx,3,-66.8,10.4,-62.2);PR.moveTo.call(ctx,-4.2,-64.4);PR.quadraticCurveTo.call(ctx,2,-68.2,8.2,-66.4);ctx.stroke();ctx.restore();
+      {const wv=Math.sin(t*3+seed)*.8;sh(tc,()=>{ctx.moveTo(-4.6,-60);ctx.quadraticCurveTo(-8.2,-56+wv,-8.8+wv,-48);ctx.lineTo(-6.4+wv,-48.6);ctx.quadraticCurveTo(-5.6,-55,-3,-58);ctx.closePath()})}
+      if(D.mouthVeil)sh(D.mouthVeil,()=>{ctx.moveTo(3.8,-54.6);ctx.lineTo(10.9,-54.8);ctx.quadraticCurveTo(11.1,-49.4,8,-47.4);ctx.lineTo(4.2,-47.8);ctx.closePath()});
+      if(D.turbanGem)glowDot(6,-63.8,1,D.turbanGem,4);break}
+    case 'headdress':{face();hairTop();beard();const fc=D.plumes||['#2ab890','#e8c040','#c83a2a'],n=D.plumeN||7,wv=Math.sin(t*2.4+seed)*.05,PL=D.plumeLen||13;
+      for(let i=0;i<n;i++){const a=-PI*.9+i*(PI*.66/Math.max(1,n-1))+wv,len=PL*(1-.14*Math.abs(i-(n-1)/2)/Math.max(1,(n-1)/2)),c2=fc[i%fc.length];ctx.save();ctx.translate(2.4+Math.cos(a)*4.6,-60+Math.sin(a)*2.8);ctx.rotate(a+PI/2);
+        sh(c2,()=>{ctx.moveTo(-1.6,0);ctx.quadraticCurveTo(-2.6,-len*.6,0,-len);ctx.quadraticCurveTo(2.6,-len*.6,1.6,0);ctx.closePath()});ln(shade(c2,-.4),.5,[0,-.5,0,-len*.85],.7);ln(shade(c2,.35),.5,[-1.2,-len*.7,0,-len*.95],.6);ctx.restore()}
+      shM(D.bandCol||'#d8b040',()=>rr(-4.2,-62.2,14,2.8,1));[0,1,2].forEach(i=>dot(-1.6+i*3.8,-60.8,.8,D.beadCol||'#2ab890'));break}
+    case 'eagle':{const ec=D.eagleCol||'#5a3a24',bk=D.beakCol||'#e8b030';face();
+      sh(ec,()=>{ctx.moveTo(-6.4,-45);ctx.quadraticCurveTo(-8.6,-60,-3,-66);ctx.quadraticCurveTo(3,-70,8.6,-66.4);ctx.lineTo(10.2,-63.4);ctx.lineTo(4,-61.6);ctx.quadraticCurveTo(1,-56,0,-45);ctx.closePath()});
+      for(let i=0;i<5;i++)sh(i%2?ec:shade(ec,.2),()=>{const x=-6+i*2;ctx.moveTo(x,-62+i*.4);ctx.lineTo(x-4.8,-56+i*2);ctx.lineTo(x+1.2,-58.6+i*.9);ctx.closePath()},true);
+      sh('#f0ece4',()=>{ctx.moveTo(-2.4,-66);ctx.quadraticCurveTo(3,-69.4,8.2,-66.4);ctx.lineTo(6,-64.4);ctx.quadraticCurveTo(2,-66.4,-2,-64.4);ctx.closePath()},true);
+      shM(bk,()=>{ctx.moveTo(5,-67);ctx.quadraticCurveTo(13.6,-68,16.6,-62);ctx.quadraticCurveTo(17,-57.4,14.4,-55.6);ctx.quadraticCurveTo(14.6,-59,11.6,-60);ctx.lineTo(4.4,-61);ctx.closePath()});
+      sh(shade(bk,-.45),()=>{ctx.moveTo(15.4,-58.6);ctx.quadraticCurveTo(16.6,-57,14.4,-55.6);ctx.quadraticCurveTo(14.4,-57,13.8,-58);ctx.closePath()},true);
+      shM(bk,()=>{ctx.moveTo(4,-49.8);ctx.quadraticCurveTo(9,-49,13.4,-51.4);ctx.lineTo(12.8,-49.6);ctx.quadraticCurveTo(8,-47.2,3.6,-48.4);ctx.closePath()},true);
+      dot(11.8,-64.2,.6,'#3a2010');dot(5.4,-64.6,1.4,'#f4d040');dot(5.6,-64.6,.7,'#1a1210');break}
+    case 'wrapped':{const wc=D.wraps||'#d6caa8';sh(wc,()=>{ctx.moveTo(-4.6,-49.6);ctx.quadraticCurveTo(-5.8,-64.6,2.8,-65.2);ctx.quadraticCurveTo(10.8,-64.8,10.8,-56);ctx.quadraticCurveTo(10.8,-50.6,8.4,-48.8);ctx.quadraticCurveTo(2,-47.6,-4.6,-49.6);ctx.closePath()},true);
+      ctx.save();ctx.strokeStyle=col(shade(wc,-.32));ctx.lineWidth=.6;ctx.beginPath();for(let i=0;i<6;i++){const y=-63+i*2.6;PR.moveTo.call(ctx,-4.8,y+1.4);PR.lineTo.call(ctx,10.6,y-.4+(i%2)*1.2)}ctx.stroke();ctx.restore();
+      ctx.fillStyle='#120c08';ctx.fillRect(4.4,-57.8,6,1.8);if(D.glow)glowEyes(-56.9,5.8,8.8);
+      {const wv=Math.sin(t*2.6+seed);ln(wc,1.1,[-4,-52,-7-wv,-46,-6.2-wv*1.4,-41],.9)}break}
     case 'beast':{ctx.save();ctx.translate(.8,5.8);beastHead();ctx.restore();break}
     case 'bare':case 'none':default:face();hairTop();beard();
       if(D.cracks){ctx.save();ctx.strokeStyle=D.cracks;ctx.lineWidth=.8;if(D.glowCracks){ctx.shadowColor=D.cracks;ctx.shadowBlur=4}ctx.beginPath();ctx.moveTo(.6,-61.6);ctx.lineTo(3,-57);ctx.lineTo(1.6,-52.4);ctx.stroke();ctx.restore()}
@@ -4070,6 +4324,12 @@ function drawFigure(ctx,key,p){
     if(AR.soul&&(D.motif||D.soul)){const fk4=Math.sin(t*9+seed)*.6;ctx.save();ctx.translate(.8,-1.7);ctx.globalAlpha*=.9;ctx.shadowColor=AR.soul;ctx.shadowBlur=6;ctx.fillStyle=AR.soul;ctx.beginPath();ctx.moveTo(-1.6,-75);ctx.quadraticCurveTo(0,-82-fk4*2,1.2+fk4,-85);ctx.quadraticCurveTo(1.8,-79,1.8,-75);ctx.closePath();ctx.fill();ctx.restore()}
     if(AR.flies){ctx.save();ctx.fillStyle='#141410';for(let i=0;i<3;i++){const a=t*(5+i)+i*2.1+seed;ctx.fillRect(Math.cos(a)*(9+i*2),-52+Math.sin(a*1.7)*7-i*3,1.3,1.3)}ctx.restore()}
     if(AR.embers){ctx.save();for(let i=0;i<4;i++){const q=((t*.5+i*.27+seed*.13)%1);ctx.globalAlpha=(1-q)*.95;ctx.fillStyle=i%2?'#ffb04a':'#ff6a22';ctx.fillRect(-8+((i*37+seed*10)%16)+Math.sin(q*6+i)*2,-30-q*44,1.6,1.6)}ctx.restore()}
+    if(D.perch){const fl=(t*.23+seed*.31)%1<.12?Math.sin(((t*.23+seed*.31)%1)/.12*Math.PI):0,px=-4.4*W,py=-57;
+      sh('#4a3a2e',()=>{ctx.moveTo(px-1.4,py-3);ctx.quadraticCurveTo(px-9,py-6-fl*9,px-11,py+1-fl*4);ctx.lineTo(px-1,py+.4);ctx.closePath()});
+      sh('#a8a098',()=>el(px,py-3.6,3,4));sh('#f0ece4',()=>el(px+1,py-2.4,1.6,2.6),true);sh('#5a4430',()=>{ctx.moveTo(px-2.4,py-1);ctx.lineTo(px-5,py+5);ctx.lineTo(px-1,py+1);ctx.closePath()},true);
+      sh('#d8c8a8',()=>ci(px+1.4,py-8.4,2.2));sh('#e8b030',()=>{ctx.moveTo(px+3.2,py-9);ctx.lineTo(px+5.2,py-8);ctx.lineTo(px+3.2,py-7.2);ctx.closePath()},true);dot(px+2,py-9,.6,'#1a1210')}
+    if(AR.glint){ctx.save();for(let i=0;i<3;i++){const q=((t*.7+i*.37+seed*.19)%1);if(q>=.3)continue;const x=(-4+((i*31+Math.round(seed*7))%11))*W,y=-50+((i*17+Math.round(seed*5))%26);ctx.globalAlpha=Math.sin(q/.3*Math.PI);ctx.fillStyle='#ffffff';ctx.shadowColor=AR.glint;ctx.shadowBlur=5;ctx.fillRect(x-.4,y-1.8,.8,3.6);ctx.fillRect(x-1.8,y-.4,3.6,.8)}ctx.restore()}
+    if(AR.sand){ctx.save();ctx.fillStyle=AR.sand;for(let i=0;i<3;i++){const q=((t*.8+i*.33+seed*.13)%1);ctx.globalAlpha=.8*(1-q);ctx.fillRect((-4+i*4)*W+Math.sin(q*5+i)*.6,-30+q*28,1,1)}ctx.restore()}
     if(D.wisp){ctx.save();for(let i=0;i<2;i++){const a=t*1.4+i*3.1+seed;ctx.globalAlpha=.85;ctx.shadowColor=D.wisp;ctx.shadowBlur=5;ctx.fillStyle=D.wisp;ctx.beginPath();ctx.arc(Math.cos(a)*13,-44+Math.sin(a*1.3)*8,1.5,0,7);ctx.fill()}ctx.restore()}
     if(AR.frost){ctx.save();ctx.fillStyle='#ffffff';for(let i=0;i<3;i++){const q=((t*.5+i*.33+seed*.1)%1);ctx.globalAlpha=.9*(1-q);ctx.fillRect(-8+((i*23+seed*7)%16),-80+q*70,1.2,1.2)}ctx.restore()}
     if(AR.drip){ctx.save();ctx.fillStyle=AR.drip;for(let i=0;i<3;i++){const q=((t*.9+i*.33+seed*.11)%1);ctx.globalAlpha=.85*(1-q*.6);ctx.fillRect((-5+i*5)*W,-34+q*32,1,1.6)}ctx.restore()}
@@ -4348,6 +4608,48 @@ const PALS={
   rotthrone:{sky:['#0a0c06','#1a200a','#343c10','#5a6a18','#8a9a2a'],glow:'190,230,70',ruins:['#1a1e0a','#121408','#0a0c04'],win:['#c0e84a','#7a9a2a'],ground:['#1a1c12','#12140c'],flame:['#6ab01e','#a8e03a','#f0ff9a'],ash:['#c0e84a','#e8f8a0']},
   throne:{sky:['#1e0a06','#4a120a','#8a2a10','#d8601a','#ffc04a'],glow:'255,190,80',ruins:['#3a1408','#260c06','#160604'],win:['#ffe080','#f0a030'],ground:['#2e1610','#20100c']},
 };
+Object.assign(PALS,{
+  dunes:{sky:['#1a1020','#4a2a3a','#a85a3a','#e8a050','#f8d890'],glow:'255,200,120',ruins:['#8a5a38','#6a4228','#4a2e1c'],win:['#ffe0a0','#e8a050'],ground:['#5a4430','#3e2e20'],ash:['#f0d8a0','#e8c080'],style:'desert'},
+  necro:{sky:['#0e0a18','#2a1a3a','#5a3a5a','#a8705a','#e0b070'],glow:'240,190,120',ruins:['#4a3438','#34262a','#20161a'],win:['#ffd070','#c89040'],ground:['#3e3226','#2a221a'],ash:['#e8d0a0','#c8b080'],style:'desert'},
+  glass:{sky:['#0a1418','#1a3a40','#3a7a7a','#8ac8c0','#e8f8e8'],glow:'190,255,240',ruins:['#3a5a58','#28443e','#18302c'],win:['#bff4f4','#6ad8d8'],ground:['#4a5650','#323c38'],flame:['#5ad8d8','#9af0f0','#e8ffff'],ash:['#e8ffff','#9ae8e8'],style:'desert'},
+  pyramid:{sky:['#120808','#3a1410','#8a3a18','#e09030','#ffe8a0'],glow:'255,210,110',ruins:['#5a3420','#3e2416','#26160c'],win:['#ffe8a0','#ffb040'],ground:['#4a3622','#302216'],ash:['#ffe8a0','#ffc060'],style:'desert'},
+  canopy:{sky:['#0a1a10','#163a1e','#2a5e2a','#5e9040','#cadc84'],glow:'230,250,160',ruins:['#1c3e20','#132c16','#0a1c0c'],win:['#e0ff90','#8ad040'],ground:['#24321a','#182212'],ash:['#e8ff90','#c8f060'],style:'jungle'},
+  river:{sky:['#0a1010','#16282a','#2a4a3a','#5a7a4a','#a8b070'],glow:'210,230,150',ruins:['#18301e','#102416','#08140c'],win:['#e8f0a0','#a0c060'],ground:['#22261a','#161a10'],ash:['#e8f0a0','#c8e080'],style:'jungle'},
+  temple:{sky:['#140a0a','#3a1a14','#7a3a1a','#d07a2a','#ffd070'],glow:'255,200,90',ruins:['#3e3418','#28220e','#161408'],win:['#ffd070','#ff9a3a'],ground:['#2a2216','#1c160e'],ash:['#ffd070','#ffb050'],style:'jungle'},
+  altar:{sky:['#0a0606','#2a0a0a','#5a1a10','#a83a14','#e8a030'],glow:'255,170,60',ruins:['#221a0c','#160e06','#0a0604'],win:['#a8e040','#ffd040'],ground:['#221810','#16100a'],flame:['#6ab01e','#a8e03a','#f0ff9a'],ash:['#c8f060','#ffd040'],style:'jungle'},
+});
+// skylines of the south: dunes, pyramids and obelisks under a white sun; canopy, stepped temples and hanging vines
+function desertSky(x,P,W,hz,cw,pk){
+  const dune=(base,amp,colr,seed,f)=>{x.fillStyle=colr;x.beginPath();x.moveTo(0,base);for(let i=0;i<=96;i++){const px=W*i/96,q=px/W;x.lineTo(px,base-amp*(.55+.3*Math.sin(q*f+seed)+.15*Math.sin(q*f*2.7+seed*3)))}x.lineTo(W,base);x.closePath();x.fill()};
+  const pyr=(cx,base,h,colr,lit)=>{x.fillStyle=colr;x.beginPath();x.moveTo(cx-h*1.05,base);x.lineTo(cx,base-h);x.lineTo(cx+h*1.05,base);x.closePath();x.fill();x.fillStyle=lit;x.beginPath();x.moveTo(cx,base-h);x.lineTo(cx+h*1.05,base);x.lineTo(cx+h*.25,base);x.closePath();x.fill()};
+  const obel=(cx,base,h,w,colr)=>{x.fillStyle=colr;x.beginPath();x.moveTo(cx-w,base);x.lineTo(cx-w*.7,base-h);x.lineTo(cx,base-h-w*1.4);x.lineTo(cx+w*.7,base-h);x.lineTo(cx+w,base);x.closePath();x.fill()};
+  const lit=`rgba(${P.glow},.24)`;
+  dune(hz,cw*.75,P.ruins[0],.3,5);
+  if(pk==='pyramid'){pyr(W*.5,hz-cw*.05,cw*2.7,P.ruins[0],`rgba(${P.glow},.32)`);x.save();x.shadowColor=P.win[0];x.shadowBlur=14;x.fillStyle=P.win[0];x.beginPath();x.arc(W*.5,hz-cw*2.75,cw*.12,0,7);x.fill();x.restore();pyr(W*.18,hz,cw*1.1,P.ruins[0],lit);pyr(W*.84,hz,cw*1.3,P.ruins[0],lit)}
+  else{pyr(W*(pk==='necro'?.3:.22),hz,cw*(pk==='necro'?1.5:1.2),P.ruins[0],lit);pyr(W*.64,hz,cw*.8,P.ruins[0],lit)}
+  dune(hz,cw*.45,P.ruins[1],1.7,4);
+  if(pk==='necro'){for(let i=0;i<5;i++){const cx=W*(.08+i*.21+hash(i,3)*.05),h=cw*(.4+hash(i,4)*.35);x.fillStyle=P.ruins[1];x.fillRect(cx-cw*.3,hz-h,cw*.6,h);x.fillRect(cx-cw*.38,hz-h-cw*.06,cw*.76,cw*.08);x.fillStyle=P.ruins[2];x.fillRect(cx-cw*.08,hz-h*.55,cw*.16,h*.55);if(hash(i,5)>.4){x.fillStyle=P.win[0];x.fillRect(cx-cw*.04,hz-h*.45,1.2/V.k,1.6/V.k)}}
+    [.18,.58,.9].forEach((q,i)=>obel(W*q,hz,cw*(.9+i*.15),cw*.09,P.ruins[1]))}
+  else [.12,.47,.76].forEach((q,i)=>obel(W*q,hz,cw*(.5+hash(i,8)*.4),cw*.07,P.ruins[1]));
+  if(pk==='glass'){for(let i=0;i<16;i++){const cx=hash(i,21)*W,h=cw*(.2+hash(i,22)*.6),w=cw*(.05+hash(i,23)*.08),lean=(hash(i,24)-.5)*cw*.3;x.fillStyle=i%3?P.win[1]:P.win[0];x.globalAlpha=.55;x.beginPath();x.moveTo(cx-w,hz);x.lineTo(cx+lean,hz-h);x.lineTo(cx+w,hz);x.closePath();x.fill();x.globalAlpha=1}}
+  dune(hz,cw*.2,P.ruins[2],3.1,3);
+}
+function jungleSky(x,P,W,hz,cw,pk){
+  const crowns=(base,r,colr,seed)=>{x.fillStyle=colr;x.beginPath();for(let px=-r,k=0;px<W+r;px+=r*.9,k++){const rr=r*(.7+hash(k,seed)*.6),py=base-r*.4-hash(k+3,seed)*r*.9;x.moveTo(px+rr,py);x.arc(px,py,rr,0,7)}x.rect(0,base-r*.6,W,r*.6+2);x.fill()};
+  const temple=(cx,base,h,colr,lite)=>{const steps=5,w0=h*1.15;x.fillStyle=colr;for(let i=0;i<steps;i++){const w=w0*(1-i/steps*.62),y=base-h*(i+1)/steps;x.fillRect(cx-w/2,y,w,h/steps+1)}
+    const tw=w0*.3,ty=base-h-h*.24;x.fillRect(cx-tw/2,ty,tw,h*.25);x.fillRect(cx-tw*.62,ty-h*.05,tw*1.24,h*.06);
+    x.fillStyle=`rgba(${P.glow},.16)`;x.fillRect(cx-w0*.08,base-h,w0*.16,h);
+    x.save();x.shadowColor=lite;x.shadowBlur=8;x.fillStyle=lite;x.fillRect(cx-tw*.15,ty+h*.08,tw*.3,h*.12);x.restore()};
+  crowns(hz,cw*.55,P.ruins[0],1);
+  if(pk==='temple'||pk==='altar'){temple(W*.5,hz-cw*.2,cw*(pk==='altar'?2.6:2),P.ruins[0],P.win[0]);temple(W*.16,hz-cw*.1,cw*1.1,P.ruins[0],P.win[1]);temple(W*.84,hz-cw*.1,cw*1.3,P.ruins[0],P.win[1])}
+  else temple(W*(pk==='river'?.7:.32),hz-cw*.3,cw*1.2,P.ruins[0],P.win[0]);
+  crowns(hz,cw*.4,P.ruins[1],2);
+  if(pk==='river'){const g=x.createLinearGradient(0,hz-cw*.18,0,hz);g.addColorStop(0,`rgba(${P.glow},.35)`);g.addColorStop(1,`rgba(${P.glow},.08)`);x.fillStyle=g;x.fillRect(0,hz-cw*.16,W,cw*.16)}
+  crowns(hz+cw*.05,cw*.25,P.ruins[2],3);
+  x.strokeStyle=P.ruins[2];x.lineWidth=1.4/V.k;for(let i=0;i<9;i++){const vx=hash(i,31)*W,len=hz*(.25+hash(i,32)*.45),sw=(hash(i,33)-.5)*cw*.6,ew=(hash(i,34)-.5)*cw*.3;x.beginPath();x.moveTo(vx,0);x.quadraticCurveTo(vx+sw,len*.6,vx+ew,len);x.stroke();
+    x.fillStyle=P.ruins[1];for(let j=1;j<5;j++){const q=j/5;x.beginPath();x.ellipse(vx+sw*q*.8,len*q,cw*.05,cw*.025,.6,0,7);x.fill()}}
+  x.fillStyle=P.ruins[2];for(let px=0,k=0;px<W+cw*.4;px+=cw*.35,k++){const r=cw*(.22+hash(k,41)*.2);x.beginPath();x.arc(px,-r*.2,r,0,7);x.fill()}
+}
 const pal=()=>Object.assign({},PALS.ashen,PALS[(S&&S.region&&REGIONS[S.region].pal)||'ashen']||{});
 function buildBackdrop(){
   const P=pal();V.pal=P;musicMood((S&&S.region&&REGIONS[S.region].pal)||'ashen');
@@ -4372,7 +4674,7 @@ function buildBackdrop(){
       x.lineTo(px+bw,base-bh);if(win&&hash(i,9)>.35)wins.push([px+bw*.3+hash(i,4)*bw*.4,base-bh*.6]);px+=bw;i++}
     x.lineTo(W,base);x.closePath();x.fill();
     wins.forEach(([wx,wy])=>{x.fillStyle=hash(wx,wy)>.5?P.win[0]:P.win[1];x.fillRect(wx,wy,1.2/V.k,1.6/V.k)})};
-  ruins(hz,cw*1.5,P.ruins[0],.37,false);ruins(hz,cw*1.0,P.ruins[1],.71,true);ruins(hz,cw*.45,P.ruins[2],.13,false);
+  {const pk=(S&&S.region&&REGIONS[S.region]&&REGIONS[S.region].pal)||'ashen';if(P.style==='desert')desertSky(x,P,W,hz,cw,pk);else if(P.style==='jungle')jungleSky(x,P,W,hz,cw,pk);else{ruins(hz,cw*1.5,P.ruins[0],.37,false);ruins(hz,cw*1.0,P.ruins[1],.71,true);ruins(hz,cw*.45,P.ruins[2],.13,false)}}
   // light shafts from the fire
   x.save();x.globalCompositeOperation='lighter';for(let i=0;i<4;i++){const sx=W*(.5+i*.12);x.fillStyle=`rgba(${P.glow},${.05-i*.008})`;x.beginPath();x.moveTo(W*.7,hz);x.lineTo(sx-cw*.6,0);x.lineTo(sx+cw*.2,0);x.closePath();x.fill()}x.restore();
   // ground
@@ -4470,6 +4772,7 @@ function drawUnitLow(lc,u){
   if(u.witch){const b=Math.sin(V.t*4)*1.5,y=-98*sz+b;lc.save();lc.globalAlpha=.6+.3*Math.sin(V.t*7);lc.fillStyle='#ff8a2a';lc.shadowColor='#ff8a2a';lc.shadowBlur=10;lc.beginPath();lc.ellipse(0,y+1,5,7+Math.sin(V.t*11),0,0,7);lc.fill();
     lc.globalAlpha=1;lc.shadowColor='#ffb04a';lc.shadowBlur=6;lc.fillStyle='#fff4d8';lc.fillRect(-1.6,y-7,3.2,13);lc.fillRect(-5,y-3.6,10,3.2);lc.restore()}
   if(u.rotting){for(let i=0;i<3;i++){const q=(V.t*.9+i*.33)%1;lc.fillStyle=i%2?'#c0e84a':'#7a9a2a';lc.beginPath();lc.arc(-6+i*6,-14-q*26,2.2*(1-q)+.8,0,7);lc.fill()}}
+  if(u.venom){const n=Math.min(3,Math.ceil(u.venom/2));lc.save();lc.shadowColor='#c8f040';lc.shadowBlur=u.venom>=4?6:2;for(let i=0;i<n;i++){const q=(V.t*1.4+i*.37)%1;lc.globalAlpha=1-q*.7;lc.fillStyle=i%2?'#a8e040':'#d8ff70';lc.fillRect(-5+i*5,-30+q*22,1.8,2.6)}lc.restore()}
   if(u.burning){const fl=[['#ff5a1e',4],['#ffb04a',2.4]];for(let i=0;i<3;i++){const fx=-5+i*5,fy=-26-((V.t*26+i*9)%12);fl.forEach(([c,r])=>{lc.fillStyle=c;lc.beginPath();lc.arc(fx,fy,r,0,7);lc.fill()})}}
   if(u.shield>u.max*.08&&!u.follower){lc.globalAlpha=Math.min(.4,.12+u.shield/u.max*.5);lc.strokeStyle='#efe6c8';lc.lineWidth=1/(k*sc);
     lc.beginPath();lc.ellipse(0,-28*sz,20*sz*(LOOK[u.key].bulk||1),33*sz,0,0,7);lc.stroke();lc.globalAlpha=1}
@@ -4521,13 +4824,15 @@ function drawLights(lc,units){
 }
 // region weather: rain in the drowned lands, spores in the rot, ash-snow in the quarries, embers elsewhere
 function drawWeather(lc){
-  const pk=(S&&S.region&&REGIONS[S.region]&&REGIONS[S.region].pal)||'ashen',kind=['spires','drowned','spire','fjord'].includes(pk)?'rain':['festering','maw','rotthrone'].includes(pk)?'spores':['hollows','tundra','winterhall'].includes(pk)?'snow':'embers';
+  const pk=(S&&S.region&&REGIONS[S.region]&&REGIONS[S.region].pal)||'ashen',kind=['dunes','necro','glass','pyramid'].includes(pk)?'sand':['canopy','river','temple','altar'].includes(pk)?'flies':['spires','drowned','spire','fjord'].includes(pk)?'rain':['festering','maw','rotthrone'].includes(pk)?'spores':['hollows','tundra','winterhall'].includes(pk)?'snow':'embers';
   if(kind==='embers')return drawAsh(lc);
   lc.save();lc.setTransform(1,0,0,1,0,0);const w=V.low.width,h=V.low.height,t=V.t;
   if(kind==='rain'){lc.strokeStyle='rgba(170,210,235,.32)';lc.lineWidth=1;lc.beginPath();for(let i=0;i<46;i++){const sp=150+(i%5)*30,x=((i*53.7)+t*40)%(w+20)-10,y=((i*37.3)+t*sp)%(h+20)-10;lc.moveTo(Math.round(x),Math.round(y));lc.lineTo(Math.round(x-2),Math.round(y+6))}lc.stroke();
     lc.fillStyle='rgba(200,230,250,.35)';const gy=(V.y0-V.rh*.6)*V.k;for(let i=0;i<8;i++){const q=(t*1.7+i*.37)%1,x=hash(i,Math.floor(t*1.7+i*.37))*w,y=gy+hash(Math.floor(t*1.7+i*.37),i)*(h-gy);if(q<.25)lc.fillRect(Math.round(x)-1,Math.round(y),3-Math.round(q*8),1)}}
   if(kind==='spores'){for(let i=0;i<30;i++){const x=((i*41.3)+Math.sin(t*.6+i)*14+t*(3+i%3))%w,y=((i*29.9)-t*(4+i%4)+h*4)%h,a=.35+.35*Math.sin(t*2+i);lc.fillStyle=i%3?`rgba(190,235,90,${a})`:`rgba(240,255,170,${a})`;lc.fillRect(Math.round(x),Math.round(y),i%5?1:2,i%5?1:2)}}
   if(kind==='snow'){for(let i=0;i<34;i++){const x=((i*47.1)+Math.sin(t*.8+i*1.7)*10)%w,y=((i*31.7)+t*(9+i%4*3))%h;lc.fillStyle=i%3?'rgba(232,224,208,.7)':'rgba(190,180,168,.6)';lc.fillRect(Math.round(x),Math.round(y),1,1)}}
+  if(kind==='sand'){for(let i=0;i<42;i++){const sp=30+(i%5)*12,x=((i*53.1)+t*sp)%(w+10)-5,y=((i*29.3)+Math.sin(t*1.3+i)*4+h)%h;lc.fillStyle=i%3?'rgba(232,200,140,.55)':'rgba(255,232,186,.75)';lc.fillRect(Math.round(x),Math.round(y),i%4?1:2,1)}}
+  if(kind==='flies'){for(let i=0;i<24;i++){const x=((i*47.3)+Math.sin(t*.5+i*1.3)*12+w*4)%w,y=((i*31.1)+Math.cos(t*.4+i)*8+h*4)%h,a=Math.max(0,Math.sin(t*1.6+i*2.3));if(a<.2)continue;lc.fillStyle=`rgba(220,255,140,${a*.25})`;lc.fillRect(Math.round(x)-1,Math.round(y)-1,3,3);lc.fillStyle=`rgba(230,255,160,${a*.95})`;lc.fillRect(Math.round(x),Math.round(y),1,1)}}
   lc.restore();
 }
 function drawAsh(lc){
@@ -4557,7 +4862,7 @@ function sceneUnits(){
     for(const e of C.ents){
       if(e.dead&&tm-e.deadT>1)continue;
       const d=disp(e),aDur=.45/Math.min(1.6,e.effAs||e.as);
-      units.push({items:e.follower?null:e.items,ref:e,key:e.key,star:e.star,follower:!!e.follower,team:e.team,r:d.r,X:d.X,boss:e.boss,elite:e.elite,bars:true,hp:e.hp,max:e.max,mana:e.mana,maxMana:e.maxMana,shield:e.shield,oc:e.oc,
+      units.push({items:e.follower?null:e.items,ref:e,key:e.key,star:e.star,follower:!!e.follower,team:e.team,r:d.r,X:d.X,boss:e.boss,elite:e.elite,bars:true,hp:e.hp,max:e.max,mana:e.mana,maxMana:e.maxMana,shield:e.shield+(e.linenHP||0),oc:e.oc,venom:!e.dead&&e.ven&&e.ven.u>tm?e.ven.n:0,
         stunned:!e.dead&&e.stunUntil>tm,burning:e.burns.some(x=>x.until>tm),rotting:!!(e.rot&&e.rot.n&&tm<e.rot.until),invul:e.invulUntil>tm,sel:sheet&&sheet.ent===e,
         witch:!e.dead&&!!e.witch,phantom:!!e.phantom,artCol:e.dead||e.follower?null:e.artCol,statue:!e.dead&&e.statueUntil>tm,taunted:!e.dead&&e.tauntUntil>tm,marked:!e.dead&&e.markUntil>tm,slowed:!e.dead&&e.slowUntil>tm,...animOf(e,tm,aDur),
         pose:{t:tm,seed:e.seed,moving:d.moving,walk:tm*11,face:e.face,hitK:clamp01(1-(tm-e.hitT)/.16),land:clamp01(1-(tm-e.spawnT-.22)/.12)*(tm>e.spawnT+.22?.6:0),cheer:C.over&&C.won&&e.team==='A'&&!e.dead,
@@ -5080,6 +5385,12 @@ function applyTraits(ents,cnt){
     if(o.includes('Frostborn')){const t=T('Frostborn');if(t)e.frost=t}
     if(o.includes('Giantkin')){const t=T('Giantkin');if(t){e.hp+=[0,15,25,40][t]*Math.min(20,e.vet||0);e.giant=[0,.25,.4,.6][t]}}
     if(o.includes('Skald')){const t=T('Skald');if(t)e.skald=t}
+    if(o.includes('Embalmed')){const t=T('Embalmed');if(t){e.linenP=[0,.15,.25,.4][t];e.linenT=t}}
+    if(o.includes('Nomad')){const t=T('Nomad');if(t){e.nomad=t;e.hazeX=t>=3?2:1.5;if(t>=2){e.dodge=(e.dodge||0)+.2;e.hazeT=7}if(t>=3)e.hazeBleed=true}}
+    if(o.includes('Glasswrought')){const t=T('Glasswrought');if(t)e.glass={mr:[0,.25,.35,.5][t],sh:[0,.15,.25,.35][t],r:t>=2?2:1,blind:t>=3}}
+    if(o.includes('Jaguar')){const t=T('Jaguar');if(t)e.jag={amp:[0,.2,.4,.7][t],strike:t>=2,vanish:t>=3}}
+    if(o.includes('Venomblood')){const t=T('Venomblood');if(t)e.venom=t}
+    if(T('Dynasty')&&o.includes('Dynasty'))e.dynasty=true;if(T('Eclipse')&&o.includes('Eclipse'))e.eclipse=true;if(T('Sun Disc')&&o.includes('Sun Disc'))e.sunDisc=true;
     if(o.includes('Inquisition')){const t=T('Inquisition');if(t){e.inq=[0,8,15,25][t];e.witchDmg=[1,1.2,1.35,1.5][t];if(t>=3)e.stoneImmune=true}}
     if(o.includes('Siegeworks')){const t=T('Siegeworks');if(t)e.siege={pct:[0,.04,.06,.09][t],stun:t>=3,t:1+Math.random()*2}}
     if(o.includes('Leechfolk')){const t=T('Leechfolk');if(t){e.leech=[0,.02,.03,.045][t];e.leechX=t>=3?2:1}}
@@ -5151,11 +5462,13 @@ function startCombat(){
     if(has('gravebell')&&o.includes('Wraithkin')){e.dodge=(e.dodge||0)+.2;e.bellHeal=true}
     if(has('pestmask'))e.pest=true;
     if(has('emberheart')&&e.revive){e.revFrac=.6;e.emberBurst=true}
-    if(has('geode')&&o.includes('Stoneblood')){e.geode=true;e.stoneImmune=true}});
+    if(has('geode')&&o.includes('Stoneblood')){e.geode=true;e.stoneImmune=true}
+    if(has('canopic')&&e.linenP){e.linenP+=.1;e.linenFast=true}
+    if(has('jadefang')&&e.venom)e.venCap=4});
   if((S.heat||0)>=4)B.forEach(e=>e.as*=1.15);
   B.forEach(e=>{if(e.boss&&e.boss!=='mini'&&NACTS()>3){e.hp*=1.35;e.atk*=1.2}});
   if((S.heat||0)>=5)B.forEach(e=>{if(e.boss&&e.boss!=='mini')e.hp*=1.25});
-  B.forEach(e=>{if(e.boss==='duskmother')e.ls=.3;if(e.boss==='kingboss'){e.burnOnHit=true;e.phase=0}if(e.boss==='sovereign'){e.rotter=2;B.forEach(b=>{if(b!==e)b.rotBomb=true})}});
+  B.forEach(e=>{if(e.boss==='glasspharaoh'){e.linenP=.15;e.linenT=2}if(e.boss==='coiledgod')e.venom=3;if(e.boss==='duskmother')e.ls=.3;if(e.boss==='kingboss'){e.burnOnHit=true;e.phase=0}if(e.boss==='sovereign'){e.rotter=2;B.forEach(b=>{if(b!==e)b.rotBomb=true})}});
   if(has('crown')){const occ=new Set(A.map(e=>K(e.r,e.c)));
     const free=ALLCELLS.filter(p=>side(p.r,p.c)==='A'&&!occ.has(K(p.r,p.c))).sort((a,b)=>Xof(b.r,b.c)-Xof(a.r,a.c))[0];
     if(free){const rv=makeEnt({key:'revenant',star:1},'A',free.r,free.c,1),g=1+.1*(S.wins||0);rv.hp*=g;rv.atk*=g;A.push(rv)}}
@@ -5202,7 +5515,7 @@ function ghost(e,r,X,dur=.35){if(C.fx.length>260)return;C.fx.push({k:'ghost',key
 const punch=(a=.05)=>{if(SET.shake)V.punch=Math.max(V.punch||0,a)};
 function shoot(src,t,amt,type,big,onHit,crit){if(C._claim&&t&&big)C._claim.add(t);
   const w=LOOK[src.key].wpn;
-  const kind=w==='xbow'||w==='spear'||w==='harpoon'||w==='trident'?'bolt':w==='bow'?'arrow':'orb';
+  const kind=w==='xbow'||w==='spear'||w==='harpoon'||w==='trident'||w==='blowgun'?'bolt':w==='bow'?'arrow':'orb';
   const colr=kind==='orb'?(LOOK[src.key].orb||'#ffc070'):(big?src.oc:'#a89880');
   C.proj.push({src,t,amt,type,big,onHit,crit,kind,col:w==='censer'?'#ffd090':w==='tome'?'#ff8a3a':colr,fr:src.pr,fX:src.pX,t0:C.time+.16,dur:.14+.07*dist(src,t)});
 }
@@ -5268,6 +5581,9 @@ function step(dt){
     if(e.expire&&tm>e.expire){e.dead=true;e.hp=0;e.deadT=tm;C.grid.delete(K(e.r,e.c));fxAt('ashes',e,1,'#6ad84a');if(e.wailer)wailBurst(e);continue}
     if(e.rot&&e.rot.n){if(tm>e.rot.until)e.rot.n=0;else{applyRaw(e,mitigate(e,e.rot.n*9*dt*(e.rot.src&&e.rot.src.pest?2:1),'magic'),e.rot.src,null);if(e.dead)continue}}
     if(e.vregen)e.hp=Math.min(e.max,e.hp+e.max*e.vregen*dt);
+    if(e.linenMax&&e.linenHP<e.linenMax&&tm-e.linenHit>=(e.linenFast?2:4)){e.linenHP=e.linenMax;if(!e.follower){fxAt('dome',e,.5,'#e8dcb8');fxText(e,'Rewrapped','#e8dcb8',10)}}
+    if(e.hazeT){e.hzT=(e.hzT||0)+dt;if(e.hzT>=e.hazeT){e.hzT=0;haze(e,1.5)}}
+    if(e.wither&&e.wither.u>tm){applyRaw(e,e.max*.06*dt,e.wither.src,null);if(e.dead)continue}
     if(e.siege){e.siege.t-=dt;if(e.siege.t<=0){e.siege.t=6;const w=alive(foeOf(e.team)).sort((a,b)=>dist(b,e)-dist(a,e))[0];if(w)C.proj.push({src:e,t:w,amt:0,type:'phys',big:true,kind:'orb',col:'#c8a070',fr:e.pr,fX:e.pX,t0:tm,dur:.3+.07*dist(e,w),onHit:x=>{applyRaw(x,mitigate(x,x.max*e.siege.pct,'phys'),e,'phys');if(e.siege.stun)stun(x,1);fxAt('rock',x,.4)}})}}
     if(e.alch){e.alch.t-=dt;if(e.alch.t<=0){e.alch.t=6;potion(e)}}
     if(e.wyrm){e.wyrm.t-=dt;if(e.wyrm.t<=0){e.wyrm.t=5;const t=e.target&&!e.target.dead?e.target:alive(foeOf(e.team))[0];if(t){const x=disp(e),y=disp(t);C.fx.push({k:'beam',r:x.r,X:x.X,r2:y.r,X2:y.X,t0:tm,dur:.5,col:'#e8f8ff'});alive(t.team).filter(f=>dist(f,t)<=1).forEach(f=>{hit(e,f,e.p*e.sp*.6,'magic');stun(f,1);fxAt('star',f,.35,'#e8f8ff')})}}}
@@ -5290,7 +5606,7 @@ function step(dt){
     let t=e.target;if(!t)continue;
     const dx=Xof(t.r,t.c)-e.pX;if(!e.moving&&Math.abs(dx)>.1)e.face=Math.sign(dx);
     if(dist(e,t)<=e.range){
-      e.effAs=e.as*(isC(e,'Ravager')?1+.12*e.kills:1)*(e.frenzyUntil>tm?1.6:1)*(e.slowUntil>tm?.6:1)*(1+.06*(e.fury||0))*(e.covOn?2:1)*(e.tpOn>tm?1.2:1)*(e.horn&&tm<8?1.4:1)*(e.fskOn>tm?1.6:1)*(e.carrion?1+e.carrion.rate*e.carrion.n:1)*(e.warUntil>tm?1.25:1)*(e.skaldN?1+e.skaldR*e.skaldN:1)*(e.beast?1+e.beast*Math.max(0,alive(e.team).filter(a=>a.o.includes('Beastkin')&&!UNITS[a.key].token).length-1):1)*bmul(e,'as')*(e.berserk?1+e.berserk*(1-e.hp/e.max):1);
+      e.effAs=e.as*(isC(e,'Ravager')?1+.12*e.kills:1)*(e.frenzyUntil>tm?1.6:1)*(e.slowUntil>tm?.6:1)*(1+.06*(e.fury||0))*(e.covOn?2:1)*(e.tpOn>tm?1.2:1)*(e.horn&&tm<8?1.4:1)*(e.fskOn>tm?1.6:1)*(e.carrion?1+e.carrion.rate*e.carrion.n:1)*(e.warUntil>tm?1.25:1)*(e.skaldN?1+e.skaldR*e.skaldN:1)*(e.beast?1+e.beast*Math.max(0,alive(e.team).filter(a=>a.o.includes('Beastkin')&&!UNITS[a.key].token).length-1):1)*bmul(e,'as')*(e.berserk?1+e.berserk*(1-e.hp/e.max):1)*(e.ven&&e.ven.n&&e.ven.u>tm?1-e.ven.n*e.ven.per:1);
       if(e.cd<=0&&e.gap<.15){
         e.cd=1/e.effAs;e.atkT=tm;if(!(e.silUntil>tm))e.mana+=10+e.hexMana;
         const atk=e.atk*(e.rageUntil>tm?1.4:1)*(e.decreeUntil>tm?1.2:1)*bmul(e,'atk');
@@ -5325,6 +5641,8 @@ function hit(src,t,amt,type,basic,crit){if(!basic&&src&&src.ab&&src._castHit)cas
   if(src&&t.exposed===src.team)amt*=1.12;
   if(src&&src.bf)amt*=bmul(src,'amp');
   if(src&&src.range>1&&t.markUntil>C.time&&t.markTeam===src.team)amt*=1.15;
+  if(src&&src.jag&&t.hp<t.max*.5)amt*=1+src.jag.amp;
+  if(src&&t.clawU>C.time&&src.o&&src.o.includes('Jaguar'))amt*=1.2;
   if(basic&&src&&src.blindUntil>C.time){fxText(t,'Miss','#ffe08a',10);return 0}
   if(basic&&src&&t.dodgeUntil>C.time){fxText(t,'Dodge','#c8d8ff',11);return 0}
   if(basic&&src&&t.blocks>0){t.blocks--;fxText(t,'Blocked','#ffd890',11);fxAt('spark',t,.25,'#ffd36a');return 0}
@@ -5336,11 +5654,15 @@ function hit(src,t,amt,type,basic,crit){if(!basic&&src&&src.ab&&src._castHit)cas
   if(src&&src.it&&src.it.ward&&src.shield>0)amt*=1.15;
   if(src&&t.eyeUntil>C.time&&t.eyed===src.team)amt*=1.25;
   if(src&&src.it&&src.it.moth&&type==='magic')amt*=1.15;
+  if(basic&&src&&src.hazeStrike){src.hazeStrike=false;amt*=src.hazeX||1.5;if(src.hazeUntil>C.time){src.invulUntil=C.time;src.hazeUntil=0}fxText(t,'From the haze','#f0c890',11);fxAt('dust',t,.4);
+    if(src.hazeBleed){const b=amt*.3;C.pend.push({at:C.time+.05,fn:()=>{if(!t.dead&&!src.dead){burn(src,t,b,3);fxText(t,'Bleeding','#e05a4a',10)}}})}}
   const spellHit=!basic&&src&&src.it&&type==='magic';
   if(spellHit&&src.it.witchsteel&&!crit&&Math.random()<(src.critC||.15)){amt*=src.critM||1.6;crit=true}
   let d=mitigate(t,amt,type);
   if(t.share){const adj=alive(t.team).filter(a=>a!==t&&dist(a,t)<=2);if(adj.length){const s=d*.2;d-=s;adj.forEach(a=>applyRaw(a,s/adj.length,src,null))}}
   const pre=t.hp+(t.shield||0);t._basic=basic;applyRaw(t,d,src,type,crit);t._basic=false;
+  // mirrored glass throws spell damage back at whoever cast it
+  if(!basic&&src&&t.bf&&!C._mir&&src!==t&&src.team!==t.team&&!src.dead){const mr=bsum(t,'mirror');if(mr){C._mir=true;try{applyRaw(src,d*mr,t,'magic')}finally{C._mir=false}fxAt('spark',src,.3,'#bff4f4');if(C.time-(t._mirT||-9)>.6){t._mirT=C.time;fxText(t,'Reflected','#bff4f4',10)}}}
   // a spell that fells a soldier carries on into the next one in its band, as a big blow cuts down several men
   if(!basic&&t.dead&&t.sq&&d>pre&&!C.noSpill){let over=d-pre;for(const m of t.sq.members.filter(m=>!m.dead&&!(m.invulUntil>C.time)).sort((a,b)=>dist(a,t)-dist(b,t))){if(over<=1)break;const ph=m.hp+(m.shield||0);applyRaw(m,over,src,type);over-=ph}}
   if(basic&&src&&t.bf&&src.range<=1&&!src.dead){const sp=bsum(t,'spike');if(sp)applyRaw(src,mitigate(src,sp,'magic'),t,'magic');const sb=bsum(t,'spikeBurn');if(sb)burn(t,src,sb,3);if(bsum(t,'spikeSlow')&&!src.slowImmune)src.slowUntil=Math.max(src.slowUntil||0,C.time+2)}
@@ -5352,6 +5674,7 @@ if(type){if(crit){sfx.crit();V.shake=Math.max(V.shake||0,1.6);C.freeze=Math.max(
     if(src.sapper&&!src.planted){src.planted=1;plantCharge(src,t)}
     if(src.courtier&&!(t.whisperUntil>C.time)){t.whisperUntil=C.time+3;(t.bf||(t.bf=[])).push({amp:.9,u:C.time+3})}
     if(src.hammer&&!t.dead&&t.o.some(o=>['Hexen','Hollow','Spellwrought'].includes(o))){src.hc=(src.hc||0)+1;if(src.hc%3===0){applyRaw(t,mitigate(t,amt,'phys'),src,'phys');t.silUntil=C.time+2;fxText(t,'Hammer!','#ffe0a0',12)}}
+    if(src.venom&&!t.dead)addVenom(src,t,1);if(src.hitShred)t.armor=Math.max(0,t.armor-src.hitShred);
     if(src.hitSlow&&!t.slowImmune)t.slowUntil=Math.max(t.slowUntil||0,C.time+1.5);if(src.hitSil)t.silUntil=C.time+1.5;if(src.hitBlind)t.blindUntil=C.time+1.5;
     if(src.hitRoot){src.hr=(src.hr||0)+1;if(src.hr%3===0&&!t.stoneImmune){t.stunUntil=Math.max(t.stunUntil,C.time+1);fxAt('roots',t,1.1,'#c8e060')}}
     if(src.marker){if(!(t.markUntil>C.time))fxText(t,'Marked','#b8c8ff',10);t.markUntil=C.time+3;t.markTeam=src.team}
@@ -5372,6 +5695,7 @@ if(type){if(crit){sfx.crit();V.shake=Math.max(V.shake||0,1.6);C.freeze=Math.max(
     if(src.execute&&!t.dead&&t.hp<t.max*.12&&!t.boss){fxText(t,'Execute','#e8d0ff',12);applyRaw(t,t.hp+t.shield+1,src,'true')}
   }
   if(spellHit&&!src.dead)magicProcs(src,t,d);
+  if(!basic&&src&&src.venom&&!t.dead&&t.team!==src.team&&d>0)addVenom(src,t,1);
   if(!basic&&src&&src.hexen&&!t.dead){t.vuln=t.vulnUntil>C.time?Math.max(t.vuln||1,src.hexen):src.hexen;t.vulnUntil=Math.max(t.vulnUntil||0,C.time+4)}
   if(src&&src.abyss>=3&&!t.dead&&t.hp<t.max*.15&&!t.boss){fxText(t,'Dragged under','#30d0a0',12);applyRaw(t,t.hp+t.shield+1,src,'true')}
   if(basic&&src&&!src.dead){const I=src.it;
@@ -5429,6 +5753,7 @@ function applyRaw(t,d,src,type,crit){
   if(t.dr)d*=t.dr;
   if(t.bf)d*=bmul(t,'dr');
   if(t.jarlWall&&t.jarlWall.every(a=>!a.dead))d*=.6;
+  if(type==='magic'&&t.glass)d*=1-t.glass.mr;
   if(type&&C.ot>1)d*=C.ot;
   if(type&&src&&src.frost>=3&&t.stunUntil>C.time)d*=1.3;
   if(t.vulnUntil>C.time)d*=t.vuln||1;
@@ -5440,6 +5765,9 @@ function applyRaw(t,d,src,type,crit){
   if(type&&src&&src.it&&src.it.bloodletter&&!src.dead&&!(src.noHealUntil>C.time)){const h=d*.2,room=src.max-src.hp;src.hp=Math.min(src.max,src.hp+h);if(h>room)src.shield=Math.min(src.max*.25,(src.shield||0)+(h-room))}
   if(type==='magic'&&src&&src.hexVamp&&!src.dead)src.hp=Math.min(src.max,src.hp+d*.25);
   if(type&&src&&src.ls&&!src.dead&&src!==t){const h=d*src.ls,room=src.max-src.hp;src.hp=Math.min(src.max,src.hp+h);if(src.overShield&&h>room)src.shield=Math.min(src.max*.5,src.shield+(h-room))}
+  if(t.linenHP>0&&type&&d>0){const a=Math.min(t.linenHP,d);t.linenHP-=a;d-=a;t.linenHit=C.time;
+    if(t.linenHP<=0){t.linenHP=0;fxAt('ashes',t,.5,'#e8dcb8');if(t.linenT>=2&&src&&!src.dead&&src.team!==t.team){(src.bf||(src.bf=[])).push({amp:.8,u:C.time+4});fxText(src,'Unwound','#e8dcb8',10)}}}
+  else if(t.linenMax&&type)t.linenHit=C.time;
   if(t.shield>0){const a=Math.min(t.shield,d);t.shield-=a;d-=a}
   if(type&&src&&src.team==='A'&&!src.dead&&has('chalice')&&!(src.noHealUntil>C.time))src.hp=Math.min(src.max,src.hp+d*.15);
   if(t.horn&&C.time<8)d*=.8;
@@ -5467,8 +5795,15 @@ function die(t,src){
       else{t.stoner2=false;t.ls=.35;t.atk*=1.3;t.as*=1.15;fxAt('ring',t,.8,'#ff4a64',{big:true})}
       V.shake=6;sfx.boom();return}
     if(t.boss==='witchqueen'){rise(.5,'A storm of crows');doSummon(t,'crows',180);return}
+    if(t.boss==='glasspharaoh'){t.hp=t.max*.6;t.reviveT=tm;t.stunUntil=0;t.burns=[];t.armor+=25;t.glass={mr:.3,sh:.2,r:2,blind:true};t.linenMax=0;t.linenHP=0;
+      fxText(t,'He rises as glass','#bff4f4',15,true);fxAt('ring',t,.9,'#bff4f4',{big:true});debris(t,16,['#e8ffff','#9ae8e8','#ffe8a0'],{h:34,dur:.9,up:110,spread:170});V.shake=6;sfx.boom();C.flashT=tm;
+      alive(foeOf(t.team)).filter(f=>dist(f,t)<=3).forEach(f=>{applyRaw(f,mitigate(f,f.max*.15,'magic'),t,'magic');f.blindUntil=Math.max(f.blindUntil||0,tm+2);fxAt('spark',f,.35,'#bff4f4')});return}
+    if(t.boss==='coiledgod'){t.hp=t.max*.6;t.reviveT=tm;t.stunUntil=0;t.burns=[];t.vulnUntil=0;t.slowUntil=0;t.blindUntil=0;t.silUntil=0;if(t.ven)t.ven.n=0;if(t.rot)t.rot.n=0;t.as*=1.3;t.venX=2;
+      fxText(t,'It sheds its skin','#a8e040',15,true);fxAt('ring',t,.9,'#a8e040',{big:true});debris(t,16,['#4a7a2a','#a8e040','#e8c040'],{h:30,dur:.9,up:90,spread:160});V.shake=6;sfx.boom();return}
     if(t.boss==='winterking'){rise(.6,'Winter deepens');t.atk*=1.3;t.armor+=30;fxAt('ring',t,.9,'#bfe8ff',{big:true});return}
     rise(.5,'Rises again');return}
+  if(!t.husk&&!t.dynasty&&t.o.includes('Embalmed')&&!UNITS[t.key].token){const q=alive(t.team).find(a=>a.dynasty&&a!==t&&(a.dynN||0)<3);
+    if(q){q.dynN=(q.dynN||0)+1;t.husk=true;t.hp=t.max*.4;t.reviveT=tm;t.stunUntil=0;t.burns=[];if(t.linenMax)t.linenHP=t.linenMax;const x=disp(q),y=disp(t);C.fx.push({k:'soul',r:x.r,X:x.X,r2:y.r,X2:y.X,t0:tm,dur:.7,col:'#80d8ff'});fxAt('pillar',t,.7,'#80d8ff');fxText(t,'Rises for the Queen','#80d8ff',12);return}}
   if(t.lastStand&&!t.lsUsed){t.lsUsed=true;t.hp=1;t.invulUntil=tm+4;t.shield=0;fxAt('ring',t,.8,'#f0d47a');fxText(t,'Covenant holds','#f0d47a',13);return}
   if(t.crown){t.crown=false;rise(.5,'Ashcrown');return}
   if(t.revive){t.revive=false;rise(t.revFrac||.3,'Rekindled');if(t.emberBurst){fxAt('ring',t,.7,'#ff7a2a',{big:true});fxAt('flame',t,.8);alive(foeOf(t.team)).filter(f=>dist(f,t)<=1).forEach(f=>applyRaw(f,mitigate(f,t.max*.2,'magic'),t,'magic'))}
@@ -5477,6 +5812,13 @@ function die(t,src){
   t.dead=true;t.hp=0;t.deadT=tm;C.grid.delete(K(t.r,t.c));fxAt('ashes',t,1.2,t.oc);
   sfx.die();C.freeze=Math.max(C.freeze||0,.07);V.shake=Math.max(V.shake||0,2.5);debris(t,t.follower?5:12,[t.oc||'#c9a25a','#3a302c','#8a7a6e'],{h:24,dur:.9,up:70,spread:120});
   if(t.team==='B'&&!UNITS[t.key].token&&has('graverobber')){C.spoils=(C.spoils||0)+5;fxAt('coin',t,.9)}
+  if(t.glass&&!t.shattered){t.shattered=true;const g=t.glass,at={r:t.r,c:t.c,pr:t.pr,pX:t.pX};fxAt('ring',t,.5,'#bff4f4');debris(t,12,['#e8ffff','#9ae8e8','#5ab8c8'],{h:24,dur:.7,up:90,spread:150});sfxV('zap');
+    alive(foeOf(t.team)).filter(f=>dist(f,at)<=g.r).forEach(f=>{applyRaw(f,mitigate(f,t.max*g.sh,'magic'),t,'magic');if(g.blind)f.blindUntil=Math.max(f.blindUntil||0,tm+2);fxAt('spark',f,.3,'#bff4f4')})}
+  if(t.linenT>=3&&src&&!src.dead&&src.team!==t.team){src.wither={u:tm+4,src:t};fxText(src,'Withering','#c8b890',10)}
+  if(src&&!src.dead&&src!==t&&src.team!==t.team&&!UNITS[t.key].token){
+    if(src.jag)C.pend.push({at:tm+.12,fn:()=>{if(src.dead||src.stunUntil>C.time)return;const w=alive(t.team).filter(f=>dist(f,src)<=4).sort((a,b)=>a.hp-b.hp)[0];if(!w)return;if(dist(w,src)>1&&!leapTo(src,w))return;src.target=w;
+      fxText(src,'Pounce','#f0a030',11);fxAt('claw',w,.4,'#f0a030',{dir:src.face});if(src.jag.strike)C.pend.push({at:C.time+.1,fn:()=>{if(!src.dead&&!w.dead)hit(src,w,src.atk,'phys',true)}});if(src.jag.vanish)src.invulUntil=Math.max(src.invulUntil||0,C.time+1)}});
+    if(src.eclipse){alive(src.team).filter(a=>a.o.includes('Jaguar')||isC(a,'Stalker')).forEach(a=>(a.bf||(a.bf=[])).push({as:1.4,amp:1.2,u:tm+3}));fxText(src,'Eclipse','#b890ff',13,true);fxAt('ring',src,.7,'#b890ff')}}
   if(t.team==='A'&&has('laststand')&&!C.lastStand){const mine=C.ents.filter(e=>e.team==='A'&&!UNITS[e.key].token);if(mine.filter(e=>e.dead).length*2>=mine.length){C.lastStand=true;
     alive('A').forEach(a=>{a.atk*=1.4;a.as*=1.4;a.shield+=a.max*.3;fxAt('dome',a,.7,'#ffd36a')});fxText(alive('A')[0]||t,'The last stand!','#ffd36a',14,true);V.shake=Math.max(V.shake||0,3)}}
   if(!alive(t.team).length&&!C.slowDone){C.slowDone=true;C.slow=.9;C.flashT=tm;punch(.07)}
@@ -6248,6 +6590,114 @@ wanderer:['The Wanderer\'s Gift',p=>`Gives each ally a gift: the strongest gains
 wolfking:['Howl of the King',p=>`Leaps onto the weakest enemy and mauls it for ${rd(p*1.2)} physical damage, then bounds to the next weakest for ${rd(p*.8)}; Beastkin allies attack 40% faster for 3s.`,
   s=>{const L=s.F().sort((a,b)=>a.hp-b.hp).slice(0,2);if(!L.length)return;s.leap(L[0]);s.snd('horn');L.forEach((w,i)=>s.L(.2+i*.25,()=>{if(!s.ok(w))return;if(i)s.leap(w);s.fx('claw',w,.5,'#ffe080',{dir:s.dir});s.D(w,s.p*(i?.8:1.2),'phys')}));s.A().filter(a=>a.o.includes('Beastkin')).forEach(a=>s.buff(a,{as:1.4},3))}],
 });
+Object.assign(SPELLS_B,{
+// ---- Embalmed: the wrapped dead of the sun-dynasties
+wrapped:['Rewrap',p=>`Binds itself anew in grave-linen: its linen ward is restored, it gains a ${rd(p*.8)} shield, and grasping strips slow every enemy beside it for 2s.`,
+  s=>s.L(.15,()=>{s.band(s.e).forEach(m=>{if(m.linenMax)m.linenHP=m.linenMax});s.SH(s.e,s.p*.8);s.fx('dome',s.e,.7,'#e8dcb8');s.in(s.e,1).forEach(f=>{s.slow(f,2);s.fx('roots',f,.7,'#e8dcb8')});s.txt(s.e,'Rewrapped','#e8dcb8')})],
+canopic:['Heart in the Jar',p=>`Opens a canopic jar over the most wounded ally within 4 hexes: it heals ${p} and takes 20% less damage for 4s.`,
+  s=>s.L(.2,()=>{const a=s.low(s.A().filter(x=>dist(x,s.e)<=4));if(!a)return;s.beam(s.e,a,'#e0c060');s.H(a,s.p);s.buff(a,{dr:.8},4);s.fx('pillar',a,.5,'#e0c060')})],
+jackalguard:['Guardians of the Threshold',p=>`Bars the way: enemies within 2 hexes must attack it for 2.5s, it gains a ${rd(p*.6)} shield, and for 4s every melee blow against it is answered with ${rd(p*.15)} magic damage.`,
+  s=>s.L(.15,()=>{s.ring(s.e,'#e0c060',true);s.in(s.e,2).forEach(f=>s.taunt(f,2.5));s.SH(s.e,s.p*.6);s.buff(s.e,{spike:s.p*.15},4);s.snd('horn')})],
+linenwitch:['Binding Linen',p=>`Flings strips of grave-linen around her target: ${p} magic damage, bound in place for 1.5s, and it takes 15% more damage for 4s.`,
+  s=>{const t=s.t();s.orb(t,'#e8dcb8',x=>{s.S(x,s.p);s.root(x,1.5);s.vuln(x,1.15,4);s.fx('roots',x,1.6,'#e8dcb8')})}],
+embalmer:['Preserve',p=>`Anoints your two most wounded allies with embalming oils: each heals ${rd(p*.6)} and is wrapped in a linen ward of ${rd(p*.5)} that rewraps after 4s without being hit.`,
+  s=>s.L(.2,()=>{s.A().filter(a=>!UNITS[a.key].token).sort((a,b)=>a.hp/a.max-b.hp/b.max).slice(0,2).forEach(a=>{s.H(a,s.p*.6);a.linenMax=Math.max(a.linenMax||0,s.p*.5);a.linenHP=a.linenMax;a.linenHit=C.time;s.beam(s.e,a,'#e0c060');s.fx('dome',a,.7,'#e8dcb8')})})],
+tombking:['Rise for the King',p=>`Commands his dead: every Embalmed ally is wrapped anew and attacks 30% faster for 5s, and allies within 3 hexes gain a ${rd(p*.6)} shield.`,
+  s=>s.L(.25,()=>{s.ring(s.e,'#e0c060',true);s.snd('horn');s.A().forEach(a=>{if(a.o.includes('Embalmed')){if(a.linenMax)a.linenHP=a.linenMax;s.buff(a,{as:1.3},5);if(!a.follower)s.fx('star',a,.4,'#e0c060')}if(dist(a,s.e)<=3)s.SH(a,s.p*.6)});s.txt(s.e,'Rise for the King','#e0c060',13,true)})],
+sphinx:['The Riddle',p=>`Poses its riddle to the enemy that hits hardest: it pounces for ${p} physical damage, stuns it for 2s and strips 30 armour, and a caster loses all its mana.`,
+  s=>{const t=s.carry();if(!t)return;s.leap(t);s.L(.25,()=>{if(!s.ok(t))return;s.fx('sigil',t,1.2,'#9ae8e8');s.D(t,s.p,'phys');s.stun(t,2);s.shred(t,30);if(t.ab)s.burnMana(t,999);s.txt(t,'Riddled','#9ae8e8',12)})}],
+nefre:['The Undying Court',p=>`Raises her ankh over her target: it and every enemy within 2 hexes of it take ${rd(p*.7)} magic damage and are silenced for 2s, and every Embalmed ally heals ${rd(p*.4)} and is wrapped anew.`,
+  s=>{const t=s.t();if(!t)return;s.fx('pillar',s.e,.7,'#80d8ff');s.L(.3,()=>{s.ring(t,'#80d8ff',true);s.shake(3);s.in(t,2).forEach(f=>{s.D(f,s.p*.7);s.sil(f,2);s.fx('sigil',f,1,'#80d8ff')});s.A().filter(a=>a.o.includes('Embalmed')).forEach(a=>{s.H(a,s.p*.4);if(a.linenMax)a.linenHP=a.linenMax})})}],
+// ---- Nomad: riders of the glass sea
+dunerunner:['Sand in the Eyes',p=>`Throws a fistful of sand in its target's face: ${p} physical damage and blinded for 2s, then it slips into the haze for 1s.`,
+  s=>{const t=s.t();if(!t)return;s.L(.15,()=>{s.fx('dust',t,.5);s.blind(t,2);s.D(t,s.p,'phys');haze(s.e,1)})}],
+sandslinger:['Hot Stone',p=>`Hurls a sun-baked stone at the weakest enemy: ${p} physical damage, and it burns for ${rd(p*.3)}.`,
+  s=>{const t=s.weak();s.orb(t,'#e89050',x=>{s.D(x,s.p,'phys');s.burn(x,s.p*.3);s.fx('spark',x,.3,'#ffb060')})}],
+outrider:['Ride Them Down',p=>`Charges the weakest enemy within 4 hexes: ${p} physical damage, and it is slowed for 2s.`,
+  s=>{const t=s.weak(s.F().filter(f=>dist(f,s.e)<=4));if(!t)return;s.leap(t);s.L(.2,()=>{s.fx('claw',t,.4,'#e89050',{dir:s.dir});s.D(t,s.p,'phys');s.slow(t,2)})}],
+miragedancer:['Mirage',p=>`Dissolves into a mirage: it slips into the haze for 1.5s, and its next three attacks deal ${rd(p*.5)} bonus magic damage.`,
+  s=>{haze(s.e,1.5);s.e.sstrike=3;s.e.ssDmg=s.p*.5;s.fx('cloud',s.e,.8,'#ffd0a0');s.txt(s.e,'Mirage','#ffd0a0')}],
+caravanguard:['Hold the Water',p=>`Guards the water-skins: allies within 3 hexes heal ${rd(p*.3)} and gain a ${rd(p*.4)} shield, and it takes 40% less damage for 3s.`,
+  s=>s.L(.15,()=>{s.ring(s.e,'#d8b878',true);s.A().filter(a=>dist(a,s.e)<=3).forEach(a=>{s.H(a,s.p*.3);s.SH(a,s.p*.4)});s.buff(s.e,{dr:.6},3)})],
+falconer:['Loose the Falcon',p=>`Sends his falcon at the enemy farthest back: it rakes for ${p} physical damage and blinds it for 2.5s, then swoops past his own target for ${rd(p*.5)}.`,
+  s=>{const f=s.far(),t=s.t();if(!f)return;s.orb(f,'#c8a070',x=>{s.fx('claw',x,.4,'#e8d0a0',{dir:s.dir});s.D(x,s.p,'phys');s.blind(x,2.5);if(s.ok(t)&&t!==x)s.L(.25,()=>{s.beam(x,t,'#e8d0a0',.3);s.D(t,s.p*.5,'phys')})},'arrow')}],
+sandseer:['Read the Sands',p=>`Reads the sands: your most wounded ally heals ${p}, and the enemy closest to casting loses 40 mana.`,
+  s=>s.L(.2,()=>{const a=s.low();if(a){s.H(a,s.p);s.beam(s.e,a,'#ffd070')}const c=s.caster();if(c){s.burnMana(c,40);s.fx('sigil',c,.8,'#d8b878');s.txt(c,'Foreseen','#e8c890')}})],
+sandkhan:['Sandstorm',p=>`Calls a sandstorm over the field for 4s: your Nomads slip into the haze for 1.5s, your whole company attacks 20% faster, and every enemy is blinded for 1s and takes ${rd(p*.06)} physical damage every second.`,
+  s=>s.L(.25,()=>{s.snd('whoosh');s.shake(3);s.A().forEach(a=>{s.buff(a,{as:1.2},4);if(a.o.includes('Nomad'))haze(a,1.5)});s.F().forEach(f=>{s.blind(f,1);if(!f.follower)s.fx('dust',f,.6)});s.txt(s.e,'Sandstorm!','#e8c890',13,true);
+    for(let i=1;i<=4;i++)s.L(i,()=>s.F().forEach(f=>{s.D(f,s.p*.06,'phys');if(Math.random()<.3)s.fx('dust',f,.5)}))})],
+rasul:['The Thousand Tents',p=>`Rides out of the dunes onto the weakest enemy for ${p} physical damage, and three phantom riders sweep through its rank behind him, each striking every enemy there for ${rd(p*.25)}.`,
+  s=>{const t=s.weak();if(!t)return;s.leap(t);s.snd('horn');s.L(.2,()=>{if(s.ok(t)){s.fx('claw',t,.5,'#ffd070',{dir:s.dir});s.D(t,s.p,'phys')}const row=s.row(t),pr=t.pr,x0=s.e.pX-s.dir*8;
+    for(let i=0;i<12;i++)s.L(i*.04,()=>{for(const dr of [-.5,0,.5])ghost({key:'rasul',team:s.e.team,face:s.dir,seed:i},pr+dr,x0+s.dir*i*1.4,.4)});
+    for(let k=0;k<3;k++)s.L(.3+k*.12,()=>{row.forEach(f=>s.D(f,s.p*.25,'phys'));s.shake(2)})})}],
+// ---- Glasswrought: the desert fused into soldiers
+shardling:['Splinter',p=>`Snaps a sliver off itself and drives it into its target: ${p} physical damage and a bleeding wound of ${rd(p*.4)}; the shardling loses 5% of its health.`,
+  s=>{const t=s.t();if(!t)return;s.L(.15,()=>{s.D(t,s.p,'phys');s.burn(t,s.p*.4);s.fx('spark',t,.35,'#bff4f4');if(s.ok(s.e))s.e.hp=Math.max(1,s.e.hp-s.e.max*.05)})}],
+glasssentinel:['Mirror Wall',p=>`Turns its mirrored face outward: it gains a ${rd(p*.6)} shield, and for 4s half of all spell damage it takes is thrown back at the caster.`,
+  s=>s.L(.15,()=>{s.SH(s.e,s.p*.6);s.buff(s.e,{mirror:.5},4);s.fx('dome',s.e,.9,'#bff4f4')})],
+prismmage:['Prism Beam',p=>`Splits the sun through its prism into a beam at its target: ${p} magic damage, and the light bends on to another enemy within 2 hexes for half.`,
+  s=>{const t=s.t();if(!t)return;s.beam(s.e,t,'#e8ffff',.4);s.L(.1,()=>{s.S(t,s.p);const n=s.near(t,s.F().filter(f=>f!==t&&dist(f,t)<=2));if(n){s.beam(t,n,'#ffb0e0',.35);s.D(n,s.p*.5)}})}],
+mirrorknight:['Through the Mirror',p=>`Steps through its mirror to the enemy closest to casting: ${p} magic damage and 30 mana burned, and for 3s half of all spell damage it takes is thrown back.`,
+  s=>{const t=s.caster();if(!t)return;s.fx('ring',s.e,.4,'#bff4f4');s.leap(t);s.L(.2,()=>{s.D(t,s.p);s.burnMana(t,30);s.buff(s.e,{mirror:.5},3);s.fx('cross',t,.4,'#bff4f4')})}],
+lenswarden:['Burning Lens',p=>`Focuses the sun through its great lens onto its target for 1.5s: ${rd(p*1.6)} magic damage in all, then it and the enemies beside it burn for ${rd(p*.3)} and are blinded for 1.5s.`,
+  s=>{const t=s.t();if(!t)return;for(let i=0;i<4;i++)s.L(i*.4,()=>{if(!s.ok(t)||!s.ok(s.e))return;s.beam(s.e,t,'#ffe080',.42);s.D(t,s.p*.4);s.fx('flame',t,.3)});s.L(1.5,()=>{if(!s.ok(t))return;s.ring(t,'#ffe080');s.in(t,1).forEach(f=>{s.burn(f,s.p*.3);s.blind(f,1.5)})})}],
+glasscolossus:['Shatterquake',p=>`Stamps the ground: enemies within 2 hexes take ${rd(p*.7)} magic damage and are stunned for 1s; shards break from its body (8% of its health) and it gains a ${rd(p*.8)} shield.`,
+  s=>s.L(.3,()=>{s.shake(5);s.fx('quake',s.e,.8,'#9ae8e8');s.in(s.e,2).forEach(f=>{s.D(f,s.p*.7);s.stun(f,1)});if(s.ok(s.e)){s.e.hp=Math.max(1,s.e.hp-s.e.max*.08);debris(s.e,14,['#e8ffff','#9ae8e8','#5ab8c8'],{h:30,dur:.8,up:90,spread:150})}s.SH(s.e,s.p*.8)})],
+// ---- Jaguar: the clans who hunt from the canopy
+jaguarcub:['Pounce',p=>`Pounces on the weakest enemy within 4 hexes, clawing it for ${p} physical damage.`,
+  s=>{const t=s.weak(s.F().filter(f=>dist(f,s.e)<=4));if(!t)return;s.leap(t);s.L(.2,()=>{s.fx('claw',t,.4,'#f0a030',{dir:s.dir});s.D(t,s.p,'phys')})}],
+jaguarscout:['Obsidian Cut',p=>`Slashes its target with an obsidian blade: ${p} physical damage, and the wound cannot be healed for 3s.`,
+  s=>{const t=s.t();if(!t)return;s.L(.15,()=>{s.fx('slash',t,.3,'#3a3a4a');s.D(t,s.p,'phys');s.noheal(t,3)})}],
+nightstalker:['From the Dark',p=>`Vanishes for a moment, then strikes the enemy with the least health for ${p} physical damage and 2 Venom.`,
+  s=>{s.inv(s.e,.6);const t=s.weak();if(!t)return;s.L(.3,()=>{if(!s.ok(t)||!s.ok(s.e))return;s.leap(t);s.fx('claw',t,.4,'#c8f040',{dir:s.dir});s.D(t,s.p,'phys');addVenom(s.e,t,2)})}],
+clawpriest:['Rite of Claws',p=>`Marks its target with the jaguar's claw: ${p} magic damage, and for 4s Jaguars deal it 20% more damage.`,
+  s=>{const t=s.t();if(!t)return;s.L(.15,()=>{if(!s.ok(t))return;s.fx('claw',t,.5,'#f0a030',{dir:s.dir});s.D(t,s.p);t.clawU=C.time+4;s.fx('sigil',t,1,'#f0a030')})}],
+jaguarknight:['Spotted Shield',p=>`Raises its pelt-covered shield: it gains a ${rd(p*.8)} shield and strikes back at melee attackers for ${rd(p*.12)} for 4s, and cuts down a wounded enemy beside it for ${rd(p*.6)}.`,
+  s=>s.L(.15,()=>{s.SH(s.e,s.p*.8);s.buff(s.e,{spike:s.p*.12},4);s.fx('dome',s.e,.7,'#e0a838');const w=s.in(s.e,1).filter(f=>f.hp<f.max*.5).sort((a,b)=>a.hp-b.hp)[0];if(w){s.fx('claw',w,.4,'#e0a838',{dir:s.dir});s.D(w,s.p*.6,'phys')}})],
+blackjaguar:['Night Without Stars',p=>`Darkness gathers around it: it cannot be targeted for 1.5s, then it pounces on the enemy with the least health for ${rd(p*1.3)} physical damage, and every enemy beside its prey is blinded for 2s.`,
+  s=>{s.inv(s.e,1.5);s.fx('cloud',s.e,1,'#1e1a20');ghost(s.e,s.e.pr,s.e.pX,.6);s.L(.9,()=>{const t=s.weak();if(!t||!s.ok(s.e))return;s.leap(t);s.L(.15,()=>{if(!s.ok(t))return;s.fx('claw',t,.6,'#e8f040',{dir:s.dir});s.D(t,s.p*1.3,'phys');s.in(t,1).filter(f=>f!==t).forEach(f=>s.blind(f,2))})})}],
+ochre:['The Long Night',p=>`Hunts three times: she leaps to the enemy with the least health and strikes for ${rd(p*.7)} physical damage, then to the next, then the next, and nothing can touch her while she hunts.`,
+  s=>{s.inv(s.e,1.4);s.txt(s.e,'The Long Night','#b890ff',13,true);for(let i=0;i<3;i++)s.L(.1+i*.4,()=>{if(!s.ok(s.e))return;const t=s.weak();if(!t)return;s.leap(t);s.L(.12,()=>{if(!s.ok(t))return;s.fx('claw',t,.45,'#b890ff',{dir:s.dir});s.D(t,s.p*.7,'phys')})})}],
+// ---- Feathered: priests who pay the sun
+sunacolyte:['Morning Hymn',p=>`Sings to the dawn: allies within 3 hexes heal ${rd(p*.3)}, and the most wounded of them heals ${rd(p*.3)} more.`,
+  s=>s.L(.2,()=>{const L=s.A().filter(a=>dist(a,s.e)<=3);L.forEach(a=>s.H(a,s.p*.3));const w=s.low(L);if(w){s.H(w,s.p*.3);s.fx('pillar',w,.5,'#ffe080')}s.ring(s.e,'#ffe080')})],
+eaglewarrior:["Eagle's Dive",p=>`Leaps onto its target with an obsidian club: ${p} physical damage and 15 armour stripped; a target below half health is also stunned for 1s.`,
+  s=>{const t=s.t();if(!t)return;if(dist(t,s.e)>1)s.leap(t);s.L(.2,()=>{if(!s.ok(t))return;s.fx('slash',t,.35,'#2ab890');const low=t.hp<t.max*.5;s.D(t,s.p,'phys');s.shred(t,15);if(low)s.stun(t,1)})}],
+sunsinger:['Solar Chant',p=>`Calls a shaft of sunlight onto its target: ${p} magic damage, and the light lingers, burning it for ${rd(p*.3)}.`,
+  s=>{const t=s.t();if(!t)return;s.fx('pillar',t,.6,'#ffd040');s.L(.2,()=>{s.S(t,s.p);s.burn(t,s.p*.3)})}],
+plumedguard:['Wall of Feathers',p=>`Spreads its feathered shield: allies within 2 hexes gain a ${rd(p*.5)} shield, and for 4s enemies that strike them in melee are slowed.`,
+  s=>s.L(.15,()=>{s.ring(s.e,'#2ab890',true);s.A().filter(a=>dist(a,s.e)<=2).forEach(a=>{s.SH(a,s.p*.5);s.buff(a,{spikeSlow:1},4)})})],
+serpentdancer:['Coil and Strike',p=>`Whirls around its target like a serpent: ${p} magic damage to it and every enemy beside it, each taking 1 Venom.`,
+  s=>{const t=s.t();if(!t)return;s.L(.2,()=>{s.ring(t,'#2ab890');s.in(t,1).forEach(f=>{s.D(f,s.p);addVenom(s.e,f,1);s.fx('slash',f,.3,'#a8e040')})})}],
+skypriest:['Call the Sun',p=>`Calls on the sun: pays it an extra Tribute, and allies within 3 hexes attack 20% faster for 4s and gain a ${rd(p*.3)} shield.`,
+  s=>s.L(.2,()=>{s.fx('pillar',s.e,.6,'#ffd040');s.A().filter(a=>dist(a,s.e)<=3).forEach(a=>{s.buff(a,{as:1.2},4);s.SH(a,s.p*.3)});tribute(s.e.team,1,s.e)})],
+sunpriest:['Heart for the Sun',p=>`Tears the light out of the enemy with the most health: ${rd(p*1.2)} magic damage, your allies share healing equal to the damage dealt, and the sun receives an extra Tribute.`,
+  s=>{const t=s.tank();if(!t)return;s.fx('sigil',t,1,'#ff6a3a');s.L(.3,()=>{const d=s.D(t,s.p*1.2);s.soul(t,s.e,'#ff9a3a');const L=s.A();L.forEach(a=>s.H(a,d/Math.max(1,L.length)));tribute(s.e.team,1,s.e)})}],
+eaglelord:['Talon Strike',p=>`Takes to the sky and drops onto the enemy farthest back: ${p} physical damage to it and ${rd(p*.5)} to every enemy beside it, and they are knocked back a hex.`,
+  s=>{const t=s.far();if(!t)return;s.leap(t);s.L(.25,()=>{s.shake(3);s.fx('quake',t,.6,'#e8c040');s.D(t,s.p,'phys');s.in(t,1).filter(f=>f!==t).forEach(f=>{s.D(f,s.p*.5,'phys');s.push(f,1,t)})})}],
+huama:['Second Sun',p=>`Raises a second sun over the field: every enemy takes ${rd(p*.35)} magic damage and burns for ${rd(p*.15)}, and every ally heals ${rd(p*.2)}.`,
+  s=>s.L(.3,()=>{C.flashT=C.time;s.shake(4);s.txt(s.e,'A second sun!','#ffd040',14,true);s.F().forEach(f=>{s.D(f,s.p*.35);s.burn(f,s.p*.15);if(!f.follower)s.fx('flame',f,.6)});s.A().forEach(a=>s.H(a,s.p*.2))})],
+// ---- Venomblood: the cults of the god's fangs
+dartfrog:['Poison Skin',p=>`Its skin weeps poison onto its target: ${p} magic damage and 2 Venom, and the frog heals ${rd(p*.3)}.`,
+  s=>{const t=s.t();if(!t)return;s.L(.15,()=>{s.D(t,s.p);addVenom(s.e,t,2);s.fx('cloud',t,.5,'#a8e040');s.H(s.e,s.p*.3)})}],
+blowgunner:['Poison Dart',p=>`Puffs a dart at the enemy with the least health: ${p} physical damage and 2 Venom.`,
+  s=>{const t=s.weak();s.orb(t,'#a8e040',x=>{s.D(x,s.p,'phys');addVenom(s.e,x,2)},'bolt')}],
+spitter:['Blinding Spit',p=>`Spits venom into its target's eyes: ${p} magic damage, 1 Venom, and blinded for 2s.`,
+  s=>{const t=s.t();s.orb(t,'#c8f040',x=>{s.D(x,s.p);addVenom(s.e,x,1);s.blind(x,2)})}],
+spiderpriest:['Web',p=>`Casts a web over its target: ${p} magic damage, bound in place for 1.5s, and 2 Venom.`,
+  s=>{const t=s.t();s.orb(t,'#e8e8e0',x=>{s.D(x,s.p);s.root(x,1.5);addVenom(s.e,x,2);s.fx('roots',x,1.6,'#e8e8e0')})}],
+venombrewer:['Venom Flask',p=>`Hurls a flask of venom at its target: ${p} magic damage to it and every enemy beside it, each taking 2 Venom.`,
+  s=>{const t=s.t();s.orb(t,'#a8e040',x=>{s.fx('cloud',x,.9,'#a8e040');s.in(x,1).forEach(f=>{s.D(f,s.p);addVenom(s.e,f,2)})})}],
+viperguard:['Fang Spear',p=>`Lunges with a fang-tipped spear: ${p} physical damage and 15 armour stripped; doubled against an enemy already carrying Venom.`,
+  s=>{const t=s.t();if(!t)return;s.L(.15,()=>{if(!s.ok(t))return;const v=t.ven&&t.ven.u>C.time&&t.ven.n>0;s.D(t,s.p*(v?2:1),'phys');s.shred(t,15);s.fx('cross',t,.35,v?'#a8e040':'#e8f0c0')})}],
+serpentmother:['Brood of the River',p=>`Spreads her hood and spits venom along her target's rank: ${rd(p*.8)} magic damage and 3 Venom to every enemy in it.`,
+  s=>{const t=s.t();if(!t)return;const row=s.row(t);s.beam(s.e,t,'#c8f040',.5);s.L(.2,()=>row.forEach((f,i)=>s.L(i*.05,()=>{s.D(f,s.p*.8);addVenom(s.e,f,3);if(!f.follower||i%2===0)s.fx('cloud',f,.5,'#a8e040')})))}],
+// ---- the two final foes
+glasspharaoh:['Sunstroke',p=>`Turns the sun on its target's rank: ${p} magic damage to every enemy in it, and they are blinded for 1.5s.`,
+  s=>{const t=s.t();if(!t)return;s.beam(s.e,t,'#ffe8a0',.6);s.L(.25,()=>{s.shake(3);s.row(t).forEach(f=>{s.D(f,s.p);s.blind(f,1.5);if(!f.follower)s.fx('flame',f,.5)})})}],
+coiledgod:["The God's Fangs",p=>`Uncoils across the field onto the enemy that hits hardest: ${p} physical damage and 3 Venom, and it is held in the coils for 1.5s.`,
+  s=>{const t=s.carry();if(!t)return;s.leap(t);s.L(.2,()=>{if(!s.ok(t))return;s.shake(4);s.fx('claw',t,.6,'#a8e040',{dir:s.dir});s.D(t,s.p,'phys');addVenom(s.e,t,3);s.stun(t,1.5);s.txt(t,'Coiled','#a8e040',12)})}],
+});
 // each unit's spell replaces the shared one it used to have
 Object.assign(SPELLS,SPELLS_B);
 for(const [k,v] of Object.entries(SPELLS)){if(!UNITS[k])continue;ABIL['u_'+k]=[v[0],v[1]];UNITS[k].ab='u_'+k}
@@ -6472,6 +6922,12 @@ const SQUADS={
   mantlet:[3,'line',"Mantlet-Men"],coffin:[3,'line',"Coffin-Bearers"],tombdoor:[3,'line',"Tomb-Door Wardens"],barrowshield:[3,'line',"Barrow-Shields"],householdguard:[3,'line',"Household Guard"],
   reliquary:[1,'',"The Hollow Reliquary"],rimeshield:[3,'line',"Rime-Shields"],shrinebearer:[3,'line',"Shrine-Bearers"],barkhide:[3,'line',"Barkhides"],shieldwall:[4,'line',"Shield-Wall"],aldric:[1,'',"Brother Aldric"]};
 Object.assign(SQUADS,{reeve:[4,'line',"Cart-Wall Levy"],anvilguard:[4,'line',"Anvil-Guard"],bellwarden:[3,'line',"Bell-Guards"],hollowmonk:[3,'line',"Ash-Eyed Brothers"],automaton:[3,'line',"Brass Guardians"],daven:[4,'line',"Shield-Sworn"]});
+Object.assign(SQUADS,{wrapped:[4,'line',"Wrapped Dead"],canopic:[3,'cluster',"Canopic Priests"],jackalguard:[3,'line',"Jackal-Guard"],linenwitch:[3,'cluster',"Linen-Witches"],
+  dunerunner:[4,'cluster',"Dune-Runners"],sandslinger:[4,'cluster',"Sand-Slingers"],outrider:[3,'wedge',"Outriders"],miragedancer:[3,'cluster',"Mirage-Dancers"],caravanguard:[3,'line',"Caravan-Guard"],sandseer:[3,'cluster',"Sand-Seers"],
+  shardling:[3,'cluster',"Shardlings"],glasssentinel:[3,'line',"Glass Sentinels"],prismmage:[3,'cluster',"Prism-Mages"],mirrorknight:[3,'wedge',"Mirror-Knights"],
+  jaguarcub:[3,'cluster',"Jaguar-Cubs"],jaguarscout:[4,'wedge',"Jaguar Scouts"],nightstalker:[3,'cluster',"Night-Stalkers"],clawpriest:[3,'cluster',"Claw-Priests"],jaguarknight:[3,'line',"Jaguar Knights"],
+  sunacolyte:[3,'cluster',"Sun-Acolytes"],eaglewarrior:[3,'wedge',"Eagle Warriors"],sunsinger:[3,'cluster',"Sun-Singers"],plumedguard:[3,'line',"Plumed Guard"],serpentdancer:[3,'cluster',"Serpent-Dancers"],
+  dartfrog:[3,'cluster',"Dart-Frogs"],blowgunner:[4,'cluster',"Blowgunners"],spitter:[3,'cluster',"Spitting Cobras"],spiderpriest:[3,'cluster',"Spider-Priestesses"],venombrewer:[3,'cluster',"Venom-Brewers"],viperguard:[3,'line',"Viper Guard"]});
 for(const [k,[n,f,name]] of Object.entries(SQUADS)){const u=UNITS[k];if(!u)continue;u.name=name;if(u.cost<5)u.title='';if(n>1)u.sq={n,f,band:name}}
 // names: units are known by what they are, so "The" goes; the great legends carry their own names, and a few beings of myth stay singular
 {const LEGEND={abbess:['Hilde','the Iron Abbess'],kilnlord:['Hargan','the Kiln-Lord'],vulturequeen:['Carrowyn','the Vulture Queen'],ashsaint:['Cendra','the Ash Saint'],banshee:['Morvaine','the Keening Queen'],
@@ -6483,6 +6939,7 @@ for(const [k,[n,f,name]] of Object.entries(SQUADS)){const u=UNITS[k];if(!u)conti
 // spell power tuning: each unit's spell was measured in a standard fight between armies of bands (damage dealt plus health saved, per point of mana)
 // and scaled toward the median for its cost
 const PWR={"kael":1.48,"tamsin":0.36,"mira":1.21,"dorn":1.23,"magrook":1.43,"pell":0.41,"crowboy":2.51,"wick":0.82,"levyman":3.35,"archerlass":1.24,"sigrun":1.05,"daven":1.66,"kindra":0.54,"sorrel":2.56,"halla":1.27,"cinder":0.54,"esk":0.6,"flailer":1.94,"shepherd":1.17,"huntress":1.18,"maren":1.73,"basalt":0.6,"brannoch":1.35,"bishop":0.74,"holt":3.68,"hask":1.59,"pyre":0.43,"vosk":0.58,"gallow":2.97,"mourner":0.41,"smithmother":1.23,"huntsman":0.59,"captain":1.87,"mordrake":1.6,"auren":0.71,"ropeboy":0.6,"kindler":0.81,"engineer":0.88,"ashknight":1.32,"trebuchet":0.8,"sapqueen":0.84,"pyrelord":0.7,"graveknight":1.49,"quartermaster":0.28,"crowlord":0.86,"grisel":2.74,"ashsaint":0.74,"siegeking":0.72,"emberwyrm":0.58,"acolyte":0.38,"hollowmonk":1.1,"wisp":1.11,"gloam":0.68,"deckhand":1.21,"inkling":0.51,"runeguard":2.14,"lanternmaid":0.55,"deepspawn":1.13,"emberwight":1.9,"knife":1.02,"harpooner":1.12,"librarian":1.73,"lisbet":0.29,"eelwitch":0.54,"reefpriest":0.53,"grieve":0.64,"wraithmere":1.76,"confessor":0.75,"ferryman":1.39,"tidecaller":0.61,"magister":0.44,"automaton":0.77,"lampknight":1.49,"gulper":0.64,"voidcaller":0.37,"bride":0.4,"grimwall":2.34,"lantern":1.31,"abysswatcher":0.85,"banshee":0.52,"severin":0.85,"bellringer":0.67,"eelrunner":1.54,"drownedpage":1.73,"chimewisp":1.21,"bellwarden":0.52,"deepbell":1.41,"wraithlord":0.37,"abysskin":0.4,"tomekeeper":1.06,"hollowlord":0.67,"tidebride":0.84,"elspeth":1.26,"greatbell":0.27,"saltking":1.28,"hollowqueen":0.4,"bloodcount":0.43,"gaunt":0.14,"thren":0.85,"sapling":0.48,"briarling":0.59,"pup":1.2,"roach":1.29,"sporeling":0.32,"bramble":0.3,"thornback":1.46,"boarman":1.86,"wolfmother":1.87,"ratking":0.21,"sow":1.57,"eelcatcher":1.61,"puffball":0.25,"curser":0.93,"halveth":0.65,"antler":1.1,"locust":0.71,"drowner":1.9,"moss":1.89,"tender":0.48,"crowwitch":0.52,"crane":0.16,"barkbishop":1.82,"thornking":0.57,"mothsaint":0.68,"mirehag":0.7,"mycelia":2.13,"rookmother":0.2,"swarmlord":0.29,"mildew":0.84,"hornedone":1.16,"leechling":0.75,"herbwife":1.46,"bogleech":2.55,"blightknight":0.35,"hunthound":1.23,"vulturelord":0.58,"sporegran":0.14,"wolfking":0.65,"legionary":2.94,"pike":0.63,"witchfinder":1.22,"flagellant":0.75,"novice":1.49,"vesna":0.54,"arbalest":1.18,"medica":1.19,"signifer":0.66,"brandsister":0.6,"heir":1.24,"anvilguard":1.09,"veyl":0.93,"ilse":0.6,"centurion":0.83,"penitent":1.48,"silencer":1.4,"kingsblade":0.66,"revgen":1.5,"morwen":0.41,"arbiter":1.6,"queen":0.73,"mallory":3,"inquisitor":0.87,"regent":1.08,"marshal":0.84,"embersworn":1.2,"retiarius":0.76,"murmillo":1.29,"pagelet":1.6,"cinderboy":1.04,"altarboy":1.38,"secutor":1.24,"perfumer":0.5,"tribune":0.23,"forgepriest":0.46,"nightwarden":0.6,"champion":2.25,"legate":1.49,"cinderabbess":0.6,"phoenix":0.75,"queenmother":1.32,"colossus":1.52,"novicecult":1.35,"toad":0.65,"zealot":0.77,"highpriestess":0.25,"ashbishop":0.73,"witchknight":1.25,"blackgoat":1.54,"prophet":0.54,"archlibrarian":1.9,"frostling":0.86,"drumboy":1.06,"icewife":0.5,"shardcaster":0.48,"hillgiant":0.71,"frostguard":4.32,"snowhunter":1.62,"stonegiant":0.83,"sagasinger":0.29,"glacierbreaker":0.5,"lawspeaker":1.26,"rimequeen":0.3,"mountainking":0.86,"drownedthrall":0.83,"sagaboy":0.63,"icegrub":1.35,"frostcaller":0.61,"runequeen":0.6,"bjorn":1.93,"yeti":1.94,"trollmother":0.3,"volva":1.55,"barrowking":0.46,"stonewarden":0.6,"runeghost":0.44,"hrothgar":1.45,"frostwyrm":0.28,"cairn":1.29,"ossian":0.83,"gravedigger":1.2,"standard":0.68,"grevna":0.82,"yeoman":1.17,"shadewalker":1.31,"leech":0.73,"kess":1.25,"livingtome":1.22,"brine":3.75,"candlewick":0.8,"morrow":1.17,"rael":0.15,"mirelurker":0.82,"covenmother":0.84,"ratcatcher":1.16,"pestilent":0.12,"mireboar":0.49,"leechlord":0.52,"chamberlain":0.47,"spymaster":0.45,"ironmaiden":0.48,"blackcat":0.67,"raven":0.55,"shieldmaid":0.78,"snowfox":0.74,"icebear":0.71,"docksider":0.49,"sundered":1.22,"ulfhednar":0.85};
+Object.assign(PWR,{"beastspeaker":0.84,"blackjaguar":1.16,"caravanguard":0.6,"clawpriest":0.51,"dartfrog":0.87,"dunerunner":0.82,"eaglewarrior":1.57,"embalmer":0.82,"falconer":1.17,"glasscolossus":0.66,"huama":0.3,"jackalguard":2.42,"jaguarcub":2.09,"jaguarknight":2.4,"jaguarscout":1.26,"linenwitch":0.6,"miragedancer":0.62,"mirrorknight":0.76,"nefre":0.61,"ochre":1.46,"outrider":1.85,"prismmage":0.4,"sandkhan":0.36,"sandsculptor":1.74,"sandslinger":0.85,"scarabcaller":0.55,"serpentdancer":0.46,"snakecharmer":0.65,"sphinx":1.6,"spiderpriest":0.5,"sunacolyte":0.36,"sunsinger":0.43,"venombrewer":0.45,"viperguard":1.53});
 for(const k of ['daven','reeve','automaton'])delete PWR[k]; // these three carry new shield-bearer spells
 for(const [k,f] of Object.entries(PWR))if(UNITS[k])UNITS[k].p=Math.round(UNITS[k].p*f);
 // the rank and file: the leader's kit in plainer, darker cloth, without the cloak, banner or aura that mark the one in charge
@@ -6514,7 +6971,7 @@ function unitGroups(team){const G=new Map();for(const e of C.ents){if(e.team!==t
     if(!g){g={key:e.key,star:e.star,oc:e.oc,dmg:0,taken:0,healed:0,n:0,alive:0};G.set(id,g)}g.dmg+=e.dmg||0;g.taken+=e.taken||0;g.healed+=e.healed||0;g.n++;if(!e.dead)g.alive++}
   return [...G.values()].map(g=>Object.assign(g,{dead:!g.alive}))}
 function wailBurst(t){fxAt('ring',t,.6,'#ff4a5a');fxText(t,'Wail','#ffb0b8',11);alive(foeOf(t.team)).filter(f=>dist(f,t)<=1&&!f.slowImmune).forEach(f=>f.slowUntil=Math.max(f.slowUntil||0,C.time+2.5))}
-const TOKF={inkblot:s=>s.hitSlow=1,bellwraith:s=>s.hitSil=1,bramblekin:s=>s.hitRoot=1,rook:s=>s.hitBlind=1,wail:s=>s.wailer=1,hornet:s=>s.hitSlow=1};
+const TOKF={scarab:s=>s.hitShred=6,glassling:s=>s.glass={mr:.35,sh:.2,r:1},viper:s=>s.venom=Math.max(s.venom||0,1),inkblot:s=>s.hitSlow=1,bellwraith:s=>s.hitSil=1,bramblekin:s=>s.hitRoot=1,rook:s=>s.hitBlind=1,wail:s=>s.wailer=1,hornet:s=>s.hitSlow=1};
 
 // ===== new trait engines: siege engines, potions, charges, cheers, bells and the chant =====
 function plantCharge(src,t){if(!t||t.dead)return;fxText(t,'Charge','#ffa040',10);fxAt('spark',t,.4,'#ffa040');const r=t.r,c=t.c,pr=t.pr,pX=t.pX,team=t.team;
@@ -6525,6 +6982,20 @@ function potion(e){const m=e.alch.m,A=alive(e.team),Fo=alive(foeOf(e.team)),r=Ma
   else{tgt=A.filter(a=>a!==e).sort((a,b)=>b.atk-a.atk)[0]||e;const go=a=>(a.bf||(a.bf=[])).push({as:1+.2*m,u:C.time+3});go(tgt);if(e.alch.splash)A.filter(a=>a!==tgt&&dist(a,tgt)<=2).forEach(go);fxAt('star',tgt,.4,'#9ae060');fxText(e,'Tonic','#c8f080',10)}}
 function cheer(team,n){const gt=(C.gladT||{})[team];if(!gt)return;const cc=C.cheers||(C.cheers={A:0,B:0});cc[team]+=n;const need=gt>=4?4:5;if(cc[team]<need)return;cc[team]=0;
   const G=alive(team).filter(a=>a.o.includes('Gladiator'));G.forEach(a=>{a.hp=Math.min(a.max,a.hp+a.max*[0,.15,.2,.25,.3][gt]);(a.bf||(a.bf=[])).push({amp:[1,1.2,1.3,1.4,1.5][gt],u:C.time+5});fxAt('star',a,.5,'#e0904a')});if(G[0])fxText(G[0],'The crowd roars!','#ffc070',14,true);sfxV('horn')}
+// the haze of the dunes: hidden, untouchable, and the first blow out of it lands harder
+function haze(e,d){if(!e||e.dead)return;e.invulUntil=Math.max(e.invulUntil||0,C.time+d);e.hazeUntil=C.time+d;e.hazeStrike=true;if(!e.follower||Math.random()<.4)fxAt('cloud',e,Math.min(1.2,d*.8),'#e0c090');ghost(e,e.pr,e.pX,.5)}
+// venom: every stack slows the victim's attacks; a full dose paralyses it
+function addVenom(src,t,n){if(!t||t.dead||!src||t.team===src.team)return;const tier=src.venom||1,per=[0,.04,.06,.08][tier]||.04,cap=src.venCap||6;
+  const v=t.ven&&t.ven.u>C.time?t.ven:(t.ven={n:0,u:0,per});v.per=Math.max(v.per||0,per);v.u=C.time+4;v.n+=n*(src.venX||1);
+  if(v.n>=cap){v.n=0;v.u=0;fxAt('cloud',t,.6,'#a8e040');if(!t.stoneImmune){t.stunUntil=Math.max(t.stunUntil,C.time+[0,1,1.5,2][tier]);fxText(t,'Paralysed','#c8f060',12)}
+    if(tier>=3&&!t.dead)applyRaw(t,mitigate(t,t.max*.1*(t.boss?.5:1),'magic'),src,'magic')}}
+// the sun keeps count: every Feathered spell is a Tribute, and enough of them bring the sunrise
+function tribute(team,n,src){const ft=(C.featT||{})[team];if(!ft)return;const tb=C.trib||(C.trib={A:0,B:0});tb[team]+=n;if(tb[team]<(ft>=4?3:4))return;tb[team]=0;
+  const L=alive(team),Fo=alive(foeOf(team));
+  L.forEach(a=>{if(!(a.noHealUntil>C.time))a.hp=Math.min(a.max,a.hp+a.max*[0,.08,.12,.16,.2][ft]);if(a.o.includes('Feathered'))(a.bf||(a.bf=[])).push({as:[1,1.2,1.3,1.4,1.5][ft],u:C.time+5});if(!a.follower)fxAt('heal',a,.6)});
+  if(ft>=3)Fo.forEach(f=>{applyRaw(f,mitigate(f,f.max*(ft>=4?.1:.06)*(f.boss?.5:1),'magic'),src,'magic');if(!f.follower)fxAt('flame',f,.5)});
+  if(L.some(a=>a.sunDisc))Fo.forEach(f=>f.blindUntil=Math.max(f.blindUntil||0,C.time+2));
+  const h=L.find(a=>a.o.includes('Feathered')&&!a.follower)||L[0];if(h){fxText(h,'The sun rises!','#ffd040',14,true);fxAt('pillar',h,.8,'#ffd040');fxAt('ring',h,.8,'#ffd040',{big:true})}sfxV('horn')}
 function newTraitsStart(cntA,cntB){
   [['A',cntA],['B',cntB]].forEach(([tm,cn])=>{const L=alive(tm),Fo=alive(foeOf(tm)),T=n=>isActive(n)?tierOf(n,cn[n]||0):0;
     const ft=T('Familiar');if(ft)L.filter(e=>e.o.includes('Familiar')).forEach(f=>{const b=L.filter(a=>a!==f&&!a.o.includes('Familiar')).sort((a,b)=>dist(a,f)-dist(b,f))[0];if(!b)return;
@@ -6534,6 +7005,9 @@ function newTraitsStart(cntA,cntB){
     if(T('Jarl'))L.filter(e=>e.o.includes('Jarl')).forEach(j=>{const g=[j,...L.filter(a=>a!==j).sort((a,b)=>dist(a,j)-dist(b,j)).slice(0,2)];g.forEach(a=>{a.jarlWall=g;fxAt('dome',a,.9,'#c8c8c8')});fxText(j,'Shield-wall!','#e8e8e8',12,true)});
     if(T('Last Light'))L.filter(e=>e.lastLight).forEach(el=>L.forEach(a=>{a.shield+=el.max*.15;fxAt('dome',a,.7,'#ffe08a')}));
     if(T('Ghost Ship'))L.filter(e=>e.o.includes('Ghost Ship')).forEach(g=>{fxText(g,'Broadside!','#a8f0ff',13,true);V.shake=Math.max(V.shake||0,4);Fo.forEach((f,i)=>C.pend.push({at:C.time+.2+i*.05,fn:()=>{if(!f.dead&&!g.dead){fxAt('rock',f,.4);hit(g,f,g.p*g.sp*.5,'magic')}}}))});
+    if(T('Nomad'))L.filter(e=>e.o.includes('Nomad')).forEach(e=>haze(e,2));
+    L.forEach(e=>{if(e.linenP){e.linenMax=e.max*e.linenP;e.linenHP=e.linenMax;e.linenHit=-9}});
+    (C.featT||(C.featT={}))[tm]=T('Feathered');
     (C.bell||(C.bell={}))[tm]={t:T('Bellfolk'),nt:C.time+5};(C.cult||(C.cult={}))[tm]={t:T('Cultist'),nt:C.time+8};(C.gladT||(C.gladT={}))[tm]=T('Gladiator');
   })}
 // what each unit's spell does, written for the unit it belongs to (a band's text speaks for the band)
@@ -6824,6 +7298,38 @@ const DESC={
   frostwyrm:p=>`Roars across the field: every enemy takes ${rd(p*.55)} magic damage and is chilled; enemies already chilled freeze for 1.5s.`,
   wanderer:p=>`Gives each ally a gift: the strongest gains 45% damage for 6s, the most wounded heals ${rd(p*1.2)}, everyone else gains 25 mana, and his two ravens tear ${rd(p*.6)} from each of the enemy's two strongest attackers.`,
   puffball:p=>`The puffballs burst a cloud of rot over their target: ${p} to it and its neighbours, applying 2 Rot to each.`};
+Object.assign(DESC,{
+  wrapped:p=>`The wrapped dead bind themselves anew: every soldier's linen ward is restored, the band shares a ${rd(p*.8)} shield, and grasping strips slow every enemy beside its leader for 2s.`,
+  canopic:p=>`The priests open a canopic jar over the most wounded ally within 4 hexes: it heals ${p} and takes 20% less damage for 4s.`,
+  jackalguard:p=>`The guard bars the way: enemies within 2 hexes must attack it for 2.5s, the band shares a ${rd(p*.6)} shield, and for 4s every melee blow against them is answered with ${rd(p*.15)} magic damage.`,
+  linenwitch:p=>`Each witch flings grave-linen around her own target: ${p} magic damage, bound in place for 1.5s, and it takes 15% more damage for 4s.`,
+  dunerunner:p=>`Each runner throws sand in its target's face: ${p} physical damage and blinded for 2s, then slips into the haze for 1s.`,
+  sandslinger:p=>`Each slinger hurls a sun-baked stone at a weak enemy: ${p} physical damage and a burn of ${rd(p*.3)}.`,
+  outrider:p=>`Each rider charges a weak enemy within 4 hexes: ${p} physical damage, and it is slowed for 2s.`,
+  miragedancer:p=>`Each dancer dissolves into a mirage: she slips into the haze for 1.5s, and her next three attacks deal ${rd(p*.5)} bonus magic damage.`,
+  caravanguard:p=>`The guard rallies round the water-skins: allies within 3 hexes heal ${rd(p*.3)} and gain a ${rd(p*.4)} shield, and the band takes 40% less damage for 3s.`,
+  sandseer:p=>`The seers read the sands: your most wounded ally heals ${p}, and the enemy closest to casting loses 40 mana.`,
+  shardling:p=>`Each shardling snaps a sliver off itself into its target: ${p} physical damage and a bleeding wound of ${rd(p*.4)}, at the cost of 5% of its own health.`,
+  glasssentinel:p=>`The sentinels turn their mirrored faces outward: the band shares a ${rd(p*.6)} shield, and for 4s half of all spell damage they take is thrown back at the caster.`,
+  prismmage:p=>`Each mage splits the sun into a beam at its target: ${p} magic damage, bending on to another enemy within 2 hexes for half.`,
+  mirrorknight:p=>`Each knight steps through its mirror to an enemy about to cast: ${p} magic damage and 30 mana burned, and for 3s half of the spell damage it takes is thrown back.`,
+  jaguarcub:p=>`Each cub pounces on a weak enemy within 4 hexes, clawing it for ${p} physical damage.`,
+  jaguarscout:p=>`Each scout slashes its target with obsidian: ${p} physical damage, and the wound cannot be healed for 3s.`,
+  nightstalker:p=>`Each stalker vanishes for a moment, then strikes a weak enemy for ${p} physical damage and 2 Venom.`,
+  clawpriest:p=>`Each priest marks its target with the jaguar's claw: ${p} magic damage, and for 4s Jaguars deal it 20% more damage.`,
+  jaguarknight:p=>`The knights raise their pelt-covered shields: the band shares a ${rd(p*.8)} shield and strikes back at melee attackers for ${rd(p*.12)} for 4s, and the leader cuts down a wounded enemy beside it for ${rd(p*.6)}.`,
+  sunacolyte:p=>`The acolytes sing to the dawn: allies within 3 hexes heal ${rd(p*.3)}, and the most wounded of them heals ${rd(p*.3)} more.`,
+  eaglewarrior:p=>`Each warrior leaps onto its target with an obsidian club: ${p} physical damage and 15 armour stripped; a target below half health is stunned for 1s.`,
+  sunsinger:p=>`Each singer calls a shaft of sunlight onto its target: ${p} magic damage and a lingering burn of ${rd(p*.3)}.`,
+  plumedguard:p=>`The guard spread their feathered shields: allies within 2 hexes gain a ${rd(p*.5)} shield, and for 4s enemies that strike them in melee are slowed.`,
+  serpentdancer:p=>`The dancers whirl around their leader's target: ${p} magic damage to it and every enemy beside it, each taking 1 Venom.`,
+  dartfrog:p=>`Each frog weeps poison onto its target: ${p} magic damage and 2 Venom, and it heals ${rd(p*.3)}.`,
+  blowgunner:p=>`Each blowgunner puffs a dart at a weak enemy: ${p} physical damage and 2 Venom.`,
+  spitter:p=>`Each cobra spits venom into its target's eyes: ${p} magic damage, 1 Venom, and blinded for 2s.`,
+  spiderpriest:p=>`Each priestess webs her target: ${p} magic damage, bound in place for 1.5s, and 2 Venom.`,
+  venombrewer:p=>`The brewers hurl a flask of venom at their target: ${p} magic damage to it and every enemy beside it, each taking 2 Venom.`,
+  viperguard:p=>`Each guard lunges with a fang-tipped spear: ${p} physical damage and 15 armour stripped, doubled against an enemy already carrying Venom.`,
+});
 for(const [k,f] of Object.entries(DESC)){const u=UNITS[k];if(u&&u.ab&&ABIL[u.ab])ABIL[u.ab][1]=f}
 // one line of flavour for every unit
 const LORE={
@@ -7135,8 +7641,62 @@ const LORE={
 "barkbishop": "A bishop of the wood, grown from an old oak and still growing.",
 "mycelia": "The rot beneath the forest floor, given a body and a purpose."
 };
+Object.assign(LORE,{
+"wrapped":"Soldiers of the old dynasties, wrapped for a war that has not ended.",
+"canopic":"They keep the hearts of kings in jars, and know which ones still beat.",
+"jackalguard":"The jackal-headed guard that stands at every tomb door.",
+"scarabcaller":"Rolls the sun across the sky each morning; rolls you under the sand at night.",
+"linenwitch":"Every strip of linen she winds holds a name. One of them is yours.",
+"embalmer":"Salt, resin and patience. He has never lost a patient for long.",
+"tombking":"A king of the city of tombs, who still holds court every night.",
+"sphinx":"It asks one riddle. No one has ever lived to give the second answer.",
+"nefre":"Queen of the Undying Court, who outlived her dynasty and refused to stop ruling it.",
+"dunerunner":"Barefoot runners who carry messages across the glass and knives for anyone who stops them.",
+"sandslinger":"A stone left in the sun all day burns hotter than any arrow.",
+"outrider":"The first riders of a raid, and the last thing a caravan guard sees.",
+"miragedancer":"She is always a little to the left of where you are looking.",
+"caravanguard":"Sworn to the water-skins. Men have died of thirst guarding them.",
+"falconer":"His falcon has taken the eyes of three khans.",
+"sandseer":"They read the shifting dunes the way scholars read books.",
+"sandkhan":"Lord of the deep desert, who rides with the storm at his back.",
+"rasul":"He has a thousand tents, and every one of them pays him tribute.",
+"shardling":"Splinters of the fallen sun, walking on legs of broken glass.",
+"glasssentinel":"Mirror-faced soldiers. You see yourself in them right before they strike.",
+"prismmage":"Scholars who learned to bend the light of the glass sea.",
+"mirrorknight":"Step through a mirror, and there is always a knight behind it.",
+"sandsculptor":"An old sculptor whose statues get up and walk away.",
+"lenswarden":"A legion's engineer who found a lens the size of a shield, and a sun to aim it with.",
+"glasscolossus":"A whole dune, fused and risen. The legion that met it is still inside.",
+"jaguarcub":"Young of the clan's beasts, already hunting.",
+"jaguarscout":"They wear the jaguar's skin, and move like it.",
+"nightstalker":"Hunters who only come out when the moon is gone.",
+"clawpriest":"Priests of the jaguar who mark the clan's prey before the hunt.",
+"jaguarknight":"The clan's sworn warriors, armoured in quilted cotton and the pelts of their kills.",
+"beastspeaker":"The canopy's beasts come when she calls, and go where she points.",
+"blackjaguar":"The clans say it is the night itself, hunting.",
+"ochre":"The greatest hunter of the clans. When she hunts, the moon covers its face.",
+"sunacolyte":"Children of the temple, who sing the sun up every morning.",
+"eaglewarrior":"Sworn warriors of the eagle, who fight with clubs edged in black glass.",
+"sunsinger":"Every song they sing is a payment to the sun.",
+"plumedguard":"The temple guard, who carry shields feathered in the sun's colours.",
+"serpentdancer":"They dance the way the god moves: slowly, until it isn't.",
+"skypriest":"He climbs the highest stair each dawn to call the sun by name.",
+"sunpriest":"The sun is hungry, and he knows exactly what it eats.",
+"eaglelord":"Lord of the eagle warriors, who strikes from a sky only he can reach.",
+"huama":"She speaks, and the sun answers.",
+"dartfrog":"Small, bright, and deadly. The brightest are the worst.",
+"blowgunner":"A breath, a dart, a man falling over. They never miss twice.",
+"snakecharmer":"His pipe plays a song every viper in the jungle knows.",
+"spitter":"They aim for the eyes.",
+"spiderpriest":"Priestesses of the eight-legged mother, who spin webs between the temples.",
+"venombrewer":"They milk the god's children and bottle what comes out.",
+"viperguard":"The cult's spearmen, every point a fang.",
+"serpentmother":"Mother of the river's brood, who has been waiting a long time for the god to wake.",
+"glasspharaoh":"The last Pharaoh of the sun-dynasty, who slept through the fall of the sun and woke as glass.",
+"coiledgod":"The feathered serpent under the altar, which the cults have been feeding for a thousand years."
+});
 // bands whose spell strikes one enemy: when the leader casts, every soldier casts it at its own target with an even share of the power
-const SPLIT=new Set(["acolyte", "antler", "apprentice", "arbalest", "arbiter", "archerlass", "ashknight", "bellringer", "bestiarius", "blackcat", "bloodtithe", "boarman", "bogling", "bramble", "brandsister", "cairn", "candlewick", "confessor", "contrabander", "corvin", "crowboy", "curser", "daven", "deckhand", "docksider", "dorn", "drownedknight", "drownedthrall", "drowner", "eelcatcher", "eelrunner", "emberwight", "engineer", "frostling", "gaunt", "gloam", "gravedigger", "grieve", "halla", "harpooner", "hask", "heir", "hunthound", "icegrub", "kess", "kingsblade", "knife", "leech", "leechling", "magister", "mira", "mirelurker", "murmillo", "nettle", "nightwarden", "ossian", "pestilent", "rael", "ratcatcher", "retiarius", "roach", "runesmith", "secutor", "shadewalker", "shieldmaid", "silencer", "snowfox", "snowhunter", "soot", "spellthief", "tamsin", "tidebride", "vesna", "volva", "wick", "witchfinder", "witchknight", "zealot"]);
+const SPLIT=new Set(["dunerunner","sandslinger","outrider","miragedancer","shardling","prismmage","mirrorknight","linenwitch","jaguarcub","jaguarscout","nightstalker","clawpriest","eaglewarrior","sunsinger","dartfrog","blowgunner","spitter","spiderpriest","viperguard","acolyte", "antler", "apprentice", "arbalest", "arbiter", "archerlass", "ashknight", "bellringer", "bestiarius", "blackcat", "bloodtithe", "boarman", "bogling", "bramble", "brandsister", "cairn", "candlewick", "confessor", "contrabander", "corvin", "crowboy", "curser", "daven", "deckhand", "docksider", "dorn", "drownedknight", "drownedthrall", "drowner", "eelcatcher", "eelrunner", "emberwight", "engineer", "frostling", "gaunt", "gloam", "gravedigger", "grieve", "halla", "harpooner", "hask", "heir", "hunthound", "icegrub", "kess", "kingsblade", "knife", "leech", "leechling", "magister", "mira", "mirelurker", "murmillo", "nettle", "nightwarden", "ossian", "pestilent", "rael", "ratcatcher", "retiarius", "roach", "runesmith", "secutor", "shadewalker", "shieldmaid", "silencer", "snowfox", "snowhunter", "soot", "spellthief", "tamsin", "tidebride", "vesna", "volva", "wick", "witchfinder", "witchknight", "zealot"]);
 for(const k of SPLIT){const u=UNITS[k];if(!u||!u.ab||!ABIL[u.ab])continue;const f=ABIL[u.ab][1],n=u.sq?u.sq.n:1;ABIL[u.ab][1]=p=>f(Math.round(p/n))}
 function cast(e,mult=1){
   if(mult===1&&e.sq&&SPLIT.has(e.key)&&!e._split){const q=e.sq;C._claim=new Set();
@@ -7151,6 +7711,7 @@ function castCore(e,mult,share){
   if(mult===1)for(const a of C.ents)if(a.spellGain&&!a.dead&&a.team===e.team&&a!==e)a.sp+=a.spellGain;
   if(mult===1&&e.sapper&&e.target&&!e.target.dead)plantCharge(e,e.target);
   if(mult===1&&e.o.includes('Gladiator'))cheer(e.team,1);
+  if(mult===1&&e.o.includes('Feathered'))tribute(e.team,e.sunDisc?2:1,e);
   if(mult===1&&isC(e,'Hexblade')){e.sstrike=3;e.ssDmg=e.p*e.sp*.25}
   if(mult===1&&e.invMana){alive(e.team).forEach(a=>{if(a!==e&&a.ab&&!(a.silUntil>C.time))a.mana=Math.min(a.maxMana,a.mana+e.invMana)});fxAt('ring',e,.5,'#d08a4a')}
   if(mult===1&&e.skald){for(const a of C.ents)if(!a.dead&&a.team===e.team){a.skaldN=Math.min(5,(a.skaldN||0)+1);a.skaldR=[0,.06,.12][e.skald]}sfxV('horn')}
@@ -7322,6 +7883,7 @@ function roundTraits(won,sub){const cnt=traitCounts(Object.values(S.board),true)
   const ft=T('Forsaken');if(!won&&ft){S.shame=(S.shame||0)+1;sub.push(`Shame ${S.shame}`)}
   else if(won&&S.shame){const g=S.shame*Math.max(1,ft)*GP;addGold(g);st('gold',g);sub.push(`Shame repaid: +${g} gold`);S.shame=0}
   if(T('Skald')){S.saga=Math.min(25,(S.saga||0)+1);sub.push(`Saga verse ${S.saga}`)}
+  if(T('Caravan')&&C&&C.ents){const k=C.ents.filter(e=>e.team==='A'&&e.o.includes('Caravan')).reduce((n,e)=>n+(e.kills||0),0);if(k){const g=Math.min(50,5*k);addGold(g);st('gold',g);sub.push(`Caravan tribute: +${g} gold`)}}
   const mt=T('Militia');if(mt){const cap=[0,1,2,3][mt],opts=pool().filter(k=>UNITS[k].o.includes('Militia')&&UNITS[k].cost<=cap);
     for(let i=0;i<(mt>=3?2:1)&&opts.length;i++){const k=rnd(opts);if(giveUnit(k,1)){sub.push(`${UNITS[k].name} answers the levy`);celebrate()}else{addGold(GP);sub.push(`No room on the bench: +${GP} gold`)}}}}
 function unlock(id){const v=store.get('ashen-vault',[]);if(!v.includes(id)){v.push(id);store.set('ashen-vault',v)}}
@@ -7398,7 +7960,7 @@ function planner(){const P=S.plan||(S.plan=[]),own=new Set([...Object.values(S.b
   paintPortraits($('#modal'));const g=$('#modal .pl-grid');if(g)g.scrollTop=sc}
 function modal(html){$('#modal').innerHTML=html;$('#overlay').hidden=false;if(typeof tutCheck==='function')tutCheck()}
 function closeModal(){$('#overlay').hidden=true}
-const skyStrip=(pk,tag)=>{const P=Object.assign({},PALS.ashen,PALS[pk]||{});return `<span class="sky" style="background:radial-gradient(70% 140% at 72% 100%,rgba(${P.glow},.55),transparent 60%),linear-gradient(180deg,${P.sky[1]},${P.sky[3]} 62%,${P.sky[4]});--rn:${P.ruins[2]}"><i></i>${tag?`<em>${tag}</em>`:''}</span>`};
+const skyStrip=(pk,tag)=>{const P=Object.assign({},PALS.ashen,PALS[pk]||{});return `<span class="sky${P.style?' '+P.style:''}" style="background:radial-gradient(70% 140% at 72% 100%,rgba(${P.glow},.55),transparent 60%),linear-gradient(180deg,${P.sky[1]},${P.sky[3]} 62%,${P.sky[4]});--rn:${P.ruins[2]}"><i></i>${tag?`<em>${tag}</em>`:''}</span>`};
 const relicOk=r=>!r.need||r.need.some(o=>RUN.origins.includes(o));
 const vault=()=>{const v=store.get('ashen-vault',[]);return RELICS.filter(r=>(r.starter||v.includes(r.id))&&relicOk(r))};
 const relicOffers=n=>{const L=shuffle(RELICS.filter(r=>!S.relics.includes(r.id)&&relicOk(r))),out=[];for(const c of shuffle(Object.keys(RCAT))){const r=L.find(x=>x.cat===c&&!out.includes(x));if(r)out.push(r);if(out.length>=n)break}for(const r of L){if(out.length>=n)break;if(!out.includes(r))out.push(r)}return out};
@@ -7409,13 +7971,13 @@ function contractModal(step){
     modal(`<div class="eyebrow">Choose a contract</div><h2>The board of contracts</h2>
       <div class="clist">${RUN_ORDER.map(i=>{const r=RUNS[i],open=runOpen(i),b=runBest(i),na=r.nActs||3,done=b>=na+1,org=r.origins.filter(o=>TRAITS[o]&&TRAITS[o].th.length>1);
         return `<button class="aug con${open?'':' locked'}${i===sel0?' on':''}${r.tutorial?' tut':''}" ${open?`data-run="${i}"`:'disabled'}>${skyStrip(REGIONS[r.final].pal||'ashen',r.tutorial?'Tutorial':`Contract ${ROMAN(i)}`)}
-        <div class="con-h"><b>${r.name}</b><span class="con-st">${r.tutorial?(done?'✓':''):'★'.repeat(r.stars)+'<i>'+'★'.repeat(4-r.stars)+'</i>'}</span></div>
+        <div class="con-h"><b>${r.name}</b><span class="con-st">${r.tutorial?(done?'✓':''):'★'.repeat(r.stars)+'<i>'+'★'.repeat(5-r.stars)+'</i>'}</span></div>
         <p class="con-b">${open?r.blurb:`Complete ${RUNS[PREV(i)].name} to unlock.`}</p>
         ${open?`<div class="con-o">${org.map(o=>`<span class="chip" title="${o}">${ticon(o)}<em>${o}</em></span>`).join('')}</div>
         <div class="con-f"><span>${r.tutorial?'2 short acts':`${na} acts`} · <em>${r.boss.name}</em></span><span class="con-r${done?' done':''}">${done?`Completed${heatBeaten(i)>0?` · Heat ${heatBeaten(i)}`:''}`:b?`Best: Act ${b}`:''}</span></div>`:''}</button>`}).join('')}</div>`);
     return;
   }
-  const draw=()=>modal(`<div class="eyebrow">${RUN.tutorial?'Tutorial':`Contract ${ROMAN(RUN.id)} · ${'★'.repeat(RUN.stars)}${'☆'.repeat(4-RUN.stars)}`}</div><h2>${RUN.name}</h2>
+  const draw=()=>modal(`<div class="eyebrow">${RUN.tutorial?'Tutorial':`Contract ${ROMAN(RUN.id)} · ${'★'.repeat(RUN.stars)}${'☆'.repeat(5-RUN.stars)}`}</div><h2>${RUN.name}</h2>
     <p><em>${RUN.blurb}</em> ${RUN.tutorial?'Two short acts with tips along the way. Pick any relic below; the tips explain it later.':`${['','One','Two','Three','Four','Five'][NACTS()]} acts; you choose a region for each act before the last.`} ${RUN.boss.name} waits at the end: ${RUN.boss.desc.charAt(0).toLowerCase()+RUN.boss.desc.slice(1)} Your company heals fully between battles, but defeats cost you health.</p>
     <div class="chips">${RUN.origins.filter(o=>TRAITS[o]&&TRAITS[o].th.length>1).map(o=>`<span class="chip">${ticon(o)}${o}</span>`).join('')}</div>
     ${heatMax(RUN.id)>0?`<div class="heat"><span class="eyebrow">Heat</span>${Array.from({length:heatMax(RUN.id)+1},(_,h)=>`<button class="hb${(S.heat||0)===h?' on':''}" data-heat="${h}">${h}</button>`).join('')}</div>
@@ -7568,6 +8130,14 @@ const EVENTS=[
     a:['Recruit them','A 3-cost soldier joins your bench',()=>S.bench.includes(null),()=>{const k=rnd(poolCost(3));giveUnit(k,1);return `${UNITS[k].name} joins you`}],b:['Strip them','+200 gold',()=>true,()=>addGold(200)]},
   {title:'The Ember Forge',runs:[0,3],text:"The empire's war-forge still burns, its anvils unattended.",
     a:['Use the forge','−150 gold: a random finished item',()=>S.gold>=150,()=>{S.gold-=150;const f=rnd(FULL_KEYS);S.items.push(f);return `Forged: ${ITEM[f].name}`}],b:['Sabotage it','level up 125 cheaper',()=>true,()=>{S.xp+=5;checkLevel()}]},
+  {title:'The Oasis',runs:[7],text:'Palms and still water, and a caravan already camped beside it, watching your banners.',
+    a:['Trade with them','−100 gold: an item component and restore 4 health',()=>S.gold>=100,()=>{S.gold-=100;heal(4);const c=rnd(Object.keys(COMP));S.items.push(c);return `Traded for ${COMP[c].name}`}],b:['Drive them off','Lose 2 health, +175 gold',()=>S.hp>2,()=>{S.hp-=2;addGold(175)}]},
+  {title:'The Sealed Tomb',runs:[7],text:'A tomb door, unbroken for three thousand years. Something on the other side is breathing.',
+    a:['Break the seal','Lose 3 health: a ★★ Embalmed unit joins your bench',()=>S.hp>3&&S.bench.includes(null),()=>{S.hp-=3;const k=rnd(pool().filter(k=>UNITS[k].cost<=2&&UNITS[k].o.includes('Embalmed')));giveUnit(k,2);return `${UNITS[k].name} ★★ joins you`}],b:['Leave it sealed','Level up 125 cheaper',()=>true,()=>{S.xp+=5;checkLevel()}]},
+  {title:'The Sun Stair',runs:[8],text:'Priests on the temple steps offer the sun a heart. They look at yours.',
+    a:['Make an offering','Lose 4 health: a random finished item',()=>S.hp>4,()=>{S.hp-=4;const f=rnd(FULL_KEYS);S.items.push(f);return `The sun gives: ${ITEM[f].name}`}],b:['Steal the temple gold','+200 gold',()=>true,()=>addGold(200)]},
+  {title:'The Fever Camp',runs:[8],text:'Soldiers sweat in their hammocks under the canopy. A healer stirs something green and offers you a cup.',
+    a:['Drink the cure','Even odds: restore 10 health or lose 3',()=>S.hp>3,()=>{if(Math.random()<.5){heal(10);return 'Restored 10 health'}S.hp-=3;return 'Lost 3 health'}],b:['Buy her venom','−100 gold: a ★★ Venomblood unit joins your bench',()=>S.gold>=100&&S.bench.includes(null),()=>{S.gold-=100;const k=rnd(pool().filter(k=>UNITS[k].cost<=2&&UNITS[k].o.includes('Venomblood')));giveUnit(k,2);return `${UNITS[k].name} ★★ joins you`}]},
   {title:'The Ash Shrine',text:'Embers still burn on an altar to the Sundering. Something listens.',
     a:['Make an offering','−150 gold: a random unit on your field gains a star',()=>S.gold>=150&&Object.values(S.board).some(u=>u.star<3),()=>{S.gold-=150;rnd(Object.values(S.board).filter(u=>u.star<3)).star++;mergeAll()}],b:['Walk on','Nothing happens',()=>true,()=>{}]},
 ];
